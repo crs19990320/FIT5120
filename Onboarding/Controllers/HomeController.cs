@@ -1,8 +1,12 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 
 
 namespace Onboarding.Controllers
@@ -16,11 +20,8 @@ namespace Onboarding.Controllers
             float numberComesFromPrediction = predictionController.getPredictionNumber();
             ColorController colorController = new ColorController();
             String decidedColor = colorController.DecideTheColor(numberComesFromPrediction);
-            RealTimeLocation location = new RealTimeLocation();
-            String ip = location.showIP();
             ViewBag.Message = numberComesFromPrediction.ToString();
             ViewBag.Color = decidedColor;
-            ViewBag.ip = ip;
             return View();
         }
 
@@ -37,6 +38,20 @@ namespace Onboarding.Controllers
 
             return View();
         }
-        
+
+        [HttpPost]
+        public ActionResult GetUserLocation(RealTimeLocation location)
+        {
+            if (location.latitude == -999 && location.longitude == -999)
+            {
+                location.setDefaultLocation();
+            }
+            else { 
+                location.setLat(location.latitude);
+                location.setLon(location.longitude);
+            }
+            return Json(new { success = true });
+
+        }
     }
 }
