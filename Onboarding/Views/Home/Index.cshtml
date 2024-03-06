@@ -9,19 +9,18 @@
 
     <div class="row">
         <div class="col">
-            <div class="card", style="text-align : center">
+            <div class="card" , style="text-align : center">
                 <div class="card-body">
                     <p>UV index</p>
                     <h2 style="color:@ViewBag.Color">@ViewBag.Message</h2>
-                    <h1>@ViewBag.ip</h1>
                 </div>
             </div>
         </div>
-        
+
 
     </div>
 
-        <!-- <section class="col-md-4" aria-labelledby="gettingStartedTitle">
+    <!-- <section class="col-md-4" aria-labelledby="gettingStartedTitle">
          <h2 id="gettingStartedTitle">Getting started</h2>
          <p>
              ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
@@ -42,3 +41,54 @@
      </section>
     </div>    -->
 </main>
+
+<script>
+    function sendLocationToBackend(latitude, longitude) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/Home/GetUserLocation", true);
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+        var data = JSON.stringify({
+            latitude: latitude,
+            longitude: longitude
+        });
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    console.log("Location sent successfully");
+                } else {
+                    console.error("Failed to send location");
+                }
+            }
+        };
+        xhr.send(data);
+    }
+    function showConfirmation() {
+        var result = confirm("Do you want to share your real-time location with us?");
+
+        if (result) {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function (position) {
+                        var latitude = position.coords.latitude;
+                        var longitude = position.coords.longitude;
+                        sendLocationToBackend(latitude, longitude);
+                    },
+                    function (error) {
+                    }
+                );
+            } else {
+                console.error("Geolocation is not supported by this browser.");
+            }
+        } else {
+            sendLocationToBackend(-999, -999);
+        }
+    }
+    window.onload = function () {
+        showConfirmation();
+    };
+
+    
+
+    
+</script>
