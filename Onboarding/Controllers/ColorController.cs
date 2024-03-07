@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Diagnostics;
+using System.Drawing.Printing;
 
 namespace Onboarding.Controllers
 {
@@ -40,7 +42,7 @@ namespace Onboarding.Controllers
             int red = 0;
             int blue = 0;
 
-            if (currentValue <= 0.5)
+            if (normalizedValue <= 0.5)
             {
                 green = 255;
                 red = (int)(255 *  2 * normalizedValue);
@@ -56,6 +58,7 @@ namespace Onboarding.Controllers
             String blueString = blue.ToString("X2");
 
             String colorString = "#" + redString + greenString + blueString;
+
 
             return colorString;
         }
