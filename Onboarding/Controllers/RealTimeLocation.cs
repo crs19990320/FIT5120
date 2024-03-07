@@ -13,6 +13,7 @@ namespace Onboarding.Controllers
     {
         public double latitude { get; set; }
         public double longitude { get; set; }
+        public double uvindex { get; set; }
 
         /*
          * This is the constructor function.

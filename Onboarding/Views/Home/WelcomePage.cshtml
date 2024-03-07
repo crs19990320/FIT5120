@@ -1,0 +1,161 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WelcomePage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #welcomeMessage {
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0);
+            border-radius: 10px;
+            font-size: 70px;
+            text-align: left;
+            display: none;
+            color: darkslategray;
+            font-family: 'Lucida Handwriting', cursive;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop>
+        <source src="~/imagine/WelcomePageVideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div id="welcomeMessage">
+        Welcome! <br>
+        Enjoy Sun. Enjoy Life.
+    </div>
+
+    <script>
+        window.onload = function () {
+
+            var isFirstVisit = sessionStorage.getItem("isFirstVisit");
+
+            if (!isFirstVisit) {
+                showConfirmation();
+                sessionStorage.setItem("isFirstVisit", "true");
+            }
+
+        };
+
+        function getWeatherData(latitude, longitude) {
+            if (latitude == -999) {
+                latitude = -34.04;
+                longitude = 151.1;
+            }
+            // testurl: "https://api.openweathermap.org/data/3.0/onecall?lat=41.15&lon=16.85&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027" Bari
+            // testurl: "https://api.openweathermap.org/data/3.0/onecall?lat=41.54&lon=12.29&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027" Roma
+            // testurl: "https://api.openweathermap.org/data/3.0/onecall?lat=30.03&lon=31.14&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027" Cairo
+            // testurl: "https://api.openweathermap.org/data/3.0/onecall?lat=-34.60333&lon=-58.38167&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027" Buenos Aires
+            // Trueurl: "https://api.openweathermap.org/data/3.0/onecall?lat=" + latitude + "&lon=" + longitude + "&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027"
+            var apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=" + latitude + "&lon=" + longitude + "&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027";
+
+            // send Ajax Get Request
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", apiUrl, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Succeed
+                    console.log("Data sent successfully!");
+                    var responseData = JSON.parse(xhr.responseText);
+                    // Do something with the response data
+                    console.log(responseData.current.uvi);
+                    var uvindex = responseData.current.uvi;
+
+                    // Call sendLocationToBackend after obtaining uvindex
+                    sendLocationToBackend(latitude, longitude, uvindex);
+                }
+            };
+            xhr.send(); // Send the request
+        }
+
+        function sendLocationToBackend(latitude, longitude, uvindex) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/Home/GetUserLocation", true);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+            var data = JSON.stringify({
+                latitude: latitude,
+                longitude: longitude,
+                uvindex: uvindex
+            });
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        console.log("Location sent successfully");
+                        setTimeout(function () {
+                            window.location.href = '/Home/Index';
+                        }, 2500);
+
+                    } else {
+                        console.error("Failed to send location");
+                    }
+                }
+            };
+            console.log(data);
+            xhr.send(data);
+
+        }
+
+        function showConfirmation() {
+            var result = confirm("Do you want to share your real-time location with us?");
+
+            if (result) {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        function (position) {
+                            var latitude = position.coords.latitude;
+                            var longitude = position.coords.longitude;
+                            getWeatherData(latitude, longitude);
+                            document.getElementById("welcomeMessage").style.display = "block";
+                        },
+                        function (error) {
+                        }
+                    );
+                } else {
+                    getWeatherData(-999, -999);
+                    document.getElementById("welcomeMessage").style.display = "block";
+                    console.error("Geolocation is not supported by this browser.");
+                }
+            } else {
+                getWeatherData(-999, -999);
+                document.getElementById("welcomeMessage").style.display = "block";
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>
+
+

@@ -47,34 +47,7 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 
-    <script>
-        document.getElementById("weatherLink").addEventListener("click", function (event) {
-            event.preventDefault();
-
-            // var city = document.getElementById("citySelect").value;
-
-
-            var apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=-37.8136&lon=144.9631&exclude=current&appid=d2dba7f53adbb152167188a597023027";
-            // use Melbourne data as an sample
-
-            // Replace {lat} and {lon} with latitude and longitude values
-            //apiUrl = apiUrl.replace("{lat}", "your_latitude").replace("{lon}", "your_longitude");
-
-            // send Ajax Get Request
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", apiUrl, true);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    // Succeed
-                    console.log("Data sent successfully!");
-                    var responseData = JSON.parse(xhr.responseText);
-                    // Do something with the response data
-                    console.log(responseData);
-                }
-            };
-            xhr.send(); // Send the request
-        });
-    </script>
+    
 
 
 </body>
