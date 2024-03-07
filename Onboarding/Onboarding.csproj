@@ -184,6 +184,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\MoreInfo.cshtml" />
     <Content Include="Views\Home\WelcomePage.cshtml" />
+    <Content Include="Views\Home\Sydney.cshtml" />
+    <Content Include="Views\Home\Melbourne.cshtml" />
+    <Content Include="Views\Home\Perth.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
