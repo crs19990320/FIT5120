@@ -22,6 +22,11 @@ namespace Onboarding.Controllers
             String decidedColor = colorController.DecideTheColor(numberComesFromPrediction);
             ViewBag.Message = numberComesFromPrediction.ToString();
             ViewBag.Color = decidedColor;
+
+            // print the corresponding tips message based on the prediction number
+            TipsController tipController = new TipsController();
+            double message = predictionController.getPredictionNumber();
+            ViewBag.Tips = tipController.getTipsBasedOnUVIndex(message);
             return View();
         }
 
@@ -58,5 +63,7 @@ namespace Onboarding.Controllers
             return Json(new { success = true });
 
         }
+
+
     }
 }
