@@ -16,7 +16,7 @@ namespace Onboarding.Controllers
         [HttpPost]
         public async Task<JsonResult> GetWeather(string city)
         {
-            // string apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=-37.8136&lon=144.9631&exclude=current&appid=d2dba7f53adbb152167188a597023027";
+             string apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=-37.8136&lon=144.9631&exclude=current&appid=d2dba7f53adbb152167188a597023027";
             // latitude and longitude values of Melbourne
 
             // Use HttpClient to send GET request to OpenWeatherMap API
