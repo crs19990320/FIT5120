@@ -25,7 +25,7 @@ namespace Onboarding.Controllers
          * Get function for get the number.
          */
         public double getPredictionNumber() {
-            double returnNumber = 4.0;
+            double returnNumber = 7.0;
             return returnNumber;
         }
 
