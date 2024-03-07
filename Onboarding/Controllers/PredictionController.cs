@@ -13,7 +13,7 @@ namespace Onboarding.Controllers
     public class PredictionController
     {
         // This is the uv index.
-        private int predictionNumber;
+        private double predictionNumber;
 
         /*
          * This is the default constructor function
@@ -23,15 +23,15 @@ namespace Onboarding.Controllers
         /*
          * Get function for get the number.
          */
-        public float getPredictionNumber() {
-            float returnNumber = 11.0f;
+        public double getPredictionNumber() {
+            double returnNumber = 11.0;
             return returnNumber;
         }
 
         /*
          * Set function.
          */
-        public void setPredictionNumber(int predictionNumber)
+        public void setPredictionNumber(double predictionNumber)
         {
             this.predictionNumber = predictionNumber;
         }

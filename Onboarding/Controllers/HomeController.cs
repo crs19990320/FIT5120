@@ -17,7 +17,7 @@ namespace Onboarding.Controllers
 
         {
             PredictionController predictionController = new PredictionController();
-            float numberComesFromPrediction = predictionController.getPredictionNumber();
+            double numberComesFromPrediction = predictionController.getPredictionNumber();
             ColorController colorController = new ColorController();
             String decidedColor = colorController.DecideTheColor(numberComesFromPrediction);
             ViewBag.Message = numberComesFromPrediction.ToString();
@@ -42,14 +42,12 @@ namespace Onboarding.Controllers
         [HttpPost]
         public ActionResult GetUserLocation(RealTimeLocation location)
         {
+            //Debug.WriteLine($"{location.latitude},     {location.longitude}");
             if (location.latitude == -999 && location.longitude == -999)
             {
                 location.setDefaultLocation();
             }
-            else { 
-                location.setLat(location.latitude);
-                location.setLon(location.longitude);
-            }
+            //Debug.WriteLine($"{location.latitude},     {location.longitude}");
             return Json(new { success = true });
 
         }

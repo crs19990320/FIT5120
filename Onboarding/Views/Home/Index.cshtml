@@ -64,6 +64,7 @@
                 }
             }
         };
+        console.log(data);
         xhr.send(data);
     }
     function showConfirmation() {
@@ -81,6 +82,7 @@
                     }
                 );
             } else {
+                sendLocationToBackend(-999, -999);
                 console.error("Geolocation is not supported by this browser.");
             }
         } else {
