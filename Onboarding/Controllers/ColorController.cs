@@ -19,22 +19,22 @@ namespace Onboarding.Controllers
 
         /*
          * This function is a function return a String of HTML color code.
-         * Accept: A float number uvIndex.
+         * Accept: A double number uvIndex.
          * Return: A String of HTML color code.
          */
-        public String DecideTheColor(float uvIndex)
+        public String DecideTheColor(double uvIndex)
         {
             return GetGradientColor(0, 20, uvIndex);
         }
 
         /*
          * This function is a function to calculate color String based on the level of uvIndex.
-         * Accept: int value for min value(usually 0), int value for max value(usuall less than 20), float uv index.
+         * Accept: int value for min value(usually 0), int value for max value(usuall less than 20), double uv index.
          * Return: A String of HTML color code.
          */
-        private String GetGradientColor(int minValue, int maxValue, float currentValue)
+        private String GetGradientColor(int minValue, int maxValue, double currentValue)
         {
-            float normalizedValue = (float)(currentValue - minValue) / (maxValue - minValue);
+            double normalizedValue = (double)(currentValue - minValue) / (maxValue - minValue);
 
             int green = 0;
             int red = 0;

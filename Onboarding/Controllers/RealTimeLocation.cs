@@ -6,26 +6,29 @@ using System.Web;
 
 namespace Onboarding.Controllers
 {
+    /*
+     * This is class for decide the location for a user
+     */
     public class RealTimeLocation 
     {
         public double latitude { get; set; }
         public double longitude { get; set; }
 
+        /*
+         * This is the constructor function.
+         */
         public RealTimeLocation() { }
+        
 
-        public double getLat() { return latitude; }
-        public double getLon() { return longitude; }
-
-        public void setLat(double lat) {  this.latitude = lat; }
-        public void setLon(double lon) {  this.longitude = lon; }
-
-        // Default the location of Sydney.
+        /*
+         * If the user don't want to share a location to us, use the default function.
+         */
         public void setDefaultLocation() 
-        { 
-            setLat(-34.04);
-            setLon(151.1);   
+        {
+            // Default the location of Sydney.
+            latitude = -34.04;
+            longitude = 151.1;   
         }
-
 
 
     }
