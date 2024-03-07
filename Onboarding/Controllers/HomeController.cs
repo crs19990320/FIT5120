@@ -39,6 +39,13 @@ namespace Onboarding.Controllers
             return View();
         }
 
+        public ActionResult MoreInfo()
+        {
+            ViewBag.Message = "The second page.";
+
+            return View();
+        }
+
         [HttpPost]
         public ActionResult GetUserLocation(RealTimeLocation location)
         {
