@@ -26,7 +26,7 @@ namespace Onboarding.Controllers
          */
         public String DecideTheColor(double uvIndex)
         {
-            return GetGradientColor(0, 10, uvIndex);
+            return GetGradientColor(0, 11, uvIndex);
         }
 
         /*

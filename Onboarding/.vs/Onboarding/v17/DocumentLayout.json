@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\onboarding\\views\\home\\welcomepage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|solutionrelative:views\\home\\welcomepage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Controllers\\PredictionController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|solutionrelative:Controllers\\PredictionController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|solutionrelative:Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\onboarding\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|solutionrelative:Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\onboarding\\controllers\\weathercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|solutionrelative:controllers\\weathercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\onboarding\\controllers\\tipscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|solutionrelative:controllers\\tipscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\onboarding\\controllers\\colorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|solutionrelative:controllers\\colorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\onboarding\\views\\home\\welcomepage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|solutionrelative:views\\home\\welcomepage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,52 +58,94 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-07T16:05:06.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WeatherController.cs",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Controllers\\WeatherController.cs",
+              "RelativeDocumentMoniker": "Controllers\\WeatherController.cs",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Controllers\\WeatherController.cs",
+              "RelativeToolTip": "Controllers\\WeatherController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T16:04:33.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TipsController.cs",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Controllers\\TipsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TipsController.cs",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Controllers\\TipsController.cs",
+              "RelativeToolTip": "Controllers\\TipsController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T16:04:07.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ColorController.cs",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Controllers\\ColorController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ColorController.cs",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Controllers\\ColorController.cs",
+              "RelativeToolTip": "Controllers\\ColorController.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAQwBwAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-07T15:59:48.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "WelcomePage.cshtml",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Views\\Home\\WelcomePage.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\WelcomePage.cshtml",
               "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Views\\Home\\WelcomePage.cshtml",
               "RelativeToolTip": "Views\\Home\\WelcomePage.cshtml",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAuwCYAAAAZAAAA",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAE8AAACiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-07T13:55:33.117Z",
+              "WhenOpened": "2024-03-07T15:48:12.112Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PredictionController.cs",
-              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Controllers\\PredictionController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PredictionController.cs",
-              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Controllers\\PredictionController.cs",
-              "RelativeToolTip": "Controllers\\PredictionController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-07T02:28:12.135Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
               "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAB4AAAAnAAAA",
+              "ViewState": "AQIAADQAAAAAAAAAAAAkwEEAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-06T12:38:58.523Z"
+              "WhenOpened": "2024-03-06T12:38:58.523Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
               "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAewFUAAAABAAAA",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAACMAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-06T12:19:06.882Z"
+              "WhenOpened": "2024-03-06T12:19:06.882Z",
+              "EditorCaption": ""
             }
           ]
         }
