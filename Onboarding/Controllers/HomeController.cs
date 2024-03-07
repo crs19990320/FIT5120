@@ -63,13 +63,17 @@ namespace Onboarding.Controllers
         {
             if (selectedCity == "1")
             {
-                return RedirectToAction("Melbourne", "Contact");
+                return RedirectToAction("Index", "Contact");
             }
-            else if (selectedCity == "2")
+            if (selectedCity == "2")
             {
                 return RedirectToAction("Sydney", "Contact");
             }
             else if (selectedCity == "3")
+            {
+                return RedirectToAction("Melbourne", "Contact");
+            }
+            else if (selectedCity == "4")
             {
                 return RedirectToAction("Perth", "Contact");
             }

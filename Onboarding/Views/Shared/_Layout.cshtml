@@ -20,12 +20,13 @@
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>
-                        @Html.ActionLink("Search by city", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })
+                        <a class="nav-link">Search by city</a>
                         <div>
                             <select id="citySelect">
-                                <option value="1">Melbourne</option>
-                                <option value="2">Syndey</option>
-                                <option value="3">Perth</option>
+                                <option value="1">Please select from Below: </option>
+                                <option value="2">Sydney</option>
+                                <option value="3">Melbourne</option>
+                                <option value="4">Perth</option>
                             </select>
                         </div>
                     </li>
@@ -33,7 +34,6 @@
                     <li><a href="#" id="weatherLink" class="nav-link">Weather</a></li>
                 </ul>
             </div>
-        </div>
     </nav>
     <div class="container body-content">
         @RenderBody()
@@ -47,7 +47,26 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 
-    
+    <!-- for the logic of click the dropdown table -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#citySelect').change(function () {
+                var selectedCity = $(this).val();
+                if (selectedCity === "1") {
+                    window.location.href = "/Home/Index";
+                } else if (selectedCity === "2") {
+                    window.location.href = "/Home/Sydney";
+                } else if (selectedCity === "3") {
+                    window.location.href = "/Home/Melbourne";
+                } else if (selectedCity === "4") {
+                    window.location.href = "/Home/Perth";
+                }
+            });
+        });
+    </script>
+
+
 
 
 </body>
