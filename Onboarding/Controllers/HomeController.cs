@@ -7,8 +7,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-
-
 namespace Onboarding.Controllers
 {
     public class HomeController : Controller
