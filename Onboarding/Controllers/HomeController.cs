@@ -44,6 +44,47 @@ namespace Onboarding.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Contact(string selectedCity)
+        {
+            if (selectedCity == "1")
+            {
+                return RedirectToAction("Melbourne", "Contact");
+            }
+            else if (selectedCity == "2")
+            {
+                return RedirectToAction("Sydney", "Contact");
+            }
+            else if (selectedCity == "3")
+            {
+                return RedirectToAction("Perth", "Contact");
+            }
+            else
+            {
+                return RedirectToAction("InvalidCityAction", "Contact");
+            }
+        }
+
+        public ActionResult Melbourne()
+        {
+            return View();
+        }
+
+        public ActionResult Sydney()
+        {
+            return View();
+        }
+
+        public ActionResult Perth()
+        {
+            return View();
+        }
+
+        public ActionResult InvalidCityAction()
+        {
+            return View();
+        }
+
         public ActionResult MoreInfo()
         {
             ViewBag.Message = "The second page.";
