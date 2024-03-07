@@ -23,8 +23,7 @@ namespace Onboarding.Controllers
 
             // print the corresponding tips message based on the prediction number
             TipsController tipController = new TipsController();
-            double message = predictionController.getPredictionNumber();
-            ViewBag.Tips = tipController.getTipsBasedOnUVIndex(message);
+            ViewBag.Tips = tipController.getTipsBasedOnUVIndex(numberComesFromPrediction);
             return View();
         }
 

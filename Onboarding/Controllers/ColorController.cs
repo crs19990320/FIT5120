@@ -26,7 +26,7 @@ namespace Onboarding.Controllers
          */
         public String DecideTheColor(double uvIndex)
         {
-            return GetGradientColor(0, 20, uvIndex);
+            return GetGradientColor(0, 10, uvIndex);
         }
 
         /*
@@ -36,30 +36,37 @@ namespace Onboarding.Controllers
          */
         private String GetGradientColor(int minValue, int maxValue, double currentValue)
         {
-            double normalizedValue = (double)(currentValue - minValue) / (maxValue - minValue);
-
             int green = 0;
             int red = 0;
             int blue = 0;
-
-            if (normalizedValue <= 0.5)
+            if (currentValue <= maxValue)
             {
-                green = 255;
-                red = (int)(255 *  2 * normalizedValue);
+                double normalizedValue = (double)(currentValue - minValue) / (maxValue - minValue);
+
+                if (normalizedValue <= 0.5)
+                {
+                    green = 255;
+                    red = (int)(255 * 2 * normalizedValue);
+                }
+                else
+                {
+                    red = 255;
+                    green = (int)(255 * 2 * (1 - normalizedValue));
+                }
+
+
+
             }
             else {
+                green = 0;
                 red = 255;
-                green = (int)(255 * 2 * (1 - normalizedValue));
-            }
+                blue = 255;
 
-            // Calculate hexadecimal
+            }
             String greenString = green.ToString("X2");
             String redString = red.ToString("X2");
             String blueString = blue.ToString("X2");
-
             String colorString = "#" + redString + greenString + blueString;
-
-
             return colorString;
         }
     }
