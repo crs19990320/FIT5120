@@ -11,19 +11,36 @@ namespace Onboarding.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        private PredictionController predictionController = new PredictionController();
+        private ColorController colorController = new ColorController();
+        private TipsController tipController = new TipsController();
 
+        public ActionResult WelcomePage()
         {
-            PredictionController predictionController = new PredictionController();
-            double numberComesFromPrediction = predictionController.getPredictionNumber();
-            ColorController colorController = new ColorController();
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult GetUserLocation(RealTimeLocation location)
+        {
+            if (location.latitude == -999 && location.longitude == -999)
+            {
+                location.setDefaultLocation();
+            }
+            predictionController.setPredictionNumber(location.uvindex);
+            Session["PredictionNumber"] = predictionController.getPredictionNumber();
+            return Json(new { success = true });
+        }
+
+        public ActionResult Index()
+        {
+            double numberComesFromPrediction = (double)(Session["PredictionNumber"] ?? 0);
             String decidedColor = colorController.DecideTheColor(numberComesFromPrediction);
             ViewBag.Message = numberComesFromPrediction.ToString();
             ViewBag.Color = decidedColor;
 
-            // print the corresponding tips message based on the prediction number
-            TipsController tipController = new TipsController();
             ViewBag.Tips = tipController.getTipsBasedOnUVIndex(numberComesFromPrediction);
+
             return View();
         }
 
@@ -89,18 +106,7 @@ namespace Onboarding.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult GetUserLocation(RealTimeLocation location)
-        {
-            //Debug.WriteLine($"{location.latitude},     {location.longitude}");
-            if (location.latitude == -999 && location.longitude == -999)
-            {
-                location.setDefaultLocation();
-            }
-            //Debug.WriteLine($"{location.latitude},     {location.longitude}");
-            return Json(new { success = true });
-
-        }
+        
 
 
     }

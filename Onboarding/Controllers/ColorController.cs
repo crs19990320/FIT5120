@@ -54,8 +54,6 @@ namespace Onboarding.Controllers
                     green = (int)(255 * 2 * (1 - normalizedValue));
                 }
 
-
-
             }
             else {
                 green = 0;
