@@ -140,6 +140,7 @@ namespace Onboarding.Controllers
         }
     }
 
+    // the schema of the data
     public class WeatherData
     {
         public string Description { get; set; }

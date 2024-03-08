@@ -1,9 +1,34 @@
 ﻿@{
     ViewBag.Title = "MoreInfo";
 }
-<main aria-labelledby="title">
-    <h2 id="title">@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
+<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <h1 id="title">
+            <img src="https://sydneynorthhealthnetwork.org.au/wp-content/uploads/2021/01/Sunsmart.png" alt="Sample Picture" style="float: left; margin-right: 10px;" width="120" height="120">
+            UV is HARMFUL to your skin!
+        </h1>
+    </section>
 
-    <p>For second page use.</p>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card" style="text-align: center; height: 200px; background-color: lightblue">
+                <div class="card-body">
+                    <p>Weekly Prediction</p>
+                </div>
+            </div>
+            <div class="card" style="text-align: center; height: 200px">
+                <div class="card-body">
+                    <p>Clothing Advice</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card" style="text-align: center; height: 400px">
+                <div class="card-body">
+                    <p>Activities</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
