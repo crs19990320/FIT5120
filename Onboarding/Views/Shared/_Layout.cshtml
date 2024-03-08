@@ -1,94 +1,153 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <title>My ASP.NET Application</title>
+    <link href="~/Content/css" rel="stylesheet">
+    <script src="~/bundles/modernizr"></script>
+    <style>
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+        .navbar-nav .city-dropdown, .navbar-nav li .city-dropdown select {
+            position: absolute;
+            background-color: #343a40;
+            display: none;
+            min-width: 160px;
+            z-index: 1;
+            border: none;
+            outline: none;
+            color: #fff;
+            background: transparent;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        .navbar-nav li:hover .city-dropdown {
+            display: block;
+        }
+
+        .city-dropdown a, .navbar-nav li .city-dropdown select option {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            background: #343a40; 
+        }
+
+        .dropdown-item:hover {
+            background-color: #1c1d3f;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container">
-            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+            <a href="@Url.Action("Index", "Home")" class="navbar-brand">Application name</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>
-                        <a class="nav-link">Search by city</a>
-                        <div>
-                            <select id="citySelect">
-                                <option value="1">Please select from Below: </option>
-                                <option value="2">Sydney</option>
-                                <option value="3">Melbourne</option>
-                                <option value="4">Perth</option>
-                            </select>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a href="@Url.Action("Index", "Home")" class="nav-link">Home</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Populer Cities</a>
+                        <div class="city-dropdown">
+                            <a id ="sydney"  class="dropdown-item">Sydney</a>
+                            <a id ="melbourne"  class="dropdown-item">Melbourne</a>
+                            <a id ="canberra"  class="dropdown-item">Canberra</a>
+                            <a id ="perth"  class="dropdown-item">Perth</a>
+                            <a id ="brisbane"  class="dropdown-item">Brisbane</a>
                         </div>
                     </li>
-                    <li>@Html.ActionLink("More information", "MoreInfo", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li><a href="#" id="getWeatherButton" class="nav-link">Weather</a></li>
+                    <li class="nav-item"><a href="@Url.Action("MoreInfo", "Home")" class="nav-link">More information</a></li>
+                    <li class="nav-item"><a href="#" id="getWeatherButton" class="nav-link">Weather</a></li>
                 </ul>
             </div>
+        </div>
     </nav>
     <div class="container body-content">
         @RenderBody()
-        <hr />
+        <hr>
         <footer>
             <p>&copy; @DateTime.Now.Year - TP28 Application</p>
         </footer>
     </div>
+    <script>
+        document.querySelector(".city-dropdown").addEventListener("click", function (event) {
+            event.preventDefault();
+            if (event.target.tagName === 'A') { 
+                var cityId = event.target.id; 
+                var apiUrl;
+                var redirectUrl;
+                switch (cityId) {
+                    case "sydney":
+                        apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=-33.8688&lon=151.2093&appid=d2dba7f53adbb152167188a597023027";
+                        redirectUrl = "/Home/Sydney";
+                        break;
+                    case "melbourne":
+                        apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=-37.8136&lon=144.9631&appid=d2dba7f53adbb152167188a597023027";
+                        redirectUrl = "/Home/Melbourne";
+                        break;
+                    case "canberra":
+                        apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=-35.2809&lon=149.1300&appid=d2dba7f53adbb152167188a597023027";
+                        redirectUrl = "/Home/Canberra";
+                        break;
+                    case "perth":
+                        apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=-31.9505&lon=115.8605&appid=d2dba7f53adbb152167188a597023027";
+                        redirectUrl = "/Home/Perth";
+                        break;
+                    case "brisbane":
+                        apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=-27.4698&lon=153.0251&appid=d2dba7f53adbb152167188a597023027";
+                        redirectUrl = "/Home/Brisbane";
+                        break;
+                }
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+                if (apiUrl) {
+                    sendApiRequest(apiUrl, redirectUrl);
+                }
+            }
+        });
+
+        function sendApiRequest(apiUrl, redirectUrl) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", apiUrl, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    console.log("Data sent successfully!");
+                    var responseData = JSON.parse(xhr.responseText);
+                    var dtValues = responseData.daily.map(function (item) { 
+                        return item.dt;
+                    });
+                    var uvValues = responseData.daily.map(function (item) {
+                        return item.uvi;
+                    });
+                    var maxTeValues = responseData.daily.map(function (item) {
+                        return item.temp.max;
+                    });
+                    var minTeValues = responseData.daily.map(function (item) {
+                        return item.temp.min;
+                    });
+                    sessionStorage.setItem("apidata_day", dtValues)
+                    sessionStorage.setItem("apidata_uvi", uvValues)
+                    sessionStorage.setItem("apidata_maxte", maxTeValues)
+                    sessionStorage.setItem("apidata_minte", minTeValues)
+                    window.location.href = redirectUrl;
+                }
+            };
+            xhr.send();
+        }
+    </script>
+
+    <script src="~/bundles/jquery"></Script>
+    <script src="~/bundles/bootstrap"></script>
     @RenderSection("scripts", required: false)
 
-    <!-- for the logic of click the dropdown table -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#citySelect').change(function () {
-                var selectedCity = $(this).val();
-                if (selectedCity === "1") {
-                    window.location.href = "/Home/Index";
-                } else if (selectedCity === "2") {
-                    window.location.href = "/Home/Sydney";
-                } else if (selectedCity === "3") {
-                    window.location.href = "/Home/Melbourne";
-                } else if (selectedCity === "4") {
-                    window.location.href = "/Home/Perth";
-                }
-            });
-        });
-    </script>
-
-    <!-- get the api data when clicking the weather button -->
-    <script>
-        $(document).ready(function () {
-            $('#getWeatherButton').click(function () {
-                // test
-                var latitude = -34.60333;
-                var longitude = -58.38167;
-                $.ajax({
-                    url: '/Home/GetWeatherData',
-                    type: 'POST',
-                    data: { latitude: latitude, longitude: longitude },
-                    success: function (data) {
-                        $('#weatherData').html(data);
-                    }
-                });
-            });
-        });
-
-    </script>
-
-
-
 </body>
-
 
 </html>
