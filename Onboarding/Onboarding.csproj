@@ -187,6 +187,8 @@
     <Content Include="Views\Home\Sydney.cshtml" />
     <Content Include="Views\Home\Melbourne.cshtml" />
     <Content Include="Views\Home\Perth.cshtml" />
+    <Content Include="Views\Shared\WeatherPartial.cshtml" />
+    <Content Include="Views\Shared\ErrorPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

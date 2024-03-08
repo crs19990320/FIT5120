@@ -1,0 +1,12 @@
+﻿@{
+    //@model Onboarding.WeatherData
+    ViewBag.Title = "WeatherPartial";
+}
+<main aria-labelledby="title">
+    <div id="weatherData">
+        <h2>The current weather</h2>
+        <p><strong>description: </strong> @Model.Description</p>
+        <p><strong>temperature: </strong> @Model.Temperature °C</p>
+    </div>
+
+</main>

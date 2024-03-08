@@ -31,7 +31,7 @@
                         </div>
                     </li>
                     <li>@Html.ActionLink("More information", "MoreInfo", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li><a href="#" id="weatherLink" class="nav-link">Weather</a></li>
+                    <li><a href="#" id="getWeatherButton" class="nav-link">Weather</a></li>
                 </ul>
             </div>
     </nav>
@@ -66,6 +66,25 @@
         });
     </script>
 
+    <!-- get the api data when clicking the weather button -->
+    <script>
+        $(document).ready(function () {
+            $('#getWeatherButton').click(function () {
+                // test
+                var latitude = -34.60333;
+                var longitude = -58.38167;
+                $.ajax({
+                    url: '/Home/GetWeatherData',
+                    type: 'POST',
+                    data: { latitude: latitude, longitude: longitude },
+                    success: function (data) {
+                        $('#weatherData').html(data);
+                    }
+                });
+            });
+        });
+
+    </script>
 
 
 
