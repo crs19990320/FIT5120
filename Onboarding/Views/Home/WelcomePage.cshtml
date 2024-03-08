@@ -77,7 +77,7 @@
             // testurl: "https://api.openweathermap.org/data/3.0/onecall?lat=30.03&lon=31.14&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027" Cairo
             // testurl: "https://api.openweathermap.org/data/3.0/onecall?lat=-34.60333&lon=-58.38167&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027" Buenos Aires
             // Trueurl: "https://api.openweathermap.org/data/3.0/onecall?lat=" + latitude + "&lon=" + longitude + "&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027"
-            var apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=-34.60333&lon=-58.38167&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027";
+            var apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=" + latitude + "&lon=" + longitude + "&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027";
 
             // send Ajax Get Request
             var xhr = new XMLHttpRequest();
@@ -114,7 +114,7 @@
                         console.log("Location sent successfully");
                         setTimeout(function () {
                             window.location.href = '/Home/Index';
-                        }, 2000);
+                        }, 1500);
 
                     } else {
                         console.error("Failed to send location");
