@@ -3,13 +3,8 @@
     "",
     "\\Onboarding",
     "\\Onboarding\\Views",
-    "\\Onboarding\\Views\\Home",
-    "\\Onboarding\\Views\\Shared"
+    "\\Onboarding\\Views\\Home"
   ],
-<<<<<<< HEAD
-  "SelectedNode": "\\Onboarding\\Views\\Home\\WelcomePage.cshtml",
-=======
-  "SelectedNode": "\\Onboarding\\Views\\Shared\\_Layout.cshtml",
->>>>>>> 33cc50b6ee5c75702aebb91383c5e1083711c7dd
+  "SelectedNode": "\\Onboarding\\Views\\Home\\MoreInfo.cshtml",
   "PreviewInSolutionExplorer": false
 }
