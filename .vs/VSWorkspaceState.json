@@ -3,8 +3,9 @@
     "",
     "\\Onboarding",
     "\\Onboarding\\Views",
-    "\\Onboarding\\Views\\Home"
+    "\\Onboarding\\Views\\Home",
+    "\\Onboarding\\Views\\Shared"
   ],
-  "SelectedNode": "\\Onboarding\\Onboarding.sln",
+  "SelectedNode": "\\Onboarding\\Views\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }
