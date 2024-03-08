@@ -1,43 +1,26 @@
-﻿using System;
-using System.Net.Http;
-using System.Threading.Tasks;
-using System.Web.Mvc;
+﻿//using System;
+//using System.Net.Http;
+//using System.Threading.Tasks;
+//using System.Web.Mvc;
 
-namespace Onboarding.Controllers
-{
-    public class WeatherController : Controller
-    {
-        public ActionResult Index()
-        {
-            return View();
-        }
+//namespace Onboarding.Controllers
+//{
+//    public class WeatherController : Controller
+//    {
+//        // GET: /Weather/
+//        public ActionResult Index()
+//        {
+//            // This action method is responsible for handling requests to /Weather/Index
 
+//            // You can call getWeatherData function to get weather data
+//            double latitude = -34.04;
+//            double longitude = 151.1;
+//            getWeatherData(latitude, longitude);
 
-        [HttpPost]
-        public async Task<JsonResult> GetWeather(string city)
-        {
-             string apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=-37.8136&lon=144.9631&exclude=current&appid=d2dba7f53adbb152167188a597023027";
-            // latitude and longitude values of Melbourne
+//            // Assuming you want to display weather data in a view, you can return a view here
+//            return View();
+//        }
 
-            // Use HttpClient to send GET request to OpenWeatherMap API
-            using (HttpClient client = new HttpClient())
-            {
-                var response = await client.GetAsync(apiUrl);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    // Parse response content to get weather data
-                    var weatherData = await response.Content.ReadAsStringAsync();
-
-                    // Return weather data as JSON to the client
-                    return Json(weatherData, JsonRequestBehavior.AllowGet);
-                }
-                else
-                {
-                    // Return error message if request fails
-                    return Json("Failed to retrieve weather data.");
-                }
-            }
-        }
-    }
-}
+//        // You can define other action methods as needed for handling different requests
+//    }
+//}
