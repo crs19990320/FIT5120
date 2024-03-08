@@ -5,30 +5,129 @@
     <section class="row" aria-labelledby="aspnetTitle">
         <h1 id="title">
             <img src="https://sydneynorthhealthnetwork.org.au/wp-content/uploads/2021/01/Sunsmart.png" alt="Sample Picture" style="float: left; margin-right: 10px;" width="120" height="120">
-            UV is HARMFUL to your skin!
+            More information to your current location!
         </h1>
     </section>
 
     <div class="row">
         <div class="col-md-6">
-            <div class="card" style="text-align: center; height: 200px; background-color: lightblue">
+            <div class="card" style="text-align: center; height: 200px;">
                 <div class="card-body">
-                    <p>Weekly Prediction</p>
+                    <p>Highest UV index prediction for next 8 days in your location </p>
+                    <table style="width:100%; border-collapse: collapse;">
+                        <tr id="uvtableHeaderRow" style="background-color: #f2f2f2;">
+                        </tr>
+                        <tr id="uvtableBodyRow">
+                        </tr>
+                    </table>
                 </div>
             </div>
-            <div class="card" style="text-align: center; height: 200px">
+            <div class="card" style="text-align: center; height: 250px;">
                 <div class="card-body">
-                    <p>Clothing Advice</p>
+                    <p>Max-Min Temperature prediction for next 8 days in your location</p>
+                    <table style="width:100%; border-collapse: collapse;">
+                        <tr id="tetableHeaderRow" style="background-color: #f2f2f2;">
+                        </tr>
+                        <tr id="maxtetableBodyRow">
+                        </tr>
+                        <tr id="mintetableBodyRow">
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
-
-        <div class="col-md-6">
-            <div class="card" style="text-align: center; height: 400px">
-                <div class="card-body">
-                    <p>Activities</p>
-                </div>
+        <div class="card" style="text-align: center; height: 200px">
+            <div class="card-body">
+                <p>Clothing Advice</p>
             </div>
         </div>
     </div>
+
+    <div class="col-md-6">
+        <div class="card" style="text-align: center; height: 400px">
+            <div class="card-body">
+                <p>Activities</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function useSessionStorageValue() {
+            var time = sessionStorage.getItem("apidata_day");
+            var uvi = sessionStorage.getItem("apidata_uvi");
+            var maxTe = sessionStorage.getItem("apidata_maxte");
+            var minTe = sessionStorage.getItem("apidata_minte");
+            if (time && uvi) {
+                var timestamps = time.split(",");
+                var uvsplit = uvi.split(",");
+                var headerRow = document.getElementById("uvtableHeaderRow");
+                var bodyRow = document.getElementById("uvtableBodyRow");
+                timestamps.forEach(function (item) {
+                    var date = new Date(item * 1000);
+                    var dateString = date.toUTCString();
+                    var parts = dateString.split(" ");
+                    var monthDayString = parts[2] + " " + parts[1];
+                    var th = document.createElement("th");
+                    th.style.border = "1px solid #ddd";
+                    th.style.padding = "8px";
+                    th.style.textAlign = "center";
+                    th.textContent = monthDayString;
+                    headerRow.appendChild(th);
+                });
+                uvsplit.forEach(function (item) {
+                    var td = document.createElement("td");
+                    td.style.border = "1px solid #ddd";
+                    td.style.padding = "8px";
+                    td.style.textAlign = "center";
+                    td.textContent = item;
+                    bodyRow.appendChild(td);
+                });
+            } else {
+                console.log("No data found in sessionStorage.");
+            }
+            if (time && maxTe && minTe) {
+                var maxTeS = maxTe.split(",");
+                var minTeS = minTe.split(",");
+                var timestamps = time.split(",");
+                var headerRow = document.getElementById("tetableHeaderRow");
+                var maxbodyRow = document.getElementById("maxtetableBodyRow");
+                var minbodyRow = document.getElementById("mintetableBodyRow");
+                timestamps.forEach(function (item) {
+                    var date = new Date(item * 1000);
+                    var dateString = date.toUTCString();
+                    var parts = dateString.split(" ");
+                    var monthDayString = parts[2] + " " + parts[1];
+                    var th = document.createElement("th");
+                    th.style.border = "1px solid #ddd";
+                    th.style.padding = "8px";
+                    th.style.textAlign = "center";
+                    th.textContent = monthDayString;
+                    headerRow.appendChild(th);
+                });
+                maxTeS.forEach(function (item) {
+                    var td = document.createElement("td");
+                    td.style.border = "1px solid #ddd";
+                    td.style.padding = "8px";
+                    td.style.textAlign = "center";
+                    td.textContent = (item - 273.15).toFixed(1);
+                    maxbodyRow.appendChild(td);
+                });
+                minTeS.forEach(function (item) {
+                    var td = document.createElement("td");
+                    td.style.border = "1px solid #ddd";
+                    td.style.padding = "8px";
+                    td.style.textAlign = "center";
+                    td.textContent = (item - 273.15).toFixed(1);
+                    minbodyRow.appendChild(td);
+                });
+            } else {
+                console.log("No data found in sessionStorage.");
+            }
+        }
+
+        window.onload = function () {
+            useSessionStorageValue();
+        };
+    </script>
+
 </main>
