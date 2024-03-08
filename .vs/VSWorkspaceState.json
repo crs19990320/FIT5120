@@ -5,6 +5,6 @@
     "\\Onboarding\\Views",
     "\\Onboarding\\Views\\Home"
   ],
-  "SelectedNode": "\\Onboarding\\Onboarding.sln",
+  "SelectedNode": "\\Onboarding\\Views\\Home\\WelcomePage.cshtml",
   "PreviewInSolutionExplorer": false
 }

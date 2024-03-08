@@ -4,7 +4,8 @@
     "\\Controllers",
     "\\imagine",
     "\\Views",
-    "\\Views\\Home"
+    "\\Views\\Home",
+    "\\Views\\Shared"
   ],
   "SelectedNode": "\\Onboarding.sln",
   "PreviewInSolutionExplorer": false

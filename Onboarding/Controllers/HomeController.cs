@@ -65,19 +65,23 @@ namespace Onboarding.Controllers
         {
             if (selectedCity == "1")
             {
-                return RedirectToAction("Index", "Contact");
+                return RedirectToAction("Sydney", "Contact");
             }
             if (selectedCity == "2")
             {
-                return RedirectToAction("Sydney", "Contact");
+                return RedirectToAction("Melbourne", "Contact");
             }
             else if (selectedCity == "3")
             {
-                return RedirectToAction("Melbourne", "Contact");
+                return RedirectToAction("Canberra", "Contact");
             }
             else if (selectedCity == "4")
             {
                 return RedirectToAction("Perth", "Contact");
+            }
+            else if (selectedCity == "5")
+            {
+                return RedirectToAction("Brisbane", "Contact");
             }
             else
             {
@@ -85,17 +89,26 @@ namespace Onboarding.Controllers
             }
         }
 
-        public ActionResult Melbourne()
-        {
-            return View();
-        }
-
         public ActionResult Sydney()
         {
             return View();
         }
 
+        public ActionResult Melbourne()
+        {
+            return View();
+        }
+
+        public ActionResult Canberra()
+        {
+            return View();
+        }
+
         public ActionResult Perth()
+        {
+            return View();
+        }
+        public ActionResult Brisbane()
         {
             return View();
         }
@@ -113,37 +126,39 @@ namespace Onboarding.Controllers
         }
 
 
-        // for testing purpose
-        [HttpPost]
-        public async Task<ActionResult> GetWeatherData(double latitude, double longitude)
-        {
-            var apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=-34.60333&lon=-58.38167&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027";
+        /* // for testing purpose
+         [HttpPost]
+         public async Task<ActionResult> GetWeatherData(double latitude, double longitude)
+         {
+             var apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=-34.60333&lon=-58.38167&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027";
 
-            using (var httpClient = new HttpClient())
-            {
-                HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
+             using (var httpClient = new HttpClient())
+             {
+                 HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
 
-                if (response.IsSuccessStatusCode)
-                {
-                    string apiResponse = await response.Content.ReadAsStringAsync();
+                 if (response.IsSuccessStatusCode)
+                 {
+                     string apiResponse = await response.Content.ReadAsStringAsync();
 
-                    var weatherData = JsonConvert.DeserializeObject<WeatherData>(apiResponse);
+                     var weatherData = JsonConvert.DeserializeObject<WeatherData>(apiResponse);
 
-                    return PartialView("WeatherPartial", weatherData);
-                }
-                else
-                {
-                    ViewBag.ErrorMessage = "Failed to fetch weather data.";
-                    return PartialView("ErrorPartial");
-                }
-            }
-        }
-    }
+                     return PartialView("WeatherPartial", weatherData);
+                 }
+                 else
+                 {
+                     ViewBag.ErrorMessage = "Failed to fetch weather data.";
+                     return PartialView("ErrorPartial");
+                 }
+             }
+         }
+     }
 
-    // the schema of the data
-    public class WeatherData
-    {
-        public string Description { get; set; }
-        public double Temperature { get; set; }
+     // the schema of the data
+     public class WeatherData
+     {
+         public string Description { get; set; }
+         public double Temperature { get; set; }
+     }*/
+
     }
 }
