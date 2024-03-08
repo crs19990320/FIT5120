@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -110,8 +112,37 @@ namespace Onboarding.Controllers
             return View();
         }
 
-        
 
+        // for testing purpose
+        [HttpPost]
+        public async Task<ActionResult> GetWeatherData(double latitude, double longitude)
+        {
+            var apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=-34.60333&lon=-58.38167&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027";
 
+            using (var httpClient = new HttpClient())
+            {
+                HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+
+                    var weatherData = JsonConvert.DeserializeObject<WeatherData>(apiResponse);
+
+                    return PartialView("WeatherPartial", weatherData);
+                }
+                else
+                {
+                    ViewBag.ErrorMessage = "Failed to fetch weather data.";
+                    return PartialView("ErrorPartial");
+                }
+            }
+        }
+    }
+
+    public class WeatherData
+    {
+        public string Description { get; set; }
+        public double Temperature { get; set; }
     }
 }
