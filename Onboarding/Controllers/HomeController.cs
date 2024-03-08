@@ -101,6 +101,11 @@ namespace Onboarding.Controllers
 
         public ActionResult Canberra()
         {
+            double numberComesFromPrediction = (double)(Session["PredictionNumber"] ?? 0);
+            String decidedColor = colorController.DecideTheColor(numberComesFromPrediction);
+            ViewBag.Message = numberComesFromPrediction.ToString();
+            ViewBag.Color = decidedColor;
+            ViewBag.Tips = tipController.getTipsBasedOnUVIndex(numberComesFromPrediction);
             return View();
         }
 
