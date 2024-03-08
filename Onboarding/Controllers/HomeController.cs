@@ -90,7 +90,6 @@ namespace Onboarding.Controllers
             return View();
         }
 
-        [HttpPost]
         public ActionResult Sydney()
         {
             double numberComesFromPrediction = (double)(Session["PredictionNumber"] ?? 0);
