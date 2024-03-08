@@ -26,9 +26,9 @@ namespace Onboarding.Controllers
          */
         public void setDefaultLocation() 
         {
-            // Default the location of Sydney.
-            latitude = -34.04;
-            longitude = 151.1;   
+            // Default the location of Melbourne.
+            latitude = -37.81;
+            longitude = 144.96;   
         }
 
 
