@@ -12,13 +12,14 @@ namespace Onboarding.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class postcodes_geo
+    public partial class melbourne_uvi
     {
-        public int id { get; set; }
-        public string postcode { get; set; }
-        public string suburb { get; set; }
-        public string state { get; set; }
-        public Nullable<decimal> latitude { get; set; }
-        public Nullable<decimal> longitude { get; set; }
+        public string datetime { get; set; }
+        public Nullable<decimal> uvi { get; set; }
+        public Nullable<float> latitude { get; set; }
+        public Nullable<float> longitude { get; set; }
+        public int location_loc_id { get; set; }
+    
+        public virtual location location { get; set; }
     }
 }

@@ -13,10 +13,10 @@ namespace Onboarding.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class location_databaseEntities : DbContext
+    public partial class sunpro_databaseEntities2 : DbContext
     {
-        public location_databaseEntities()
-            : base("name=location_databaseEntities")
+        public sunpro_databaseEntities2()
+            : base("name=sunpro_databaseEntities2")
         {
         }
     
@@ -25,6 +25,9 @@ namespace Onboarding.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<postcodes_geo> postcodes_geo { get; set; }
+        public DbSet<cancer_by_state_stats> cancer_by_state_stats { get; set; }
+        public DbSet<cancer_inc_mort_stats> cancer_inc_mort_stats { get; set; }
+        public DbSet<location> locations { get; set; }
+        public DbSet<melbourne_uvi> melbourne_uvi { get; set; }
     }
 }
