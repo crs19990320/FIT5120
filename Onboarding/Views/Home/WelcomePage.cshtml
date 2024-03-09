@@ -77,7 +77,7 @@
             // testurl: "https://api.openweathermap.org/data/3.0/onecall?lat=30.03&lon=31.14&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027" Cairo
             // testurl: "https://api.openweathermap.org/data/3.0/onecall?lat=-34.60333&lon=-58.38167&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027" Buenos Aires
             // Trueurl: "https://api.openweathermap.org/data/3.0/onecall?lat=" + latitude + "&lon=" + longitude + "&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027"
-            var apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=" + latitude + "&lon=" + longitude + "&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027";
+            var apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=" + latitude + "&lon=" + longitude + "&appid=d2dba7f53adbb152167188a597023027";
 
             // send Ajax Get Request
             var xhr = new XMLHttpRequest();
@@ -90,6 +90,22 @@
                     // Do something with the response data
                     console.log(responseData.current.uvi);
                     var uvindex = responseData.current.uvi;
+                    var dtValues = responseData.daily.map(function (item) {
+                        return item.dt;
+                    });
+                    var uvValues = responseData.daily.map(function (item) {
+                        return item.uvi;
+                    });
+                    var maxTeValues = responseData.daily.map(function (item) {
+                        return item.temp.max;
+                    });
+                    var minTeValues = responseData.daily.map(function (item) {
+                        return item.temp.min;
+                    });
+                    sessionStorage.setItem("apidata_day_real_location", dtValues)
+                    sessionStorage.setItem("apidata_uvi_real_location", uvValues)
+                    sessionStorage.setItem("apidata_maxte_real_location", maxTeValues)
+                    sessionStorage.setItem("apidata_minte_real_location", minTeValues)
 
                     // Call sendLocationToBackend after obtaining uvindex
                     sendLocationToBackend(latitude, longitude, uvindex);
