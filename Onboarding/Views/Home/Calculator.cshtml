@@ -82,8 +82,17 @@
     <div id="result"></div>
 
     <script>
+        window.onload = function () {
+            getDefaultUVI();
+        }
+        function getDefaultUVI() {
+            var default_uv = sessionStorage.getItem('apidata_uvi_for_cal');
+            console.log(default_uv);
+            document.getElementById('uvIndex').value = default_uv;
+        }
         document.getElementById("calculatorForm").addEventListener("submit", function (event) {
             event.preventDefault();
+            
             var uvIndex = parseFloat(document.getElementById("uvIndex").value);
             var sunscreenAmount = calculateSunscreen(uvIndex);
             document.getElementById("result").innerHTML = "You need to apply approximately <span style='font-size: 30px; color: red;'>" + sunscreenAmount.toFixed(2) + "</span> tablespoons of SPF sunscreen.";
