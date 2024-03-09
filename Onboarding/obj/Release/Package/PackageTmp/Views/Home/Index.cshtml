@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<main>
+    <!-- Calculator on right corner -->
+    <a href="/Home/Calculator">
+        <div class="card" style="position: fixed; top: 20px; right: 20px; width: 400px;" id="card1">
+            <div class="card-body">
+                <img src="https://cdn-icons-png.flaticon.com/512/8841/8841452.png" alt="Calculator Icon" style="float: left; margin-right: 10px; max-width: 50px; max-height: 50px;">
+                <h5 class="card-title">New Sunscreen Calculator</h5>
+                <p class="card-text">Want to know how much Sunscreen you need to apply?</p>
+            </div>
+        </div>
+    </a>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <h1 id="title">
+            <img src="https://sydneynorthhealthnetwork.org.au/wp-content/uploads/2021/01/Sunsmart.png" alt="Sample Picture" style="float: left; margin-right: 10px;" width="120" height="120">
+            UV is HARMFUL to your skin!
+        </h1>
+    </section>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card" style="text-align: center; height: 200px; background-color: @ViewBag.Color">
+                <div class="card-body">
+                    <p>UV index</p>
+                    <h2 id="uvindex" style="font-size: 100px; font-weight: bold;">@ViewBag.Message</h2>
+                </div>
+            </div>
+            <div class="card" style="text-align: center; height: 200px">
+                <div class="card-body">
+                    <p>TIPS</p>
+                    <h2 style="color:@ViewBag.Color">@ViewBag.Tips</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card" style="text-align: center; height: 400px">
+                <div class="card-body">
+                    <img src="https://img.freepik.com/premium-vector/uv-index-level-sun-numbers-solar-protection-scale-sun-exposure-risk-low-extreme_352905-803.jpg?w=360" alt="UV chart static" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+@*<script>
+    document.getElementById("card1").addEventListener("click", function (event) {
+        event.preventDefault();
+        var redirectUrl = "/Home/Calculator";
+        window.location.href = redirectUrl;
+    });
+</script>*@
