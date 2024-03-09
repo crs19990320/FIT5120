@@ -3,19 +3,23 @@
   "WorkspaceRootPath": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\onboarding\\views\\home\\moreinfo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\views\\home\\moreinfo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|solutionrelative:views\\home\\moreinfo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\onboarding\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\onboarding\\controllers\\colorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|solutionrelative:controllers\\colorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\onboarding\\views\\home\\welcomepage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\views\\home\\welcomepage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|solutionrelative:views\\home\\welcomepage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\onboarding\\views\\home\\sydney.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\views\\home\\sydney.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DDC066E4-002B-429B-AD16-C31EC144AB38}|Onboarding.csproj|solutionrelative:views\\home\\sydney.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -26,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,7 +50,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "ColorController.cs",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Controllers\\ColorController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ColorController.cs",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Controllers\\ColorController.cs",
+              "RelativeToolTip": "Controllers\\ColorController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-09T01:54:56.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Sydney.cshtml",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Views\\Home\\Sydney.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Sydney.cshtml",
@@ -54,12 +71,11 @@
               "RelativeToolTip": "Views\\Home\\Sydney.cshtml",
               "ViewState": "AQIAAGMAAAAAAAAAAAAcwIUAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-09T00:24:10.514Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-09T00:24:10.514Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "WelcomePage.cshtml",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Views\\Home\\WelcomePage.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\WelcomePage.cshtml",
@@ -67,12 +83,11 @@
               "RelativeToolTip": "Views\\Home\\WelcomePage.cshtml",
               "ViewState": "AQIAAFUAAAAAAAAAAAAcwGgAAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-09T00:21:56.804Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-09T00:21:56.804Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -80,8 +95,7 @@
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAAFEAAAAAAAAAAAAAAHsAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-09T00:13:55.126Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-09T00:13:55.126Z"
             },
             {
               "$type": "Document",
@@ -91,7 +105,7 @@
               "RelativeDocumentMoniker": "Views\\Home\\MoreInfo.cshtml",
               "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\Onboarding\\Views\\Home\\MoreInfo.cshtml",
               "RelativeToolTip": "Views\\Home\\MoreInfo.cshtml",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAcwEAAAAArAAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAAAcwCwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-03-08T16:17:38.225Z",
               "EditorCaption": ""

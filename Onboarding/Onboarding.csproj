@@ -191,6 +191,7 @@
     <Content Include="Views\Shared\ErrorPartial.cshtml" />
     <Content Include="Views\Home\Canberra.cshtml" />
     <Content Include="Views\Home\Brisbane.cshtml" />
+    <Content Include="Views\Home\Calculator.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -130,6 +130,10 @@ namespace Onboarding.Controllers
             return View();
         }
 
+        public ActionResult Calculator()
+        {
+            return View();
+        }
 
         /* // for testing purpose
          [HttpPost]

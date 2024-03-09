@@ -3,6 +3,16 @@
 }
 
 <main>
+    <!-- Calculator on right corner -->
+    <a href="/Home/Calculator">
+        <div class="card" style="position: fixed; top: 20px; right: 20px; width: 400px;" id="card1">
+            <div class="card-body">
+                <img src="https://cdn-icons-png.flaticon.com/512/8841/8841452.png" alt="Calculator Icon" style="float: left; margin-right: 10px; max-width: 50px; max-height: 50px;">
+                <h5 class="card-title">New Sunscreen Calculator</h5>
+                <p class="card-text">Want to know how much Sunscreen you need to apply?</p>
+            </div>
+        </div>
+    </a>
     <section class="row" aria-labelledby="aspnetTitle">
         <h1 id="title">
             <img src="https://sydneynorthhealthnetwork.org.au/wp-content/uploads/2021/01/Sunsmart.png" alt="Sample Picture" style="float: left; margin-right: 10px;" width="120" height="120">
@@ -34,28 +44,12 @@
             </div>
         </div>
     </div>
-        
 </main>
 
-
-<!-- 
-    document.getElementById("weatherLink").addEventListener("click", function (event) {
+@*<script>
+    document.getElementById("card1").addEventListener("click", function (event) {
         event.preventDefault();
-
-        var apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=37.8136&lon=144.9631&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027";
-
-        // send Ajax Get Request
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", apiUrl, true);
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                // Succeed
-                console.log("Data sent successfully!");
-                var responseData = JSON.parse(xhr.responseText);
-                // Do something with the response data
-                console.log(responseData);
-            }
-        };
-        xhr.send(); // Send the request
+        var redirectUrl = "/Home/Calculator";
+        window.location.href = redirectUrl;
     });
--->
+</script>*@
