@@ -106,6 +106,7 @@
                     sessionStorage.setItem("apidata_uvi_real_location", uvValues)
                     sessionStorage.setItem("apidata_maxte_real_location", maxTeValues)
                     sessionStorage.setItem("apidata_minte_real_location", minTeValues)
+                    sessionStorage.setItem("apidata_uvi_for_cal", responseData.current.uvi)
 
                     // Call sendLocationToBackend after obtaining uvindex
                     sendLocationToBackend(latitude, longitude, uvindex);
