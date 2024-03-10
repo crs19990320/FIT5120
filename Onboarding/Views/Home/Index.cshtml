@@ -26,6 +26,11 @@
                 <div class="card-body">
                     <p>UV index</p>
                     <h2 id="uvindex" style="font-size: 100px; font-weight: bold;">@ViewBag.Message</h2>
+                    <div style="position: absolute; bottom: 0; right: 0; width: 100px; height: 80px;">
+                        <a href="/Home/MoreInfo" style="display: block; width: 100%; height: 100%;">
+                            <img src="~/imagine/moreinfo.gif" style="width: 100%; height: 100%;" type="image/gif">
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="card" style="text-align: center; height: 200px">
@@ -46,10 +51,4 @@
     </div>
 </main>
 
-@*<script>
-    document.getElementById("card1").addEventListener("click", function (event) {
-        event.preventDefault();
-        var redirectUrl = "/Home/Calculator";
-        window.location.href = redirectUrl;
-    });
-</script>*@
+
