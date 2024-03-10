@@ -20,6 +20,44 @@
         th {
             background-color: rgba(0,0,0,0.5);
         }
+
+        #clothingAdviceContainer .card {
+            width: 300px;
+            height: 125px;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease, background-color 0.3s ease, margin 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #clothingAdviceContainer .card:hover {
+            transform: scale(2);
+            background-color: #cccccc;
+            z-index: 2; 
+        }
+
+        #clothingAdviceContainer .card:hover::after {
+            content: attr(data-detail);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 10px;
+            font-family: 'Kristen ITC';
+            font-weight: bold;
+            z-index: 1;
+        }
     </style>
     
 </head>
@@ -74,11 +112,23 @@
         <div class="col-md-6">
             <div class="card" style="text-align: center; height: 600px;">
                 <div class="card-body">
-                    <p style="font-weight : bold">Clothing Advice</p>
-                    <div id="clothingAdviceContainer">
-               
-                    </div>
-                </div>
+                    <p style="font-weight: bold">Clothing Advice</p>
+                    <div id="clothingAdviceContainer" class="row">
+                        <div class="col-md-6">
+                            <div id ="day1" class="card" data-detail="Detail 1">Card 1</div>
+                            <div id ="day2" class="card" data-detail="Detail 2">Card 2</div>
+                            <div id ="day3" class="card" data-detail="Detail 3">Card 3</div>
+                            <div id ="day4" class="card" data-detail="Detail 4">Card 4</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id ="day5" class="card" data-detail="Detail 5">Card 5</div>
+                            <div id ="day6" class="card" data-detail="Detail 6">Card 6</div>
+                            <div id ="day7" class="card" data-detail="Detail 7">Card 7</div>
+                            <div id ="day8" class="card" data-detail="Detail 8">Card 8</div>
+                        </div>
+                     </div>
+                 </div>
+
             </div>
         </div>
     </div>
@@ -98,24 +148,29 @@
                     var uvIndex = uvData[i].value;
                     var maxTemp = tempData[i].max;
                     var minTemp = tempData[i].min;
-
-                    // give clothing advice based on UV index and temperature
-                    var advice = "Date: " + date + "<br>";
-                    advice += "UV Index: " + uvIndex + "<br>";
-                    advice += "Max Temperature: " + maxTemp + "°C<br>";
-                    advice += "Min Temperature: " + minTemp + "°C<br>";
+                    var idString = "day" + (i + 1).toString();
+                    console.log(idString)
+                    var title = document.getElementById(idString);
+                    title.textContent = date;
+                    var advice = "Date: " + date + "  ";
+                    advice += "UV Index: " + uvIndex + "  ";
+                    advice += "Max Temperature: " + maxTemp + "°C  ";
+                    advice += "Min Temperature: " + minTemp + "°C  ";
                     advice += generateClothingAdvice(uvIndex, maxTemp, minTemp);
+                    createAdviceCards(advice, idString);
 
-                    // add advice to the paragraph
-                    var paragraph = document.createElement("p");
-                    paragraph.innerHTML = advice;
-
-                    // add to site
-                    clothingAdvice.appendChild(paragraph);
                 }
             } else {
                 console.log("Data mismatch between UV and temperature data.");
             }
+        }
+
+        function createAdviceCards(advice, idString) {
+            const container = document.getElementById("clothingAdviceContainer");
+            const card = document.getElementById(idString);
+            card.setAttribute("data-detail", `${advice}`);
+            container.appendChild(card);
+            
         }
 
         function extractDailyData(dayKey, dataKey1, dataKey2 = null) {
