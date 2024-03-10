@@ -101,11 +101,6 @@ namespace Onboarding.Controllers
 
         public ActionResult Canberra()
         {
-            double numberComesFromPrediction = (double)(Session["PredictionNumber"] ?? 0);
-            String decidedColor = colorController.DecideTheColor(numberComesFromPrediction);
-            ViewBag.Message = numberComesFromPrediction.ToString();
-            ViewBag.Color = decidedColor;
-            ViewBag.Tips = tipController.getTipsBasedOnUVIndex(numberComesFromPrediction);
             return View();
         }
 
@@ -125,8 +120,10 @@ namespace Onboarding.Controllers
 
         public ActionResult MoreInfo()
         {
-            ViewBag.Message = "The second page.";
-
+            double numberComesFromPrediction = (double)(Session["PredictionNumber"] ?? 0);
+            TipsController tipsController = new TipsController();
+            String actTips = tipsController.getActivitiesTipsBasedOnUVIndex(numberComesFromPrediction);
+            ViewBag.actTips = actTips;
             return View();
         }
 

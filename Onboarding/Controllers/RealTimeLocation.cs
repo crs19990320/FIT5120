@@ -27,8 +27,8 @@ namespace Onboarding.Controllers
         public void setDefaultLocation() 
         {
             // Default the location of Melbourne.
-            latitude = -37.81;
-            longitude = 144.96;   
+            latitude = -37.8136;
+            longitude = 144.9631;   
         }
 
 
