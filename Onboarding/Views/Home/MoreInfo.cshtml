@@ -71,18 +71,94 @@
             </div>
         </div>
 
-            <div class="col-md-6">
-                <div class="card" style="text-align: center; height: 600px;">
-                    <div class="card-body">
-                        <p style="font-weight : bold">Clothing Advice</p>
-
+        <div class="col-md-6">
+            <div class="card" style="text-align: center; height: 600px;">
+                <div class="card-body">
+                    <p style="font-weight : bold">Clothing Advice</p>
+                    <div id="clothingAdviceContainer">
+               
                     </div>
                 </div>
             </div>
+        </div>
     </div>
 
 
     <script>
+
+        function getClothingData() {
+            var uvData = extractDailyData("apidata_day_real_location", "apidata_uvi_real_location");
+            var tempData = extractDailyData("apidata_day_real_location", "apidata_maxte_real_location", "apidata_minte_real_location");
+
+            if (uvData.length === tempData.length) {
+                var clothingAdvice = document.getElementById("clothingAdviceContainer");
+
+                for (var i = 0; i < uvData.length; i++) {
+                    var date = uvData[i].date;
+                    var uvIndex = uvData[i].value;
+                    var maxTemp = tempData[i].max;
+                    var minTemp = tempData[i].min;
+
+                    // give clothing advice based on UV index and temperature
+                    var advice = "Date: " + date + "<br>";
+                    advice += "UV Index: " + uvIndex + "<br>";
+                    advice += "Max Temperature: " + maxTemp + "°C<br>";
+                    advice += "Min Temperature: " + minTemp + "°C<br>";
+                    advice += generateClothingAdvice(uvIndex, maxTemp, minTemp);
+
+                    // add advice to the paragraph
+                    var paragraph = document.createElement("p");
+                    paragraph.innerHTML = advice;
+
+                    // add to site
+                    clothingAdvice.appendChild(paragraph);
+                }
+            } else {
+                console.log("Data mismatch between UV and temperature data.");
+            }
+        }
+
+        function extractDailyData(dayKey, dataKey1, dataKey2 = null) {
+            var dayData = sessionStorage.getItem(dayKey);
+            var data1 = sessionStorage.getItem(dataKey1);
+            var data2 = dataKey2 ? sessionStorage.getItem(dataKey2) : null;
+
+            if (!dayData || !data1) {
+                return [];
+            }
+            var dailyData = [];
+            if (dayData && data1) {
+                var days = dayData.split(",");
+                var values1 = data1.split(",");
+                var values2 = data2 ? data2.split(",") : null;
+
+                for (var i = 0; i < days.length; i++) {
+                    var date = new Date(days[i] * 1000).toDateString();
+                    var value1 = parseFloat(values1[i]);
+                    var value2 = data2 ? parseFloat(values2[i]) : null;
+
+                    dailyData.push({ date: date, value: value1, max: value2, min: value2 });
+                }
+            }
+            return dailyData;
+        }
+
+        function generateClothingAdvice(uvIndex, maxTemp, minTemp) {
+            var advice = "";
+
+            // advice
+            if (uvIndex > 7) {
+                advice += "UV index is high. Please use sunscreen and wear protective clothing. ";
+            }
+            if (maxTemp > 30) {
+                advice += "It's hot outside. Wear light, breathable clothing. ";
+            } else if (maxTemp < 10) {
+                advice += "It's cold outside. Wear warm clothing. ";
+            }
+
+            return advice;
+        }
+
         function useSessionStorageValue() {
             var time = sessionStorage.getItem("apidata_day_real_location");
             var uvi = sessionStorage.getItem("apidata_uvi_real_location");
@@ -158,6 +234,7 @@
 
         window.onload = function () {
             useSessionStorageValue();
+            getClothingData();
         };
     </script>
 

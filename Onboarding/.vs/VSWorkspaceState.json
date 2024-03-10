@@ -1,12 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Controllers",
-    "\\imagine",
     "\\Views",
     "\\Views\\Home",
     "\\Views\\Shared"
   ],
-  "SelectedNode": "\\Onboarding.sln",
+  "SelectedNode": "\\Views\\Home",
   "PreviewInSolutionExplorer": false
 }
