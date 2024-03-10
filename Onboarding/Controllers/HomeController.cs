@@ -132,6 +132,11 @@ namespace Onboarding.Controllers
             return View();
         }
 
+        public ActionResult Articles()
+        {
+            return View();
+        }
+
         /* // for testing purpose
          [HttpPost]
          public async Task<ActionResult> GetWeatherData(double latitude, double longitude)

@@ -193,6 +193,7 @@
     <Content Include="Views\Home\Canberra.cshtml" />
     <Content Include="Views\Home\Brisbane.cshtml" />
     <Content Include="Views\Home\Calculator.cshtml" />
+    <Content Include="Views\Home\Articles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
