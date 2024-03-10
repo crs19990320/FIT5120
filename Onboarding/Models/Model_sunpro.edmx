@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="sunpro_databaseModel1.Store" Provider="Devart.Data.MySql" ProviderManifestToken="MySQL, 8.3.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="cancer_by_state_stats">
+          <Key>
+            <PropertyRef Name="state_stats_id" />
+          </Key>
+          <Property Name="state_stats_id" Type="int" Nullable="false" />
+          <Property Name="icd_codes" Type="varchar" MaxLength="10" />
+          <Property Name="cancer_group" Type="varchar" MaxLength="50" />
+          <Property Name="year" Type="int" />
+          <Property Name="state" Type="varchar" MaxLength="50" />
+          <Property Name="sex" Type="varchar" MaxLength="10" />
+          <Property Name="count" Type="int" />
+        </EntityType>
+        <EntityType Name="cancer_inc_mort_stats">
+          <Key>
+            <PropertyRef Name="inc_mort_stats_id" />
+          </Key>
+          <Property Name="inc_mort_stats_id" Type="int" Nullable="false" />
+          <Property Name="icd_codes" Type="varchar" MaxLength="10" />
+          <Property Name="cancer_group" Type="varchar" MaxLength="50" />
+          <Property Name="year" Type="int" />
+          <Property Name="lower_age" Type="int" />
+          <Property Name="upper_age" Type="int" />
+          <Property Name="sex" Type="varchar" MaxLength="10" />
+          <Property Name="count" Type="int" />
+          <Property Name="datatype" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="location">
+          <Key>
+            <PropertyRef Name="loc_id" />
+          </Key>
+          <Property Name="loc_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="postcode" Type="varchar" MaxLength="10" />
+          <Property Name="suburb" Type="varchar" MaxLength="50" />
+          <Property Name="state" Type="varchar" MaxLength="50" />
+          <Property Name="latitude" Type="float" />
+          <Property Name="longitude" Type="float" />
+        </EntityType>
+        <EntityType Name="melbourne_uvi">
+          <Key>
+            <PropertyRef Name="datetime" />
+          </Key>
+          <Property Name="datetime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="uvi" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="latitude" Type="float" />
+          <Property Name="longitude" Type="float" />
+        </EntityType>
+        <EntityContainer Name="sunpro_databaseModel1StoreContainer">
+          <EntitySet Name="cancer_by_state_stats" EntityType="Self.cancer_by_state_stats" Schema="sunpro_database" store:Type="Tables" />
+          <EntitySet Name="cancer_inc_mort_stats" EntityType="Self.cancer_inc_mort_stats" Schema="sunpro_database" store:Type="Tables" />
+          <EntitySet Name="location" EntityType="Self.location" Schema="sunpro_database" store:Type="Tables" />
+          <EntitySet Name="melbourne_uvi" EntityType="Self.melbourne_uvi" Schema="sunpro_database" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="sunpro_databaseModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="cancer_by_state_stats">
+          <Key>
+            <PropertyRef Name="state_stats_id" />
+          </Key>
+          <Property Name="state_stats_id" Type="Int32" Nullable="false" />
+          <Property Name="icd_codes" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="cancer_group" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="year" Type="Int32" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sex" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="count" Type="Int32" />
+          <NavigationProperty Name="location" Relationship="sunpro_databaseModel1.locationcancer_by_state_stats" FromRole="cancer_by_state_stats" ToRole="location" />
+          <NavigationProperty Name="cancer_inc_mort_stats" Relationship="sunpro_databaseModel1.cancer_by_state_statscancer_inc_mort_stats" FromRole="cancer_by_state_stats" ToRole="cancer_inc_mort_stats" />
+        </EntityType>
+        <EntityType Name="cancer_inc_mort_stats">
+          <Key>
+            <PropertyRef Name="inc_mort_stats_id" />
+          </Key>
+          <Property Name="inc_mort_stats_id" Type="Int32" Nullable="false" />
+          <Property Name="icd_codes" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="cancer_group" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="year" Type="Int32" />
+          <Property Name="lower_age" Type="Int32" />
+          <Property Name="upper_age" Type="Int32" />
+          <Property Name="sex" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="count" Type="Int32" />
+          <Property Name="datatype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="cancer_by_state_stats" Relationship="sunpro_databaseModel1.cancer_by_state_statscancer_inc_mort_stats" FromRole="cancer_inc_mort_stats" ToRole="cancer_by_state_stats" />
+        </EntityType>
+        <EntityType Name="location">
+          <Key>
+            <PropertyRef Name="loc_id" />
+          </Key>
+          <Property Name="loc_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="postcode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="suburb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="latitude" Type="Single" />
+          <Property Name="longitude" Type="Single" />
+          <NavigationProperty Name="melbourne_uvi" Relationship="sunpro_databaseModel1.locationmelbourne_uvi" FromRole="location" ToRole="melbourne_uvi" />
+          <NavigationProperty Name="cancer_by_state_stats" Relationship="sunpro_databaseModel1.locationcancer_by_state_stats" FromRole="location" ToRole="cancer_by_state_stats" />
+        </EntityType>
+        <EntityType Name="melbourne_uvi">
+          <Key>
+            <PropertyRef Name="datetime" />
+          </Key>
+          <Property Name="datetime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="uvi" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="latitude" Type="Single" />
+          <Property Name="longitude" Type="Single" />
+          <Property Name="location_loc_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="location" Relationship="sunpro_databaseModel1.locationmelbourne_uvi" FromRole="melbourne_uvi" ToRole="location" />
+        </EntityType>
+        <EntityContainer Name="sunpro_databaseEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="cancer_by_state_stats" EntityType="Self.cancer_by_state_stats" />
+          <EntitySet Name="cancer_inc_mort_stats" EntityType="Self.cancer_inc_mort_stats" />
+          <EntitySet Name="locations" EntityType="Self.location" />
+          <EntitySet Name="melbourne_uvi" EntityType="Self.melbourne_uvi" />
+          <AssociationSet Name="locationmelbourne_uvi" Association="sunpro_databaseModel1.locationmelbourne_uvi">
+            <End Role="location" EntitySet="locations" />
+            <End Role="melbourne_uvi" EntitySet="melbourne_uvi" />
+          </AssociationSet>
+          <AssociationSet Name="locationcancer_by_state_stats" Association="sunpro_databaseModel1.locationcancer_by_state_stats">
+            <End Role="location" EntitySet="locations" />
+            <End Role="cancer_by_state_stats" EntitySet="cancer_by_state_stats" />
+          </AssociationSet>
+          <AssociationSet Name="cancer_by_state_statscancer_inc_mort_stats" Association="sunpro_databaseModel1.cancer_by_state_statscancer_inc_mort_stats">
+            <End Role="cancer_by_state_stats" EntitySet="cancer_by_state_stats" />
+            <End Role="cancer_inc_mort_stats" EntitySet="cancer_inc_mort_stats" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="locationmelbourne_uvi">
+          <End Type="sunpro_databaseModel1.location" Role="location" Multiplicity="1" />
+          <End Type="sunpro_databaseModel1.melbourne_uvi" Role="melbourne_uvi" Multiplicity="*" />
+        </Association>
+        <Association Name="locationcancer_by_state_stats">
+          <End Type="sunpro_databaseModel1.location" Role="location" Multiplicity="1" />
+          <End Type="sunpro_databaseModel1.cancer_by_state_stats" Role="cancer_by_state_stats" Multiplicity="*" />
+        </Association>
+        <Association Name="cancer_by_state_statscancer_inc_mort_stats">
+          <End Type="sunpro_databaseModel1.cancer_by_state_stats" Role="cancer_by_state_stats" Multiplicity="*" />
+          <End Type="sunpro_databaseModel1.cancer_inc_mort_stats" Role="cancer_inc_mort_stats" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="sunpro_databaseModel1StoreContainer" CdmEntityContainer="sunpro_databaseEntities2">
+          <EntitySetMapping Name="cancer_by_state_stats">
+            <EntityTypeMapping TypeName="sunpro_databaseModel1.cancer_by_state_stats">
+              <MappingFragment StoreEntitySet="cancer_by_state_stats">
+                <ScalarProperty Name="state_stats_id" ColumnName="state_stats_id" />
+                <ScalarProperty Name="icd_codes" ColumnName="icd_codes" />
+                <ScalarProperty Name="cancer_group" ColumnName="cancer_group" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="count" ColumnName="count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cancer_inc_mort_stats">
+            <EntityTypeMapping TypeName="sunpro_databaseModel1.cancer_inc_mort_stats">
+              <MappingFragment StoreEntitySet="cancer_inc_mort_stats">
+                <ScalarProperty Name="inc_mort_stats_id" ColumnName="inc_mort_stats_id" />
+                <ScalarProperty Name="icd_codes" ColumnName="icd_codes" />
+                <ScalarProperty Name="cancer_group" ColumnName="cancer_group" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="lower_age" ColumnName="lower_age" />
+                <ScalarProperty Name="upper_age" ColumnName="upper_age" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="count" ColumnName="count" />
+                <ScalarProperty Name="datatype" ColumnName="datatype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="locations">
+            <EntityTypeMapping TypeName="sunpro_databaseModel1.location">
+              <MappingFragment StoreEntitySet="location">
+                <ScalarProperty Name="loc_id" ColumnName="loc_id" />
+                <ScalarProperty Name="postcode" ColumnName="postcode" />
+                <ScalarProperty Name="suburb" ColumnName="suburb" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="melbourne_uvi">
+            <EntityTypeMapping TypeName="sunpro_databaseModel1.melbourne_uvi">
+              <MappingFragment StoreEntitySet="melbourne_uvi">
+                <ScalarProperty Name="datetime" ColumnName="datetime" />
+                <ScalarProperty Name="uvi" ColumnName="uvi" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
