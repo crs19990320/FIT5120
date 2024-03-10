@@ -38,11 +38,11 @@
         #clothingAdviceContainer .card:hover {
             transform: scale(2);
             background-color: #cccccc;
-            z-index: 2; 
+            z-index: 2;
         }
 
         #clothingAdviceContainer .card:hover::after {
-            content: attr(data-detail);
+            content: attr(data-detail1) "\A" attr(data-detail2) "\A" attr(data-detail3) "\A" attr(data-detail4) "\A" attr(data-detail5);
             position: absolute;
             width: 100%;
             height: 100%;
@@ -51,13 +51,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgb(27, 24, 24, 0.8);
             color: white;
             font-size: 10px;
             font-family: 'Kristen ITC';
             font-weight: bold;
             z-index: 1;
+            white-space: pre-wrap;
         }
+
+         
     </style>
     
 </head>
@@ -149,15 +152,14 @@
                     var maxTemp = tempData[i].max;
                     var minTemp = tempData[i].min;
                     var idString = "day" + (i + 1).toString();
-                    console.log(idString)
                     var title = document.getElementById(idString);
                     title.textContent = date;
-                    var advice = "Date: " + date + "  ";
-                    advice += "UV Index: " + uvIndex + "  ";
-                    advice += "Max Temperature: " + maxTemp + "°C  ";
-                    advice += "Min Temperature: " + minTemp + "°C  ";
-                    advice += generateClothingAdvice(uvIndex, maxTemp, minTemp);
-                    createAdviceCards(advice, idString);
+                    var advice1 = "Date: " + date;
+                    var advice2 = "UV Index: " + uvIndex;
+                    var advice3 = "Max Temperature: " + maxTemp + "°F";
+                    var advice4 = "Min Temperature: " + minTemp + "°F";
+                    var advice5 = generateClothingAdvice(uvIndex, maxTemp, minTemp);
+                    createAdviceCards(advice1, advice2, advice3, advice4, advice5, idString);
 
                 }
             } else {
@@ -165,12 +167,15 @@
             }
         }
 
-        function createAdviceCards(advice, idString) {
+        function createAdviceCards(advice1, advice2, advice3, advice4, advice5, idString) {
             const container = document.getElementById("clothingAdviceContainer");
             const card = document.getElementById(idString);
-            card.setAttribute("data-detail", `${advice}`);
-            container.appendChild(card);
-            
+            card.setAttribute("data-detail1", `${advice1}`);
+            card.setAttribute("data-detail2", `${advice2}`);
+            card.setAttribute("data-detail3", `${advice3}`);
+            card.setAttribute("data-detail4", `${advice4}`);
+            card.setAttribute("data-detail5", `${advice5}`);
+            container.appendChild(card); 
         }
 
         function extractDailyData(dayKey, dataKey1, dataKey2 = null) {
