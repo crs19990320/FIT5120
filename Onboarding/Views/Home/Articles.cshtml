@@ -1,0 +1,140 @@
+﻿@{
+    ViewBag.Title = "Articles";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .card-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        #img-card .card {
+            margin: 10px;
+            overflow: hidden;
+            perspective: 1000px;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.5s;
+        }
+
+            #img-card .card:hover {
+                transform: scale(1.75);
+                z-index: 1;
+            }
+
+            #img-card .card img {
+                width: 100%;
+                height: 100%;
+            }
+
+            #img-card .card .back {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                transform: rotateY(180deg);
+            }
+
+            #img-card .card.flipped .front {
+                transform: rotateY(180deg);
+            }
+
+            #img-card .card.flipped .back {
+                transform: rotateY(0deg);
+            }
+
+        #articles.card a {
+            text-align: left;
+            font-size: 20px;
+            font-family: Arial;
+            line-height: 2;
+        }
+
+        #auto-zoom-container {
+            width: 200px;
+            height: 50px; 
+            overflow: hidden; 
+        }
+
+        #auto-zoom {
+            font-weight: bolder;
+            font-size: 20px;
+            transition: font-size 0.3s ease-in-out;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="card-container">
+            <div class="row">
+                <div class="col-md-6" style="text-align:center">
+                    <div id="img-card" class="card-body" style="text-align:center">
+                        <div id="auto-zoom-container">
+                            <p id="auto-zoom">Click the graph!</p>
+                        </div>
+                        <div title="Click Me!" class="card" id="card1" style="height:300px">
+                            <div class="front"><img src="~/imagine/gender-group1.jpg"></div>
+                            <div class="back"><img src="~/imagine/gender-group2.jpg"></div>
+                        </div>
+                        <div title="Click Me!" class="card" id="card2" style="height:300px">
+                            <div class="front"><img src="~/imagine/Age-group1.jpg"></div>
+                            <div class="back"><img src="~/imagine/Age-group2.jpg"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div id="articles" class="card" style="height: 610px; top: 60px; text-align: center; background-color: rgba(189, 193, 210, 0.9) ">
+                        <p style="font-weight:bolder; font-size: 50px"> Useful links</p>
+                        <a style="text-decoration:underline" href="https://www.9news.com.au/national/severe-sunburn-rampant-among-young-aussies-parents-called-to-protect-children-this-summer/e5a7b7d0-cc4b-4c7d-9173-4faa53873781">Severe sunburn in young Australians skyrockets</a>
+                        <a style="text-decoration:underline" href="https://www.nsw.gov.au/media-releases/alarming-rates-of-sunburn-in-children">Alarming rates of sunburn in children and young people</a>
+                        <a style="text-decoration:underline" href="https://www.health.qld.gov.au/newsroom/features/how-to-keep-your-baby-safe-from-the-sun">How to keep your baby safe from the sun</a>
+                        <a style="text-decoration:underline" href="https://www.cancer.org.au/media-releases/2018/9-in-10-australians-dont-know-when-they-need-sun-protection">9 in 10 Australians don't know when they need sun protection</a>
+                        <a style="text-decoration:underline" href="https://www.cancer.org.au/media-releases/2017/almost-half-of-australians-confused-about-sunscreen">Almost half of Australians confused about sunscreen</a>
+                        <a style="text-decoration:underline" href="https://www.sciencedirect.com/science/article/pii/S009174351930074X">Awareness, understanding, use, and impact of the UV index: A systematic review of over two decades of international research</a>
+                        <a style="text-decoration:underline" href="https://www.cancer.org.au/media-releases/2017/almost-half-of-australians-confused-about-sunscreen">Almost half of Australians confused about sunscreen</a>
+                        <a style="text-decoration:underline" href="https://hbswk.hbs.edu/item/learning-by-thinking-how-reflection-improves-performance">Learning By Thinking: How Reflection Improves Performance</a>
+                        <a style="font-family:'Lucida Handwriting'; right:1px; bottom:1px; position:absolute " href="https://www.google.co.uk/search?q=Sun+protection&sca_esv=88f53b0a7b860e25&ei=oentZYniK7nG2roP48iQuAc&ved=0ahUKEwjJtr-RmOqEAxU5o1YBHWMkBHcQ4dUDCBE&uact=5&oq=Sun+protection&gs_lp=Egxnd3Mtd2l6LXNlcnAiDlN1biBwcm90ZWN0aW9uMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyChAAGIAEGIoFGEMyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAESNYyUIAIWNsrcAF4AZABAJgBgAKgAecWqgEFMC41Ljm4AQPIAQD4AQGYAg-gAp0XwgIKEAAYRxjWBBiwA8ICCxAuGIAEGMcBGNEDwgIFEC4YgATCAg4QLhiABBjHARivARiOBcICCxAuGIAEGMcBGK8BwgIHEC4YgAQYDJgDAIgGAZAGCZIHBjEuMy4xMaAHyVM&sclient=gws-wiz-serp">Want to see more?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        document.querySelectorAll('#img-card .card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+            });
+        });
+
+
+        const element = document.getElementById('auto-zoom');
+        let fontSize = 20;
+
+        function zoom() {
+
+            fontSize = fontSize === 20 ? 25 : 20;
+
+            element.style.fontSize = fontSize + 'px';
+
+            setTimeout(zoom, 300);
+        }
+
+
+        zoom();
+    </script>
+
+</body>
+
+
+</html>
