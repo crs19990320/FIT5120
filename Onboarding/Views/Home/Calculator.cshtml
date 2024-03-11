@@ -1,7 +1,14 @@
 ﻿@{
     ViewBag.Title = "Calculator";
 }
+
+<!--
+     * This is the Class for Calculator Card.
+     * Version: 0.4
+     * Author: Qihang Wang
+-->
 <style>
+    /* CSS styles for the page */
     body {
         font-family: Arial, sans-serif;
     }
@@ -82,22 +89,33 @@
     <div id="result"></div>
 
     <script>
+        // When the window is loaded, get the default UV index value
         window.onload = function () {
             getDefaultUVI();
         }
+
+        // Function to get the default UV index value from sessionStorage
         function getDefaultUVI() {
             var default_uv = sessionStorage.getItem('apidata_uvi_for_cal');
             console.log(default_uv);
             document.getElementById('uvIndex').value = default_uv;
         }
+
+        // Event listener for form submission
         document.getElementById("calculatorForm").addEventListener("submit", function (event) {
-            event.preventDefault();
-            
+            event.preventDefault(); // Prevent default form submission behavior
+
+            // Get the UV index value from the input field
             var uvIndex = parseFloat(document.getElementById("uvIndex").value);
+
+            // Calculate the amount of sunscreen needed based on UV index
             var sunscreenAmount = calculateSunscreen(uvIndex);
+
+            // Display the result
             document.getElementById("result").innerHTML = "You need to apply approximately <span style='font-size: 30px; color: red;'>" + sunscreenAmount.toFixed(2) + "</span> tablespoons of SPF sunscreen.";
         });
 
+        // Function to calculate sunscreen amount based on UV index
         function calculateSunscreen(uvIndex) {
             if (uvIndex >= 0 && uvIndex <= 2) {
                 return 0.5;

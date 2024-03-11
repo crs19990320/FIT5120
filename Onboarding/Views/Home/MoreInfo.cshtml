@@ -1,6 +1,12 @@
 ﻿@{
     ViewBag.Title = "MoreInfo";
 }
+
+<!--
+     * This is the Class for MoreInfo(Ready to go) page.
+     * Version: 0.4
+     * Author: Ruosong Chen, Qihang Wang
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,30 +48,30 @@
             border-radius: 40px;
         }
 
-        #clothingAdviceContainer .card:hover {
-            transform: scale(2);
-            background-color: #cccccc;
-            z-index: 2;
-        }
+            #clothingAdviceContainer .card:hover {
+                transform: scale(2);
+                background-color: #cccccc;
+                z-index: 2;
+            }
 
-        #clothingAdviceContainer .card:hover::after {
-            content: attr(data-detail1) "\A" attr(data-detail2) "\A" attr(data-detail3) "\A" attr(data-detail4) "\A" attr(data-detail5);
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgb(27, 24, 24, 0.8);
-            color: white;
-            font-size: 10px;
-            font-family: 'Kristen ITC';
-            font-weight: bold;
-            z-index: 1;
-            white-space: pre-wrap;
-        }
+                #clothingAdviceContainer .card:hover::after {
+                    content: attr(data-detail1) "\A" attr(data-detail2) "\A" attr(data-detail3) "\A" attr(data-detail4) "\A" attr(data-detail5);
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgb(27, 24, 24, 0.8);
+                    color: white;
+                    font-size: 10px;
+                    font-family: 'Kristen ITC';
+                    font-weight: bold;
+                    z-index: 1;
+                    white-space: pre-wrap;
+                }
 
         #activities.card {
             transition: transform 0.3s ease, opacity 0.3s ease;
@@ -73,31 +79,29 @@
             background-color: rgba(255, 255, 255, 0.5);
         }
 
-        #activities.card:hover {
-            transform: scale(2.7);
-            z-index: 1;
-            background-color: rgba(189, 193, 210, 0.9);
-            opacity: 1;
-        }
+            #activities.card:hover {
+                transform: scale(1.5);
+                z-index: 1;
+                background-color: rgba(189, 193, 210, 0.9);
+                opacity: 1;
+            }
 
-        #activities.card:hover .hover-text {
-            display: block;
-            color: #000000;
-            font-family: 'Kristen ITC';
-            font-size: 0.7vw;
-        }
+                #activities.card:hover .hover-text {
+                    display: block;
+                    color: #000000;
+                    font-family: 'Kristen ITC';
+                    font-size: 0.7vw;
+                }
 
-        #activities.card .hover-text {
-            display: none;
-        }
+            #activities.card .hover-text {
+                display: none;
+            }
 
-        #activities.card:hover .card-body p {
-            display: none; 
-        }
-
-         
+            #activities.card:hover .card-body p {
+                display: none;
+            }
     </style>
-    
+
 </head>
 <body>
     <div class="row">
@@ -173,199 +177,208 @@
             </div>
         </div>
     </div>
+</body>
+</html>
 
+<script>
+    // Function to fetch and display clothing advice data
+    function getClothingData() {
 
-    <script>
+        // Extract UV and temperature data from sessionStorage
+        var uvData = extractDailyData("apidata_day_real_location", "apidata_uvi_real_location");
+        var tempData = extractDailyData("apidata_day_real_location", "apidata_maxte_real_location", "apidata_minte_real_location");
 
-        function getClothingData() {
-            var uvData = extractDailyData("apidata_day_real_location", "apidata_uvi_real_location");
-            var tempData = extractDailyData("apidata_day_real_location", "apidata_maxte_real_location", "apidata_minte_real_location");
+        if (uvData.length === tempData.length) {
+            var clothingAdvice = document.getElementById("clothingAdviceContainer");
 
-            if (uvData.length === tempData.length) {
-                var clothingAdvice = document.getElementById("clothingAdviceContainer");
+            // Iterate through data and create clothing advice cards
+            for (var i = 0; i < uvData.length; i++) {
+                var date = uvData[i].date;
+                var uvIndex = uvData[i].value;
+                var maxTemp = tempData[i].max;
+                var minTemp = tempData[i].min;
+                var idString = "day" + (i + 1).toString();
+                var title = document.getElementById(idString);
+                title.textContent = date;
+                var advice1 = "Date: " + date;
+                var advice2 = "UV Index: " + uvIndex;
+                var advice3 = "Max Temperature: " + maxTemp + "°F";
+                var advice4 = "Min Temperature: " + minTemp + "°F";
+                var advice5 = generateClothingAdvice(uvIndex, maxTemp, minTemp);
+                createAdviceCards(advice1, advice2, advice3, advice4, advice5, idString);
 
-                for (var i = 0; i < uvData.length; i++) {
-                    var date = uvData[i].date;
-                    var uvIndex = uvData[i].value;
-                    var maxTemp = tempData[i].max;
-                    var minTemp = tempData[i].min;
-                    var idString = "day" + (i + 1).toString();
-                    var title = document.getElementById(idString);
-                    title.textContent = date;
-                    var advice1 = "Date: " + date;
-                    var advice2 = "UV Index: " + uvIndex;
-                    var advice3 = "Max Temperature: " + maxTemp + "°F";
-                    var advice4 = "Min Temperature: " + minTemp + "°F";
-                    var advice5 = generateClothingAdvice(uvIndex, maxTemp, minTemp);
-                    createAdviceCards(advice1, advice2, advice3, advice4, advice5, idString);
+            }
+        } else {
+            console.log("Data mismatch between UV and temperature data.");
+        }
+    }
 
-                }
-            } else {
-                console.log("Data mismatch between UV and temperature data.");
+    // Function to create advice cards for clothing advice
+    function createAdviceCards(advice1, advice2, advice3, advice4, advice5, idString) {
+        const container = document.getElementById("clothingAdviceContainer");
+        const card = document.getElementById(idString);
+        card.setAttribute("data-detail1", `${advice1}`);
+        card.setAttribute("data-detail2", `${advice2}`);
+        card.setAttribute("data-detail3", `${advice3}`);
+        card.setAttribute("data-detail4", `${advice4}`);
+        card.setAttribute("data-detail5", `${advice5}`);
+        container.appendChild(card);
+    }
+
+    // Function to extract daily data from sessionStorage
+    function extractDailyData(dayKey, dataKey1, dataKey2 = null) {
+        // Extract data from sessionStorage
+        // Convert data to array format
+        // Return array of daily data
+        var dayData = sessionStorage.getItem(dayKey);
+        var data1 = sessionStorage.getItem(dataKey1);
+        var data2 = dataKey2 ? sessionStorage.getItem(dataKey2) : null;
+
+        if (!dayData || !data1) {
+            return [];
+        }
+        var dailyData = [];
+        if (dayData && data1) {
+            var days = dayData.split(",");
+            var values1 = data1.split(",");
+            var values2 = data2 ? data2.split(",") : null;
+
+            for (var i = 0; i < days.length; i++) {
+                var date = new Date(days[i] * 1000).toDateString();
+                var value1 = parseFloat(values1[i]);
+                var value2 = data2 ? parseFloat(values2[i]) : null;
+
+                dailyData.push({ date: date, value: value1, max: value2, min: value2 });
             }
         }
+        return dailyData;
+    }
 
-        function createAdviceCards(advice1, advice2, advice3, advice4, advice5, idString) {
-            const container = document.getElementById("clothingAdviceContainer");
-            const card = document.getElementById(idString);
-            card.setAttribute("data-detail1", `${advice1}`);
-            card.setAttribute("data-detail2", `${advice2}`);
-            card.setAttribute("data-detail3", `${advice3}`);
-            card.setAttribute("data-detail4", `${advice4}`);
-            card.setAttribute("data-detail5", `${advice5}`);
-            container.appendChild(card);
+    // Function to generate clothing advice based on UV index and temperature
+    function generateClothingAdvice(uvIndex, maxTemp, minTemp) {
+        var advice = "";
+
+        // advice
+        if (uvIndex > 7) {
+            advice += "UV index is high. Please use sunscreen and wear protective clothing. ";
+        }
+        if (maxTemp > 30) {
+            advice += "It's hot outside. Wear light, breathable clothing. ";
+        } else if (maxTemp < 10) {
+            advice += "It's cold outside. Wear warm clothing. ";
         }
 
-        function extractDailyData(dayKey, dataKey1, dataKey2 = null) {
-            var dayData = sessionStorage.getItem(dayKey);
-            var data1 = sessionStorage.getItem(dataKey1);
-            var data2 = dataKey2 ? sessionStorage.getItem(dataKey2) : null;
+        return advice;
+    }
 
-            if (!dayData || !data1) {
-                return [];
-            }
-            var dailyData = [];
-            if (dayData && data1) {
-                var days = dayData.split(",");
-                var values1 = data1.split(",");
-                var values2 = data2 ? data2.split(",") : null;
-
-                for (var i = 0; i < days.length; i++) {
-                    var date = new Date(days[i] * 1000).toDateString();
-                    var value1 = parseFloat(values1[i]);
-                    var value2 = data2 ? parseFloat(values2[i]) : null;
-
-                    dailyData.push({ date: date, value: value1, max: value2, min: value2 });
-                }
-            }
-            return dailyData;
+    function useSessionStorageValue() {
+        var time = sessionStorage.getItem("apidata_day_real_location");
+        var uvi = sessionStorage.getItem("apidata_uvi_real_location");
+        var maxTe = sessionStorage.getItem("apidata_maxte_real_location");
+        var minTe = sessionStorage.getItem("apidata_minte_real_location");
+        if (time && uvi) {
+            var timestamps = time.split(",");
+            var uvsplit = uvi.split(",");
+            var headerRow = document.getElementById("uvtableHeaderRow");
+            var bodyRow = document.getElementById("uvtableBodyRow");
+            timestamps.forEach(function (item) {
+                var date = new Date(item * 1000);
+                var dateString = date.toUTCString();
+                var parts = dateString.split(" ");
+                var monthDayString = parts[2] + " " + parts[1];
+                var th = document.createElement("th");
+                th.style.border = "1px solid #ddd";
+                th.style.padding = "8px";
+                th.style.textAlign = "center";
+                th.textContent = monthDayString;
+                headerRow.appendChild(th);
+            });
+            uvsplit.forEach(function (item) {
+                var td = document.createElement("td");
+                td.style.border = "1px solid #ddd";
+                td.style.padding = "8px";
+                td.style.textAlign = "center";
+                td.textContent = item;
+                bodyRow.appendChild(td);
+            });
+        } else {
+            console.log("No data found in sessionStorage.");
         }
-
-        function generateClothingAdvice(uvIndex, maxTemp, minTemp) {
-            var advice = "";
-
-            // advice
-            if (uvIndex > 7) {
-                advice += "UV index is high. Please use sunscreen and wear protective clothing. ";
-            }
-            if (maxTemp > 30) {
-                advice += "It's hot outside. Wear light, breathable clothing. ";
-            } else if (maxTemp < 10) {
-                advice += "It's cold outside. Wear warm clothing. ";
-            }
-
-            return advice;
+        if (time && maxTe && minTe) {
+            var maxTeS = maxTe.split(",");
+            var minTeS = minTe.split(",");
+            var timestamps = time.split(",");
+            var headerRow = document.getElementById("tetableHeaderRow");
+            var maxbodyRow = document.getElementById("maxtetableBodyRow");
+            var minbodyRow = document.getElementById("mintetableBodyRow");
+            timestamps.forEach(function (item) {
+                var date = new Date(item * 1000);
+                var dateString = date.toUTCString();
+                var parts = dateString.split(" ");
+                var monthDayString = parts[2] + " " + parts[1];
+                var th = document.createElement("th");
+                th.style.border = "1px solid #ddd";
+                th.style.padding = "8px";
+                th.style.textAlign = "center";
+                th.textContent = monthDayString;
+                headerRow.appendChild(th);
+            });
+            maxTeS.forEach(function (item) {
+                var td = document.createElement("td");
+                td.style.border = "1px solid #ddd";
+                td.style.padding = "8px";
+                td.style.textAlign = "center";
+                td.textContent = (item - 273.15).toFixed(1);
+                maxbodyRow.appendChild(td);
+            });
+            minTeS.forEach(function (item) {
+                var td = document.createElement("td");
+                td.style.border = "1px solid #ddd";
+                td.style.padding = "8px";
+                td.style.textAlign = "center";
+                td.textContent = (item - 273.15).toFixed(1);
+                minbodyRow.appendChild(td);
+            });
+        } else {
+            console.log("No data found in sessionStorage.");
         }
+    }
 
-        function useSessionStorageValue() {
-            var time = sessionStorage.getItem("apidata_day_real_location");
-            var uvi = sessionStorage.getItem("apidata_uvi_real_location");
-            var maxTe = sessionStorage.getItem("apidata_maxte_real_location");
-            var minTe = sessionStorage.getItem("apidata_minte_real_location");
-            if (time && uvi) {
-                var timestamps = time.split(",");
-                var uvsplit = uvi.split(",");
-                var headerRow = document.getElementById("uvtableHeaderRow");
-                var bodyRow = document.getElementById("uvtableBodyRow");
-                timestamps.forEach(function (item) {
-                    var date = new Date(item * 1000);
-                    var dateString = date.toUTCString();
-                    var parts = dateString.split(" ");
-                    var monthDayString = parts[2] + " " + parts[1];
-                    var th = document.createElement("th");
-                    th.style.border = "1px solid #ddd";
-                    th.style.padding = "8px";
-                    th.style.textAlign = "center";
-                    th.textContent = monthDayString;
-                    headerRow.appendChild(th);
-                });
-                uvsplit.forEach(function (item) {
-                    var td = document.createElement("td");
-                    td.style.border = "1px solid #ddd";
-                    td.style.padding = "8px";
-                    td.style.textAlign = "center";
-                    td.textContent = item;
-                    bodyRow.appendChild(td);
-                });
-            } else {
-                console.log("No data found in sessionStorage.");
-            }
-            if (time && maxTe && minTe) {
-                var maxTeS = maxTe.split(",");
-                var minTeS = minTe.split(",");
-                var timestamps = time.split(",");
-                var headerRow = document.getElementById("tetableHeaderRow");
-                var maxbodyRow = document.getElementById("maxtetableBodyRow");
-                var minbodyRow = document.getElementById("mintetableBodyRow");
-                timestamps.forEach(function (item) {
-                    var date = new Date(item * 1000);
-                    var dateString = date.toUTCString();
-                    var parts = dateString.split(" ");
-                    var monthDayString = parts[2] + " " + parts[1];
-                    var th = document.createElement("th");
-                    th.style.border = "1px solid #ddd";
-                    th.style.padding = "8px";
-                    th.style.textAlign = "center";
-                    th.textContent = monthDayString;
-                    headerRow.appendChild(th);
-                });
-                maxTeS.forEach(function (item) {
-                    var td = document.createElement("td");
-                    td.style.border = "1px solid #ddd";
-                    td.style.padding = "8px";
-                    td.style.textAlign = "center";
-                    td.textContent = (item - 273.15).toFixed(1);
-                    maxbodyRow.appendChild(td);
-                });
-                minTeS.forEach(function (item) {
-                    var td = document.createElement("td");
-                    td.style.border = "1px solid #ddd";
-                    td.style.padding = "8px";
-                    td.style.textAlign = "center";
-                    td.textContent = (item - 273.15).toFixed(1);
-                    minbodyRow.appendChild(td);
-                });
-            } else {
-                console.log("No data found in sessionStorage.");
-            }
-        }
-        function randomPicture() {
-            var images = [
-                '/imagine/info1.jpg',
-                '/imagine/info2.jpg',
-                '/imagine/info3.jpg',
-                '/imagine/info4.jpg',
-                '/imagine/info5.jpg',
-                '/imagine/info6.jpg',
-                '/imagine/info7.jpg',
-                '/imagine/info8.jpg',
-                '/imagine/info9.jpg',
-                '/imagine/info10.jpg',
-                '/imagine/info11.jpg',
-                '/imagine/info12.jpg',
-                '/imagine/info13.jpg',
-                '/imagine/info14.jpg',
-                '/imagine/info15.jpg',
-            ];
+    // Function to update city image with random pictures
+    function randomPicture() {
+        var images = [
+            '/imagine/info1.jpg',
+            '/imagine/info2.jpg',
+            '/imagine/info3.jpg',
+            '/imagine/info4.jpg',
+            '/imagine/info5.jpg',
+            '/imagine/info6.jpg',
+            '/imagine/info7.jpg',
+            '/imagine/info8.jpg',
+            '/imagine/info9.jpg',
+            '/imagine/info10.jpg',
+            '/imagine/info11.jpg',
+            '/imagine/info12.jpg',
+            '/imagine/info13.jpg',
+            '/imagine/info14.jpg',
+            '/imagine/info15.jpg',
+        ];
 
-            setInterval(function () {
-                var imgElement = document.getElementById('cityimg');
-                var randomImage = images[Math.floor(Math.random() * images.length)];
-                imgElement.src = randomImage;
-                
-            }, 5000);
-        }
+        // Set interval to change image at regular intervals
+        setInterval(function () {
+            var imgElement = document.getElementById('cityimg');
+            var randomImage = images[Math.floor(Math.random() * images.length)];
+            imgElement.src = randomImage;
 
-        window.onload = function () {
-            useSessionStorageValue();
-            getClothingData();
-            randomPicture();
-        };
-    </script>
-    <script>
-        
-    </script>
+        }, 5000);
+    }
 
+    window.onload = function () {
+        useSessionStorageValue();
+        getClothingData();
+        randomPicture();
+    };
+</script>
 
 </body>
 

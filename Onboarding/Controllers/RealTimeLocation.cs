@@ -6,8 +6,11 @@ using System.Web;
 
 namespace Onboarding.Controllers
 {
+
     /*
-     * This is class for decide the location for a user
+     * This is class for decide the location for a user.
+     * Version: 0.1
+     * Author: Ruosong Chen
      */
     public class RealTimeLocation 
     {
