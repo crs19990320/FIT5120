@@ -2,6 +2,11 @@
 @{
     Layout = null;
 }
+<!--
+     * This is the Class for Welcome page.
+     * Version: 0.4
+     * Author: Ruosong Chen
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,7 +65,7 @@
         window.onload = function () {
             // Check if it's the user's first visit
             var isFirstVisit = sessionStorage.getItem("isFirstVisit");
-            // If it's the first visit, show confirmation message and store in sessionStorage   
+            // If it's the first visit, show confirmation message and store in sessionStorage
             if (!isFirstVisit) {
                 showConfirmation();
                 sessionStorage.setItem("isFirstVisit", "true");

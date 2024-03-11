@@ -4,7 +4,7 @@
 <!--
      * This is the Class for article page.
      * Version: 0.4
-     * Author: Ruosong Chen
+     * Author: Ruosong Chen, Qihang Wang
 -->
 
 <!DOCTYPE html>
@@ -19,6 +19,14 @@
             margin-top: 50px;
         }
 
+/*        #file {
+            position: sticky;
+            top: 30px;
+            right: 20px;
+            width: 200px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }*/
+
         /* Styles for the card */
         #img-card .card {
             margin: 10px;
@@ -31,7 +39,7 @@
 
             /* Hover effect for the card */
             #img-card .card:hover {
-                transform: scale(1.75);
+                transform: scale(1.25);
                 z-index: 1;
             }
 
@@ -65,9 +73,10 @@
         /* Styles for the articles container */
         #articles.card a {
             text-align: left;
-            font-size: 20px;
+            font-size: 12px;
             font-family: Arial;
-            line-height: 2;
+            font-weight:500;
+            line-height: 5;
         }
 
         /* Styles for the auto zoom container */
@@ -89,11 +98,20 @@
 <body>
     <!-- HTML body content -->
     <div class="container">
+
+        <!-- Fixed top-right card -->
+        <div class="card" style="position: absolute; top: 55px; right: 10px; width: 280px; background-color: rgba(255, 255, 255, 0.8);" id="file">
+            <div class="card-body">
+                <h5 class="card-title">Want to keep track of your sunscreen usage?</h5>
+                <a href="~/imagine/daily_sunscreen_checklist.pdf" download="daily_sunscreen_checklist.pdf"> Download Me </a>
+            </div>
+        </div>
+
         <!-- Card container -->
         <div class="card-container">
             <div class="row">
                 <!-- Left column -->
-                <div class="col-md-6" style="text-align:center">
+                <div class="col-md-5" style="text-align:center">
                     <div id="img-card" class="card-body" style="text-align:center">
                         <!-- Auto zoom feature -->
                         <div id="auto-zoom-container">
@@ -111,25 +129,42 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Middle column -->
+                <div class="col-md-5">
+                    <div id="articles" class="card" style="height: 610px; top: 60px; text-align: center; background-color: rgba(189, 193, 210, 0.9) ">
+                        <p style="font-weight:lighter; font-size: 30px">
+                            <strong>Understanding Our Children’s Future: Trends in Cancer Incidence and Survival Across Generations in Australia</strong>
+                            <ul style="text-align:left; margin-left: 20px;">
+                                <li>The graphs show skin cancer trends in Australia, showing incidence and mortality in different age groups and higher incidence in females but greater mortality in males over the years.</li>
+                                <li>These graphs represent the importance of protection against UV exposure because the data shows a significant increase in incidence and mortality with age. The main cause of skin cancer is UV exposure.</li>
+                                <li>The gender-based incidence may prompt considerations of specific protective measures for girls, while the higher mortality in males might highlight the need for heightened awareness and prevention strategies for boys.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+
                 <!-- Right column -->
-                <div class="col-md-6">
+                <div class="col-md-2">
                     <!-- Articles container -->
                     <div id="articles" class="card" style="height: 610px; top: 60px; text-align: center; background-color: rgba(189, 193, 210, 0.9) ">
                         <!-- Title for articles -->
-                        <p style="font-weight:bolder; font-size: 50px"> Useful links</p>
+                        <p style="font-weight:bolder; font-size: 50px">Links</p>
                         <!-- List of articles -->
-                        <a style="text-decoration:underline" href="https://www.9news.com.au/national/severe-sunburn-rampant-among-young-aussies-parents-called-to-protect-children-this-summer/e5a7b7d0-cc4b-4c7d-9173-4faa53873781">Severe sunburn in young Australians skyrockets</a>
-                        <a style="text-decoration:underline" href="https://www.nsw.gov.au/media-releases/alarming-rates-of-sunburn-in-children">Alarming rates of sunburn in children and young people</a>
-                        <a style="text-decoration:underline" href="https://www.health.qld.gov.au/newsroom/features/how-to-keep-your-baby-safe-from-the-sun">How to keep your baby safe from the sun</a>
-                        <a style="text-decoration:underline" href="https://www.cancer.org.au/media-releases/2018/9-in-10-australians-dont-know-when-they-need-sun-protection">9 in 10 Australians don't know when they need sun protection</a>
-                        <a style="text-decoration:underline" href="https://www.cancer.org.au/media-releases/2017/almost-half-of-australians-confused-about-sunscreen">Almost half of Australians confused about sunscreen</a>
-                        <a style="text-decoration:underline" href="https://www.sciencedirect.com/science/article/pii/S009174351930074X">Awareness, understanding, use, and impact of the UV index: A systematic review of over two decades of international research</a>
-                        <a style="text-decoration:underline" href="https://www.cancer.org.au/media-releases/2017/almost-half-of-australians-confused-about-sunscreen">Almost half of Australians confused about sunscreen</a>
-                        <a style="text-decoration:underline" href="https://hbswk.hbs.edu/item/learning-by-thinking-how-reflection-improves-performance">Learning By Thinking: How Reflection Improves Performance</a>
+                        <a style="text-decoration:underline" href="https://www.9news.com.au/national/severe-sunburn-rampant-among-young-aussies-parents-called-to-protect-children-this-summer/e5a7b7d0-cc4b-4c7d-9173-4faa53873781"><strong>Severe Sunburn Cases</strong></a>
+                        <a style="text-decoration:underline" href="https://www.nsw.gov.au/media-releases/alarming-rates-of-sunburn-in-children"><strong>Alarming Sunburn Rates</strong></a>
+                        <a style="text-decoration:underline" href="https://www.health.qld.gov.au/newsroom/features/how-to-keep-your-baby-safe-from-the-sun"><strong>Safe Children Sunscreen</strong></a>
+                        <a style="text-decoration:underline" href="https://www.cancer.org.au/media-releases/2018/9-in-10-australians-dont-know-when-they-need-sun-protection"><strong>When do Sunscreen?</strong></a>
+                        <a style="text-decoration:underline" href="https://www.cancer.org.au/media-releases/2017/almost-half-of-australians-confused-about-sunscreen"><strong>What is Sunscreen?</strong></a>
+                        <a style="text-decoration:underline" href="https://www.sciencedirect.com/science/article/pii/S009174351930074X"><strong>Sunscreen Awareness Research</strong></a>
+                        @*<a style="text-decoration:underline" href="https://www.cancer.org.au/media-releases/2017/almost-half-of-australians-confused-about-sunscreen">Almost half of Australians confused about sunscreen</a>*@
+                        <a style="text-decoration:underline" href="https://hbswk.hbs.edu/item/learning-by-thinking-how-reflection-improves-performance"><strong>Learning By Thinking</strong></a>
                         <!-- Additional link -->
+
                         <a style="font-family:'Lucida Handwriting'; right:1px; bottom:1px; position:absolute " href="https://www.google.co.uk/search?q=Sun+protection&sca_esv=88f53b0a7b860e25&ei=oentZYniK7nG2roP48iQuAc&ved=0ahUKEwjJtr-RmOqEAxU5o1YBHWMkBHcQ4dUDCBE&uact=5&oq=Sun+protection&gs_lp=Egxnd3Mtd2l6LXNlcnAiDlN1biBwcm90ZWN0aW9uMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyChAAGIAEGIoFGEMyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAESNYyUIAIWNsrcAF4AZABAJgBgAKgAecWqgEFMC41Ljm4AQPIAQD4AQGYAg-gAp0XwgIKEAAYRxjWBBiwA8ICCxAuGIAEGMcBGNEDwgIFEC4YgATCAg4QLhiABBjHARivARiOBcICCxAuGIAEGMcBGK8BwgIHEC4YgAQYDJgDAIgGAZAGCZIHBjEuMy4xMaAHyVM&sclient=gws-wiz-serp">Want to see more?</a>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -159,6 +194,8 @@
         // Call the zoom function initially
         zoom();
     </script>
+
+
 </body>
 </html>
 
