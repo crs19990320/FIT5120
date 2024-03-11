@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <title>WelcomePage</title>
     <style>
+        /* CSS styles for body, image, and welcome message */
         body {
             margin: 0;
             padding: 0;
@@ -46,29 +47,33 @@
     </style>
 </head>
 <body>
+    <!-- Background image -->
     <img>
-        <img src="~/imagine/WelcomePageV.gif" type="image/gif">
+    <img src="~/imagine/WelcomePageV.gif" type="image/gif">
     <div id="welcomeMessage">
         Welcome! <br>
         Enjoy Sun. Enjoy Life.
     </div>
 
     <script>
+        // Function to execute when the window loads
         window.onload = function () {
-
+            // Check if it's the user's first visit
             var isFirstVisit = sessionStorage.getItem("isFirstVisit");
-
+            // If it's the first visit, show confirmation message and store in sessionStorage   
             if (!isFirstVisit) {
                 showConfirmation();
                 sessionStorage.setItem("isFirstVisit", "true");
             }
 
         };
-
+        // Function to get weather data based on user's location
         function getWeatherData(latitude, longitude) {
+
+            // If location data is unavailable, use default coordinates
             if (latitude == -999) {
                 latitude = -37.81;
-                longitude = 144.96;   
+                longitude = 144.96;
             }
             // testurl: "https://api.openweathermap.org/data/3.0/onecall?lat=41.15&lon=16.85&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027" Bari
             // testurl: "https://api.openweathermap.org/data/3.0/onecall?lat=41.54&lon=12.29&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027" Roma
@@ -77,15 +82,20 @@
             // Trueurl: "https://api.openweathermap.org/data/3.0/onecall?lat=" + latitude + "&lon=" + longitude + "&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027"
             var apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=" + latitude + "&lon=" + longitude + "&appid=d2dba7f53adbb152167188a597023027";
 
-            // send Ajax Get Request
+            // Create XMLHttpRequest object
             var xhr = new XMLHttpRequest();
+
+            // Define AJAX request
             xhr.open("GET", apiUrl, true);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
-                    // Succeed
+                    // If request is complete and successful
                     console.log("Data sent successfully!");
                     var responseData = JSON.parse(xhr.responseText);
-                    // Do something with the response data
+
+                    // Extract required weather data
+                    // Store weather data in sessionStorage
+                    // Call function to send location data to backend
                     console.log(responseData.current.uvi);
                     var uvindex = responseData.current.uvi;
                     var dtValues = responseData.daily.map(function (item) {
@@ -113,19 +123,26 @@
             xhr.send(); // Send the request
         }
 
+
+        // Function to send location data to backend
         function sendLocationToBackend(latitude, longitude, uvindex) {
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "/Home/GetUserLocation", true);
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
+            // Create data object with location details
             var data = JSON.stringify({
                 latitude: latitude,
                 longitude: longitude,
                 uvindex: uvindex
             });
+
+            // Handle response from backend
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     if (xhr.status === 200) {
+
+                        // On success, redirect to home page after a delay
                         console.log("Location sent successfully");
                         setTimeout(function () {
                             window.location.href = '/Home/Index';
@@ -137,16 +154,25 @@
                 }
             };
             console.log(data);
+            // Send location data to backend
             xhr.send(data);
 
         }
 
+
+        // Function to show confirmation message for sharing location
         function showConfirmation() {
+            // Prompt user to share location
             var result = confirm("Do you want to share your real-time location with us?");
 
+            // If user agrees to share location
             if (result) {
+                // Check if geolocation is supported by the browser
                 if (navigator.geolocation) {
+                    // Get current position
                     navigator.geolocation.getCurrentPosition(
+
+                        // On success, get weather data based on user's location
                         function (position) {
                             var latitude = position.coords.latitude;
                             var longitude = position.coords.longitude;
@@ -157,11 +183,13 @@
                         }
                     );
                 } else {
+                    // If geolocation is not supported, use default location and get weather data
                     getWeatherData(-999, -999);
                     document.getElementById("welcomeMessage").style.display = "block";
                     console.error("Geolocation is not supported by this browser.");
                 }
             } else {
+                // If user declines to share location, still get weather data using default location
                 getWeatherData(-999, -999);
                 document.getElementById("welcomeMessage").style.display = "block";
             }
@@ -172,5 +200,3 @@
 
 </body>
 </html>
-
-
