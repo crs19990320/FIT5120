@@ -60,12 +60,19 @@
         .dropdown-item:hover {
             background-color: #1c1d3f;
         }
+
+        #ourlogo:hover {
+            transform: scale(2);
+            z-index: 1;
+        }
+
+        
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container">
-            <img src="~/imagine/Logo.jpg" alt="Sample Picture" style="float: left; margin-right: 10px;" width="100" height="100">
+            <img id="ourlogo" src="~/imagine/Logo.jpg" alt="Sample Picture" style="float: left; margin-right: 10px;" width="50" height="50" />
             <a href="@Url.Action("Index", "Home")" class="navbar-brand"> U V Care</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -93,7 +100,6 @@
     </nav>
     <div class="container body-content">
         @RenderBody()
-        <hr>
     </div>
     <script>
         document.querySelector(".city-dropdown").addEventListener("click", function (event) {
