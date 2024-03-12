@@ -39,22 +39,22 @@ namespace Onboarding.Controllers
             String colorString = "default";
             if (currentValue < 3 && currentValue >= 0 )
              {
-                colorString = "green";
+                colorString = "#A5B592";
             }
             else if (currentValue <6 && currentValue >=3 )
             {
-                colorString = "yellow";
+                colorString = "#F1D77F";
             }
             else if (currentValue < 8 && currentValue >= 6)
             {
-                colorString = "orange";
+                colorString = "#F3A447";
             }
             else if (currentValue < 10 && currentValue >= 8)
             {
-                colorString = "red";
+                colorString = "#E26966";
             }else if(currentValue >= 11)
             {
-                colorString = "purple";
+                colorString = "#B55475";
             }
 
             return colorString;
