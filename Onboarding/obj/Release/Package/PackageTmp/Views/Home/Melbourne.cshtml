@@ -1,30 +1,47 @@
 ﻿@{
     ViewBag.Title = "Melbourne";
 }
+
+<!--
+     * This is the Class for Melbourne page.
+     * Version: 0.4
+     * Author: Ruosong Chen
+-->
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <style>
+        table th {
+            background-color: #687896;
+        }
+
+        table td {
+            background-color: #a0a3cc;
+        }
+    </style>
+</head>
 <body>
     <div class="row">
         <div class="col-md-6">
-            <div class="card" style="text-align: center; height: 800px; border: none;">
+            <div class="card" style="text-align: center; height: 800px; border: none;background-color: rgba(255, 255, 255, 0); overflow: hidden;">
                 <div class="card-body">
-                    <img src="~/imagine/Melbourne.jpg" style="width: 100%; height: 800px; object-fit: cover; object-position: center;" />
+                    <img src="~/imagine/Melbourne.jpg" style="width: 100%; height: 780px; object-fit: cover; object-position: center;" />
                 </div>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="card" style="text-align: center; height: 350px;">
+            <div class="card" style="text-align: left; height: 350px; background-color: rgba(255, 255, 255, 0.5);">
                 <div class="card-body">
-                    <p style="font-weight : bold">Introduction</p>
+                    <p style="font-weight: bold; text-align: center">Introduction</p>
                     Melbourne, Australia's cultural capital, is celebrated for its eclectic blend of art, cuisine, and sports.
-                    Nestled in the heart of Victoria, it's distinguished by its Victorian-era architecture, labyrinthine laneways, and expansive gardens. 
-                    The city is home to the Melbourne Cricket Ground, a mecca for sports enthusiasts, and the National Gallery of Victoria, showcasing local and international art. 
-                    Melbourne's culinary scene is diverse, featuring everything from street food markets to high-end dining experiences. 
-                    The Yarra River adds to the city's charm, offering picturesque walks and boating activities. 
+                    Nestled in the heart of Victoria, it's distinguished by its Victorian-era architecture, labyrinthine laneways, and expansive gardens.
+                    The city is home to the Melbourne Cricket Ground, a mecca for sports enthusiasts, and the National Gallery of Victoria, showcasing local and international art.
+                    Melbourne's culinary scene is diverse, featuring everything from street food markets to high-end dining experiences.
+                    The Yarra River adds to the city's charm, offering picturesque walks and boating activities.
                     With its vibrant arts scene, including live music and theatre, Melbourne embodies a fusion of tradition and contemporary flair, making it a compelling destination for visitors.
                 </div>
             </div>
-            <div class="card" style="text-align: center; height: 200px;">
+            <div class="card" style="text-align: center; height: 200px; background-color: rgba(255, 255, 255, 0.5);">
                 <div class="card-body">
                     <p>Highest UV index prediction for next 8 days</p>
                     <table style="width:100%; border-collapse: collapse;">
@@ -35,7 +52,7 @@
                     </table>
                 </div>
             </div>
-            <div class="card" style="text-align: center; height: 250px;">
+            <div class="card" style="text-align: center; height: 250px; background-color: rgba(255, 255, 255, 0.5);">
                 <div class="card-body">
                     <p>Max-Min Temperature prediction for next 8 days</p>
                     <table style="width:100%; border-collapse: collapse;">

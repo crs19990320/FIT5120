@@ -2,53 +2,78 @@
     ViewBag.Title = "Index";
 }
 
+<!--
+     * This is the Class for Index(HomePage) page.
+     * Version: 0.4
+     * Author: Ruosong Chen, Qihang Wang
+-->
+
 <main>
-    <!-- Calculator on right corner -->
+    <!-- Link to Sunscreen Calculator at the top right corner -->
     <a href="/Home/Calculator">
+        <!-- Card for Sunscreen Calculator -->
         <div class="card" style="position: fixed; top: 20px; right: 20px; width: 400px; background-color: rgba(255, 255, 255, 0.8); overflow: hidden;" id="card1">
             <div class="card-body">
+                <!-- Calculator Icon -->
                 <img src="https://cdn-icons-png.flaticon.com/512/8841/8841452.png" alt="Calculator Icon" style="float: left; margin-right: 10px; max-width: 50px; max-height: 50px;">
+                <!-- Title for Sunscreen Calculator -->
                 <h5 class="card-title">New Sunscreen Calculator</h5>
+                <!-- Description for Sunscreen Calculator -->
                 <p class="card-text">Want to know how much Sunscreen you need to apply?</p>
             </div>
         </div>
     </a>
+    <!-- Section containing the main title -->
     <section class="row" aria-labelledby="aspnetTitle">
+        <!-- Main title with logo and text -->
         <h1 id="title">
             <img src="~/imagine/Logo.jpg" alt="Sample Picture" style="float: left; margin-right: 10px;" width="120" height="120">
             UV is HARMFUL to your skin!
         </h1>
     </section>
 
+    <!-- Two-column layout -->
     <div class="row">
+        <!-- Left column -->
         <div class="col-md-6">
+            <!-- Card for displaying UV index -->
             <div class="card" style="text-align: center; height: 250px; background-color: @ViewBag.Color;">
                 <div class="card-body">
+                    <!-- Title for UV index -->
                     <p style="font-size: 20px;">UV index</p>
-                        <h2 id="uvindex" style="font-size: 100px; font-weight: bold;">@ViewBag.Message</h2>
-                        <div style="position: absolute; bottom: 0; right: 0; width: 150px; height: 120px;">
-                            <a href="/Home/MoreInfo" style="display: block; width: 100%; height: 100%;">
-                                <img src="~/imagine/moreinfo.gif" style="width: 100%; height: 100%;" type="image/gif">
-                            </a>
-                        </div>
+                    <!-- Display UV index value -->
+                    <h2 id="uvindex" style="font-size: 100px; font-weight: bold;">@ViewBag.Message</h2>
+                    <!-- Link to more info about UV index -->
+                    <div style="position: absolute; bottom: 0; right: 0; width: 150px; height: 120px;">
+                        <a href="/Home/MoreInfo" style="display: block; width: 100%; height: 100%;">
+                            <img src="~/imagine/moreinfo.gif" style="width: 100%; height: 100%;" type="image/gif">
+                        </a>
+                    </div>
                 </div>
             </div>
+            <!-- Card for displaying UV index image -->
             <div class="card" style="text-align: center; background-color: rgb(14, 17, 169, 0.70);">
                 <div class="card-body p-0" style="text-align: center; height: 250px;">
+                    <!-- UV index image -->
                     <img src="~/imagine/uv_index.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 1;">
                 </div>
             </div>
         </div>
 
+        <!-- Right column -->
         <div class="col-md-6">
+            <!-- Card for displaying tips -->
             <div class="card border-0" style="background-color: rgba(255, 255, 255,0.3);">
-                <div class="card-body" style="text-align: center; height: 500px;">  
+                <div class="card-body" style="text-align: center; height: 500px;">
+                    <!-- Title for tips -->
                     <p style="font-size: 35px;  font-family: 'Kristen ITC'; font-weight: bold ">TIPS</p>
+                    <!-- Display tips -->
                     <h2 style="font-size: 20px; text-align: left; font-family: 'Kristen ITC' ;line-height: 1.75;">@Html.Raw(ViewBag.Tips.Replace("\n", "<br>"))</h2>
                 </div>
             </div>
         </div>
     </div>
 </main>
+
 
 

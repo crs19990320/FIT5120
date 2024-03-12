@@ -7,25 +7,49 @@ using System.Web.Mvc;
 
 namespace Onboarding.Controllers
 {
+    /*
+     * This is the Class control all the basic logics in tips.
+     * Version: 0.4
+     * Author: Ruosong Chen
+     */
     public class TipsController
     {
+        // Default constructor
         public TipsController() { }
 
+        /*
+         * This method generates random tips based on the UV index.
+         * It returns a concatenated string of three randomly selected tips.
+         */
         public String getTipsBasedOnUVIndex(double uvIndex)
         {
+            // Generating random tips based on UV index
             String[] randomTips = randomlyGenTips(uvIndex);
-            String tips = randomTips[0] + randomTips[1] + randomTips[2];
-            return tips;
-        }
-        public String getActivitiesTipsBasedOnUVIndex(double uvIndex)
-        {
-            String[] randomTips = activitiesGenTips(uvIndex);
+            // Concatenating three randomly selected tips
             String tips = randomTips[0] + randomTips[1] + randomTips[2];
             return tips;
         }
 
+        /*
+         * This method generates activity-related tips based on the UV index.
+         * It returns a concatenated string of three randomly selected tips.
+         */
+        public String getActivitiesTipsBasedOnUVIndex(double uvIndex)
+        {
+            // Generating activity-related random tips based on UV index
+            String[] randomTips = activitiesGenTips(uvIndex);
+            // Concatenating three randomly selected tips
+            String tips = randomTips[0] + randomTips[1] + randomTips[2];
+            return tips;
+        }
+
+       /*
+        * This method generates random tips based on the UV index for general advice.
+        * It returns an array of three randomly selected tips.
+        */
         public String[] randomlyGenTips(double uvIndex)
         {
+            // Arrays containing tips for different UV levels
             String[] lowLevelUV = { "● Accessorize with flair on low UV days. A chic hat and UV-filtering sunglasses keep you fashionable and protected, blending seamlessly with Melbourne’s eclectic style.\n",
                 "● Transform sunscreen application into as much of a morning ritual as your first espresso. Even when UV levels dip, your skin's health doesn't take a day off.\n",
                 "● The sun's taking it easy, so you can too. A light, breathable hat is perfect. It’s like wearing a bit of cool shade on your head!\n" ,
@@ -39,10 +63,13 @@ namespace Onboarding.Controllers
                 "● Zap! Boom! Every time we put on sunscreen, we're turning into Sun Safety Superheroes! Let’s apply sunscreen and wear some cool sunglasses before stepping out!\n",
                 "● Sunscreen alone is not 100% protection against harsh UV rays. Always use hats, sunglasses, and coveralls to protect yourself.\n"};
 
+            // Generating random numbers to select tips from the corresponding array
             Random random = new Random();
             int randomNumber1 = random.Next(0, 4);
             int randomNumber2;
             int randomNumber3;
+
+            // Ensuring three different random numbers
             do
             {
                 randomNumber2 = random.Next(0, 4);
@@ -54,6 +81,7 @@ namespace Onboarding.Controllers
             }
             while (randomNumber1 == randomNumber2 || randomNumber1 == randomNumber3 || randomNumber2 == randomNumber3);
 
+            // Determining which array to use based on UV index
             String[] returnString = { };
             if (uvIndex < 3)
             {
@@ -68,11 +96,17 @@ namespace Onboarding.Controllers
                 returnString = highLevelUV;
             }
 
+            // Returning three randomly selected tips
             return new String[] { returnString[randomNumber1], returnString[randomNumber2], returnString[randomNumber3] };
         }
 
+        /*
+         * This method generates random tips based on the UV index for activities.
+         * It returns an array of three randomly selected tips.
+         */
         public String[] activitiesGenTips(double uvIndex)
         {
+            // Arrays containing activity-related tips for different UV levels
             String[] lowLevelUV = { "● Ideal for a chill riverside stroll as the evening unwinds – pure bliss on the banks!\n",
                 "● Zoos, amusement parks, and parks truly come alive under the soft glow of low UV levels – the perfect backdrop for adventure without the sunburn!\n",
                 "● Grab your pals and hit the trails to gulp down some fresh air – it's the ultimate recharge!\n" ,
@@ -95,10 +129,13 @@ namespace Onboarding.Controllers
                 "● Indulge in a spa day – pampering in the shade, away from the UV parade.\n",
                 "● Venture into the culinary world with a cooking class – whip up some deliciousness while the sun does its business outside.\n"};
 
+            // Generating random numbers to select tips from the corresponding array
             Random random = new Random();
             int randomNumber1 = random.Next(0, 7);
             int randomNumber2;
             int randomNumber3;
+
+            // Ensuring three different random numbers
             do
             {
                 randomNumber2 = random.Next(0, 7);
@@ -110,6 +147,7 @@ namespace Onboarding.Controllers
             }
             while (randomNumber1 == randomNumber2 || randomNumber1 == randomNumber3 || randomNumber2 == randomNumber3);
 
+            // Determining which array to use based on UV index
             String[] returnString = { };
             if (uvIndex < 3)
             {
@@ -124,6 +162,7 @@ namespace Onboarding.Controllers
                 returnString = highLevelUV;
             }
 
+            // Returning three randomly selected tips
             return new String[] { returnString[randomNumber1], returnString[randomNumber2], returnString[randomNumber3] };
         }
 
