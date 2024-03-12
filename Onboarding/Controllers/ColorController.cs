@@ -26,7 +26,7 @@ namespace Onboarding.Controllers
          */
         public String DecideTheColor(double uvIndex)
         {
-            return GetGradientColor(0, 11, uvIndex);
+            return GetGradientColor(uvIndex);
         }
 
         /*
@@ -34,37 +34,29 @@ namespace Onboarding.Controllers
          * Accept: int value for min value(usually 0), int value for max value(usuall less than 20), double uv index.
          * Return: A String of HTML color code.
          */
-        private String GetGradientColor(int minValue, int maxValue, double currentValue)
+        private String GetGradientColor(double currentValue)
         {
-            int green = 0;
-            int red = 0;
-            int blue = 0;
-            if (currentValue <= maxValue)
+            String colorString = "default";
+            if (currentValue < 3 && currentValue >= 0 )
+             {
+                colorString = "green";
+            }
+            else if (currentValue <6 && currentValue >=3 )
             {
-                double normalizedValue = (double)(currentValue - minValue) / (maxValue - minValue);
-
-                if (normalizedValue <= 0.5)
-                {
-                    green = 255;
-                    red = (int)(255 * 2 * normalizedValue);
-                }
-                else
-                {
-                    red = 255;
-                    green = (int)(255 * 2 * (1 - normalizedValue));
-                }
-
+                colorString = "yellow";
             }
-            else {
-                green = 0;
-                red = 255;
-                blue = 255;
-
+            else if (currentValue < 8 && currentValue >= 6)
+            {
+                colorString = "orange";
             }
-            String greenString = green.ToString("X2");
-            String redString = red.ToString("X2");
-            String blueString = blue.ToString("X2");
-            String colorString = "#" + redString + greenString + blueString;
+            else if (currentValue < 10 && currentValue >= 8)
+            {
+                colorString = "red";
+            }else if(currentValue >= 11)
+            {
+                colorString = "purple";
+            }
+
             return colorString;
         }
     }
