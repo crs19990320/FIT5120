@@ -11,17 +11,31 @@ using System.Web.Mvc;
 
 namespace Onboarding.Controllers
 {
+    /*
+     * This is the Class control all the basic logics in Homepage.
+     * Version: 0.4
+     * Author: Ruosong Chen, Qihang Wang
+     */
     public class HomeController : Controller
     {
+        /*
+         * This is the declaration of private fields initializing controller objects.
+         */
         private PredictionController predictionController = new PredictionController();
         private ColorController colorController = new ColorController();
         private TipsController tipController = new TipsController();
 
+        /*
+         * This method returns the Welcome Page view.
+         */
         public ActionResult WelcomePage()
         {
             return View();
         }
 
+        /*
+         * This method receives the user's location information and sets the prediction number based on UV index.
+         */
         [HttpPost]
         public ActionResult GetUserLocation(RealTimeLocation location)
         {
@@ -34,6 +48,9 @@ namespace Onboarding.Controllers
             return Json(new { success = true });
         }
 
+        /*
+         * This method returns the Index view, along with prediction number, color, and tips based on UV index.
+         */
         public ActionResult Index()
         {
             double numberComesFromPrediction = (double)(Session["PredictionNumber"] ?? 0);
@@ -46,20 +63,24 @@ namespace Onboarding.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+        //public ActionResult About()
+        //{
+        //    ViewBag.Message = "Your application description page.";
 
-            return View();
-        }
+        //    return View();
+        //}
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+        //public ActionResult Contact()
+        //{
+        //    ViewBag.Message = "your contact page.";
 
-            return View();
-        }
+        //    return View();
+        //}
 
+
+        /*
+         * This method receives the selected city from the user and redirects to the corresponding city page.
+         */
         [HttpPost]
         public ActionResult Contact(string selectedCity)
         {
@@ -89,6 +110,9 @@ namespace Onboarding.Controllers
             }
         }
 
+        /*
+         * Below are methods for each city page.
+         */
         public ActionResult Sydney()
         {
             return View();
@@ -113,11 +137,17 @@ namespace Onboarding.Controllers
             return View();
         }
 
+        /*
+         * This method returns the Invalid City Action view.
+         */
         public ActionResult InvalidCityAction()
         {
             return View();
         }
 
+        /*
+         * This method returns the More Info view, along with activity tips based on UV index.
+         */
         public ActionResult MoreInfo()
         {
             double numberComesFromPrediction = (double)(Session["PredictionNumber"] ?? 0);
@@ -127,11 +157,17 @@ namespace Onboarding.Controllers
             return View();
         }
 
+        /*
+         * This method returns the Calculator page view.
+         */
         public ActionResult Calculator()
         {
             return View();
         }
 
+        /*
+         * This method returns the Articles page view.
+         */
         public ActionResult Articles()
         {
             return View();

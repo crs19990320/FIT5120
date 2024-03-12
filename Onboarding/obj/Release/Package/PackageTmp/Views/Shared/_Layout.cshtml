@@ -1,12 +1,29 @@
 ﻿<!DOCTYPE html>
+
+<!--
+     * This is the Class for Layout that used in all pages.
+     * Version: 0.4
+     * Author: Ruosong Chen, Qihang Wang
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My ASP.NET Application</title>
+    <title>U V Care: TP28</title>
     <link href="~/Content/css" rel="stylesheet">
     <script src="~/bundles/modernizr"></script>
     <style>
+
+        /*change the background image*/
+        body {
+            background-image: url('https://wallpaper.dog/large/17236505.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            min-height: 100vh;
+        }
+
+
         .navbar {
             background-color: #343a40;
         }
@@ -37,7 +54,7 @@
             padding: 12px 16px;
             text-decoration: none;
             display: block;
-            background: #343a40; 
+            background: #343a40;
         }
 
         .dropdown-item:hover {
@@ -48,7 +65,7 @@
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container">
-            <a href="@Url.Action("Index", "Home")" class="navbar-brand">Application name</a>
+            <a href="@Url.Action("Index", "Home")" class="navbar-brand">U V Care</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -56,16 +73,17 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item"><a href="@Url.Action("Index", "Home")" class="nav-link">Home</a></li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Populer Cities</a>
+                        <a href="#" class="nav-link">Popular Cities</a>
                         <div class="city-dropdown">
-                            <a id ="sydney"  class="dropdown-item">Sydney</a>
-                            <a id ="melbourne"  class="dropdown-item">Melbourne</a>
-                            <a id ="canberra"  class="dropdown-item">Canberra</a>
-                            <a id ="perth"  class="dropdown-item">Perth</a>
-                            <a id ="brisbane"  class="dropdown-item">Brisbane</a>
+                            <a id="sydney" class="dropdown-item">Sydney</a>
+                            <a id="melbourne" class="dropdown-item">Melbourne</a>
+                            <a id="canberra" class="dropdown-item">Canberra</a>
+                            <a id="perth" class="dropdown-item">Perth</a>
+                            <a id="brisbane" class="dropdown-item">Brisbane</a>
                         </div>
                     </li>
-                    <li class="nav-item"><a href="@Url.Action("MoreInfo", "Home")" class="nav-link">More information</a></li>
+                    <li class="nav-item"><a href="@Url.Action("MoreInfo", "Home")" class="nav-link">Ready to Go?</a></li>
+                    <li class="nav-item"><a href="@Url.Action("Articles", "Home")" class="nav-link">Useful Resources</a></li>
                     @*<li class="nav-item"><a href="#" id="getWeatherButton" class="nav-link">Weather</a></li>*@
                 </ul>
             </div>
@@ -75,14 +93,14 @@
         @RenderBody()
         <hr>
         <footer>
-            <p>&copy; @DateTime.Now.Year - TP28 Application</p>
+            <p style="color:#fff">&copy; @DateTime.Now.Year - TP28 Application</p>
         </footer>
     </div>
     <script>
         document.querySelector(".city-dropdown").addEventListener("click", function (event) {
             event.preventDefault();
-            if (event.target.tagName === 'A') { 
-                var cityId = event.target.id; 
+            if (event.target.tagName === 'A') {
+                var cityId = event.target.id;
                 var apiUrl;
                 var redirectUrl;
                 switch (cityId) {
@@ -121,7 +139,7 @@
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     console.log("Data sent successfully!");
                     var responseData = JSON.parse(xhr.responseText);
-                    var dtValues = responseData.daily.map(function (item) { 
+                    var dtValues = responseData.daily.map(function (item) {
                         return item.dt;
                     });
                     var uvValues = responseData.daily.map(function (item) {
@@ -144,7 +162,7 @@
         }
     </script>
 
-    <script src="~/bundles/jquery"></Script>
+    <script src="~/bundles/jquery"></script>
     <script src="~/bundles/bootstrap"></script>
     @RenderSection("scripts", required: false)
 

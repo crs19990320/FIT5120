@@ -2,32 +2,48 @@
 @{
     ViewBag.Title = "Brisbane";
 }
+
+<!--
+     * This is the Class for Brisbane page.
+     * Version: 0.4
+     * Author: Ruosong Chen
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- CSS styles -->
     <style>
+        /* Styles for table headers */
         table th {
             background-color: #687896;
         }
-
+        /* Styles for table cells */
         table td {
             background-color: #a0a3cc;
         }
     </style>
 </head>
 <body>
+    <!-- HTML body content -->
     <div class="row">
+        <!-- Left column -->
         <div class="col-md-6">
+            <!-- Card with image -->
             <div class="card" style="text-align: center; height: 800px; border: none; background-color: rgba(255, 255, 255, 0); overflow: hidden;">
                 <div class="card-body">
+                    <!-- Image of Brisbane -->
                     <img src="~/imagine/Brisbane.jpg" style="width: 100%; height: 780px; object-fit: cover; object-position: center;" />
                 </div>
             </div>
         </div>
+        <!-- Right column -->
         <div class="col-md-6">
+            <!-- Introduction card -->
             <div class="card" style="text-align: left; height: 350px; background-color: rgba(255, 255, 255, 0.5);">
                 <div class="card-body">
+                    <!-- Introduction text -->
                     <p style="font-weight: bold; text-align: center">Introduction</p>
+                    <!-- Description of Brisbane -->
                     Brisbane, Queensland's vibrant capital, radiates warmth,
                     from its sunny climate to its welcoming locals.
                     Nestled on the banks of the Brisbane River, the city is a blend of lush parklands, urban sophistication,
@@ -39,9 +55,12 @@
                     making it an irresistible destination for all types of travelers.
                 </div>
             </div>
+            <!-- UV index prediction card -->
             <div class="card" style="text-align: center; height: 200px; background-color: rgba(255, 255, 255, 0.5);">
                 <div class="card-body">
+                    <!-- Title for UV index prediction -->
                     <p>Highest UV index prediction for next 8 days</p>
+                    <!-- Table for UV index prediction -->
                     <table style="width:100%; border-collapse: collapse;">
                         <tr id="uvtableHeaderRow" style="background-color: #f2f2f2;">
                         </tr>
@@ -50,9 +69,12 @@
                     </table>
                 </div>
             </div>
+            <!-- Max-Min Temperature prediction card -->
             <div class="card" style="text-align: center; height: 250px; background-color: rgba(255, 255, 255, 0.5);">
                 <div class="card-body">
+                    <!-- Title for Max-Min Temperature prediction -->
                     <p>Max-Min Temperature prediction for next 8 days</p>
+                    <!-- Table for Max-Min Temperature prediction -->
                     <table style="width:100%; border-collapse: collapse;">
                         <tr id="tetableHeaderRow" style="background-color: #f2f2f2;">
                         </tr>
@@ -66,22 +88,30 @@
         </div>
     </div>
 
+    <!-- JavaScript code -->
     <script>
+        // Function to retrieve and display session storage values
         function useSessionStorageValue() {
+            // Retrieve data from session storage
             var time = sessionStorage.getItem("apidata_day");
             var uvi = sessionStorage.getItem("apidata_uvi");
             var maxTe = sessionStorage.getItem("apidata_maxte");
             var minTe = sessionStorage.getItem("apidata_minte");
+            // Check if UV index data is available
             if (time && uvi) {
+                // Split timestamps and UV index values
                 var timestamps = time.split(",");
                 var uvsplit = uvi.split(",");
                 var headerRow = document.getElementById("uvtableHeaderRow");
                 var bodyRow = document.getElementById("uvtableBodyRow");
+                // Iterate through timestamps
                 timestamps.forEach(function (item) {
+                    // Convert timestamp to date
                     var date = new Date(item * 1000);
                     var dateString = date.toUTCString();
                     var parts = dateString.split(" ");
                     var monthDayString = parts[2] + " " + parts[1];
+                    // Create table header cell
                     var th = document.createElement("th");
                     th.style.border = "1px solid #ddd";
                     th.style.padding = "8px";
@@ -89,7 +119,9 @@
                     th.textContent = monthDayString;
                     headerRow.appendChild(th);
                 });
+                // Iterate through UV index values
                 uvsplit.forEach(function (item) {
+                    // Create table body cell
                     var td = document.createElement("td");
                     td.style.border = "1px solid #ddd";
                     td.style.padding = "8px";
@@ -100,14 +132,18 @@
             } else {
                 console.log("No data found in sessionStorage.");
             }
+            // Check if temperature data is available
             if (time && maxTe && minTe) {
+                // Split max and min temperature values
                 var maxTeS = maxTe.split(",");
                 var minTeS = minTe.split(",");
                 var timestamps = time.split(",");
                 var headerRow = document.getElementById("tetableHeaderRow");
                 var maxbodyRow = document.getElementById("maxtetableBodyRow");
                 var minbodyRow = document.getElementById("mintetableBodyRow");
+                // Iterate through timestamps
                 timestamps.forEach(function (item) {
+                // Convert timestamp to date
                     var date = new Date(item * 1000);
                     var dateString = date.toUTCString();
                     var parts = dateString.split(" ");
@@ -119,6 +155,7 @@
                     th.textContent = monthDayString;
                     headerRow.appendChild(th);
                 });
+                // Iterate through max temperature values
                 maxTeS.forEach(function (item) {
                     var td = document.createElement("td");
                     td.style.border = "1px solid #ddd";
