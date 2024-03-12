@@ -7,28 +7,70 @@
      * Version: 0.4
      * Author: Ruosong Chen, Qihang Wang
 -->
+<style>
+/*    p {
+        color: #777;
+        text-align: center;
+    }*/
+
+    form {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="number"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 5px;
+    }
+
+    button[type="submit"] {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    #result {
+        margin-top: 20px;
+        text-align: center;
+        font-weight: bold;
+        color: red;
+        font-size: 12px;
+    }
+</style>
 
 <main>
     <!-- Link to Sunscreen Calculator at the top right corner -->
     <!--<a href="/Home/Calculator">-->
-        <!-- Card for Sunscreen Calculator -->
-        <!--<div class="card" style="position: fixed; top: 20px; right: 20px; width: 400px; background-color: rgba(255, 255, 255, 0.8); overflow: hidden;" id="card1">
-            <div class="card-body">-->
-                <!-- Calculator Icon -->
-                <!--<img src="https://cdn-icons-png.flaticon.com/512/8841/8841452.png" alt="Calculator Icon" style="float: left; margin-right: 10px; max-width: 50px; max-height: 50px;">-->
-                <!-- Title for Sunscreen Calculator -->
-                <!--<h5 class="card-title">New Sunscreen Calculator</h5>-->
-                <!-- Description for Sunscreen Calculator -->
-                <!--<p class="card-text">Want to know how much Sunscreen you need to apply?</p>
+    <!-- Card for Sunscreen Calculator -->
+    <!--<div class="card" style="position: fixed; top: 20px; right: 20px; width: 400px; background-color: rgba(255, 255, 255, 0.8); overflow: hidden;" id="card1">
+        <div class="card-body">-->
+    <!-- Calculator Icon -->
+    <!--<img src="https://cdn-icons-png.flaticon.com/512/8841/8841452.png" alt="Calculator Icon" style="float: left; margin-right: 10px; max-width: 50px; max-height: 50px;">-->
+    <!-- Title for Sunscreen Calculator -->
+    <!--<h5 class="card-title">New Sunscreen Calculator</h5>-->
+    <!-- Description for Sunscreen Calculator -->
+    <!--<p class="card-text">Want to know how much Sunscreen you need to apply?</p>
             </div>
         </div>
     </a>-->
-
     <!-- Section containing the main title -->
     <section class="row" aria-labelledby="aspnetTitle">
         <!-- Main title with logo and text -->
         <h1 id="title">
-            <img src="~/imagine/Logo.jpg" alt="Sample Picture" style="float: left; margin-right: 10px;" width="120" height="120">
+            @*<img src="~/imagine/Logo.jpg" alt="Sample Picture" style="float: left; margin-right: 10px;" width="120" height="120">*@
             UV is HARMFUL to your skin!
         </h1>
     </section>
@@ -41,7 +83,7 @@
             <div class="card" style="text-align: center; height: 250px; background-color: @ViewBag.Color;">
                 <div class="card-body">
                     <!-- Title for UV index -->
-                    <p style="font-size: 20px;">UV index</p>
+                    <p style="font-size: 30px;">UV index</p>
                     <!-- Display UV index value -->
                     <h2 id="uvindex" style="font-size: 100px; font-weight: bold;">@ViewBag.Message</h2>
                     <!-- Link to more info about UV index -->
@@ -65,24 +107,22 @@
                 </div>
                 <!-- Right column for Calculator card -->
                 <div class="col-md-6 d-flex align-items-center justify-content-start">
-                    <a href="/Home/Calculator">
-                        <!-- Card for Sunscreen Calculator -->
-                        <div class="card" style="background-color: rgba(255, 255, 255, 0.8); overflow: hidden;">
-                            <div class="card-body">
-                                <!-- Calculator Icon -->
-                                <img src="https://cdn-icons-png.flaticon.com/512/8841/8841452.png" alt="Calculator Icon" style="float: left; margin-right: 10px; max-width: 50px; max-height: 50px;">
-                                <!-- Title for Sunscreen Calculator -->
-                                <h5 class="card-title" style="font-size: 30px;">New Sunscreen Calculator</h5>
-                                <!-- Description for Sunscreen Calculator -->
-                                <p class="card-text" style="font-size: 28px;">Want to know how much Sunscreen you need to apply?</p>
-                            </div>
+                    <!-- Card for Sunscreen Calculator -->
+                    <div class="card" style="background-color: rgba(255, 255, 255, 0.8); overflow: hidden;">
+                        <div class="card-body" style="text-align: center; height: 250px;">
+                            <!-- Form for Sunscreen Calculator -->
+                            <form id="calculatorForm">
+                                <label for="uvIndex">Enter UV Index to get sunscreen amount:</label>
+                                <input type="number" id="uvIndex" name="uvIndex" required>
+                                <button type="submit">Calculate</button>
+                            </form>
+                            <!-- Result for Sunscreen Calculator -->
+                            <div id="result"></div>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
-
-
         <!-- Right column -->
         <div class="col-md-6">
             <!-- Card for displaying tips -->
@@ -95,6 +135,58 @@
                 </div>
             </div>
 </main>
+
+<script>
+    // When the window is loaded, get the default UV index value
+    window.onload = function () {
+        getDefaultUVI();
+    }
+
+    // Function to get the default UV index value from sessionStorage
+    function getDefaultUVI() {
+        var default_uv = sessionStorage.getItem('apidata_uvi_for_cal');
+        console.log(default_uv);
+        document.getElementById('uvIndex').value = default_uv;
+    }
+
+    // Event listener for form submission
+    document.getElementById("calculatorForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission behavior
+
+        // Get the UV index value from the input field as a floating point number
+        var uvIndex = parseFloat(document.getElementById("uvIndex").value);
+
+        // Check if the entered UV index is within the range of 0 to 15
+        if (uvIndex >= 0 && uvIndex <= 15) {
+            // Calculate the amount of sunscreen needed based on UV index
+            var sunscreenAmount = calculateSunscreen(uvIndex);
+
+            // Display the result
+            document.getElementById("result").innerHTML = "You need to apply approximately <span style='font-size: 30px; color: red;'>" + sunscreenAmount.toFixed(2) + "</span> tablespoons of SPF sunscreen.";
+        } else {
+            // Display an error message if the UV index is out of range
+            document.getElementById("result").innerHTML = "Please enter a UV Index between 0 and 15.";
+        }
+    });
+
+    // Function to calculate sunscreen amount based on UV index
+    function calculateSunscreen(uvIndex) {
+        if (uvIndex == 0)
+            return 0;
+        else if (uvIndex > 0 && uvIndex <= 2) {
+            return 0.5;
+        } else if (uvIndex > 2 && uvIndex <= 5) {
+            return 1.0;
+        } else if (uvIndex > 5 && uvIndex <= 7) {
+            return 1.5;
+        } else if (uvIndex > 7 && uvIndex <= 10) {
+            return 2.0;
+        } else {
+            return 2.5;
+        }
+    }
+</script>
+
 
 
 
