@@ -66,6 +66,15 @@
             z-index: 1;
         }
 
+        #cityname {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgb(255,255,255);
+            margin-right: 50px; 
+            font-weight:bold;
+        }
         
     </style>
 </head>
@@ -96,12 +105,16 @@
                     @*<li class="nav-item"><a href="#" id="getWeatherButton" class="nav-link">Weather</a></li>*@
                 </ul>
             </div>
+            <div id="cityname_div">
+                <p id="cityname" class="nav-item" style="color: rgb(255,255,255);">1</p>
+            </div>
         </div>
     </nav>
     <div class="container body-content">
         @RenderBody()
     </div>
     <script>
+        
         document.querySelector(".city-dropdown").addEventListener("click", function (event) {
             event.preventDefault();
             if (event.target.tagName === 'A') {
@@ -138,6 +151,7 @@
         });
 
         function sendApiRequest(apiUrl, redirectUrl) {
+
             var xhr = new XMLHttpRequest();
             xhr.open("GET", apiUrl, true);
             xhr.onreadystatechange = function () {
@@ -165,6 +179,10 @@
             };
             xhr.send();
         }
+        var cityname = sessionStorage.getItem('current_location_re');
+        console.log(cityname)
+        var cityNameElement = document.getElementById("cityname");
+        cityNameElement.textContent = "Hi! User from " + cityname;
     </script>
 
     <script src="~/bundles/jquery"></script>

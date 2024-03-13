@@ -49,6 +49,7 @@
             font-family: 'Lucida Handwriting', cursive;
             font-weight: bold;
         }
+
     </style>
 </head>
 <body>
@@ -215,6 +216,7 @@
                     // If request is complete and successful
                     var responseData = JSON.parse(xhr.responseText);
                     sessionStorage.setItem("current_location_re", responseData.features[0].properties.city)
+                    console.log(responseData.features[0].properties)
                 }
             };
             xhr.send(); // Send the request
