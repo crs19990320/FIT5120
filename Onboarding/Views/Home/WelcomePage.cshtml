@@ -86,7 +86,7 @@
             // testurl: "https://api.openweathermap.org/data/3.0/onecall?lat=-34.60333&lon=-58.38167&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027" Buenos Aires
             // Trueurl: "https://api.openweathermap.org/data/3.0/onecall?lat=" + latitude + "&lon=" + longitude + "&exclude=hourly,daily&appid=d2dba7f53adbb152167188a597023027"
             var apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=" + latitude + "&lon=" + longitude + "&appid=d2dba7f53adbb152167188a597023027";
-
+            re_geolocation(latitude, longitude);
             // Create XMLHttpRequest object
             var xhr = new XMLHttpRequest();
 
@@ -149,7 +149,7 @@
 
                         // On success, redirect to home page after a delay
                         console.log("Location sent successfully");
-                        setTimeout(function () {
+                       setTimeout(function () {
                             window.location.href = '/Home/Index';
                         }, 1500);
 
@@ -199,6 +199,27 @@
                 document.getElementById("welcomeMessage").style.display = "block";
             }
         }
+
+        function re_geolocation(latitude, longitude) {
+            //
+
+            var apiUrl = "https://api.geoapify.com/v1/geocode/reverse?lat=" + latitude + "&lon=" + longitude + "&apiKey=56e2168ece694ca2a9cffe80b6a74aaa";
+
+            // Create XMLHttpRequest object
+            var xhr = new XMLHttpRequest();
+
+            // Define AJAX request
+            xhr.open("GET", apiUrl, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // If request is complete and successful
+                    var responseData = JSON.parse(xhr.responseText);
+                    sessionStorage.setItem("current_location_re", responseData.features[0].properties.city)
+                }
+            };
+            xhr.send(); // Send the request
+            }
+
 
 
     </script>
