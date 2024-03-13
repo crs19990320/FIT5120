@@ -27,10 +27,11 @@
         border: 1px solid #ccc;
         border-radius: 5px;
         margin: 5px;
+        width:80%
     }
 
     button[type="submit"] {
-        padding: 10px 20px;
+        padding: 5px 10px;
         background-color: #007bff;
         color: #fff;
         border: none;
@@ -73,10 +74,12 @@
     <!-- Section containing the main title -->
     <section class="row" aria-labelledby="aspnetTitle">
         <!-- Main title with logo and text -->
-        <h1 id="title">
-            @*<img src="~/imagine/Logo.jpg" alt="Sample Picture" style="float: left; margin-right: 10px;" width="120" height="120">*@
-            UV is HARMFUL to your skin!
-        </h1>
+        <p style="font-size:40px; font-weight:bolder;">
+            Safeguarding Your Family's Health: Understand the UV Index
+        </p>
+        <p style="font-size:16px;">
+            The UV index measures the strength of the Ultraviolet Radiation at Earth's surface. A higher level of UV index indicates greater skin damage and even greater need for sun protection. Australian parents can protect themselves and their children from hamrful  sun rays by using the realtime UV index update, super fun sun safety tips, and sunprotection habits tracking pdf. The UV Index scale provides guidelines for safe, moderate, and high level danger to help moderate your outdoor activities. By keeping an eye on UV index, parents can plan their activities during the times when sun is less intense, ensuring a fun and safe time for them.
+        </p>
     </section>
 
     <!-- Two-column layout -->
@@ -102,7 +105,7 @@
             <!-- UV index image and Calculator -->
             <div class="row mt-3">
                 <!-- Left column for UV index image -->
-                <div class="col-md-6 d-flex align-items-center justify-content-end">
+                <div class="col-md-8 d-flex align-items-center justify-content-end">
                     <div class="card border-0" style="background-color: rgb(225, 225, 225, 0.7);">
                         <div class="card-body" style="text-align: center; height: 250px;">
                             <img src="~/imagine/uv_index.png" style="width: 100%; height: auto;">
@@ -110,13 +113,13 @@
                     </div>
                 </div>
                 <!-- Right column for Calculator card -->
-                <div class="col-md-6 d-flex align-items-center justify-content-start">
+                <div class="col-md-4 d-flex align-items-center justify-content-start">
                     <!-- Card for Sunscreen Calculator -->
                     <div class="card" style="background-color: rgba(255, 255, 255, 0.7); overflow: hidden;">
                         <div class="card-body" style="text-align: center; height: 250px;">
                             <!-- Form for Sunscreen Calculator -->
                             <form id="calculatorForm">
-                                <label for="uvIndex">Enter UV Index to get sunscreen amount:</label>
+                                <label for="uvIndex">Sunscreen amount:</label>
                                 <input type="number" id="uvIndex" name="uvIndex" required>
                                 <button type="submit">Calculate</button>
                             </form>
@@ -168,7 +171,7 @@
             var sunscreenAmount = calculateSunscreen(uvIndex);
 
             // Display the result
-            document.getElementById("result").innerHTML = "You need to apply approximately <span style='font-size: 30px; color: red;'>" + sunscreenAmount.toFixed(2) + "</span> tablespoons of SPF sunscreen.";
+            document.getElementById("result").innerHTML = "Apply approximately <span style='font-size: 20px; color: red;'>" + sunscreenAmount.toFixed(2) + "</span> tablespoons of sunscreen.";
         } else {
             // Display an error message if the UV index is out of range
             document.getElementById("result").innerHTML = "Please enter a UV Index between 0 and 15.";
