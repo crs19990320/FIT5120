@@ -7,30 +7,70 @@
      * Version: 0.4
      * Author: Ruosong Chen, Qihang Wang
 -->
+<style>
+/*    p {
+        color: #777;
+        text-align: center;
+    }*/
+
+    form {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="number"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 5px;
+    }
+
+    button[type="submit"] {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    #result {
+        margin-top: 20px;
+        text-align: center;
+        font-weight: bold;
+        color: red;
+        font-size: 12px;
+    }
+</style>
 
 <main>
     <!-- Link to Sunscreen Calculator at the top right corner -->
-    <a href="/Home/Calculator">
-<<<<<<< Updated upstream
-        <!-- Card for Sunscreen Calculator -->
-=======
->>>>>>> Stashed changes
-        <div class="card" style="position: fixed; top: 20px; right: 20px; width: 400px; background-color: rgba(255, 255, 255, 0.8); overflow: hidden;" id="card1">
-            <div class="card-body">
-                <!-- Calculator Icon -->
-                <img src="https://cdn-icons-png.flaticon.com/512/8841/8841452.png" alt="Calculator Icon" style="float: left; margin-right: 10px; max-width: 50px; max-height: 50px;">
-                <!-- Title for Sunscreen Calculator -->
-                <h5 class="card-title">New Sunscreen Calculator</h5>
-                <!-- Description for Sunscreen Calculator -->
-                <p class="card-text">Want to know how much Sunscreen you need to apply?</p>
+    <!--<a href="/Home/Calculator">-->
+    <!-- Card for Sunscreen Calculator -->
+    <!--<div class="card" style="position: fixed; top: 20px; right: 20px; width: 400px; background-color: rgba(255, 255, 255, 0.8); overflow: hidden;" id="card1">
+        <div class="card-body">-->
+    <!-- Calculator Icon -->
+    <!--<img src="https://cdn-icons-png.flaticon.com/512/8841/8841452.png" alt="Calculator Icon" style="float: left; margin-right: 10px; max-width: 50px; max-height: 50px;">-->
+    <!-- Title for Sunscreen Calculator -->
+    <!--<h5 class="card-title">New Sunscreen Calculator</h5>-->
+    <!-- Description for Sunscreen Calculator -->
+    <!--<p class="card-text">Want to know how much Sunscreen you need to apply?</p>
             </div>
         </div>
-    </a>
+    </a>-->
     <!-- Section containing the main title -->
     <section class="row" aria-labelledby="aspnetTitle">
         <!-- Main title with logo and text -->
         <h1 id="title">
-            <img src="~/imagine/Logo.jpg" alt="Sample Picture" style="float: left; margin-right: 10px;" width="120" height="120">
+            @*<img src="~/imagine/Logo.jpg" alt="Sample Picture" style="float: left; margin-right: 10px;" width="120" height="120">*@
             UV is HARMFUL to your skin!
         </h1>
     </section>
@@ -39,12 +79,11 @@
     <div class="row">
         <!-- Left column -->
         <div class="col-md-6">
-<<<<<<< Updated upstream
             <!-- Card for displaying UV index -->
             <div class="card" style="text-align: center; height: 250px; background-color: @ViewBag.Color;">
                 <div class="card-body">
                     <!-- Title for UV index -->
-                    <p style="font-size: 20px;">UV index</p>
+                    <p style="font-size: 30px;">UV index</p>
                     <!-- Display UV index value -->
                     <h2 id="uvindex" style="font-size: 100px; font-weight: bold;">@ViewBag.Message</h2>
                     <!-- Link to more info about UV index -->
@@ -55,37 +94,37 @@
                     </div>
                 </div>
             </div>
-            <!-- Card for displaying UV index image -->
-            <div class="card" style="text-align: center; background-color: rgb(14, 17, 169, 0.70);">
-                <div class="card-body p-0" style="text-align: center; height: 250px;">
-                    <!-- UV index image -->
-                    <img src="~/imagine/uv_index.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 1;">
-=======
-            <div class="card" style="text-align: center; height: 250px; background-color: @ViewBag.Color;">
-                <div class="card-body">
-                    <p style="font-size: 20px;">
-                        UV index</pstyle="font-size:>
-                        <h2 id="uvindex" style="font-size: 100px; font-weight: bold;">@ViewBag.Message</h2>
-                        <div style="position: absolute; bottom: 0; right: 0; width: 150px; height: 120px;">
-                            <a href="/Home/MoreInfo" style="display: block; width: 100%; height: 100%;">
-                                <img src="~/imagine/moreinfo.gif" style="width: 100%; height: 100%;" type="image/gif">
-                            </a>
+
+            <!-- UV index image and Calculator -->
+            <div class="row mt-3">
+                <!-- Left column for UV index image -->
+                <div class="col-md-6 d-flex align-items-center justify-content-end">
+                    <div class="card border-0" style="background-color: rgb(14, 17, 169, 0.70);">
+                        <div class="card-body" style="text-align: center; height: 250px;">
+                            <img src="~/imagine/uv_index.png" style="width: 100%; height: 100%;">
                         </div>
+                    </div>
                 </div>
-            </div>
-            <div class="card" style="text-align: center; height: 250px; background-color: rgba(255, 255, 255, 0.5);">
-                <div class="card-body" style="text-align: center; height: 250px;">
-                    @*background-image: url('/imagine/tips.jpg'); background-size: cover;*@
-                    <p style="font-size: 40px;">TIPS</p>
-                    <h2 style="font-size: 40px;">@ViewBag.Tips</h2>
->>>>>>> Stashed changes
+                <!-- Right column for Calculator card -->
+                <div class="col-md-6 d-flex align-items-center justify-content-start">
+                    <!-- Card for Sunscreen Calculator -->
+                    <div class="card" style="background-color: rgba(255, 255, 255, 0.8); overflow: hidden;">
+                        <div class="card-body" style="text-align: center; height: 250px;">
+                            <!-- Form for Sunscreen Calculator -->
+                            <form id="calculatorForm">
+                                <label for="uvIndex">Enter UV Index to get sunscreen amount:</label>
+                                <input type="number" id="uvIndex" name="uvIndex" required>
+                                <button type="submit">Calculate</button>
+                            </form>
+                            <!-- Result for Sunscreen Calculator -->
+                            <div id="result"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
         <!-- Right column -->
         <div class="col-md-6">
-<<<<<<< Updated upstream
             <!-- Card for displaying tips -->
             <div class="card border-0" style="background-color: rgba(255, 255, 255,0.3);">
                 <div class="card-body" style="text-align: center; height: 500px;">
@@ -93,19 +132,61 @@
                     <p style="font-size: 35px;  font-family: 'Kristen ITC'; font-weight: bold ">TIPS</p>
                     <!-- Display tips -->
                     <h2 style="font-size: 20px; text-align: left; font-family: 'Kristen ITC' ;line-height: 1.75;">@Html.Raw(ViewBag.Tips.Replace("\n", "<br>"))</h2>
-=======
-            <div class="card border-0">
-                <div class="card-body p-0" style="text-align: center; height: 250px; background-image: url('https://img.freepik.com/premium-vector/uv-index-level-sun-numbers-solar-protection-scale-sun-exposure-risk-low-extreme_352905-803.jpg?w=360'); background-size: cover; background-position: center; background-color: rgba(255, 255, 255, 0.5);">
-                    <img src="~/imagine/uv_index.png" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.5;">
->>>>>>> Stashed changes
                 </div>
             </div>
-        </div>
-    </div>
 </main>
 
+<script>
+    // When the window is loaded, get the default UV index value
+    window.onload = function () {
+        getDefaultUVI();
+    }
 
-<<<<<<< Updated upstream
+    // Function to get the default UV index value from sessionStorage
+    function getDefaultUVI() {
+        var default_uv = sessionStorage.getItem('apidata_uvi_for_cal');
+        console.log(default_uv);
+        document.getElementById('uvIndex').value = default_uv;
+    }
 
-=======
->>>>>>> Stashed changes
+    // Event listener for form submission
+    document.getElementById("calculatorForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission behavior
+
+        // Get the UV index value from the input field as a floating point number
+        var uvIndex = parseFloat(document.getElementById("uvIndex").value);
+
+        // Check if the entered UV index is within the range of 0 to 15
+        if (uvIndex >= 0 && uvIndex <= 15) {
+            // Calculate the amount of sunscreen needed based on UV index
+            var sunscreenAmount = calculateSunscreen(uvIndex);
+
+            // Display the result
+            document.getElementById("result").innerHTML = "You need to apply approximately <span style='font-size: 30px; color: red;'>" + sunscreenAmount.toFixed(2) + "</span> tablespoons of SPF sunscreen.";
+        } else {
+            // Display an error message if the UV index is out of range
+            document.getElementById("result").innerHTML = "Please enter a UV Index between 0 and 15.";
+        }
+    });
+
+    // Function to calculate sunscreen amount based on UV index
+    function calculateSunscreen(uvIndex) {
+        if (uvIndex == 0)
+            return 0;
+        else if (uvIndex > 0 && uvIndex <= 2) {
+            return 0.5;
+        } else if (uvIndex > 2 && uvIndex <= 5) {
+            return 1.0;
+        } else if (uvIndex > 5 && uvIndex <= 7) {
+            return 1.5;
+        } else if (uvIndex > 7 && uvIndex <= 10) {
+            return 2.0;
+        } else {
+            return 2.5;
+        }
+    }
+</script>
+
+
+
+
