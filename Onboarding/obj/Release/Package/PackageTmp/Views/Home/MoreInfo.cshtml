@@ -99,12 +99,16 @@
             }
 
         #total-row {
-            margin-top: 80px;
+            margin-top: 30px;
+        }
+        #cityName {
+            margin-top: 30px;
         }
     </style>
 
 </head>
 <body>
+    <p id="cityName" style="font-size:40px; font-weight:bolder;">1</p>
     <div id="total-row" class="row">
         <div class="col-md-6">
             <div class="card" style="text-align: center; height: 150px; background-color: rgba(255, 255, 255, 0.5);">
@@ -344,12 +348,17 @@
             }
         }
 
-        
+        function getCityName() {
+            var cname = sessionStorage.getItem('current_location_re');
+            var cityNameElement = document.getElementById("cityName");
+            cityNameElement.textContent = "You are in " + cname + "! Good place!";
+        }
 
 
         window.onload = function () {
             useSessionStorageValue();
             getClothingData();
+            getCityName();
         };
     </script>
 </body>

@@ -15,10 +15,13 @@
         #total{
             margin-top:80px;
         }
-        #viz1710241262862:hover{
-            transform:scale(1.2);
-            z-index:1
-            
+        #viz1710299314680:hover {
+            transform: scale(1.2);
+            z-index: 1
+        }
+        #viz1710241262862:hover {
+            transform: scale(1.2);
+            z-index: 1
         }
 
     </style>
@@ -51,18 +54,58 @@
                         <param name='language' value='en-US' />
                     </object>
                 </div>
+                
             </div>
             <div class="col-md-4">
                 <div class="card" style="background-color: rgba(255,255,255,0.5)">
-                    <div class="card-body" style="height:630px; background-color:rgba(255,255,255,0.5)">
-                    <h4>Understanding Our Children’s Future: Trends in Cancer Incidence and Survival Across Generations in Australia</h4>
-                    <ul style="text-align:left; margin-left: 10px;">
-                        <li>The graphs show skin cancer trends in Australia, showing incidence and mortality in different age groups and higher incidence in females but greater mortality in males over the years.</li>
-                        <li>These graphs represent the importance of protection against UV exposure because the data shows a significant increase in incidence and mortality with age. The main cause of skin cancer is UV exposure.</li>
-                        <li>The gender-based incidence may prompt considerations of specific protective measures for girls, while the higher mortality in males might highlight the need for heightened awareness and prevention strategies for boys.</li>
-                    </ul>
+                    <div class="card-body" style=" background-color:rgba(255,255,255,0.5)">
+                        <h5>Incidence & Mortality Rate of skin cancer in AU based on gender.</h5>
+                        <ul style="text-align:left; margin-left: 10px;">
+                            <li>The graphs show skin cancer trends in Australia, showing incidence and mortality in different genders. It shows a higher incidence in males and greater mortality in males over the years.</li>
+                            <li>These graphs illustrate the importance of sun protection against UV exposure. The data shows a significant increase in skin cancer incidence over the years. Harsh UV rays are the main cause of skin cancer in Australia. As the rays are powerful in Australia, the prominent outdoor lifestyle of Australians also plays an important role in excess sun exposure.</li>
+                            <li>The gender-based incidence may prompt considerations of specific protective measures for children. At the same time, the higher mortality in males might highlight the need for heightened awareness and prevention strategies for boys. Parents must take significant steps to educate their children about sun safety at an earlier age.</li>
+                        </ul>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div id="total" class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class='tableauPlaceholder' id='viz1710299314680' style='position: relative'>
+                    <noscript>
+                        <a href='#'>
+                            <img alt='Cancer cases counts by different age groups over years ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;CN&#47;CNHQ77KSG&#47;1_rss.png' style='border: none' />
+                        </a>
+                    </noscript>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;CNHQ77KSG' />
+                        <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;CN&#47;CNHQ77KSG&#47;1.png' />
+                        <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-US' />
+                        <param name='filter' value='publish=yes' />
+                    </object>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="background-color: rgba(255,255,255,0.5)">
+                    <div class="card-body" style=" background-color:rgba(255,255,255,0.5)">
+                        <h5>Incidence & Mortality Rate of skin cancer in AU based on age-group.</h5>
+                        <ul style="text-align:left; margin-left: 10px;">
+                            <li>Both the incidence and the mortality rates for cancer are highest in the oldest age group and have increased over the years, though there seems to be a slight decrease or stabilisation in the most recent years depicted.</li>
+                            <li>As children age, their risk of developing cancer naturally increases, particularly as they reach 60 years and older. While this might seem distant for parents thinking about young children, it emphasises the importance of long-term health monitoring and cancer screening programs.</li>
+                            <li>The relatively stable incidence and mortality rates in the younger age groups suggest that while cancer can occur in young people, it remains relatively rare. This could be reassuring to parents but also underlines the importance of being aware of any unusual signs or symptoms, regardless of age.</li>
+                            <li>Australian parents can use this information to guide their health practices and choices, such as advocating for sun safety to reduce the risk of skin cancer, one of the most common cancers in Australia. It also underlines the importance of supporting research and healthcare policies that focus on reducing cancer incidence and mortality across all age groups</li>
+                        </ul>
+                    </div>
+
+                </div>
+                
             </div>
         </div>
     </div>
@@ -77,7 +120,14 @@
         scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
         vizElement.parentNode.insertBefore(scriptElement, vizElement);
     </script>
-
+    <script type='text/javascript'>
+        var divElement = document.getElementById('viz1710299314680');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        vizElement.style.width = '100%';
+        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+        var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
 
 </body>
 </html>
