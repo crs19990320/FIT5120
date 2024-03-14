@@ -72,6 +72,20 @@
                 sessionStorage.setItem("isFirstVisit", "true");
             }
 
+            // Start the timer when the window loads
+            var timer = setTimeout(function () {
+                // After 10 seconds, show a confirmation message
+                alert("If you want to use our service, you need to provide us with your location, please reopen the website and try again :)");
+            }, 10000);
+
+            // If the user interacts with the page (e.g., moves the mouse), reset the timer
+            document.addEventListener("mousemove", function () {
+                clearTimeout(timer);
+                timer = setTimeout(function () {
+                    alert("If you want to use our service, you need to provide us with your location, please reopen the website and try again :)");
+                }, 10000);
+            });
+
         };
         // Function to get weather data based on user's location
         function getWeatherData(latitude, longitude) {
