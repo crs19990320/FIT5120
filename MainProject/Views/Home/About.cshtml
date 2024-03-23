@@ -1,9 +1,23 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<main aria-labelledby="title">
-    <h2 id="title">@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
+@model IEnumerable<MainProject.Models.Database1Entities>
 
-    <p>Use this area to provide additional information.</p>
-</main>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Cards</title>
+</head>
+<body>
+    <h1>Card Data</h1>
+    <div id="cardData">
+        @foreach (var card in Model)
+        {
+            <div>
+                @*<p>Card Name: @card.CardName</p>*@
+                <p>Description: @card.Description</p>
+            </div>
+        }
+    </div>
+</body>
+</html>
