@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Games",
+    "\\Views",
+    "\\Views\\Home"
   ],
   "SelectedNode": "\\MainProject.sln",
   "PreviewInSolutionExplorer": false
