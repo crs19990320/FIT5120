@@ -20,6 +20,12 @@ namespace MainProject.Controllers
             return View(db.QuestionTable1.ToList());
         }
 
+        public ActionResult GetQuestionData()
+        {
+            var questionData = db.QuestionTable1.ToList(); // Get QuestionTable Data
+            return Json(questionData, JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
