@@ -25,6 +25,6 @@ namespace MainProject.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Table> Tables { get; set; }
+        public DbSet<Table> Tables { get; set; }
     }
 }

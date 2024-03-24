@@ -1,23 +1,28 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-@model IEnumerable<MainProject.Models.Database1Entities>
 
+@model IEnumerable<MainProject.Models.Table>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Display Cards</title>
+    <title>Data View</title>
 </head>
 <body>
-    <h1>Card Data</h1>
-    <div id="cardData">
-        @foreach (var card in Model)
+    <h1>Data View</h1>
+    <table>
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+
+        </tr>
+        @foreach (var item in Model)
         {
-            <div>
-                <p>card name: @card.CardName</p>
-                <p>Description: @card.Description</p>
-            </div>
+            <tr>
+                <td>@item.CardName</td>
+                <td>@item.Description</td>
+            </tr>
         }
-    </div>
+    </table>
 </body>
 </html>
