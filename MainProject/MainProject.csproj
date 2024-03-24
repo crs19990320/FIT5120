@@ -242,11 +242,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Tables\Create.cshtml" />
-    <Content Include="Views\Tables\Delete.cshtml" />
-    <Content Include="Views\Tables\Details.cshtml" />
-    <Content Include="Views\Tables\Edit.cshtml" />
-    <Content Include="Views\Tables\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MainProject.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace MainProject.Controllers
 {
     public class HomeController : Controller
     {
+        private Database1Entities db = new Database1Entities();
         public ActionResult Index()
         {
             return View();
@@ -15,9 +17,7 @@ namespace MainProject.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            return View(db.Tables.ToList());
         }
 
         public ActionResult Contact()
