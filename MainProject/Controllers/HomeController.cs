@@ -17,7 +17,7 @@ namespace MainProject.Controllers
 
         public ActionResult About()
         {
-            return View(db.Tables.ToList());
+            return View(db.QuestionTable1.ToList());
         }
 
         public ActionResult Contact()

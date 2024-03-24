@@ -2,7 +2,7 @@
     ViewBag.Title = "About";
 }
 
-@model IEnumerable<MainProject.Models.Table>
+@model IEnumerable<MainProject.Models.QuestionTable>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,15 +12,17 @@
     <h1>Data View</h1>
     <table>
         <tr>
-            <th>Column 1</th>
-            <th>Column 2</th>
+            <th>Questions</th>
+            <th>WaterCredit</th>
+            <th>CarbonCredit</th>
 
         </tr>
         @foreach (var item in Model)
         {
             <tr>
-                <td>@item.CardName</td>
-                <td>@item.Description</td>
+                <td>@item.Question</td>
+                <td>@item.WaterCredit</td>
+                <td>@item.CarbonCredit</td>
             </tr>
         }
     </table>

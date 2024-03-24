@@ -11,5 +11,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="QuestionTable1">
+      <EntityTypeMapping TypeName="Database1Model.QuestionTable">
+        <MappingFragment StoreEntitySet="QuestionTable">
+          <ScalarProperty Name="CarbonCredit" ColumnName="CarbonCredit" />
+          <ScalarProperty Name="WaterCredit" ColumnName="WaterCredit" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

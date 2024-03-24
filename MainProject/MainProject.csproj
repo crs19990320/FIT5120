@@ -149,6 +149,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\QuestionTable.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Table.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
