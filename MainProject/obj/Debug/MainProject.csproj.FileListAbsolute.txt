@@ -160,3 +160,7 @@ C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\EntityFramework.
 C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\EntityFramework.SqlServer.dll
 C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\EntityFramework.xml
 C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\EntityFramework.SqlServer.xml
+D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\EntityFramework.dll
+D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\EntityFramework.SqlServer.dll
+D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\EntityFramework.xml
+D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\EntityFramework.SqlServer.xml
