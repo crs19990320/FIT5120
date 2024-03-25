@@ -10,7 +10,8 @@
     </section>
 
     <div class="row">
-        <iframe src="~/Games/cardGame.html" style="width:1000px; height:800px"></iframe>
+        <iframe id="unityFrame" src="~/Games/cardGame.html" style="width:1000px; height:800px"></iframe>
+        <button id="test">Start game</button>
         <section class="col-md-4" aria-labelledby="gettingStartedTitle">
             <h2 id="gettingStartedTitle">Getting started</h2>
             <p>
@@ -30,5 +31,17 @@
             <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
             <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
         </section>
+
     </div>
+    <script>
+        document.getElementById('test').addEventListener('click', function () {
+            var testJsonString = JSON.stringify({ message: "Hello, this is a test from ASP.NET!" });
+
+            var iframe = document.getElementById('unityFrame');
+            if (iframe && iframe.contentWindow) {
+                iframe.contentWindow.postMessage(testJsonString, '*'); 
+                console.log("Sending JSON to Unity iframe: ", testJsonString);
+            }
+        });
+    </script>
 </main>

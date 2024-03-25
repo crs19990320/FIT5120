@@ -182,6 +182,7 @@
     <Content Include="Games\Build\Games.data.gz" />
     <Content Include="Games\Build\Games.framework.js" />
     <Content Include="Games\Build\Games.loader.js" />
+    <Content Include="Games\cardGame.html" />
     <Content Include="Games\TemplateData\favicon.ico" />
     <Content Include="Games\TemplateData\fullscreen-button.png" />
     <Content Include="Games\TemplateData\MemoryProfiler.png" />
