@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<main>
+<div class="text-center">
+    <button id="test">Start game</button>
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<script>
+    document.getElementById('test').addEventListener('click', function () {
+        var testJsonString = JSON.stringify({ message: "Hello, this is a test from ASP.NET!" });
+
+        var iframe = document.getElementById('unityFrame');
+        if (iframe && iframe.contentWindow) {
+            iframe.contentWindow.postMessage(testJsonString, '*'); 
+            console.log("Sending JSON to Unity iframe: ", testJsonString);
+        }
+    });
+</script>
+</main>

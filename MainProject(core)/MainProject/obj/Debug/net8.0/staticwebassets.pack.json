@@ -1,0 +1,333 @@
+{
+  "Files": [
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MainProject.bundle.scp.css",
+      "PackagePath": "staticwebassets\\MainProject.bundle.scp.css"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\Games\\Build\\Games.data.gz",
+      "PackagePath": "staticwebassets\\Games\\Build\\Games.data.gz"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\Games\\Build\\Games.framework.js",
+      "PackagePath": "staticwebassets\\Games\\Build\\Games.framework.js"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\Games\\Build\\Games.loader.js",
+      "PackagePath": "staticwebassets\\Games\\Build\\Games.loader.js"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\Games\\Build\\Games.wasm",
+      "PackagePath": "staticwebassets\\Games\\Build\\Games.wasm"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\Games\\TemplateData\\MemoryProfiler.png",
+      "PackagePath": "staticwebassets\\Games\\TemplateData\\MemoryProfiler.png"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\Games\\TemplateData\\favicon.ico",
+      "PackagePath": "staticwebassets\\Games\\TemplateData\\favicon.ico"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\Games\\TemplateData\\fullscreen-button.png",
+      "PackagePath": "staticwebassets\\Games\\TemplateData\\fullscreen-button.png"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\Games\\TemplateData\\progress-bar-empty-dark.png",
+      "PackagePath": "staticwebassets\\Games\\TemplateData\\progress-bar-empty-dark.png"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\Games\\TemplateData\\progress-bar-empty-light.png",
+      "PackagePath": "staticwebassets\\Games\\TemplateData\\progress-bar-empty-light.png"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\Games\\TemplateData\\progress-bar-full-dark.png",
+      "PackagePath": "staticwebassets\\Games\\TemplateData\\progress-bar-full-dark.png"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\Games\\TemplateData\\progress-bar-full-light.png",
+      "PackagePath": "staticwebassets\\Games\\TemplateData\\progress-bar-full-light.png"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\Games\\TemplateData\\style.css",
+      "PackagePath": "staticwebassets\\Games\\TemplateData\\style.css"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\Games\\TemplateData\\unity-logo-dark.png",
+      "PackagePath": "staticwebassets\\Games\\TemplateData\\unity-logo-dark.png"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\Games\\TemplateData\\unity-logo-light.png",
+      "PackagePath": "staticwebassets\\Games\\TemplateData\\unity-logo-light.png"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\Games\\TemplateData\\webgl-logo.png",
+      "PackagePath": "staticwebassets\\Games\\TemplateData\\webgl-logo.png"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\Games\\TemplateData\\webmemd-icon.png",
+      "PackagePath": "staticwebassets\\Games\\TemplateData\\webmemd-icon.png"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\Games\\index.html",
+      "PackagePath": "staticwebassets\\Games\\index.html"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "d:\\Monash\\5120&5122\\Assessments\\FIT5120\\MainProject(core)\\MainProject\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MainProject.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.MainProject.props",
+      "PackagePath": "build\\MainProject.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MainProject.props",
+      "PackagePath": "buildMultiTargeting\\MainProject.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.MainProject.props",
+      "PackagePath": "buildTransitive\\MainProject.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
