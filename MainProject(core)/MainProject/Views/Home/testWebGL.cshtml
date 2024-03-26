@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unity WebGL Content</title>
+</head>
+<body>
+    <div>
+        <iframe id="unityIframe" src="~/Games/index.html" width="960" height="600" frameborder="0"></iframe>
+    </div>
+    <button id="testButton">Send Message to WebGL</button>
+    <script>
+        document.getElementById('testButton').addEventListener('click', function() {
+            var testJsonString = JSON.stringify({ message: "Hello, this is a test from ASP.NET!" });
+            
+            var unityIframe = document.getElementById('unityIframe').contentWindow;
+            unityIframe.postMessage(testJsonString, '*');
+            console.log("Sending JSON to Unity via iframe: ", testJsonString);
+        });
+    </script>
+</body>
+</html>
