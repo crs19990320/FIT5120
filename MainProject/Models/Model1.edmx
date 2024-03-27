@@ -58,12 +58,12 @@
           <Property Name="Questions" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Answer1" Type="String" />
           <Property Name="Answer2" Type="String" />
-          <Property Name="A1Carbon" Type="Int64" Nullable="false" />
-          <Property Name="A1Water" Type="Int64" Nullable="false" />
-          <Property Name="A1EcoLife" Type="Int64" Nullable="false" />
-          <Property Name="A2Carbon" Type="Int64" Nullable="false" />
-          <Property Name="A2Water" Type="Int64" Nullable="false" />
-          <Property Name="A2EcoLife" Type="Int64" Nullable="false" />
+          <Property Name="A1Carbon" Type="Int32" Nullable="false" />
+          <Property Name="A1Water" Type="Int32" Nullable="false" />
+          <Property Name="A1EcoLife" Type="Int32" Nullable="false" />
+          <Property Name="A2Carbon" Type="Int32" Nullable="false" />
+          <Property Name="A2Water" Type="Int32" Nullable="false" />
+          <Property Name="A2EcoLife" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>

@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "cardGame";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <iframe id="unityFrame" src="~/Games/cardGame.html" style="width:1000px; height:800px"></iframe>
+    <script>
+
+        var questionString = sessionStorage.getItem('QuestionJson');
+        var questionJsonString = JSON.parse(questionString);
+        var iframe = document.getElementById('unityFrame');
+        if (iframe && iframe.contentWindow) {
+            iframe.contentWindow.postMessage(questionJsonString, '*');
+            console.log(questionJsonString);
+        }
+
+    </script>
+</body>
+
+
+</html>

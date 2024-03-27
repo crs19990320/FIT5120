@@ -40,5 +40,9 @@ namespace MainProject.Controllers
         {
             return View();
         }
+        public ActionResult cardGame()
+        {
+            return View();
+        }
     }
 }

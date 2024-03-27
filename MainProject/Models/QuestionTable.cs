@@ -18,11 +18,11 @@ namespace MainProject.Models
         public string Questions { get; set; }
         public string Answer1 { get; set; }
         public string Answer2 { get; set; }
-        public long A1Carbon { get; set; }
-        public long A1Water { get; set; }
-        public long A1EcoLife { get; set; }
-        public long A2Carbon { get; set; }
-        public long A2Water { get; set; }
-        public long A2EcoLife { get; set; }
+        public int A1Carbon { get; set; }
+        public int A1Water { get; set; }
+        public int A1EcoLife { get; set; }
+        public int A2Carbon { get; set; }
+        public int A2Water { get; set; }
+        public int A2EcoLife { get; set; }
     }
 }

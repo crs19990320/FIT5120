@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
+@model IEnumerable<MainProject.Models.QuestionTable>
 <main>
     <section class="row" aria-labelledby="aspnetTitle">
         <h1 id="title">ASP.NET</h1>
@@ -10,8 +10,8 @@
     </section>
 
     <div class="row">
-        <iframe id="unityFrame" src="~/Games/cardGame.html" style="width:1000px; height:800px"></iframe>
-        <button id="test">Start game</button>
+
+        <button id="test">card</button>
         <section class="col-md-4" aria-labelledby="gettingStartedTitle">
             <h2 id="gettingStartedTitle">Getting started</h2>
             <p>
@@ -35,13 +35,21 @@
     </div>
     <script>
         document.getElementById('test').addEventListener('click', function () {
-            var testJsonString = JSON.stringify({ message: "Hello, this is a test from ASP.NET!" });
-
-            var iframe = document.getElementById('unityFrame');
-            if (iframe && iframe.contentWindow) {
-                iframe.contentWindow.postMessage(testJsonString, '*'); 
-                console.log("Sending JSON to Unity iframe: ", testJsonString);
-            }
+            $.ajax({
+                url: '/QuestionsAPI/GetRandomData',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    sessionStorage.setItem('QuestionJson', JSON.stringify(data));
+                    window.location.href = '/Home/cardGame';
+                },
+                error: function (error) {
+                    console.error('Error fetching data:', error);
+                }
+            });
+            
+          
         });
     </script>
 </main>
