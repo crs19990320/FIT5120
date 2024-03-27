@@ -36,5 +36,9 @@ namespace MainProject.Controllers
         {
             return View();
         }
+        public ActionResult D3test()
+        {
+            return View();
+        }
     }
 }
