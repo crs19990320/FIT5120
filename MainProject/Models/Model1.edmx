@@ -10,9 +10,15 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Question" Type="varchar(max)" Nullable="false" />
-          <Property Name="WaterCredit" Type="int" />
-          <Property Name="CarbonCredit" Type="int" />
+          <Property Name="Questions" Type="varchar(max)" />
+          <Property Name="Answer1" Type="varchar(max)" />
+          <Property Name="Answer2" Type="varchar(max)" />
+          <Property Name="A1Carbon" Type="int" />
+          <Property Name="A1Water" Type="int" />
+          <Property Name="A1EcoLife" Type="int" />
+          <Property Name="A2Carbon" Type="int" />
+          <Property Name="A2Water" Type="int" />
+          <Property Name="A2EcoLife" Type="int" />
         </EntityType>
         <EntityType Name="Table">
           <Key>
@@ -49,9 +55,15 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Question" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="WaterCredit" Type="Int32" />
-          <Property Name="CarbonCredit" Type="Int32" />
+          <Property Name="Questions" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Answer1" Type="String" />
+          <Property Name="Answer2" Type="String" />
+          <Property Name="A1Carbon" Type="Int64" Nullable="false" />
+          <Property Name="A1Water" Type="Int64" Nullable="false" />
+          <Property Name="A1EcoLife" Type="Int64" Nullable="false" />
+          <Property Name="A2Carbon" Type="Int64" Nullable="false" />
+          <Property Name="A2Water" Type="Int64" Nullable="false" />
+          <Property Name="A2EcoLife" Type="Int64" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -70,11 +82,17 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="QuestionTable1">
-            <EntityTypeMapping TypeName="Database1Model.QuestionTable">
+            <EntityTypeMapping TypeName="IsTypeOf(Database1Model.QuestionTable)">
               <MappingFragment StoreEntitySet="QuestionTable">
-                <ScalarProperty Name="CarbonCredit" ColumnName="CarbonCredit" />
-                <ScalarProperty Name="WaterCredit" ColumnName="WaterCredit" />
-                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="A2EcoLife" ColumnName="A2EcoLife" />
+                <ScalarProperty Name="A2Water" ColumnName="A2Water" />
+                <ScalarProperty Name="A2Carbon" ColumnName="A2Carbon" />
+                <ScalarProperty Name="A1EcoLife" ColumnName="A1EcoLife" />
+                <ScalarProperty Name="A1Water" ColumnName="A1Water" />
+                <ScalarProperty Name="A1Carbon" ColumnName="A1Carbon" />
+                <ScalarProperty Name="Answer2" ColumnName="Answer2" />
+                <ScalarProperty Name="Answer1" ColumnName="Answer1" />
+                <ScalarProperty Name="Questions" ColumnName="Questions" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

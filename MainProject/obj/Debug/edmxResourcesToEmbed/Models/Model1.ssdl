@@ -5,9 +5,15 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="Question" Type="varchar(max)" Nullable="false" />
-    <Property Name="WaterCredit" Type="int" />
-    <Property Name="CarbonCredit" Type="int" />
+    <Property Name="Questions" Type="varchar(max)" />
+    <Property Name="Answer1" Type="varchar(max)" />
+    <Property Name="Answer2" Type="varchar(max)" />
+    <Property Name="A1Carbon" Type="int" />
+    <Property Name="A1Water" Type="int" />
+    <Property Name="A1EcoLife" Type="int" />
+    <Property Name="A2Carbon" Type="int" />
+    <Property Name="A2Water" Type="int" />
+    <Property Name="A2EcoLife" Type="int" />
   </EntityType>
   <EntityType Name="Table">
     <Key>

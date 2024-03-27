@@ -15,8 +15,14 @@ namespace MainProject.Models
     public partial class QuestionTable
     {
         public int Id { get; set; }
-        public string Question { get; set; }
-        public Nullable<int> WaterCredit { get; set; }
-        public Nullable<int> CarbonCredit { get; set; }
+        public string Questions { get; set; }
+        public string Answer1 { get; set; }
+        public string Answer2 { get; set; }
+        public long A1Carbon { get; set; }
+        public long A1Water { get; set; }
+        public long A1EcoLife { get; set; }
+        public long A2Carbon { get; set; }
+        public long A2Water { get; set; }
+        public long A2EcoLife { get; set; }
     }
 }
