@@ -26,8 +26,10 @@ namespace MainProject.Controllers
                                 .OrderBy(r => Guid.NewGuid())
                                 .Take(10) 
                                 .ToList();
+            var response = new { questions = randomData };
 
-            return Json(randomData, JsonRequestBehavior.AllowGet);
+
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
     }
 }

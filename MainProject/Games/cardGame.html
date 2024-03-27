@@ -111,12 +111,14 @@
                     unityInstance.SetFullscreen(1);
                 };
 
-                window.addEventListener('message', function (event) {
-                    unityInstance.SendMessage('QuestionPanel', 'ReceiveJsonString', event.data);
-                }, false);
+                var storedData = sessionStorage.getItem('QuestionJson');
+                if (storedData) {
+                    console.log("Sending stored data to Unity");
+                    unityInstance.SendMessage('QuestionPanel', 'ReceiveJsonString', storedData);
+                }
 
             }).catch((message) => {
-                alert(message);
+                console.log(message);
             });
         };
 
