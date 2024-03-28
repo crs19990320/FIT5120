@@ -13,16 +13,16 @@
     <table>
         <tr>
             <th>Questions</th>
-            <th>WaterCredit</th>
-            <th>CarbonCredit</th>
+            <th>Answer1</th>
+            <th>Answer2</th>
 
         </tr>
         @foreach (var item in Model)
         {
             <tr>
-                <td>@item.Question</td>
-                <td>@item.WaterCredit</td>
-                <td>@item.CarbonCredit</td>
+                <td>@item.Questions</td>
+                <td>@item.Answer1</td>
+                <td>@item.Answer2</td>
             </tr>
         }
     </table>
