@@ -10,6 +10,14 @@ namespace MainProject.Controllers
     public class HomeController : Controller
     {
         private Database1Entities db = new Database1Entities();
+
+        /*
+         * This method returns the Landing Page view.
+         */
+        public ActionResult LandingPage()
+        {
+            return View();
+        }
         public ActionResult Index()
         {
             return View();
