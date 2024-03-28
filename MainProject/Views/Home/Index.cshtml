@@ -2,54 +2,82 @@
     ViewBag.Title = "Home Page";
 }
 @model IEnumerable<MainProject.Models.QuestionTable>
-<main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
+
+<h1 style="text-align: center;">Come to Play!</h1>
+<main style="position: relative; width: 80vw; height: 90vh; display:flex;">
+
+    <!-- up-left -->
+    <section class="board" style="position: absolute; top: 0; left: 0; width: 40%; height: 40%;">
+        <h2 style="text-align: center;" id="leftTopTitle">Video</h2>
+        <div style="border: 1px solid black;" id="videoContainer">
+            <video controls style="width: 100%; height: 100%;" id="videoPlayer">
+                <source src="https://videos.pexels.com/video-files/4884642/4884642-hd_1920_1080_30fps.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </section>
 
-    <div class="row">
+    <!-- up-right -->
+    <section class="board" style="position: absolute; top: 0; right: 0; width: 40%; height: 40%;">
+        <h2 style="text-align: center;" id="rightTopTitle">Map</h2>
+        <div style="border: 1px solid black;">
+            <img src="https://www.mapsland.com/maps/oceania/australia/large-australia-cartoon-map.jpg" alt="map" style="width: 100%; height: 100%;">
+        </div>
+    </section>
 
-        <button id="test">card</button>
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </section>
+    <!-- below-left -->
+    <section class="board" style="position: absolute; bottom: 0; left: 0; width: 40%; height: 40%;">
+        <h2 style="text-align: center;" id="leftBottomTitle">Game</h2>
+        <div style="border: 1px solid black; overflow: hidden;">
+            <a href="@Url.Action("cardGame", "Home")">
+                <img src="https://developers.google.com/static/games/services/images/google-play-16-9.svg" alt="cardGame" style="width: 100%; height: 100%;">
+            </a>
+        </div>
+    </section>
 
-    </div>
-    <script>
-        document.getElementById('test').addEventListener('click', function () {
-            $.ajax({
-                url: '/QuestionsAPI/GetRandomData',
-                type: 'GET',
-                dataType: 'json',
-                success: function (data) {
-                    console.log(data);
-                    sessionStorage.setItem('QuestionJson', JSON.stringify(data));
-                    window.location.href = '/Home/cardGame';
-                },
-                error: function (error) {
-                    console.error('Error fetching data:', error);
-                }
-            });
-            
-          
-        });
-    </script>
+    <!-- below-right -->
+    <section class="board" style="position: absolute; bottom: 0; right: 0; width: 40%; height: 40%;">
+        <h2 style="text-align: center;" id="rightBottomTitle">Achievement</h2>
+        <div style="border: 1px solid black;">
+            <img src="https://t4.ftcdn.net/jpg/05/93/91/27/360_F_593912714_6pEIEP3YlFQkbwknHEYxQzbne5ZN6BlE.jpg" alt="achievement" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+    </section>
+
+
+    @*<div class="row">
+            <button id="test">CardGame</button>
+        </div>*@
+
+
+
 </main>
+
+<script>
+    document.getElementById('test').addEventListener('click', function () {
+        $.ajax({
+            url: '/QuestionsAPI/GetRandomData',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                sessionStorage.setItem('QuestionJson', JSON.stringify(data));
+                window.location.href = '/Home/cardGame';
+            },
+            error: function (error) {
+                console.error('Error fetching data:', error);
+            }
+        });
+    });
+</script>
+
+<!-- logic of video playing -->
+<script>
+    document.getElementById("videoContainer").addEventListener("click", function () {
+        var video = document.getElementById("videoPlayer");
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    });
+</script>
