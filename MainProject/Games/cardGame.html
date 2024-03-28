@@ -114,7 +114,7 @@
                 var storedData = sessionStorage.getItem('QuestionJson');
                 if (storedData) {
                     console.log("Sending stored data to Unity");
-                    unityInstance.SendMessage('QuestionPanel', 'ReceiveJsonString', storedData);
+                    unityInstance.SendMessage('StartClick', 'ReceiveJsonString', storedData);
                 }
 
             }).catch((message) => {
