@@ -1,6 +1,5 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+    ViewBag.Title = "LandingPage";
 }
 <!--
      * This is the Class for Landing page.
@@ -45,27 +44,34 @@
             font-size: 70px;
             text-align: left;
             display: none;
-            color: darkslategray;
+            color: darkviolet;
             font-family: 'Lucida Handwriting', cursive;
             font-weight: bold;
         }
-
     </style>
 </head>
 <body>
-    <!-- Background image -->
     <img>
-    <img src="~/imagine/WelcomePageV.gif" type="image/gif">
+    <img src="~/Media/giphy.gif" type="image/gif">
     <div id="welcomeMessage">
-        Welcome! <br>
-        Enjoy Sun. Enjoy Life.
+        welcome! <br>
+        little climate warrior ^_^
     </div>
-
-    <script>
-
-
-
-    </script>
-
 </body>
 </html>
+
+<script>
+    // Function to execute when the window loads
+    window.onload = function () {
+        // Display the welcome message
+        document.getElementById('welcomeMessage').style.display = 'block';
+
+        // Redirect to homepage after 5 seconds
+        setTimeout(function () {
+            window.location.href = 'Index';
+        }, 5000);
+    };
+</script>
+
+
+
