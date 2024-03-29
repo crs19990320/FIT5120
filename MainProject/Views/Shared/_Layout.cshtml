@@ -22,6 +22,14 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("cardGame", "cardGame", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                 </ul>
+                <ul class="navbar-nav">
+                    @if (ViewContext.RouteData.Values["action"].ToString() == "WelcomePage")
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Information", "Home")">Information for parents</a>
+                        </li>
+                    }
+                </ul>
             </div>
         </div>
     </nav>
@@ -34,3 +42,4 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+

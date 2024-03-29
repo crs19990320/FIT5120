@@ -18,6 +18,10 @@ namespace MainProject.Controllers
         {
             return View();
         }
+
+        public ActionResult WelcomePage() { return View(); }
+
+        public ActionResult Information() { return View();}
         public ActionResult Index()
         {
             return View();
