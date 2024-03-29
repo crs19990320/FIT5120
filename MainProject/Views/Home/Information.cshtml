@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "Information";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .section {
+            width: 80%;
+            padding: 100px;
+            margin-bottom: 100px; 
+            position: relative; 
+        }
+
+        .section:not(:last-child) {
+            border-bottom: 1px solid #ccc;
+        }
+
+        .button {
+            position: relative;
+            bottom: 1px; 
+            left: 1%; 
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .image {
+            position: absolute;
+            top: 20px; 
+            right: 20px; 
+            width: 200px; 
+            height: auto;
+        }
+
+        .image1 {
+            position: absolute;
+            top: 20px;
+            left: 10%; 
+            width: 200px;
+            height: auto;
+        }
+
+        .image2 {
+            position: absolute;
+            top: 20px;
+            left: 50%; 
+            transform: translateX(-50%); 
+            width: 200px;
+            height: auto;
+        }
+
+        .image3 {
+            position: absolute;
+            top: 20px;
+            right: 10%;
+            width: 200px;
+            height: auto;
+        }
+
+        h2 {
+            position:relative;
+            top:-20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="section" id="elevator">
+        <h2>Elevator Pitch</h2>
+        <p>More content Here</p>
+        <button class="button">Begin Lesson</button>
+        <img src="~/Media/co2.jpg" alt="Sample Image" class="image">
+    </div>
+
+    <div class="section">
+        <h2>Features</h2>
+        <img src="~/Media/co2.jpg" alt="Sample Image" class="image1">
+        <img src="~/Media/co2.jpg" alt="Sample Image" class="image2">
+        <img src="~/Media/co2.jpg" alt="Sample Image" class="image3">
+    </div>
+
+    <div class="section">
+        <h2>How it works</h2>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "WelcomePage";
+}
+<!--
+     * This is the Class for Welcome page.
+     * Version: 0.1
+     * Author: Ruosong Chen, Qihang Wang
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        .text {
+            float: left;
+            width: 50%;
+            box-sizing: border-box;
+            padding-top: 200px;
+            padding-left: 30px;
+        } 
+
+        .pic {
+            float: right;
+            width: 50%;
+            box-sizing: border-box;
+            padding-top: 20px;
+        }
+
+        .pic img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .button-container {
+            padding-left: 60px;
+            text-align: center; 
+        }
+
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="clearfix">
+        <div class="text">
+            <h2>This week's Lesson:</h2>
+            <p>Carbon Emission issue is getting more and more serious...</p>
+            <p>More content Here</p>
+        </div>
+
+        <div class="pic">
+            <img src="~/Media/co2.jpg" alt="Placeholder Image">
+        </div>
+    </div>
+
+    <div class="button-container">
+        <div class="accordion-button">
+            <a href="target_page.html" class="btn">Begin Lesson</a>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+

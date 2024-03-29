@@ -199,6 +199,7 @@
     <Content Include="Games\TemplateData\webmemd-icon.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Media\co2.jpg" />
     <Content Include="Media\giphy.gif" />
     <Content Include="Media\test_video1.mp4" />
     <Content Include="Models\Model1.Context.tt">
@@ -253,6 +254,8 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\LandingPage.cshtml" />
+    <Content Include="Views\Home\WelcomePage.cshtml" />
+    <Content Include="Views\Home\Information.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
