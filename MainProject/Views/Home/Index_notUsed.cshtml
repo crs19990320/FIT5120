@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model IEnumerable<MainProject.Models.QuestionTable>
+
+<h1 style="text-align: center;">Come to Play!</h1>
+<main style="position: relative; width: 80vw; height: 90vh; display:flex;">
+
+    <!-- up-left -->
+    <section class="card" style="position: absolute; top: 0; left: 0; width: 40%; height: 40%;">
+        <h2 style="text-align: center;" id="leftTopTitle">Video</h2>
+        <div style="border: none" id="videoContainer">
+            <video controls style="width: 100%; height: 100%;" id="videoPlayer">
+                <source src="https://videos.pexels.com/video-files/4884642/4884642-hd_1920_1080_30fps.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <!-- up-right -->
+    <section class="card" style="position: absolute; top: 0; right: 0; width: 40%; height: 40%;">
+        <h2 style="text-align: center;" id="rightTopTitle">Map</h2>
+        <div style="border: 1px solid black;">
+            <img src="https://www.mapsland.com/maps/oceania/australia/large-australia-cartoon-map.jpg" alt="map" style="width: 100%; height: 100%;">
+        </div>
+    </section>
+
+    <!-- below-left -->
+    <section class="card" style="position: absolute; bottom: 0; left: 0; width: 40%; height: 40%;">
+        <h2 style="text-align: center;" id="leftBottomTitle">Game</h2>
+        <div style="border: 1px solid black; overflow: hidden;">
+            <button id="test">
+                <img src="https://developers.google.com/static/games/services/images/google-play-16-9.svg" alt="cardGame" style="width: 100%; height: 100%;">
+            </button>
+        </div>
+    </section>
+
+    <!-- below-right -->
+    <section class="card" style="position: absolute; bottom: 0; right: 0; width: 40%; height: 40%;">
+        <h2 style="text-align: center;" id="rightBottomTitle">Achievement</h2>
+        <div style="border: 1px solid black;">
+            <img src="https://t4.ftcdn.net/jpg/05/93/91/27/360_F_593912714_6pEIEP3YlFQkbwknHEYxQzbne5ZN6BlE.jpg" alt="achievement" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+    </section>
+
+
+    @*<div class="row">
+            <button id="test">CardGame</button>
+        </div>*@
+
+
+
+</main>
+
+<script>
+    document.getElementById('test').addEventListener('click', function () {
+        $.ajax({
+            url: '/QuestionsAPI/GetRandomData',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                sessionStorage.setItem('QuestionJson', JSON.stringify(data));
+                window.location.href = '/Home/cardGame';
+            },
+            error: function (error) {
+                console.error('Error fetching data:', error);
+            }
+        });
+    });
+</script>
+
+<!-- logic of video playing -->
+<script>
+    document.getElementById("videoContainer").addEventListener("click", function () {
+        var video = document.getElementById("videoPlayer");
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    });
+</script>

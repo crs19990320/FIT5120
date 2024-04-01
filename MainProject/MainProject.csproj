@@ -252,10 +252,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Index_notUsed.cshtml" />
     <Content Include="Views\Home\LandingPage.cshtml" />
     <Content Include="Views\Home\WelcomePage.cshtml" />
     <Content Include="Views\Home\Information.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
