@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+@model IEnumerable<MainProject.Models.QuestionTable>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data View</title>
+</head>
+<body>
+    <h1>Data View</h1>
+    <table>
+        <tr>
+            <th>Questions</th>
+            <th>Answer1</th>
+            <th>Answer2</th>
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Questions</td>
+                <td>@item.Answer1</td>
+                <td>@item.Answer2</td>
+            </tr>
+        }
+    </table>
+    <button id="btn">Get Data</button>
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>WaterCredit</th>
+                <th>CarbonCredit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- fill the table -->
+        </tbody>
+    </table>
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#btn").click(function () {
+            $.ajax({
+                url: "/Home/GetQuestionData", // URL
+                type: "GET",
+                success: function (response) {
+                    // empty the table content
+                    $("#dataTable tbody").empty();
+
+                    // fill out the table
+                    $.each(response, function (index, item) {
+                        $("#dataTable tbody").append("<tr><td>" + item.WaterCredit + "</td><td>" + item.CarbonCredit + "</td></tr>");
+                    });
+                }
+            });
+        });
+    });
+</script>

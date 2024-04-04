@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+    <EntitySetMapping Name="Tables">
+      <EntityTypeMapping TypeName="Database1Model.Table">
+        <MappingFragment StoreEntitySet="Table">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CardName" ColumnName="CardName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuestionTable1">
+      <EntityTypeMapping TypeName="IsTypeOf(Database1Model.QuestionTable)">
+        <MappingFragment StoreEntitySet="QuestionTable">
+          <ScalarProperty Name="A2EcoLife" ColumnName="A2EcoLife" />
+          <ScalarProperty Name="A2Water" ColumnName="A2Water" />
+          <ScalarProperty Name="A2Carbon" ColumnName="A2Carbon" />
+          <ScalarProperty Name="A1EcoLife" ColumnName="A1EcoLife" />
+          <ScalarProperty Name="A1Water" ColumnName="A1Water" />
+          <ScalarProperty Name="A1Carbon" ColumnName="A1Carbon" />
+          <ScalarProperty Name="Answer2" ColumnName="Answer2" />
+          <ScalarProperty Name="Answer1" ColumnName="Answer1" />
+          <ScalarProperty Name="Questions" ColumnName="Questions" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="main1_databaseModel.Store" Provider="Devart.Data.MySql" ProviderManifestToken="MySQL, 8.3.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="air_quality">
+    <Key>
+      <PropertyRef Name="air_id" />
+    </Key>
+    <Property Name="air_id" Type="int" Nullable="false" />
+    <Property Name="air_station_name" Type="varchar" MaxLength="50" />
+    <Property Name="air_lat" Type="float" />
+    <Property Name="air_long" Type="float" />
+    <Property Name="air_no2" Type="float" />
+    <Property Name="air_o3" Type="float" />
+    <Property Name="air_co" Type="float" />
+    <Property Name="air_pm10" Type="float" />
+    <Property Name="air_pm2_5" Type="float" />
+    <Property Name="air_date" Type="date" />
+    <Property Name="air_time" Type="time" Precision="0" />
+  </EntityType>
+  <EntityType Name="current_climate">
+    <Key>
+      <PropertyRef Name="current_id" />
+    </Key>
+    <Property Name="current_id" Type="int" Nullable="false" />
+    <Property Name="current_lat" Type="float" />
+    <Property Name="current_long" Type="float" />
+    <Property Name="current_date_val" Type="date" />
+    <Property Name="current_time_val" Type="time" Precision="0" />
+    <Property Name="current_temp" Type="float" />
+    <Property Name="current_humidity" Type="int" />
+    <Property Name="current_pressure" Type="int" />
+    <Property Name="current_wind_speed" Type="float" />
+    <Property Name="current_is_cloud" Type="sbyte" />
+    <Property Name="current_is_clear" Type="sbyte" />
+    <Property Name="current_is_rain" Type="sbyte" />
+  </EntityType>
+  <EntityType Name="historical_climate">
+    <Key>
+      <PropertyRef Name="hist_id" />
+    </Key>
+    <Property Name="hist_id" Type="int" Nullable="false" />
+    <Property Name="hist_name" Type="varchar" MaxLength="50" />
+    <Property Name="hist_lat" Type="float" />
+    <Property Name="hist_long" Type="float" />
+    <Property Name="hist_year" Type="int" />
+    <Property Name="hist_percentage" Type="float" />
+  </EntityType>
+  <EntityContainer Name="main1_databaseModelStoreContainer">
+    <EntitySet Name="air_quality" EntityType="Self.air_quality" Schema="main1_database" store:Type="Tables" />
+    <EntitySet Name="current_climate" EntityType="Self.current_climate" Schema="main1_database" store:Type="Tables" />
+    <EntitySet Name="historical_climate" EntityType="Self.historical_climate" Schema="main1_database" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
