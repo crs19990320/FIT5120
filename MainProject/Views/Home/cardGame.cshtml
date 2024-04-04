@@ -6,11 +6,24 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            position: relative;
+        }
+
+        #gifBackground {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
 </head>
 <body>
+    <img id="gifBackground" src="~/Media/giphy2.gif" alt="GIF Background">
     <iframe id="unityFrame" src="~/Games/cardGame.html" style="width:1000px; height:800px"></iframe>
 </body>
-
-
 </html>

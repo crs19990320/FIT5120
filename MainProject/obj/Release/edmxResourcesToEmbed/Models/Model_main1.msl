@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="main1_databaseModelStoreContainer" CdmEntityContainer="main1_databaseEntities">
+    <EntitySetMapping Name="air_quality">
+      <EntityTypeMapping TypeName="main1_databaseModel.air_quality">
+        <MappingFragment StoreEntitySet="air_quality">
+          <ScalarProperty Name="air_id" ColumnName="air_id" />
+          <ScalarProperty Name="air_station_name" ColumnName="air_station_name" />
+          <ScalarProperty Name="air_lat" ColumnName="air_lat" />
+          <ScalarProperty Name="air_long" ColumnName="air_long" />
+          <ScalarProperty Name="air_no2" ColumnName="air_no2" />
+          <ScalarProperty Name="air_o3" ColumnName="air_o3" />
+          <ScalarProperty Name="air_co" ColumnName="air_co" />
+          <ScalarProperty Name="air_pm10" ColumnName="air_pm10" />
+          <ScalarProperty Name="air_pm2_5" ColumnName="air_pm2_5" />
+          <ScalarProperty Name="air_date" ColumnName="air_date" />
+          <ScalarProperty Name="air_time" ColumnName="air_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="current_climate">
+      <EntityTypeMapping TypeName="main1_databaseModel.current_climate">
+        <MappingFragment StoreEntitySet="current_climate">
+          <ScalarProperty Name="current_id" ColumnName="current_id" />
+          <ScalarProperty Name="current_lat" ColumnName="current_lat" />
+          <ScalarProperty Name="current_long" ColumnName="current_long" />
+          <ScalarProperty Name="current_date_val" ColumnName="current_date_val" />
+          <ScalarProperty Name="current_time_val" ColumnName="current_time_val" />
+          <ScalarProperty Name="current_temp" ColumnName="current_temp" />
+          <ScalarProperty Name="current_humidity" ColumnName="current_humidity" />
+          <ScalarProperty Name="current_pressure" ColumnName="current_pressure" />
+          <ScalarProperty Name="current_wind_speed" ColumnName="current_wind_speed" />
+          <ScalarProperty Name="current_is_cloud" ColumnName="current_is_cloud" />
+          <ScalarProperty Name="current_is_clear" ColumnName="current_is_clear" />
+          <ScalarProperty Name="current_is_rain" ColumnName="current_is_rain" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="historical_climate">
+      <EntityTypeMapping TypeName="main1_databaseModel.historical_climate">
+        <MappingFragment StoreEntitySet="historical_climate">
+          <ScalarProperty Name="hist_id" ColumnName="hist_id" />
+          <ScalarProperty Name="hist_name" ColumnName="hist_name" />
+          <ScalarProperty Name="hist_lat" ColumnName="hist_lat" />
+          <ScalarProperty Name="hist_long" ColumnName="hist_long" />
+          <ScalarProperty Name="hist_year" ColumnName="hist_year" />
+          <ScalarProperty Name="hist_percentage" ColumnName="hist_percentage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
