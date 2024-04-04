@@ -6,6 +6,9 @@ const svg = d3.select("#map-canvas")
   .attr("width", width)
   .attr("height", height);
 
+
+// AUSTRALIA MAP
+
 // Define a geographical projection
 const projection = d3.geoEquirectangular()
   .center([132, -27]) // Center the map on Australia
@@ -122,6 +125,7 @@ d3.selectAll('input[name="option"]').on('change', function() {
   console.log("Radio button selected:", selectedValue);
 });
 
+// RADIO BUTTON 
 
 // Event listener for radio buttons
 d3.selectAll('input[name="map-option"]').on('change', function(event) {
@@ -136,3 +140,46 @@ function updateMap(option) {
   console.log("Selected option:", option);
   // Example: if(option === 'population') { ... }
 }
+
+//ZOOM BEHAVIOUR
+
+// Define your zoom behavior
+var zoom = d3.zoom()
+    .scaleExtent([1, 8])  // This controls how much you can zoom (1X to 8X here)
+    .on('zoom', zoomed);
+
+// Apply the zoom behavior to the SVG canvas
+svg.call(zoom);
+
+function zoomed({transform}) {
+  // This function will be called when zooming or panning occurs
+  // 'g' is the group that contains all the elements you want to zoom
+  svg.selectAll('path') // Select all paths inside the SVG
+    .attr('transform', transform); // Apply the transformation
+
+  // If you have labels or other elements you want to scale, you can select them here too
+  svg.selectAll('.state-label')
+    .attr('transform', function(d) {
+      return `translate(${transform.apply(path.centroid(d))})`;
+    })
+    .style('font-size', `${1/transform.k * 10}px`); // Adjust label font-size inversely to scale
+}
+
+// Optional: Function to reset zoom
+function resetZoom() {
+  svg.transition()
+    .duration(750) // Transition speed
+    .call(zoom.transform, d3.zoomIdentity); // Reset the transform to no scaling and translation
+}
+// Select the reset button and bind the click event
+d3.select('#reset-zoom').on('click', resetZoom);
+
+// The resetZoom function resets the zoom transformation to the default state
+function resetZoom() {
+  svg.transition()
+    .duration(750) // Smooth transition duration
+    .call(zoom.transform, d3.zoomIdentity); // Reset zoom level to the original state
+}
+
+
+
