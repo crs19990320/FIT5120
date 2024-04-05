@@ -34,7 +34,7 @@ namespace MainProject.Controllers
         public ActionResult About()
         {
             // set Google Cloud
-            var relativePath = "~/App_Data/my-first-project-381923-ee56fd884a5b.json";
+            var relativePath = "~/App_Data/my-first-project-381923-316111010eb8.json";
             var absolutePath = Server.MapPath(relativePath);
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", absolutePath);
 
