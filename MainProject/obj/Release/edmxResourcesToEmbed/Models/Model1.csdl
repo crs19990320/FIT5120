@@ -12,20 +12,32 @@
   <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Tables" EntityType="Self.Table" />
     <EntitySet Name="QuestionTable1" EntityType="Database1Model.QuestionTable" />
+    <EntitySet Name="Climate" EntityType="Database1Model.Climate" />
   </EntityContainer>
   <EntityType Name="QuestionTable">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" />
-    <Property Name="Questions" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="Answer1" Type="String" />
-    <Property Name="Answer2" Type="String" />
-    <Property Name="A1Carbon" Type="Int32" Nullable="false" />
-    <Property Name="A1Water" Type="Int32" Nullable="false" />
-    <Property Name="A1EcoLife" Type="Int32" Nullable="false" />
-    <Property Name="A2Carbon" Type="Int32" Nullable="false" />
-    <Property Name="A2Water" Type="Int32" Nullable="false" />
-    <Property Name="A2EcoLife" Type="Int32" Nullable="false" />
+    <Property Name="Questions" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Answer1" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Answer2" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="A1Carbon" Type="Int32" />
+    <Property Name="A1Water" Type="Int32" />
+    <Property Name="A1EcoLife" Type="Int32" />
+    <Property Name="A2Carbon" Type="Int32" />
+    <Property Name="A2Water" Type="Int32" />
+    <Property Name="A2EcoLife" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Climate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="state_lat" Type="Double" />
+    <Property Name="state_long" Type="Double" />
+    <Property Name="temp_change" Type="Double" />
+    <Property Name="avr_rainfall" Type="Double" />
   </EntityType>
 </Schema>

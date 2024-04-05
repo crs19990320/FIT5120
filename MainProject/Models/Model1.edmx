@@ -5,6 +5,17 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Climate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="state" Type="varchar" MaxLength="50" />
+          <Property Name="state_lat" Type="float" />
+          <Property Name="state_long" Type="float" />
+          <Property Name="temp_change" Type="float" />
+          <Property Name="avr_rainfall" Type="float" />
+        </EntityType>
         <EntityType Name="QuestionTable">
           <Key>
             <PropertyRef Name="Id" />
@@ -30,6 +41,7 @@
           <Property Name="ImagePath" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="Climate" EntityType="Self.Climate" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QuestionTable" EntityType="Self.QuestionTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -49,21 +61,33 @@
         <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Tables" EntityType="Self.Table" />
           <EntitySet Name="QuestionTable1" EntityType="Database1Model.QuestionTable" />
+          <EntitySet Name="Climate" EntityType="Database1Model.Climate" />
         </EntityContainer>
         <EntityType Name="QuestionTable">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Questions" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Answer1" Type="String" />
-          <Property Name="Answer2" Type="String" />
-          <Property Name="A1Carbon" Type="Int32" Nullable="false" />
-          <Property Name="A1Water" Type="Int32" Nullable="false" />
-          <Property Name="A1EcoLife" Type="Int32" Nullable="false" />
-          <Property Name="A2Carbon" Type="Int32" Nullable="false" />
-          <Property Name="A2Water" Type="Int32" Nullable="false" />
-          <Property Name="A2EcoLife" Type="Int32" Nullable="false" />
+          <Property Name="Questions" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Answer1" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Answer2" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="A1Carbon" Type="Int32" />
+          <Property Name="A1Water" Type="Int32" />
+          <Property Name="A1EcoLife" Type="Int32" />
+          <Property Name="A2Carbon" Type="Int32" />
+          <Property Name="A2Water" Type="Int32" />
+          <Property Name="A2EcoLife" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Climate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="state_lat" Type="Double" />
+          <Property Name="state_long" Type="Double" />
+          <Property Name="temp_change" Type="Double" />
+          <Property Name="avr_rainfall" Type="Double" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -93,6 +117,18 @@
                 <ScalarProperty Name="Answer2" ColumnName="Answer2" />
                 <ScalarProperty Name="Answer1" ColumnName="Answer1" />
                 <ScalarProperty Name="Questions" ColumnName="Questions" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Climate">
+            <EntityTypeMapping TypeName="Database1Model.Climate">
+              <MappingFragment StoreEntitySet="Climate">
+                <ScalarProperty Name="avr_rainfall" ColumnName="avr_rainfall" />
+                <ScalarProperty Name="temp_change" ColumnName="temp_change" />
+                <ScalarProperty Name="state_long" ColumnName="state_long" />
+                <ScalarProperty Name="state_lat" ColumnName="state_lat" />
+                <ScalarProperty Name="state" ColumnName="state" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
