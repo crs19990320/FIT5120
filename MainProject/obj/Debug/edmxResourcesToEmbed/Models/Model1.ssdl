@@ -1,5 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Climate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="state" Type="varchar" MaxLength="50" />
+    <Property Name="state_lat" Type="float" />
+    <Property Name="state_long" Type="float" />
+    <Property Name="temp_change" Type="float" />
+    <Property Name="avr_rainfall" Type="float" />
+  </EntityType>
   <EntityType Name="QuestionTable">
     <Key>
       <PropertyRef Name="Id" />
@@ -25,6 +36,7 @@
     <Property Name="ImagePath" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityContainer Name="Database1ModelStoreContainer">
+    <EntitySet Name="Climate" EntityType="Self.Climate" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="QuestionTable" EntityType="Self.QuestionTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
   </EntityContainer>

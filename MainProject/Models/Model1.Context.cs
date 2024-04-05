@@ -27,5 +27,6 @@ namespace MainProject.Models
     
         public virtual DbSet<Table> Tables { get; set; }
         public virtual DbSet<QuestionTable> QuestionTable1 { get; set; }
+        public virtual DbSet<Climate> Climate { get; set; }
     }
 }

@@ -2,7 +2,7 @@
     ViewBag.Title = "About";
 }
 
-@model IEnumerable<MainProject.Models.QuestionTable>
+@model IEnumerable<MainProject.Models.Climate>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,21 +12,25 @@
     <h1>Data View</h1>
     <table>
         <tr>
-            <th>Questions</th>
-            <th>Answer1</th>
-            <th>Answer2</th>
+            <th>State</th>
+            <th>state_lat</th>
+            <th>state_long</th>
+            <th>temp_change</th>
+            <th>avr_rainfall</th>
 
         </tr>
         @foreach (var item in Model)
         {
             <tr>
-                <td>@item.Questions</td>
-                <td>@item.Answer1</td>
-                <td>@item.Answer2</td>
+                <td>@item.state</td>
+                <td>@item.state_lat</td>
+                <td>@item.state_long</td>
+                <td>@item.temp_change</td>
+                <td>@item.avr_rainfall</td>
             </tr>
         }
     </table>
-    <button id="btn">Get Data</button>
+    <!--<button id="btn">Get Data</button>
     <table id="dataTable">
         <thead>
             <tr>
@@ -34,19 +38,19 @@
                 <th>CarbonCredit</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody>-->
             <!-- fill the table -->
-        </tbody>
-    </table>
+        <!--</tbody>
+    </table>-->
 </body>
 </html>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
         $("#btn").click(function () {
             $.ajax({
-                url: "/Home/GetQuestionData", // URL
+                url: "/HomeController/GetQuestionData", // URL
                 type: "GET",
                 success: function (response) {
                     // empty the table content
@@ -60,4 +64,4 @@
             });
         });
     });
-</script>
+</script>*@

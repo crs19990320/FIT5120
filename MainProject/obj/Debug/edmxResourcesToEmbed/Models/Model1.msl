@@ -27,5 +27,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Climate">
+      <EntityTypeMapping TypeName="Database1Model.Climate">
+        <MappingFragment StoreEntitySet="Climate">
+          <ScalarProperty Name="avr_rainfall" ColumnName="avr_rainfall" />
+          <ScalarProperty Name="temp_change" ColumnName="temp_change" />
+          <ScalarProperty Name="state_long" ColumnName="state_long" />
+          <ScalarProperty Name="state_lat" ColumnName="state_lat" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
