@@ -273,6 +273,7 @@
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <Content Include="App_Data\dbo.Climate.sql" />
+    <Content Include="App_Data\dbo.QuestionSchema.sql" />
     <Content Include="App_Data\dbo.Table.sql" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
