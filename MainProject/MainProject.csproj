@@ -292,7 +292,6 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="Games\Build\Games.data.gz" />
     <Content Include="Games\Build\Games.framework.js" />
     <Content Include="Games\Build\Games.loader.js" />
     <Content Include="Games\cardGame.html" />

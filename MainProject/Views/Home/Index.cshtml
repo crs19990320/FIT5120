@@ -41,7 +41,7 @@
                 <p style="font-size:30px ;font-weight:300; text-align: left; margin-bottom: 10px; margin-left:100px">Check your knowledge</p>
                 <div style="border: none;">
                     <p style="font-size: 30px;font-weight:bold; text-align: left; margin-left: 120px;">Card Game<img src="https://st2.depositphotos.com/1036149/12175/i/450/depositphotos_121752080-stock-photo-crocodile-holding-question-mark-and.jpg" style="width: 20%; height: auto; float: right; margin-right:70px;" /></p>
-                    <button id="test" class="btn btn-custom"> Play </button>
+                    <button id="game" class="btn btn-custom"> Play </button>
                 </div>
             </section>
 
@@ -141,7 +141,7 @@
 
 
 <script>
-    document.getElementById('test').addEventListener('click', function () {
+    document.getElementById('game').addEventListener('click', function () {
         var jsonData = @Html.Raw(Json.Encode(Model));
 
         function shuffle(array) {
