@@ -28,7 +28,49 @@ namespace MainProject.Controllers
         public ActionResult Information() { return View();}
         public ActionResult Index()
         {
-            return View();
+            // set Google Cloud
+            var relativePath = "~/App_Data/my-first-project-381923-316111010eb8.json";
+            var absolutePath = Server.MapPath(relativePath);
+            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", absolutePath);
+
+            var storage = StorageClient.Create();
+
+            string bucketName = "climate_bucket_test1";
+            string objectName = "dbo.QuestionTable.csv";
+
+            var records = new List<QuestionTable>();
+
+            using (var stream = new MemoryStream())
+            {
+                storage.DownloadObject(bucketName, objectName, stream);
+
+                stream.Position = 0;
+
+                using (var reader = new StreamReader(stream))
+                using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                {
+                    csv.Read();
+                    csv.ReadHeader();
+                    while (csv.Read())
+                    {
+                        var record = new QuestionTable
+                        {
+                            Id = csv.GetField<int>("Id"),
+                            Questions = csv.GetField<string>("Questions"),
+                            Answer1 = csv.GetField<string>("Answer1"),
+                            Answer2 = csv.GetField<string>("Answer2"),
+                            A1Carbon = csv.GetField<int>("A1Carbon"),
+                            A1Water = csv.GetField<int>("A1Water"),
+                            A1EcoLife = csv.GetField<int>("A1EcoLife"),
+                            A2Carbon = csv.GetField<int>("A2Carbon"),
+                            A2Water = csv.GetField<int>("A2Water"),
+                            A2EcoLife = csv.GetField<int>("A2EcoLife"),
+                        };
+                        records.Add(record);
+                    }
+                }
+            }
+            return View(records);
         }
 
         public ActionResult About()

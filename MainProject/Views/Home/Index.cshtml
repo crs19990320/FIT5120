@@ -139,20 +139,24 @@
     }
 </script>
 
+
 <script>
     document.getElementById('test').addEventListener('click', function () {
-        $.ajax({
-            url: '/QuestionsAPI/GetRandomData',
-            type: 'GET',
-            dataType: 'json',
-            success: function (data) {
-                console.log(data);
-                sessionStorage.setItem('QuestionJson', JSON.stringify(data));
-                window.location.href = '/Home/cardGame';
-            },
-            error: function (error) {
-                console.error('Error fetching data:', error);
+        var jsonData = @Html.Raw(Json.Encode(Model));
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
             }
-        });
+        }
+        shuffle(jsonData);
+        var selectedQuestions = jsonData.slice(0, 10);
+        var encapsulatedData = {
+            questions: selectedQuestions
+        };
+        sessionStorage.setItem('QuestionJson', JSON.stringify(encapsulatedData));
+        console.log("Randomly selected 10 questions:", encapsulatedData);
+        window.location.href = '/Home/cardGame';
     });
 </script>
