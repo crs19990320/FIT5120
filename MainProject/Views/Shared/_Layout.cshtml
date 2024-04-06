@@ -20,7 +20,7 @@
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("cardGame", "cardGame", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li id="test">@Html.ActionLink("cardGame", "cardGame", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                 </ul>
                 <ul class="navbar-nav">
                     @if (ViewContext.RouteData.Values["action"].ToString() == "WelcomePage")
@@ -36,7 +36,26 @@
     <div class="container body-content">
         @RenderBody()
     </div>
+    <script>
+    document.getElementById('test').addEventListener('click', function () {
+        var jsonData = @Html.Raw(Json.Encode(Model));
 
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+        shuffle(jsonData);
+        var selectedQuestions = jsonData.slice(0, 10);
+        var encapsulatedData = {
+            questions: selectedQuestions
+        };
+        sessionStorage.setItem('QuestionJson', JSON.stringify(encapsulatedData));
+        console.log("Randomly selected 10 questions:", encapsulatedData);
+        window.location.href = '/Home/cardGame';
+    });
+    </script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
