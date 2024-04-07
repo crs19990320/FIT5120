@@ -3,6 +3,7 @@
     "",
     "\\Controllers",
     "\\Games",
+    "\\Games\\Build",
     "\\Models",
     "\\Views",
     "\\Views\\Home"
