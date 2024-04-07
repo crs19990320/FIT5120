@@ -311,9 +311,15 @@
     <Content Include="Content\Site.css" />
     <Content Include="Media\background1.png" />
     <Content Include="Media\co2.jpg" />
+    <Content Include="Media\Drag1.png" />
+    <Content Include="Media\Drag2.png" />
     <Content Include="Media\Earth.jpg" />
+    <Content Include="Media\EndGame.png" />
     <Content Include="Media\giphy.gif" />
     <Content Include="Media\giphy2.gif" />
+    <Content Include="Media\reset.png" />
+    <Content Include="Media\StartGame .png" />
+    <Content Include="Media\Statuses.png" />
     <Content Include="Media\test_video1.mp4" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -356,7 +362,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Views\Home\Map.cshtml" />
     <None Include="Views\Home\D3test.cshtml" />
-    <None Include="Views\Home\cardGame.cshtml" />
+    <None Include="Views\Home\CardGame.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
