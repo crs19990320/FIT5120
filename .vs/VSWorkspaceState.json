@@ -1,11 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Onboarding",
-    "\\Onboarding\\Controllers",
-    "\\Onboarding\\Views",
-    "\\Onboarding\\Views\\Home"
+    "\\MainProject"
   ],
-  "SelectedNode": "\\Onboarding\\Controllers\\HomeController.cs",
+  "SelectedNode": "\\MainProject\\MainProject.sln",
   "PreviewInSolutionExplorer": false
 }

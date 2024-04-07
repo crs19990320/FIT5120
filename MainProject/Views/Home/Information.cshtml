@@ -1,98 +1,111 @@
 ﻿@{
     ViewBag.Title = "Information";
+    ViewBag.HideNavbar = true;
 }
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- CSS styles -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
     <style>
-        /* Styles for table headers */
-        table th {
-            background-color: #687896;
+        .text {
+            float: left;
+            width: 40%;
+            box-sizing: border-box;
+            padding-top: 100px;
+            padding-left: 60px;
         }
-        /* Styles for table cells */
-        table td {
-            background-color: #a0a3cc;
+
+        .pic {
+            float: right;
+            width: 50%;
+            box-sizing: border-box;
+            padding-top: 100px;
+            padding-right: 30px;
+        }
+
+        .pic img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .button-container {
+            padding-left: 40px;
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        #newContent1 {
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 700px;
+            margin-bottom: 350px;
+        }
+
+        #newContent1 > div {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+        #newContent1 h2, #newContent1 p {
+            margin: 0;
         }
     </style>
 </head>
-
-
 <body>
-    <div class="container">
-        <!-- HTML body content -->
-        <div class="row">
-            <!-- Elevator Pitch -->
-            <div class="col-auto">
-                <!-- Card with image -->
-                <div style="margin-bottom: 30px;">
-                    <div class="card" style="text-align: left; height: 200px; background-color: rgba(255, 255, 255, 0.5); align-items: center; border: none; border-bottom: 1px solid #ccc; ">
-                        <div class="card-body">
-                            <div>
-                                <h2>Elevator Pitch <img src="~/Media/co2.jpg" style="width: 20%; height: auto; float: right;" /></h2>
-                                <h3>More content Here </h3>
-                                <a href="Index" class="btn btn-primary">Begin Lesson</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="clearfix">
+        <div class="text">
+            <h1 style="color: black; font-size: 66px; font-family: Arial;">
+                Transforming<br>
+                climate<br>
+                education<br>
+                into adventures
+            </h1>
+            <p style="color:dimgray">Occaecat est ipsum reprehenderit reprehenderit veniam anim laborum est esse duis occaecat reprehenderit pariatur.</p>
+        </div>
 
-                <div style="margin-bottom: 30px;">
-                    <div class="card" style="text-align: left; height: 200px; background-color: rgba(255, 255, 255, 0.5); align-items: center; border:none; border-bottom: 1px solid #ccc;">
-                        <div class="card-body">
-                            <div>
-                                <h2>
-                                    Features
-                                    <img src="~/Media/co2.jpg" style="width: 20%; height: auto; float: right;" />
-                                    <img src="https://via.placeholder.com/100" style="width: 10%; height: auto; float: right;" />
-                                    <img src="https://via.placeholder.com/100" style="width: 10%; height: auto; float: right;" />
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <div class="card" style="text-align: left; height: 200px; background-color: rgba(255, 255, 255, 0.5); border: none; border-bottom: 1px solid #ccc; ">
-                        <div class="card-body">
-                            <div>
-                                <h2>How it works:</h2>
-                                <h5>1. </h5>
-                                <h5>2. </h5>
-                                <h5>3. </h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <div class="card" style="text-align: left; height: 200px; background-color: rgba(255, 255, 255, 0.5); align-items: center; border:none; border-bottom: 1px solid #ccc;">
-                        <div class="card-body">
-                            <div>
-                                <h2>
-                                    Your children is safe with us
-                                    <img src="~/Media/co2.jpg" style="width: 20%; height: auto; float: right;" />
-                                    <img src="https://via.placeholder.com/100" style="width: 10%; height: auto; float: right;" />
-                                    <img src="https://via.placeholder.com/100" style="width: 10%; height: auto; float: right;" />
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <div class="card" style="text-align: left; height: 200px; background-color: rgba(255, 255, 255, 0.5); align-items: center; border:none; border-bottom: 1px solid #ccc;">
-                        <div class="card-body">
-                            <div>
-                                <h2>
-                                    Frequently Asked Questions
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="pic">
+            <img src="~/Media/Mom&Dad.png" alt="Placeholder Image">
         </div>
     </div>
+
+    <div style="padding-left:90px;">
+        <a href="#newContent1" style="color: dodgerblue; text-decoration: none;">Take a Tour</a>
+    </div>
+
+    <div id="newContent1">
+        <!-- 2nd content -->
+        <div>
+            <h2>Part 1</h2>
+            <p>This is the first part of the card.</p>
+        </div>
+        <div>
+            <h2>Part 2</h2>
+            <p>This is the second part of the card.</p>
+        </div>
+        <div>
+            <h2>Part 3</h2>
+            <p>This is the third part of the card.</p>
+        </div>
+    </div>
+
 </body>
 </html>
+
+<script>
+    document.querySelector('a[href="#newContent1"]').addEventListener('click', function (event) {
+        event.preventDefault();
+        document.getElementById('newContent1').scrollIntoView({ behavior: 'smooth' });
+    });
+</script>
