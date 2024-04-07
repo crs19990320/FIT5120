@@ -15,7 +15,7 @@ namespace MainProject
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
+                url: "{action}/{id}",
                 defaults: new { controller = "Home", action = "LandingPage", id = UrlParameter.Optional }
             );
         }
