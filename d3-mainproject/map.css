@@ -21,13 +21,6 @@ h1 {
     height: 800px; /* Specifies the height of the map canvas; can be omitted if set directly in the HTML */
 }
 
-/* .state {
-    fill-opacity: 0.6; /* Semi-transparent fill for watercolor effect */
-    /* stroke: #fff; /* White stroke to mimic watercolor edge bleeding */
-    /* stroke-width: 2px; /* Width of the stroke for visibility */
-    /* stroke-opacity: 0.5; /* Semi-transparent stroke */
-/* } */
-
 .state {
     fill:0.6; /* Your dynamic fill based on data */
     stroke: #fdfafa; /* White or another color that stands out against your fill colors */
@@ -36,11 +29,12 @@ h1 {
 }
 
 /* Add this class to text elements if you want to style the state labels */
-.state-label {
-    font-family: 'Fredoka One', cursive; /* Applying the Fredoka One font */
-    fill: #413b3b; /* Color of the text */
+.dynamic-state-label {
+    font-family: 'Open Sans', sans-serif; /* Applying the Fredoka One font */
+    fill: #0f0f0f; /* Color of the text */
     pointer-events: none; /* Ensures that text doesn't interfere with map interaction */
     font-size: 16px; /* Increased font size for readability */
+    font-weight: bold; /* Makes the font bold */
 }
 
 #control-panel {

@@ -309,7 +309,9 @@
     <Content Include="Games\TemplateData\webmemd-icon.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Media\background1.png" />
     <Content Include="Media\co2.jpg" />
+    <Content Include="Media\Earth.jpg" />
     <Content Include="Media\giphy.gif" />
     <Content Include="Media\giphy2.gif" />
     <Content Include="Media\test_video1.mp4" />
