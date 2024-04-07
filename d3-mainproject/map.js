@@ -6,7 +6,6 @@ const svg = d3.select("#map-canvas")
   .attr("width", width)
   .attr("height", height);
 
-
 // AUSTRALIA MAP
 
 // Define a geographical projection
@@ -21,8 +20,12 @@ projection.scale(projection.scale() * 1.3); // For example, increasing by 50%
 // Create a path generator using the projection
 const path = d3.geoPath().projection(projection);
 
+// Create groups for map features and icons
+const mapGroup = svg.append("g").attr("id", "mapGroup");
+const iconsGroup = svg.append("g").attr("id", "iconsGroup");
+
 // Define SVG filters for the watercolor effect
-const defs = svg.append('defs');
+const defs = mapGroup.append('defs');
 
 const watercolorFilter = defs.append('filter')
   .attr('id', 'watercolor')
@@ -82,42 +85,62 @@ australia.features.forEach(function(feature) {
       // Add other cases as necessary
   }
 });
-  
-  // Draw the states on the SVG with the watercolor filter applied
-  svg.selectAll(".state")
+
+// // Bind hover events to state paths for interactive coloring
+// mapGroup.selectAll(".state")
+//     .data(australia.features)
+//     .enter().append("path")
+//     .attr("class", "state")
+//     .attr("d", path)
+//     // Other attributes as previously defined
+//     .on("mouseover", function(event, d) {
+//         d3.select(this).attr("fill", colorForState(d.properties.STATE_NAME, true)); // Set to darker color
+
+//         // Append a text label on hover
+//         mapGroup.append("text")
+//             .attr("class", "dynamic-state-label")
+//             .attr("x", path.centroid(d)[0])
+//             .attr("y", path.centroid(d)[1])
+//             .attr("text-anchor", "middle")
+//             .text(d.properties.STATE_NAME);
+//     })
+//     .on("mouseout", function(event, d) {
+//         d3.select(this).attr("fill", colorForState(d.properties.STATE_NAME)); // Revert to original color
+//         d3.selectAll(".dynamic-state-label").remove(); // Remove the label
+//     });
+
+// Bind hover events to state paths for interactive coloring
+mapGroup.selectAll(".state")
     .data(australia.features)
     .enter().append("path")
     .attr("class", "state")
     .attr("d", path)
-    .attr("fill", d => colorForState(d.properties.STATE_NAME))
-    // Adjust stroke color and width for a subtle outline effect
+    .attr("fill", d => colorForState(d.properties.STATE_NAME)) // Set initial fill color
     .attr("stroke", "#897D72")
-    .attr("stroke-width", 1) // Reduce stroke width for a finer outline
+    .attr("stroke-width", 1)
     .attr("stroke-linejoin", "round")
-    .attr("filter", "url(#watercolor)"); 
-
-  // Add hover effect
-  svg.selectAll(".state")
+    .attr("filter", "url(#watercolor)") // Apply the watercolor filter here
     .on("mouseover", function(event, d) {
-        d3.select(this).attr("fill", colorForState(d.properties.STATE_NAME, true)); // Set to darker color
+        d3.select(this).attr("fill", colorForState(d.properties.STATE_NAME, true)); // Set to darker color on hover
+
+        // Append a text label on hover
+        mapGroup.append("text")
+            .attr("class", "dynamic-state-label")
+            .attr("x", path.centroid(d)[0])
+            .attr("y", path.centroid(d)[1])
+            .attr("text-anchor", "middle")
+            .text(d.properties.STATE_NAME);
     })
     .on("mouseout", function(event, d) {
-        d3.select(this).attr("fill", colorForState(d.properties.STATE_NAME)); // Revert to original color
+        d3.select(this).attr("fill", colorForState(d.properties.STATE_NAME)); // Revert to original color on mouseout
+        d3.selectAll(".dynamic-state-label").remove(); // Remove the label
     });
 
-  // Add state labels
-  svg.selectAll(".state-label")
-    .data(australia.features)
-    .enter().append("text")
-    .attr("class", "state-label")
-    .attr("transform", d => `translate(${path.centroid(d)})`)
-    .attr("dy", ".35em")
-    .text(d => d.properties.STATE_NAME)
-    .attr("text-anchor", "middle")
-    .attr("font-size", "9px");
 }).catch(function(error) {
   console.error("Error loading the GeoJSON data:", error);
 });
+
+// RADIO BUTTON 
 
 d3.selectAll('input[name="option"]').on('change', function() {
   var selectedValue = this.value;
@@ -125,7 +148,6 @@ d3.selectAll('input[name="option"]').on('change', function() {
   console.log("Radio button selected:", selectedValue);
 });
 
-// RADIO BUTTON 
 
 // Event listener for radio buttons
 d3.selectAll('input[name="map-option"]').on('change', function(event) {
@@ -141,7 +163,151 @@ function updateMap(option) {
   // Example: if(option === 'population') { ... }
 }
 
+//ICONS
+// Example offset values for each type
+const typeOffsets = {
+  'Greenhouse Gases': {dx: -50, dy: -50},
+  'Water Consumption': {dx: 20, dy: -20},
+  'Temperature': {dx: 0, dy: 20},
+};
+
+
+const iconsData = [
+  {
+    type: 'Greenhouse Gases',
+    url: "icons/Emission_release_factory_icon.png",
+    coordinates: [
+       [147.612793, -33.240233], // NSW
+       [143.785153, -38.471308], // VIC
+       [145.702796, -24.517574], // QLD
+       [135.209155, -28.000233], // SA
+       [120.628310, -27.672817], // WA
+       [149.8087, -41.809],     // TAS
+       [133.550960, -21.491411], // NT
+       [153.012368, -35.473468], // ACT 
+    ],
+    width: 60,
+    height: 60
+  },
+  {
+    type: 'Water Consumption',
+    url: "icons/water2.png",
+    coordinates: [
+      [145.612793, -33.240233], // NSW
+      [141.785153, -38.471308], // VIC
+      [143.702796, -24.517574], // QLD
+      [133.209155, -28.000233], // SA
+      [118.628310, -27.672817], // WA
+      [147.8087, -41.809],     // TAS
+      [131.550960, -21.491411], // NT
+      [151.012368, -35.473468], // ACT 
+   ],
+    width: 60,
+    height: 60
+  },
+  {
+    type: 'Temperature', 
+    url: "icons/temp2.png", 
+    coordinates: [
+      [149.612793, -33.240233], // NSW
+      [145.785153, -38.471308], // VIC
+      [147.702796, -24.517574], // QLD
+      [137.209155, -28.000233], // SA
+      [122.628310, -27.672817], // WA
+      [151.8087, -41.809],     // TAS
+      [135.550960, -21.491411], // NT
+      [155.012368, -35.473468], // ACT 
+   ],
+    width: 60, 
+    height: 60 },
+  
+];
+
+function updateMap(selectedOption) {
+  // Clear existing icons
+  iconsGroup.selectAll("image").remove();
+
+  // Determine which icons to display
+  const filteredIcons = selectedOption === 'all'
+    ? iconsData
+    : iconsData.filter(icon => icon.type === selectedOption);
+
+  // Append filtered icons to the map
+  filteredIcons.forEach(icon => {
+    const offset = typeOffsets[icon.type] || {dx: 0, dy: 0}; // Default offset if type is not found
+
+    icon.coordinates.forEach(([lng, lat]) => {
+      const [x, y] = projection([lng, lat]);
+
+      // // Calculate offset based on icon index
+      // // This is a simple way to adjust the position so they don't overlap perfectly
+      // // Adjust the offset multiplier as necessary to fit the visual appearance
+      // const xOffset = x + (iconIndex * 10) - (filteredIcons.length * 5);
+      // const yOffset = y - (iconIndex * 10) + (filteredIcons.length * 5);
+
+      iconsGroup.append("image")
+        .attr("xlink:href", icon.url)
+        .attr("x", x - icon.width / 2)
+        .attr("y", y - icon.height / 2)
+        .attr("width", icon.width)
+        .attr("height", icon.height);
+    });
+  });
+}
+
+// Attach an event listener to the radio buttons
+d3.selectAll('input[name="map-option"]').on('change', function() {
+  updateMap(this.value);
+});
+
+// Initialize with all icons displayed
+updateMap('all');
+
+
+// // Define your array of icons with their properties
+// const images = [
+//   {type: 'gas', url: "icons/Emission_release_factory_icon.png", width: 60, height: 60 },
+//   {type: 'water', url: "icons/water2.png", width: 60, height: 60 },
+//   {type: 'temp', url: "icons/temp2.png", width: 60, height: 60 },
+// ];
+
+// const coordinates = [
+//   [145.612793, -33.240233], // NSW
+//   [143.785153, -38.471308], // VIC
+//   [144.702796, -25.517574], // QLD
+//   [134.209155, -28.000233], // SA
+//   [120.628310, -27.672817], // WA
+//   [149.8087, -41.809],     // TAS
+//   [132.550960, -21.491411], // NT
+//   [152.012368, -35.473468], // ACT 
+// ];
+
+// coordinates.forEach((coord, index) => {
+//   // Calculate the projected x and y for the current coordinate
+//   const [x, y] = projection(coord);
+
+//   images.forEach((image, imgIndex) => {
+//     // Offset each image slightly by its index
+//     const xOffset = x + (imgIndex * image.width) - image.width;
+//     const yOffset = y - (image.height / 2);
+
+//     // Append the image to the iconsGroup
+//     iconsGroup.append("image")
+//       .attr("xlink:href", image.url)
+//       .attr("width", image.width)
+//       .attr("height", image.height)
+//       .attr("x", xOffset)
+//       .attr("y", yOffset)
+//       .attr("class", "map-icon");
+//   });
+// });
+
+
+
+
+
 //ZOOM BEHAVIOUR
+const initialFontSize = 12; // Initial font size in pixels
 
 // Define your zoom behavior
 var zoom = d3.zoom()
@@ -154,18 +320,19 @@ svg.call(zoom);
 function zoomed({transform}) {
   // This function will be called when zooming or panning occurs
   // 'g' is the group that contains all the elements you want to zoom
-  svg.selectAll('path') // Select all paths inside the SVG
-    .attr('transform', transform); // Apply the transformation
+  mapGroup.attr('transform', transform); // Apply the transformation
+
+  iconsGroup.attr('transform', transform); // Apply the transformation
 
   // If you have labels or other elements you want to scale, you can select them here too
   svg.selectAll('.state-label')
     .attr('transform', function(d) {
       return `translate(${transform.apply(path.centroid(d))})`;
     })
-    .style('font-size', `${1/transform.k * 10}px`); // Adjust label font-size inversely to scale
+    .style('font-size', `${initialFontSize}px`); // Adjust label font-size inversely to scale
 }
 
-// Optional: Function to reset zoom
+// Function to reset zoom
 function resetZoom() {
   svg.transition()
     .duration(750) // Transition speed
@@ -180,6 +347,8 @@ function resetZoom() {
     .duration(750) // Smooth transition duration
     .call(zoom.transform, d3.zoomIdentity); // Reset zoom level to the original state
 }
+
+
 
 
 
