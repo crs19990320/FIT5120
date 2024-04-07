@@ -308,18 +308,18 @@
     <Content Include="Games\TemplateData\webmemd-icon.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Media\background1.png" />
     <Content Include="Media\co2.jpg" />
     <Content Include="Media\Drag1.png" />
     <Content Include="Media\Drag2.png" />
-    <Content Include="Media\Earth.jpg" />
     <Content Include="Media\EndGame.png" />
-    <Content Include="Media\giphy.gif" />
     <Content Include="Media\giphy2.gif" />
+    <Content Include="Media\LandingPage.png" />
+    <Content Include="Media\Mom&amp;Dad.png" />
     <Content Include="Media\reset.png" />
     <Content Include="Media\StartGame .png" />
     <Content Include="Media\Statuses.png" />
     <Content Include="Media\test_video1.mp4" />
+    <Content Include="Media\WelcomePage.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -381,6 +381,7 @@
     <Content Include="Views\Home\WelcomePage.cshtml" />
     <Content Include="Views\Home\Information.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
