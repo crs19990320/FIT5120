@@ -292,7 +292,6 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="Games\Build\Games.framework.js" />
     <Content Include="Games\Build\Games.loader.js" />
     <Content Include="Games\card.html" />
     <Content Include="Games\TemplateData\favicon.ico" />
@@ -346,6 +345,10 @@
     </Content>
     <Content Include="App_Data\my-first-project-381923-316111010eb8.json" />
     <Content Include="Games\Build\Games.data.gz" />
+<<<<<<< HEAD
+=======
+    <Content Include="Games\Build\Games.framework.js.gz" />
+>>>>>>> 60589a78fd606764d47a34c5ee7b88e869ae12c3
     <Content Include="Games\Build\Games.wasm.gz" />
     <None Include="Properties\PublishProfiles\FIT5120-TP28-24S1 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MainProject20240403211138 - Web Deploy.pubxml" />
