@@ -4,39 +4,103 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .text-brown {
+            color: #A52A2A;
+        }
+
+        /*change the background image*/
+        body {
+            background-image: url('../Media/background1.png');
+            background-size: cover;
+            background-repeat: repeat;
+            background-position: center;
+            min-height: 100vh;
+        }
+
+        .boxed-link {
+            border: 2px solid #A52A2A;
+            border-radius: 5px;
+        }
+
+        .navbar-nav .nav-link {
+            position: relative;
+            transition: color 0.5s, border-bottom 0.5s;
+            margin-right:20px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: orangered;
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 2px;
+            width: 100%;
+            height: 2px;
+            background-color: orangered;
+            transition: width 0.5s;
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+
+        .navbar-nav .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
         <div class="container">
-            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand text-brown font-weight-bold" })
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("cardGame", "cardGame", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                </ul>
+
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
                 <ul class="navbar-nav">
-                    @if (ViewContext.RouteData.Values["action"].ToString() == "WelcomePage")
-                    {
-                        <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("Information", "Home")">Information for parents</a>
-                        </li>
-                    }
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link text-brown font-weight-bold" })</li>
+                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link text-brown font-weight-bold" })</li>
+                    <li id="test">@Html.ActionLink("CardGame", "Contact", "Home", new { area = "" }, new { @class = "nav-link text-brown font-weight-bold" })</li>
+                    <li><div class="boxed-link">@Html.ActionLink("For Mom & Dad", "Information", "Home", new { area = "" }, new { @class = "nav-link text-brown font-weight-bold" })</div></li>
                 </ul>
             </div>
         </div>
     </nav>
+
     <div class="container body-content">
         @RenderBody()
     </div>
+    <script>
+    document.getElementById('test').addEventListener('click', function () {
+        var jsonData = @Html.Raw(Json.Encode(Model));
 
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+        shuffle(jsonData);
+        var selectedQuestions = jsonData.slice(0, 10);
+        var encapsulatedData = {
+            questions: selectedQuestions
+        };
+        sessionStorage.setItem('QuestionJson', JSON.stringify(encapsulatedData));
+        console.log("Randomly selected 10 questions:", encapsulatedData);
+        window.location.href = '/Home/Contact';
+    });
+    </script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
