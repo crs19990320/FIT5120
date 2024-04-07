@@ -26,8 +26,8 @@
     <div style="width: 60%; display: flex; flex-direction: column; justify-content: space-between;">
         <h4>This Week's Activities</h4>
         <!-- Top-left card -->
-        <section class="card" style="height: 200px; border: solid">
-            <p style="font-size:30px ;font-weight:300; text-align: left; margin-bottom: 10px; margin-left:100px">Let's Learn about</p>
+        <section class="card" style="height: 200px; background-color: rgba(255, 255, 255, 0.5); border: solid">
+            <p style="font-size: 30px; font-weight: 300; text-align: left; margin-bottom: 10px; margin-left: 100px">Let's Learn about</p>
             <div style="border: none;">
                 <p style="font-size: 30px;font-weight:bold; text-align: left; margin-left: 120px;">Water Waste<img src="https://i.pinimg.com/474x/71/e9/3a/71e93a80c1b1713b41ad2676230a69df.jpg" style="width: 20%; height: auto; float: right; margin-right:70px;" /></p>
                 <button onclick="openVideoPopup()" class="btn btn-custom">Watch Video</button>
@@ -37,17 +37,17 @@
         <!-- Bottom-left cards -->
         <div style="display: flex; flex-direction: column; justify-content: space-between; height: 50%;">
             <!-- Bottom-left card 1 -->
-            <section class="card" style="height: 200px; border: solid">
+            <section class="card" style="height: 200px; background-color: rgba(255, 255, 255, 0.5); border: solid">
                 <p style="font-size:30px ;font-weight:300; text-align: left; margin-bottom: 10px; margin-left:100px">Check your knowledge</p>
                 <div style="border: none;">
                     <p style="font-size: 30px;font-weight:bold; text-align: left; margin-left: 120px;">Card Game<img src="https://st2.depositphotos.com/1036149/12175/i/450/depositphotos_121752080-stock-photo-crocodile-holding-question-mark-and.jpg" style="width: 20%; height: auto; float: right; margin-right:70px;" /></p>
-                    <button id="test" class="btn btn-custom"> Play </button>
+                    <button id="game" class="btn btn-custom"> Play </button>
                 </div>
             </section>
 
             <!-- Bottom-left card 2 -->
             <h4 style="margin-top: 20px; margin-bottom:20px;">Your Impact</h4>
-            <section class="card" style="height: 200px; border: solid">
+            <section class="card" style="height: 200px; background-color: rgba(255, 255, 255, 0.5); border: solid">
                 <p style="font-size:30px ;font-weight:300; text-align: left; margin-bottom: 10px; margin-left:100px">How have you helped the climate?</p>
                 <div style="border: none;">
                     <p style="font-size: 30px;font-weight:bold; text-align: left; margin-left: 120px;">Climate Explorer<img src="https://static.vecteezy.com/system/resources/previews/001/237/406/original/world-kawaii-planet-earth-smiling-vector.jpg" style="width: 20%; height: auto; float: right; margin-right:70px;" /></p>
@@ -58,13 +58,13 @@
     </div>
 
     <!-- Card on the right -->
-    <section class="card" style="width: 30%; margin-left: auto; margin-top: 80px; border:solid;">
+    <section class="card" style="width: 30%; background-color: rgba(255, 255, 255, 0.5); margin-left: auto; margin-top: 80px; border: solid;">
         <h2 style="text-align: left;" id="rightCardTitle">Checklist</h2>
         <div style="border: none;">
             <ul>
-                <li style="margin-bottom: 10px; font-size: large"><input type="checkbox" id="task1" name="task1"><label for="task1">Turn off the tap while brushing teeth</label></li>
-                <li style="margin-bottom: 10px; font-size: large"><input type="checkbox" id="task2" name="task2"><label for="task2">Task 2</label></li>
-                <li style="margin-bottom: 10px; font-size: large"><input type="checkbox" id="task3" name="task3"><label for="task3">Task 3</label></li>
+                <li style="margin-bottom: 10px; font-size: medium"><input type="checkbox" id="task1" name="task1"><label for="task1">Turn off the tap while brushing teeth</label></li>
+                <li style="margin-bottom: 10px; font-size: medium"><input type="checkbox" id="task2" name="task2"><label for="task2">Task 2</label></li>
+                <li style="margin-bottom: 10px; font-size: medium"><input type="checkbox" id="task3" name="task3"><label for="task3">Task 3</label></li>
             </ul>
         </div>
     </section>
@@ -139,20 +139,24 @@
     }
 </script>
 
+
 <script>
-    document.getElementById('test').addEventListener('click', function () {
-        $.ajax({
-            url: '/QuestionsAPI/GetRandomData',
-            type: 'GET',
-            dataType: 'json',
-            success: function (data) {
-                console.log(data);
-                sessionStorage.setItem('QuestionJson', JSON.stringify(data));
-                window.location.href = '/Home/cardGame';
-            },
-            error: function (error) {
-                console.error('Error fetching data:', error);
+    document.getElementById('game').addEventListener('click', function () {
+        var jsonData = @Html.Raw(Json.Encode(Model));
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
             }
-        });
+        }
+        shuffle(jsonData);
+        var selectedQuestions = jsonData.slice(0, 10);
+        var encapsulatedData = {
+            questions: selectedQuestions
+        };
+        sessionStorage.setItem('QuestionJson', JSON.stringify(encapsulatedData));
+        console.log("Randomly selected 10 questions:", encapsulatedData);
+        window.location.href = '/Home/cardGame';
     });
 </script>
