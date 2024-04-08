@@ -16,6 +16,20 @@
           <Property Name="temp_change" Type="float" />
           <Property Name="avr_rainfall" Type="float" />
         </EntityType>
+        <EntityType Name="CurrentNewMap">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="state" Type="varchar" MaxLength="50" />
+          <Property Name="state_lat" Type="float" />
+          <Property Name="state_long" Type="float" />
+          <Property Name="Temperature" Type="int" />
+          <Property Name="net_emissions" Type="int" />
+          <Property Name="rainfall_percentage" Type="int" />
+          <Property Name="total_water_use" Type="int" />
+          <Property Name="total_water_consumption" Type="int" />
+        </EntityType>
         <EntityType Name="MapModelTable">
           <Key>
             <PropertyRef Name="Id" />
@@ -59,6 +73,7 @@
         </EntityType>
         <EntityContainer Name="Database1ModelStoreContainer">
           <EntitySet Name="Climate" EntityType="Self.Climate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CurrentNewMap" EntityType="Self.CurrentNewMap" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MapModelTable" EntityType="Self.MapModelTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QuestionTable" EntityType="Self.QuestionTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
@@ -81,6 +96,7 @@
           <EntitySet Name="QuestionTable1" EntityType="Database1Model.QuestionTable" />
           <EntitySet Name="Climate" EntityType="Database1Model.Climate" />
           <EntitySet Name="MapModelTable" EntityType="Database1Model.MapModelTable" />
+          <EntitySet Name="CurrentNewMap" EntityType="Database1Model.CurrentNewMap" />
         </EntityContainer>
         <EntityType Name="QuestionTable">
           <Key>
@@ -124,6 +140,20 @@
           <Property Name="Temperature" Type="Int32" />
           <Property Name="total_water_consumption" Type="Int32" />
           <Property Name="total_water_use" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CurrentNewMap">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="state_lat" Type="Double" />
+          <Property Name="state_long" Type="Double" />
+          <Property Name="Temperature" Type="Int32" />
+          <Property Name="net_emissions" Type="Int32" />
+          <Property Name="rainfall_percentage" Type="Int32" />
+          <Property Name="total_water_use" Type="Int32" />
+          <Property Name="total_water_consumption" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -183,6 +213,21 @@
                 <ScalarProperty Name="task3" ColumnName="task3" />
                 <ScalarProperty Name="task2" ColumnName="task2" />
                 <ScalarProperty Name="task1" ColumnName="task1" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurrentNewMap">
+            <EntityTypeMapping TypeName="Database1Model.CurrentNewMap">
+              <MappingFragment StoreEntitySet="CurrentNewMap">
+                <ScalarProperty Name="total_water_consumption" ColumnName="total_water_consumption" />
+                <ScalarProperty Name="total_water_use" ColumnName="total_water_use" />
+                <ScalarProperty Name="rainfall_percentage" ColumnName="rainfall_percentage" />
+                <ScalarProperty Name="net_emissions" ColumnName="net_emissions" />
+                <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+                <ScalarProperty Name="state_long" ColumnName="state_long" />
+                <ScalarProperty Name="state_lat" ColumnName="state_lat" />
+                <ScalarProperty Name="state" ColumnName="state" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -84,9 +84,9 @@ namespace MainProject.Controllers
             var storage = StorageClient.Create();
 
             string bucketName = "climate_bucket_test1";
-            string objectName = "climate_test.csv";
+            string objectName = "map_current_new.csv";
 
-            var records = new List<Climate>();
+            var records = new List<CurrentNewMap>();
 
             using (var stream = new MemoryStream())
             {
@@ -101,13 +101,13 @@ namespace MainProject.Controllers
                     csv.ReadHeader();
                     while (csv.Read())
                     {
-                        var record = new Climate
+                        var record = new CurrentNewMap
                         {
                             state = csv.GetField<string>("state"),
-                            state_lat = csv.GetField<double>("state_lat"),
-                            state_long = csv.GetField<double>("state_long"),
-                            temp_change = csv.GetField<double>("temp_change"),
-                            avr_rainfall = csv.GetField<double>("avr_rainfall")
+                            Temperature = csv.GetField<int>("Temperature"),
+                            net_emissions = csv.GetField<int>("net_emissions"),
+                            total_water_use = csv.GetField<int>("total_water_use"),
+                            total_water_consumption = csv.GetField<int>("total_water_consumption")
                         };
                         records.Add(record);
                     }
@@ -233,9 +233,9 @@ namespace MainProject.Controllers
             var storage = StorageClient.Create();
 
             string bucketName = "climate_bucket_test1";
-            string objectName = "num_iconmap_database.csv";
+            string objectName = "map_current_new.csv";
 
-            var records = new List<MapModelTable>();
+            var records = new List<CurrentNewMap>();
 
             using (var stream = new MemoryStream())
             {
@@ -250,19 +250,16 @@ namespace MainProject.Controllers
                     csv.ReadHeader();
                     while (csv.Read())
                     {
-                        var record = new MapModelTable
+                        var record = new CurrentNewMap
                         {
-                            task1 = csv.GetField<int>("task1"),
-                            task2 = csv.GetField<int>("task2"),
-                            task3 = csv.GetField<int>("task3"),
-                            task4 = csv.GetField<int>("task4"),
-                            task5 = csv.GetField<int>("task5"),
-                            task6 = csv.GetField<int>("task6"),
+                            state = csv.GetField<string>("state"),
+                            state_lat = csv.GetField<double>("state_lat"),
+                            state_long = csv.GetField<double>("state_long"),
+                            Temperature = csv.GetField<int>("Temperature"),
                             net_emissions = csv.GetField<int>("net_emissions"),
                             rainfall_percentage = csv.GetField<int>("rainfall_percentage"),
-                            Temperature = csv.GetField<int>("Temperature"),
-                            total_water_consumption = csv.GetField<int>("total_water_consumption"),
                             total_water_use = csv.GetField<int>("total_water_use"),
+                            total_water_consumption = csv.GetField<int>("total_water_consumption")
                         };
                         records.Add(record);
                     }

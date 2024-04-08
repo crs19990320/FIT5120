@@ -1,5 +1,6 @@
 ﻿@{
     ViewBag.Title = "Contact";
+    ViewBag.HideNavbar = true;
 }
 
 <!DOCTYPE html>
@@ -64,15 +65,35 @@
                 display: block;
                 text-align: center;
             }
+
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+            .back-to-home img {
+                width: 80px;
+                height: auto;
+            }
     </style>
 </head>
 <body>
+
+    <button class="back-to-home" onclick="goToIndex()">
+        <img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/home_circle_icon_137496.png" alt="Home">
+    </button>
+    <button id="reset" style="width:50px;right:470px;top:100px;background-color:transparent;">
+        <img style="width:100%;" src="~/Media/reset.png" />
+    </button>
+
     <img id="gifBackground" src="~/Media/giphy2.gif" alt="GIF Background">
 
     <div style="text-align:center">
-        <button id="reset" style="width:50px;right:470px;top:100px;position:absolute;background-color:transparent;">
-            <img style="width:100%;" src="~/Media/reset.png" />
-        </button>
         <iframe id="unityFrame" src="~/Games/card.html" style="width:1000px; height:800px"></iframe>
     </div>
 
@@ -148,6 +169,12 @@
         console.log("Randomly selected 10 questions:", encapsulatedData);
         window.location.reload();
     });
+    </script>
+
+    <script>
+        function goToIndex() {
+            window.location.href = "Index";
+        }
     </script>
 </body>
 </html>

@@ -29,5 +29,6 @@ namespace MainProject.Models
         public virtual DbSet<QuestionTable> QuestionTable1 { get; set; }
         public virtual DbSet<Climate> Climate { get; set; }
         public virtual DbSet<MapModelTable> MapModelTable { get; set; }
+        public virtual DbSet<CurrentNewMap> CurrentNewMap { get; set; }
     }
 }

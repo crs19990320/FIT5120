@@ -247,6 +247,9 @@
     <Compile Include="Models\Climate.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CurrentNewMap.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\MapModelTable.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -279,6 +282,7 @@
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <Content Include="App_Data\dbo.Climate.sql" />
+    <Content Include="App_Data\dbo.CurrentMap.sql" />
     <Content Include="App_Data\dbo.MapTable.sql" />
     <Content Include="App_Data\dbo.QuestionSchema.sql" />
     <Content Include="App_Data\dbo.Table.sql" />
@@ -315,6 +319,7 @@
     <Content Include="d3_project\icons\trees.png" />
     <Content Include="d3_project\icons\water.png" />
     <Content Include="d3_project\icons\water2.png" />
+    <Content Include="d3_project\map - Copy.js" />
     <Content Include="d3_project\map.css" />
     <Content Include="d3_project\map.html" />
     <Content Include="d3_project\map.js" />
@@ -388,6 +393,7 @@
     <Content Include="d3_project\aust.json" />
     <Content Include="d3_project\data\australian-states.json" />
     <Content Include="d3_project\data\australian-states.min.geojson" />
+    <Content Include="App_Data\map_current_new.csv" />
     <None Include="Properties\PublishProfiles\FIT5120-TP28-24S1 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MainProject20240403211138 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MainProject20240407204544 - Web Deploy.pubxml" />

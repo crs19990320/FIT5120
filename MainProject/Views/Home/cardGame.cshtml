@@ -1,5 +1,6 @@
 ﻿@{
     ViewBag.Title = "CardGame";
+    Layout = "_Layout2.cshtml";
 }
 
 <!DOCTYPE html>
@@ -64,9 +65,28 @@
             display: block;
             text-align: center;
         }
+
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .back-to-home img {
+            width: 80px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
+    <button class="back-to-home" onclick="goToIndex()">
+        <img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/home_circle_icon_137496.png" alt="Home">
+    </button>
+
     <img id="gifBackground" src="~/Media/giphy2.gif" alt="GIF Background">
 
     <div style="text-align:center">
@@ -129,6 +149,13 @@
             });
         });
     </script>
+
+    <script>
+        function goToIndex() {
+            window.location.href = "Index";
+        }
+    </script>
+
     <script>
     document.getElementById('reset').addEventListener('click', function () {
         var jsonData = @Html.Raw(Json.Encode(Model));
