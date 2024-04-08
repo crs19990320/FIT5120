@@ -11,6 +11,20 @@
     <Property Name="temp_change" Type="float" />
     <Property Name="avr_rainfall" Type="float" />
   </EntityType>
+  <EntityType Name="CurrentNewMap">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="state" Type="varchar" MaxLength="50" />
+    <Property Name="state_lat" Type="float" />
+    <Property Name="state_long" Type="float" />
+    <Property Name="Temperature" Type="int" />
+    <Property Name="net_emissions" Type="int" />
+    <Property Name="rainfall_percentage" Type="int" />
+    <Property Name="total_water_use" Type="int" />
+    <Property Name="total_water_consumption" Type="int" />
+  </EntityType>
   <EntityType Name="MapModelTable">
     <Key>
       <PropertyRef Name="Id" />
@@ -54,6 +68,7 @@
   </EntityType>
   <EntityContainer Name="Database1ModelStoreContainer">
     <EntitySet Name="Climate" EntityType="Self.Climate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CurrentNewMap" EntityType="Self.CurrentNewMap" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MapModelTable" EntityType="Self.MapModelTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="QuestionTable" EntityType="Self.QuestionTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />

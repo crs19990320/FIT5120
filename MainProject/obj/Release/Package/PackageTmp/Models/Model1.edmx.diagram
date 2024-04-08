@@ -9,6 +9,7 @@
         <EntityTypeShape EntityType="Database1Model.QuestionTable" Width="1.5" PointX="3.75" PointY="0.75" />
         <EntityTypeShape EntityType="Database1Model.Climate" Width="1.5" PointX="6.75" PointY="0.75" />
         <EntityTypeShape EntityType="Database1Model.MapModelTable" Width="1.5" PointX="0.875" PointY="3.25" />
+        <EntityTypeShape EntityType="Database1Model.CurrentNewMap" Width="1.5" PointX="3.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

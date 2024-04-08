@@ -14,6 +14,7 @@
     <EntitySet Name="QuestionTable1" EntityType="Database1Model.QuestionTable" />
     <EntitySet Name="Climate" EntityType="Database1Model.Climate" />
     <EntitySet Name="MapModelTable" EntityType="Database1Model.MapModelTable" />
+    <EntitySet Name="CurrentNewMap" EntityType="Database1Model.CurrentNewMap" />
   </EntityContainer>
   <EntityType Name="QuestionTable">
     <Key>
@@ -57,5 +58,19 @@
     <Property Name="Temperature" Type="Int32" />
     <Property Name="total_water_consumption" Type="Int32" />
     <Property Name="total_water_use" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CurrentNewMap">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="state_lat" Type="Double" />
+    <Property Name="state_long" Type="Double" />
+    <Property Name="Temperature" Type="Int32" />
+    <Property Name="net_emissions" Type="Int32" />
+    <Property Name="rainfall_percentage" Type="Int32" />
+    <Property Name="total_water_use" Type="Int32" />
+    <Property Name="total_water_consumption" Type="Int32" />
   </EntityType>
 </Schema>
