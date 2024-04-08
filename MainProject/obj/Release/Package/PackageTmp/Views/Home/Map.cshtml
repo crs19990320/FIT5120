@@ -10,35 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Progress</title>
     <style>
-        .card {
-            width: 30%;
-            background-color: rgba(255, 255, 255, 0.5);
-            padding: 20px;
-        }
-
-        .task-list {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .task-item {
-            margin-bottom: 20px;
-            font-weight: bold;
-            font-size: medium;
-        }
-
-        .task-item::after {
-            content: '★ ★ ★ ★ ★';
-            color: gold;
-            display: inline-block;
-            margin-left: 155px;
-        }
-
         .map-container {
-            width: 60%;
-            height: 600px;
-            border: 2px solid #ccc;
-            border-radius: 8px;
+            width: 1500px;
+            height: 970px;
+            border: none;
             overflow: hidden;
             float: right;
         }
@@ -70,40 +45,11 @@
         <img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/home_circle_icon_137496.png" alt="Home">
     </button>
 
-    <h1 style="text-align:right;margin-right:100px;">CLIMATE CHANGE EXPLORER</h1>
     <div class="map-container">
-        @*<iframe src="path/to/your/map/file.html" title="Map"></iframe>*@
+        <iframe src="~/d3_project/map.html" title="Map"></iframe>
     </div>
 
-    <div class="card">
-        <h2 style="font-weight:bold;">Current Week: Water</h2>
-        <ul class="task-list">
-            <li class="task-item">
-                <input type="checkbox" id="task1" name="task1">
-                <label for="task1">Task1</label>
-            </li>
-            <li class="task-item">
-                <input type="checkbox" id="task2" name="task2">
-                <label for="task2">Task2</label>
-            </li>
-            <li class="task-item">
-                <input type="checkbox" id="task3" name="task3">
-                <label for="task3">Task3</label>
-            </li>
-            <li class="task-item">
-                <input type="checkbox" id="task4" name="task4">
-                <label for="task4">Task4</label>
-            </li>
-            <li class="task-item">
-                <input type="checkbox" id="task5" name="task5">
-                <label for="task5">Task5</label>
-            </li>
-            <li class="task-item">
-                <input type="checkbox" id="task6" name="task6">
-                <label for="task6">Task6</label>
-            </li>
-        </ul>
-    </div>
+   
 
 
 
@@ -114,22 +60,10 @@
     </script>
 
     <script>
-        $(document).ready(function () {
-            $.ajax({
-                url: '/tasks',
-                method: 'GET',
-                success: function (response) {
-                    response.forEach(function (task) {
-                        if (task.completed) {
-                            $('#' + task.id).prop('checked', true);
-                        }
-                    });
-                },
-                error: function (xhr, status, error) {
-                    console.error('Error fetching tasks:', error);
-                }
-            });
-        });
+        var jsonData = @Html.Raw(Json.Encode(Model));
+
+
+        sessionStorage.setItem('MapModelJson', JSON.stringify(jsonData));
     </script>
 </body>
 </html>

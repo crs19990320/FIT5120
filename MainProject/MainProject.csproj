@@ -354,7 +354,6 @@
     <Content Include="Media\StartGame .png" />
     <Content Include="Media\Statuses.png" />
     <Content Include="Media\test_video1.mp4" />
-    <Content Include="Media\VideoDraft.mpeg" />
     <Content Include="Media\WelcomePage.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
