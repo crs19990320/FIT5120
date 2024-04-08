@@ -312,6 +312,7 @@ D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\System.Text.Encodings.We
 D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\System.Text.Json.xml
 D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\System.Threading.Tasks.Extensions.xml
 D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\System.ValueTuple.xml
+<<<<<<< HEAD
 D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x64\Readme.txt
 D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\avcodec-58.dll
 D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\avdevice-58.dll
@@ -328,3 +329,21 @@ D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSVideoConverter.License
 D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSVideoConverter.dll
 D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSVideoConverter.pdb
 D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSVideoConverter.xml
+=======
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x64\Readme.txt
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\avcodec-58.dll
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\avdevice-58.dll
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\avfilter-7.dll
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\avformat-58.dll
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\avutil-56.dll
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\ffmpeg.exe
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\ffplay.exe
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\ffprobe.exe
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\swresample-3.dll
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\swscale-5.dll
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSVideoConverter.Credits.txt
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSVideoConverter.License.txt
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSVideoConverter.dll
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSVideoConverter.pdb
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSVideoConverter.xml
+>>>>>>> 1165a8cd384508b6ab3564a5b21aa81b57fcd30f
