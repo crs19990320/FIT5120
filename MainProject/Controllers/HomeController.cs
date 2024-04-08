@@ -223,6 +223,52 @@ namespace MainProject.Controllers
             return View(records);
         }
 
-        public ActionResult Map() { return View();}
+        public ActionResult Map() {
+
+            var relativePath = "~/App_Data/my-first-project-381923-316111010eb8.json";
+            var absolutePath = Server.MapPath(relativePath);
+            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", absolutePath);
+
+            var storage = StorageClient.Create();
+
+            string bucketName = "climate_bucket_test1";
+            string objectName = "num_iconmap_database.csv";
+
+            var records = new List<MapModelTable>();
+
+            using (var stream = new MemoryStream())
+            {
+                storage.DownloadObject(bucketName, objectName, stream);
+
+                stream.Position = 0;
+
+                using (var reader = new StreamReader(stream))
+                using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                {
+                    csv.Read();
+                    csv.ReadHeader();
+                    while (csv.Read())
+                    {
+                        var record = new MapModelTable
+                        {
+                            task1 = csv.GetField<int>("task1"),
+                            task2 = csv.GetField<int>("task2"),
+                            task3 = csv.GetField<int>("task3"),
+                            task4 = csv.GetField<int>("task4"),
+                            task5 = csv.GetField<int>("task5"),
+                            task6 = csv.GetField<int>("task6"),
+                            net_emissions = csv.GetField<int>("net_emissions"),
+                            rainfall_percentage = csv.GetField<int>("rainfall_percentage"),
+                            Temperature = csv.GetField<int>("Temperature"),
+                            total_water_consumption = csv.GetField<int>("total_water_consumption"),
+                            total_water_use = csv.GetField<int>("total_water_use"),
+                        };
+                        records.Add(record);
+                    }
+                }
+            }
+            return View(records);
+
+        }
     }
 }
