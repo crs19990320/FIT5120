@@ -155,6 +155,7 @@ C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\Google.Cloud.Sto
 C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\Microsoft.Bcl.HashCode.xml
 C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
 C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\System.CodeDom.xml
+<<<<<<< Updated upstream
 D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\MainProject.dll.config
 D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\MainProject.dll
 D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\MainProject.pdb
@@ -312,3 +313,21 @@ D:\Monash\5120&5122\Assessments\FIT5120\MainProject\obj\Release\MainProject.cspr
 D:\Monash\5120&5122\Assessments\FIT5120\MainProject\obj\Release\MainProj.90D20194.Up2Date
 D:\Monash\5120&5122\Assessments\FIT5120\MainProject\obj\Release\MainProject.dll
 D:\Monash\5120&5122\Assessments\FIT5120\MainProject\obj\Release\MainProject.pdb
+=======
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x64\Readme.txt
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\avcodec-58.dll
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\avdevice-58.dll
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\avfilter-7.dll
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\avformat-58.dll
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\avutil-56.dll
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\ffmpeg.exe
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\ffplay.exe
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\ffprobe.exe
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\swresample-3.dll
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\swscale-5.dll
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSVideoConverter.Credits.txt
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSVideoConverter.License.txt
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSVideoConverter.dll
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSVideoConverter.pdb
+C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSVideoConverter.xml
+>>>>>>> Stashed changes
