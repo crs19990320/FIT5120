@@ -57,5 +57,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="CurrentNewMap">
+      <EntityTypeMapping TypeName="Database1Model.CurrentNewMap">
+        <MappingFragment StoreEntitySet="CurrentNewMap">
+          <ScalarProperty Name="total_water_consumption" ColumnName="total_water_consumption" />
+          <ScalarProperty Name="total_water_use" ColumnName="total_water_use" />
+          <ScalarProperty Name="rainfall_percentage" ColumnName="rainfall_percentage" />
+          <ScalarProperty Name="net_emissions" ColumnName="net_emissions" />
+          <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+          <ScalarProperty Name="state_long" ColumnName="state_long" />
+          <ScalarProperty Name="state_lat" ColumnName="state_lat" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

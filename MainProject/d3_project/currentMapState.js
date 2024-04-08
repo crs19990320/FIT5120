@@ -125,7 +125,7 @@ const colorForState = (stateName, darker = false) => {
 };
 
 // Load the local GeoJSON data
-d3.json("data/australian-states.json").then(function(australia) {
+d3.json("https://mainprojectvideo.blob.core.windows.net/mainprojectvi/australian-states.json").then(function(australia) {
 // Dynamically shorten state names
 australia.features.forEach(function(feature) {
   switch (feature.properties.STATE_NAME) {
@@ -152,7 +152,7 @@ mapGroup.selectAll(".state")
     .attr("stroke-linejoin", "round")
     .attr("filter", "url(#watercolor)") // Apply the watercolor filter here
     .on("mouseover", function(event, d) {
-        /*d3.select(this).asttr("fill", colorForState(d.properties.STATE_NAME, true)); // Set to darker color on hover
+        d3.select(this).asttr("fill", colorForState(d.properties.STATE_NAME, true)); // Set to darker color on hover
 
         // Append a text label on hover
         mapGroup.append("text")
@@ -160,7 +160,7 @@ mapGroup.selectAll(".state")
             .attr("x", path.centroid(d)[0])
             .attr("y", path.centroid(d)[1])
             .attr("text-anchor", "middle")
-            .text(d.properties.STATE_NAME);*/
+            .text(d.properties.STATE_NAME);
     })
     .on("mouseout", function(event, d) {
         d3.select(this).attr("fill", colorForState(d.properties.STATE_NAME)); // Revert to original color on mouseout
