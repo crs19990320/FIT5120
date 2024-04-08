@@ -331,3 +331,19 @@ C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSVideoConverter
 C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSVideoConverter.pdb
 C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\bin\CSVideoConverter.xml
 >>>>>>> Stashed changes
+D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x64\Readme.txt
+D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\avcodec-58.dll
+D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\avdevice-58.dll
+D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\avfilter-7.dll
+D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\avformat-58.dll
+D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\avutil-56.dll
+D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\ffmpeg.exe
+D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\ffplay.exe
+D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\ffprobe.exe
+D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\swresample-3.dll
+D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSPlugins\FFmpeg\x86\swscale-5.dll
+D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSVideoConverter.Credits.txt
+D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSVideoConverter.License.txt
+D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSVideoConverter.dll
+D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSVideoConverter.pdb
+D:\Monash\5120&5122\Assessments\FIT5120\MainProject\bin\CSVideoConverter.xml

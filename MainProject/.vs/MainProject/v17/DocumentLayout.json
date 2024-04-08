@@ -3,48 +3,60 @@
   "WorkspaceRootPath": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\d3_project\\currentmapstate.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:d3_project\\currentmapstate.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\d3_project\\nexttenyearsmapstate.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:d3_project\\nexttenyearsmapstate.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\d3_project\\map.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:d3_project\\map.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\MainProject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:MainProject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\views\\home\\map.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:views\\home\\map.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:Web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:Views\\Web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\Contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:Views\\Home\\Contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\d3_project\\nextTenYearsMapState.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:d3_project\\nextTenYearsMapState.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Models\\MapModelTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:Models\\MapModelTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\Map.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:Views\\Home\\Map.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\d3_project\\currentMapState.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:d3_project\\currentMapState.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\App_Data\\dbo.MapTable.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:App_Data\\dbo.MapTable.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\cardGame.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:Views\\Home\\cardGame.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\models\\mapmodeltable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:models\\mapmodeltable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\app_data\\dbo.maptable.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
-      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:app_data\\dbo.maptable.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\app_data\\dbo.maptable.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
       "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:app_data\\dbo.maptable.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\app_data\\dbo.maptable.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame",
-      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:app_data\\dbo.maptable.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,33 +86,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "currentMapState.js",
-              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\d3_project\\currentMapState.js",
-              "RelativeDocumentMoniker": "d3_project\\currentMapState.js",
-              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\d3_project\\currentMapState.js",
-              "RelativeToolTip": "d3_project\\currentMapState.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-04-08T04:18:48.484Z",
+              "DocumentIndex": 3,
+              "Title": "MainProject.csproj",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\MainProject.csproj",
+              "RelativeDocumentMoniker": "MainProject.csproj",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\MainProject.csproj",
+              "RelativeToolTip": "MainProject.csproj",
+              "ViewState": "AQIAAFMBAAAAAAAAAAAewAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-08T08:51:20.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Web.config",
+              "RelativeDocumentMoniker": "Web.config",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Web.config",
+              "RelativeToolTip": "Web.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-04-08T08:48:27.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Web.config",
+              "RelativeDocumentMoniker": "Views\\Web.config",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Web.config",
+              "RelativeToolTip": "Views\\Web.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-04-08T08:48:22.763Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "nextTenYearsMapState.js",
-              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\d3_project\\nextTenYearsMapState.js",
-              "RelativeDocumentMoniker": "d3_project\\nextTenYearsMapState.js",
-              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\d3_project\\nextTenYearsMapState.js",
-              "RelativeToolTip": "d3_project\\nextTenYearsMapState.js",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAYwHMAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-04-08T04:18:03.363Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "map.html",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\d3_project\\map.html",
               "RelativeDocumentMoniker": "d3_project\\map.html",
@@ -113,20 +137,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Contact.cshtml",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\Contact.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Contact.cshtml",
               "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\Contact.cshtml",
               "RelativeToolTip": "Views\\Home\\Contact.cshtml",
-              "ViewState": "AQIAADkAAAAAAAAAAAAAAIYAAAAAAAAA",
+              "ViewState": "AQIAADcAAAAAAAAAAMBtwIYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-08T04:11:48.35Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAALAAAAAAAAAAAAAAAPwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-08T08:37:07.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAP4AAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T03:20:18.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "nextTenYearsMapState.js",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\d3_project\\nextTenYearsMapState.js",
+              "RelativeDocumentMoniker": "d3_project\\nextTenYearsMapState.js",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\d3_project\\nextTenYearsMapState.js",
+              "RelativeToolTip": "d3_project\\nextTenYearsMapState.js",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAYwHMAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-04-08T04:18:03.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "MapModelTable.cs",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Models\\MapModelTable.cs",
               "RelativeDocumentMoniker": "Models\\MapModelTable.cs",
@@ -139,33 +202,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "Map.cshtml",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\Map.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Map.cshtml",
               "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\Map.cshtml",
               "RelativeToolTip": "Views\\Home\\Map.cshtml",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAAEEAAAAOAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAMBtwEEAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-08T02:46:59.454Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAANsAAAAAAAAAAAAIwPwAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T03:20:18.964Z",
+              "DocumentIndex": 10,
+              "Title": "currentMapState.js",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\d3_project\\currentMapState.js",
+              "RelativeDocumentMoniker": "d3_project\\currentMapState.js",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\d3_project\\currentMapState.js",
+              "RelativeToolTip": "d3_project\\currentMapState.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-04-08T04:18:48.484Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "dbo.MapTable.sql ",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\App_Data\\dbo.MapTable.sql",
               "RelativeDocumentMoniker": "App_Data\\dbo.MapTable.sql",
@@ -177,13 +240,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "CardGame.cshtml",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\cardGame.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\cardGame.cshtml",
               "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\cardGame.cshtml",
               "RelativeToolTip": "Views\\Home\\cardGame.cshtml",
-              "ViewState": "AQIAAHgAAAAAAAAAAAAAAI8AAAAgAAAA",
+              "ViewState": "AQIAAGsAAAAAAAAAAKBrwI8AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-08T02:05:53.056Z",
               "EditorCaption": ""
