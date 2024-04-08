@@ -275,6 +275,7 @@
     <Content Include="App_Data\dbo.Climate.sql" />
     <Content Include="App_Data\dbo.QuestionSchema.sql" />
     <Content Include="App_Data\dbo.Table.sql" />
+    <Content Include="App_Data\my-first-project-381923-316111010eb8.json" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -312,13 +313,18 @@
     <Content Include="Media\Drag1.png" />
     <Content Include="Media\Drag2.png" />
     <Content Include="Media\EndGame.png" />
+    <Content Include="Media\Explore.png" />
     <Content Include="Media\giphy2.gif" />
     <Content Include="Media\LandingPage.png" />
+    <Content Include="Media\Learn.png" />
     <Content Include="Media\Mom&amp;Dad.png" />
+    <Content Include="Media\Note.jpg" />
+    <Content Include="Media\Play.png" />
     <Content Include="Media\reset.png" />
     <Content Include="Media\StartGame .png" />
     <Content Include="Media\Statuses.png" />
     <Content Include="Media\test_video1.mp4" />
+    <Content Include="Media\VideoDraft.mp4" />
     <Content Include="Media\WelcomePage.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -343,7 +349,6 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <Content Include="App_Data\my-first-project-381923-316111010eb8.json" />
     <Content Include="Games\Build\Games.data.gz" />
     <Content Include="Games\Build\Games.framework.js.gz" />
     <Content Include="Games\Build\Games.wasm.gz" />

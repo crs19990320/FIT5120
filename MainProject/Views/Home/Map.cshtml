@@ -1,39 +1,136 @@
-﻿<!DOCTYPE html>
-<html>
+﻿@{
+    ViewBag.Title = "Map";
+    ViewBag.HideNavbar = true;
+}
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>@ViewBag.Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Progress</title>
     <style>
-        body {
-            margin: 0;
+        .card {
+            width: 30%;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+        }
+
+        .task-list {
+            list-style-type: none;
             padding: 0;
-            font-family: Arial, sans-serif;
+        }
+
+        .task-item {
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: medium;
+        }
+
+        .task-item::after {
+            content: '★ ★ ★ ★ ★';
+            color: gold;
+            display: inline-block;
+            margin-left: 155px;
         }
 
         .map-container {
-            width: 100%;
-            height: 600px; 
-            border: 2px solid #ccc; 
-            border-radius: 8px; 
-            overflow: hidden; 
+            width: 60%;
+            height: 600px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            float: right;
         }
 
-            .map-container iframe {
-                width: 100%;
-                height: 100%;
-                border: none;
-            }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .back-to-home img {
+            width: 30px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>@ViewBag.Title</h1>
-    </header>
-    <main aria-labelledby="title">
-        <div class="map-container">
-            @*<iframe src="path/to/your/map/file.html" title="Map"></iframe>*@
-        </div>
-        <p>For map page</p>
-    </main>
+    <button class="back-to-home" onclick="goToIndex()">
+        <img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/home_circle_icon_137496.png" alt="Home">
+    </button>
+
+    <h1 style="text-align:right;margin-right:100px;">CLIMATE CHANGE EXPLORER</h1>
+    <div class="map-container">
+        @*<iframe src="path/to/your/map/file.html" title="Map"></iframe>*@
+    </div>
+
+    <div class="card">
+        <h2 style="font-weight:bold;">Current Week: Water</h2>
+        <ul class="task-list">
+            <li class="task-item">
+                <input type="checkbox" id="task1" name="task1">
+                <label for="task1">Task1</label>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" id="task2" name="task2">
+                <label for="task2">Task2</label>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" id="task3" name="task3">
+                <label for="task3">Task3</label>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" id="task4" name="task4">
+                <label for="task4">Task4</label>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" id="task5" name="task5">
+                <label for="task5">Task5</label>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" id="task6" name="task6">
+                <label for="task6">Task6</label>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <script>
+        function goToIndex() {
+            window.location.href = "Index";
+        }
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: '/tasks',
+                method: 'GET',
+                success: function (response) {
+                    response.forEach(function (task) {
+                        if (task.completed) {
+                            $('#' + task.id).prop('checked', true);
+                        }
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error fetching tasks:', error);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
+
