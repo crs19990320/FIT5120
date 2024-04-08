@@ -38,12 +38,28 @@
             width: 30px;
             height: auto;
         }
+
+        .card {
+            width:13%;
+            top:20px;
+            right:20px;
+            position:absolute;
+            border:none;
+            height:auto;
+        }
+
     </style>
 </head>
 <body>
     <button class="back-to-home" onclick="goToIndex()">
         <img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/home_circle_icon_137496.png" alt="Home">
     </button>
+
+    <div class="card">
+        <img src="~/Media/scale_water.png" alt="water" />
+        <img src="~/Media/scale_gas.png" alt="gas" />
+        <img src="~/Media/scale_temp.png" alt="temp" />
+    </div>
 
     <div class="map-container">
         <iframe src="~/d3_project/map.html" title="Map"></iframe>
