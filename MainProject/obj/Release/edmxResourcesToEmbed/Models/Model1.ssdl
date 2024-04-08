@@ -11,6 +11,23 @@
     <Property Name="temp_change" Type="float" />
     <Property Name="avr_rainfall" Type="float" />
   </EntityType>
+  <EntityType Name="MapModelTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="task1" Type="int" />
+    <Property Name="task2" Type="int" />
+    <Property Name="task3" Type="int" />
+    <Property Name="task4" Type="int" />
+    <Property Name="task5" Type="int" />
+    <Property Name="task6" Type="int" />
+    <Property Name="net_emissions" Type="int" />
+    <Property Name="rainfall_percentage" Type="int" />
+    <Property Name="Temperature" Type="int" />
+    <Property Name="total_water_consumption" Type="int" />
+    <Property Name="total_water_use" Type="int" />
+  </EntityType>
   <EntityType Name="QuestionTable">
     <Key>
       <PropertyRef Name="Id" />
@@ -37,6 +54,7 @@
   </EntityType>
   <EntityContainer Name="Database1ModelStoreContainer">
     <EntitySet Name="Climate" EntityType="Self.Climate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MapModelTable" EntityType="Self.MapModelTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="QuestionTable" EntityType="Self.QuestionTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
