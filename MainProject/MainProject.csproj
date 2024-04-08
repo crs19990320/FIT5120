@@ -247,6 +247,9 @@
     <Compile Include="Models\Climate.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MapModelTable.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -276,6 +279,7 @@
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <Content Include="App_Data\dbo.Climate.sql" />
+    <Content Include="App_Data\dbo.MapTable.sql" />
     <Content Include="App_Data\dbo.QuestionSchema.sql" />
     <Content Include="App_Data\dbo.Table.sql" />
     <Content Include="App_Data\my-first-project-381923-316111010eb8.json" />
@@ -295,6 +299,28 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="d3_project\currentMapState.js" />
+    <Content Include="d3_project\icons\Carbon_emission_icon.png" />
+    <Content Include="d3_project\icons\carpollution.png" />
+    <Content Include="d3_project\icons\eco_water.png" />
+    <Content Include="d3_project\icons\Emission_release_factory_icon.png" />
+    <Content Include="d3_project\icons\factory.png" />
+    <Content Include="d3_project\icons\forest_fire.png" />
+    <Content Include="d3_project\icons\gases.png" />
+    <Content Include="d3_project\icons\ind_smoke.png" />
+    <Content Include="d3_project\icons\kangaroo.png" />
+    <Content Include="d3_project\icons\smoke.png" />
+    <Content Include="d3_project\icons\temp1.png" />
+    <Content Include="d3_project\icons\temp2.png" />
+    <Content Include="d3_project\icons\trees.png" />
+    <Content Include="d3_project\icons\water.png" />
+    <Content Include="d3_project\icons\water2.png" />
+    <Content Include="d3_project\map.css" />
+    <Content Include="d3_project\map.html" />
+    <Content Include="d3_project\map.js" />
+    <Content Include="d3_project\map2.js" />
+    <Content Include="d3_project\nextTenYearsMapState.js" />
+    <Content Include="d3_project\test.html" />
     <Content Include="favicon.ico" />
     <Content Include="Games\Build\Games.framework.js" />
     <Content Include="Games\Build\Games.loader.js" />
@@ -355,6 +381,14 @@
     </Content>
     <Content Include="Games\Build\Games.data.gz" />
     <Content Include="Games\Build\Games.wasm.gz" />
+    <Content Include="d3_project\.vs\d3-mainproject\config\applicationhost.config" />
+    <Content Include="d3_project\.vs\d3-mainproject\FileContentIndex\1e03f8a4-1c92-46db-aebf-872e51d70aca.vsidx" />
+    <Content Include="d3_project\.vs\d3-mainproject\v17\DocumentLayout.json" />
+    <Content Include="d3_project\.vs\slnx.sqlite" />
+    <Content Include="d3_project\.vs\VSWorkspaceState.json" />
+    <Content Include="d3_project\aust.json" />
+    <Content Include="d3_project\data\australian-states.json" />
+    <Content Include="d3_project\data\australian-states.min.geojson" />
     <None Include="Properties\PublishProfiles\FIT5120-TP28-24S1 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MainProject20240403211138 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MainProject20240407204544 - Web Deploy.pubxml" />

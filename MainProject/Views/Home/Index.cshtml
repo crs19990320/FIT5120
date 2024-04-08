@@ -228,88 +228,89 @@
             </div>
             <div class="button-container">
                 <div class="accordion-button">
+                    <!--<a class="btn" style="color:hotpink" href="~/d3_project/map.html">Start</a>-->
                     <a href="Map" class="btn" style="color:hotpink">Start</a>
                 </div>
+                </div>
+            </div>
+            <div class="card-image">
+                <img src="~/Media/Explore.png" alt="Placeholder Image">
             </div>
         </div>
-        <div class="card-image">
-            <img src="~/Media/Explore.png" alt="Placeholder Image">
-        </div>
-    </div>
-</body>
-</html>
+    </body>
+    </html>
 
-<!-- Temporary window -->
-<div id="tempWindow" style="display: none; position: absolute; top: 60px; left: 75%; transform: translateX(-50%); background-color: rgba(255, 255, 255, 0.8); padding: 20px; border: 1px solid #ccc;">
-    <p id="tempContent">This is a temporary window.</p>
-    <button onclick="closeTempWindow()">Close</button>
-</div>
+    <!-- Temporary window -->
+                    <div id="tempWindow" style="display: none; position: absolute; top: 60px; left: 75%; transform: translateX(-50%); background-color: rgba(255, 255, 255, 0.8); padding: 20px; border: 1px solid #ccc;">
+                        <p id="tempContent">This is a temporary window.</p>
+                        <button onclick="closeTempWindow()">Close</button>
+                    </div>
 
-<!-- Video popup -->
-<div id="videoPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.8); padding: 20px; border-radius: 10px;">
-    <video id="videoPlayer" controls style="width: 80%; height: auto; margin: 0 auto;">
-        <source src="~/Media/VideoDraft.mpeg" type="video/mpeg">
-        Your browser does not support the video tag.
-    </video>
-    <button onclick="closeVideoPopup()" style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; color: white; font-size: 20px;">Close</button>
-</div>
+                    <!-- Video popup -->
+                    <div id="videoPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.8); padding: 20px; border-radius: 10px;">
+                        <video id="videoPlayer" controls style="width: 80%; height: auto; margin: 0 auto;">
+                            <source src="~/Media/VideoDraft.mpeg" type="video/mpeg">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button onclick="closeVideoPopup()" style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; color: white; font-size: 20px;">Close</button>
+                    </div>
 
-@*<script>
-    // Function to show temporary window with different content based on checkbox id
-    function showTempWindow(id) {
-        var content = "";
+                    @*<script>
+            // Function to show temporary window with different content based on checkbox id
+            function showTempWindow(id) {
+                var content = "";
 
-        // Determine content based on checkbox id
-        switch (id) {
-            case "task1":
-                content = "Hurray,In 5 years, you would have preserved 25 wetlands for alligators.";
-                break;
-            case "task2":
-                content = "Content for Task 2.";
-                break;
-            case "task3":
-                content = "Content for Task 3.";
-                break;
-            default:
-                content = "Default content.";
-        }
+                // Determine content based on checkbox id
+                switch (id) {
+                    case "task1":
+                        content = "Hurray,In 5 years, you would have preserved 25 wetlands for alligators.";
+                        break;
+                    case "task2":
+                        content = "Content for Task 2.";
+                        break;
+                    case "task3":
+                        content = "Content for Task 3.";
+                        break;
+                    default:
+                        content = "Default content.";
+                }
 
-        // Set content and display temporary window
-        document.getElementById("tempContent").innerText = content;
-        document.getElementById("tempWindow").style.display = "block";
-    }
-
-    // Function to close temporary window
-    function closeTempWindow() {
-        document.getElementById("tempWindow").style.display = "none";
-    }
-
-    // Add event listener to each checkbox
-    document.querySelectorAll('input[type="checkbox"]').forEach(function (checkbox) {
-        checkbox.addEventListener('change', function () {
-            if (this.checked) {
-                showTempWindow(this.id);
+                // Set content and display temporary window
+                document.getElementById("tempContent").innerText = content;
+                document.getElementById("tempWindow").style.display = "block";
             }
-        });
-    });
-</script>*@
 
-<script>
-    // Function to open the video popup
-    function openVideoPopup() {
-        document.getElementById("videoPopup").style.display = "block";
-        document.getElementById("videoPlayer").play(); // Auto play the video
-    }
+            // Function to close temporary window
+            function closeTempWindow() {
+                document.getElementById("tempWindow").style.display = "none";
+            }
 
-    // Function to close the video popup
-    function closeVideoPopup() {
-        document.getElementById("videoPopup").style.display = "none";
-        document.getElementById("videoPlayer").pause(); // Pause the video
-    }
-</script>
+            // Add event listener to each checkbox
+            document.querySelectorAll('input[type="checkbox"]').forEach(function (checkbox) {
+                checkbox.addEventListener('change', function () {
+                    if (this.checked) {
+                        showTempWindow(this.id);
+                    }
+                });
+            });
+        </script>*@
+
+                    <script>
+                        // Function to open the video popup
+                        function openVideoPopup() {
+                            document.getElementById("videoPopup").style.display = "block";
+                            document.getElementById("videoPlayer").play(); // Auto play the video
+                        }
+
+                        // Function to close the video popup
+                        function closeVideoPopup() {
+                            document.getElementById("videoPopup").style.display = "none";
+                            document.getElementById("videoPlayer").pause(); // Pause the video
+                        }
+                    </script>
 
 
-<script>
+                    <script>
     document.getElementById('game').addEventListener('click', function () {
         var jsonData = @Html.Raw(Json.Encode(Model));
 
@@ -328,4 +329,4 @@
         console.log("Randomly selected 10 questions:", encapsulatedData);
         window.location.href = '/Home/Contact';
     });
-</script>
+                    </script>

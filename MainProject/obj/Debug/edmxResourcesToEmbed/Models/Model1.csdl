@@ -13,6 +13,7 @@
     <EntitySet Name="Tables" EntityType="Self.Table" />
     <EntitySet Name="QuestionTable1" EntityType="Database1Model.QuestionTable" />
     <EntitySet Name="Climate" EntityType="Database1Model.Climate" />
+    <EntitySet Name="MapModelTable" EntityType="Database1Model.MapModelTable" />
   </EntityContainer>
   <EntityType Name="QuestionTable">
     <Key>
@@ -39,5 +40,22 @@
     <Property Name="state_long" Type="Double" />
     <Property Name="temp_change" Type="Double" />
     <Property Name="avr_rainfall" Type="Double" />
+  </EntityType>
+  <EntityType Name="MapModelTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="task1" Type="Int32" />
+    <Property Name="task2" Type="Int32" />
+    <Property Name="task3" Type="Int32" />
+    <Property Name="task4" Type="Int32" />
+    <Property Name="task5" Type="Int32" />
+    <Property Name="task6" Type="Int32" />
+    <Property Name="net_emissions" Type="Int32" />
+    <Property Name="rainfall_percentage" Type="Int32" />
+    <Property Name="Temperature" Type="Int32" />
+    <Property Name="total_water_consumption" Type="Int32" />
+    <Property Name="total_water_use" Type="Int32" />
   </EntityType>
 </Schema>
