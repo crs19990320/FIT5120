@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup>
+        <None Include="$(MSBuildThisFileDirectory)\..\CSPlugins\**\*.*">
+            <Link>CSPlugins\%(RecursiveDir)%(FileName)%(Extension)</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="$(MSBuildThisFileDirectory)\..\lib\net472\CSVideoConverter.Credits.txt">
+            <Link>CSVideoConverter.Credits.txt</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>        
+        <None Include="$(MSBuildThisFileDirectory)\..\lib\net472\CSVideoConverter.License.txt">
+            <Link>CSVideoConverter.License.txt</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>        
+    </ItemGroup>
+</Project>
