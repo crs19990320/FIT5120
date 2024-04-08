@@ -356,6 +356,9 @@
     <Content Include="Media\Note.jpg" />
     <Content Include="Media\Play.png" />
     <Content Include="Media\reset.png" />
+    <Content Include="Media\scale_gas.png" />
+    <Content Include="Media\scale_temp.png" />
+    <Content Include="Media\scale_water.png" />
     <Content Include="Media\StartGame .png" />
     <Content Include="Media\Statuses.png" />
     <Content Include="Media\test_video1.mp4" />
