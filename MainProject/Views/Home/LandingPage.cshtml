@@ -1,9 +1,10 @@
 ﻿@{
     ViewBag.Title = "LandingPage";
+    ViewBag.HideNavbar = true;
 }
 <!--
      * This is the Class for Landing page.
-     * Version: 0.1
+     * Version: 0.2
      * Author: Ruosong Chen, Qihang Wang
 -->
 <!DOCTYPE html>
@@ -12,66 +13,88 @@
     <meta charset="UTF-8">
     <title>LandingPage</title>
     <style>
-        /* CSS styles for body, image, and welcome message */
+        /* CSS styles for body, image, welcome message, and button */
         body {
-            margin: 0;
-            padding: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
-            position: absolute;
-            top: 0;
-            left: 0;
+            position: relative; /* Changed from absolute */
+        }
+
+        .content-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
         }
 
         img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
+            width: 70%;
+            height: auto;
+            
         }
 
         #welcomeMessage {
-            position: absolute;
-            top: 50%;
-            right: 30px;
-            transform: translateY(-50%);
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0);
+            background-color: rgba(255, 255, 255, 0.7); /* Changed background color opacity */
             border-radius: 10px;
-            font-size: 70px;
-            text-align: left;
-            display: none;
-            color: darkviolet;
+            font-size: 24px; /* Decreased font size for better fit */
+            color: black;
             font-family: 'Lucida Handwriting', cursive;
             font-weight: bold;
+        }
+
+        #buttonContainer {
+            margin-top: 20px;
+        }
+
+        #warrior {
+            font-weight:normal;
+        }
+
+        #redirectButton {
+            margin-top: 80px;
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
-    <img>
-    <img src="~/Media/giphy.gif" type="image/gif">
-    <div id="welcomeMessage">
-        welcome! <br>
-        little climate warrior ^_^
+    <div class="content-container">
+        <img src="~/Media/LandingPage.png">
+        <div id="welcomeMessage">
+            <h2>WELCOME &#128522;</h2>
+            <h3 id="warrior">Little Climate Warrior</h3>
+            <div id="buttonContainer">
+                <button id="redirectButton" onclick="window.location.href = 'WelcomePage';">Enter Site</button>
+            </div>
+        </div>
     </div>
 </body>
 </html>
 
-<script>
-    // Function to execute when the window loads
-    window.onload = function () {
-        // Display the welcome message
-        document.getElementById('welcomeMessage').style.display = 'block';
 
-        // Redirect to homepage after 5 seconds
-        setTimeout(function () {
-            window.location.href = '/Home/WelcomePage';
-        }, 5000);
-    };
-</script>
+
+@*<script>
+        // Function to execute when the window loads
+        window.onload = function () {
+            // Display the welcome message
+            document.getElementById('welcomeMessage').style.display = 'block';
+
+            // Redirect to homepage after 5 seconds
+            setTimeout(function () {
+                window.location.href = '/Home/WelcomePage';
+            }, 5000);
+        };
+    </script>*@
 
 
 
