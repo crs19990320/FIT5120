@@ -1,3 +1,5 @@
+
+
 // Define the dimensions for the SVG container
 const width = 1360, height = 800;
 
@@ -86,28 +88,6 @@ australia.features.forEach(function(feature) {
   }
 });
 
-// // Bind hover events to state paths for interactive coloring
-// mapGroup.selectAll(".state")
-//     .data(australia.features)
-//     .enter().append("path")
-//     .attr("class", "state")
-//     .attr("d", path)
-//     // Other attributes as previously defined
-//     .on("mouseover", function(event, d) {
-//         d3.select(this).attr("fill", colorForState(d.properties.STATE_NAME, true)); // Set to darker color
-
-//         // Append a text label on hover
-//         mapGroup.append("text")
-//             .attr("class", "dynamic-state-label")
-//             .attr("x", path.centroid(d)[0])
-//             .attr("y", path.centroid(d)[1])
-//             .attr("text-anchor", "middle")
-//             .text(d.properties.STATE_NAME);
-//     })
-//     .on("mouseout", function(event, d) {
-//         d3.select(this).attr("fill", colorForState(d.properties.STATE_NAME)); // Revert to original color
-//         d3.selectAll(".dynamic-state-label").remove(); // Remove the label
-//     });
 
 // Bind hover events to state paths for interactive coloring
 mapGroup.selectAll(".state")
@@ -121,7 +101,7 @@ mapGroup.selectAll(".state")
     .attr("stroke-linejoin", "round")
     .attr("filter", "url(#watercolor)") // Apply the watercolor filter here
     .on("mouseover", function(event, d) {
-        d3.select(this).attr("fill", colorForState(d.properties.STATE_NAME, true)); // Set to darker color on hover
+        d3.select(this).asttr("fill", colorForState(d.properties.STATE_NAME, true)); // Set to darker color on hover
 
         // Append a text label on hover
         mapGroup.append("text")
@@ -264,47 +244,6 @@ d3.selectAll('input[name="map-option"]').on('change', function() {
 updateMap('all');
 
 
-// // Define your array of icons with their properties
-// const images = [
-//   {type: 'gas', url: "icons/Emission_release_factory_icon.png", width: 60, height: 60 },
-//   {type: 'water', url: "icons/water2.png", width: 60, height: 60 },
-//   {type: 'temp', url: "icons/temp2.png", width: 60, height: 60 },
-// ];
-
-// const coordinates = [
-//   [145.612793, -33.240233], // NSW
-//   [143.785153, -38.471308], // VIC
-//   [144.702796, -25.517574], // QLD
-//   [134.209155, -28.000233], // SA
-//   [120.628310, -27.672817], // WA
-//   [149.8087, -41.809],     // TAS
-//   [132.550960, -21.491411], // NT
-//   [152.012368, -35.473468], // ACT 
-// ];
-
-// coordinates.forEach((coord, index) => {
-//   // Calculate the projected x and y for the current coordinate
-//   const [x, y] = projection(coord);
-
-//   images.forEach((image, imgIndex) => {
-//     // Offset each image slightly by its index
-//     const xOffset = x + (imgIndex * image.width) - image.width;
-//     const yOffset = y - (image.height / 2);
-
-//     // Append the image to the iconsGroup
-//     iconsGroup.append("image")
-//       .attr("xlink:href", image.url)
-//       .attr("width", image.width)
-//       .attr("height", image.height)
-//       .attr("x", xOffset)
-//       .attr("y", yOffset)
-//       .attr("class", "map-icon");
-//   });
-// });
-
-
-
-
 
 //ZOOM BEHAVIOUR
 const initialFontSize = 12; // Initial font size in pixels
@@ -352,3 +291,6 @@ function resetZoom() {
 
 
 
+// Add event listeners to the buttons to trigger these functions
+document.getElementById('show-current').addEventListener('click', showCurrentMap);
+document.getElementById('show-next-ten-years').addEventListener('click', showNextTenYearsMap);

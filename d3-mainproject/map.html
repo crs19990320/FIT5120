@@ -8,26 +8,34 @@
     <link rel="icon" href="data:;base64,iVBORw0KGgo="> <!-- Needs to be updated -->
 </head>
 <body>
-    <div id="control-panel">
-        <form id="options">
-            <fieldset>
-                <legend>Explore Our Climate Change!</legend>
-                <label><input type="radio" name="map-option" value="all" checked> All Factors</label><br>
-                <label><input type="radio" name="map-option" value="Water Consumption"> Water Consumption</label><br>
-                <label><input type="radio" name="map-option" value="Greenhouse Gases"> Greenhouse Gases</label><br>
-                <label><input type="radio" name="map-option" value="Temperature"> Temperature</label>
-            </fieldset>
-        </form>
+    
+    <div id="control-panel-current">
+    </div>
+
+    <div id="control-panel1">
+    </div>
+
+    <div id="control-panel2">
+    </div>
+
+    <div id="control-panel3">
     </div>
     
     
     <div id="svgcontainer">
-        <h1>Australia map visualisation</h1>
+        <h1>CLIMATE CHANGE EXPLORER</h1>
+        <div id="map-controls" style="text-align:center; margin-bottom:20px;">
+            <button id="current">Current</button>
+            <button id="nextTenYears" class="advanced-button">Next Ten Years</button>
+            <button id="reset-zoom">Reset</button>
+        </div>
     </div>
-    <button id="reset-zoom">Reset</button>
     <svg id="map-canvas" width="1060" height="900"></svg>
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="map.js"></script>
+    <!--<script src="map.js"></script>-->
+    <script type="module" src="map2.js"></script>
+
+
       
 </body>
 </html>
