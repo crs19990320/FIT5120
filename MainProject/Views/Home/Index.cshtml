@@ -1,74 +1,243 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    Layout = "../Shared/_Layout2.cshtml";
 }
 @model IEnumerable<MainProject.Models.QuestionTable>
 
-<style>
-    .btn-custom {
-        margin-left: 120px;
-        background-color: blue;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 20px;
-        font-size: 16px;
-        text-decoration: none;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Layout</title>
+    <style>
+        .card {
+            background-color: lightskyblue;
+            width: 50%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-<h1 style="text-align: left; margin-bottom: 20px;">
-    <span>&#x1F984;</span> Hi! Alligator Hibiscus
-</h1>
+        .card-title {
+            font-size: 60px;
+            margin-top: 10px;
+            margin-left: 5px;
+            margin-bottom: 5px;
+            color:white;
+        }
 
-<main style="position: relative; width: 80vw; height: 90vh; display: flex;">
+        .card-content {
+            flex: 1;
+            margin-left: 30px;
+            margin-bottom:10px;
 
-    <!-- Cards on the left -->
-    <div style="width: 60%; display: flex; flex-direction: column; justify-content: space-between;">
-        <h4>This Week's Activities</h4>
-        <!-- Top-left card -->
-        <section class="card" style="height: 200px; background-color: rgba(255, 255, 255, 0.5); border: solid">
-            <p style="font-size: 30px; font-weight: 300; text-align: left; margin-bottom: 10px; margin-left: 100px">Let's Learn about</p>
-            <div style="border: none;">
-                <p style="font-size: 30px;font-weight:bold; text-align: left; margin-left: 120px;">Water Waste<img src="https://i.pinimg.com/474x/71/e9/3a/71e93a80c1b1713b41ad2676230a69df.jpg" style="width: 20%; height: auto; float: right; margin-right:70px;" /></p>
-                <button onclick="openVideoPopup()" class="btn btn-custom">Watch Video</button>
+        }
+
+        .button-container {
+            padding-left: 40px;
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 30px;
+            margin-right: 30px;
+            margin-bottom: 5px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            color: deepskyblue;
+            background-color: white;
+            border: none;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .card-image {
+            width: 40%;
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%; 
+            height: auto;
+        }
+
+        .transparent-cards {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px; /* Adjust as needed */
+        }
+
+        .transparent-card {
+
+        }
+
+        .checklist-item {
+            width: 400px; /* Adjust card width as needed */
+            height: 100px; /* Adjust card height as needed */
+            background-color: rgba(255, 255, 255, 0.5); /* Adjust transparency as needed */
+            border: none; /* Add border as needed */
+            border-radius: 8px; /* Adjust border radius as needed */
+            margin-right: 10px; /* Adjust spacing between cards as needed */
+            margin-bottom: 10px; /* Adjust spacing between cards as needed */
+            display: flex;
+            align-items: center;
+            font-weight:bold;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            display: none;
+        }
+
+        .checklist-item label {
+            position: relative;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .checklist-item input[type="checkbox"]:checked + label:after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 7px;
+            width: 6px;
+            height: 12px;
+            border: solid #007bff;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: left; margin-bottom: 20px;">
+        <span>&#x1F984;</span> Hi, Alligator Hibiscus!
+    </h1>
+
+    <div style="margin-top:30px; margin-bottom:30px; display: flex; align-items: center;">
+        <h4>Your Weekly Activities</h4>
+        <h4 style="margin-left: 510px;">Checklist</h4>
+    </div>
+
+    <div class="card" style="width: 40%; background-color: limegreen; float:right">
+        <div class="card-content">
+            <div class="card-title">Commit</div>
+            <div style="color: white; margin-left: 30px;">
+                <h4>This week I...</h4>
+                <div class="transparent-cards">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task1" name="task1">
+                        <label for="task1"></label>
+                        <span>Turned off the tap while brushing my teeth</span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task2" name="task2">
+                        <label for="task2"></label>
+                        <span>Shortened my shower</span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task3" name="task3">
+                        <label for="task3"></label>
+                        <span> Turn off the tap while soaping during handwash</span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task4" name="task4">
+                        <label for="task4"></label>
+                        <span> Took a walk around my house to find any water leaks </span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task5" name="task5">
+                        <label for="task5"></label>
+                        <span> Used a bucket to collect rainwater</span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task6" name="task6">
+                        <label for="task6"></label>
+                        <span> BONUS: Shareed water-saving tips with my friends</span>
+                    </div>
+                </div>
             </div>
-        </section>
-
-        <!-- Bottom-left cards -->
-        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 50%;">
-            <!-- Bottom-left card 1 -->
-            <section class="card" style="height: 200px; background-color: rgba(255, 255, 255, 0.5); border: solid">
-                <p style="font-size:30px ;font-weight:300; text-align: left; margin-bottom: 10px; margin-left:100px">Check your knowledge</p>
-                <div style="border: none;">
-                    <p style="font-size: 30px;font-weight:bold; text-align: left; margin-left: 120px;">Card Game<img src="https://st2.depositphotos.com/1036149/12175/i/450/depositphotos_121752080-stock-photo-crocodile-holding-question-mark-and.jpg" style="width: 20%; height: auto; float: right; margin-right:70px;" /></p>
-                    <button id="game" class="btn btn-custom"> Play </button>
-                </div>
-            </section>
-
-            <!-- Bottom-left card 2 -->
-            <h4 style="margin-top: 20px; margin-bottom:20px;">Your Impact</h4>
-            <section class="card" style="height: 200px; background-color: rgba(255, 255, 255, 0.5); border: solid">
-                <p style="font-size:30px ;font-weight:300; text-align: left; margin-bottom: 10px; margin-left:100px">How have you helped the climate?</p>
-                <div style="border: none;">
-                    <p style="font-size: 30px;font-weight:bold; text-align: left; margin-left: 120px;">Climate Explorer<img src="https://static.vecteezy.com/system/resources/previews/001/237/406/original/world-kawaii-planet-earth-smiling-vector.jpg" style="width: 20%; height: auto; float: right; margin-right:70px;" /></p>
-                    <a href="Map" class="btn btn-custom">Launch</a>
-                </div>
-            </section>
         </div>
     </div>
 
-    <!-- Card on the right -->
-    <section class="card" style="width: 30%; background-color: rgba(255, 255, 255, 0.5); margin-left: auto; margin-top: 80px; border: solid;">
-        <h2 style="text-align: left;" id="rightCardTitle">Checklist</h2>
-        <div style="border: none;">
-            <ul>
-                <li style="margin-bottom: 10px; font-size: medium"><input type="checkbox" id="task1" name="task1"><label for="task1">Turn off the tap while brushing teeth</label></li>
-                <li style="margin-bottom: 10px; font-size: medium"><input type="checkbox" id="task2" name="task2"><label for="task2">Task 2</label></li>
-                <li style="margin-bottom: 10px; font-size: medium"><input type="checkbox" id="task3" name="task3"><label for="task3">Task 3</label></li>
-            </ul>
+    <div class="card">
+        <div class="card-content">
+            <div class="card-title">Learn</div>
+            <div style="color:white;">
+                This week, we're going on an adventure to <br />
+                learn all about saving water.
+            </div>
+            <div class="button-container">
+                <div class="accordion-button">
+                    <div onclick="openVideoPopup()" class="btn">Start</div>
+                </div>
+            </div>
         </div>
-    </section>
-</main>
+        <div class="card-image">
+            <img src="~/Media/Learn.png" alt="Placeholder Image">
+        </div>
+    </div>
+
+    <div class="card" style="background-color: mediumpurple">
+        <div class="card-content">
+            <div class="card-title">Play</div>
+            <div style="color:white;">
+                Show of how much you have learned !
+            </div>
+            <div class="button-container">
+                <div class="accordion-button">
+                    <div id="game" class="btn" style="color:mediumpurple">Start</div>
+                </div>
+            </div>
+        </div>
+        <div class="card-image">
+            <img src="~/Media/Play.png" alt="Placeholder Image">
+        </div>
+    </div>
+
+    <div>
+        <h2>Your Impact</h2>
+    </div>
+
+    <div class="card" style="background-color:hotpink">
+        <div class="card-content">
+            <div class="card-title">Explore</div>
+            <div style="color:white;">
+                See the amazing ways you've made <br />
+                a difference in Australia
+            </div>
+            <div class="button-container">
+                <div class="accordion-button">
+                    <a href="Map" class="btn" style="color:hotpink">Start</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-image">
+            <img src="~/Media/Explore.png" alt="Placeholder Image">
+        </div>
+    </div>
+</body>
+</html>
 
 <!-- Temporary window -->
 <div id="tempWindow" style="display: none; position: absolute; top: 60px; left: 75%; transform: translateX(-50%); background-color: rgba(255, 255, 255, 0.8); padding: 20px; border: 1px solid #ccc;">
@@ -79,13 +248,13 @@
 <!-- Video popup -->
 <div id="videoPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.8); padding: 20px; border-radius: 10px;">
     <video id="videoPlayer" controls style="width: 80%; height: auto; margin: 0 auto;">
-        <source src="https://videos.pexels.com/video-files/4884642/4884642-hd_1920_1080_30fps.mp4" type="video/mp4">
+        <source src="~/Media/VideoDraft.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <button onclick="closeVideoPopup()" style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; color: white; font-size: 20px;">Close</button>
 </div>
 
-<script>
+@*<script>
     // Function to show temporary window with different content based on checkbox id
     function showTempWindow(id) {
         var content = "";
@@ -123,7 +292,7 @@
             }
         });
     });
-</script>
+</script>*@
 
 <script>
     // Function to open the video popup
@@ -157,10 +326,7 @@
         };
         sessionStorage.setItem('QuestionJson', JSON.stringify(encapsulatedData));
         console.log("Randomly selected 10 questions:", encapsulatedData);
-<<<<<<< HEAD
         window.location.href = 'cardGame';
-=======
         window.location.href = '/Home/Contact';
->>>>>>> f6521075f2e4ed8ae5374204441477d4d422826a
     });
 </script>
