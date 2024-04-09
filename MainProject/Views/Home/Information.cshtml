@@ -156,9 +156,50 @@
             padding-bottom: 10px; 
         }
 
+        .clearfix1 {
+            display: flex;
+            align-items: flex-start; 
+        }
+
+        .text1, .pic21 {
+            flex: 1;
+            padding: 20px;
+            padding-bottom: 30px;
+            padding-left: 120px;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            overflow-x: hidden;
+        }
+
+        .backg {
+            height: 70vh;
+            width: 100vw;
+            display: flex;
+            position: absolute;
+        }
+
+        #backg1 {
+            left: 0px;
+            top: 0px;
+            background-color: #f6d6b3;
+            z-index: -5;
+        }
+
+        #backg2 {
+            left: 0px;
+            top: 1350px;
+            background-color: #f6d6b3;
+            z-index: -5;
+        }
+
     </style>
 </head>
 <body>
+    <div id="backg1" class="backg"></div>
     <div class="section">
         <div class="clearfix">
             <div class="text">
@@ -212,7 +253,7 @@
             </p>
         </div>
     </div>
-
+    <div id="backg2" class="backg"></div>
     <div id="newContent2" class="section">
         <!-- 3nd content -->
         <div>
@@ -276,15 +317,15 @@
     </div>
 
     <div class="section">
-        <div class="clearfix">
-            <div class="text">
+        <div class="clearfix1">
+            <div class="text1">
                 <h1 style="color: black; font-size: 46px; font-family: Arial;">
                     Frequently Asked<br>
                     Questions<br>
                 </h1>
             </div>
 
-            <div class="pic2">
+            <div class="pic21">
                 <p>What age group is your platform designed for?</p>
                 <p>How do you ensure the safety of children on your platform?</p>
                 <p>What topics related to climate change do you cover?</p>
@@ -295,17 +336,3 @@
 </body>
 </html>
 
-@*<script>
-    window.addEventListener('scroll', function () {
-        var scrollPosition = window.scrollY || document.documentElement.scrollTop;
-        var sections = document.querySelectorAll('.section');
-
-        sections.forEach(function (section) {
-            var sectionTop = section.offsetTop;
-
-            if (scrollPosition >= sectionTop) {
-                window.location.hash = section.id;
-            }
-        });
-    });
-</script>*@
