@@ -398,6 +398,7 @@
     <Content Include="d3_project\data\australian-states.min.geojson" />
     <Content Include="App_Data\map_current_new.csv" />
     <None Include="Properties\PublishProfiles\FIT5120-TP28-24S1 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\MainProject-fit5120-tp28 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MainProject20240403211138 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MainProject20240407204544 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MainProject20240407204544 - Web Deploy1.pubxml" />
