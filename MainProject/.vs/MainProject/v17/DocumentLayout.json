@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\d3_project\\currentMapState.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:d3_project\\currentMapState.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\views\\home\\landingpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:views\\home\\landingpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\views\\home\\information.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:views\\home\\information.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\d3_project\\currentmapstate.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:d3_project\\currentmapstate.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,6 +47,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "LandingPage.cshtml",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\LandingPage.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\LandingPage.cshtml",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\LandingPage.cshtml",
+              "RelativeToolTip": "Views\\Home\\LandingPage.cshtml",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAAEwAAABSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-08T13:51:13.103Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Information.cshtml",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\Information.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Information.cshtml",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\Information.cshtml",
+              "RelativeToolTip": "Views\\Home\\Information.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAgAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-08T12:26:38.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "currentMapState.js",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\d3_project\\currentMapState.js",
               "RelativeDocumentMoniker": "d3_project\\currentMapState.js",
@@ -51,7 +85,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
