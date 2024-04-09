@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\games\\card.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:games\\card.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\views\\home\\landingpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:views\\home\\landingpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -47,6 +55,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "card.html",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Games\\card.html",
+              "RelativeDocumentMoniker": "Games\\card.html",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Games\\card.html",
+              "RelativeToolTip": "Games\\card.html",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAAD8AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-04-09T18:22:15.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Contact.cshtml",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\Contact.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Contact.cshtml",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\Contact.cshtml",
+              "RelativeToolTip": "Views\\Home\\Contact.cshtml",
+              "ViewState": "AQIAAJwAAAAAAAAAAAAAALQAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-09T15:52:50.775Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "LandingPage.cshtml",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\LandingPage.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\LandingPage.cshtml",
@@ -59,7 +93,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Information.cshtml",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\Information.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Information.cshtml",
@@ -71,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "currentMapState.js",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\d3_project\\currentMapState.js",
               "RelativeDocumentMoniker": "d3_project\\currentMapState.js",
@@ -83,7 +117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
