@@ -91,7 +91,9 @@
             cursor: pointer;
             z-index: 1000;
         }
-
+        html, body {
+            overflow-y: hidden;
+        }
     </style>
 </head>
 <body>
@@ -105,9 +107,9 @@
     <img id="gifBackground" src="~/Media/giphy2.gif" alt="GIF Background">
 
     <div style="text-align:center;">
-        <iframe id="unityFrame" src="~/Games/card.html" style="width:1000px; height:800px;">
+        <iframe id="unityFrame" src="~/Games/card.html" style="width:1300px; height:800px;">
         </iframe>
-        <button id="reset" style="position:absolute;width:50px;margin-top:640px;margin-right:250px;float:right;">
+        <button id="reset" style="width: 50px; position: relative; left: 20px; top: -125px; float: right; background-color: transparent; border: none;">
             <img style="width:100%;" src="~/Media/reset.png" />
         </button>
     </div>
