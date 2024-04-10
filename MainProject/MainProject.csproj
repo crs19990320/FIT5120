@@ -344,14 +344,19 @@
     <Content Include="Games\TemplateData\webmemd-icon.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Media\3.jpg" />
+    <Content Include="Media\back.png" />
     <Content Include="Media\co2.jpg" />
     <Content Include="Media\Drag1.png" />
     <Content Include="Media\Drag2.png" />
     <Content Include="Media\EndGame.png" />
     <Content Include="Media\Explore.png" />
     <Content Include="Media\giphy2.gif" />
+    <Content Include="Media\homebutton.png" />
+    <Content Include="Media\Instruction.png" />
     <Content Include="Media\LandingPage.png" />
     <Content Include="Media\Learn.png" />
+    <Content Include="Media\LearnVideo.png" />
     <Content Include="Media\Mom&amp;Dad.png" />
     <Content Include="Media\Note.jpg" />
     <Content Include="Media\Play.png" />
@@ -359,6 +364,7 @@
     <Content Include="Media\scale_gas.png" />
     <Content Include="Media\scale_temp.png" />
     <Content Include="Media\scale_water.png" />
+    <Content Include="Media\star.png" />
     <Content Include="Media\StartGame .png" />
     <Content Include="Media\Statuses.png" />
     <Content Include="Media\test_video1.mp4" />
@@ -398,6 +404,7 @@
     <Content Include="d3_project\data\australian-states.min.geojson" />
     <Content Include="App_Data\map_current_new.csv" />
     <None Include="Properties\PublishProfiles\FIT5120-TP28-24S1 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\GreenGuardians - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MainProject-fit5120-tp28 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MainProject20240403211138 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MainProject20240407204544 - Web Deploy.pubxml" />
@@ -414,6 +421,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Views\Home\Map.cshtml" />
+    <Content Include="Views\Home\Instruction.cshtml" />
     <None Include="Views\Home\D3test.cshtml" />
     <None Include="Views\Home\CardGame.cshtml" />
     <Content Include="Web.config" />
