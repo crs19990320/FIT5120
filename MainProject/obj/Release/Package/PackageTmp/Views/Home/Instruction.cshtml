@@ -9,6 +9,9 @@
     <meta charset="utf-8" />
     <title>@ViewBag.Title</title>
     <style>
+        html, body {
+            overflow-y: hidden;
+        }
         body {
             position: relative;
             font-family: Arial, sans-serif;
@@ -92,12 +95,12 @@
     <img id="gifBackground" src="~/Media/giphy2.gif" alt="GIF Background">
 
     @*<div style="text-align:center;">
-        <iframe id="unityFrame" src="~/Games/card.html" style="width:1000px; height:800px;">
-        </iframe>
-        <button id="reset" style="position:absolute;width:50px;margin-top:640px;margin-right:250px;float:right;">
-            <img style="width:100%;" src="~/Media/reset.png" />
-        </button>
-    </div>*@
+            <iframe id="unityFrame" src="~/Games/card.html" style="width:1000px; height:800px;">
+            </iframe>
+            <button id="reset" style="position:absolute;width:50px;margin-top:640px;margin-right:250px;float:right;">
+                <img style="width:100%;" src="~/Media/reset.png" />
+            </button>
+        </div>*@
 
     <div class="tabbed-container">
         <ul class="tabs">
@@ -112,18 +115,16 @@
             <h4>Click on the <b>Action Start</b> to start a Game</h4>
         </div>
         <div id="tab-2" class="tab-content">
-            <img style="width:80%; top:10px" src="~/Media/Statuses.png">
+            <img style="width:80%; top:10px" src="~/Media/Statuses2.png">
             <h4>The different attribute values from left to right are: <b>Carbon</b>, <b>Water</b>, <b>EcoLife</b>. The values will <b>increase</b> and <b>decrease</b> depending on the different outcomes you select.</h4>
         </div>
         <div id="tab-3" class="tab-content">
-            <img style="width:80%; top:10px" src="~/Media/Drag1.png">
-            <h4>Drag the <b>Question Card</b> to left to see a choice.</h4>
-            <img style="width:80%; top:10px" src="~/Media/Drag2.png">
-            <h4>Drag the <b>Question Card</b> to right to see another choice choice.</h4>
-            <h4>End Drag to make a choice.</h4>
+            <img style="width:80%; top:10px" src="~/Media/Choice.png">
+            <h4>Click on the <b> Options </b> to make a choice.</h4>
+            
         </div>
         <div id="tab-4" class="tab-content">
-            <img style="width:80%; top:10px" src="~/Media/EndGame.png">
+            <img style="width:80%; top:10px" src="~/Media/EndGame2.png">
             <h4>you will have <b>medal</b> based on your statuses</h4>
             <h4>you will see <b>score</b> based on your choice</h4>
         </div>
@@ -139,6 +140,28 @@
         window.alert = function (msg) {
             console.log(1);
         };
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.tab-link');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    const target = document.querySelector('#' + this.dataset.tab);
+
+                    tabs.forEach(t => {
+                        t.classList.remove('current');
+                    });
+                    tabContents.forEach(tc => {
+                        tc.classList.remove('current');
+                    });
+
+                    tab.classList.add('current');
+                    target.classList.add('current');
+                });
+            });
+        });
     </script>
 </body>
 </html>
