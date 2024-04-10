@@ -1,6 +1,5 @@
 ﻿@{
     ViewBag.Title = "Information";
-    ViewBag.HideNavbar = true;
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -63,7 +62,7 @@
         }
 
         #newContent1 img {
-            max-width: 100px; 
+            max-width: 100px;
             max-height: 100px;
             margin-right: 150px;
         }
@@ -99,7 +98,7 @@
         .step-item {
             display: flex;
             align-items: center;
-            margin-bottom: 30px;
+            margin-bottom: 50px;
         }
 
         .colored-btn {
@@ -126,14 +125,14 @@
 
         #newContent3 > div {
             flex: 1;
-            width: 30%; 
-            justify-content: space-between; 
+            width: 30%;
+            justify-content: space-between;
             padding: 10px;
             text-align: center;
             background-color: white;
-            border: none; 
-            border-radius: 8px; 
-            margin: 0 10px; 
+            border: none;
+            border-radius: 8px;
+            margin: 0 10px;
         }
 
         #newContent3 h2, #newContent3 p {
@@ -151,14 +150,14 @@
         }
 
         .pic2 p {
-            margin-bottom: 20px; 
-            border-bottom: 1px solid #ccc; 
-            padding-bottom: 10px; 
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
         }
 
         .clearfix1 {
             display: flex;
-            align-items: flex-start; 
+            align-items: flex-start;
         }
 
         .text1, .pic21 {
@@ -176,7 +175,7 @@
         }
 
         .backg {
-            height: 70vh;
+            height: 90vh;
             width: 100vw;
             display: flex;
             position: absolute;
@@ -186,14 +185,26 @@
             left: 0px;
             top: 0px;
             background-color: #f6d6b3;
-            z-index: -5;
+            background-image: url('https://i.pinimg.com/originals/05/59/94/05599424bb5a1b7819956d0288559697.gif');
+            z-index: -1;
         }
 
         #backg2 {
             left: 0px;
             top: 1350px;
             background-color: #f6d6b3;
-            z-index: -5;
+            z-index: -1;
+        }
+
+        .backi {
+            height: 50vh;
+            width: 100vw;
+            display: flex;
+            position: absolute;
+            left: 0px;
+            top: 2650px;
+            background-image:url(../../Media/3.jpg);
+            z-index: -1;
         }
 
     </style>
@@ -203,13 +214,13 @@
     <div class="section">
         <div class="clearfix">
             <div class="text">
-                <h1 style="color: black; font-size: 66px; font-family: Arial;">
+                <h1 style="color: black; font-size: 46px; font-family: 'Comic Sans MS';">
                     Transforming<br>
                     climate<br>
                     education<br>
                     into adventures
                 </h1>
-                <p style="color:dimgray">Occaecat est ipsum reprehenderit reprehenderit veniam anim laborum est esse duis occaecat reprehenderit pariatur.</p>
+                <p style="color:dimgray">Transform climate education into interesting explorations where children become Green Guardians, exploring virtual landscapes, solving environmental mysteries, learning new skills and applying in different scenarios.</p>
             </div>
 
             <div class="pic">
@@ -217,10 +228,18 @@
             </div>
         </div>
 
-        <div style="padding-left:90px;">
-            <a href="Index" style="color: dodgerblue; text-decoration: none;">Take a Tour</a>
+        <div style="position: relative; padding-left: 90px;">
+            <a href="Home/Index" style="color: white; text-decoration: none; background-color: dodgerblue; padding: 10px 20px; border-radius: 5px; position: relative; z-index: 1; animation: bounce 1s infinite;">Take a Tour</a>
+        </div>
+
+    </div>
+
+    <div>
+        <div style="float: left; padding-left: 10px; padding-top: 180px;">
+            <h1 style="font-family:'Comic Sans MS'">Our Key Features</h1>
         </div>
     </div>
+
 
     <div id="newContent1" class="section">
         <!-- 2nd content -->
@@ -253,24 +272,26 @@
             </p>
         </div>
     </div>
+
     <div id="backg2" class="backg"></div>
+
     <div id="newContent2" class="section">
         <!-- 3nd content -->
         <div>
-            <h2 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom:10px;">How it works:</h2>
-            <p>Discover the magic of website name in just a few simple steps!</p>
+            <h2 style="font-family:'Comic Sans MS'; margin-bottom:40px;">How it works:</h2>
+            <h4 style="margin-bottom: 40px;">Discover the magic of website name in just a few simple steps!</h4>
             <div class="step-list">
                 <div class="step-item">
                     <span class="colored-btn">1</span>
-                    <span style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Dive into our weekly video lesson and immerse yourself in the world of climate change. Then, challenge yourself with our card game.</span>
+                    <span style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size:larger;">Dive into our weekly video lesson and immerse yourself in the world of climate change. Then, challenge yourself with our card game.</span>
                 </div>
                 <div class="step-item">
                     <span class="colored-btn">2</span>
-                    <span style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Complete our themed checklist, designed to inspire climate-friendly behaviors and habits.</span>
+                    <span style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: larger;">Complete our themed checklist, designed to inspire climate-friendly behaviors and habits.</span>
                 </div>
                 <div class="step-item">
                     <span class="colored-btn">3</span>
-                    <span style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Using Climate Explorer, visualize how your actions contribute to environmental change and empower yourself to make a difference.</span>
+                    <span style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: larger;">Using Climate Explorer, visualize how your actions contribute to environmental change and empower yourself to make a difference.</span>
                 </div>
             </div>
         </div>
@@ -315,6 +336,8 @@
             </p>
         </div>
     </div>
+
+    <div id="backi" class="backi"></div>
 
     <div class="section">
         <div class="clearfix1">
