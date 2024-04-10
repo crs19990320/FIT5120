@@ -38,20 +38,20 @@
             text-align: center;
         }
 
-            .tabs .tab-link {
-                display: inline-block;
-                padding: 10px 15px;
-                cursor: pointer;
-                background-color: #333;
-                color: white;
-                border-bottom: 3px solid transparent;
-            }
+        .tabs .tab-link {
+            display: inline-block;
+            padding: 10px 15px;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            border-bottom: 3px solid transparent;
+        }
 
-                .tabs .tab-link.current {
-                    background-color: #f9f9f9;
-                    color: #333;
-                    border-bottom: 3px solid #f9f9f9;
-                }
+        .tabs .tab-link.current {
+            background-color: #f9f9f9;
+            color: #333;
+            border-bottom: 3px solid #f9f9f9;
+        }
 
         .tab-content {
             display: none;
@@ -61,10 +61,10 @@
             text-align: center;
         }
 
-            .tab-content.current {
-                display: block;
-                text-align: center;
-            }
+        .tab-content.current {
+            display: block;
+            text-align: center;
+        }
 
         .back-to-home {
             position: fixed;
@@ -76,10 +76,22 @@
             z-index: 1000;
         }
 
-            .back-to-home img {
-                width: 80px;
-                height: auto;
-            }
+        .back-to-home img {
+            width: 80px;
+            height: auto;
+        }
+
+        .instruction {
+            width: 130px;
+            height: auto;
+            position: absolute;
+            top: 20px;
+            right: 255px;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
     </style>
 </head>
 <body>
@@ -87,17 +99,20 @@
     <button class="back-to-home" onclick="goToIndex()">
         <img src="~/Media/homebutton.png" alt="Home">
     </button>
-    <button id="reset" style="width:50px;right:470px;top:100px;background-color:transparent;">
-        <img style="width:100%;" src="~/Media/reset.png" />
-    </button>
+
+    <img class="instruction" onclick="goToInstruction()" src="~/Media/Instruction.png" />
 
     <img id="gifBackground" src="~/Media/giphy2.gif" alt="GIF Background">
 
-    <div style="text-align:center">
-        <iframe id="unityFrame" src="~/Games/card.html" style="width:1000px; height:800px"></iframe>
+    <div style="text-align:center;">
+        <iframe id="unityFrame" src="~/Games/card.html" style="width:1000px; height:800px;">
+        </iframe>
+        <button id="reset" style="position:absolute;width:50px;margin-top:640px;margin-right:250px;float:right;">
+            <img style="width:100%;" src="~/Media/reset.png" />
+        </button>
     </div>
 
-    <div class="tabbed-container">
+    @*<div class="tabbed-container">
         <ul class="tabs">
             <li class="tab-link current" data-tab="tab-1">Start Game</li>
             <li class="tab-link" data-tab="tab-2">Statuses</li>
@@ -126,7 +141,7 @@
             <h4>you will see <b>score</b> based on your choice</h4>
         </div>
         <h4 style="text-align:center; color:aliceblue"> <b>Have Fun!</b> There is no right or wrong for every choice!</h4>
-    </div>
+    </div>*@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -174,6 +189,12 @@
     <script>
         function goToIndex() {
             window.location.href = "Index";
+        }
+    </script>
+
+    <script>
+        function goToInstruction() {
+            window.location.href = "Instruction";
         }
     </script>
     <script>

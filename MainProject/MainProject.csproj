@@ -345,6 +345,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Media\3.jpg" />
+    <Content Include="Media\back.png" />
     <Content Include="Media\co2.jpg" />
     <Content Include="Media\Drag1.png" />
     <Content Include="Media\Drag2.png" />
@@ -352,6 +353,7 @@
     <Content Include="Media\Explore.png" />
     <Content Include="Media\giphy2.gif" />
     <Content Include="Media\homebutton.png" />
+    <Content Include="Media\Instruction.png" />
     <Content Include="Media\LandingPage.png" />
     <Content Include="Media\Learn.png" />
     <Content Include="Media\LearnVideo.png" />
@@ -419,6 +421,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Views\Home\Map.cshtml" />
+    <Content Include="Views\Home\Instruction.cshtml" />
     <None Include="Views\Home\D3test.cshtml" />
     <None Include="Views\Home\CardGame.cshtml" />
     <Content Include="Web.config" />
