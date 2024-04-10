@@ -23,6 +23,11 @@ namespace MainProject.Controllers
             return View();
         }
 
+        public ActionResult Instruction()
+        {
+            return View();
+        }
+
         public ActionResult WelcomePage() {
             ViewBag.VideoUrl = "https://mainprojectvideo.blob.core.windows.net/mainprojectvi/VideoDraft.mp4";
             return View(); }
