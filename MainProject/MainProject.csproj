@@ -344,14 +344,17 @@
     <Content Include="Games\TemplateData\webmemd-icon.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Media\3.jpg" />
     <Content Include="Media\co2.jpg" />
     <Content Include="Media\Drag1.png" />
     <Content Include="Media\Drag2.png" />
     <Content Include="Media\EndGame.png" />
     <Content Include="Media\Explore.png" />
     <Content Include="Media\giphy2.gif" />
+    <Content Include="Media\homebutton.png" />
     <Content Include="Media\LandingPage.png" />
     <Content Include="Media\Learn.png" />
+    <Content Include="Media\LearnVideo.png" />
     <Content Include="Media\Mom&amp;Dad.png" />
     <Content Include="Media\Note.jpg" />
     <Content Include="Media\Play.png" />

@@ -1,6 +1,5 @@
 ﻿@{
     ViewBag.Title = "Information";
-    ViewBag.HideNavbar = true;
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -99,7 +98,7 @@
         .step-item {
             display: flex;
             align-items: center;
-            margin-bottom: 30px;
+            margin-bottom: 50px;
         }
 
         .colored-btn {
@@ -176,7 +175,7 @@
         }
 
         .backg {
-            height: 80vh;
+            height: 90vh;
             width: 100vw;
             display: flex;
             position: absolute;
@@ -197,6 +196,17 @@
             z-index: -1;
         }
 
+        .backi {
+            height: 50vh;
+            width: 100vw;
+            display: flex;
+            position: absolute;
+            left: 0px;
+            top: 2650px;
+            background-image:url(../../Media/3.jpg);
+            z-index: -1;
+        }
+
     </style>
 </head>
 <body>
@@ -210,7 +220,7 @@
                     education<br>
                     into adventures
                 </h1>
-                <p style="color:dimgray">Transform climate education into thrilling adventures where children become eco-heroes, exploring virtual landscapes, solving environmental mysteries, learning new skills and applying in different scenarios.</p>
+                <p style="color:dimgray">Transform climate education into interesting explorations where children become eco-heroes, exploring virtual landscapes, solving environmental mysteries, learning new skills and applying in different scenarios.</p>
             </div>
 
             <div class="pic">
@@ -219,7 +229,7 @@
         </div>
 
         <div style="position: relative; padding-left: 90px;">
-            <a href="Index" style="color: white; text-decoration: none; background-color: dodgerblue; padding: 10px 20px; border-radius: 5px; position: relative; z-index: 1; animation: bounce 1s infinite;">Take a Tour</a>
+            <a href="Home/Index" style="color: white; text-decoration: none; background-color: dodgerblue; padding: 10px 20px; border-radius: 5px; position: relative; z-index: 1; animation: bounce 1s infinite;">Take a Tour</a>
         </div>
 
     </div>
@@ -268,20 +278,20 @@
     <div id="newContent2" class="section">
         <!-- 3nd content -->
         <div>
-            <h2 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom:10px;">How it works:</h2>
-            <p>Discover the magic of website name in just a few simple steps!</p>
+            <h2 style="font-family:'Comic Sans MS'; margin-bottom:40px;">How it works:</h2>
+            <h4 style="margin-bottom: 40px;">Discover the magic of website name in just a few simple steps!</h4>
             <div class="step-list">
                 <div class="step-item">
                     <span class="colored-btn">1</span>
-                    <span style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Dive into our weekly video lesson and immerse yourself in the world of climate change. Then, challenge yourself with our card game.</span>
+                    <span style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size:larger;">Dive into our weekly video lesson and immerse yourself in the world of climate change. Then, challenge yourself with our card game.</span>
                 </div>
                 <div class="step-item">
                     <span class="colored-btn">2</span>
-                    <span style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Complete our themed checklist, designed to inspire climate-friendly behaviors and habits.</span>
+                    <span style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: larger;">Complete our themed checklist, designed to inspire climate-friendly behaviors and habits.</span>
                 </div>
                 <div class="step-item">
                     <span class="colored-btn">3</span>
-                    <span style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Using Climate Explorer, visualize how your actions contribute to environmental change and empower yourself to make a difference.</span>
+                    <span style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: larger;">Using Climate Explorer, visualize how your actions contribute to environmental change and empower yourself to make a difference.</span>
                 </div>
             </div>
         </div>
@@ -326,6 +336,8 @@
             </p>
         </div>
     </div>
+
+    <div id="backi" class="backi"></div>
 
     <div class="section">
         <div class="clearfix1">

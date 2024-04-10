@@ -23,12 +23,14 @@ namespace MainProject.Controllers
             return View();
         }
 
-        public ActionResult WelcomePage() { return View(); }
+        public ActionResult WelcomePage() {
+            ViewBag.VideoUrl = "https://mainprojectvideo.blob.core.windows.net/mainprojectvi/VideoDraft.mp4";
+            return View(); }
 
         public ActionResult Information() { return View();}
         public ActionResult Index()
         {
-            ViewBag.VideoUrl = "https://mainprojectvideo.blob.core.windows.net/mainprojectvi/VideoDraft.mp4";
+            
             // set Google Cloud
             var relativePath = "~/App_Data/my-first-project-381923-316111010eb8.json";
             var absolutePath = Server.MapPath(relativePath);
