@@ -20,7 +20,7 @@
             box-sizing: border-box;
             padding-top: 100px;
             padding-left: 30px;
-        } 
+        }
 
         .pic {
             float: right;
@@ -29,17 +29,17 @@
             padding-top: 90px;
         }
 
-        .pic img {
-            max-width: 100%;
-            height: auto;
-        }
+            .pic img {
+                max-width: 100%;
+                height: auto;
+            }
 
         .button-container {
             padding-left: 40px;
             padding-bottom: 20px;
-            text-align: center; 
+            text-align: center;
             margin-top: 60px;
-            position:relative;
+            position: relative;
         }
 
         .clearfix::after {
@@ -51,7 +51,7 @@
         .btn {
             display: inline-block;
             padding: 10px 20px;
-            margin-bottom:20px;
+            margin-bottom: 20px;
             font-size: 16px;
             text-align: center;
             text-decoration: none;
@@ -62,10 +62,10 @@
             transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
 
-        .btn:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-        }
+            .btn:hover {
+                background-color: #0056b3;
+                border-color: #0056b3;
+            }
     </style>
 </head>
 <body>
@@ -89,10 +89,44 @@
     </div>
 
 
+    <div class="button-container">
+        <div class="accordion-button">
+            <div onclick="openVideoPopup()" class="btn">Start</div>
+        </div>
+    </div>
+
+
 </body>
 </html>
 
+<!-- Temporary window -->
+<div id="tempWindow" style="display: none; position: absolute; top: 60px; left: 75%; transform: translateX(-50%); background-color: rgba(255, 255, 255, 0.8); padding: 20px; border: 1px solid #ccc;">
+    <p id="tempContent">This is a temporary window.</p>
+    <button onclick="closeTempWindow()">Close</button>
+</div>
 
+<!-- Video popup -->
+<div id="videoPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.8); padding: 20px; border-radius: 10px;">
+    <video id="videoPlayer" controls style="width: 80%; height: auto; margin: 0 auto;">
+        <source src="@ViewBag.VideoUrl" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <button onclick="closeVideoPopup()" style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; color: white; font-size: 20px;">Close</button>
+</div>
+
+<script>
+    // Function to open the video popup
+    function openVideoPopup() {
+        document.getElementById("videoPopup").style.display = "block";
+        document.getElementById("videoPlayer").play(); // Auto play the video
+    }
+
+    // Function to close the video popup
+    function closeVideoPopup() {
+        document.getElementById("videoPopup").style.display = "none";
+        document.getElementById("videoPlayer").pause(); // Pause the video
+    }
+</script>
 
 
 
