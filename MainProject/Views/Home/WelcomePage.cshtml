@@ -29,16 +29,15 @@
             padding-top: 90px;
         }
 
-            .pic img {
-                max-width: 100%;
-                height: auto;
-            }
+        .pic img {
+            max-width: 100%;
+            height: auto;
+        }
 
         .button-container {
             padding-left: 40px;
-            padding-bottom: 20px;
-            text-align: center;
-            margin-top: 60px;
+            text-align: left;
+            margin-top: 260px;
             position: relative;
         }
 
@@ -62,10 +61,10 @@
             transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
 
-            .btn:hover {
-                background-color: #0056b3;
-                border-color: #0056b3;
-            }
+        .btn:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -75,38 +74,31 @@
             <h1 style="color: dodgerblue; font-size: 66px; margin-bottom:40px;">Water Waste</h1>
             <p>Water Waste is not just about leaving the tap on for too long - Let's dive in and learn how saving water can help save our planet</p>
             <div class="button-container">
-                <div class="accordion-button">
-                    <a href="Index" class="btn">Begin Lesson</a>
-                </div>
+                <h2 style="font-family:'Comic Sans MS';">Watch & Learn <img src="~/Media/LearnVideo.png" style="width:60px;height:auto;" /></h2>
             </div>
         </div>
 
         <div class="pic">
             <img src="~/Media/WelcomePage.png" alt="Placeholder Image">
-        </div>
 
-
-    </div>
-
-
-    <div class="button-container">
-        <div class="accordion-button">
-            <div onclick="openVideoPopup()" class="btn">Start</div>
+            <video width="640" height="360" controls>
+                <source src="@ViewBag.VideoUrl" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
-
 
 </body>
 </html>
 
 <!-- Temporary window -->
-<div id="tempWindow" style="display: none; position: absolute; top: 60px; left: 75%; transform: translateX(-50%); background-color: rgba(255, 255, 255, 0.8); padding: 20px; border: 1px solid #ccc;">
+<!--<div id="tempWindow" style="display: none; position: absolute; top: 60px; left: 75%; transform: translateX(-50%); background-color: rgba(255, 255, 255, 0.8); padding: 20px; border: 1px solid #ccc;">
     <p id="tempContent">This is a temporary window.</p>
     <button onclick="closeTempWindow()">Close</button>
-</div>
+</div>-->
 
 <!-- Video popup -->
-<div id="videoPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.8); padding: 20px; border-radius: 10px;">
+<!--<div id="videoPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.8); padding: 20px; border-radius: 10px;">
     <video id="videoPlayer" controls style="width: 80%; height: auto; margin: 0 auto;">
         <source src="@ViewBag.VideoUrl" type="video/mp4">
         Your browser does not support the video tag.
@@ -126,7 +118,7 @@
         document.getElementById("videoPopup").style.display = "none";
         document.getElementById("videoPlayer").pause(); // Pause the video
     }
-</script>
+</script>-->
 
 
 
