@@ -18,6 +18,8 @@ export function clearCurrentMapState() {
   }
 
 
+
+
 // Define a function to set up the current map state
 export function setupCurrentMapState() {
     // Implementation for setting up the map's current state
@@ -119,7 +121,7 @@ mapGroup.selectAll(".state")
     .attr("stroke-linejoin", "round")
     .attr("filter", "url(#watercolor)") // Apply the watercolor filter here
     .on("mouseover", function(event, d) {
-        d3.select(this).asttr("fill", colorForState(d.properties.STATE_NAME, true)); // Set to darker color on hover
+        d3.select(this).attr("fill", colorForState(d.properties.STATE_NAME, true)); // Set to darker color on hover
 
         // Append a text label on hover
         mapGroup.append("text")
@@ -188,14 +190,14 @@ d3.selectAll('input[name="option"]').on('change', function() {
       type: 'Greenhouse Gases',
       url: "icons/Emission_release_factory_icon.png",
       coordinates: [
-         [147.612793, -33.240233], // NSW
-         [143.785153, -38.471308], // VIC
-         [145.702796, -24.517574], // QLD
-         [135.209155, -28.000233], // SA
-         [120.628310, -27.672817], // WA
-         [149.8087, -41.809],     // TAS
-         [133.550960, -21.491411], // NT
-         [153.012368, -35.473468], // ACT 
+        [153.012368, -35.473468], // ACT
+        [149.612793, -33.240233], // NSW
+        [134.550960, -21.491411], // NT
+        [145.702796, -24.517574], // QLD
+        [135.209155, -28.000233], // SA
+        [149.8087, -41.809],     // TAS
+        [145.785153, -38.471308], // VIC
+        [120.628310, -27.672817], // WA
       ],
       width: 60,
       height: 60
@@ -204,14 +206,14 @@ d3.selectAll('input[name="option"]').on('change', function() {
       type: 'Water Consumption',
       url: "icons/water2.png",
       coordinates: [
-        [145.612793, -33.240233], // NSW
-        [141.785153, -38.471308], // VIC
-        [143.702796, -24.517574], // QLD
-        [133.209155, -28.000233], // SA
-        [118.628310, -27.672817], // WA
-        [147.8087, -41.809],     // TAS
-        [131.550960, -21.491411], // NT
-        [151.012368, -35.473468], // ACT 
+        [153.012368, -35.473468], // ACT
+[149.612793, -33.240233], // NSW
+[134.550960, -21.491411], // NT
+[145.702796, -24.517574], // QLD
+[135.209155, -28.000233], // SA
+[149.8087, -41.809],     // TAS
+[145.785153, -38.471308], // VIC
+[120.628310, -27.672817], // WA
      ],
       width: 60,
       height: 60
@@ -220,19 +222,95 @@ d3.selectAll('input[name="option"]').on('change', function() {
       type: 'Temperature', 
       url: "icons/temp2.png", 
       coordinates: [
-        [149.612793, -33.240233], // NSW
-        [145.785153, -38.471308], // VIC
-        [147.702796, -24.517574], // QLD
-        [137.209155, -28.000233], // SA
-        [122.628310, -27.672817], // WA
-        [151.8087, -41.809],     // TAS
-        [135.550960, -21.491411], // NT
-        [155.012368, -35.473468], // ACT 
+        [153.012368, -35.473468], // ACT
+[149.612793, -33.240233], // NSW
+[134.550960, -21.491411], // NT
+[145.702796, -24.517574], // QLD
+[135.209155, -28.000233], // SA
+[149.8087, -41.809],     // TAS
+[145.785153, -38.471308], // VIC
+[120.628310, -27.672817], // WA 
      ],
       width: 60, 
       height: 60 },
     
   ];
+
+  var greenhouse = {
+    NSW: 1,
+    VIC: 2,
+    QLD: 3,
+    SA: 4,
+    WA: 5,
+    TAS: 6,
+    NT: 7,
+    ACT: 8
+};
+
+var temp = {
+    NSW: 2,
+    VIC: 3,
+    QLD: 4,
+    SA: 5,
+    WA: 6,
+    TAS: 7,
+    NT: 8,
+    ACT: 1
+};
+
+var water = {
+    NSW: 3,
+    VIC: 4,
+    QLD: 5,
+    SA: 6,
+    WA: 7,
+    TAS: 8,
+    NT: 1,
+    ACT: 2
+};
+
+// Mapping of icon types to the corresponding variables
+const typeToVariable = {
+    'Greenhouse Gases': greenhouse,
+    'Temperature': temp,
+    'Water Consumption': water
+};
+
+
+
+
+// UPDATE ICONS
+function updateAllIconCoordinates() {
+    iconsData.forEach(icon => {
+        // Find the corresponding variable for the icon type
+        const valuesMap = typeToVariable[icon.type];
+        
+        if (valuesMap) {
+            // Correctly update coordinates without altering original lat and long
+            icon.coordinates = icon.coordinates.map((coord, index) => {
+               // Ensure lat and lng are explicitly preserved
+               const lat = coord[0];
+               const lng = coord[1];
+               // Find the corresponding value based on the state/territory order
+               const stateOrder = ['ACT', 'NSW', 'NT', 'QLD', 'SA', 'TAS', 'VIC', 'WA'];
+               
+               if (index < stateOrder.length) {
+                   const state = stateOrder[index];
+                   const value = valuesMap[state]; // Use the state to fetch the value
+                   return [lat, lng, value]; // Append the value while keeping lat and lng unchanged
+               }
+               return coord; // In case of any indexing issues, return the original coordinate
+            });
+        }
+    });
+}
+
+// Run the function to update all icon coordinates
+updateAllIconCoordinates();
+
+
+
+// UPDATE MAP
   
   function updateMap(selectedOption) {
     // Clear existing icons
@@ -243,29 +321,43 @@ d3.selectAll('input[name="option"]').on('change', function() {
       ? iconsData
       : iconsData.filter(icon => icon.type === selectedOption);
   
-    // Append filtered icons to the map
-    filteredIcons.forEach(icon => {
+    // Update icon sizes based on their values
+    const updatedIconsData = updateIconSize(filteredIcons);
+  
+    // Append updated and filtered icons to the map
+    updatedIconsData.forEach(icon => {
       const offset = typeOffsets[icon.type] || {dx: 0, dy: 0}; // Default offset if type is not found
   
-      icon.coordinates.forEach(([lng, lat]) => {
+      icon.coordinates.forEach(([lng, lat, , newWidth, newHeight]) => { // Adjusted to accept newWidth and newHeight
         const [x, y] = projection([lng, lat]);
-  
-        // // Calculate offset based on icon index
-        // // This is a simple way to adjust the position so they don't overlap perfectly
-        // // Adjust the offset multiplier as necessary to fit the visual appearance
-        // const xOffset = x + (iconIndex * 10) - (filteredIcons.length * 5);
-        // const yOffset = y - (iconIndex * 10) + (filteredIcons.length * 5);
   
         iconsGroup.append("image")
           .attr("xlink:href", icon.url)
-          .attr("x", x - icon.width / 2)
-          .attr("y", y - icon.height / 2)
-          .attr("width", icon.width)
-          .attr("height", icon.height);
+          .attr("x", x + offset.dx - newWidth / 2) // Use the updated width for positioning
+          .attr("y", y + offset.dy - newHeight / 2) // Use the updated height for positioning
+          .attr("width", newWidth)
+          .attr("height", newHeight);
       });
     });
   }
   
+  // Function to update width and height based on value (already defined)
+  function updateIconSize(iconsData) {
+    const baseSize = 40;
+    const sizeIncrement = 5;
+  
+    return iconsData.map(icon => {
+      let updatedCoordinates = icon.coordinates.map(coord => {
+        const value = coord[2]; // Assuming the value is stored as the third element
+        const newSize = baseSize + (sizeIncrement * (value - 1));
+        return [coord[0], coord[1], value, newSize, newSize]; // Append new width and height
+      });
+  
+      return {...icon, coordinates: updatedCoordinates}; // Update icon with new coordinates (including sizes)
+    });
+  }
+
+////////////////////////////////////////////////////////////////
   // Attach an event listener to the radio buttons
   d3.selectAll('input[name="map-option"]').on('change', function() {
     updateMap(this.value);
@@ -317,6 +409,7 @@ d3.selectAll('input[name="option"]').on('change', function() {
       .duration(750) // Smooth transition duration
       .call(zoom.transform, d3.zoomIdentity); // Reset zoom level to the original state
   }
+  
 
   
 // end
