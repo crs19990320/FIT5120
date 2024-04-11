@@ -17,45 +17,14 @@ export function clearCurrentMapState() {
     // Additional cleanup if necessary...
   }
 
-function showData() {
-    var storedData = sessionStorage.getItem('MapModelJson');
-    console.log(typeof storedData);
-    console.log(JSON.parse(storedData));
-}
 
-function extractData() {
-    var storedData = sessionStorage.getItem('MapModelJson');
-    if (storedData) {
-        // Parse the JSON string to a JavaScript 
-        var dataArray = JSON.parse(storedData);
-        // Initialize an empty object to store the state and Temperature mappings 
-        var greenhouse = {};
-        var water = {};
-        var temperature = {};
-        // Iterate over the array to extract state and Temperature values        
-        dataArray.forEach(item => {
-            greenhouse[item.state] = item.net_emissions;
-            water[item.state] = item.total_water_consumption;
-            temperature[item.state] = item.Temperature;
-        });
-        console.log(greenhouse);
-        console.log(water);
-        console.log(temperature);
-        // Now greenhouse is populated with state codes as keys and Temperatures as values 
-        return {temperature, greenhouse, water};
-    } else {
-        console.log('No data found');
-        return {};
-    }
-}
-var { temperature, greenhouse, water } = extractData();
+
 
 // Define a function to set up the current map state
 export function setupCurrentMapState() {
     // Implementation for setting up the map's current state
     
 console.log('Setting up the current map state...');
-showData()
 
 // Your setup code here
 
@@ -125,7 +94,7 @@ const colorForState = (stateName, darker = false) => {
 };
 
 // Load the local GeoJSON data
-d3.json("https://mainprojectvideo.blob.core.windows.net/mainprojectvi/australian-states.json").then(function(australia) {
+d3.json("data/australian-states.json").then(function(australia) {
 // Dynamically shorten state names
 australia.features.forEach(function(feature) {
   switch (feature.properties.STATE_NAME) {
@@ -155,12 +124,12 @@ mapGroup.selectAll(".state")
         d3.select(this).attr("fill", colorForState(d.properties.STATE_NAME, true)); // Set to darker color on hover
 
         // Append a text label on hover
-        //mapGroup.append("text")
-        //    .attr("class", "dynamic-state-label")
-        //    .attr("x", path.centroid(d)[0])
-        //    .attr("y", path.centroid(d)[1]-10)
-        //    .attr("text-anchor", "middle")
-        //    .text(d.properties.STATE_NAME);
+        mapGroup.append("text")
+            .attr("class", "dynamic-state-label")
+            .attr("x", path.centroid(d)[0])
+            .attr("y", path.centroid(d)[1])
+            .attr("text-anchor", "middle")
+            .text(d.properties.STATE_NAME);
     })
     .on("mouseout", function(event, d) {
         d3.select(this).attr("fill", colorForState(d.properties.STATE_NAME)); // Revert to original color on mouseout
@@ -214,20 +183,21 @@ d3.selectAll('input[name="option"]').on('change', function() {
     'Water Consumption': {dx: 20, dy: -20},
     'Temperature': {dx: 0, dy: 20},
   };
-
+  
+  
   const iconsData = [
     {
       type: 'Greenhouse Gases',
       url: "icons/Emission_release_factory_icon.png",
-      coordinates:[
-          [153.012368, -37.473468], // ACT
-          [144.209155, -32.240233], // NSW
-          [134.550960, -21.491411], // NT
-          [145.702796, -24.517574], // QLD
-          [135.209155, -30.000233], // SA
-          [149.8087, -43.809],     // TAS
-          [145.785153, -38.471308], // VIC
-          [120.628310, -27.672817], // WA
+      coordinates: [
+        [153.012368, -35.473468], // ACT
+        [149.612793, -33.240233], // NSW
+        [134.550960, -21.491411], // NT
+        [145.702796, -24.517574], // QLD
+        [135.209155, -28.000233], // SA
+        [149.8087, -41.809],     // TAS
+        [145.785153, -38.471308], // VIC
+        [120.628310, -27.672817], // WA
       ],
       width: 60,
       height: 60
@@ -236,14 +206,14 @@ d3.selectAll('input[name="option"]').on('change', function() {
       type: 'Water Consumption',
       url: "icons/water2.png",
       coordinates: [
-          [153.012368, -35.473468], // ACT
-          [146.612793, -32.240233], // NSW
-          [134.550960, -19.491411], // NT
-          [146.702796, -22.517574], // QLD
-          [135.209155, -28.000233], // SA
-          [149.8087, -41.809],     // TAS
-          [145.785153, -38.471308], // VIC
-          [120.628310, -25.672817], // WA
+        [153.012368, -35.473468], // ACT
+[149.612793, -33.240233], // NSW
+[134.550960, -21.491411], // NT
+[145.702796, -24.517574], // QLD
+[135.209155, -28.000233], // SA
+[149.8087, -41.809],     // TAS
+[145.785153, -38.471308], // VIC
+[120.628310, -27.672817], // WA
      ],
       width: 60,
       height: 60
@@ -252,135 +222,142 @@ d3.selectAll('input[name="option"]').on('change', function() {
       type: 'Temperature', 
       url: "icons/temp2.png", 
       coordinates: [
-          [153.012368, -35.473468], // ACT
-          [145.209155, -33.240233], // NSW
-          [134.550960, -21.491411], // NT
-          [145.702796, -24.517574], // QLD
-          [135.209155, -29.800233], // SA
-          [149.8087, -41.809],     // TAS
-          [143.785153, -37.471308], // VIC
-          [120.628310, -27.672817], // WA
+        [153.012368, -35.473468], // ACT
+[149.612793, -33.240233], // NSW
+[134.550960, -21.491411], // NT
+[145.702796, -24.517574], // QLD
+[135.209155, -28.000233], // SA
+[149.8087, -41.809],     // TAS
+[145.785153, -38.471308], // VIC
+[120.628310, -27.672817], // WA 
      ],
       width: 60, 
       height: 60 },
     
-    ];
-    // Mapping of icon types to the corresponding variables
-    const typeToVariable = {
-        'Greenhouse Gases': greenhouse,
-        'Temperature': temperature,
-        'Water Consumption': water
-    };
+  ];
+
+  var greenhouse = {
+    NSW: 1,
+    VIC: 2,
+    QLD: 3,
+    SA: 4,
+    WA: 5,
+    TAS: 6,
+    NT: 7,
+    ACT: 8
+};
+
+var temp = {
+    NSW: 2,
+    VIC: 3,
+    QLD: 4,
+    SA: 5,
+    WA: 6,
+    TAS: 7,
+    NT: 8,
+    ACT: 1
+};
+
+var water = {
+    NSW: 3,
+    VIC: 4,
+    QLD: 5,
+    SA: 6,
+    WA: 7,
+    TAS: 8,
+    NT: 1,
+    ACT: 2
+};
+
+// Mapping of icon types to the corresponding variables
+const typeToVariable = {
+    'Greenhouse Gases': greenhouse,
+    'Temperature': temp,
+    'Water Consumption': water
+};
 
 
 
 
-    // UPDATE ICONS
-    function updateAllIconCoordinates() {
-        iconsData.forEach(icon => {
-            // Find the corresponding variable for the icon type
-            const valuesMap = typeToVariable[icon.type];
-
-            if (valuesMap) {
-                // Correctly update coordinates without altering original lat and long
-                icon.coordinates = icon.coordinates.map((coord, index) => {
-                    // Ensure lat and lng are explicitly preserved
-                    const lat = coord[0];
-                    const lng = coord[1];
-                    // Find the corresponding value based on the state/territory order
-                    const stateOrder = ['ACT', 'NSW', 'NT', 'Qld', 'SA', 'Tas', 'Vic', 'WA'];
-
-                    if (index < stateOrder.length) {
-                        const state = stateOrder[index];
-                        const value = valuesMap[state]; // Use the state to fetch the value
-                        return [lat, lng, value]; // Append the value while keeping lat and lng unchanged
-                    }
-                    return coord; // In case of any indexing issues, return the original coordinate
-                });
-            }
-        });
-    }
-
-    // Run the function to update all icon coordinates
-    updateAllIconCoordinates();
-
-    // UPDATE MAP
-    function updateMap(selectedOption) {
-        // Clear existing icons
-        iconsGroup.selectAll("image").remove();
-
-        // Determine which icons to display
-        const filteredIcons = selectedOption === 'all'
-            ? iconsData
-            : iconsData.filter(icon => icon.type === selectedOption);
-
-        // Update icon sizes based on their values
-        const updatedIconsData = updateIconSize(filteredIcons);
-
-        // Append updated and filtered icons to the map
-        updatedIconsData.forEach(icon => {
-            const offset = typeOffsets[icon.type] || { dx: 0, dy: 0 }; // Default offset if type is not found
-
-            icon.coordinates.forEach(([lng, lat, , newWidth, newHeight]) => { // Adjusted to accept newWidth and newHeight
-                const [x, y] = projection([lng, lat]);
-
-                iconsGroup.append("image")
-                    .attr("xlink:href", icon.url)
-                    .attr("x", x + offset.dx - newWidth / 2) // Use the updated width for positioning
-                    .attr("y", y + offset.dy - newHeight / 2) // Use the updated height for positioning
-                    .attr("width", newWidth)
-                    .attr("height", newHeight);
+// UPDATE ICONS
+function updateAllIconCoordinates() {
+    iconsData.forEach(icon => {
+        // Find the corresponding variable for the icon type
+        const valuesMap = typeToVariable[icon.type];
+        
+        if (valuesMap) {
+            // Correctly update coordinates without altering original lat and long
+            icon.coordinates = icon.coordinates.map((coord, index) => {
+               // Ensure lat and lng are explicitly preserved
+               const lat = coord[0];
+               const lng = coord[1];
+               // Find the corresponding value based on the state/territory order
+               const stateOrder = ['ACT', 'NSW', 'NT', 'QLD', 'SA', 'TAS', 'VIC', 'WA'];
+               
+               if (index < stateOrder.length) {
+                   const state = stateOrder[index];
+                   const value = valuesMap[state]; // Use the state to fetch the value
+                   return [lat, lng, value]; // Append the value while keeping lat and lng unchanged
+               }
+               return coord; // In case of any indexing issues, return the original coordinate
             });
-        });
-    }
+        }
+    });
+}
 
-    // Function to update width and height based on value (already defined)
-    function updateIconSize(iconsData) {
-        const baseSize = 40;
-        const sizeIncrement = 5;
+// Run the function to update all icon coordinates
+updateAllIconCoordinates();
 
-        return iconsData.map(icon => {
-            let updatedCoordinates = icon.coordinates.map(coord => {
-                const value = coord[2]; // Assuming the value is stored as the third element
-                const newSize = baseSize + (sizeIncrement * (value - 1));
-                return [coord[0], coord[1], value, newSize, newSize]; // Append new width and height
-            });
 
-            return { ...icon, coordinates: updatedCoordinates }; // Update icon with new coordinates (including sizes)
-        });
-    }
-  //function updateMap(selectedOption) {
-  //  // Clear existing icons
-  //  iconsGroup.selectAll("image").remove();
+
+// UPDATE MAP
   
-  //  // Determine which icons to display
-  //  const filteredIcons = selectedOption === 'all'
-  //    ? iconsData
-  //    : iconsData.filter(icon => icon.type === selectedOption);
+  function updateMap(selectedOption) {
+    // Clear existing icons
+    iconsGroup.selectAll("image").remove();
   
-  //  // Append filtered icons to the map
-  //  filteredIcons.forEach(icon => {
-  //    const offset = typeOffsets[icon.type] || {dx: 0, dy: 0}; // Default offset if type is not found
+    // Determine which icons to display
+    const filteredIcons = selectedOption === 'all'
+      ? iconsData
+      : iconsData.filter(icon => icon.type === selectedOption);
   
-  //    icon.coordinates.forEach(([lng, lat]) => {
-  //      const [x, y] = projection([lng, lat]);
+    // Update icon sizes based on their values
+    const updatedIconsData = updateIconSize(filteredIcons);
   
-  //      // // Calculate offset based on icon index
-  //      // // This is a simple way to adjust the position so they don't overlap perfectly
-  //      // // Adjust the offset multiplier as necessary to fit the visual appearance
-  //      // const xOffset = x + (iconIndex * 10) - (filteredIcons.length * 5);
-  //      // const yOffset = y - (iconIndex * 10) + (filteredIcons.length * 5);
+    // Append updated and filtered icons to the map
+    updatedIconsData.forEach(icon => {
+      const offset = typeOffsets[icon.type] || {dx: 0, dy: 0}; // Default offset if type is not found
   
-  //      iconsGroup.append("image")
-  //        .attr("xlink:href", icon.url)
-  //        .attr("x", x - icon.width / 2)
-  //        .attr("y", y - icon.height / 2)
-  //        .attr("width", icon.width)
-  //        .attr("height", icon.height);
-  //    });
-  //  });
-  //}
+      icon.coordinates.forEach(([lng, lat, , newWidth, newHeight]) => { // Adjusted to accept newWidth and newHeight
+        const [x, y] = projection([lng, lat]);
   
+        iconsGroup.append("image")
+          .attr("xlink:href", icon.url)
+          .attr("x", x + offset.dx - newWidth / 2) // Use the updated width for positioning
+          .attr("y", y + offset.dy - newHeight / 2) // Use the updated height for positioning
+          .attr("width", newWidth)
+          .attr("height", newHeight);
+      });
+    });
+  }
+  
+  // Function to update width and height based on value (already defined)
+  function updateIconSize(iconsData) {
+    const baseSize = 40;
+    const sizeIncrement = 5;
+  
+    return iconsData.map(icon => {
+      let updatedCoordinates = icon.coordinates.map(coord => {
+        const value = coord[2]; // Assuming the value is stored as the third element
+        const newSize = baseSize + (sizeIncrement * (value - 1));
+        return [coord[0], coord[1], value, newSize, newSize]; // Append new width and height
+      });
+  
+      return {...icon, coordinates: updatedCoordinates}; // Update icon with new coordinates (including sizes)
+    });
+  }
+
+////////////////////////////////////////////////////////////////
   // Attach an event listener to the radio buttons
   d3.selectAll('input[name="map-option"]').on('change', function() {
     updateMap(this.value);
@@ -418,8 +395,7 @@ d3.selectAll('input[name="option"]').on('change', function() {
   }
   
   // Function to reset zoom
-    function resetZoom() {
-  
+  function resetZoom() {
     svg.transition()
       .duration(750) // Transition speed
       .call(zoom.transform, d3.zoomIdentity); // Reset the transform to no scaling and translation
@@ -433,6 +409,7 @@ d3.selectAll('input[name="option"]').on('change', function() {
       .duration(750) // Smooth transition duration
       .call(zoom.transform, d3.zoomIdentity); // Reset zoom level to the original state
   }
+  
 
   
 // end

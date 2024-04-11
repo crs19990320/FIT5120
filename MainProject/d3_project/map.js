@@ -1,4 +1,4 @@
-﻿
+
 
 // Define the dimensions for the SVG container
 const width = 1360, height = 800;
@@ -150,6 +150,7 @@ const typeOffsets = {
   'Water Consumption': {dx: 20, dy: -20},
   'Temperature': {dx: 0, dy: 20},
 };
+
 
 const iconsData = [
   {
