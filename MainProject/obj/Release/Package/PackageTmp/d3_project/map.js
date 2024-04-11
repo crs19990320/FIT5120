@@ -1,4 +1,4 @@
-﻿
+
 
 // Define the dimensions for the SVG container
 const width = 1360, height = 800;
@@ -74,7 +74,7 @@ const colorForState = (stateName, darker = false) => {
 };
 
 // Load the local GeoJSON data
-d3.json("data/australian-states.json").then(function(australia) {
+d3.json("https://mainprojectvideo.blob.core.windows.net/mainprojectvi/australian-states.json").then(function(australia) {
 // Dynamically shorten state names
 australia.features.forEach(function(feature) {
   switch (feature.properties.STATE_NAME) {
@@ -150,6 +150,7 @@ const typeOffsets = {
   'Water Consumption': {dx: 20, dy: -20},
   'Temperature': {dx: 0, dy: 20},
 };
+
 
 const iconsData = [
   {
