@@ -323,6 +323,7 @@
     <Content Include="d3_project\map.css" />
     <Content Include="d3_project\map.html" />
     <Content Include="d3_project\map.js" />
+    <Content Include="d3_project\map2.css" />
     <Content Include="d3_project\map2.js" />
     <Content Include="d3_project\nextTenYearsMapState.js" />
     <Content Include="d3_project\test.html" />

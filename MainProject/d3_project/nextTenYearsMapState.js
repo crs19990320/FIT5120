@@ -16,7 +16,7 @@ export function setupNextTenYearsMapState() {
 
 // Define a geographical projection
 const projection = d3.geoEquirectangular()
-.center([125, -27]) // Center the map on Australia
+.center([128, -27]) // Center the map on Australia
 .scale(1000) // Adjust scale
 .translate([width / 2, height / 2]);
 
@@ -78,7 +78,7 @@ const colorForState = (stateName, darker = false) => {
 };
 
 // Load the local GeoJSON data
-    d3.json("https://mainprojectvideo.blob.core.windows.net/mainprojectvi/australian-states.json").then(function(australia) {
+d3.json("data/australian-states.json").then(function(australia) {
 // Dynamically shorten state names
 australia.features.forEach(function(feature) {
 switch (feature.properties.STATE_NAME) {
