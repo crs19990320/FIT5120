@@ -147,7 +147,6 @@ const checklistHTML = `
                 <label><input type="radio" name="map-option" value="all" checked> All Factors</label><br>
                 <label><input type="radio" name="map-option" value="Water Consumption"> Water Consumption</label><br>
                 <label><input type="radio" name="map-option" value="Greenhouse Gases"> Greenhouse Gases</label><br>
-                <label><input type="radio" name="map-option" value="Temperature"> Temperature</label>
             </fieldset>
     </form> 
 `;
@@ -189,50 +188,50 @@ d3.selectAll('input[name="option"]').on('change', function() {
     {
       type: 'Greenhouse Gases',
       url: "icons/Emission_release_factory_icon.png",
-      coordinates: [
-        [153.012368, -35.473468], // ACT
-        [149.612793, -33.240233], // NSW
-        [134.550960, -21.491411], // NT
-        [145.702796, -24.517574], // QLD
-        [135.209155, -28.000233], // SA
-        [149.8087, -41.809],     // TAS
-        [145.785153, -38.471308], // VIC
-        [120.628310, -27.672817], // WA
-      ],
+          coordinates: [
+              [153.012368, -37.473468], // ACT
+              [144.209155, -32.240233], // NSW
+              [134.550960, -21.491411], // NT
+              [145.702796, -24.517574], // QLD
+              [135.209155, -30.000233], // SA
+              [149.8087, -43.809],     // TAS
+              [145.785153, -38.471308], // VIC
+              [120.628310, -27.672817], // WA
+          ],
       width: 60,
       height: 60
     },
     {
       type: 'Water Consumption',
       url: "icons/water2.png",
-      coordinates: [
-        [153.012368, -35.473468], // ACT
-[149.612793, -33.240233], // NSW
-[134.550960, -21.491411], // NT
-[145.702796, -24.517574], // QLD
-[135.209155, -28.000233], // SA
-[149.8087, -41.809],     // TAS
-[145.785153, -38.471308], // VIC
-[120.628310, -27.672817], // WA
+        coordinates: [
+            [153.012368, -35.473468], // ACT
+            [146.612793, -32.240233], // NSW
+            [134.550960, -19.491411], // NT
+            [146.702796, -22.517574], // QLD
+            [135.209155, -28.000233], // SA
+            [149.8087, -41.809],     // TAS
+            [145.785153, -38.471308], // VIC
+            [120.628310, -25.672817], // WA
      ],
       width: 60,
       height: 60
     },
-    {
-      type: 'Temperature', 
-      url: "icons/temp2.png", 
-      coordinates: [
-        [153.012368, -35.473468], // ACT
-[149.612793, -33.240233], // NSW
-[134.550960, -21.491411], // NT
-[145.702796, -24.517574], // QLD
-[135.209155, -28.000233], // SA
-[149.8087, -41.809],     // TAS
-[145.785153, -38.471308], // VIC
-[120.628310, -27.672817], // WA 
-     ],
-      width: 60, 
-      height: 60 },
+/*    {*/
+/*      type: 'Temperature', */
+     //   url: "icons/temp2.png", 
+     // coordinates: [
+     //     [153.012368, -35.473468], // ACT
+     //     [145.209155, -33.240233], // NSW
+     //     [134.550960, -21.491411], // NT
+     //     [145.702796, -24.517574], // QLD
+     //     [135.209155, -29.800233], // SA
+     //     [149.8087, -41.809],     // TAS
+     //     [143.785153, -37.471308], // VIC
+     //     [120.628310, -27.672817], // WA
+     //],
+     // width: 60, 
+     // height: 60 },
     
   ];
 
