@@ -407,6 +407,7 @@
     <None Include="Properties\PublishProfiles\GreenGuardians - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MainProject-fit5120-tp28 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MainProject-fit5120-tp28 - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\MainProject-fit5120-tp28 - Web Deploy2.pubxml" />
     <None Include="Properties\PublishProfiles\MainProject20240403211138 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MainProject20240407204544 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MainProject20240407204544 - Web Deploy1.pubxml" />
