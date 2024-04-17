@@ -21,8 +21,8 @@ h1 {
 
 #map-canvas {
     border: 1px solid rgba(253, 252, 252, 0.937);
-    width: 1360px; /* Specifies the width of the map canvas; can be omitted if set directly in the HTML */
-    height: 800px; /* Specifies the height of the map canvas; can be omitted if set directly in the HTML */
+    width: 1060px; /* Specifies the width of the map canvas; can be omitted if set directly in the HTML */
+    height: 700px; /* Specifies the height of the map canvas; can be omitted if set directly in the HTML */
    /* position: relative; /* or 'absolute' if you need it positioned relative to the nearest positioned ancestor */
     top: 20px; /* Move down from the top by 20px */
     left: 200px; /* Move right from the left by 20px */
