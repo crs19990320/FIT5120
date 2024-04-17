@@ -2,11 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Controllers",
-    "\\d3_project",
     "\\Games",
     "\\Views",
     "\\Views\\Home"
   ],
-  "SelectedNode": "\\Games\\card.html",
+  "SelectedNode": "\\MainProject.sln",
   "PreviewInSolutionExplorer": false
 }

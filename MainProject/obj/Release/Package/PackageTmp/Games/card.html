@@ -100,28 +100,27 @@
 
       loadingBar.style.display = "block";
 
-        var script = document.createElement("script");
-        script.src = loaderUrl;
-        script.onload = () => {
-            createUnityInstance(canvas, config, (progress) => {
-                progressBarFull.style.width = 100 * progress + "%";
-            }).then((unityInstance) => {
-                loadingBar.style.display = "none";
-                fullscreenButton.onclick = () => {
-                    unityInstance.SetFullscreen(1);
-                };
-
-                var storedData = sessionStorage.getItem('QuestionJson');
-                if (storedData) {
-                    console.log("Sending stored data to Unity");
-                    unityInstance.SendMessage('StartClick', 'ReceiveJsonString', storedData);
-                }
-
-            }).catch((message) => {
-                console.log(message);
-            });
+      var script = document.createElement("script");
+script.src = loaderUrl;
+script.onload = () => {
+    createUnityInstance(canvas, config, (progress) => {
+        progressBarFull.style.width = 100 * progress + "%";
+    }).then((unityInstance) => {
+        loadingBar.style.display = "none";
+        fullscreenButton.onclick = () => {
+            unityInstance.SetFullscreen(1);
         };
 
+        var storedData = sessionStorage.getItem('QuestionJson');
+        if (storedData) {
+            console.log("Sending stored data to Unity");
+            unityInstance.SendMessage('StartClick', 'ReceiveJsonString', storedData);
+        }
+
+    }).catch((message) => {
+        console.log(message);
+    });
+    }
       document.body.appendChild(script);
 
     </script>
