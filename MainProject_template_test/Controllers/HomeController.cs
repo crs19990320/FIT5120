@@ -8,7 +8,12 @@ namespace MainProject_template_test.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Dashboard()
+        {
+            return View();
+        }
+
+        public ActionResult HomePage()
         {
             return View();
         }

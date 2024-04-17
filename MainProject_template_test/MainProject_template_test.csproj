@@ -190,6 +190,31 @@
     <Content Include="lib\waypoints\waypoints.min.js" />
     <Content Include="lib\wow\wow.js" />
     <Content Include="lib\wow\wow.min.js" />
+    <Content Include="Media\3.jpg" />
+    <Content Include="Media\back.png" />
+    <Content Include="Media\Choice.png" />
+    <Content Include="Media\co2.jpg" />
+    <Content Include="Media\EndGame2.png" />
+    <Content Include="Media\Explore.png" />
+    <Content Include="Media\giphy2.gif" />
+    <Content Include="Media\homebutton.png" />
+    <Content Include="Media\Instruction.png" />
+    <Content Include="Media\LandingPage.png" />
+    <Content Include="Media\Learn.png" />
+    <Content Include="Media\LearnVideo.png" />
+    <Content Include="Media\Mom&amp;Dad.png" />
+    <Content Include="Media\Note.jpg" />
+    <Content Include="Media\Play.png" />
+    <Content Include="Media\reset.png" />
+    <Content Include="Media\scale_gas.png" />
+    <Content Include="Media\scale_temp.png" />
+    <Content Include="Media\scale_water.png" />
+    <Content Include="Media\star.png" />
+    <Content Include="Media\StartGame .png" />
+    <Content Include="Media\Statuses2.png" />
+    <Content Include="Media\test_video1.mp4" />
+    <Content Include="Media\VideoDraft.mp4" />
+    <Content Include="Media\WelcomePage.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -232,7 +257,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\HomePage.cshtml" />
     <Content Include="scss\bootstrap.scss" />
     <Content Include="scss\bootstrap\scss\bootstrap-grid.scss" />
     <Content Include="scss\bootstrap\scss\bootstrap-reboot.scss" />
@@ -315,6 +340,7 @@
     <Content Include="scss\bootstrap\scss\_type.scss" />
     <Content Include="scss\bootstrap\scss\_utilities.scss" />
     <Content Include="scss\bootstrap\scss\_variables.scss" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
