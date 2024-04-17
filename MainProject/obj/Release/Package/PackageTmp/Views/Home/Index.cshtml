@@ -280,7 +280,7 @@
         </script>*@
 
 
-                    <script>
+<script>
     document.getElementById('game').addEventListener('click', function () {
         var jsonData = @Html.Raw(Json.Encode(Model));
 
@@ -299,4 +299,4 @@
         console.log("Randomly selected 10 questions:", encapsulatedData);
         window.location.href = '/Home/Contact';
     });
-                    </script>
+</script>
