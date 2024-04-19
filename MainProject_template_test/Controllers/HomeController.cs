@@ -18,10 +18,8 @@ namespace MainProject_template_test.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Puzzle()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
