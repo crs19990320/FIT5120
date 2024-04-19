@@ -1,7 +1,7 @@
 /********** Template CSS **********/
 :root {
-    --primary: #00FF00;
-    --light: #00FF00;
+    --primary: #17522F;
+    --light: #17522F;
     --dark: #103741;
 }
 
@@ -105,10 +105,10 @@ h6,
     outline: none;
 }
 
-.navbar .navbar-nav .nav-link:hover,
-.navbar .navbar-nav .nav-link.active {
-    color: var(--primary);
-}
+    .navbar .navbar-nav .nav-link:hover,
+    .navbar .navbar-nav .nav-link.active {
+        color: #17522F;
+    }
 
 .navbar.sticky-top {
     top: -100px;
