@@ -405,6 +405,8 @@
     <Content Include="App_Data\map_current_new.csv" />
     <None Include="Properties\PublishProfiles\FIT5120-TP28-24S1 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\GreenGuardians - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\GreenGuardians - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\GreenGuardians-iteration1 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MainProject-fit5120-tp28 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MainProject-fit5120-tp28 - Web Deploy1.pubxml" />
     <None Include="Properties\PublishProfiles\MainProject-fit5120-tp28 - Web Deploy2.pubxml" />

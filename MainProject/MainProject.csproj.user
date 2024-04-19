@@ -21,7 +21,11 @@
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_DbContextDialogWidth>600</WebStackScaffolding_DbContextDialogWidth>
+<<<<<<< Updated upstream
     <NameOfLastUsedPublishProfile>D:\Monash\5120&amp;5122\Assessments\FIT5120\MainProject\Properties\PublishProfiles\MainProject-fit5120-tp28 - Web Deploy3.pubxml</NameOfLastUsedPublishProfile>
+=======
+    <NameOfLastUsedPublishProfile>C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject\Properties\PublishProfiles\GreenGuardians-iteration1 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
+>>>>>>> Stashed changes
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
