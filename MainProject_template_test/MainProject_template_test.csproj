@@ -212,6 +212,7 @@
     <Content Include="Media\star.png" />
     <Content Include="Media\StartGame .png" />
     <Content Include="Media\Statuses2.png" />
+    <Content Include="Media\testPic.png" />
     <Content Include="Media\test_video1.mp4" />
     <Content Include="Media\VideoDraft.mp4" />
     <Content Include="Media\WelcomePage.png" />

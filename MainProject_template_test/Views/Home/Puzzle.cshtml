@@ -7,57 +7,121 @@
     <meta charset="UTF-8">
     <title>Change Ellipse Color on Click</title>
     <style>
-        
+        html, body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #puzzlediv {
+            position: relative;
+            width: 700px;
+            height: 700px;
+            top:300px;
+        }
+
+        #test {
+            position: absolute;
+            top: 17px;
+            left: 17px;
+            width: 83.5%;
+            height: 83.5%;
+        }
+
+        #svg_puzzle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #test{
+            z-index: 1;
+        }
+
+        #svg_puzzle {
+            z-index: 2;
+        }
+
+        #journeydiv {
+            position: absolute;
+            left: 200px;
+            top:20px;
+        }
+
     </style>
 </head>
 <body>
-    <div>
-        <svg id="svg_journey" width="1334" height="450" xmlns="http://www.w3.org/2000/svg">
-            <path id="p1" d="M1,2 Q50,10 60,100 " stroke="black" fill="transparent" stroke-width="3" />
-            <ellipse id="e1" cx="100" cy="100" rx="40" ry="20" stroke="black" fill="transparent" stroke-width="3" />
-            <path id="p2" d=" M140,100 Q200,100 210,140" stroke="black" fill="transparent" stroke-width="3" />
-            <ellipse id="e2" cx="250" cy="140" rx="40" ry="20" stroke="black" fill="transparent" stroke-width="3" />
-            <path id="p3" d=" M290,140 Q280,80 350,80" stroke="black" fill="transparent" stroke-width="3" />
-            <ellipse id="e3" cx="390" cy="80" rx="40" ry="20" stroke="black" fill="transparent" stroke-width="3" />
-            <path id="p4" d=" M430,80 Q460,80 470,160" stroke="black" fill="transparent" stroke-width="3" />
-            <ellipse id="e4" cx="510" cy="160" rx="40" ry="20" stroke="black" fill="transparent" stroke-width="3" />
-            <path id="p5" d=" M550,160 Q550,110 600,110" stroke="black" fill="transparent" stroke-width="3" />
-            <ellipse id="e5" cx="640" cy="110" rx="40" ry="20" stroke="black" fill="transparent" stroke-width="3" />
-            <path id="p6" d=" M680,110 Q710,130 720,230" stroke="black" fill="transparent" stroke-width="3" />
-            <ellipse id="e6" cx="760" cy="230" rx="40" ry="20" stroke="black" fill="transparent" stroke-width="3" />
-            <path id="p7" d=" M800,230 Q810,100 840,100" stroke="black" fill="transparent" stroke-width="3" />
-            <ellipse id="e7" cx="880" cy="100" rx="40" ry="20" stroke="black" fill="transparent" stroke-width="3" />
-            <path id="p8" d=" M920,100 Q930,170 970,170" stroke="black" fill="transparent" stroke-width="3" />
-        </svg>
-    </div>
-    <div>
-        <svg id="svg_puzzle" width="700" height="700" viewBox="0 0 350 350" xmlns="http://www.w3.org/2000/svg">
-            <path id="pi1" d="M 10,10 V 100 H 51 A 1,1 0 0 0 70,100 H 100 V 59 A 1,1 0 0 1 100,39 V 10 H 10 Z" stroke="black" fill="black" stroke-width="2" />
-            <path id="pi2" d="M 100,10 H 200 V 40 A 1,1 0 0 1 200,60 V 100 H 160 A 1,1 0 0 0 140,100 H 100 V 59 A 1,1 0 0 1 100,39 V 10 Z" stroke="black" fill="black" stroke-width="2" />
-            <path id="pi3" d="M 200,10 H 300 V 100 H 260 A 1,1 0 0 1 240,100 H 200 V 59 A 1,1 0 0 0 200,39 V 10 Z" stroke="black" fill="black" stroke-width="2" />
-            <path id="pi4" d="M 10,100 H 51 A 1,1 0 0 0 70,100 H 100 V 140 A 1,1 0 0 1 100,160 V 200 H 70 A 1,1 0 0 0 50,200 H 10 V 100 Z" stroke="black" fill="black" stroke-width="2" />
-            <path id="pi5" d="M 100,100 H 141 A 1,1 0 0 1 160,100 H 200 V 140 A 1,1 0 0 0 200,160 V 200 H 160 A 1,1 0 0 1 140,200 H 100 V 160 A 1,1 0 0 0 100,140 V 100 Z" stroke="black" fill="black" stroke-width="2" />
-            <path id="pi6" d="M 200,100 H 240 A 1,1 0 0 0 260,100 H 300 V 200 H 260 A 1,1 0 0 0 240,200 H 200 V 159 A 1,1 0 0 1 200,139 V 100 Z" stroke="black" fill="black" stroke-width="2" />
-            <path id="pi7" d="M 10,200 V 300 H 100 V260 A 1,1 0 0 1 100,240 V 200 H 70 A 1,1 0 0 0 50,200 H 10 Z" stroke="black" fill="black" stroke-width="2" />
-            <path id="pi8" d="M 100,200 H 140 A 1,1 0 0 0 160,200 H 200 V 240 A 1,1 0 0 1 200,260 V 300 H 100 V 260 A 1,1 0 0 1 100,240 V 210 Z" stroke="black" fill="black" stroke-width="2" />
-            <path id="pi9" d="M 200,200 H 240 A 1,1 0 0 1 260,200 H 300 V 300 H 200 V 260 A 1,1 0 0 0 200,240 V 200 Z" stroke="black" fill="black" stroke-width="2" />
-        </svg>
-    </div>
 
+    <div id="main-container">
+        <div id="journeydiv">
+            <svg id="svg_journey" width="1334" height="450" xmlns="http://www.w3.org/2000/svg">
+                <path id="p1" d="M1,2 Q50,10 60,100 " stroke="black" fill="transparent" stroke-width="3" />
+                <ellipse id="e1" cx="100" cy="100" rx="40" ry="20" stroke="black" fill="transparent" stroke-width="3" />
+                <path id="p2" d=" M140,100 Q200,100 210,140" stroke="black" fill="transparent" stroke-width="3" />
+                <ellipse id="e2" cx="250" cy="140" rx="40" ry="20" stroke="black" fill="transparent" stroke-width="3" />
+                <path id="p3" d=" M290,140 Q280,80 350,80" stroke="black" fill="transparent" stroke-width="3" />
+                <ellipse id="e3" cx="390" cy="80" rx="40" ry="20" stroke="black" fill="transparent" stroke-width="3" />
+                <path id="p4" d=" M430,80 Q460,80 470,160" stroke="black" fill="transparent" stroke-width="3" />
+                <ellipse id="e4" cx="510" cy="160" rx="40" ry="20" stroke="black" fill="transparent" stroke-width="3" />
+                <path id="p5" d=" M550,160 Q550,110 600,110" stroke="black" fill="transparent" stroke-width="3" />
+                <ellipse id="e5" cx="640" cy="110" rx="40" ry="20" stroke="black" fill="transparent" stroke-width="3" />
+                <path id="p6" d=" M680,110 Q710,130 720,230" stroke="black" fill="transparent" stroke-width="3" />
+                <ellipse id="e6" cx="760" cy="230" rx="40" ry="20" stroke="black" fill="transparent" stroke-width="3" />
+                <path id="p7" d=" M800,230 Q810,100 840,100" stroke="black" fill="transparent" stroke-width="3" />
+                <ellipse id="e7" cx="880" cy="100" rx="40" ry="20" stroke="black" fill="transparent" stroke-width="3" />
+                <path id="p8" d=" M920,100 Q930,170 970,170" stroke="black" fill="transparent" stroke-width="3" />
+            </svg>
+        </div>
+        <div id="puzzlediv">
+            <img id="test" src="~/Media/testPic.png">
+            <svg id="svg_puzzle" width="700px" height="700px" viewBox="0 0 350 350" xmlns="http://www.w3.org/2000/svg">
+                <path id="pi1" d="M 10,10 V 100 H 51 A 1,1 0 0 0 70,100 H 100 V 59 A 1,1 0 0 1 100,39 V 10 H 10 Z" stroke="black" fill="black" stroke-width="2" />
+                <path id="pi2" d="M 100,10 H 200 V 40 A 1,1 0 0 1 200,60 V 100 H 160 A 1,1 0 0 0 140,100 H 100 V 59 A 1,1 0 0 1 100,39 V 10 Z" stroke="black" fill="black" stroke-width="2" />
+                <path id="pi3" d="M 200,10 H 300 V 100 H 260 A 1,1 0 0 1 240,100 H 200 V 59 A 1,1 0 0 0 200,39 V 10 Z" stroke="black" fill="black" stroke-width="2" />
+                <path id="pi4" d="M 10,100 H 51 A 1,1 0 0 0 70,100 H 100 V 140 A 1,1 0 0 1 100,160 V 200 H 70 A 1,1 0 0 0 50,200 H 10 V 100 Z" stroke="black" fill="black" stroke-width="2" />
+                <path id="pi5" d="M 100,100 H 141 A 1,1 0 0 1 160,100 H 200 V 140 A 1,1 0 0 0 200,160 V 200 H 160 A 1,1 0 0 1 140,200 H 100 V 160 A 1,1 0 0 0 100,140 V 100 Z" stroke="black" fill="black" stroke-width="2" />
+                <path id="pi6" d="M 200,100 H 240 A 1,1 0 0 0 260,100 H 300 V 200 H 260 A 1,1 0 0 0 240,200 H 200 V 159 A 1,1 0 0 1 200,139 V 100 Z" stroke="black" fill="black" stroke-width="2" />
+                <path id="pi7" d="M 10,200 V 300 H 100 V260 A 1,1 0 0 1 100,240 V 200 H 70 A 1,1 0 0 0 50,200 H 10 Z" stroke="black" fill="black" stroke-width="2" />
+                <path id="pi8" d="M 100,200 H 140 A 1,1 0 0 0 160,200 H 200 V 240 A 1,1 0 0 1 200,260 V 300 H 100 V 260 A 1,1 0 0 1 100,240 V 210 Z" stroke="black" fill="black" stroke-width="2" />
+                <path id="pi9" d="M 200,200 H 240 A 1,1 0 0 1 260,200 H 300 V 300 H 200 V 260 A 1,1 0 0 0 200,240 V 200 Z" stroke="black" fill="black" stroke-width="2" />
+            </svg>
+        </div>
+    </div>
     <script>
-        document.querySelectorAll('#svg_journey ellipse').forEach(ellipse => {
-            ellipse.addEventListener('click', function () {
-                this.setAttribute('fill', this.getAttribute('fill') === 'transparent' ? 'green' : 'transparent');
-            });
-        });
-        </script>
-        <script>
-            document.querySelectorAll('#svg_puzzle path').forEach(path => {
-            path.addEventListener('click', function () {
-                this.setAttribute('fill', this.getAttribute('fill') === 'black' ? 'transparent' : 'black');
-            });
-        });
-    </script>
+        var taskStatusString = sessionStorage.getItem('checkListData');
+        var taskStatus = taskStatusString ? JSON.parse(taskStatusString) : {};
+        if (Object.keys(taskStatus).length > 0) {
+            var tasks = Object.keys(taskStatus);
 
+            tasks.forEach(task => {
+                const taskIndex = task.replace('task', '');
+                const ellipseId = `e${taskIndex}`;
+                const puzzleid = `pi${taskIndex}`
+                const ellipse = document.getElementById(ellipseId);
+                const puzzlepi = document.getElementById(puzzleid);
+
+                if (ellipse) {
+                    ellipse.setAttribute('fill', 'green');
+                    ellipse.addEventListener('click', function () {
+                        alert(taskStatus[task]);
+                    });
+                }
+                if (puzzlepi) {
+                    puzzlepi.setAttribute('fill', 'transparent');
+                }
+            });
+        } else {
+            console.log("No data to process.");
+        }
+    </script>
 </body>
 </html>

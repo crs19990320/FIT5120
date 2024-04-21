@@ -320,7 +320,18 @@
         });
     </script>*@
 
+<script>
+    var taskStatus = {};
 
+    document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(function (checkbox) {
+        checkbox.addEventListener('click', function () {
+            var textSpan = checkbox.parentNode.querySelector('span').textContent;
+            taskStatus[checkbox.id] = textSpan;
+            console.log(JSON.stringify(taskStatus));
+            sessionStorage.setItem('checkListData', JSON.stringify(taskStatus));
+        });
+    });
+</script>
 <script>
     document.getElementById('game').addEventListener('click', function () {
         var jsonData = @Html.Raw(Json.Encode(Model));
