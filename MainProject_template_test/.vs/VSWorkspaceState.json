@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\css"
+    "\\css",
+    "\\Views",
+    "\\Views\\Home"
   ],
-  "SelectedNode": "\\MainProject_template_test.sln",
+  "SelectedNode": "\\Views\\Home\\Puzzle.cshtml",
   "PreviewInSolutionExplorer": false
 }
