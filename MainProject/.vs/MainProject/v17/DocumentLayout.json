@@ -14,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -33,6 +33,10 @@
               "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "card.html",
@@ -40,9 +44,9 @@
               "RelativeDocumentMoniker": "Games\\card.html",
               "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Games\\card.html",
               "RelativeToolTip": "Games\\card.html",
-              "ViewState": "AQIAACEAAAAAAAAAAAAAADUAAAAOAAAA",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAEEAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-04-19T06:52:44.311Z",
+              "WhenOpened": "2024-04-21T07:39:27.425Z",
               "EditorCaption": ""
             }
           ]
