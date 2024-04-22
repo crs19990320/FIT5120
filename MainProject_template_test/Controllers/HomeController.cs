@@ -117,6 +117,11 @@ namespace MainProject_template_test.Controllers
             return View();
         }
 
+        public ActionResult Parents()
+        {
+            return View();
+        }
+
         public ActionResult Puzzle()
         {
             return View();
