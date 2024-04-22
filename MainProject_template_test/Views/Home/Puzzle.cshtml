@@ -115,8 +115,19 @@
                         alert(taskStatus[task]);
                     });
                 }
-                if (puzzlepi) {
+                if (taskIndex != '6' && taskIndex != '7') {
                     puzzlepi.setAttribute('fill', 'transparent');
+                }
+                else if (taskIndex == '6') {
+                    puzzlepi.setAttribute('fill', 'transparent');
+                    const puzzlepiBonus = document.getElementById("pi7");
+                    puzzlepiBonus.setAttribute('fill', 'transparent');
+                }
+                else if (taskIndex == '7') {
+                    const puzzlepiBonus1 = document.getElementById("pi8");
+                    puzzlepiBonus.setAttribute('fill', 'transparent');
+                    const puzzlepiBonus2 = document.getElementById("pi9");
+                    puzzlepiBonus.setAttribute('fill', 'transparent');
                 }
             });
         } else {
