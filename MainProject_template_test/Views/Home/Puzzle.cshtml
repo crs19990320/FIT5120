@@ -171,7 +171,7 @@
                             case '4': ellipse.setAttribute('fill', 'rgb(46, 204, 113)'); break;
                             case '5': ellipse.setAttribute('fill', 'rgb(52, 152, 219)'); break;
                             case '6': ellipse.setAttribute('fill', 'rgb(240, 128, 128)'); break;
-                            case '7': ellipse.setAttribute('fill', 'rgb(142, 68, 173)'); break;
+                           // case '7': ellipse.setAttribute('fill', 'rgb(142, 68, 173)'); break;
                         }
 
                         ellipse.addEventListener('mouseenter', function () {
@@ -192,12 +192,6 @@
                         const puzzlepiBonus = document.getElementById("pi7");
                         puzzlepiBonus.setAttribute('fill', 'transparent');
                     }
-                    /*else if (taskIndex == '7') {
-                        const puzzlepiBonus1 = document.getElementById("pi8");
-                        puzzlepiBonus1.setAttribute('fill', 'transparent');
-                        const puzzlepiBonus2 = document.getElementById("pi9");
-                        puzzlepiBonus2.setAttribute('fill', 'transparent');
-                    }*/
                 });
             } else {
                 console.log("No data to process.");
@@ -205,7 +199,25 @@
         });
     </script>
     <script>
-        
-        </script>
+        var videoComplete = sessionStorage.getItem('videoComplete');
+        if (videoComplete) {
+            const ellipse = document.getElementById('e7');
+            ellipse.setAttribute('fill', 'rgb(142, 68, 173)'); 
+
+            ellipse.addEventListener('mouseenter', function () {
+                infoText.textContent = "Weekly learning video completed!";
+                infoBox.style.display = 'flex';
+            });
+
+            ellipse.addEventListener('mouseleave', function () {
+            infoBox.style.display = 'none';
+            });
+
+            const puzzlepiBonus1 = document.getElementById("pi8");
+            puzzlepiBonus1.setAttribute('fill', 'transparent');
+            const puzzlepiBonus2 = document.getElementById("pi9");
+            puzzlepiBonus2.setAttribute('fill', 'transparent');
+        }
+    </script>
 </body>
 </html>
