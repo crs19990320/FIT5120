@@ -81,10 +81,10 @@
             transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
 
-            .btn:hover {
-                background-color: #0056b3;
-                border-color: #0056b3;
-            }
+        .btn:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
 
         .card-image {
             width: 40%;
@@ -118,33 +118,34 @@
             font-weight: bold;
         }
 
-            .checklist-item input[type="checkbox"] {
-                display: none;
-            }
+        .checklist-item input[type="checkbox"] {
+            display: none;
+        }
 
-            .checklist-item label {
-                position: relative;
-                display: inline-block;
-                width: 20px;
-                height: 20px;
-                background-color: #fff;
-                border: 1px solid #ccc;
-                /*            border-radius: 50%;*/
-                cursor: pointer;
-                margin-right: 5px;
-            }
+        .checklist-item label {
+            position: relative;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            /*            border-radius: 50%;*/
+            cursor: pointer;
+            margin-right: 5px;
+        }
 
-            .checklist-item input[type="checkbox"]:checked + label:after {
-                content: '';
-                position: absolute;
-                top: 4px;
-                left: 7px;
-                width: 6px;
-                height: 12px;
-                border: solid #007bff;
-                border-width: 0 2px 2px 0;
-                transform: rotate(45deg);
-            }
+        .checklist-item input[type="checkbox"]:checked + label:after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 7px;
+            width: 6px;
+            height: 12px;
+            border: solid #007bff;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
         .mybutton1{
             text-align:left;
             position:absolute;
@@ -215,7 +216,7 @@
             </div>
             <div class="button-container">
                 <div class="mybutton1">
-                    <a href="WelcomePage" class="btn">Start</a>
+                    <a href="LearnPage" class="btn">Start</a>
                 </div>
             </div>
         </div>
@@ -224,6 +225,7 @@
         </div>
     </div>
 
+    <!-- CardGame Card-->
     <div class="card" style="background-color: mediumpurple">
         <div class="card-content">
             <div class="card-title">Play</div>
@@ -240,6 +242,8 @@
             <img src="~/Media/Play.png" alt="Placeholder Image">
         </div>
     </div>
+
+    <!-- Puzzle Card-->
     <div class="card" style="background-color: mediumpurple">
         <div class="card-content">
             <div class="card-title">Puzzle</div>
@@ -332,6 +336,8 @@
         });
     });
 </script>
+
+
 <script>
     document.getElementById('game').addEventListener('click', function () {
         var jsonData = @Html.Raw(Json.Encode(Model));
@@ -349,6 +355,6 @@
         };
         sessionStorage.setItem('QuestionJson', JSON.stringify(encapsulatedData));
         console.log("Randomly selected 10 questions:", encapsulatedData);
-        window.location.href = '/Home/Contact';
+        window.location.href = '/Home/CardGame';
     });
 </script>

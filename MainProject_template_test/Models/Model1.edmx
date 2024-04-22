@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Climate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="state" Type="varchar" MaxLength="50" />
+          <Property Name="state_lat" Type="float" />
+          <Property Name="state_long" Type="float" />
+          <Property Name="temp_change" Type="float" />
+          <Property Name="avr_rainfall" Type="float" />
+        </EntityType>
+        <EntityType Name="CurrentNewMap">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="state" Type="varchar" MaxLength="50" />
+          <Property Name="state_lat" Type="float" />
+          <Property Name="state_long" Type="float" />
+          <Property Name="Temperature" Type="int" />
+          <Property Name="net_emissions" Type="int" />
+          <Property Name="rainfall_percentage" Type="int" />
+          <Property Name="total_water_use" Type="int" />
+          <Property Name="total_water_consumption" Type="int" />
+        </EntityType>
+        <EntityType Name="MapModelTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="task1" Type="int" />
+          <Property Name="task2" Type="int" />
+          <Property Name="task3" Type="int" />
+          <Property Name="task4" Type="int" />
+          <Property Name="task5" Type="int" />
+          <Property Name="task6" Type="int" />
+          <Property Name="net_emissions" Type="int" />
+          <Property Name="rainfall_percentage" Type="int" />
+          <Property Name="Temperature" Type="int" />
+          <Property Name="total_water_consumption" Type="int" />
+          <Property Name="total_water_use" Type="int" />
+        </EntityType>
+        <EntityType Name="QuestionTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Questions" Type="varchar(max)" />
+          <Property Name="Answer1" Type="varchar(max)" />
+          <Property Name="Answer2" Type="varchar(max)" />
+          <Property Name="A1Carbon" Type="int" />
+          <Property Name="A1Water" Type="int" />
+          <Property Name="A1EcoLife" Type="int" />
+          <Property Name="A2Carbon" Type="int" />
+          <Property Name="A2Water" Type="int" />
+          <Property Name="A2EcoLife" Type="int" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="CardName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="ImagePath" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="Climate" EntityType="Self.Climate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CurrentNewMap" EntityType="Self.CurrentNewMap" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MapModelTable" EntityType="Self.MapModelTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuestionTable" EntityType="Self.QuestionTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CardName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tables" EntityType="Self.Table" />
+          <EntitySet Name="QuestionTable1" EntityType="Database1Model.QuestionTable" />
+          <EntitySet Name="Climate" EntityType="Database1Model.Climate" />
+          <EntitySet Name="MapModelTable" EntityType="Database1Model.MapModelTable" />
+          <EntitySet Name="CurrentNewMap" EntityType="Database1Model.CurrentNewMap" />
+        </EntityContainer>
+        <EntityType Name="QuestionTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Questions" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Answer1" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Answer2" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="A1Carbon" Type="Int32" />
+          <Property Name="A1Water" Type="Int32" />
+          <Property Name="A1EcoLife" Type="Int32" />
+          <Property Name="A2Carbon" Type="Int32" />
+          <Property Name="A2Water" Type="Int32" />
+          <Property Name="A2EcoLife" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Climate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="state_lat" Type="Double" />
+          <Property Name="state_long" Type="Double" />
+          <Property Name="temp_change" Type="Double" />
+          <Property Name="avr_rainfall" Type="Double" />
+        </EntityType>
+        <EntityType Name="MapModelTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="task1" Type="Int32" />
+          <Property Name="task2" Type="Int32" />
+          <Property Name="task3" Type="Int32" />
+          <Property Name="task4" Type="Int32" />
+          <Property Name="task5" Type="Int32" />
+          <Property Name="task6" Type="Int32" />
+          <Property Name="net_emissions" Type="Int32" />
+          <Property Name="rainfall_percentage" Type="Int32" />
+          <Property Name="Temperature" Type="Int32" />
+          <Property Name="total_water_consumption" Type="Int32" />
+          <Property Name="total_water_use" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CurrentNewMap">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="state_lat" Type="Double" />
+          <Property Name="state_long" Type="Double" />
+          <Property Name="Temperature" Type="Int32" />
+          <Property Name="net_emissions" Type="Int32" />
+          <Property Name="rainfall_percentage" Type="Int32" />
+          <Property Name="total_water_use" Type="Int32" />
+          <Property Name="total_water_consumption" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+          <EntitySetMapping Name="Tables">
+            <EntityTypeMapping TypeName="Database1Model.Table">
+              <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CardName" ColumnName="CardName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuestionTable1">
+            <EntityTypeMapping TypeName="IsTypeOf(Database1Model.QuestionTable)">
+              <MappingFragment StoreEntitySet="QuestionTable">
+                <ScalarProperty Name="A2EcoLife" ColumnName="A2EcoLife" />
+                <ScalarProperty Name="A2Water" ColumnName="A2Water" />
+                <ScalarProperty Name="A2Carbon" ColumnName="A2Carbon" />
+                <ScalarProperty Name="A1EcoLife" ColumnName="A1EcoLife" />
+                <ScalarProperty Name="A1Water" ColumnName="A1Water" />
+                <ScalarProperty Name="A1Carbon" ColumnName="A1Carbon" />
+                <ScalarProperty Name="Answer2" ColumnName="Answer2" />
+                <ScalarProperty Name="Answer1" ColumnName="Answer1" />
+                <ScalarProperty Name="Questions" ColumnName="Questions" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Climate">
+            <EntityTypeMapping TypeName="Database1Model.Climate">
+              <MappingFragment StoreEntitySet="Climate">
+                <ScalarProperty Name="avr_rainfall" ColumnName="avr_rainfall" />
+                <ScalarProperty Name="temp_change" ColumnName="temp_change" />
+                <ScalarProperty Name="state_long" ColumnName="state_long" />
+                <ScalarProperty Name="state_lat" ColumnName="state_lat" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MapModelTable">
+            <EntityTypeMapping TypeName="Database1Model.MapModelTable">
+              <MappingFragment StoreEntitySet="MapModelTable">
+                <ScalarProperty Name="total_water_use" ColumnName="total_water_use" />
+                <ScalarProperty Name="total_water_consumption" ColumnName="total_water_consumption" />
+                <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+                <ScalarProperty Name="rainfall_percentage" ColumnName="rainfall_percentage" />
+                <ScalarProperty Name="net_emissions" ColumnName="net_emissions" />
+                <ScalarProperty Name="task6" ColumnName="task6" />
+                <ScalarProperty Name="task5" ColumnName="task5" />
+                <ScalarProperty Name="task4" ColumnName="task4" />
+                <ScalarProperty Name="task3" ColumnName="task3" />
+                <ScalarProperty Name="task2" ColumnName="task2" />
+                <ScalarProperty Name="task1" ColumnName="task1" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurrentNewMap">
+            <EntityTypeMapping TypeName="Database1Model.CurrentNewMap">
+              <MappingFragment StoreEntitySet="CurrentNewMap">
+                <ScalarProperty Name="total_water_consumption" ColumnName="total_water_consumption" />
+                <ScalarProperty Name="total_water_use" ColumnName="total_water_use" />
+                <ScalarProperty Name="rainfall_percentage" ColumnName="rainfall_percentage" />
+                <ScalarProperty Name="net_emissions" ColumnName="net_emissions" />
+                <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+                <ScalarProperty Name="state_long" ColumnName="state_long" />
+                <ScalarProperty Name="state_lat" ColumnName="state_lat" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
