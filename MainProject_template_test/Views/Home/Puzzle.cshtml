@@ -11,34 +11,32 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            
         }
 
-        #main-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
 
         #puzzlediv {
             position: relative;
-            width: 700px;
+            width: 500px;
             height: 700px;
-            top:300px;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(158, 247, 182, 0.5);
+            border-radius:30px;
         }
 
         #test {
             position: absolute;
-            top: 17px;
-            left: 17px;
+            top: 32px;
+            left: 33px;
             width: 83.5%;
-            height: 83.5%;
+            height: 59%;
         }
 
         #svg_puzzle {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: -80px;
+            left: 20px;
             width: 100%;
             height: 100%;
         }
@@ -53,86 +51,161 @@
 
         #journeydiv {
             position: absolute;
-            left: 200px;
-            top:20px;
+            left: 570px;
+            top: 20px;
+            width: 582px;
+        }
+
+        .ellipse {
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .ellipse:hover {
+            filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.7));
+        }
+        #line {
+            position: absolute;
+            top: 430px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: white;
+        }
+
+        #infoBox {
+            display: none;
+            position: absolute;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgba(39, 55, 70, 0.5);
+            border: 1px solid #ccc;
+            width: auto;
+            transition: all 1s ease; 
+        }
+
+        #infoImage {
+            width: 30px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        #infoText {
+            flex: 1;
+            font-size: 13px;
+            color: #333;
+        }
+        .mp {
+            margin-top: 0;
+            margin-bottom: 0;
         }
 
     </style>
 </head>
-<body>
+<body style="background-image: url('../../media/puzzlebackground.png'); background-size: cover;">
 
-    <div id="main-container">
-        <div id="journeydiv">
-            <svg id="svg_journey" width="1334" height="450" xmlns="http://www.w3.org/2000/svg">
-                <path id="p1" d="M1,2 Q50,10 60,100 " stroke="black" fill="transparent" stroke-width="3" />
-                <ellipse id="e1" cx="100" cy="100" rx="40" ry="20" stroke="black" fill="transparent" stroke-width="3" />
-                <path id="p2" d=" M140,100 Q200,100 210,140" stroke="black" fill="transparent" stroke-width="3" />
-                <ellipse id="e2" cx="250" cy="140" rx="40" ry="20" stroke="black" fill="transparent" stroke-width="3" />
-                <path id="p3" d=" M290,140 Q280,80 350,80" stroke="black" fill="transparent" stroke-width="3" />
-                <ellipse id="e3" cx="390" cy="80" rx="40" ry="20" stroke="black" fill="transparent" stroke-width="3" />
-                <path id="p4" d=" M430,80 Q460,80 470,160" stroke="black" fill="transparent" stroke-width="3" />
-                <ellipse id="e4" cx="510" cy="160" rx="40" ry="20" stroke="black" fill="transparent" stroke-width="3" />
-                <path id="p5" d=" M550,160 Q550,110 600,110" stroke="black" fill="transparent" stroke-width="3" />
-                <ellipse id="e5" cx="640" cy="110" rx="40" ry="20" stroke="black" fill="transparent" stroke-width="3" />
-                <path id="p6" d=" M680,110 Q710,130 720,230" stroke="black" fill="transparent" stroke-width="3" />
-                <ellipse id="e6" cx="760" cy="230" rx="40" ry="20" stroke="black" fill="transparent" stroke-width="3" />
-                <path id="p7" d=" M800,230 Q810,100 840,100" stroke="black" fill="transparent" stroke-width="3" />
-                <ellipse id="e7" cx="880" cy="100" rx="40" ry="20" stroke="black" fill="transparent" stroke-width="3" />
-                <path id="p8" d=" M920,100 Q930,170 970,170" stroke="black" fill="transparent" stroke-width="3" />
-            </svg>
+        <div class="card" style=" width: 1200px; height: 700px; margin-top: 50px; background-color: rgba(43, 71, 50, 0.6); border-radius:30px;">
+            <div id="journeydiv">
+                <svg id="svg_journey" width="800px" height="170px" viewBox="0 70 1334 100" xmlns="http://www.w3.org/2000/svg">
+                    <path id="p1" d="M1,2 Q50,10 60,100 " stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="3" />
+                    <ellipse class="ellipse" id="e1" cx="100" cy="100" rx="40" ry="20" stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="3" />
+                    <path id="p2" d=" M140,100 Q200,100 210,140" stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="3" />
+                    <ellipse class="ellipse" id="e2" cx="250" cy="140" rx="40" ry="20" stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="3" />
+                    <path id="p3" d=" M290,140 Q280,80 350,80" stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="3" />
+                    <ellipse class="ellipse" id="e3" cx="390" cy="80" rx="40" ry="20" stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="3" />
+                    <path id="p4" d=" M430,80 Q460,80 470,160" stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="3" />
+                    <ellipse class="ellipse" id="e4" cx="510" cy="160" rx="40" ry="20" stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="3" />
+                    <path id="p5" d=" M550,160 Q550,110 600,110" stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="3" />
+                    <ellipse class="ellipse" id="e5" cx="640" cy="110" rx="40" ry="20" stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="3" />
+                    <path id="p6" d=" M680,110 Q710,130 720,230" stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="3" />
+                    <ellipse class="ellipse" id="e6" cx="760" cy="230" rx="40" ry="20" stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="3" />
+                    <path id="p7" d=" M800,230 Q810,100 840,100" stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="3" />
+                    <ellipse class="ellipse" id="e7" cx="880" cy="100" rx="40" ry="20" stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="3" />
+                    <path id="p8" d=" M920,100 Q930,170 970,170" stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="3" />
+                </svg>
+                <div  id="infoBox">
+                    <img src="~/Media/Learn.png" id="infoImage">
+                    <p class="mp" id="infoText"></p>
+                </div>
+                <div id="line"></div>
+            </div>
+            <div id="puzzlediv">
+                <img id="test" src="~/Media/testPic.png">
+                <svg id="svg_puzzle" width="400px" height="400px" viewBox="0 0 350 350" xmlns="http://www.w3.org/2000/svg">
+                    <path id="pi1" d="M 10,10 V 100 H 51 A 1,1 0 0 0 70,100 H 100 V 59 A 1,1 0 0 1 100,39 V 10 H 10 Z" stroke="black" fill="black" stroke-width="2" />
+                    <path id="pi2" d="M 100,10 H 200 V 40 A 1,1 0 0 1 200,60 V 100 H 160 A 1,1 0 0 0 140,100 H 100 V 59 A 1,1 0 0 1 100,39 V 10 Z" stroke="black" fill="black" stroke-width="2" />
+                    <path id="pi3" d="M 200,10 H 300 V 100 H 260 A 1,1 0 0 1 240,100 H 200 V 59 A 1,1 0 0 0 200,39 V 10 Z" stroke="black" fill="black" stroke-width="2" />
+                    <path id="pi4" d="M 10,100 H 51 A 1,1 0 0 0 70,100 H 100 V 140 A 1,1 0 0 1 100,160 V 200 H 70 A 1,1 0 0 0 50,200 H 10 V 100 Z" stroke="black" fill="black" stroke-width="2" />
+                    <path id="pi5" d="M 100,100 H 141 A 1,1 0 0 1 160,100 H 200 V 140 A 1,1 0 0 0 200,160 V 200 H 160 A 1,1 0 0 1 140,200 H 100 V 160 A 1,1 0 0 0 100,140 V 100 Z" stroke="black" fill="black" stroke-width="2" />
+                    <path id="pi6" d="M 200,100 H 240 A 1,1 0 0 0 260,100 H 300 V 200 H 260 A 1,1 0 0 0 240,200 H 200 V 159 A 1,1 0 0 1 200,139 V 100 Z" stroke="black" fill="black" stroke-width="2" />
+                    <path id="pi7" d="M 10,200 V 300 H 100 V260 A 1,1 0 0 1 100,240 V 200 H 70 A 1,1 0 0 0 50,200 H 10 Z" stroke="black" fill="black" stroke-width="2" />
+                    <path id="pi8" d="M 100,200 H 140 A 1,1 0 0 0 160,200 H 200 V 240 A 1,1 0 0 1 200,260 V 300 H 100 V 260 A 1,1 0 0 1 100,240 V 210 Z" stroke="black" fill="black" stroke-width="2" />
+                    <path id="pi9" d="M 200,200 H 240 A 1,1 0 0 1 260,200 H 300 V 300 H 200 V 260 A 1,1 0 0 0 200,240 V 200 Z" stroke="black" fill="black" stroke-width="2" />
+                </svg>
+            </div>
         </div>
-        <div id="puzzlediv">
-            <img id="test" src="~/Media/testPic.png">
-            <svg id="svg_puzzle" width="700px" height="700px" viewBox="0 0 350 350" xmlns="http://www.w3.org/2000/svg">
-                <path id="pi1" d="M 10,10 V 100 H 51 A 1,1 0 0 0 70,100 H 100 V 59 A 1,1 0 0 1 100,39 V 10 H 10 Z" stroke="black" fill="black" stroke-width="2" />
-                <path id="pi2" d="M 100,10 H 200 V 40 A 1,1 0 0 1 200,60 V 100 H 160 A 1,1 0 0 0 140,100 H 100 V 59 A 1,1 0 0 1 100,39 V 10 Z" stroke="black" fill="black" stroke-width="2" />
-                <path id="pi3" d="M 200,10 H 300 V 100 H 260 A 1,1 0 0 1 240,100 H 200 V 59 A 1,1 0 0 0 200,39 V 10 Z" stroke="black" fill="black" stroke-width="2" />
-                <path id="pi4" d="M 10,100 H 51 A 1,1 0 0 0 70,100 H 100 V 140 A 1,1 0 0 1 100,160 V 200 H 70 A 1,1 0 0 0 50,200 H 10 V 100 Z" stroke="black" fill="black" stroke-width="2" />
-                <path id="pi5" d="M 100,100 H 141 A 1,1 0 0 1 160,100 H 200 V 140 A 1,1 0 0 0 200,160 V 200 H 160 A 1,1 0 0 1 140,200 H 100 V 160 A 1,1 0 0 0 100,140 V 100 Z" stroke="black" fill="black" stroke-width="2" />
-                <path id="pi6" d="M 200,100 H 240 A 1,1 0 0 0 260,100 H 300 V 200 H 260 A 1,1 0 0 0 240,200 H 200 V 159 A 1,1 0 0 1 200,139 V 100 Z" stroke="black" fill="black" stroke-width="2" />
-                <path id="pi7" d="M 10,200 V 300 H 100 V260 A 1,1 0 0 1 100,240 V 200 H 70 A 1,1 0 0 0 50,200 H 10 Z" stroke="black" fill="black" stroke-width="2" />
-                <path id="pi8" d="M 100,200 H 140 A 1,1 0 0 0 160,200 H 200 V 240 A 1,1 0 0 1 200,260 V 300 H 100 V 260 A 1,1 0 0 1 100,240 V 210 Z" stroke="black" fill="black" stroke-width="2" />
-                <path id="pi9" d="M 200,200 H 240 A 1,1 0 0 1 260,200 H 300 V 300 H 200 V 260 A 1,1 0 0 0 200,240 V 200 Z" stroke="black" fill="black" stroke-width="2" />
-            </svg>
-        </div>
-    </div>
     <script>
-        var taskStatusString = sessionStorage.getItem('checkListData');
-        var taskStatus = taskStatusString ? JSON.parse(taskStatusString) : {};
-        if (Object.keys(taskStatus).length > 0) {
-            var tasks = Object.keys(taskStatus);
+        document.addEventListener('DOMContentLoaded', function () {
+            var taskStatusString = sessionStorage.getItem('checkListData');
+            var taskStatus = taskStatusString ? JSON.parse(taskStatusString) : {};
+            var infoBox = document.getElementById('infoBox');
+            var infoText = document.getElementById('infoText');
 
-            tasks.forEach(task => {
-                const taskIndex = task.replace('task', '');
-                const ellipseId = `e${taskIndex}`;
-                const puzzleid = `pi${taskIndex}`
-                const ellipse = document.getElementById(ellipseId);
-                const puzzlepi = document.getElementById(puzzleid);
+            if (Object.keys(taskStatus).length > 0) {
+                var tasks = Object.keys(taskStatus);
 
-                if (ellipse) {
-                    ellipse.setAttribute('fill', 'green');
-                    ellipse.addEventListener('click', function () {
-                        alert(taskStatus[task]);
-                    });
-                }
-                if (taskIndex != '6' && taskIndex != '7') {
-                    puzzlepi.setAttribute('fill', 'transparent');
-                }
-                else if (taskIndex == '6') {
-                    puzzlepi.setAttribute('fill', 'transparent');
-                    const puzzlepiBonus = document.getElementById("pi7");
-                    puzzlepiBonus.setAttribute('fill', 'transparent');
-                }
-                else if (taskIndex == '7') {
-                    const puzzlepiBonus1 = document.getElementById("pi8");
-                    puzzlepiBonus.setAttribute('fill', 'transparent');
-                    const puzzlepiBonus2 = document.getElementById("pi9");
-                    puzzlepiBonus.setAttribute('fill', 'transparent');
-                }
-            });
-        } else {
-            console.log("No data to process.");
-        }
+                tasks.forEach(task => {
+                    const taskIndex = task.replace('task', '');
+                    const ellipseId = `e${taskIndex}`;
+                    const puzzleid = `pi${taskIndex}`;
+                    const ellipse = document.getElementById(ellipseId);
+                    const puzzlepi = document.getElementById(puzzleid);
+
+                    if (ellipse) {
+                        switch (taskIndex) {
+                            case '1': ellipse.setAttribute('fill', 'rgb(231, 76, 60)'); break;
+                            case '2': ellipse.setAttribute('fill', 'rgb(230, 126, 34)'); break;
+                            case '3': ellipse.setAttribute('fill', 'rgb(241, 196, 15)'); break;
+                            case '4': ellipse.setAttribute('fill', 'rgb(46, 204, 113)'); break;
+                            case '5': ellipse.setAttribute('fill', 'rgb(52, 152, 219)'); break;
+                            case '6': ellipse.setAttribute('fill', 'rgb(240, 128, 128)'); break;
+                            case '7': ellipse.setAttribute('fill', 'rgb(142, 68, 173)'); break;
+                        }
+
+                        ellipse.addEventListener('mouseenter', function () {
+                            infoText.textContent = taskStatus[task];
+                            infoBox.style.display = 'flex';
+                        });
+
+                        ellipse.addEventListener('mouseleave', function () {
+                            infoBox.style.display = 'none';
+                        });
+                    }
+
+                    if (taskIndex != '6' && taskIndex != '7') {
+                        puzzlepi.setAttribute('fill', 'transparent');
+                    }
+                    else if (taskIndex == '6') {
+                        puzzlepi.setAttribute('fill', 'transparent');
+                        const puzzlepiBonus = document.getElementById("pi7");
+                        puzzlepiBonus.setAttribute('fill', 'transparent');
+                    }
+                    /*else if (taskIndex == '7') {
+                        const puzzlepiBonus1 = document.getElementById("pi8");
+                        puzzlepiBonus1.setAttribute('fill', 'transparent');
+                        const puzzlepiBonus2 = document.getElementById("pi9");
+                        puzzlepiBonus2.setAttribute('fill', 'transparent');
+                    }*/
+                });
+            } else {
+                console.log("No data to process.");
+            }
+        });
     </script>
+    <script>
+        
+        </script>
 </body>
 </html>

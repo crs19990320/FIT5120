@@ -205,6 +205,7 @@
     <Content Include="Media\Mom&amp;Dad.png" />
     <Content Include="Media\Note.jpg" />
     <Content Include="Media\Play.png" />
+    <Content Include="Media\puzzlebackground.png" />
     <Content Include="Media\reset.png" />
     <Content Include="Media\scale_gas.png" />
     <Content Include="Media\scale_temp.png" />
