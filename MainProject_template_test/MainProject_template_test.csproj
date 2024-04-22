@@ -349,6 +349,7 @@
     <Content Include="Media\Play.png" />
     <Content Include="Media\puzzle.png" />
     <Content Include="Media\puzzlebackground.png" />
+    <Content Include="Media\puzzlePiece.png" />
     <Content Include="Media\reset.png" />
     <Content Include="Media\scale_gas.png" />
     <Content Include="Media\scale_temp.png" />
@@ -517,6 +518,7 @@
     <Content Include="Views\Home\LearnPage.cshtml" />
     <Content Include="Views\Home\CardGame.cshtml" />
     <Content Include="Views\Home\Map.cshtml" />
+    <Content Include="Views\Home\Parents.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
