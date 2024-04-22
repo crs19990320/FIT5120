@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Climate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="state" Type="varchar" MaxLength="50" />
+    <Property Name="state_lat" Type="float" />
+    <Property Name="state_long" Type="float" />
+    <Property Name="temp_change" Type="float" />
+    <Property Name="avr_rainfall" Type="float" />
+  </EntityType>
+  <EntityType Name="CurrentNewMap">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="state" Type="varchar" MaxLength="50" />
+    <Property Name="state_lat" Type="float" />
+    <Property Name="state_long" Type="float" />
+    <Property Name="Temperature" Type="int" />
+    <Property Name="net_emissions" Type="int" />
+    <Property Name="rainfall_percentage" Type="int" />
+    <Property Name="total_water_use" Type="int" />
+    <Property Name="total_water_consumption" Type="int" />
+  </EntityType>
+  <EntityType Name="MapModelTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="task1" Type="int" />
+    <Property Name="task2" Type="int" />
+    <Property Name="task3" Type="int" />
+    <Property Name="task4" Type="int" />
+    <Property Name="task5" Type="int" />
+    <Property Name="task6" Type="int" />
+    <Property Name="net_emissions" Type="int" />
+    <Property Name="rainfall_percentage" Type="int" />
+    <Property Name="Temperature" Type="int" />
+    <Property Name="total_water_consumption" Type="int" />
+    <Property Name="total_water_use" Type="int" />
+  </EntityType>
+  <EntityType Name="QuestionTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Questions" Type="varchar(max)" />
+    <Property Name="Answer1" Type="varchar(max)" />
+    <Property Name="Answer2" Type="varchar(max)" />
+    <Property Name="A1Carbon" Type="int" />
+    <Property Name="A1Water" Type="int" />
+    <Property Name="A1EcoLife" Type="int" />
+    <Property Name="A2Carbon" Type="int" />
+    <Property Name="A2Water" Type="int" />
+    <Property Name="A2EcoLife" Type="int" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CardName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="ImagePath" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="Database1ModelStoreContainer">
+    <EntitySet Name="Climate" EntityType="Self.Climate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CurrentNewMap" EntityType="Self.CurrentNewMap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MapModelTable" EntityType="Self.MapModelTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QuestionTable" EntityType="Self.QuestionTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
