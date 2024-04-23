@@ -28,10 +28,10 @@
             padding-top: 90px;
         }
 
-            .pic img {
-                max-width: 100%;
-                height: auto;
-            }
+        .pic img {
+            max-width: 100%;
+            height: auto;
+        }
 
         .button-container {
             padding-left: 40px;
@@ -60,10 +60,10 @@
             transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
 
-            .btn:hover {
-                background-color: #0056b3;
-                border-color: #0056b3;
-            }
+        .btn:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
 
         .back-to-home {
             position: absolute;
@@ -75,10 +75,10 @@
             z-index: 1000;
         }
 
-            .back-to-home img {
-                width: 80px;
-                height: auto;
-            }
+        .back-to-home img {
+            width: 80px;
+            height: auto;
+        }
 
         .backg {
             height: 100vh;
@@ -87,27 +87,65 @@
             position: absolute;
         }
 
-        #backg1 {
+/*        #backg1 {
             left: 0px;
             top: 0px;
             background-image: url('../../Media/WelcomePage.png');
             background-repeat: no-repeat;
             background-size: 2000px;
             z-index: -1;
+        }*/
+
+        .video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            background-size: cover;
         }
     </style>
+    <!-- Favicon -->
+    <link href="~/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="~/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="~/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="~/css/style.css" rel="stylesheet">
 </head>
 <body>
     <button class="back-to-home" onclick="goToDashboard()">
-        <img src="~/Media/homebutton.png" alt="Home">
+        <img src="https://cdn-icons-png.freepik.com/512/1828/1828671.png" alt="Home">
     </button>
 
-    <div id="backg1" class="backg"></div>
+    @*<div id="backg1" class="backg"></div>*@
+
+    <video autoplay muted loop class="video-background">
+        <source src="~/Media/underwater.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
     <div class="clearfix">
         <div class="text">
             <h2 style="margin-bottom:40px;">This Week's Activity</h2>
-            <h1 style="color: dodgerblue; font-size: 66px; margin-bottom:40px;">Water Waste</h1>
+            <h1 style="color: green; font-size: 66px; margin-bottom:40px;">Water Waste</h1>
             <p>Water Waste is not just about leaving the tap on for too long - Let's dive in and learn how saving water can help save our planet</p>
             @*<div class="button-container">
                     <h2 style="font-family:'Comic Sans MS';">Watch & Learn <img src="~/Media/LearnVideo.png" style="width:60px;height:auto;" /></h2>
@@ -117,7 +155,7 @@
         <div class="pic">
             @*<img src="~/Media/WelcomePage.png" alt="Placeholder Image">*@
             <video id="myVideo" width="640" height="360" controls>
-                <source src="https://mainprojectvideo.blob.core.windows.net/mainprojectvi/test.mp4" type="video/mp4">
+                <source src="https://storagefit5120tp28.blob.core.windows.net/game-data/Water%20Waste.mp4?sp=r&st=2024-04-23T11:14:39Z&se=2024-04-23T19:14:39Z&spr=https&sv=2022-11-02&sr=b&sig=rM7uoJkC5iaQjuQRRqfnsHVqQBFU0IuDqBOFAb%2BPegk%3D" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>

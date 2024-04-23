@@ -222,7 +222,12 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
                 <ul class="navbar-nav">
-                    @Html.ActionLink("For Mom & Dad", "Parents", "Home", new { area = "" }, new { @class = "nav-link text-brown", style = "font-weight: bolder;" })
+                    <li class="nav-item">
+                        <a class="nav-link text-brown" href="@Url.Action("Parents", "Home")" style="font-weight: bolder;">
+                            <img src="https://cdn-icons-png.freepik.com/512/2829/2829825.png" alt="Family Icon" style="width: 20px; height: 20px; margin-right: 5px;">
+                            For Mom & Dad
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -272,14 +277,14 @@
                         <label for="task5"></label>
                         <span> Used a bucket to collect rainwater</span>
                         <img src="~/Media/puzzlePiece.png" style="width: 30px; margin-left: 82px; margin-top: 60px;" />
-                        <p style="margin-top:80px;">x2</p>
+                        <p style="margin-top:80px;">x1</p>
                     </div>
                     <div class="checklist-item">
                         <input type="checkbox" id="task6" name="task6">
                         <label for="task6"></label>
                         <span> BONUS: Shareed water-saving tips with my friends</span>
                         <img src="~/Media/puzzlePiece.png" style="width:30px; margin-top:60px;" />
-                        <p style="margin-top:80px;">x3</p>
+                        <p style="margin-top:80px;">x2</p>
                     </div>
                 </div>
             </div>

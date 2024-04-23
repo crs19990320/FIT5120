@@ -66,9 +66,7 @@
         .navbar-nav .nav-link:hover::after {
             transform: scaleX(1);
         }
-
     </style>
-
 
 </head>
 <body>
@@ -83,10 +81,16 @@
             <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
                     <ul class="navbar-nav">
-                        @Html.ActionLink("Dashboard", "Dashboard", "Home", new { area = "" }, new { @class = "nav-link text-brown", style = "font-weight: bolder;" })
+                        <li class="nav-item">
+                            <a class="nav-link text-brown" href="@Url.Action("Dashboard", "Home")" style="font-weight: bolder;">
+                                <img src="https://cdn-icons-png.freepik.com/512/1828/1828671.png" alt="Dashboard Icon" style="width: 20px; height: 20px; margin-right: 5px;">
+                                Dashboard
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
+
         </div>
     </nav>
     <div style="display: flex; align-items: center;">

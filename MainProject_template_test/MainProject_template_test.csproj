@@ -332,11 +332,8 @@
     <Content Include="lib\waypoints\waypoints.min.js" />
     <Content Include="lib\wow\wow.js" />
     <Content Include="lib\wow\wow.min.js" />
-<<<<<<< Updated upstream
     <Content Include="Media\3.jpg" />
     <Content Include="Media\ai-generated-8663117_640.png" />
-=======
->>>>>>> Stashed changes
     <Content Include="Media\back.png" />
     <Content Include="Media\Choice.png" />
     <Content Include="Media\co2.jpg" />
@@ -364,8 +361,7 @@
     <Content Include="Media\StartGame .png" />
     <Content Include="Media\Statuses2.png" />
     <Content Include="Media\testPic.png" />
-    <Content Include="Media\test_video1.mp4" />
-    <Content Include="Media\VideoDraft.mp4" />
+    <Content Include="Media\underwater.mp4" />
     <Content Include="Media\water_irrigation.png" />
     <Content Include="Media\WelcomePage.png" />
     <Content Include="Models\Model1.Context.tt">
