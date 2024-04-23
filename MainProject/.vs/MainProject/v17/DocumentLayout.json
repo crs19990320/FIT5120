@@ -3,8 +3,18 @@
   "WorkspaceRootPath": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|MainProject||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\games\\card.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:games\\card.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|909d16b3-c8e8-43d1-a2b8-26ea0d4b6b57"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,12 +49,37 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Web.config",
+              "RelativeDocumentMoniker": "Web.config",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Web.config",
+              "RelativeToolTip": "Web.config",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-04-23T07:27:00.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainProject",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\MainProject.csproj",
+              "RelativeDocumentMoniker": "MainProject.csproj",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\MainProject.csproj",
+              "RelativeToolTip": "MainProject.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-23T07:26:39.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "card.html",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Games\\card.html",
               "RelativeDocumentMoniker": "Games\\card.html",
               "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Games\\card.html",
               "RelativeToolTip": "Games\\card.html",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAADUAAAANAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAADUAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2024-04-23T06:24:35.395Z",
               "EditorCaption": ""

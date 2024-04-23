@@ -3,24 +3,34 @@
   "WorkspaceRootPath": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject_template_test\\views\\home\\puzzle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:views\\home\\puzzle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject_template_test\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\LearnPage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:Views\\Home\\LearnPage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|MainProject_template_test||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\HomePage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:Views\\Home\\HomePage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject_template_test\\views\\home\\puzzle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:views\\home\\puzzle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:Views\\Home\\Dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\LearnPage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:Views\\Home\\LearnPage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject_template_test\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|909d16b3-c8e8-43d1-a2b8-26ea0d4b6b57"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +40,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,7 +64,32 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RouteConfig.cs",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\App_Start\\RouteConfig.cs",
+              "RelativeDocumentMoniker": "App_Start\\RouteConfig.cs",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "App_Start\\RouteConfig.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T07:32:05.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "MainProject_template_test",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\MainProject_template_test.csproj",
+              "RelativeDocumentMoniker": "MainProject_template_test.csproj",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\MainProject_template_test.csproj*",
+              "RelativeToolTip": "MainProject_template_test.csproj*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-23T07:25:26.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "LearnPage.cshtml",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\LearnPage.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\LearnPage.cshtml",
@@ -74,36 +109,38 @@
               "RelativeToolTip": "Views\\Home\\HomePage.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAFAAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-19T10:35:01.101Z"
+              "WhenOpened": "2024-04-19T10:35:01.101Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Puzzle.cshtml",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Puzzle.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Puzzle.cshtml",
               "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Puzzle.cshtml",
               "RelativeToolTip": "Views\\Home\\Puzzle.cshtml",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAAAG0AAAAMAAAA",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAQwI0AAABTAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-19T10:22:35.936Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Dashboard.cshtml",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Dashboard.cshtml",
               "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Dashboard.cshtml",
               "RelativeToolTip": "Views\\Home\\Dashboard.cshtml",
-              "ViewState": "AQIAAIYBAAAAAAAAAAAAAJQBAAAvAAAA",
+              "ViewState": "AQIAAMYAAAAAAAAAAAAAAOQAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-19T08:54:50.226Z"
+              "WhenOpened": "2024-04-19T08:54:50.226Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
