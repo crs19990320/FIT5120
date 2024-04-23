@@ -360,6 +360,7 @@
     <Content Include="Media\testPic.png" />
     <Content Include="Media\test_video1.mp4" />
     <Content Include="Media\VideoDraft.mp4" />
+    <Content Include="Media\water_irrigation.png" />
     <Content Include="Media\WelcomePage.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -397,11 +398,8 @@
     <Content Include="d3_project\aust.json" />
     <Content Include="d3_project\data\australian-states.json" />
     <Content Include="d3_project\data\australian-states.min.geojson" />
-
     <None Include="Properties\PublishProfiles\greenguardains-iteration2 - Web Deploy.pubxml" />
-
     <None Include="Properties\PublishProfiles\GreenGuardians-iteration2 - Web Deploy.pubxml" />
-
     <None Include="Properties\PublishProfiles\GreenGuardians-iteration2 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

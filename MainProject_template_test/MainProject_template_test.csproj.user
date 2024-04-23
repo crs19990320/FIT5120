@@ -10,21 +10,14 @@
     <UseGlobalApplicationHostFile />
     <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
     <ProjectView>ShowAllFiles</ProjectView>
-
     <NameOfLastUsedPublishProfile>D:\Monash\5120&amp;5122\Assessments\FIT5120\MainProject_template_test\Properties\PublishProfiles\greenguardains-iteration2 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
-
     <NameOfLastUsedPublishProfile>C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject_template_test\Properties\PublishProfiles\GreenGuardians-iteration2 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
-
     <NameOfLastUsedPublishProfile>C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject_template_test\Properties\PublishProfiles\GreenGuardians-iteration2 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
-
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-
-          <StartPageUrl>/Home/HomePage</StartPageUrl>
-
           <StartPageUrl>Home/HomePage</StartPageUrl>
           <StartAction>SpecificPage</StartAction>
           <AspNetDebugging>True</AspNetDebugging>
