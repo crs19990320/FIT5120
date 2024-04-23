@@ -333,6 +333,7 @@
     <Content Include="lib\wow\wow.js" />
     <Content Include="lib\wow\wow.min.js" />
     <Content Include="Media\3.jpg" />
+    <Content Include="Media\ai-generated-8663117_640.png" />
     <Content Include="Media\back.png" />
     <Content Include="Media\Choice.png" />
     <Content Include="Media\co2.jpg" />

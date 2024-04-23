@@ -153,7 +153,9 @@
             </div>
         </div>
         <div id="journeydiv">
+
             <div id="line2"></div>
+            <img src="~/Media/ai-generated-8663117_640.png" style="display: flex; width: 582px; height: 350px; opacity: 0.3; position: absolute; z-index: -1;" />
             <svg id="svg_journey" width="800px" height="170px" viewBox="0 70 1334 100" xmlns="http://www.w3.org/2000/svg">
                 <path id="p1" d="M1,2 Q50,10 60,100 " stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="3" />
                 <ellipse class="ellipse" id="e1" cx="100" cy="100" rx="40" ry="20" stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="3" />
@@ -187,7 +189,7 @@
             <div style="position: absolute; top: 410px; width: 250px;left:300px">
                 <h5 style="font-weight: bolder; color: #a8f8b8d5; font-size: 14px;">Your Actions Matter!</h5>
                 <h6 style="top:20px;font-size: 12px;color:whitesmoke">With each checklist task you complete, your positive impact on the environment grows. Keep going to see just how much of a difference you're making! </h6>
-        </div>
+            </div>
         </div>
             <div id="puzzlediv">
                 <img id="test" src="~/Media/water_irrigation.png" />
@@ -218,7 +220,6 @@
             var taskStatus = taskStatusString ? JSON.parse(taskStatusString) : {};
             var infoBox = document.getElementById('infoBox');
             var infoText = document.getElementById('infoText');
-
             if (Object.keys(taskStatus).length > 0) {
                 var tasks = Object.keys(taskStatus);
 
@@ -250,7 +251,7 @@
                         });
                     }
 
-                    if (taskIndex != '6' && taskIndex != '7') {
+                    if (taskIndex != '6') {
                         puzzlepi.setAttribute('fill', 'transparent');
                     }
                     else if (taskIndex == '6') {
@@ -267,8 +268,19 @@
     <script>
         var videoComplete = sessionStorage.getItem('videoComplete');
         if (videoComplete) {
+            var taskStatusString = sessionStorage.getItem('checkListData');
+            var taskStatus = taskStatusString ? JSON.parse(taskStatusString) : {};
+            if ('task6' in taskStatus) {
+                document.getElementById('pieceNumber').textContent = Object.keys(taskStatus).length + 3;
+            }
+            else {
+                document.getElementById('pieceNumber').textContent = Object.keys(taskStatus).length + 1;
+            }
+            
+            
+
             const ellipse = document.getElementById('e7');
-            ellipse.setAttribute('fill', 'rgb(142, 68, 173)'); 
+            ellipse.setAttribute('fill', 'rgb(142, 68, 173)');
 
             ellipse.addEventListener('mouseenter', function () {
                 infoText.textContent = "Weekly learning video completed!";
@@ -276,7 +288,7 @@
             });
 
             ellipse.addEventListener('mouseleave', function () {
-            infoBox.style.display = 'none';
+                infoBox.style.display = 'none';
             });
 
             const puzzlepiBonus1 = document.getElementById("pi8");
@@ -284,6 +296,19 @@
             const puzzlepiBonus2 = document.getElementById("pi9");
             puzzlepiBonus2.setAttribute('fill', 'transparent');
         }
+        else {
+            var taskStatusString = sessionStorage.getItem('checkListData');
+            var taskStatus = taskStatusString ? JSON.parse(taskStatusString) : {};
+            if ('task6' in taskStatus) {
+                document.getElementById('pieceNumber').textContent = Object.keys(taskStatus).length + 1;
+            }
+            else {
+                document.getElementById('pieceNumber').textContent = Object.keys(taskStatus).length;
+            }
+        }
+    </script>
+    <script>
+        
     </script>
 </body>
 </html>
