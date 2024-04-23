@@ -64,6 +64,7 @@
         .ellipse:hover {
             filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.7));
         }
+<<<<<<< HEAD
         #line1 {
             position: absolute;
             top: 350px;
@@ -74,6 +75,11 @@
         }
         #line2 {
             position: absolute;
+=======
+        #line {
+            position: absolute;
+            top: 430px;
+>>>>>>> 7b1aa10c07feb9aacaa0022fcf2e6642d2c4d6f5
             left: 0;
             width: 100%;
             height: 1px;
@@ -112,6 +118,7 @@
     </style>
 </head>
 <body style="background-image: url('../../media/puzzlebackground.png'); background-size: cover;">
+<<<<<<< HEAD
     <div style="display: flex; align-items: center; width: 1200px;">
         <h4 style="text-align: left; flex: 1;">
             Green Guardians
@@ -146,6 +153,11 @@
         </div>
             <div id="journeydiv">
                 <div id="line2"></div>
+=======
+
+        <div class="card" style=" width: 1200px; height: 700px; margin-top: 50px; background-color: rgba(43, 71, 50, 0.6); border-radius:30px;">
+            <div id="journeydiv">
+>>>>>>> 7b1aa10c07feb9aacaa0022fcf2e6642d2c4d6f5
                 <svg id="svg_journey" width="800px" height="170px" viewBox="0 70 1334 100" xmlns="http://www.w3.org/2000/svg">
                     <path id="p1" d="M1,2 Q50,10 60,100 " stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="3" />
                     <ellipse class="ellipse" id="e1" cx="100" cy="100" rx="40" ry="20" stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="3" />
@@ -163,11 +175,19 @@
                     <ellipse class="ellipse" id="e7" cx="880" cy="100" rx="40" ry="20" stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="3" />
                     <path id="p8" d=" M920,100 Q930,170 970,170" stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="3" />
                 </svg>
+<<<<<<< HEAD
                 <div id="infoBox">
                     <img src="~/Media/Learn.png" id="infoImage">
                     <p class="mp" id="infoText"></p>
                 </div>
                 <div id="line1"></div>
+=======
+                <div  id="infoBox">
+                    <img src="~/Media/Learn.png" id="infoImage">
+                    <p class="mp" id="infoText"></p>
+                </div>
+                <div id="line"></div>
+>>>>>>> 7b1aa10c07feb9aacaa0022fcf2e6642d2c4d6f5
             </div>
             <div id="puzzlediv">
                 <img id="test" src="~/Media/testPic.png">
@@ -184,6 +204,7 @@
                 </svg>
             </div>
         </div>
+<<<<<<< HEAD
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 var taskStatusString = sessionStorage.getItem('checkListData');
@@ -257,5 +278,80 @@
                 puzzlepiBonus2.setAttribute('fill', 'transparent');
             }
         </script>
+=======
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var taskStatusString = sessionStorage.getItem('checkListData');
+            var taskStatus = taskStatusString ? JSON.parse(taskStatusString) : {};
+            var infoBox = document.getElementById('infoBox');
+            var infoText = document.getElementById('infoText');
+
+            if (Object.keys(taskStatus).length > 0) {
+                var tasks = Object.keys(taskStatus);
+
+                tasks.forEach(task => {
+                    const taskIndex = task.replace('task', '');
+                    const ellipseId = `e${taskIndex}`;
+                    const puzzleid = `pi${taskIndex}`;
+                    const ellipse = document.getElementById(ellipseId);
+                    const puzzlepi = document.getElementById(puzzleid);
+
+                    if (ellipse) {
+                        switch (taskIndex) {
+                            case '1': ellipse.setAttribute('fill', 'rgb(231, 76, 60)'); break;
+                            case '2': ellipse.setAttribute('fill', 'rgb(230, 126, 34)'); break;
+                            case '3': ellipse.setAttribute('fill', 'rgb(241, 196, 15)'); break;
+                            case '4': ellipse.setAttribute('fill', 'rgb(46, 204, 113)'); break;
+                            case '5': ellipse.setAttribute('fill', 'rgb(52, 152, 219)'); break;
+                            case '6': ellipse.setAttribute('fill', 'rgb(240, 128, 128)'); break;
+                           // case '7': ellipse.setAttribute('fill', 'rgb(142, 68, 173)'); break;
+                        }
+
+                        ellipse.addEventListener('mouseenter', function () {
+                            infoText.textContent = taskStatus[task];
+                            infoBox.style.display = 'flex';
+                        });
+
+                        ellipse.addEventListener('mouseleave', function () {
+                            infoBox.style.display = 'none';
+                        });
+                    }
+
+                    if (taskIndex != '6' && taskIndex != '7') {
+                        puzzlepi.setAttribute('fill', 'transparent');
+                    }
+                    else if (taskIndex == '6') {
+                        puzzlepi.setAttribute('fill', 'transparent');
+                        const puzzlepiBonus = document.getElementById("pi7");
+                        puzzlepiBonus.setAttribute('fill', 'transparent');
+                    }
+                });
+            } else {
+                console.log("No data to process.");
+            }
+        });
+    </script>
+    <script>
+        var videoComplete = sessionStorage.getItem('videoComplete');
+        if (videoComplete) {
+            const ellipse = document.getElementById('e7');
+            ellipse.setAttribute('fill', 'rgb(142, 68, 173)'); 
+
+            ellipse.addEventListener('mouseenter', function () {
+                infoText.textContent = "Weekly learning video completed!";
+                infoBox.style.display = 'flex';
+            });
+
+            ellipse.addEventListener('mouseleave', function () {
+            infoBox.style.display = 'none';
+            });
+
+            const puzzlepiBonus1 = document.getElementById("pi8");
+            puzzlepiBonus1.setAttribute('fill', 'transparent');
+            const puzzlepiBonus2 = document.getElementById("pi9");
+            puzzlepiBonus2.setAttribute('fill', 'transparent');
+        }
+    </script>
+>>>>>>> 7b1aa10c07feb9aacaa0022fcf2e6642d2c4d6f5
 </body>
 </html>

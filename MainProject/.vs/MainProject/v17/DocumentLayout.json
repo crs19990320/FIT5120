@@ -3,6 +3,7 @@
   "WorkspaceRootPath": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
@@ -15,6 +16,10 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|909d16b3-c8e8-43d1-a2b8-26ea0d4b6b57"
+=======
+      "AbsoluteMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject\\games\\card.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F430C6D5-C604-42D2-839B-163191CFB565}|MainProject.csproj|solutionrelative:games\\card.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+>>>>>>> 7b1aa10c07feb9aacaa0022fcf2e6642d2c4d6f5
     }
   ],
   "DocumentGroupContainers": [
@@ -49,6 +54,7 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
               "Title": "Web.config",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Web.config",
               "RelativeDocumentMoniker": "Web.config",
@@ -74,12 +80,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+=======
+>>>>>>> 7b1aa10c07feb9aacaa0022fcf2e6642d2c4d6f5
               "Title": "card.html",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Games\\card.html",
               "RelativeDocumentMoniker": "Games\\card.html",
               "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject\\Games\\card.html",
               "RelativeToolTip": "Games\\card.html",
+<<<<<<< HEAD
               "ViewState": "AQIAAA4AAAAAAAAAAAAAADUAAAANAAAA",
+=======
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAADUAAAANAAAA",
+>>>>>>> 7b1aa10c07feb9aacaa0022fcf2e6642d2c4d6f5
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2024-04-23T06:24:35.395Z",
               "EditorCaption": ""

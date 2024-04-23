@@ -11,7 +11,11 @@
     <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
     <ProjectView>ShowAllFiles</ProjectView>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <NameOfLastUsedPublishProfile>D:\Monash\5120&amp;5122\Assessments\FIT5120\MainProject_template_test\Properties\PublishProfiles\greenguardains-iteration2 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
+=======
+    <NameOfLastUsedPublishProfile>C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject_template_test\Properties\PublishProfiles\GreenGuardians-iteration2 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
+>>>>>>> 7b1aa10c07feb9aacaa0022fcf2e6642d2c4d6f5
 =======
     <NameOfLastUsedPublishProfile>C:\Users\96968\source\repos\crs19990320\FIT5120\MainProject_template_test\Properties\PublishProfiles\GreenGuardians-iteration2 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
 >>>>>>> 7b1aa10c07feb9aacaa0022fcf2e6642d2c4d6f5
@@ -20,7 +24,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
+<<<<<<< HEAD
           <StartPageUrl>/Home/HomePage</StartPageUrl>
+=======
+          <StartPageUrl>Home/HomePage</StartPageUrl>
+>>>>>>> 7b1aa10c07feb9aacaa0022fcf2e6642d2c4d6f5
           <StartAction>SpecificPage</StartAction>
           <AspNetDebugging>True</AspNetDebugging>
           <SilverlightDebugging>False</SilverlightDebugging>
