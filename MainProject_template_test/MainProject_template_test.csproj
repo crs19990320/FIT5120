@@ -397,7 +397,11 @@
     <Content Include="d3_project\aust.json" />
     <Content Include="d3_project\data\australian-states.json" />
     <Content Include="d3_project\data\australian-states.min.geojson" />
+<<<<<<< HEAD
     <None Include="Properties\PublishProfiles\greenguardains-iteration2 - Web Deploy.pubxml" />
+=======
+    <None Include="Properties\PublishProfiles\GreenGuardians-iteration2 - Web Deploy.pubxml" />
+>>>>>>> 7b1aa10c07feb9aacaa0022fcf2e6642d2c4d6f5
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
