@@ -341,11 +341,14 @@
     <Content Include="Media\back.png" />
     <Content Include="Media\Choice.png" />
     <Content Include="Media\co2.jpg" />
+    <Content Include="Media\Dashboard_for_MomDad.png" />
+    <Content Include="Media\Dashboard_Kids.png" />
     <Content Include="Media\EndGame2.png" />
     <Content Include="Media\Explore.png" />
     <Content Include="Media\giphy2.gif" />
     <Content Include="Media\go_to_dashboard.png" />
     <Content Include="Media\green_homepage1.png" />
+    <Content Include="Media\Home.png" />
     <Content Include="Media\homebutton.png" />
     <Content Include="Media\Instruction.png" />
     <Content Include="Media\kid1.jpg" />
@@ -355,6 +358,7 @@
     <Content Include="Media\LearnVideo.png" />
     <Content Include="Media\logo.png" />
     <Content Include="Media\Mom&amp;Dad.png" />
+    <Content Include="Media\new_logo.png" />
     <Content Include="Media\Note.jpg" />
     <Content Include="Media\Play.png" />
     <Content Include="Media\puzzle.png" />

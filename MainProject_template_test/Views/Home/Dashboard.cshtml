@@ -215,16 +215,22 @@
 </head>
 <body>
     <div style="display: flex; align-items: center;">
-        <h1 style="text-align: left; margin-bottom: 20px; flex: 1;">
+        <h1 style="text-align: left; margin-bottom: 20px; flex: 1; font-family: 'Lobster Two', cursive;">
             <span>&#x1F984;</span> Hi, Alligator Hibiscus!
         </h1>
 
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style=" font-size: 25px;">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style=" font-size: 25px;width:550px">
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link text-brown" href="@Url.Action("Parents", "Home")" style="font-weight: bolder;">
-                            <img src="https://cdn-icons-png.freepik.com/512/2829/2829825.png" alt="Family Icon" style="width: 30px; height: 30px; margin-right: 5px;">
+                        <a class="nav-link text-brown" href="@Url.Action("HomePage", "Home")" style="font-weight: bolder; width:250px">
+                            <img src="~/Media/Home.png" alt="Family Icon" style="width: 100px; height: 60px; margin-right: -20px;">
+                            HomePage
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-brown" href="@Url.Action("Parents", "Home")" style="font-weight: bolder; width:280px">
+                            <img src="~/Media/Dashboard_for_MomDad.png" alt="Family Icon" style="width: 100px; height: 60px; margin-right: -20px;">
                             For Mom & Dad
                         </a>
                     </li>
@@ -234,15 +240,15 @@
     </div>
 
     <div style="margin-top:30px; margin-bottom:30px; display: flex; align-items: center;">
-        <h4>Your Weekly Activities</h4>
-        <h4 style="margin-left: 510px;">Checklist</h4>
+        <h4 style="font-family: 'Lobster Two', cursive;">Your Weekly Activities</h4>
+        <h4 style="margin-left: 550px; font-family: 'Lobster Two', cursive;">Checklist</h4>
     </div>
 
     <div class="card" style="width: 40%; background-color: limegreen; float:right">
         <div class="card-content">
-            <div class="card-title">Commit</div>
+            <div class="card-title" style="font-family: 'Lobster Two', cursive;">Commit</div>
             <div style="color: white; margin-left: 30px;">
-                <h4>This week I...</h4>
+                <h4 style="font-family: 'Lobster Two', cursive;">This week...</h4>
                 <div class="transparent-cards">
                     <div class="checklist-item">
                         <input type="checkbox" id="task1" name="task1">
@@ -293,7 +299,7 @@
 
     <div class="card">
         <div class="card-content">
-            <div class="card-title">Learn</div>
+            <div class="card-title" style="font-family: 'Lobster Two', cursive;">Learn</div>
             <div style="color:white;">
                 This week, we're going on an adventure to <br />
                 learn all about saving water.
@@ -311,9 +317,9 @@
 
     <div class="card-row">
         <!-- CardGame Card-->
-        <div class="card" style="background-color: mediumpurple; height:30vh;">
+        <div class="card" style="background-color: mediumpurple; height:26vh;">
             <div class="card-content" style="margin-left:10px;">
-                <div class="card-title">Play</div>
+                <div class="card-title" style="font-family: 'Lobster Two', cursive;">Play</div>
                 <div style="color:white;">
                     Test your <br />
                     climate knowledge!
@@ -330,9 +336,9 @@
         </div>
 
         <!-- Puzzle Card-->
-        <div class="card" style="background-color: brown; height:30vh;">
+        <div class="card" style="background-color: brown; height:26vh;">
             <div class="card-content" style="margin-left:10px;">
-                <div class="card-title">Complete</div>
+                <div class="card-title" style="font-family: 'Lobster Two', cursive;">Journey</div>
                 <div style="color:white;">
                     Checkout how you <br />
                     made a difference
@@ -350,12 +356,12 @@
     </div>
 
     <div style="margin-bottom:30px;">
-        <h2>Additional Activities</h2>
+        <h2 style="font-family: 'Lobster Two', cursive;">Additional Activities</h2>
     </div>
 
-    <div class="card" style="background-color:hotpink; height:31vh;">
+    <div class="card" style="background-color:hotpink; height:24vh;">
         <div class="card-content">
-            <div class="card-title">Explore</div>
+            <div class="card-title"style="font-family: 'Lobster Two', cursive;">Explore</div>
             <div style="color:white;">
                 Navigate the Climate!
             </div>
@@ -366,7 +372,7 @@
                 </div>
             </div>
         </div>
-        <div class="card-image" style="width:41%;">
+        <div class="card-image" style="width:41%; margin-top:17px">
             <img src="~/Media/Explore.png" alt="Placeholder Image">
         </div>
     </div>

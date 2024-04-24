@@ -2,7 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\css",
-    "\\Games"
+    "\\Games",
+    "\\Views",
+    "\\Views\\Home"
   ],
   "SelectedNode": "\\MainProject_template_test.sln",
   "PreviewInSolutionExplorer": false
