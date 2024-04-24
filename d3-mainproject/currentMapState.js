@@ -18,16 +18,13 @@ export function clearCurrentMapState() {
   }
 
 
-
-
 // Define a function to set up the current map state
 export function setupCurrentMapState() {
     // Implementation for setting up the map's current state
     
 console.log('Setting up the current map state...');
 
-// Your setup code here
-
+////////////////////////////////////////////////
 // AUSTRALIA MAP
 
 // Define a geographical projection
@@ -143,11 +140,12 @@ mapGroup.selectAll(".state")
 const checklistHTML = `
   <form id="options">
             <fieldset>
-                <legend>Explore Our Climate Change!</legend>
-                <label><input type="radio" name="map-option" value="all" checked> All Factors</label><br>
-                <label><input type="radio" name="map-option" value="Water Consumption"> Water Consumption</label><br>
-                <label><input type="radio" name="map-option" value="Greenhouse Gases"> Greenhouse Gases</label><br>
-                <label><input type="radio" name="map-option" value="Temperature"> Temperature</label>
+                <label><input type="radio" name="map-option" value="all" checked> All Factors</label>
+                <label><input type="radio" name="map-option" value="Water Consumption"> Water Consumption</label>
+                <label><input type="radio" name="map-option" value="Greenhouse Gases"> Greenhouse Gases</label>
+                <label><input type="radio" name="map-option" value="PM2.5"> Air Quality</label>
+                <label><input type="radio" name="map-option" value="Non-renewable"> Non-renewable Energy</label>
+                <label><input type="radio" name="map-option" value="Waste"> Waste</label>
             </fieldset>
     </form> 
 `;
@@ -171,9 +169,8 @@ d3.selectAll('input[name="option"]').on('change', function() {
   // Function to update the map based on the selected option
   function updateMap(option) {
     // Update your map visualisation based on the option selected
-    // This is where you'll need to modify how the map is rendered based on the data (population, area, GDP, etc.)
     console.log("Selected option:", option);
-    // Example: if(option === 'population') { ... }
+
   }
   
   //ICONS
@@ -181,14 +178,16 @@ d3.selectAll('input[name="option"]').on('change', function() {
   const typeOffsets = {
     'Greenhouse Gases': {dx: -50, dy: -50},
     'Water Consumption': {dx: 20, dy: -20},
-    'Temperature': {dx: 0, dy: 20},
+    'PM2.5': {dx: 0, dy: 30},
+    'Non-renewable': {dx: 50, dy: 40},
+    'Waste': {dx: -50, dy: 50}
   };
   
   
   const iconsData = [
     {
       type: 'Greenhouse Gases',
-      url: "icons/Emission_release_factory_icon.png",
+      url: "icons-v2/carbon.png",
       coordinates: [
         [153.012368, -35.473468], // ACT
         [149.612793, -33.240233], // NSW
@@ -199,12 +198,12 @@ d3.selectAll('input[name="option"]').on('change', function() {
         [145.785153, -38.471308], // VIC
         [120.628310, -27.672817], // WA
       ],
-      width: 60,
-      height: 60
+      width: 100,
+      height: 100
     },
     {
       type: 'Water Consumption',
-      url: "icons/water2.png",
+      url: "icons-v2/water.png",
       coordinates: [
         [153.012368, -35.473468], // ACT
 [149.612793, -33.240233], // NSW
@@ -215,12 +214,12 @@ d3.selectAll('input[name="option"]').on('change', function() {
 [145.785153, -38.471308], // VIC
 [120.628310, -27.672817], // WA
      ],
-      width: 60,
-      height: 60
+      width: 100,
+      height: 100
     },
     {
-      type: 'Temperature', 
-      url: "icons/temp2.png", 
+      type: 'PM2.5', 
+      url: "icons-v2/pm2_5.png", 
       coordinates: [
         [153.012368, -35.473468], // ACT
 [149.612793, -33.240233], // NSW
@@ -231,49 +230,104 @@ d3.selectAll('input[name="option"]').on('change', function() {
 [145.785153, -38.471308], // VIC
 [120.628310, -27.672817], // WA 
      ],
-      width: 60, 
-      height: 60 },
+      width: 200, 
+      height: 200 },
+      {
+        type: 'Non-renewable', 
+        url: "icons-v2/non-renewable_energy.png", 
+        coordinates: [
+          [153.012368, -35.473468], // ACT
+  [149.612793, -33.240233], // NSW
+  [134.550960, -21.491411], // NT
+  [145.702796, -24.517574], // QLD
+  [135.209155, -28.000233], // SA
+  [149.8087, -41.809],     // TAS
+  [145.785153, -38.471308], // VIC
+  [120.628310, -27.672817], // WA 
+       ],
+        width: 200, 
+        height: 200 },
+  {
+    type: 'Waste', 
+    url: "icons-v2/waste.png", 
+    coordinates: [
+    [153.012368, -35.473468], // ACT
+    [149.612793, -33.240233], // NSW
+    [134.550960, -21.491411], // NT
+    [145.702796, -24.517574], // QLD
+    [135.209155, -28.000233], // SA
+    [149.8087, -41.809],     // TAS
+    [145.785153, -38.471308], // VIC
+    [120.628310, -27.672817], // WA 
+         ],
+      width: 200, 
+      height: 200 }
     
   ];
 
-  var greenhouse = {
-    NSW: 1,
-    VIC: 2,
-    QLD: 3,
+var greenhouse = {
+    NSW: 7,
+    VIC: 5,
+    QLD: 8,
     SA: 4,
-    WA: 5,
-    TAS: 6,
-    NT: 7,
-    ACT: 8
-};
-
-var temp = {
-    NSW: 2,
-    VIC: 3,
-    QLD: 4,
-    SA: 5,
     WA: 6,
-    TAS: 7,
-    NT: 8,
-    ACT: 1
+    TAS: 1,
+    NT: 3,
+    ACT: 2
 };
 
 var water = {
-    NSW: 3,
-    VIC: 4,
-    QLD: 5,
-    SA: 6,
-    WA: 7,
-    TAS: 8,
-    NT: 1,
-    ACT: 2
+    NSW: 8,
+    VIC: 6,
+    QLD: 7,
+    SA: 4,
+    WA: 5,
+    TAS: 3,
+    NT: 2,
+    ACT: 1
 };
+
+var airQuality = {
+  NSW: 2,
+  VIC: 6,
+  QLD: 7,
+  SA: 3,
+  WA: 4,
+  TAS: 1,
+  NT: 8,
+  ACT: 5
+};
+
+var nonRenewable = {
+  NSW: 6,
+  VIC: 7,
+  QLD: 8,
+  SA: 4,
+  WA: 5,
+  TAS: 1,
+  NT: 2,
+  ACT: 3
+};
+
+var waste = {
+  NSW: 8,
+  VIC: 7,
+  QLD: 6,
+  SA: 4,
+  WA: 5,
+  TAS: 2,
+  NT: 1,
+  ACT: 3
+};
+
 
 // Mapping of icon types to the corresponding variables
 const typeToVariable = {
     'Greenhouse Gases': greenhouse,
-    'Temperature': temp,
-    'Water Consumption': water
+    'Water Consumption': water,
+    'PM2.5': airQuality,
+    'Non-renewable': nonRenewable,
+    'Waste': waste
 };
 
 
@@ -343,8 +397,8 @@ updateAllIconCoordinates();
   
   // Function to update width and height based on value (already defined)
   function updateIconSize(iconsData) {
-    const baseSize = 40;
-    const sizeIncrement = 5;
+    const baseSize = 60;
+    const sizeIncrement = 10;
   
     return iconsData.map(icon => {
       let updatedCoordinates = icon.coordinates.map(coord => {
@@ -364,54 +418,7 @@ updateAllIconCoordinates();
   });
   
   // Initialize with all icons displayed
-  updateMap('all');
-  
-  
-  
-  //ZOOM BEHAVIOUR
-  const initialFontSize = 12; // Initial font size in pixels
-  
-  // Define your zoom behavior
-  var zoom = d3.zoom()
-      .scaleExtent([1, 8])  // This controls how much you can zoom (1X to 8X here)
-      .on('zoom', zoomed);
-  
-  // Apply the zoom behavior to the SVG canvas
-  svg.call(zoom);
-  
-  function zoomed({transform}) {
-    // This function will be called when zooming or panning occurs
-    // 'g' is the group that contains all the elements you want to zoom
-    mapGroup.attr('transform', transform); // Apply the transformation
-  
-    iconsGroup.attr('transform', transform); // Apply the transformation
-  
-    // If you have labels or other elements you want to scale, you can select them here too
-    svg.selectAll('.state-label')
-      .attr('transform', function(d) {
-        return `translate(${transform.apply(path.centroid(d))})`;
-      })
-      .style('font-size', `${initialFontSize}px`); // Adjust label font-size inversely to scale
-  }
-  
-  // Function to reset zoom
-  function resetZoom() {
-    svg.transition()
-      .duration(750) // Transition speed
-      .call(zoom.transform, d3.zoomIdentity); // Reset the transform to no scaling and translation
-  }
-  // Select the reset button and bind the click event
-  d3.select('#reset-zoom').on('click', resetZoom);
-  
-  // The resetZoom function resets the zoom transformation to the default state
-  function resetZoom() {
-    svg.transition()
-      .duration(750) // Smooth transition duration
-      .call(zoom.transform, d3.zoomIdentity); // Reset zoom level to the original state
-  }
-  
-
-  
+  updateMap('all');  
 // end
 }
 

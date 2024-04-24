@@ -8,9 +8,9 @@ body {
   
 
 h1 {
-        font-family: 'Fredoka One', cursive; /* Applying the Fredoka One font */
-        font-weight: 500;
-        color: #606767;
+        font-family:'Epilogue'; /* Applying the Fredoka One font */
+        font-weight: bold;
+        color: #070808;
         font-size: 48px;
         margin-bottom: 10px;
 }
@@ -22,7 +22,7 @@ h1 {
    /* position: relative; /* or 'absolute' if you need it positioned relative to the nearest positioned ancestor */
     top: 20px; /* Move down from the top by 20px */
     left: 200px; /* Move right from the left by 20px */
-    /* box-shadow: 0 4px 6px rgba(0,0,0,0.1); */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .state {
@@ -45,7 +45,7 @@ h1 {
     position: absolute;
     left: 30px;
     top: 600px;
-    background: white;
+    background: #f0f4e1;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -55,6 +55,14 @@ h1 {
     display: block;
     margin: 7px 0px;
 }
+
+#options {
+    font-family: 'Epilogue'; /* Applying the Fredoka One font */
+    fill: #0f0f0f; /* Color of the text */
+    pointer-events: none; /* Ensures that text doesn't interfere with map interaction */
+    font-size: 14px; /* Increased font size for readability */
+}
+
 
 #current {
     background-color: rgb(248, 248, 248);
@@ -74,18 +82,4 @@ h1 {
 
   
 
-  #reset-zoom {
-    background-color: rgb(248, 248, 248);
-    color: rgb(7, 7, 7);
-    border: 2px solid grey; /* Initial grey border */
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    outline: none;
-    transition: border-color 0.3s ease;
-  }
-  
-  #reset-zoom:hover {
-    border-color: white;
-   /* background-color: #555; /* Change background color to a lighter shade or a different color for visibility */
-  }
+ 
