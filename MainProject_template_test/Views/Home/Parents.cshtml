@@ -46,26 +46,26 @@
             margin-right: 20px;
         }
 
-        .navbar-nav .nav-link:hover {
-            color: orangered;
-        }
+            .navbar-nav .nav-link:hover {
+                color: orangered;
+            }
 
-        .navbar-nav .nav-link::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 2px;
-            width: 100%;
-            height: 2px;
-            background-color: orangered;
-            transition: width 0.5s;
-            transform: scaleX(0);
-            transform-origin: left;
-        }
+            .navbar-nav .nav-link::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 2px;
+                width: 100%;
+                height: 2px;
+                background-color: orangered;
+                transition: width 0.5s;
+                transform: scaleX(0);
+                transform-origin: left;
+            }
 
-        .navbar-nav .nav-link:hover::after {
-            transform: scaleX(1);
-        }
+            .navbar-nav .nav-link:hover::after {
+                transform: scaleX(1);
+            }
 
         .card {
             width: 50%;
@@ -81,8 +81,8 @@
 
         .card-title {
             font-size: 30px;
-            font-weight:bold;
-            font-family:Arial;
+            font-weight: bold;
+            font-family: Arial;
             margin-top: 10px;
             margin-bottom: 5px;
             color: black;
@@ -134,9 +134,9 @@
             transition: background-color 0.3s;
         }
 
-        button:hover {
-            background-color: #0056b3;
-        }
+            button:hover {
+                background-color: #0056b3;
+            }
 
         .flip-card-content {
             transition: transform 0.5s, opacity 0.5s ease-in-out;
@@ -152,7 +152,6 @@
             transform: scale(0.95);
             display: none;
         }
-
     </style>
 
 </head>
@@ -192,11 +191,11 @@
     </div>
 
     <!-- Activities -->
-    <div class="card" style="position: absolute; width: 44%; height:40vh; background-color: white; top: 280px; right: 30px;">
+    <div class="card" style="position: absolute; width: 44%; height:300px; background-color: white; top: 280px; right: 30px;">
         <div class="card-content" style="margin-left:0px;">
-            <!-- Page 1-->
-            <div class="page" id="page1" style="display: block;">
-                <div class="card-header" style="background-color: red;">
+            <!-- Page 1 -->
+            <div id="card1" style="display: block;">
+                <div class="card-header" style="background-color: brown;">
                     <div class="card-title">Nature Walks and Observations</div>
                 </div>
                 <hr style="margin: 0;">
@@ -207,26 +206,142 @@
                             Encourage kids to observe changes in the environment, such as plant growth, animal behaviour, and weather patterns.
                         </p>
                     </div>
-                    <img src="~/Media/star.png" style="width: 150px;">
+                    <img src="~/Media/Walking.png" style="width: 280px;margin-left:35px;">
                 </div>
             </div>
 
-            <!-- additional pages-->
-            <div class="page" id="page2" style="display: none;">
-                <div class="card-title">Gardening</div>
-                <div style="color: black; margin-left: 30px;">
-                    <h4>
-                        Start a garden at home or involve kids in gardening. <br />
-                        Teach them about the importance of plants in absorbing carbon dioxide and how gardening can help mitigate climate change.
-                    </h4>
+            <!-- page 2 -->
+            <div id="card2" style="display: none;">
+                <div class="card-header" style="background-color: brown;">
+                    <div class="card-title">Gardening</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:290px;line-height: 2.0;">
+                            Start a garden at home or involve kids in gardening. Teach them about the <br />
+                            importance of plants in absorbing carbon dioxide and how gardening can help mitigate climate change.
+                        </p>
+                    </div>
+                    <img src="~/Media/garden.png" style="width: 280px;margin-left:35px;">
                 </div>
             </div>
 
-            <div class="button-container" style="float:right; margin-bottom:20px;">
-                <div class="mybutton1" onclick="nextPage()">
-                    <div class="btn">NEXT</div>
+            <!-- page 3 -->
+            <div id="card3" style="display: none;">
+                <div class="card-header" style="background-color: brown;">
+                    <div class="card-title">Energy Conservation Challenges</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:290px;line-height: 2.0;">
+                            Organise energy conservation challenges at home. Encourage kids to turn off
+                            lights when not in use, unplug electronics, and reduce water usage. Discuss how
+                            these small actions can improve the climate.
+                        </p>
+                    </div>
+                    <img src="~/Media/energy.png" style="width: 280px; margin-left:35px;">
                 </div>
             </div>
+
+            <!-- page 4 -->
+            <div id="card4" style="display: none;">
+                <div class="card-header" style="background-color: brown;">
+                    <div class="card-title">Recycling and Waste Management</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:290px;line-height: 2.0;">
+                            Involve kids in recycling activities and teach them about the importance of
+                            waste reduction. Discuss how recycling can help conserve resources and reduce
+                            the energy needed for production.
+                        </p>
+                    </div>
+                    <img src="~/Media/recycle.png" style="width: 280px; margin-left:35px;">
+                </div>
+            </div>
+
+            <!-- page 5 -->
+            <div id="card5" style="display: none;">
+                <div class="card-header" style="background-color: brown;">
+                    <div class="card-title">Outdoor Adventures</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:290px;line-height: 2.0;">
+                            Plan outdoor adventures such as camping, hiking, or birdwatching that emphasises
+                            the connection between nature and climate. Encourage kids to document their
+                            observations and reflections in a nature journal.
+                        </p>
+                    </div>
+                    <img src="~/Media/camping.png" style="width: 280px; margin-left:35px;">
+                </div>
+            </div>
+
+            <!-- page 6 -->
+            <div id="card6" style="display: none;">
+                <div class="card-header" style="background-color: brown;">
+                    <div class="card-title">Community Engagement</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:290px;line-height: 1.5;">
+                            Get involved in community initiatives aimed at addressing climate change,
+                            such as tree planting events, clean-up campaigns, or advocacy efforts. By
+                            taking action together as a family, kids can feel empowered to make a positive impact on their environment.
+                        </p>
+                    </div>
+                    <img src="~/Media/community.png" style="width: 280px; margin-left:35px;">
+                </div>
+            </div>
+
+            <!-- page 7 -->
+            <div id="card7" style="display: none;">
+                <div class="card-header" style="background-color: brown;">
+                    <div class="card-title">Climate-Friendly Cooking</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:290px;line-height: 2.0;">
+                            Spend time with kids in the kitchen preparing climate-friendly meals using
+                            locally sourced, seasonal ingredients. Talk about the environmental benefits of
+                            eating lower on the food chain, and reducing food waste.
+                        </p>
+                    </div>
+                    <img src="~/Media/cooking.png" style="width: 280px; margin-left:35px; margin-top: 35px;">
+                </div>
+            </div>
+
+            <!-- page 8 -->
+            <div id="card8" style="display: none;">
+                <div class="card-header" style="background-color: brown;">
+                    <div class="card-title">Green Transportation Adventures</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:290px;line-height: 1.5;">
+                            Explore alternative modes of transportation as a family, such as biking,
+                            walking, or using public transit for outings and errands. Discuss the environmental
+                            and health benefits of reducing car dependency and share experiences of exploring your neighbourhood in new ways.
+                        </p>
+                    </div>
+                    <img src="~/Media/bicycle.png" style="width: 280px; margin-left:35px;">
+                </div>
+            </div>
+
+            <button style="position:absolute; top:250px; right: 10px; z-index: 999" onclick="nextPage1()"> Next </button>
+
+            @*<div class="button-container" style="">
+                    <div class="mybutton1" onclick="nextPage1()">
+                        <div class="btn">Next</div>
+                    </div>
+                </div>*@
 
         </div>
     </div>
@@ -256,85 +371,314 @@
         <h4> Helpful External Reads</h4>
     </div>
 
-    <div class="card" style="position: absolute; width: 43.5%; height:40vh; background-color: white; top: 1090px; left: 100px;">
+    <div class="card" style="position: absolute; width: 43.5%; height:300px; background-color: white; top: 1090px; left: 100px;">
         <div class="card-content" style="margin-left:0px;">
-            <!-- Page 1-->
-            <div class="page" id="page1" style="display: block;">
-                <div class="card-header" style="background-color: red;">
-                    <div class="card-title">Nature Walks and Observations</div>
+            <!-- Page 1 -->
+            <div id="read1" style="display: block;">
+                <div class="card-header" style="background-color: gray;">
+                    <div class="card-title">Talking to your child about climate change</div>
                 </div>
                 <hr style="margin: 0;">
                 <div class="card-body">
                     <div style="color: black; margin-left: 30px; float: left;">
-                        <p style="width:290px;line-height: 2.0;">
-                            Take nature walks in different environments such as parks, forests, or beaches. <br />
-                            Encourage kids to observe changes in the environment, such as plant growth, animal behaviour, and weather patterns.
+                        <p style="width:200px;line-height: 1; font-size:small">
+                            This UNICEF article provides practical advice on how to discuss climate change with children in a way that is hopeful and empowering.
+                            It highlights the importance of being honest about the challenges while also focusing on positive actions that families can take together.
+                            A great resource for parents looking to navigate this critical topic with their kids, encouraging them to become proactive about environmental issues.
                         </p>
                     </div>
-                    <img src="~/Media/star.png" style="width: 150px;">
+                    <img src="~/Media/article1.png" style="width: 280px;margin-left:35px;">
+                    <button style="position: absolute; bottom: 0; left: 100px;" id="article1"> Read More </button>
                 </div>
             </div>
 
-            <!-- additional pages-->
-            <div class="page" id="page2" style="display: none;">
-                <div class="card-title">Gardening</div>
-                <div style="color: black; margin-left: 30px;">
-                    <h4>
-                        Start a garden at home or involve kids in gardening. <br />
-                        Teach them about the importance of plants in absorbing carbon dioxide and how gardening can help mitigate climate change.
-                    </h4>
+            <!-- page 2 -->
+            <div id="read2" style="display: none;">
+                <div class="card-header" style="background-color: gray;">
+                    <div class="card-title">Children Change Their Parents’ Minds about Climate Change</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:200px;line-height: 1;">
+                            This engaging article from Scientific American explores the powerful influence children can have on their parents' views about climate change.
+                            It presents fascinating research showing how informed and passionate kids can spark important conversations and even change perspectives at home.
+                            This piece is an encouraging read for anyone interested in the intergenerational impact of environmental education.
+                        </p>
+                    </div>
+                    <img src="~/Media/article2.png" style="width: 280px;margin-left:35px;">
+                    <button style="position: absolute; bottom: 0; left: 100px;" id="article2"> Read More </button>
                 </div>
             </div>
 
-            <div class="button-container" style="float:right; margin-bottom:20px;">
-                <div class="mybutton1" onclick="nextPage()">
-                    <div class="btn">NEXT</div>
+            <!-- page 3 -->
+            <div id="read3" style="display: none;">
+                <div class="card-header" style="background-color: gray;">
+                    <div class="card-title">Why Forest School? Find out one parent's perspective.</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:200px;line-height: 1;">
+                            This insightful article from Wildlings offers a parent's perspective on the benefits of forest school,
+                            highlighting how it enhances children's connection with nature and develops their independence and problem-solving skills.
+                            It's a compelling read for parents considering alternative educational environments that promote outdoor learning and environmental stewardship.
+                        </p>
+                    </div>
+                    <img src="~/Media/article3.png" style="width: 280px; margin-left:35px;">
+                    <button style="position: absolute; bottom: 0; left: 100px;" id="article3"> Read More </button>
                 </div>
             </div>
+
+            <!-- page 4 -->
+            <div id="read4" style="display: none;">
+                <div class="card-header" style="background-color: gray;">
+                    <div class="card-title">How kids can help protect the oceans</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:200px;line-height: 1.2;">
+                            This article from Babysits provides practical tips on how to encourage children to protect the oceans.
+                            It outlines simple and engaging activities that can raise awareness about marine conservation among young learners.
+                            An excellent resource for parents looking to instill a sense of environmental responsibility in their children.
+                        </p>
+                    </div>
+                    <img src="~/Media/article4.png" style="width: 280px; margin-left:35px;">
+                    <button style="position: absolute; bottom: 0; left: 100px;" id="article4"> Read More </button>
+                </div>
+            </div>
+
+            <!-- page 5 -->
+            <div id="read5" style="display: none;">
+                <div class="card-header" style="background-color: gray;">
+                    <div class="card-title">I’m Not Raising My Kids in a Bubble, I’m Raising Them in a Greenhouse</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:200px;line-height: 2.0;">
+                            This delightful article from Her View From Home shares a personal story about the joys and educational
+                            benefits of building a greenhouse with kids. It emphasizes how such projects can teach children about nature,
+                            sustainability, and the importance of nurturing life. An inspiring read for families looking to engage in hands-on
+                            environmental learning.
+                        </p>
+                    </div>
+                    <img src="~/Media/article5.png" style="width: 280px; margin-left:35px;">
+                    <button style="position: absolute; bottom: 0; left: 100px;" id="article5"> Read More </button>
+                </div>
+            </div>
+
+            <!-- page 6 -->
+            <div id="read6" style="display: none;">
+                <div class="card-header" style="background-color: gray;">
+                    <div class="card-title">5 Ways to Teach Your Child to Reduce, Reuse, and Recycle</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:200px;line-height: 1.3;">
+                            This practical guide from The Gardner School offers straightforward tips on teaching children to reduce,
+                            reuse, and recycle. It's filled with actionable steps that parents can implement to foster environmental
+                            consciousness in their kids. A valuable read for families wanting to incorporate sustainable practices into their daily lives.
+                        </p>
+                    </div>
+                    <img src="~/Media/article6.png" style="width: 280px; margin-left:35px;">
+                    <button style="position: absolute; bottom: 0; left: 100px;" id="article6"> Read More </button>
+                </div>
+            </div>
+
+            <!-- page 7 -->
+            <div id="read7" style="display: none;">
+                <div class="card-header" style="background-color: gray;">
+                    <div class="card-title">How parents and caregivers can prepare for a natural disaster</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:200px;line-height: 1.3;">
+                            This article from Emerging Minds is a crucial resource for parents and caregivers on preparing for natural disasters.
+                            It provides detailed guidance on how to talk to children about these events, ensuring they feel safe and informed.
+                            It's an essential read for families looking to develop effective emergency plans and build resilience in children.
+                        </p>
+                    </div>
+                    <img src="~/Media/article7.png" style="width: 280px; margin-left:35px; margin-top: 35px;">
+                    <button style="position: absolute; bottom: 0; left: 100px;" id="article2"> Read More </button>
+                </div>
+            </div>
+
+            <button style="position:absolute; top:250px; right: 10px; z-index: 999" onclick="read()"> Next </button>
+
+            @*<div class="button-container" style="">
+                    <div class="mybutton1" onclick="nextPage1()">
+                        <div class="btn">Next</div>
+                    </div>
+                </div>*@
 
         </div>
     </div>
 
     <!-- Communication Tips -->
-    <div style="position:absolute; top:660px; left:800px;">
+    <div style="position:absolute; top:640px; left:800px;">
         <h4>Communication Tips</h4>
     </div>
 
-    <div class="card" style="position: absolute; width: 44%; height:40vh; background-color: white; top: 730px; right: 30px;">
+    <div class="card" style="position: absolute; width: 44%; height:300px; background-color: white; top: 730px; right: 30px;">
         <div class="card-content" style="margin-left:0px;">
-            <!-- Page 1-->
-            <div class="page" id="page1" style="display: block;">
-                <div class="card-header" style="background-color: red;">
-                    <div class="card-title">Nature Walks and Observations</div>
+            <!-- Page 1 -->
+            <div id="icon1" style="display: block;">
+                <div class="card-header" style="background-color: darkorange;">
+                    <div class="card-title">Keep it Simple and Age-Appropriate</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:290px;line-height: 1.5;">
+                            Use language and concepts that are suitable for your child's age and level of understanding.
+                            Avoid overwhelming them with complex scientific terminology.
+                            Start with basic ideas and gradually build upon their understanding as they grow.
+                        </p>
+                    </div>
+                    <img src="~/Media/icon1.png" style="width: 280px;margin-left:35px;">
+                </div>
+            </div>
+
+            <!-- page 2 -->
+            <div id="icon2" style="display: none;">
+                <div class="card-header" style="background-color: darkorange;">
+                    <div class="card-title">Use Concrete Examples and Analogies</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:290px;line-height: 1.5;">
+                            Help your child grasp the concept of climate change by using relatable examples and analogies.
+                            Compare the Earth's atmosphere to a blanket that regulates temperature or use everyday experiences
+                            like weather patterns and seasons to illustrate changes over time.
+                        </p>
+                    </div>
+                    <img src="~/Media/icon2.png" style="width: 280px;margin-left:35px;">
+                </div>
+            </div>
+
+            <!-- page 3 -->
+            <div id="icon3" style="display: none;">
+                <div class="card-header" style="background-color: darkorange;">
+                    <div class="card-title">Energy Conservation Challenges</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:290px;line-height: 1.5;">
+                            Be a positive role model for your child by demonstrating environmentally friendly behaviours and lifestyle choices.
+                            Show them how to reduce waste, conserve energy, and make sustainable consumer choices.
+                            Your actions speak louder than words and can inspire your child to follow suit.
+                        </p>
+                    </div>
+                    <img src="~/Media/icon3.png" style="width: 280px; margin-left:35px;">
+                </div>
+            </div>
+
+            <!-- page 4 -->
+            <div id="icon4" style="display: none;">
+                <div class="card-header" style="background-color: darkorange;">
+                    <div class="card-title">Recycling and Waste Management</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:290px;line-height: 1.2;">
+                            Encourage kids to ask climate change questions, fostering their  curiosity and civic responsibility.
+                            Guide them in seeking trusted resources for information while cautioning about disinformation.
+                            Avoid information overload, focus on meaningful exploration to prevent overwhelm and maintain realistic expectations,
+                            preserving hope and efficacy.
+                        </p>
+                    </div>
+                    <img src="~/Media/icon4.png" style="width: 280px; margin-left:35px;">
+                </div>
+            </div>
+
+            <!-- page 5 -->
+            <div id="icon5" style="display: none;">
+                <div class="card-header" style="background-color: darkorange;">
+                    <div class="card-title">Encourage Emotional Expression</div>
                 </div>
                 <hr style="margin: 0;">
                 <div class="card-body">
                     <div style="color: black; margin-left: 30px; float: left;">
                         <p style="width:290px;line-height: 2.0;">
-                            Take nature walks in different environments such as parks, forests, or beaches. <br />
-                            Encourage kids to observe changes in the environment, such as plant growth, animal behaviour, and weather patterns.
+                            Create a supportive space for your child to express their emotions and concerns about climate change.
+                            Validate their feelings of fear, frustration, or sadness while offering reassurance, hope, and encouragement.
                         </p>
                     </div>
-                    <img src="~/Media/star.png" style="width: 150px;">
+                    <img src="~/Media/icon5.png" style="width: 280px; margin-left:35px;">
                 </div>
             </div>
 
-            <!-- additional pages-->
-            <div class="page" id="page2" style="display: none;">
-                <div class="card-title">Gardening</div>
-                <div style="color: black; margin-left: 30px;">
-                    <h4>
-                        Start a garden at home or involve kids in gardening. <br />
-                        Teach them about the importance of plants in absorbing carbon dioxide and how gardening can help mitigate climate change.
-                    </h4>
+            <!-- page 6 -->
+            <div id="icon6" style="display: none;">
+                <div class="card-header" style="background-color: darkorange;">
+                    <div class="card-title">Promote Solutions-Oriented Thinking</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:290px;line-height: 1.3;">
+                            Shift the focus from fear and despair to action and solutions.
+                            Encourage your child to brainstorm creative ideas for addressing
+                            climate change in their own lives, schools, and communities.
+                            Foster a problem-solving mindset by emphasising the importance of innovation
+                            and collaboration in tackling environmental challenges.
+                        </p>
+                    </div>
+                    <img src="~/Media/icon6.png" style="width: 280px; margin-left:35px;">
                 </div>
             </div>
 
-            <div class="button-container" style="float:right; margin-bottom:20px;">
-                <div class="mybutton1" onclick="nextPage()">
-                    <div class="btn">NEXT</div>
+            <!-- page 7 -->
+            <div id="icon7" style="display: none;">
+                <div class="card-header" style="background-color: darkorange;">
+                    <div class="card-title">Inspiring Hope</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:290px;line-height: 1.3;">
+                            Reassure kids of adults' dedication to solving climate change.
+                            Highlight innovations like chinese panda-shaped solar farms and student-led
+                            initiatives such as Turn It Off campaigns. Let them know millions are working
+                            on solutions to protect their future, instilling hope and empowerment in facing environmental challenges together.
+                        </p>
+                    </div>
+                    <img src="~/Media/icon7.png" style="width: 280px; margin-left:35px; margin-top: 35px;">
                 </div>
             </div>
+
+            <!-- page 8 -->
+            <div id="icon8" style="display: none;">
+                <div class="card-header" style="background-color: darkorange;">
+                    <div class="card-title">Celebrate Eco-Friendly Achievements</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:290px;line-height: 1.5;">
+                            Acknowledge and celebrate your child's eco-friendly behaviours and actions, no matter how small.
+                            Praise them for turning off lights, recycling, conserving water, or expressing concern for the environment.
+                            Positive feedback strengthens their belief in their ability and responsibility to make a difference for positive change.
+                        </p>
+                    </div>
+                    <img src="~/Media/icon8.png" style="width: 280px; margin-left:35px;">
+                </div>
+            </div>
+
+            <button style="position:absolute; top:250px; right: 10px; z-index: 999" onclick="icon()"> Next </button>
+
+            @*<div class="button-container" style="">
+                    <div class="mybutton1" onclick="nextPage1()">
+                        <div class="btn">Next</div>
+                    </div>
+                </div>*@
 
         </div>
     </div>
@@ -344,8 +688,9 @@
         <h4>Helpful External Videos</h4>
     </div>
 
-    <div class="card" style="position: absolute; width: 44%; height:40vh; background-color: white; top: 1090px; right: 30px; margin-bottom:30px;">
-        <div class="flip-card-content" id="card1">
+    <div class="card" style="position: absolute; width: 44%; height:300px; background-color: white; top: 1090px; right: 30px; margin-bottom:30px;">
+        <!-- video 1-->
+        <div class="flip-card-content" id="video1">
             <div class="left-side">
                 <div class="card-content">
                     <div class="card-title" style="color:white;">
@@ -356,31 +701,250 @@
             </div>
             <div class="right-side">
                 <img src="~/Media/videoParent1.png" style="width: 70%; height:40vh; margin-left: 0px; position: absolute; bottom: 0px; right: 0px" />
+                <button style="position: absolute; bottom: 0; left: 200px;" id="play1"> Watch </button>
             </div>
         </div>
 
-        <button style="position: absolute; bottom: 0; left: 200px; "> Watch </button>
-        <button style="position: absolute; bottom: 0; right: 0; background-color:transparent;" onclick="nextPage4()">Next</button>
+        <!-- video 2-->
+        <div class="flip-card-content" id="video2" style="display: none;">
+            <div class="left-side">
+                <div class="card-content">
+                    <div class="card-title" style="color:white; line-height: 2.2;">
+                        When The World <br />
+                        Gets 1℃ Hotter
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <img src="~/Media/videoParent2.png" style="width: 70%; height:40vh; margin-left: 0px; position: absolute; bottom: 0px; right: 0px" />
+                <button style="position: absolute; bottom: 0; left: 200px;" id="play2"> Watch </button>
+            </div>
+        </div>
+
+        <!-- video 3-->
+        <div class="flip-card-content" id="video3" style="display: none;">
+            <div class="left-side">
+                <div class="card-content">
+                    <div class="card-title" style="color:white; line-height: 3.0;">
+                        Why Do We
+                        Need Trees?
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <img src="~/Media/videoParent3.png" style="width: 70%; height:40vh; margin-left: 0px; position: absolute; bottom: 0px; right: 0px" />
+                <button style="position: absolute; bottom: 0; left: 200px;" id="play3"> Watch </button>
+            </div>
+        </div>
+
+        <!-- video 4-->
+        <div class="flip-card-content" id="video4" style="display: none;">
+            <div class="left-side">
+                <div class="card-content">
+                    <div class="card-title" style="color:white; font-size:23px; line-height: 1.9">
+                        Carbon capture: the hopes,
+                        challenges & controversies
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <img src="~/Media/videoParents4.png" style="width: 70%; height:40vh; margin-left: 0px; position: absolute; bottom: 0px; right: 0px" />
+                <button style="position: absolute; bottom: 0; left: 200px;" id="play4"> Watch </button>
+            </div>
+        </div>
+
+        <!-- video 5-->
+        <div class="flip-card-content" id="video5" style="display: none;">
+            <div class="left-side">
+                <div class="card-content">
+                    <div class="card-title" style="color:white; font-size:23px; line-height: 2.4">
+                        Global renewables:
+                        Pioneering the energy transition
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <img src="~/Media/videoParents5.png" style="width: 70%; height:40vh; margin-left: 0px; position: absolute; bottom: 0px; right: 0px" />
+                <button style="position: absolute; bottom: 0; left: 200px;" id="play5"> Watch </button>
+            </div>
+        </div>
+
+        <!-- video 6-->
+        <div class="flip-card-content" id="video6" style="display: none;">
+            <div class="left-side">
+                <div class="card-content">
+                    <div class="card-title" style="color:white; font-size:23px; line-height: 2.4">
+                        Movies That Teach
+                        Kids About Climate Change
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <img src="~/Media/videoParents6.png" style="width: 70%; height:40vh; margin-left: 0px; position: absolute; bottom: 0px; right: 0px" />
+                <button style="position: absolute; bottom: 0; left: 200px;" id="play6"> Watch </button>
+            </div>
+        </div>
+
+        <!-- video 7-->
+        <div class="flip-card-content" id="video7" style="display: none; ">
+            <div class="left-side">
+                <div class="card-content">
+                    <div class="card-title" style="color:white; font-size:20px; line-height: 2.3">
+                        TV Shows and Films That Teach Your Children About Environmental Issues
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <img src="~/Media/videoParents7.png" style="width: 70%; height:40vh; margin-left: 0px; position: absolute; bottom: 0px; right: 0px" />
+                <button style="position: absolute; bottom: 0; left: 200px;" id="play7"> Watch </button>
+            </div>
+        </div>
+
+        <button style="position: absolute; bottom: 0; right: 0; background-color:transparent;" onclick="video()">Next</button>
     </div>
 </body>
 </html>
 
+<!-- Activities logic -->
 <script>
-    let currentPage = 1;
+    function PageManager(totalPages, prefix) {
+        this.currentPage = 1;
+        this.totalPages = totalPages;
+        this.prefix = prefix;
 
-    function nextPage4() {
-        const totalPages = 2; // 总页数
-        const currentCard = document.getElementById(`card${currentPage}`);
-        const nextCard = document.getElementById(`card${(currentPage % totalPages) + 1}`);
+        this.nextPage = function () {
+            const currentCard = document.getElementById(`${this.prefix}${this.currentPage}`);
+            const nextCard = document.getElementById(`${this.prefix}${(this.currentPage % this.totalPages) + 1}`);
 
-        currentCard.classList.add('hidden');
-        setTimeout(() => {
-            currentCard.style.display = 'none';
-            nextCard.style.display = 'block';
-            nextCard.classList.remove('hidden');
-        }, 500);
+            currentCard.classList.add('hidden');
+            setTimeout(() => {
+                currentCard.style.display = 'none';
+                nextCard.style.display = 'block';
+                nextCard.classList.remove('hidden');
+            }, 500);
 
-        currentPage = (currentPage % totalPages) + 1;
+            this.currentPage = (this.currentPage % this.totalPages) + 1;
+        };
     }
 
+    let cardPageManager = new PageManager(8, 'card');
+    let iconPageManager = new PageManager(8, 'icon');
+    let videoPageManager = new PageManager(7, 'video');
+    let readPageManager = new PageManager(7, 'read')
+
+    function nextPage1() {
+        cardPageManager.nextPage();
+    }
+
+    function icon() {
+        iconPageManager.nextPage();
+    }
+
+    function video() {
+        videoPageManager.nextPage();
+    }
+
+    function read() {
+        readPageManager.nextPage();
+    }
+</script>
+
+
+<!-- 1st video -->
+<script>
+    document.getElementById('play1').addEventListener('click', function () {
+        window.location.href = 'https://youtu.be/HQTUWK7CM-Y?si=C38dVd7y_UxH9gFG';
+    });
+</script>
+
+<!-- 2nd video -->
+<script>
+    document.getElementById('play2').addEventListener('click', function () {
+        window.location.href = 'https://youtu.be/dIsjcG7hTmo?si=HCPJA-mzMfU49e73';
+    });
+</script>
+
+<!-- 3rd video -->
+<script>
+    document.getElementById('play3').addEventListener('click', function () {
+        window.location.href = 'https://youtu.be/UnwMq1gGjhk?si=pD4qc1i51HMxGGtb';
+    });
+</script>
+
+<!-- 4th video -->
+<script>
+    document.getElementById('play4').addEventListener('click', function () {
+        window.location.href = 'https://youtu.be/laGtd-b0vMY?si=KKpwAG5YMihHzQ0e';
+    });
+</script>
+
+<!-- 5th video -->
+<script>
+    document.getElementById('play5').addEventListener('click', function () {
+        window.location.href = 'https://youtu.be/UVf2Yw7uFoE?si=_Uqox4WsveZeyMDB';
+    });
+</script>
+
+<!-- 6th video -->
+<script>
+    document.getElementById('play6').addEventListener('click', function () {
+        window.location.href = 'https://www.commonsensemedia.org/lists/movies-that-teach-kids-about-climate-change';
+    });
+</script>
+
+<!-- 7th video -->
+<script>
+    document.getElementById('play7').addEventListener('click', function () {
+        window.location.href = 'https://emmareed.net/tv-shows-and-films-that-teach-your-children-about-environmental-issues/';
+    });
+</script>
+
+
+<!-- 1st article -->
+<script>
+    document.getElementById('article1').addEventListener('click', function () {
+        window.location.href = 'https://www.unicef.org/parenting/talking-your-child-about-climate-change#:~:text=Talk%20about%20what%20steps%20you,to%20help%20address%20climate%20change';
+    });
+</script>
+
+<!-- 2nd video -->
+<script>
+    document.getElementById('article2').addEventListener('click', function () {
+        window.location.href = 'https://www.scientificamerican.com/article/children-change-their-parents-minds-about-climate-change/';
+    });
+</script>
+
+<!-- 3rd video -->
+<script>
+    document.getElementById('article3').addEventListener('click', function () {
+        window.location.href = 'https://www.wildlings.sg/post/why-forest-school-find-out-one-parent-s-perspective';
+    });
+</script>
+
+<!-- 4th video -->
+<script>
+    document.getElementById('article4').addEventListener('click', function () {
+        window.location.href = 'https://www.babysits.au/community-resources/2542/how-to-encourage-your-child-to-protect-the-oceans/';
+    });
+</script>
+
+<!-- 5th video -->
+<script>
+    document.getElementById('article5').addEventListener('click', function () {
+        window.location.href = 'https://herviewfromhome.com/kids-greenhouse/';
+    });
+</script>
+
+<!-- 6th video -->
+<script>
+    document.getElementById('article6').addEventListener('click', function () {
+        window.location.href = 'https://www.thegardnerschool.com/blog/teach-your-child-to-reduce-reuse-and-recycle/';
+    });
+</script>
+
+<!-- 7th video -->
+<script>
+    document.getElementById('article7').addEventListener('click', function () {
+        window.location.href = 'https://emergingminds.com.au/resources/how-parents-and-caregivers-can-prepare-for-a-natural-disaster/';
+    });
 </script>
