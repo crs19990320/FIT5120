@@ -332,7 +332,6 @@
     <Content Include="lib\waypoints\waypoints.min.js" />
     <Content Include="lib\wow\wow.js" />
     <Content Include="lib\wow\wow.min.js" />
-    <Content Include="Media\3.jpg" />
     <Content Include="Media\ai-generated-8663117_640.png" />
     <Content Include="Media\back.png" />
     <Content Include="Media\Choice.png" />
@@ -353,6 +352,7 @@
     <Content Include="Media\puzzle.png" />
     <Content Include="Media\puzzlebackground.png" />
     <Content Include="Media\puzzlePiece.png" />
+    <Content Include="Media\puzzle_background.png" />
     <Content Include="Media\reset.png" />
     <Content Include="Media\scale_gas.png" />
     <Content Include="Media\scale_temp.png" />

@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:Views\\Home\\Dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject_template_test\\views\\home\\puzzle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:views\\home\\puzzle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\LearnPage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:Views\\Home\\LearnPage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Puzzle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:Views\\Home\\Puzzle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject_template_test\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\HomePage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,15 +54,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "LearnPage.cshtml",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\LearnPage.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\LearnPage.cshtml",
               "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\LearnPage.cshtml",
               "RelativeToolTip": "Views\\Home\\LearnPage.cshtml",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAAAHsAAAAKAAAA",
+              "ViewState": "AQIAAH4AAAAAAAAAAAAAAJ0AAAB8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-22T10:14:59.371Z"
+              "WhenOpened": "2024-04-22T10:14:59.371Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -84,20 +85,20 @@
               "RelativeDocumentMoniker": "Views\\Home\\Puzzle.cshtml",
               "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Puzzle.cshtml",
               "RelativeToolTip": "Views\\Home\\Puzzle.cshtml",
-              "ViewState": "AQIAAAgBAAAAAAAAAAAQwBQBAABnAAAA",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAQwHsAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-19T10:22:35.936Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Dashboard.cshtml",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Dashboard.cshtml",
               "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Dashboard.cshtml",
               "RelativeToolTip": "Views\\Home\\Dashboard.cshtml",
-              "ViewState": "AQIAAIgBAAAAAAAAAAAowKUBAAANAAAA",
+              "ViewState": "AQIAAI4BAAAAAAAAAAAowKUBAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-19T08:54:50.226Z",
               "EditorCaption": ""
