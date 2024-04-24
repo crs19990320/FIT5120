@@ -123,6 +123,36 @@
             background-color: white;
             padding: 10px;
         }
+
+        button {
+            padding: 8px 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .flip-card-content {
+            transition: transform 0.5s, opacity 0.5s ease-in-out;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+
+        .hidden {
+            opacity: 0;
+            transform: scale(0.95);
+            display: none;
+        }
+
     </style>
 
 </head>
@@ -162,22 +192,22 @@
     </div>
 
     <!-- Activities -->
-    <div class="card" style="position: absolute; width: 44%; background-color: white; top: 280px; right: 30px;">
+    <div class="card" style="position: absolute; width: 44%; height:40vh; background-color: white; top: 280px; right: 30px;">
         <div class="card-content" style="margin-left:0px;">
             <!-- Page 1-->
             <div class="page" id="page1" style="display: block;">
                 <div class="card-header" style="background-color: red;">
                     <div class="card-title">Nature Walks and Observations</div>
                 </div>
-                <hr style="margin: 0;"> 
+                <hr style="margin: 0;">
                 <div class="card-body">
                     <div style="color: black; margin-left: 30px; float: left;">
-                        <p style="width:290px;line-height: 2.6;">
+                        <p style="width:290px;line-height: 2.0;">
                             Take nature walks in different environments such as parks, forests, or beaches. <br />
                             Encourage kids to observe changes in the environment, such as plant growth, animal behaviour, and weather patterns.
                         </p>
                     </div>
-                    <img src="~/Media/star.png" style="width: 270px;">
+                    <img src="~/Media/star.png" style="width: 150px;">
                 </div>
             </div>
 
@@ -192,7 +222,7 @@
                 </div>
             </div>
 
-            <div class="button-container" style="float:right">
+            <div class="button-container" style="float:right; margin-bottom:20px;">
                 <div class="mybutton1" onclick="nextPage()">
                     <div class="btn">NEXT</div>
                 </div>
@@ -221,70 +251,136 @@
         </div>
     </div>
 
-    <!-- External Reads -->
-    <div class="card" style="position:absolute; width: 40%; background-color: white; top:1000px; right:30px;">
-        <div class="card-content">
-            <div class="card-title">Activity Heading</div>
-            <div style="color: white; margin-left: 30px;">
-                <h4>This week I...</h4>
+    <!--  Helpful External Reads -->
+    <div style="margin-bottom:10px;">
+        <h4> Helpful External Reads</h4>
+    </div>
+
+    <div class="card" style="position: absolute; width: 43.5%; height:40vh; background-color: white; top: 1090px; left: 100px;">
+        <div class="card-content" style="margin-left:0px;">
+            <!-- Page 1-->
+            <div class="page" id="page1" style="display: block;">
+                <div class="card-header" style="background-color: red;">
+                    <div class="card-title">Nature Walks and Observations</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:290px;line-height: 2.0;">
+                            Take nature walks in different environments such as parks, forests, or beaches. <br />
+                            Encourage kids to observe changes in the environment, such as plant growth, animal behaviour, and weather patterns.
+                        </p>
+                    </div>
+                    <img src="~/Media/star.png" style="width: 150px;">
+                </div>
             </div>
+
+            <!-- additional pages-->
+            <div class="page" id="page2" style="display: none;">
+                <div class="card-title">Gardening</div>
+                <div style="color: black; margin-left: 30px;">
+                    <h4>
+                        Start a garden at home or involve kids in gardening. <br />
+                        Teach them about the importance of plants in absorbing carbon dioxide and how gardening can help mitigate climate change.
+                    </h4>
+                </div>
+            </div>
+
+            <div class="button-container" style="float:right; margin-bottom:20px;">
+                <div class="mybutton1" onclick="nextPage()">
+                    <div class="btn">NEXT</div>
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <!-- communication tips-->
-    <div style="margin-bottom:10px;">
+    <!-- Communication Tips -->
+    <div style="position:absolute; top:660px; left:800px;">
         <h4>Communication Tips</h4>
     </div>
 
-    <div class="card">
-        <div class="card-content">
-            <div class="card-title">Learn</div>
-            <div style="color:white;">
-                This week, we're going on an adventure to <br />
-                learn all about saving water.
-            </div>
-            <div class="button-container">
-                <div class="mybutton1">
-                    <a href="LearnPage" class="btn">Start</a>
+    <div class="card" style="position: absolute; width: 44%; height:40vh; background-color: white; top: 730px; right: 30px;">
+        <div class="card-content" style="margin-left:0px;">
+            <!-- Page 1-->
+            <div class="page" id="page1" style="display: block;">
+                <div class="card-header" style="background-color: red;">
+                    <div class="card-title">Nature Walks and Observations</div>
+                </div>
+                <hr style="margin: 0;">
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:290px;line-height: 2.0;">
+                            Take nature walks in different environments such as parks, forests, or beaches. <br />
+                            Encourage kids to observe changes in the environment, such as plant growth, animal behaviour, and weather patterns.
+                        </p>
+                    </div>
+                    <img src="~/Media/star.png" style="width: 150px;">
                 </div>
             </div>
-        </div>
-        <div class="card-image">
-            <img src="~/Media/Learn.png" alt="Placeholder Image">
-        </div>
-    </div>
 
+            <!-- additional pages-->
+            <div class="page" id="page2" style="display: none;">
+                <div class="card-title">Gardening</div>
+                <div style="color: black; margin-left: 30px;">
+                    <h4>
+                        Start a garden at home or involve kids in gardening. <br />
+                        Teach them about the importance of plants in absorbing carbon dioxide and how gardening can help mitigate climate change.
+                    </h4>
+                </div>
+            </div>
 
-    <div style="position:absolute; top:900px; left:850px;">
-        <h4>Helpful external videos</h4>
+            <div class="button-container" style="float:right; margin-bottom:20px;">
+                <div class="mybutton1" onclick="nextPage()">
+                    <div class="btn">NEXT</div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <!-- Videos -->
-    <div class="card" style="width: 40%; background-color: white; float:right">
-        <div class="card-content">
-            <div class="card-title">Video Title</div>
-            <div style="color: white; margin-left: 30px;">
-                <h4>This week I...</h4>
+    <div style="position:absolute; top:1050px; left:800px;">
+        <h4>Helpful External Videos</h4>
+    </div>
+
+    <div class="card" style="position: absolute; width: 44%; height:40vh; background-color: white; top: 1090px; right: 30px; margin-bottom:30px;">
+        <div class="flip-card-content" id="card1">
+            <div class="left-side">
+                <div class="card-content">
+                    <div class="card-title" style="color:white;">
+                        How Can We Keep Plastics <br />
+                        Out of Our Ocean?
+                    </div>
+                </div>
             </div>
+            <div class="right-side">
+                <img src="~/Media/videoParent1.png" style="width: 70%; height:40vh; margin-left: 0px; position: absolute; bottom: 0px; right: 0px" />
+                <button style="position: absolute; bottom: 0; left: 200px; "> Watch </button>
+                <button style="position: absolute; bottom: 0; right: 0; background-color:transparent;" onclick="nextPage4()">Next</button>
+            </div>
+
         </div>
     </div>
 </body>
 </html>
 
 <script>
-    var currentPage = 1; // 开始时显示第一页
+    let currentPage = 1;
 
-    function nextPage() {
-        // 计算下一页的ID
-        var nextPageId = "page" + (currentPage % 2 + 1); // 循环显示页面1和2
+    function nextPage4() {
+        const totalPages = 2; // 总页数
+        const currentCard = document.getElementById(`card${currentPage}`);
+        const nextCard = document.getElementById(`card${(currentPage % totalPages) + 1}`);
 
-        // 隐藏当前页
-        document.getElementById("page" + currentPage).style.display = 'none';
+        currentCard.classList.add('hidden');
+        setTimeout(() => {
+            currentCard.style.display = 'none';
+            nextCard.style.display = 'block';
+            nextCard.classList.remove('hidden');
+        }, 500);
 
-        // 显示下一页
-        document.getElementById(nextPageId).style.display = 'block';
-
-        // 更新当前页码
-        currentPage = currentPage % 2 + 1;
+        currentPage = (currentPage % totalPages) + 1;
     }
+
 </script>

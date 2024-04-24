@@ -374,6 +374,7 @@
     <Content Include="Media\Statuses2.png" />
     <Content Include="Media\testPic.png" />
     <Content Include="Media\underwater.mp4" />
+    <Content Include="Media\videoParent1.png" />
     <Content Include="Media\water_irrigation.png" />
     <Content Include="Media\WelcomePage.png" />
     <Content Include="Models\Model1.Context.tt">
