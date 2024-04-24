@@ -66,11 +66,67 @@
         .navbar-nav .nav-link:hover::after {
             transform: scaleX(1);
         }
+
+        .card {
+            width: 50%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            font-size: 30px;
+            font-weight:bold;
+            font-family:Arial;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            color: black;
+        }
+
+        .card-content {
+            flex: 1;
+            margin-left: 30px;
+            margin-bottom: 10px;
+        }
+
+        .card-header {
+            background-color: red; /* 红色背景 */
+        }
+
+        .card-body {
+            padding: 10px 0;
+        }
+
+        hr {
+            margin: 0;
+            border: none;
+            height: 2px;
+            background-color: black; /* 黑色分界线 */
+        }
+
+        .left-side {
+            float: left;
+            width: 30%;
+            color: white;
+            background-color: blue;
+            padding: 10px;
+        }
+
+        .right-side {
+            float: right;
+            width: 70%;
+            background-color: white;
+            padding: 10px;
+        }
     </style>
 
 </head>
 <body>
-
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
         <div class="container">
             @Html.ActionLink("Green Guardians", "HomePage", "Home", new { area = "" }, new { @class = "navbar-brand" })
@@ -83,14 +139,12 @@
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link text-brown" href="@Url.Action("Dashboard", "Home")" style="font-weight: bolder;">
-                                <img src="https://cdn-icons-png.freepik.com/512/1828/1828671.png" alt="Dashboard Icon" style="width: 20px; height: 20px; margin-right: 5px;">
-                                Dashboard
+                                <img src="~/Media/go_to_dashboard.png" alt="Dashboard Icon" style="width: 180px; height: 50px; margin-right: 5px;">
                             </a>
                         </li>
                     </ul>
                 </div>
             </nav>
-
         </div>
     </nav>
     <div style="display: flex; align-items: center;">
@@ -101,6 +155,136 @@
         </h1>
     </div>
 
+    <!-- Teaching Resources -->
+    <div style="margin-top:30px; margin-bottom:30px; display: flex; align-items: center;">
+        <h4>Teaching Resources</h4>
+        <h4 style="margin-left: 470px;">Activities with the kids</h4>
+    </div>
+
+    <!-- Activities -->
+    <div class="card" style="position: absolute; width: 44%; background-color: white; top: 280px; right: 30px;">
+        <div class="card-content" style="margin-left:0px;">
+            <!-- Page 1-->
+            <div class="page" id="page1" style="display: block;">
+                <div class="card-header" style="background-color: red;">
+                    <div class="card-title">Nature Walks and Observations</div>
+                </div>
+                <hr style="margin: 0;"> 
+                <div class="card-body">
+                    <div style="color: black; margin-left: 30px; float: left;">
+                        <p style="width:290px;line-height: 2.6;">
+                            Take nature walks in different environments such as parks, forests, or beaches. <br />
+                            Encourage kids to observe changes in the environment, such as plant growth, animal behaviour, and weather patterns.
+                        </p>
+                    </div>
+                    <img src="~/Media/star.png" style="width: 270px;">
+                </div>
+            </div>
+
+            <!-- additional pages-->
+            <div class="page" id="page2" style="display: none;">
+                <div class="card-title">Gardening</div>
+                <div style="color: black; margin-left: 30px;">
+                    <h4>
+                        Start a garden at home or involve kids in gardening. <br />
+                        Teach them about the importance of plants in absorbing carbon dioxide and how gardening can help mitigate climate change.
+                    </h4>
+                </div>
+            </div>
+
+            <div class="button-container" style="float:right">
+                <div class="mybutton1" onclick="nextPage()">
+                    <div class="btn">NEXT</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Book -->
+    <div class="card">
+        <div class="left-side">
+            <div class="card-content">
+                <div class="card-title" style="color:white;">Stories</div>
+                <div style="color:white;">
+                    Book 1
+                </div>
+            </div>
+        </div>
+        <div class="right-side">
+            <div style="position: relative; width: 100%; height: 0; padding-top: 156.2500%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
+                <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                        src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGDOK-XQtI&#x2F;l8kEGmebSRVFKmMO52CWKA&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+                </iframe>
+            </div>
+            <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGDOK-XQtI&#x2F;l8kEGmebSRVFKmMO52CWKA&#x2F;view?utm_content=DAGDOK-XQtI&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Story Book</a> by MZ 3N
+        </div>
+    </div>
+
+    <!-- External Reads -->
+    <div class="card" style="position:absolute; width: 40%; background-color: white; top:1000px; right:30px;">
+        <div class="card-content">
+            <div class="card-title">Activity Heading</div>
+            <div style="color: white; margin-left: 30px;">
+                <h4>This week I...</h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- communication tips-->
+    <div style="margin-bottom:10px;">
+        <h4>Communication Tips</h4>
+    </div>
+
+    <div class="card">
+        <div class="card-content">
+            <div class="card-title">Learn</div>
+            <div style="color:white;">
+                This week, we're going on an adventure to <br />
+                learn all about saving water.
+            </div>
+            <div class="button-container">
+                <div class="mybutton1">
+                    <a href="LearnPage" class="btn">Start</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-image">
+            <img src="~/Media/Learn.png" alt="Placeholder Image">
+        </div>
+    </div>
+
+
+    <div style="position:absolute; top:900px; left:850px;">
+        <h4>Helpful external videos</h4>
+    </div>
+
+    <!-- Videos -->
+    <div class="card" style="width: 40%; background-color: white; float:right">
+        <div class="card-content">
+            <div class="card-title">Video Title</div>
+            <div style="color: white; margin-left: 30px;">
+                <h4>This week I...</h4>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 
+<script>
+    var currentPage = 1; // 开始时显示第一页
+
+    function nextPage() {
+        // 计算下一页的ID
+        var nextPageId = "page" + (currentPage % 2 + 1); // 循环显示页面1和2
+
+        // 隐藏当前页
+        document.getElementById("page" + currentPage).style.display = 'none';
+
+        // 显示下一页
+        document.getElementById(nextPageId).style.display = 'block';
+
+        // 更新当前页码
+        currentPage = currentPage % 2 + 1;
+    }
+</script>

@@ -15,7 +15,7 @@
     <style>
         .text {
             float: left;
-            width: 50%;
+            width: 40%;
             box-sizing: border-box;
             padding-top: 100px;
             padding-left: 30px;
@@ -23,7 +23,7 @@
 
         .pic {
             float: right;
-            width: 50%;
+            width: 60%;
             box-sizing: border-box;
             padding-top: 90px;
         }
@@ -76,7 +76,7 @@
         }
 
         .back-to-home img {
-            width: 80px;
+            width: 180px;
             height: auto;
         }
 
@@ -132,7 +132,7 @@
 </head>
 <body>
     <button class="back-to-home" onclick="goToDashboard()">
-        <img src="https://cdn-icons-png.freepik.com/512/1828/1828671.png" alt="Home">
+        <img src="~/Media/go_to_dashboard.png" alt="Home">
     </button>
 
     @*<div id="backg1" class="backg"></div>*@
@@ -144,9 +144,9 @@
 
     <div class="clearfix">
         <div class="text">
-            <h2 style="margin-bottom:40px;">This Week's Activity</h2>
-            <h1 style="color: green; font-size: 66px; margin-bottom:40px;">Water Waste</h1>
-            <p>Water Waste is not just about leaving the tap on for too long - Let's dive in and learn how saving water can help save our planet</p>
+            <h2 style="color: ghostwhite; margin-bottom: 40px;">This Week's Activity</h2>
+            <h1 style="color: ghostwhite; font-size: 66px; margin-bottom:40px;">Water Waste</h1>
+            <p style="color: ghostwhite;"> Water Waste is not just about leaving the tap on for too long - Let's dive in and learn how saving water can help save our planet</p>
             @*<div class="button-container">
                     <h2 style="font-family:'Comic Sans MS';">Watch & Learn <img src="~/Media/LearnVideo.png" style="width:60px;height:auto;" /></h2>
                 </div>*@
@@ -154,8 +154,13 @@
 
         <div class="pic">
             @*<img src="~/Media/WelcomePage.png" alt="Placeholder Image">*@
+<<<<<<< Updated upstream
             <video id="myVideo" width="640" height="360" controls>
                 <source src="https://mainprojectvideo.blob.core.windows.net/mainprojectvi/Water_Waste.mp4" type="video/mp4">
+=======
+            <video id="myVideo" width="840" height="560" controls>
+                <source src="https://storagefit5120tp28.blob.core.windows.net/game-data/Water%20Waste.mp4?sp=r&st=2024-04-23T11:14:39Z&se=2024-04-23T19:14:39Z&spr=https&sv=2022-11-02&sr=b&sig=rM7uoJkC5iaQjuQRRqfnsHVqQBFU0IuDqBOFAb%2BPegk%3D" type="video/mp4">
+>>>>>>> Stashed changes
                 Your browser does not support the video tag.
             </video>
         </div>
