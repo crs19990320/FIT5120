@@ -332,14 +332,11 @@
     <Content Include="lib\waypoints\waypoints.min.js" />
     <Content Include="lib\wow\wow.js" />
     <Content Include="lib\wow\wow.min.js" />
-<<<<<<< Updated upstream
-=======
     <Content Include="Media\1.png" />
     <Content Include="Media\2.png" />
     <Content Include="Media\3.png" />
     <Content Include="Media\4.png" />
     <Content Include="Media\5.png" />
->>>>>>> Stashed changes
     <Content Include="Media\ai-generated-8663117_640.png" />
     <Content Include="Media\back.png" />
     <Content Include="Media\Choice.png" />
@@ -356,6 +353,7 @@
     <Content Include="Media\LandingPage.png" />
     <Content Include="Media\Learn.png" />
     <Content Include="Media\LearnVideo.png" />
+    <Content Include="Media\logo.png" />
     <Content Include="Media\Mom&amp;Dad.png" />
     <Content Include="Media\Note.jpg" />
     <Content Include="Media\Play.png" />
