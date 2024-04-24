@@ -266,7 +266,7 @@
     <Content Include="d3_project\icons\water2.png" />
     <Content Include="d3_project\map - Copy.js" />
     <Content Include="d3_project\map.css" />
-    <Content Include="d3_project\map.html" />
+    <Content Include="d3_project\map_new.html" />
     <Content Include="d3_project\map.js" />
     <Content Include="d3_project\map2.css" />
     <Content Include="d3_project\map2.js" />
