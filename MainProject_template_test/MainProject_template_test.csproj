@@ -338,6 +338,13 @@
     <Content Include="Media\4.png" />
     <Content Include="Media\5.png" />
     <Content Include="Media\ai-generated-8663117_640.png" />
+    <Content Include="Media\article1.png" />
+    <Content Include="Media\article2.png" />
+    <Content Include="Media\article3.png" />
+    <Content Include="Media\article4.png" />
+    <Content Include="Media\article5.png" />
+    <Content Include="Media\article6.png" />
+    <Content Include="Media\article7.png" />
     <Content Include="Media\back.png" />
     <Content Include="Media\bicycle.png" />
     <Content Include="Media\camping.png" />
