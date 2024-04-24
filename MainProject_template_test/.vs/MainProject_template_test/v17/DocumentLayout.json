@@ -3,12 +3,40 @@
   "WorkspaceRootPath": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject_template_test\\d3_project\\map_new.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:d3_project\\map_new.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject_template_test\\views\\home\\map.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:views\\home\\map.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject_template_test\\views\\home\\puzzle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:views\\home\\puzzle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject_template_test\\views\\home\\cardgame.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:views\\home\\cardgame.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject_template_test\\views\\home\\learnpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:views\\home\\learnpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject_template_test\\views\\home\\homepage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:views\\home\\homepage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject_template_test\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\d3-mainproject\\currentMapState.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:d3-mainproject\\currentMapState.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\d3-mainproject\\map.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:d3-mainproject\\map.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\d3-mainproject\\map2.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:d3-mainproject\\map2.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,21 +46,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 9,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "map_new.html",
-              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\d3_project\\map_new.html",
-              "RelativeDocumentMoniker": "d3_project\\map_new.html",
-              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\d3_project\\map_new.html",
-              "RelativeToolTip": "d3_project\\map_new.html",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-04-24T09:21:01.71Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -55,16 +70,117 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "CardGame.cshtml",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\CardGame.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\CardGame.cshtml",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\CardGame.cshtml",
+              "RelativeToolTip": "Views\\Home\\CardGame.cshtml",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAAAHcAAABXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-24T13:10:04.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Dashboard.cshtml",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Dashboard.cshtml",
+              "RelativeToolTip": "Views\\Home\\Dashboard.cshtml",
+              "ViewState": "AQIAAMMAAAAAAAAAAAAAACEBAABeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-24T12:36:06.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "currentMapState.js",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\d3-mainproject\\currentMapState.js",
+              "RelativeDocumentMoniker": "d3-mainproject\\currentMapState.js",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\d3-mainproject\\currentMapState.js",
+              "RelativeToolTip": "d3-mainproject\\currentMapState.js",
+              "ViewState": "AQIAAIwAAAAAAAAAAAAIwJwAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-04-24T09:51:02.89Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "map.html",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\d3-mainproject\\map.html",
+              "RelativeDocumentMoniker": "d3-mainproject\\map.html",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\d3-mainproject\\map.html",
+              "RelativeToolTip": "d3-mainproject\\map.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-04-24T09:50:51.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Map.cshtml",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Map.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Map.cshtml",
               "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Map.cshtml",
               "RelativeToolTip": "Views\\Home\\Map.cshtml",
-              "ViewState": "AQIAADkAAAAAAAAAAAAAAFcAAAAlAAAA",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAQwFMAAAB1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-24T09:13:15.808Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Puzzle.cshtml",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Puzzle.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Puzzle.cshtml",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Puzzle.cshtml",
+              "RelativeToolTip": "Views\\Home\\Puzzle.cshtml",
+              "ViewState": "AQIAAGkAAAAAAAAAAAAAAIgAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-24T13:17:55.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LearnPage.cshtml",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\LearnPage.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\LearnPage.cshtml",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\LearnPage.cshtml",
+              "RelativeToolTip": "Views\\Home\\LearnPage.cshtml",
+              "ViewState": "AQIAAG8AAAAAAAAAAAAAAIYAAABwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-24T13:12:22.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomePage.cshtml",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\HomePage.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\HomePage.cshtml",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\HomePage.cshtml",
+              "RelativeToolTip": "Views\\Home\\HomePage.cshtml",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAGEAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-24T13:09:45.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "map2.css",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\d3-mainproject\\map2.css",
+              "RelativeDocumentMoniker": "d3-mainproject\\map2.css",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\d3-mainproject\\map2.css",
+              "RelativeToolTip": "d3-mainproject\\map2.css",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAACoAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-04-24T09:45:56.356Z"
             }
           ]
         }

@@ -131,10 +131,19 @@
     <link href="~/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <img src="~/Media/new_logo.png" style=" width: 100px; position: absolute; top: 10px; left:90px">
-    <button class="back-to-home" onclick="goToDashboard()" style="right:50px">
-        <img src="~/Media/go_to_dashboard.png" alt="Home">
-    </button>
+    <img src="~/Media/new_logo.png" style=" width: 100px; position: absolute; top: 40px; left:90px">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style=" font-size: 25px; left:170px; z-index:10">
+        <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-brown" href="@Url.Action("Dashboard", "Home")" style="font-weight: bolder;color:white">
+                        <img src="~/Media/Dashboard_Kids.png" alt="Family Icon" style="width: 100px; height: 60px; margin-right: -23px;">
+                        DashBoard
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     @*<div id="backg1" class="backg"></div>*@
 
@@ -143,7 +152,7 @@
         Your browser does not support the video tag.
     </video>
 
-    <div class="clearfix" style="position: absolute; left: 80px;">
+    <div class="clearfix" style="position: absolute; left: 80px; top:80px">
         <div class="text">
             <h2 style="color: ghostwhite; margin-bottom: 40px;">This Week's Activity</h2>
             <h1 style="color: ghostwhite; font-size: 100px; margin-bottom:40px;">Water Waste</h1>

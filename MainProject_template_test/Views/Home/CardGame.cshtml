@@ -98,17 +98,26 @@
 </head>
 <body>
 
-    <img src="~/Media/new_logo.png" style=" width: 100px; position: absolute; top: 2px; left:250px">
-    <button class="back-to-home" onclick="goToIndex()" style="right:240px">
-        <img src="~/Media/go_to_dashboard.png" alt="Home">
-    </button>
+    <img src="~/Media/new_logo.png" style=" width: 100px; position: absolute; top: 25px; left:250px">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style=" font-size: 25px; left:-30px">
+        <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-brown" href="@Url.Action("Dashboard", "Home")" style="font-weight: bolder;color:white">
+                        <img src="~/Media/Dashboard_Kids.png" alt="Family Icon" style="width: 100px; height: 60px; margin-right: -23px;">
+                        DashBoard
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <img id="gifBackground" src="~/Media/giphy2.gif" alt="GIF Background">
 
     <div style="text-align:center;">
-        <iframe id="unityFrame" src="~/Games/card.html" style="width:1300px; height:800px;">
+        <iframe id="unityFrame" src="~/Games/card.html" style="width:1300px; height:700px;">
         </iframe>
-        <button id="reset" style="width: 50px; position: relative; left: 20px; top: -125px; float: right; background-color: transparent; border: none;">
+        <button id="reset" style="width: 50px; position: relative; left: 20px; top: -76px; float: right; background-color: transparent; border: none;">
             <img style="width:100%;" src="~/Media/reset.png" />
         </button>
     </div>
