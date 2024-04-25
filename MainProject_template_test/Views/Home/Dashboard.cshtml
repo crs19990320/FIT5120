@@ -234,7 +234,7 @@
 
 
 </head>
-<body style="background-image:url('../Media/page_background4.png')">
+<body style="background-image:url('../Media/page_background4.png'); background-repeat:no-repeat">
     <div style="display: flex; align-items: center;">
         <h1 style="text-align: left; margin-bottom: 20px; flex: 1; font-family: 'Lobster Two', cursive;">
             <span>&#x1F984;</span> Hi, Alligator Hibiscus!
@@ -269,49 +269,49 @@
         <div class="card-content">
             <div class="card-title" style="font-family: 'Lobster Two', cursive;">Commit</div>
             <div style="color: white; margin-left: 30px;">
-                <h4 style="font-family: 'Lobster Two', cursive;">This week...</h4>
+                <h4 style="font-family: 'Lobster Two', cursive; color:white;">Click on tasks to earn rewards and see your impact in the Journey section!</h4>
                 <div class="transparent-cards">
                     <div class="checklist-item">
                         <input type="checkbox" id="task1" name="task1">
                         <label for="task1"></label>
                         <span>Turned off the tap while brushing my teeth</span>
-                        <img src="~/Media/puzzlePiece.png"  />
-                        <p >x1</p>
+                        <img src="~/Media/puzzlePiece.png" />
+                        <p>x1</p>
                     </div>
                     <div class="checklist-item">
                         <input type="checkbox" id="task2" name="task2">
                         <label for="task2"></label>
                         <span>Shortened my shower</span>
-                        <img src="~/Media/puzzlePiece.png"  />
-                        <p >x1</p>
+                        <img src="~/Media/puzzlePiece.png" />
+                        <p>x1</p>
                     </div>
                     <div class="checklist-item">
                         <input type="checkbox" id="task3" name="task3">
                         <label for="task3"></label>
                         <span> Turn off the tap while soaping during handwash</span>
-                        <img src="~/Media/puzzlePiece.png"  />
-                        <p >x1</p>
+                        <img src="~/Media/puzzlePiece.png" />
+                        <p>x1</p>
                     </div>
                     <div class="checklist-item">
                         <input type="checkbox" id="task4" name="task4">
                         <label for="task4"></label>
                         <span> Took a walk around my house to find any water leaks </span>
-                        <img src="~/Media/puzzlePiece.png"  />
-                        <p >x1</p>
+                        <img src="~/Media/puzzlePiece.png" />
+                        <p>x1</p>
                     </div>
                     <div class="checklist-item">
                         <input type="checkbox" id="task5" name="task5">
                         <label for="task5"></label>
                         <span> Used a bucket to collect rainwater</span>
-                        <img src="~/Media/puzzlePiece.png"  />
-                        <p >x1</p>
+                        <img src="~/Media/puzzlePiece.png" />
+                        <p>x1</p>
                     </div>
                     <div class="checklist-item">
                         <input type="checkbox" id="task6" name="task6">
                         <label for="task6"></label>
                         <span> Shared water-saving tips with my friends</span>
-                        <img src="~/Media/puzzlePiece.png"  />
-                        <p >x2</p>
+                        <img src="~/Media/puzzlePiece.png" />
+                        <p>x2</p>
                     </div>
                 </div>
             </div>
@@ -322,8 +322,7 @@
         <div class="card-content">
             <div class="card-title" style="font-family: 'Lobster Two', cursive;">Learn</div>
             <div style="color:white;">
-                This week, we're going on an adventure to <br />
-                learn all about saving water.
+                Explore engaging tutorials and expand your knowledge!
             </div>
             <div class="button-container">
                 <div class="mybutton1">
@@ -338,12 +337,13 @@
 
     <div class="card-row">
         <!-- CardGame Card-->
-        <div class="card" style="background-color: mediumpurple; height:230px;">
+        <div class="card" style="background-color: mediumpurple; height:260px;">
             <div class="card-content" style="margin-left:10px;">
                 <div class="card-title" style="font-family: 'Lobster Two', cursive;">Play</div>
                 <div style="color:white;">
-                    Test your <br />
-                    climate knowledge!
+                    Explore scenarios, 
+                    choose sustainable <br />actions,
+                    and impact <br /> climate health
                 </div>
                 <div class="button-container">
                     <div class="mybutton1">
@@ -357,46 +357,70 @@
         </div>
 
         <!-- Puzzle Card-->
-        <div class="card" style="background-color: brown; height:230px;">
+        @*<div class="card" style="background-color: brown; height:230px;">
+                    <div class="card-content" style="margin-left:10px;">
+                        <div class="card-title" style="font-family: 'Lobster Two', cursive;">Journey</div>
+                        <div style="color:white;">
+                            After watching lessons and completing tasks,<br />
+                            visit here to see your impact and earn rewards!
+                        </div>
+                        <div class="button-container">
+                            <div class="mybutton1">
+                                <a href="Puzzle" class="btn">Start</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-image-small-card">
+                        <img src="~/Media/puzzle.png" alt="Placeholder Image">
+                    </div>
+                </div>
+            </div>*@
+
+        <!-- Map page -->
+        <div class="card" style="background-color: hotpink; height:260px;">
             <div class="card-content" style="margin-left:10px;">
-                <div class="card-title" style="font-family: 'Lobster Two', cursive;">Journey</div>
+                <div class="card-title" style="font-family: 'Lobster Two', cursive;">Explore</div>
                 <div style="color:white;">
-                    Checkout how you <br />
-                    made a difference
+                    Discover the impact <br />
+                    of different climate<br />
+                    factors on Australia
                 </div>
                 <div class="button-container">
                     <div class="mybutton1">
-                        <a href="Puzzle" class="btn">Start</a>
+                        <!--<a class="btn" style="color:hotpink" href="~/d3_project/map.html">Start</a>-->
+                        <a href="Map" class="btn" style="color:hotpink">Start</a>
                     </div>
                 </div>
             </div>
             <div class="card-image-small-card">
-                <img src="~/Media/puzzle.png" alt="Placeholder Image">
+                <img src="~/Media/Explore.png" alt="Placeholder Image">
             </div>
+        </div>
+
+        <div style=" position:absolute; top: 790px; left:100px;">
+            <h2 style="font-size:30px">Your Impact</h2>
         </div>
     </div>
 
-    <div style="margin-bottom:30px;">
-        <h2 style="font-size:30px">Additional Activities</h2>
-    </div>
-
-    <div class="card" style="background-color:hotpink; height:230px;">
-        <div class="card-content">
-            <div class="card-title"style="font-family: 'Lobster Two', cursive;">Explore</div>
+    <!-- Jounrey Page-->
+    <div class="card" style="background-color: #E5696D; width: 43%; height: 230px; position: absolute; top: 850px;">
+        <div class="card-content" style="margin-left:10px;">
+            <div class="card-title" style="font-family: 'Lobster Two', cursive;">Journey</div>
             <div style="color:white;">
-                Navigate the Climate!
+                After watching lessons and completing tasks,<br />
+                visit here to see your impact and earn rewards!
             </div>
             <div class="button-container">
                 <div class="mybutton1">
-                    <!--<a class="btn" style="color:hotpink" href="~/d3_project/map.html">Start</a>-->
-                    <a href="Map" class="btn" style="color:hotpink">Start</a>
+                    <a href="Puzzle" class="btn" style="color: #E5696D">Start</a>
                 </div>
             </div>
         </div>
-        <div class="card-image" style="width:41%; margin-top:17px">
-            <img src="~/Media/Explore.png" alt="Placeholder Image">
+        <div class="card-image">
+            <img src="~/Media/puzzle.png" alt="Placeholder Image">
         </div>
     </div>
+
 </body>
 </html>
 

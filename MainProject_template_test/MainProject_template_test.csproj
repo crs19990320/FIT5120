@@ -366,6 +366,7 @@
     <Content Include="Media\Learn.png" />
     <Content Include="Media\LearnVideo.png" />
     <Content Include="Media\logo.png" />
+    <Content Include="Media\map_background.png" />
     <Content Include="Media\Mom&amp;Dad.png" />
     <Content Include="Media\new_logo.png" />
     <Content Include="Media\Note.jpg" />
