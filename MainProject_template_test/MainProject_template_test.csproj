@@ -382,6 +382,9 @@
     <Content Include="Media\scale_temp.png" />
     <Content Include="Media\scale_water.png" />
     <Content Include="Media\star.png" />
+    <Content Include="Media\stars_3.png" />
+    <Content Include="Media\stars_5.png" />
+    <Content Include="Media\stars_7.png" />
     <Content Include="Media\StartGame .png" />
     <Content Include="Media\Statuses2.png" />
     <Content Include="Media\testPic.png" />

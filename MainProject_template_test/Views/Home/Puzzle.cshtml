@@ -139,11 +139,12 @@
     <div class="card" style=" width: 1200px; height: 700px; margin-top: 20px; background-color: rgba(43, 71, 50, 0.6); border-radius:30px;">
         <div id="InfoJourney">
             <div style="display: flex; align-items: center; width: 800px; position: absolute; left: 500px;">
+                <h4 style="position: absolute; left: 70px; top: 20px; font-size: 15px; color: ghostwhite; font-weight: bold;">Your Reward Count:</h4>
                 <h4 style="text-align: left; flex: 1;">
-                        <img src="~/Media/puzzlePiece.png" style="width: 40px; position: absolute; left: 80px; top: 40px;"/>
-                        <a id="pieceNumber" style="position: absolute; left: 120px; top: 43px;"> 0 </a>
+                        <img src="~/Media/puzzlePiece.png" style=" width: 60px; position: absolute; left: 60px; top: 40px;"/>
+                        <a id="pieceNumber" style="position: absolute; left: 120px; top: 48px; font-size: 30px; color: ghostwhite; font-weight: bold;"> 0 </a>
                 </h4>
-                <h6 style="text-align: right; position: absolute; flex: 1; right: 140px; top: 40px; width: 350px;">
+                <h6 style="color:ghostwhite;text-align: right; position: absolute; flex: 1; right: 140px; top: 40px; width: 350px;">
                     Earn all <img src="~/Media/puzzlePiece.png" style="width: 20px;"/> by completing the checklist.
                     Puzzles refresh weekly.
                 </h6>
@@ -171,25 +172,27 @@
                 <path id="p8" d=" M920,100 Q930,170 970,170" stroke="rgb(39, 55, 70)" fill="transparent" stroke-width="5" />
             </svg>
 
-            <div id="infoBox">
-                <img src="~/Media/Learn.png" id="infoImage">
-                <p class="mp" id="infoText"></p>
+            <div id="infoBox" style="top: 170px; width: 580px; height: 130px; display: none; border-radius: 40px; background-color: rgb(192, 195, 114);">
+                <h3 style="font-weight: bold; position: absolute; top: 20px; left: 30px; color: #0F3500;">AWESOME! 
+                <img id="infoImg"src="~/Media/Learn.png" style="height: 40px; position: absolute; left: 180px; top: -5px;"> </h3>
+                
+                <p class="mp" id="infoText" style="position: absolute; top: 60px; margin-left: 20px; margin-right: 5px; color: black; font-size: 16px;"></p>
             </div>
-            <div style="position: absolute; top: 250px">
-                <p style="color: white; margin-left: 10px; font-weight: bold; font-size: 16.9px;">Here's your amazing journey of hard work and success! Each task you've completed shows your dedication and growth. Keep shining and tackling new challenges with your incredible can-do spirit!</p>
+            <div style="position: absolute; top: 310px">
+                <p style="color: white; margin-left: 10px; font-weight: bold; font-size: 11px;">Here's your amazing journey of hard work and success! Each task you've completed shows your dedication and growth. Keep shining and tackling new challenges with your incredible can-do spirit!</p>
             </div>
             <div id="line1"></div>
             <div style="position: absolute; top: 370px;">
                 <h6 style=" font-size: 13px; font-weight: bolder; color: white;">How have you helped the climate?</h6>
             </div>
             <div id="line3"></div>
-            <div style="position: absolute; top: 410px; width: 250px;">
-                <h5 style="font-weight: bolder; color: #a8f8b8d5; font-size: 14px;">You saved <span id="predictNumber"> 5 </span> big buckets of water!</h5>
-                <h6 style="top:20px;font-size: 12px;color:whitesmoke">When you turned off the tap while brushing your teeth, you save about 5 big buckets of water. That's 1,825 buckets saved in a whole year! By saving all that water, You are making sure that the homes of animals like alligators have plenty of water to swim and play in. </h6>
+            <div style="position: absolute; top: 410px; width: 260px;">
+                <h5 style="font-weight: bolder; color: #a8f8b8d5; font-size: 14px;">Water-Saving Impact: Next 10 Years</h5>
+                <h6 style="top:20px;font-size: 14px;color:whitesmoke">Keep it up! Save 3 buckets weekly for a decade, and you’ll fill 1,500 buckets for forest life. 5 buckets a week? That’s 2,500 buckets, perfect for a frog's pond. Saving 7 buckets? You’ll gather 3,500 buckets, creating a splashy playground for our animal friends over 10 years! </h6>
             </div>
             <div style="position: absolute; top: 410px; width: 250px;left:300px">
                 <h5 style="font-weight: bolder; color: #a8f8b8d5; font-size: 14px;">Your Actions Matter!</h5>
-                <h6 style="top:20px;font-size: 12px;color:whitesmoke">With each checklist task you complete, your positive impact on the environment grows. Keep going to see just how much of a difference you're making! </h6>
+                <h6 style="top:20px;font-size: 14px;color:whitesmoke">With each checklist task you complete, your positive impact on the environment grows. Keep going to see just how much of a difference you're making! </h6>
             </div>
         </div>
             <div id="puzzlediv">
@@ -205,9 +208,11 @@
                     <path id="pi8" d="M 100,200 H 140 A 1,1 0 0 0 160,200 H 200 V 240 A 1,1 0 0 1 200,260 V 300 H 100 V 260 A 1,1 0 0 1 100,240 V 210 Z" stroke="black" fill="black" stroke-width="2" />
                     <path id="pi9" d="M 200,200 H 240 A 1,1 0 0 1 260,200 H 300 V 300 H 200 V 260 A 1,1 0 0 0 200,240 V 200 Z" stroke="black" fill="black" stroke-width="2" />
                 </svg>
-                <div style=" position: absolute; background-color: rgba(54,102,17,0.5); top: 480px; left: 40px; right: 50px;height:150px">
-                    <h6 style=" text-align: center; position: absolute; flex: 1; top: 20px; width: 350px; left: 20px; color:white">
-                        Look at this river and its animal friends! When we save water by turning off the tap and not wasting it, we help keep their home just right. Let's all try to use less water to help them out!e.
+                <div style=" position: absolute; background-color: rgba(54, 102, 17, 0.5); top: 460px; left: 32px; right: 50px; height: 210px;">
+                    <h6 style="text-align: center; position: absolute; flex: 1; top: 20px; width: 360px; left: 20px; color: white; font-size: 20px;">
+                        Use  <img src="~/Media/puzzlePiece.png" style="width: 40px;" />   points to unlock the missing puzzle pieces!
+                        <br><br><br>
+                        <p style="text-align: left; position: absolute; flex: 1; top: 80px; width: 380px; left: 5px; color: white; font-size: 17px; font-style: italic;"> <b>Hint:</b> The puzzle picture shows a peaceful stream with animals, fish, and maybe even cows nearby. Streams help animals and plants by giving them water to live.</p>
                     </h6>
                 </div>
             </div>
@@ -219,6 +224,7 @@
             var taskStatus = taskStatusString ? JSON.parse(taskStatusString) : {};
             var infoBox = document.getElementById('infoBox');
             var infoText = document.getElementById('infoText');
+            var infoImg = document.getElementById('infoImg');
             if (Object.keys(taskStatus).length > 0) {
                 var tasks = Object.keys(taskStatus);
 
@@ -241,7 +247,16 @@
                         }
 
                         ellipse.addEventListener('mouseenter', function () {
-                            infoText.textContent = taskStatus[task];
+                            switch (taskIndex) {
+                                case '1': infoImg.src ="../Media/bstars_5.png"; infoText.textContent = "With the latest task you completed, you've filled 5 penguins' ice buckets! Cool job!";; break;
+                                case '2': infoImg.src = "../Media/bstars_3.png"; infoText.textContent = "With the latest task you completed, you've saved 3 bathtubs' worth of water! Keep going!"; break;
+                                case '3': infoImg.src = "../Media/bstars_5.png"; infoText.textContent = "With the latest task you completed, you've filled 5 penguins' ice buckets! Cool job!"; break;
+                                case '4': infoImg.src = "../Media/bstars_7.png"; infoText.textContent = "With the latest task you completed, you've saved enough for a mini water park! 7 buckets? That's a new record!"; break;
+                                case '5': infoImg.src = "../Media/bstars_3.png"; infoText.textContent = "With the latest task you completed, you've saved 3 bathtubs' worth of water! Keep going!"; break;
+                                case '6': infoImg.src = "../Media/bstars_7.png"; infoText.textContent = " With the latest task you completed, you've saved enough for a mini water park! 7 buckets? That's a new record!"; break;
+                                // case '7': ellipse.setAttribute('fill', 'rgb(142, 68, 173)'); break;
+                            }
+                            
                             infoBox.style.display = 'flex';
                         });
 
@@ -267,6 +282,9 @@
     <script>
         var videoComplete = sessionStorage.getItem('videoComplete');
         if (videoComplete) {
+            var infoBox = document.getElementById('infoBox');
+            var infoText = document.getElementById('infoText');
+            var infoImg = document.getElementById('infoImg');
             var taskStatusString = sessionStorage.getItem('checkListData');
             var taskStatus = taskStatusString ? JSON.parse(taskStatusString) : {};
             if ('task6' in taskStatus) {
@@ -282,7 +300,11 @@
             ellipse.setAttribute('fill', 'rgb(142, 68, 173)');
 
             ellipse.addEventListener('mouseenter', function () {
-                infoText.textContent = "Weekly learning video completed!";
+                infoImg.style.height = '50px';
+                infoImg.style.left = '200px';
+                infoImg.style.top = '-10px';
+                infoImg.src = "../Media/Learn.png";
+                infoText.textContent = "Great work! Weekly learning video completed. You're absolutely crushing it!";
                 infoBox.style.display = 'flex';
             });
 
