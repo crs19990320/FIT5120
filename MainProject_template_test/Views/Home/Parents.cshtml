@@ -136,9 +136,9 @@
             transition: background-color 0.3s;
         }
 
-            button:hover {
-                background-color: #0056b3;
-            }
+        button:hover {
+            background-color: #0056b3;
+        }
 
         .flip-card-content {
             transition: transform 0.5s, opacity 0.5s ease-in-out;
@@ -173,37 +173,32 @@
 
 </head>
 <body style="background-image:url('../Media/page_background4.png'); background-repeat: no-repeat;">
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
-        <div class="container">
-            @Html.ActionLink("Green Guardians", "HomePage", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
-                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link text-brown" href="@Url.Action("Dashboard", "Home")" style="font-weight: bolder;">
-                                <img src="~/Media/go_to_dashboard.png" alt="Dashboard Icon" style="width: 180px; height: 50px; margin-right: 5px;">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+    <img src="~/Media/new_logo.png" style=" width: 100px; position: absolute; top: 25px; left:200px">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style=" font-size: 25px; left:-30px">
+        <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-brown" href="@Url.Action("Dashboard", "Home")" style="font-weight: bolder;color:white">
+                        <img src="~/Media/Dashboard_Kids.png" alt="Family Icon" style="width: 100px; height: 60px; margin-right: -23px;">
+                        DashBoard
+                    </a>
+                </li>
+            </ul>
         </div>
     </nav>
-    <div style="display: flex; align-items: center;">
-        <h1 style="text-align: left; margin-bottom: 20px; flex: 1;">
+    <!--<div style="display: flex; align-items: center;">-->
+    @*<h1 style="text-align: left; margin-bottom: 20px; flex: 1;">
             <span>
                 &#128107;
             </span> Welcome, Parents!
-        </h1>
+        </h1>*@
+    <!--</div>-->
+    <!-- Teaching Resources -->
+    <div style="position:absolute; top:230px; left: 100px;">
+        <h4>Teaching Resources</h4>
     </div>
 
-    <!-- Teaching Resources -->
-    <div style="margin-top:30px; margin-bottom:30px; display: flex; align-items: center;">
-        <h4>Teaching Resources</h4>
+    <div style="position:absolute; top:230px; left: 330px;">
         <h4 style="margin-left: 470px;">Activities with the kids</h4>
     </div>
 
@@ -219,7 +214,7 @@
                 <div class="card-body">
                     <div style="color: black; margin-left: 30px; float: left;">
                         <p style="width:290px;line-height: 2.0;">
-                            Take nature walks in different environments such as parks, forests, or beaches. <br />
+                            Take nature walks in different environments such as parks, forests, or beaches.
                             Encourage kids to observe changes in the environment, such as plant growth, animal behaviour, and weather patterns.
                         </p>
                     </div>
@@ -236,7 +231,7 @@
                 <div class="card-body">
                     <div style="color: black; margin-left: 30px; float: left;">
                         <p style="width:290px;line-height: 2.0;">
-                            Start a garden at home or involve kids in gardening. Teach them about the <br />
+                            Start a garden at home or involve kids in gardening. Teach them about the
                             importance of plants in absorbing carbon dioxide and how gardening can help mitigate climate change.
                         </p>
                     </div>
@@ -294,7 +289,7 @@
                             observations and reflections in a nature journal.
                         </p>
                     </div>
-                    <img src="~/Media/camping.png" style="width: 280px; margin-left:35px;">
+                    <img src="~/Media/camping_1.png" style="width: 280px; margin-left:35px;">
                 </div>
             </div>
 
@@ -306,7 +301,7 @@
                 <hr style="margin: 0;">
                 <div class="card-body">
                     <div style="color: black; margin-left: 30px; float: left;">
-                        <p style="width:290px;line-height: 1.5;">
+                        <p style="width:290px;line-height: 1.7;">
                             Get involved in community initiatives aimed at addressing climate change,
                             such as tree planting events, clean-up campaigns, or advocacy efforts. By
                             taking action together as a family, kids can feel empowered to make a positive impact on their environment.
@@ -330,7 +325,7 @@
                             eating lower on the food chain, and reducing food waste.
                         </p>
                     </div>
-                    <img src="~/Media/cooking.png" style="width: 280px; margin-left:35px; margin-top: 35px;">
+                    <img src="~/Media/cooking_1.png" style="width: 270px; margin-left:35px; margin-top: 10px;">
                 </div>
             </div>
 
@@ -354,17 +349,11 @@
 
             <button style="position:absolute; background-color:brown; top:250px; right: 10px; z-index: 999" onclick="nextPage1()"> Next </button>
 
-            @*<div class="button-container" style="">
-                    <div class="mybutton1" onclick="nextPage1()">
-                        <div class="btn">Next</div>
-                    </div>
-                </div>*@
-
         </div>
     </div>
 
     <!-- Book -->
-    <div class="card">
+    <div class="card" style="height:750px; top:174px;">
         <div class="left-side" style="background-color:darkslategrey">
             <div class="card-content">
                 <div class="card-title" style="color:white;margin-bottom:50px;">Stories</div>
@@ -374,24 +363,18 @@
             </div>
         </div>
         <div class="right-side">
-            @*<div style="position: relative; width: 100%; height: 0; padding-top: 156.2500%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
-            <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-                    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGDOK-XQtI&#x2F;l8kEGmebSRVFKmMO52CWKA&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-            </iframe>
-        </div>
-        <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGDOK-XQtI&#x2F;l8kEGmebSRVFKmMO52CWKA&#x2F;view?utm_content=DAGDOK-XQtI&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Story Book</a> by MZ 3N*@
-            <div style="position: relative; width: 100%; height: 0; padding-top: 80.0000%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
+            <div style="position: relative; width: 100%; height: 0; padding-top: 156.2500%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;border-radius: 8px; will-change: transform;">
                 <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-                        src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGDUgAInl4&#x2F;tj1qDgFNxegJ1HZiguhFLw&#x2F;watch?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+                        src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGDY9wwCjE&#x2F;x7kU7sE6OQAtr_gbmP0E1w&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
                 </iframe>
             </div>
-            <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGDUgAInl4&#x2F;tj1qDgFNxegJ1HZiguhFLw&#x2F;watch?utm_content=DAGDUgAInl4&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Story 1</a> by TP-28
+            <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGDY9wwCjE&#x2F;x7kU7sE6OQAtr_gbmP0E1w&#x2F;view?utm_content=DAGDY9wwCjE&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">The Green Forest Adventure</a> by Eternal Synergy
         </div>
     </div>
 
     <!--  Helpful External Reads -->
-    <div style="margin-bottom:10px;">
-        <h4> Helpful External Reads</h4>
+    <div style="position:absolute; top:1050px; left: 100px;">
+        <h4>Helpful External Reads</h4>
     </div>
 
     <div class="card" style="position: absolute; width: 43.5%; height:300px; background-color: white; top: 1090px; left: 100px;">
@@ -411,7 +394,7 @@
                         </p>
                     </div>
                     <img src="~/Media/article1.png" style="width: 280px;margin-left:35px;">
-                    <h3 style="position: absolute; bottom: 0; left: 100px; color: gray; cursor: pointer;" id="article1" class="custom-underline">Read More</h3>
+                    <p style="position: absolute; bottom: 3px; left: 100px; color: gray; cursor: pointer;" id="article1" class="custom-underline">Read More</p>
                 </div>
             </div>
 
@@ -430,7 +413,7 @@
                         </p>
                     </div>
                     <img src="~/Media/article2.png" style="width: 280px;margin-left:35px;">
-                    <h3 style="position: absolute; bottom: 0; left: 100px; color: gray; cursor: pointer;" id="article2" class="custom-underline">Read More</h3>
+                    <p style="position: absolute; bottom: 3px; left: 100px; color: gray; cursor: pointer;" id="article2" class="custom-underline">Read More</p>
                 </div>
             </div>
 
@@ -448,8 +431,8 @@
                             @*It's a compelling read for parents considering alternative educational environments that promote outdoor learning and environmental stewardship.*@
                         </p>
                     </div>
-                    <img src="~/Media/article3.png" style="width: 280px; margin-left:35px;">
-                    <h3 style="position: absolute; bottom: 0; left: 100px; color: gray; cursor: pointer;" id="article3" class="custom-underline">Read More</h3>
+                    <img src="~/Media/article3_1.png" style="width: 260px; margin-left:45px;">
+                    <p style="position: absolute; bottom: 3px; left: 100px; color: gray; cursor: pointer;" id="article3" class="custom-underline">Read More</p>
                 </div>
             </div>
 
@@ -468,7 +451,7 @@
                         </p>
                     </div>
                     <img src="~/Media/article4.png" style="width: 280px; margin-left:35px;">
-                    <h3 style="position: absolute; bottom: 0; left: 100px; color: gray; cursor: pointer;" id="article4" class="custom-underline">Read More</h3>
+                    <p style="position: absolute; bottom: 3px; left: 100px; color: gray; cursor: pointer;" id="article4" class="custom-underline">Read More</p>
                 </div>
             </div>
 
@@ -488,7 +471,7 @@
                             </p>
                         </div>
                         <img src="~/Media/article5.png" style="width: 280px; margin-left:35px;">
-                        <h3 style="position: absolute; bottom: 0; left: 100px; color: gray; cursor: pointer;" id="article5" class="custom-underline">Read More</h3>
+                        <p style="position: absolute; bottom: 3px; left: 100px; color: gray; cursor: pointer;" id="article5" class="custom-underline">Read More</p>
                     </div>
                 </div>
 
@@ -507,7 +490,7 @@
                             </p>
                         </div>
                         <img src="~/Media/article6.png" style="width: 280px; margin-left:35px;">
-                        <h3 style="position: absolute; bottom: 0; left: 100px; color: gray; cursor: pointer;" id="article6" class="custom-underline">Read More</h3>
+                        <p style="position: absolute; bottom: 3px; left: 100px; color: gray; cursor: pointer;" id="article6" class="custom-underline">Read More</p>
                     </div>
                 </div>
 
@@ -525,8 +508,8 @@
                                     It's an essential read for families looking to develop effective emergency plans and build resilience in children.*@
                             </p>
                         </div>
-                        <img src="~/Media/article7.png" style="width: 280px; margin-left:35px; margin-top: 35px;">
-                        <h3 style="position: absolute; bottom: 0; left: 100px; color: gray; cursor: pointer;" id="article7" class="custom-underline">Read More</h3>
+                        <img src="~/Media/article7_1.png" style="width: 250px; margin-left:45px; margin-top: 10px;">
+                        <p style="position: absolute; bottom: 3px; left: 100px; color: gray; cursor: pointer;" id="article7" class="custom-underline">Read More</p>
                     </div>
                 </div>
 
@@ -718,7 +701,7 @@
                 </div>
                 <div class="right-side">
                     <img src="~/Media/videoParent1.png" style="width: 70%; height:40vh; margin-left: 0px; position: absolute; bottom: 0px; right: 0px" />
-                    <button style="position: absolute; bottom: 0; left: 200px; background-color: darkolivegreen;" id="play1"> Watch </button>
+                    <button style="position: absolute; bottom: 0; left: 500px; background-color: darkolivegreen;" id="play1"> Watch </button>
                 </div>
             </div>
 
@@ -734,7 +717,7 @@
                 </div>
                 <div class="right-side">
                     <img src="~/Media/videoParent2.png" style="width: 70%; height:40vh; margin-left: 0px; position: absolute; bottom: 0px; right: 0px" />
-                    <button style="position: absolute; bottom: 0; left: 200px; background-color: darkolivegreen;" id="play2"> Watch </button>
+                    <button style="position: absolute; bottom: 0; left: 500px; background-color: darkolivegreen;" id="play2"> Watch </button>
                 </div>
             </div>
 
@@ -750,7 +733,7 @@
                 </div>
                 <div class="right-side">
                     <img src="~/Media/videoParent3.png" style="width: 70%; height:40vh; margin-left: 0px; position: absolute; bottom: 0px; right: 0px" />
-                    <button style="position: absolute; bottom: 0; left: 200px; background-color: darkolivegreen;" id="play3"> Watch </button>
+                    <button style="position: absolute; bottom: 0; left: 500px; background-color: darkolivegreen;" id="play3"> Watch </button>
                 </div>
             </div>
 
@@ -766,7 +749,7 @@
                 </div>
                 <div class="right-side">
                     <img src="~/Media/videoParents4.png" style="width: 70%; height:40vh; margin-left: 0px; position: absolute; bottom: 0px; right: 0px" />
-                    <button style="position: absolute; bottom: 0; left: 200px; background-color: darkolivegreen;" id="play4"> Watch </button>
+                    <button style="position: absolute; bottom: 0; left: 500px; background-color: darkolivegreen;" id="play4"> Watch </button>
                 </div>
             </div>
 
@@ -782,7 +765,7 @@
                 </div>
                 <div class="right-side">
                     <img src="~/Media/videoParents5.png" style="width: 70%; height:40vh; margin-left: 0px; position: absolute; bottom: 0px; right: 0px" />
-                    <button style="position: absolute; bottom: 0; left: 200px; background-color: darkolivegreen;" id="play5"> Watch </button>
+                    <button style="position: absolute; bottom: 0; left: 500px; background-color: darkolivegreen;" id="play5"> Watch </button>
                 </div>
             </div>
 
@@ -798,26 +781,26 @@
                 </div>
                 <div class="right-side">
                     <img src="~/Media/videoParents6.png" style="width: 70%; height:40vh; margin-left: 0px; position: absolute; bottom: 0px; right: 0px" />
-                    <button style="position: absolute; bottom: 0; left: 200px; background-color: darkolivegreen;" id="play6"> Watch </button>
+                    <button style="position: absolute; bottom: 0; left: 500px; background-color: darkolivegreen;" id="play6"> Watch </button>
                 </div>
             </div>
 
             <!-- video 7-->
             <div class="flip-card-content" id="video7" style="display: none; ">
-                <div class="left-side">
-                    <div class="card-content" style="background-color:darkolivegreen">
-                        <div class="card-title" style="font-size: medium; color: white; line-height: 2.2; padding:10px;">
+                <div class="left-side" style="background-color:darkolivegreen">
+                    <div class="card-content">
+                        <div class="card-title" style="font-size: medium; color: white; line-height: 2.2; padding:15px;">
                             TV Shows and Films That Teach Your Children About Environmental Issues
                         </div>
                     </div>
                 </div>
                 <div class="right-side">
                     <img src="~/Media/videoParents7.png" style="width: 70%; height:40vh; margin-left: 0px; position: absolute; bottom: 0px; right: 0px" />
-                    <button style="position: absolute; bottom: 0; left: 200px; background-color:darkolivegreen;" id="play7"> Watch </button>
+                    <button style="position: absolute; bottom: 0; left: 500px; background-color:darkolivegreen;" id="play7"> Watch </button>
                 </div>
             </div>
 
-            <button style="position: absolute; bottom: 0; right: 0; background-color:transparent;" onclick="video()">Next</button>
+            <button style="position: absolute; bottom: 0; right: 0; background-color:darkolivegreen;" onclick="video()">Next</button>
         </div>
     </body>
 </html>
