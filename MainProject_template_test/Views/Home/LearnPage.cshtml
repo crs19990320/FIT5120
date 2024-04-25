@@ -10,7 +10,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.7">
     <title>Welcome</title>
     <style>
         .text {
@@ -98,37 +97,16 @@
             position: fixed;
             right: 0;
             bottom: 0;
-            
-          
-           
-          
             z-index: -100;
             background-size: cover;
         }
     </style>
-    <!-- Favicon -->
-    <link href="~/img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="~/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="~/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="~/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="~/css/style.css" rel="stylesheet">
 </head>
 <body>
+    <video autoplay muted loop class="video-background">
+        <source src="https://mainprojectvideo.blob.core.windows.net/mainprojectvi/under_the_sea_background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     <div style=" position: absolute; width: 1400px; left: 120px; height: 800px;">
         <img src="~/Media/new_logo.png" style="width: 140px; position: absolute; top: 40px; left: 50px;">
 
@@ -147,10 +125,7 @@
 
         @*<div id="backg1" class="backg"></div>*@
 
-        <video autoplay muted loop class="video-background">
-            <source src="https://mainprojectvideo.blob.core.windows.net/mainprojectvi/under_the_sea_background.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+
 
         <div class="clearfix" style=" position: absolute; left: 30px; top: 80px;">
             <div class="text">
@@ -158,8 +133,8 @@
                 <h1 style="color: ghostwhite; font-size: 100px; margin-bottom:40px;">Water Waste</h1>
                 <p style="color: ghostwhite; width: 300px; font-size: 23px; font-weight: bold; margin-left:25px"> Water Waste is not just about leaving the tap on for too long - Let's dive in and learn how saving water can help save our planet</p>
                 @*<div class="button-container">
-                    <h2 style="font-family:'Comic Sans MS';">Watch & Learn <img src="~/Media/LearnVideo.png" style="width:60px;height:auto;" /></h2>
-                </div>*@
+                        <h2 style="font-family:'Comic Sans MS';">Watch & Learn <img src="~/Media/LearnVideo.png" style="width:60px;height:auto;" /></h2>
+                    </div>*@
             </div>
 
             <div class="pic">
@@ -171,14 +146,14 @@
                 </video>
             </div>
         </div>
-        </div>
-            <script>
-                var video = document.getElementById('myVideo');
-                video.addEventListener('ended', function () {
-                    sessionStorage.setItem("videoComplete", true);
-                    console.log("video complete");
-                });
-            </script>
+    </div>
+    <script>
+        var video = document.getElementById('myVideo');
+        video.addEventListener('ended', function () {
+            sessionStorage.setItem("videoComplete", true);
+            console.log("video complete");
+        });
+    </script>
 
 </body>
 </html>
