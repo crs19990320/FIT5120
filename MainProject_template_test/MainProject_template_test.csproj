@@ -344,6 +344,7 @@
     <Content Include="Media\EndGame2.png" />
     <Content Include="Media\energy.png" />
     <Content Include="Media\Explore.png" />
+    <Content Include="Media\faq.png" />
     <Content Include="Media\garden.png" />
     <Content Include="Media\giphy2.gif" />
     <Content Include="Media\go_to_dashboard.png" />
