@@ -334,6 +334,9 @@
     <Content Include="Media\article7_1.png" />
     <Content Include="Media\back.png" />
     <Content Include="Media\bicycle.png" />
+    <Content Include="Media\bstars_3.png" />
+    <Content Include="Media\bstars_5.png" />
+    <Content Include="Media\bstars_7.png" />
     <Content Include="Media\camping_1.png" />
     <Content Include="Media\Choice.png" />
     <Content Include="Media\co2.jpg" />
@@ -382,9 +385,6 @@
     <Content Include="Media\scale_temp.png" />
     <Content Include="Media\scale_water.png" />
     <Content Include="Media\star.png" />
-    <Content Include="Media\stars_3.png" />
-    <Content Include="Media\stars_5.png" />
-    <Content Include="Media\stars_7.png" />
     <Content Include="Media\StartGame .png" />
     <Content Include="Media\Statuses2.png" />
     <Content Include="Media\testPic.png" />

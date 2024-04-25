@@ -10,28 +10,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
+    <!-- Favicon -->
+    <link href="~/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="~/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="~/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <!--<link href="~/css/style.css" rel="stylesheet">-->
     <style>
         .text {
-            float: left;
-            width: 40%;
+            position: absolute;
+            width: 700px;
             box-sizing: border-box;
-            padding-top: 100px;
-            padding-left: 30px;
+            top: 100px;
+            left: 30px;
         }
 
         .pic {
-            float: right;
-            width: 60%;
-            box-sizing: border-box;
-            padding-top: 90px;
+            position: absolute;
+            top: 90px;
+            left: 550px;
         }
 
-        .pic img {
-            max-width: 100%;
-            height: auto;
-        }
+            .pic img {
+                max-width: 100%;
+                height: auto;
+            }
 
         .button-container {
             padding-left: 40px;
@@ -60,10 +79,10 @@
             transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
 
-        .btn:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-        }
+            .btn:hover {
+                background-color: #0056b3;
+                border-color: #0056b3;
+            }
 
         .back-to-home {
             position: absolute;
@@ -75,10 +94,10 @@
             z-index: 1000;
         }
 
-        .back-to-home img {
-            width: 180px;
-            height: auto;
-        }
+            .back-to-home img {
+                width: 180px;
+                height: auto;
+            }
 
         .backg {
             height: 100vh;
@@ -87,7 +106,7 @@
             position: absolute;
         }
 
-/*        #backg1 {
+        /*        #backg1 {
             left: 0px;
             top: 0px;
             background-image: url('../../Media/WelcomePage.png');
@@ -97,82 +116,62 @@
         }*/
 
         .video-background {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
+            position: absolute;
+            background-repeat: no-repeat;
+            left: 0px;
             height: auto;
-            z-index: -100;
-            background-size: cover;
+            width: 100%;
+            top: 0
+        }
+
+        html, body {
+            overflow-y: hidden;
         }
     </style>
-    <!-- Favicon -->
-    <link href="~/img/favicon.ico" rel="icon">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="~/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="~/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="~/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="~/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <img src="~/Media/new_logo.png" style=" width: 140px; position: absolute; top: 40px; left:90px">
-
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style=" font-size: 25px; left:170px; z-index:10">
-        <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link text-brown" href="@Url.Action("Dashboard", "Home")" style="font-weight: bolder;color:white">
-                        <img src="~/Media/Dashboard_Kids.png" alt="Family Icon" style="width: 100px; height: 60px; margin-right: -23px;">
-                        DashBoard
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    @*<div id="backg1" class="backg"></div>*@
-
     <video autoplay muted loop class="video-background">
         <source src="https://mainprojectvideo.blob.core.windows.net/mainprojectvi/under_the_sea_background.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <div class="clearfix" style="position: absolute; left: 80px; top:80px">
-        <div class="text">
-            <h2 style="color: ghostwhite; margin-bottom: 40px;">This Week's Activity</h2>
-            <h1 style="color: ghostwhite; font-size: 100px; margin-bottom:40px;">Water Waste</h1>
-            <p style="color: ghostwhite; width: 300px; font-size: 23px; font-weight: bold; margin-left:25px"> Water Waste is not just about leaving the tap on for too long - Let's dive in and learn how saving water can help save our planet</p>
-            @*<div class="button-container">
-                    <h2 style="font-family:'Comic Sans MS';">Watch & Learn <img src="~/Media/LearnVideo.png" style="width:60px;height:auto;" /></h2>
-                </div>*@
-        </div>
+    <div style=" position: absolute; width: 800px; left: 120px; height: 500px;">
+        <img src="~/Media/new_logo.png" style="width: 140px; position: absolute; top: 20px; left: 50px;">
 
-        <div class="pic">
-            @*<img src="~/Media/WelcomePage.png" alt="Placeholder Image">*@
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style=" font-size: 25px; top: 60px; left: 600px; z-index: 10;">
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-brown" href="@Url.Action("Dashboard", "Home")" style="font-weight: bolder;color:white">
+                            <img src="~/Media/Dashboard_Kids.png" alt="Family Icon" style="width: 100px; height: 60px;">
+                            DashBoard
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="clearfix" style=" position: absolute; left: 30px; top: 80px;">
+            <div class="text">
+                <h2 style="font-family: 'Lobster Two', cursive; cursive; color: ghostwhite; margin-bottom: 30px; ">This Week's Activity</h2>
+                <h1 style="font-family: 'Lobster Two', cursive; color: ghostwhite; font-size: 80px; margin-bottom: 40px; ">Water Waste</h1>
+                <p style="color: ghostwhite; width: 300px; font-size: 23px; font-weight: bold; margin-left:25px"> Water Waste is not just about leaving the tap on for too long - Let's dive in and learn how saving water can help save our planet</p>
+                @*<div class="button-container">
+                        <h2 style="font-family:'Comic Sans MS';">Watch & Learn <img src="~/Media/LearnVideo.png" style="width:60px;height:auto;" /></h2>
+                    </div>*@
+            </div>
 
-            <video id="myVideo" width="960" height="540" controls>
-                <source src="https://mainprojectvideo.blob.core.windows.net/mainprojectvi/Water_Waste.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <div class="pic">
+                @*<img src="~/Media/WelcomePage.png" alt="Placeholder Image">*@
+
+                <video id="myVideo" width="800" height="450" controls>
+                    <source src="https://mainprojectvideo.blob.core.windows.net/mainprojectvi/Water_Waste.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
         </div>
     </div>
-
     <script>
         var video = document.getElementById('myVideo');
         video.addEventListener('ended', function () {
