@@ -120,17 +120,17 @@ mapGroup.selectAll(".state")
     .on("mouseover", function(event, d) {
         d3.select(this).attr("fill", colorForState(d.properties.STATE_NAME, true)); // Set to darker color on hover
 
-        // Append a text label on hover
+       /* // Append a text label on hover
         mapGroup.append("text")
             .attr("class", "dynamic-state-label")
             .attr("x", path.centroid(d)[0])
             .attr("y", path.centroid(d)[1])
             .attr("text-anchor", "middle")
-            .text(d.properties.STATE_NAME);
+            .text(d.properties.STATE_NAME);*/
     })
     .on("mouseout", function(event, d) {
         d3.select(this).attr("fill", colorForState(d.properties.STATE_NAME)); // Revert to original color on mouseout
-        d3.selectAll(".dynamic-state-label").remove(); // Remove the label
+        //d3.selectAll(".dynamic-state-label").remove(); // Remove the label
     });
 
 }).catch(function(error) {
