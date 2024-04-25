@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+    <EntitySetMapping Name="Tables">
+      <EntityTypeMapping TypeName="Database1Model.Table">
+        <MappingFragment StoreEntitySet="Table">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CardName" ColumnName="CardName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuestionTable1">
+      <EntityTypeMapping TypeName="IsTypeOf(Database1Model.QuestionTable)">
+        <MappingFragment StoreEntitySet="QuestionTable">
+          <ScalarProperty Name="A2EcoLife" ColumnName="A2EcoLife" />
+          <ScalarProperty Name="A2Water" ColumnName="A2Water" />
+          <ScalarProperty Name="A2Carbon" ColumnName="A2Carbon" />
+          <ScalarProperty Name="A1EcoLife" ColumnName="A1EcoLife" />
+          <ScalarProperty Name="A1Water" ColumnName="A1Water" />
+          <ScalarProperty Name="A1Carbon" ColumnName="A1Carbon" />
+          <ScalarProperty Name="Answer2" ColumnName="Answer2" />
+          <ScalarProperty Name="Answer1" ColumnName="Answer1" />
+          <ScalarProperty Name="Questions" ColumnName="Questions" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Climate">
+      <EntityTypeMapping TypeName="Database1Model.Climate">
+        <MappingFragment StoreEntitySet="Climate">
+          <ScalarProperty Name="avr_rainfall" ColumnName="avr_rainfall" />
+          <ScalarProperty Name="temp_change" ColumnName="temp_change" />
+          <ScalarProperty Name="state_long" ColumnName="state_long" />
+          <ScalarProperty Name="state_lat" ColumnName="state_lat" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MapModelTable">
+      <EntityTypeMapping TypeName="Database1Model.MapModelTable">
+        <MappingFragment StoreEntitySet="MapModelTable">
+          <ScalarProperty Name="total_water_use" ColumnName="total_water_use" />
+          <ScalarProperty Name="total_water_consumption" ColumnName="total_water_consumption" />
+          <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+          <ScalarProperty Name="rainfall_percentage" ColumnName="rainfall_percentage" />
+          <ScalarProperty Name="net_emissions" ColumnName="net_emissions" />
+          <ScalarProperty Name="task6" ColumnName="task6" />
+          <ScalarProperty Name="task5" ColumnName="task5" />
+          <ScalarProperty Name="task4" ColumnName="task4" />
+          <ScalarProperty Name="task3" ColumnName="task3" />
+          <ScalarProperty Name="task2" ColumnName="task2" />
+          <ScalarProperty Name="task1" ColumnName="task1" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CurrentNewMap">
+      <EntityTypeMapping TypeName="Database1Model.CurrentNewMap">
+        <MappingFragment StoreEntitySet="CurrentNewMap">
+          <ScalarProperty Name="total_water_consumption" ColumnName="total_water_consumption" />
+          <ScalarProperty Name="total_water_use" ColumnName="total_water_use" />
+          <ScalarProperty Name="rainfall_percentage" ColumnName="rainfall_percentage" />
+          <ScalarProperty Name="net_emissions" ColumnName="net_emissions" />
+          <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+          <ScalarProperty Name="state_long" ColumnName="state_long" />
+          <ScalarProperty Name="state_lat" ColumnName="state_lat" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
