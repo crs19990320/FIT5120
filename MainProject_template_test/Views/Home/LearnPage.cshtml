@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    @*<meta name="viewport" content="width=device-width, initial-scale=0.7">*@
     <title>Welcome</title>
     <style>
         .text {
@@ -20,10 +20,11 @@
             top: 100px;
             left: 30px;
         }
+
         .pic {
             position: absolute;
             top: 90px;
-            left: 600px;
+            left: 550px;
         }
 
         .pic img {
@@ -95,44 +96,50 @@
         }*/
 
         .video-background {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            
-          
-           
-          
-            z-index: -100;
-            background-size: cover;
+            position: absolute;
+            background-repeat: no-repeat;
+            left: 0px;
+            height: auto;
+            width: 100%;
+            top: 0
+        }
+
+        html, body {
+            overflow-y: hidden;
         }
     </style>
     <!-- Favicon -->
-    <link href="~/img/favicon.ico" rel="icon">
+    <!--<link href="~/img/favicon.ico" rel="icon">-->
 
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">-->
 
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">-->
 
     <!-- Libraries Stylesheet -->
-    <link href="~/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="~/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!--<link href="~/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="~/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">-->
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="~/css/bootstrap.min.css" rel="stylesheet">-->
 
     <!-- Template Stylesheet -->
-    <link href="~/css/style.css" rel="stylesheet">
+    <!--<link href="~/css/style.css" rel="stylesheet">-->
 </head>
 <body>
-    <div style=" position: absolute; width: 1400px; left: 120px; height: 800px;">
-        <img src="~/Media/new_logo.png" style="width: 140px; position: absolute; top: 40px; left: 50px;">
+    <video autoplay muted loop class="video-background">
+        <source src="https://mainprojectvideo.blob.core.windows.net/mainprojectvi/under_the_sea_background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style=" font-size: 25px; right: -40px; z-index: 10;">
+    <div style=" position: absolute; width: 800px; left: 120px; height: 500px;">
+        <img src="~/Media/new_logo.png" style="width: 100px; position: absolute; top: 20px; left: 50px;">
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style=" font-size: 25px; left: 600px; z-index: 10;">
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -147,19 +154,14 @@
 
         @*<div id="backg1" class="backg"></div>*@
 
-        <video autoplay muted loop class="video-background">
-            <source src="https://mainprojectvideo.blob.core.windows.net/mainprojectvi/under_the_sea_background.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-
         <div class="clearfix" style=" position: absolute; left: 30px; top: 80px;">
             <div class="text">
-                <h2 style="color: ghostwhite; margin-bottom: 40px;">This Week's Activity</h2>
-                <h1 style="color: ghostwhite; font-size: 100px; margin-bottom:40px;">Water Waste</h1>
+                <h2 style="color: ghostwhite; margin-bottom: 30px;">This Week's Activity</h2>
+                <h1 style="color: ghostwhite; font-size: 80px; margin-bottom:40px;">Water Waste</h1>
                 <p style="color: ghostwhite; width: 300px; font-size: 23px; font-weight: bold; margin-left:25px"> Water Waste is not just about leaving the tap on for too long - Let's dive in and learn how saving water can help save our planet</p>
                 @*<div class="button-container">
-                    <h2 style="font-family:'Comic Sans MS';">Watch & Learn <img src="~/Media/LearnVideo.png" style="width:60px;height:auto;" /></h2>
-                </div>*@
+                        <h2 style="font-family:'Comic Sans MS';">Watch & Learn <img src="~/Media/LearnVideo.png" style="width:60px;height:auto;" /></h2>
+                    </div>*@
             </div>
 
             <div class="pic">
@@ -170,15 +172,16 @@
                     Your browser does not support the video tag.
                 </video>
             </div>
+
         </div>
-        </div>
-            <script>
-                var video = document.getElementById('myVideo');
-                video.addEventListener('ended', function () {
-                    sessionStorage.setItem("videoComplete", true);
-                    console.log("video complete");
-                });
-            </script>
+    </div>
+    <script>
+        var video = document.getElementById('myVideo');
+        video.addEventListener('ended', function () {
+            sessionStorage.setItem("videoComplete", true);
+            console.log("video complete");
+        });
+    </script>
 
 </body>
 </html>
