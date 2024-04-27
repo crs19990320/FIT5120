@@ -172,5 +172,11 @@ namespace MainProject_template_test.Controllers
             return View(records);
 
         }
+
+        public ActionResult pageNotFound()
+        {
+            Response.StatusCode = 404; // Set HTTP status code to 404
+            return View(); // Return your 404 error view
+        }
     }
 }

@@ -44,6 +44,7 @@
     $(".header-carousel").owlCarousel({
         autoplay: true,
         smartSpeed: 1500,
+        autoplayTimeout: 12000,   // change the time duration of the pictures
         items: 1,
         dots: true,
         loop: true,
@@ -59,6 +60,7 @@
     $(".testimonial-carousel").owlCarousel({
         autoplay: true,
         smartSpeed: 1000,
+        autoplayTimeout: 12000, // change the time duration of the texts
         margin: 24,
         dots: false,
         loop: true,

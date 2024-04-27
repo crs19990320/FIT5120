@@ -19,6 +19,13 @@ namespace MainProject_template_test
 
                 defaults: new { controller = "Home", action = "HomePage", id = UrlParameter.Optional }
             );
+
+            // Add route for 404 errors
+            routes.MapRoute(
+                name: "404-PageNotFound",
+                url: "404",
+                defaults: new { controller = "Home", action = "PageNotFound" }
+            );
         }
     }
 }

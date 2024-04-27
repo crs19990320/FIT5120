@@ -33,7 +33,12 @@
     <!--<link href="~/css/style.css" rel="stylesheet">-->
 
     <style>
+<<<<<<< Updated upstream
         body {
+=======
+
+        .body {
+>>>>>>> Stashed changes
             zoom: 1.1;
         }
         .text-brown {
@@ -182,11 +187,19 @@
         <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-brown" href="@Url.Action("Dashboard", "Home")" style="font-weight: bolder;color:white">
-                        <img src="~/Media/Dashboard_Kids.png" alt="Family Icon" style="width: 100px; height: 60px; margin-right: -23px;">
-                        DashBoard
+                    <a class="nav-link text-brown" href="@Url.Action("HomePage", "Home")" style="font-weight: bolder; width:250px">
+                        <img src="~/Media/Home.png" alt="Family Icon" style="width: 100px; height: 60px; left:600px;">
+                        HomePage
                     </a>
                 </li>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-brown" href="@Url.Action("Dashboard", "Home")" style="font-weight: bolder; width: 250px">
+                            <img src="~/Media/Dashboard_Kids.png" alt="Family Icon" style="width: 100px; height: 60px;">
+                            DashBoard
+                        </a>
+                    </li>
+                </ul>
             </ul>
         </div>
     </nav>
@@ -199,8 +212,8 @@
     <!--</div>-->
     <!-- Activities -->
     <div id="activities" style="display:flex; align-content:center;">
-        <h3 style="position: absolute; top: 230px; left: 380px; margin-left: 470px; font-family: 'Lobster Two', cursive;">Activities with the kids</h3>
-        <div class="card" style="position: absolute; width: 680px; height:300px; background-color: white; top: 280px; right: 30px;">
+        <h3 style="position: absolute; top: 230px; left: 1050px; font-family: 'Lobster Two', cursive;">Activities with the kids</h3>
+        <div class="card" style="position: absolute; width: 680px; height:300px; background-color: white; top: 280px; left: 930px;">
             <div class="card-content" style="margin-left:0px;">
                 <!-- Page 1 -->
                 <div id="card1" style="display: block;">
@@ -352,8 +365,8 @@
 
     <!-- Teaching Resources -->
     <div id="book" style="display:flex;">
-        <h3 style="position: absolute; top: 230px; left: 110px; font-family: 'Lobster Two', cursive;">Teaching Resources</h3>
-        <div class="card" style="height: 750px; top: 174px; right: 30px;">
+        <h3 style="position: absolute; top: 230px; left: 210px; font-family: 'Lobster Two', cursive;">Teaching Resources</h3>
+        <div class="card" style=" position: absolute; height: 750px; top: 280px; left: 100px;">
             <div class="left-side" style="background-color:darkslategrey">
                 <div class="card-content">
                     <div class="card-title" style="color:white;margin-bottom:50px;">Stories</div>
@@ -375,11 +388,11 @@
 
     <!--  Helpful External Reads -->
     <div id="ReadingResource" style="display:flex;">
-        <div style="position: absolute; top: 1100px; left: 850px;">
+        <div style="position: absolute; top: 1100px; left: 1050px;">
             <h3 style="font-family: 'Lobster Two', cursive;">Helpful External Reads</h3>
         </div>
 
-        <div class="card" style="position: absolute; width: 680px; height: 300px; background-color: white; top: 1150px; right: 30px; margin-bottom: 30px;">
+        <div class="card" style="position: absolute; width: 680px; height: 300px; background-color: white; top: 1150px; left: 930px; margin-bottom: 30px;">
             <div class="card-content" style="margin-left:0px;">
                 <!-- Page 1 -->
                 <div id="read1" style="display: block;">
@@ -522,11 +535,11 @@
 
         <!-- Communication Tips -->
         <div id="communication" style="display:flex;">
-            <div style="position: absolute; top: 680px; left: 850px;">
+            <div style="position: absolute; top: 680px; left: 1050px;">
                 <h3 style=" font-family: 'Lobster Two', cursive;">Communication Tips</h3>
             </div>
 
-            <div class="card" style="position: absolute; height:300px; background-color: white; top: 730px; right: 30px;">
+            <div class="card" style="position: absolute; height: 300px; background-color: white; top: 730px; left: 930px;">
                 <div class="card-content" style="margin-left:0px;">
                     <!-- Page 1 -->
                     <div id="icon1" style="display: block;">
@@ -689,7 +702,7 @@
 
 
         <div id="videoWatch" style="display:flex;">
-            <div style="position:absolute; top:1100px; left:100px; ">
+            <div style="position:absolute; top:1100px; left:200px; ">
                 <h3 style="font-family: 'Lobster Two', cursive;">Helpful External Videos</h3>
             </div>
 
