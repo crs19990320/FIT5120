@@ -179,7 +179,7 @@ namespace MainProject_template_test.Controllers
             return View(); // Return your 404 error view
         }
 
-        public ActionResult Contact()
+        public ActionResult Login()
         {
             return View();
         }

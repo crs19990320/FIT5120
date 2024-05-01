@@ -473,6 +473,7 @@
       <DependentUpon>Login.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\greenguardains-iteration2 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\GreenGuardians-iteration-3 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\GreenGuardians-iteration2 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\GreenGuardians-iteration2 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -507,7 +508,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Puzzle.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\HomePage.cshtml" />
     <Content Include="scss\bootstrap.scss" />
     <Content Include="scss\bootstrap\scss\bootstrap-grid.scss" />

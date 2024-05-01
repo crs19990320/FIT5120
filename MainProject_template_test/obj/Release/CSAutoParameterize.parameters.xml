@@ -1,2 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters />
+<parameters>
+  <parameter name="MainprojectTP28Entities1-Web.config Connection String" description="MainprojectTP28Entities1 Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.Login.csdl|res://*/Models.Login.ssdl|res://*/Models.Login.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=mainproject.database.windows.net;initial catalog=MainprojectTP28;persist security info=True;user id=CloudSA290f0dff;password=CHEN159753crs!@#;multipleactiveresultsets=True;encrypt=True;trustservercertificate=True;application name=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\96968\\source\\repos\\crs19990320\\FIT5120\\MainProject_template_test\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MainprojectTP28Entities1']/@connectionString" />
+  </parameter>
+</parameters>
