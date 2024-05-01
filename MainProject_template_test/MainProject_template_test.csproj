@@ -557,6 +557,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Error\" />
+    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
