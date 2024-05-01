@@ -7,7 +7,24 @@
     <Property Name="id" Type="int" Nullable="false" />
     <Property Name="testMessage" Type="varchar(max)" />
   </EntityType>
+  <EntityType Name="userTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar(max)" />
+    <Property Name="PASSWORD" Type="varchar(max)" />
+    <Property Name="EMAIL" Type="varchar(max)" />
+    <Property Name="VIDEOTASK" Type="varchar(max)" />
+    <Property Name="CTASK1" Type="varchar(max)" />
+    <Property Name="CTASK2" Type="varchar(max)" />
+    <Property Name="CTASK3" Type="varchar(max)" />
+    <Property Name="CTASK4" Type="varchar(max)" />
+    <Property Name="CTASK5" Type="varchar(max)" />
+    <Property Name="CTASK6" Type="varchar(max)" />
+  </EntityType>
   <EntityContainer Name="MainprojectTP28ModelStoreContainer">
     <EntitySet Name="testTable" EntityType="Self.testTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="userTable" EntityType="Self.userTable" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

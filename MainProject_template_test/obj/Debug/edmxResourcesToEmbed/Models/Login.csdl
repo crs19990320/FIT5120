@@ -9,5 +9,22 @@
   </EntityType>
   <EntityContainer Name="MainprojectTP28Entities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="testTable" EntityType="Self.testTable" />
+    <EntitySet Name="userTable" EntityType="MainprojectTP28Model.userTable" />
   </EntityContainer>
+  <EntityType Name="userTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="USERNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="VIDEOTASK" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CTASK1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CTASK2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CTASK3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CTASK4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CTASK5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CTASK6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

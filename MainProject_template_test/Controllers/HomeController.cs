@@ -183,5 +183,16 @@ namespace MainProject_template_test.Controllers
         {
             return View();
         }
+        public ActionResult register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public JsonResult Register(string UserName, string Password)
+        {
+
+            return Json(new { success = true, message = "Registration successful" });
+        }
     }
 }

@@ -9,5 +9,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="userTable">
+      <EntityTypeMapping TypeName="MainprojectTP28Model.userTable">
+        <MappingFragment StoreEntitySet="userTable">
+          <ScalarProperty Name="CTASK6" ColumnName="CTASK6" />
+          <ScalarProperty Name="CTASK5" ColumnName="CTASK5" />
+          <ScalarProperty Name="CTASK4" ColumnName="CTASK4" />
+          <ScalarProperty Name="CTASK3" ColumnName="CTASK3" />
+          <ScalarProperty Name="CTASK2" ColumnName="CTASK2" />
+          <ScalarProperty Name="CTASK1" ColumnName="CTASK1" />
+          <ScalarProperty Name="VIDEOTASK" ColumnName="VIDEOTASK" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
