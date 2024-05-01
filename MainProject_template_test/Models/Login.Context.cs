@@ -26,5 +26,6 @@ namespace MainProject_template_test.Models
         }
     
         public virtual DbSet<testTable> testTable { get; set; }
+        public virtual DbSet<userTable> userTable { get; set; }
     }
 }

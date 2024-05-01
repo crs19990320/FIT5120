@@ -18,5 +18,7 @@ namespace MainProject_template_test.Controllers
             var logins = db.testTable.ToList(); 
             return View(logins);
         }
+
+
     }
 }

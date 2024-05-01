@@ -240,6 +240,9 @@
     <Compile Include="Models\testTable.cs">
       <DependentUpon>Login.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\userTable.cs">
+      <DependentUpon>Login.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -252,6 +255,7 @@
     <Content Include="App_Data\dbo.MapTable.sql" />
     <Content Include="App_Data\dbo.QuestionSchema.sql" />
     <Content Include="App_Data\dbo.Table.sql" />
+    <Content Include="App_Data\dbo.userTable.sql" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MainprojectTP28Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MainprojectTP28Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="testTable">
           <Key>
             <PropertyRef Name="id" />
@@ -12,11 +12,27 @@
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="testMessage" Type="varchar(max)" />
         </EntityType>
+        <EntityType Name="userTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar(max)" />
+          <Property Name="PASSWORD" Type="varchar(max)" />
+          <Property Name="EMAIL" Type="varchar(max)" />
+          <Property Name="VIDEOTASK" Type="varchar(max)" />
+          <Property Name="CTASK1" Type="varchar(max)" />
+          <Property Name="CTASK2" Type="varchar(max)" />
+          <Property Name="CTASK3" Type="varchar(max)" />
+          <Property Name="CTASK4" Type="varchar(max)" />
+          <Property Name="CTASK5" Type="varchar(max)" />
+          <Property Name="CTASK6" Type="varchar(max)" />
+        </EntityType>
         <EntityContainer Name="MainprojectTP28ModelStoreContainer">
           <EntitySet Name="testTable" EntityType="Self.testTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="userTable" EntityType="Self.userTable" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MainprojectTP28Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -29,7 +45,24 @@
         </EntityType>
         <EntityContainer Name="MainprojectTP28Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="testTable" EntityType="Self.testTable" />
+          <EntitySet Name="userTable" EntityType="MainprojectTP28Model.userTable" />
         </EntityContainer>
+        <EntityType Name="userTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="USERNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="VIDEOTASK" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CTASK1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CTASK2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CTASK3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CTASK4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CTASK5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CTASK6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -41,6 +74,23 @@
               <MappingFragment StoreEntitySet="testTable">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="testMessage" ColumnName="testMessage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="userTable">
+            <EntityTypeMapping TypeName="MainprojectTP28Model.userTable">
+              <MappingFragment StoreEntitySet="userTable">
+                <ScalarProperty Name="CTASK6" ColumnName="CTASK6" />
+                <ScalarProperty Name="CTASK5" ColumnName="CTASK5" />
+                <ScalarProperty Name="CTASK4" ColumnName="CTASK4" />
+                <ScalarProperty Name="CTASK3" ColumnName="CTASK3" />
+                <ScalarProperty Name="CTASK2" ColumnName="CTASK2" />
+                <ScalarProperty Name="CTASK1" ColumnName="CTASK1" />
+                <ScalarProperty Name="VIDEOTASK" ColumnName="VIDEOTASK" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
