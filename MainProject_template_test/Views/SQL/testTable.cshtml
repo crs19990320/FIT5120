@@ -1,0 +1,16 @@
+﻿@model IEnumerable<MainProject_template_test.Models.testTable>
+
+<h2>Logins</h2>
+<table>
+    <tr>
+        <th>User ID</th>
+        <th>Password</th>
+    </tr>
+    @foreach (var login in Model)
+    {
+        <tr>
+            <td>@login.id</td>
+            <td>@login.testMessage</td>
+        </tr>
+    }
+</table>
