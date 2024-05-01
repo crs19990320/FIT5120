@@ -178,5 +178,10 @@ namespace MainProject_template_test.Controllers
             Response.StatusCode = 404; // Set HTTP status code to 404
             return View(); // Return your 404 error view
         }
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
     }
 }

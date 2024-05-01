@@ -347,6 +347,7 @@
     <Content Include="Media\4.png" />
     <Content Include="Media\5.png" />
     <Content Include="Media\ai-generated-8663117_640.png" />
+    <Content Include="Media\anonymous1.png" />
     <Content Include="Media\article1.png" />
     <Content Include="Media\article2.png" />
     <Content Include="Media\article3_1.png" />
@@ -594,10 +595,7 @@
     <Content Include="Views\Home\pageNotFound.cshtml" />
     <Content Include="Views\SQL\testTable.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Error\" />
-    <Folder Include="Views\Login\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
     <Content Include="Content\bootstrap.rtl.css.map" />
