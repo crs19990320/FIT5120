@@ -183,6 +183,7 @@ namespace MainProject_template_test.Controllers
         {
             return View();
         }
+<<<<<<< Updated upstream
         public ActionResult register()
         {
             return View();
@@ -242,5 +243,12 @@ namespace MainProject_template_test.Controllers
 
             
         }
+=======
+
+        public ActionResult indexBaker()
+        {
+            return View();
+        }
+>>>>>>> Stashed changes
     }
 }
