@@ -82,7 +82,7 @@
             top: 400px;
             background-color: #fff;
             border: none;
-            width: 100px;
+            width: 150px;
             height: 60px;
             border-radius: 20px;
             z-index: 100;
@@ -101,6 +101,14 @@
         }
     </style>
     <script>
+        let usernameRecord = "";
+        let passwordRecord = "";
+        let PasswordConfirmRecord = "";
+        let tempColor = "";
+        let tempAnimal = "";
+        let tempFill = "";
+        let tempsrc = "";
+
         let chooseCircle = null;
 
         function enlargeAndMoveToFront(circle) {
@@ -128,13 +136,14 @@
                 circle.setAttribute('r', parseInt(circle.getAttribute('r')) + 15);
                 circle.parentNode.appendChild(circle);
                 chooseCircle = circle;
-                console.log(`Circle ${circle.id} is now active and enlarged.`);
+                tempColor = circle.id;
+                tempFill = circle.getAttribute('fill');
             }
         }
     </script>
     <script>
         let activeImage = null;
-
+        let smallImage = null;
         function enlargeAndToFront(image) {
             if (activeImage !== image) {
                 image.style.transform = 'scale(1.2)';
@@ -148,11 +157,11 @@
                 image.style.zIndex = "1";
                 image.style.transition = "transform 0.3s ease";
             }
-        } 
+        }
 
         function imageClicked(image) {
             if (activeImage !== image) {
-                if (activeImage) { 
+                if (activeImage) {
                     activeImage.style.transform = 'none';
                     image.style.zIndex = "1";
                 }
@@ -160,12 +169,127 @@
                 image.style.zIndex = "20";
                 image.style.transition = "transform 0.3s ease";
                 activeImage = image;
-                console.log(`${image.alt} clicked`);
+                tempAnimal = image.alt;
+                tempsrc = image.src;
             }
-
-            
         }
     </script>
+    @*<script>
+            let clickSequence = [];
+            function reset() {
+                clickSequence = [];
+                let descriptionDiv = document.querySelector('.password-description');
+                let smallImages = descriptionDiv.querySelectorAll('.small_image');
+                let Messages = descriptionDiv.querySelectorAll('.pmessage');
+                smallImages.forEach(image => {
+                    image.remove();
+                });
+                Messages.forEach(p => {
+                    p.remove();
+                })
+            }
+            function enlarge(image) {
+                image.style.transform = 'scale(1.1)';
+                image.style.opacity = 0.85;
+            }
+
+            function resetpImage(image) {
+                image.style.transform = 'none';
+                image.style.opacity = 0.7;
+                image.style.transition = "transform 0.3s ease";
+            }
+
+            function pimageClicked(image) {
+                let index = Array.prototype.indexOf.call(image.parentNode.children, image) + 1;
+                clickSequence.push(index);
+                if (clickSequence.length > 4) {
+                    let Message = document.createElement('p');
+                    Message.textContent = "The length of the password should not over 4!"
+                    Message.className = 'pmessage';
+                    Message.style.width = '400px';
+                    Message.style.height = '30px';
+                    Message.style.fontSize = '15px';
+                    Message.style.color = 'red';
+                    clickSequence.pop(index)
+                    let descriptionDiv = document.querySelector('.password-description');
+                    descriptionDiv.appendChild(Message);
+                    setTimeout(function () {
+                        Message.remove();
+                    }, 3000);
+                } else {
+                    image.style.transform = 'scale(1.2)';
+                    image.style.transition = "transform 0.3s ease";
+
+
+                    let smallImage = document.createElement('img');
+                    smallImage.src = image.src;
+                    smallImage.className = 'small_image';
+                    smallImage.alt = image.alt + '_small';
+                    smallImage.style.width = '50px';
+                    smallImage.style.height = '50px';
+
+                    let descriptionDiv = document.querySelector('.password-description');
+                    descriptionDiv.appendChild(smallImage);
+                }
+            }
+        </script>
+        <script>
+            let clickSequence1 = [];
+            function pcreset() {
+                clickSequence1 = [];
+                let descriptionDiv = document.querySelector('.password-description1');
+                let smallImages = descriptionDiv.querySelectorAll('.small_image1');
+                smallImages.forEach(image => {
+                    image.remove();
+                });
+            }
+            function pcenlarge(image) {
+                image.style.transform = 'scale(1.1)';
+                image.style.opacity = 0.85;
+            }
+
+            function resetpcImage(image) {
+                image.style.transform = 'none';
+                image.style.opacity = 0.7;
+                image.style.transition = "transform 0.3s ease";
+            }
+
+            function pcimageClicked(image) {
+                let index = Array.prototype.indexOf.call(image.parentNode.children, image) + 1;
+                clickSequence1.push(index);
+                if (clickSequence1.length > 4) {
+                    let Message = document.createElement('p');
+                    Message.textContent = "The length of the password should not over 4!"
+                    Message.className = 'pcmessage';
+                    Message.style.width = '400px';
+                    Message.style.height = '30px';
+                    Message.style.fontSize = '15px';
+                    Message.style.color = 'red';
+                    clickSequence1.pop(index)
+                    let descriptionDiv = document.querySelector('.password-description1');
+                    descriptionDiv.appendChild(Message);
+                    setTimeout(function () {
+                        Message.remove();
+                    }, 3000);
+                } else {
+                image.style.transform = 'scale(1.2)';
+                image.style.transition = "transform 0.3s ease";
+
+
+                let smallImage = document.createElement('img');
+                smallImage.src = image.src;
+                smallImage.className = 'small_image1';
+                smallImage.alt = image.alt + '_small';
+                smallImage.style.width = '50px';
+                smallImage.style.height = '50px';
+
+                let descriptionDiv = document.querySelector('.password-description1');
+                descriptionDiv.appendChild(smallImage);
+
+
+                }
+            }
+        </script>*@
 </head>
 
 <body style="background-image:url('../Media/page_background4.png'); background-repeat:no-repeat">
@@ -195,7 +319,7 @@
     </div>
 
     <div class="recarousel">
-        <button class="recarousel__button--prev">Go Back</button>
+        <button id="buttonprev"class="recarousel__button--prev">Go Back</button>
         <div class="recarousel__slides">
             <div class="recarousel__slide">
                 <div style="text-align:center; margin-top:20px;">
@@ -206,35 +330,114 @@
                 </div>
             </div>
             <div class="recarousel__slide">
-                <svg width="1000" height="300" style="position: absolute; left: 1450px;">
-                    <circle id="c1" cx="100" cy="150" r="50" fill="#E74C3C" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)"/>
-                    <circle id="c2" cx="200" cy="150" r="50" fill="#9B59B6" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)"/>
-                    <circle id="c3" cx="300" cy="150" r="50" fill="#82E0AA" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)"/>
-                    <circle id="c4" cx="400" cy="150" r="50" fill="#EB984E" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)"/>
-                    <circle id="c5" cx="500" cy="150" r="50" fill="#F89DF0" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)"/>
-                    <circle id="c6" cx="600" cy="150" r="50" fill="#5DADE2" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)"/>
-                    <circle id="c7" cx="700" cy="150" r="50" fill="#1C298A" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)"/>
-                    <circle id="c8" cx="800" cy="150" r="50" fill="#D1D3DB" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)"/>
-                    <circle id="c9" cx="900" cy="150" r="50" fill="#F4D03F" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)"/>
+                <svg width="1000" height="170" viewBox="0 80 1000 150" style="position: absolute; left: 1450px;">
+                    <circle id="Red" cx="100" cy="150" r="50" fill="#E74C3C" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                    <circle id="Purple" cx="200" cy="150" r="50" fill="#9B59B6" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                    <circle id="Green" cx="300" cy="150" r="50" fill="#82E0AA" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                    <circle id="Orange" cx="400" cy="150" r="50" fill="#EB984E" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                    <circle id="Pink" cx="500" cy="150" r="50" fill="#F89DF0" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                    <circle id="Blue" cx="600" cy="150" r="50" fill="#5DADE2" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                    <circle id="Navy" cx="700" cy="150" r="50" fill="#1C298A" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                    <circle id="Grey" cx="800" cy="150" r="50" fill="#D1D3DB" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                    <circle id="Yellow" cx="900" cy="150" r="50" fill="#F4D03F" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
                 </svg>
-            </div>
-            <div class="recarousel__slide">
-                <div style="position: absolute; width: 1050px; height: 300px; left: 2750px; ">
-                    <img src="../Media/whale1.png" alt="img1" style="position: relative; width: 100px; height: 100px; margin-top: 100px; margin-left: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
-                    <img src="../Media/tiger1.png" alt="img2" style="position: relative; width: 100px; height: 100px; margin-top: 100px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
-                    <img src="../Media/squirrel1.png" alt="img3" style="position: relative; width: 100px; height: 100px; margin-top: 100px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
-                    <img src="../Media/rat1.png" alt="img4" style="position: relative; width: 100px; height: 100px; margin-top: 100px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
-                    <img src="../Media/raccoon1.png" alt="img5" style="position: relative; width: 100px; height: 100px; margin-top: 100px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
-                    <img src="../Media/pig1.png" alt="img6" style="position: relative; width: 100px; height: 100px; margin-top: 100px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
-                    <img src="../Media/frog1.png" alt="img7" style="position: relative; width: 100px; height: 100px; margin-top: 100px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
-                    <img src="../Media/fox1.png" alt="img8" style="position: relative; width: 100px; height: 100px; margin-top: 100px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
-                    <img src="../Media/cat1.png" alt="img9" style="position: relative; width: 100px; height: 100px; margin-top: 100px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+
+                <div style="position: absolute; width: 1000px; height: 150px;top:150px; left: 1450px; ">
+                    <img src="../Media/whale1.png" alt="Whale" style="position: relative; width: 96px; height: 96px; margin-top: 50px; margin-left: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                    <img src="../Media/tiger1.png" alt="Tiger" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                    <img src="../Media/squirrel1.png" alt="Squirrel" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                    <img src="../Media/rat1.png" alt="Rat" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                    <img src="../Media/raccoon1.png" alt="Raccoon" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                    <img src="../Media/pig1.png" alt="Pig" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                    <img src="../Media/frog1.png" alt="Frog" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                    <img src="../Media/fox1.png" alt="Fox" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                    <img src="../Media/cat1.png" alt="Cat" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                </div>
+                <div class="usernameWarning" style="position: absolute; left: 2300px; width: 300px; height: 30px; top: 350px;">
+
                 </div>
             </div>
+            <div class="recarousel__slide">
+                <div class="display" style="text-align:center; margin-top:20px;">
+                    <p style="font-size:50px; font-family: 'Lobster Two', cursive;">
+                        This is your username. Please remember the id behind "#".
+                    </p>
+                    <svg width="100" height="100">
+                        <circle id="showSVG" cx="50" cy="50" r="40" />
+                     </svg>
+                    <img  id="animalusername" src="~/Media/fox1.png" style="width:80px;height:80px;">
+                </div>
+            </div>
+            @*<div class="recarousel__slide">
+            <div class="display" style="text-align:center; margin-top:20px;">
+                <p style="font-size:60px; font-family: 'Lobster Two', cursive;">
+                    Then, we will help you to create a password! <br />
+                    Ready?
+                </p>
+            </div>
         </div>
-        <button class="recarousel__button--next">Next</button>
-    </div>
+        <div class="recarousel__slide">
+            <div class="display" style="text-align:center; margin-top:20px;">
+                <p style="font-size:60px; font-family: 'Lobster Two', cursive;">
+                    Create a password!
+                </p>
+                <input type="password" id="pasword" />
+                <p style="font-size:60px; font-family: 'Lobster Two', cursive;">
+                    Confirm your password!
+                </p>
+                <input type="password" id="confirmpassword" />
+                <div class="password_detial"></div>
+            </div>
+        </div>*@
 
+            @* <div class="recarousel__slide">
+            <div style="position: absolute; width: 1100px; height: 500px; left: 4000px;">
+                <div class="password-description" style="width: 400px; position: absolute; text-align: center; left: 150px;">
+                    <p style="font-size:40px; font-family: 'Lobster Two', cursive;">
+                        Select animals as your password!
+                    </p>
+                </div>
+                <div id="pimg" style="position: absolute; width: 500px; left: 600px;">
+                    <img src="../Media/whale1.png" alt="pimg1" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 20px; opacity: 0.7;" onmouseover="enlarge(this)" onmouseout="resetpImage(this)" onclick="pimageClicked(this)">
+                    <img src="../Media/tiger1.png" alt="pimg2" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 20px; opacity: 0.7;" onmouseover="enlarge(this)" onmouseout="resetpImage(this)" onclick="pimageClicked(this)">
+                    <img src="../Media/squirrel1.png" alt="pimg3" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 20px; opacity: 0.7;" onmouseover="enlarge(this)" onmouseout="resetpImage(this)" onclick="pimageClicked(this)">
+                    <img src="../Media/rat1.png" alt="pimg4" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7;" onmouseover="enlarge(this)" onmouseout="resetpImage(this)" onclick="pimageClicked(this)">
+                    <img src="../Media/raccoon1.png" alt="pimg5" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7;" onmouseover="enlarge(this)" onmouseout="resetpImage(this)" onclick="pimageClicked(this)">
+                    <img src="../Media/pig1.png" alt="pimg6" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7;" onmouseover="enlarge(this)" onmouseout="resetpImage(this)" onclick="pimageClicked(this)">
+                    <img src="../Media/frog1.png" alt="pimg7" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7; " onmouseover="enlarge(this)" onmouseout="resetpImage(this)" onclick="pimageClicked(this)">
+                    <img src="../Media/fox1.png" alt="pimg8" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7;" onmouseover="enlarge(this)" onmouseout="resetpImage(this)" onclick="pimageClicked(this)">
+                    <img src="../Media/cat1.png" alt="pimg9" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7;" onmouseover="enlarge(this)" onmouseout="resetpImage(this)" onclick="pimageClicked(this)">
+                    <button class="resetButton" style=" position: absolute; top: 200px; left: 500px;" onclick="reset()">reset</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="recarousel__slide">
+            <div style="position: absolute; width: 1100px; height: 500px; left: 5200px;">
+                <div class="password-description1" style="width: 400px; position: absolute; text-align: center; left: 150px;">
+                    <p style="font-size:40px; font-family: 'Lobster Two', cursive;">
+                        Confirm your password!
+                    </p>
+                </div>
+                <div id="pcimg" style="position: absolute; width: 500px; left: 600px;">
+                    <img src="../Media/whale1.png" alt="pcimg1" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 20px; opacity: 0.7;" onmouseover="pcenlarge(this)" onmouseout="resetpcImage(this)" onclick="pcimageClicked(this)">
+                    <img src="../Media/tiger1.png" alt="pcimg2" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 20px; opacity: 0.7;" onmouseover="pcenlarge(this)" onmouseout="resetpcImage(this)" onclick="pcimageClicked(this)">
+                    <img src="../Media/squirrel1.png" alt="pcimg3" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 20px; opacity: 0.7;" onmouseover="pcenlarge(this)" onmouseout="resetpcImage(this)" onclick="pcimageClicked(this)">
+                    <img src="../Media/rat1.png" alt="pcimg4" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7;" onmouseover="pcenlarge(this)" onmouseout="resetpcImage(this)" onclick="pcimageClicked(this)">
+                    <img src="../Media/raccoon1.png" alt="pcimg5" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7;" onmouseover="pcenlarge(this)" onmouseout="resetpcImage(this)" onclick="pcimageClicked(this)">
+                    <img src="../Media/pig1.png" alt="pcimg6" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7;" onmouseover="pcenlarge(this)" onmouseout="resetpcImage(this)" onclick="pcimageClicked(this)">
+                    <img src="../Media/frog1.png" alt="pcimg7" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7; " onmouseover="pcenlarge(this)" onmouseout="resetpcImage(this)" onclick="pcimageClicked(this)">
+                    <img src="../Media/fox1.png" alt="pcimg8" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7;" onmouseover="pcenlarge(this)" onmouseout="resetpcImage(this)" onclick="pcimageClicked(this)">
+                    <img src="../Media/cat1.png" alt="pcimg9" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7;" onmouseover="pcenlarge(this)" onmouseout="resetpcImage(this)" onclick="pcimageClicked(this)">
+                    <button class="pcresetButton" style=" position: absolute; top: 200px; left: 500px;" onclick="pcreset()">reset</button>
+                </div>
+
+            </div>
+        </div>*@
+
+        </div>
+        <button id="buttonnext" class="recarousel__button--next">Next</button>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -242,10 +445,48 @@
             const prevButton = document.querySelector('.recarousel__button--prev');
             const nextButton = document.querySelector('.recarousel__button--next');
             let currentIndex = 0;
-
+            let currentID = "";
+            $.ajax({
+                url: '/Home/Register',
+                type: 'POST',
+                success: function (response) {
+                    if (response.success) {
+                        currentID = response.userTableRowCount
+                    }
+                },
+                error: function () {
+                }
+            });
+            if (currentIndex == 0) {
+                document.getElementById('buttonprev').style.display = 'none';
+                document.getElementById('buttonnext').textContent = "I'm ready!";
+            }
+            
             function updateCarousel() {
                 const newTransformValue = -100 * currentIndex;
                 document.querySelector('.recarousel__slides').style.transform = `translateX(${newTransformValue}%)`;
+                if (currentIndex == 0) {
+                    document.getElementById('buttonprev').style.display = 'none';
+                    document.getElementById('buttonnext').textContent = "I'm ready!";
+                }
+                else if (currentIndex == 1) {
+                    document.getElementById('buttonprev').style.display = 'block';
+                    document.getElementById('buttonnext').textContent = "Confirm!";
+                    document.getElementById('buttonprev').textContent = "Maybe not that ready....";
+                }
+                else if (currentIndex == 2) {
+                    document.getElementById('buttonnext').textContent = "Confirm!";
+                    document.getElementById('buttonprev').textContent = "I want to change something...";
+                }
+                /* else if (currentIndex == 3) {
+                    document.getElementById('buttonnext').textContent = "submit password!";
+                    document.getElementById('buttonprev').textContent = "I want to change something...";
+                }
+                else if (currentIndex == 4) {
+                    document.getElementById('buttonnext').textContent = "Confirm!";
+                    document.getElementById('buttonprev').textContent = "I want to change something...";
+                }
+                 */
             }
 
             prevButton.addEventListener('click', function () {
@@ -253,13 +494,67 @@
                     currentIndex--;
                     updateCarousel();
                 }
-            });
+                
+                            });
 
             nextButton.addEventListener('click', function () {
+                usernameRecord = tempColor + "-" + tempAnimal;
+                let jsonUserName = usernameRecord + "#" + currentID;
+                if (currentIndex == 1) {
+                    if (tempColor == "" || tempAnimal == "") {
+                        let wdescriptionDiv = document.querySelector('.usernameWarning');
+                        let wMessage = document.createElement('p');
+                        wMessage.textContent = "You need to choose color and animal!"
+                        wMessage.className = 'pcmessage';
+                        wMessage.style.width = '400px';
+                        wMessage.style.height = '30px';
+                        wMessage.style.fontSize = '15px';
+                        wMessage.style.color = 'red';
+                        wdescriptionDiv.appendChild(wMessage);
+                        setTimeout(function () {
+                            wMessage.remove();
+                        }, 3000);
+                        currentIndex--;
+                    }
+                    document.getElementById('showSVG').setAttribute('fill', tempFill);
+                    document.getElementById('animalusername').src=tempsrc;
+                    let descriptionDiv = document.querySelector('.display');
+                    let Message = document.createElement('p');
+                    Message.textContent = "#" + currentID
+                    Message.className = 'pcmessage';
+                    Message.style.position = 'absolute';
+                    Message.style.width = '100px';
+                    Message.style.height = '100px';
+                    Message.style.fontSize = '40px';
+                    Message.style.left = '3320px';
+                    Message.style.top = '135px';
+                    Message.style.color = 'black';
+                    descriptionDiv.appendChild(Message);
+
+                }
+                if (currentIndex == 2) {
+                    $.ajax({
+                        url: '/Home/RecordRegister',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({ id: parseInt(currentID), Username: jsonUserName }),
+                        success: function (response) {
+                            console.log("success");
+                        },
+                        error: function () {
+                            console.log("error");
+                        }
+                    });
+                }
+                 console.log("userName: " + jsonUserName);
+                 
+                    
+                
                 if (currentIndex < slides.length - 1) {
                     currentIndex++;
                     updateCarousel();
                 }
+                
             });
         });
     </script>

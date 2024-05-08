@@ -189,10 +189,58 @@ namespace MainProject_template_test.Controllers
         }
 
         [HttpPost]
-        public JsonResult Register(string UserName, string Password)
+        public JsonResult Register()
         {
+            SQLController sqlController = new SQLController();
+            int userTableRowCount = sqlController.GetUserTableRowCount();
 
-            return Json(new { success = true, message = "Registration successful" });
+            return Json(new { success = true, message = "Registration successful", userTableRowCount = userTableRowCount });
+        }
+
+        [HttpPost]
+        public JsonResult RecordRegister(int id, string UserName)
+        {
+            SQLController sqlController = new SQLController();
+            sqlController.InsertUser(id,UserName);
+
+            return Json(new { success = true, message = "Registration successful"});
+        }
+
+        [HttpPost]
+        public JsonResult LoginCheck(string userName)
+        {
+            SQLController sqlController = new SQLController();
+            userTable user = sqlController.LoginUser(userName);
+            if (user != null)
+            {
+                return Json(new
+                {
+                    success = true,
+                    message = "Login successful",
+                    data = new
+                    {
+                        USERNAME = userName,
+                        VIDEOTASK=user.VIDEOTASK,
+                        CTASK1= user.CTASK1,
+                        CTASK2 = user.CTASK2,
+                        CTASK3 = user.CTASK3,
+                        CTASK4 = user.CTASK4,
+                        CTASK5 = user.CTASK5,
+                        CTASK6 = user.CTASK6
+                    }
+                });
+            }
+            else
+            {
+                return Json(new
+                {
+                    success = false,
+                    message = "Login Faile",
+                   
+                });
+            }
+
+            
         }
     }
 }

@@ -19,6 +19,28 @@ namespace MainProject_template_test.Controllers
             return View(logins);
         }
 
+        public int GetUserTableRowCount()
+        {
+            int rowCount = db.userTable.Count();
+            return rowCount;
+        }
 
+        public void InsertUser(int id, string username)
+        {
+            var user = new userTable();
+            user.ID = id;
+            user.USERNAME = username;
+
+            db.userTable.Add(user);
+            db.SaveChanges(); 
+        }
+
+        public userTable LoginUser(string username)
+        {
+            var user = db.userTable.FirstOrDefault(u => u.USERNAME == username);
+            return user;
+        }
     }
+
+    
 }

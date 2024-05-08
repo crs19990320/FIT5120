@@ -20,7 +20,6 @@
           <ScalarProperty Name="CTASK1" ColumnName="CTASK1" />
           <ScalarProperty Name="VIDEOTASK" ColumnName="VIDEOTASK" />
           <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
-          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
           <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>

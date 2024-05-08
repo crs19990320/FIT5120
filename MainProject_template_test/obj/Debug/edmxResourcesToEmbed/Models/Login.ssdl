@@ -13,7 +13,6 @@
     </Key>
     <Property Name="ID" Type="int" Nullable="false" />
     <Property Name="USERNAME" Type="varchar(max)" />
-    <Property Name="PASSWORD" Type="varchar(max)" />
     <Property Name="EMAIL" Type="varchar(max)" />
     <Property Name="VIDEOTASK" Type="varchar(max)" />
     <Property Name="CTASK1" Type="varchar(max)" />

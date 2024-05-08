@@ -27,7 +27,7 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="~/css/bootstrap.min.css" rel="stylesheet">
 
-     @*Template Stylesheet*@ 
+    @*Template Stylesheet*@
     <link href="~/css/style.css" rel="stylesheet">
 
     <style>
@@ -37,34 +37,149 @@
             margin-right: 20px;
         }
 
-        .navbar-nav .nav-link:hover {
-            color: orangered;
-        }
+            .navbar-nav .nav-link:hover {
+                color: orangered;
+            }
 
-        .navbar-nav .nav-link::after {
-            content: '';
+            .navbar-nav .nav-link::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 2px;
+                width: 100%;
+                height: 2px;
+                background-color: orangered;
+                transition: width 0.5s;
+                transform: scaleX(0);
+                transform-origin: left;
+            }
+
+            .navbar-nav .nav-link:hover::after {
+                transform: scaleX(1);
+            }
+
+        .recarousel {
             position: absolute;
-            left: 0;
-            bottom: 2px;
-            width: 100%;
-            height: 2px;
-            background-color: orangered;
-            transition: width 0.5s;
-            transform: scaleX(0);
-            transform-origin: left;
+            height: 500px;
+            width: 1300px;
+            overflow: hidden;
+            top: 200px;
         }
 
-        .navbar-nav .nav-link:hover::after {
-            transform: scaleX(1);
+        .recarousel__slides {
+            display: flex;
+            transition: transform 1s ease;
+            height: 500px;
+        }
+
+        .recarousel__slide {
+            flex: 0 0 100%;
+            width: 100%;
+        }
+
+        .recarousel__button--prev, .recarousel__button--next {
+            position: absolute;
+            top: 400px;
+            background-color: #fff;
+            border: none;
+            width: 150px;
+            height: 60px;
+            border-radius: 20px;
+            z-index: 100;
+        }
+
+        .recarousel__button--prev {
+            left: 10px;
+        }
+
+        .recarousel__button--next {
+            right: 10px;
+        }
+
+        circle {
+            transition: r 0.3s ease;
         }
     </style>
+    <script>
+        let usernameRecord = "";
+        let passwordRecord = "";
+        let PasswordConfirmRecord = "";
+        let tempColor = "";
+        let tempAnimal = "";
+        let tempFill = "";
+        let tempsrc = "";
 
+        let chooseCircle = null;
+
+        function enlargeAndMoveToFront(circle) {
+            if (chooseCircle !== circle) {
+                circle.setAttribute('r', parseInt(circle.getAttribute('r')) + 10);
+                circle.parentNode.appendChild(circle);
+                if (chooseCircle) {
+                    circle.parentNode.appendChild(chooseCircle);
+                }
+            }
+
+        }
+
+        function resetRadius(circle) {
+            if (chooseCircle !== circle) {
+                circle.setAttribute('r', parseInt(circle.getAttribute('r')) - 10);
+            }
+        }
+
+        function handleCircleClick(circle) {
+            if (chooseCircle !== circle) {
+                if (chooseCircle) {
+                    chooseCircle.setAttribute('r', parseInt(chooseCircle.getAttribute('r')) - 25);
+                }
+                circle.setAttribute('r', parseInt(circle.getAttribute('r')) + 15);
+                circle.parentNode.appendChild(circle);
+                chooseCircle = circle;
+                tempColor = circle.id;
+                tempFill = circle.getAttribute('fill');
+            }
+        }
+    </script>
+    <script>
+        let activeImage = null;
+        let smallImage = null;
+        function enlargeAndToFront(image) {
+            if (activeImage !== image) {
+                image.style.transform = 'scale(1.2)';
+                image.style.zIndex = "10";
+            }
+        }
+
+        function resetImageSize(image) {
+            if (activeImage !== image) {
+                image.style.transform = 'none';
+                image.style.zIndex = "1";
+                image.style.transition = "transform 0.3s ease";
+            }
+        }
+
+        function imageClicked(image) {
+            if (activeImage !== image) {
+                if (activeImage) {
+                    activeImage.style.transform = 'none';
+                    image.style.zIndex = "1";
+                }
+                image.style.transform = 'scale(1.5)';
+                image.style.zIndex = "20";
+                image.style.transition = "transform 0.3s ease";
+                activeImage = image;
+                tempAnimal = image.alt;
+                tempsrc = image.src;
+            }
+        }
+    </script>
 </head>
 
 <body style="background-image:url('../Media/page_background4.png'); background-repeat:no-repeat">
     <div style="display: flex; align-items: center;">
         <h1 style="text-align: left; margin-bottom: 20px; flex: 1; font-family: 'Lobster Two', cursive;">
-            <img src="~/Media/anonymous1.png"/> Hi, Guest!
+            <img src="~/Media/anonymous1.png" /> Hi, Guest!
         </h1>
 
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style=" font-size: 25px;width:550px">
@@ -87,13 +202,108 @@
         </nav>
     </div>
 
-    <div style="text-align:center; margin-top:20px;">
-        <p style="font-size:60px; font-family: 'Lobster Two', cursive;">
-            Welcome to <br />
-            Green Guardians!
-        </p>
+    <div class="recarousel">
+        <button id="buttonprev" class="recarousel__button--prev">Register</button>
+        <div class="recarousel__slide">
+            <svg width="1000" height="170" viewBox="0 80 1000 150" style="position: absolute; left: 150px;">
+                <circle id="Red" cx="100" cy="150" r="50" fill="#E74C3C" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                <circle id="Purple" cx="200" cy="150" r="50" fill="#9B59B6" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                <circle id="Green" cx="300" cy="150" r="50" fill="#82E0AA" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                <circle id="Orange" cx="400" cy="150" r="50" fill="#EB984E" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                <circle id="Pink" cx="500" cy="150" r="50" fill="#F89DF0" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                <circle id="Blue" cx="600" cy="150" r="50" fill="#5DADE2" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                <circle id="Navy" cx="700" cy="150" r="50" fill="#1C298A" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                <circle id="Grey" cx="800" cy="150" r="50" fill="#D1D3DB" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                <circle id="Yellow" cx="900" cy="150" r="50" fill="#F4D03F" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+            </svg>
+
+            <div style="position: absolute; width: 1000px; height: 150px;top:150px; left: 150px; ">
+                <img src="../Media/whale1.png" alt="Whale" style="position: relative; width: 96px; height: 96px; margin-top: 50px; margin-left: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                <img src="../Media/tiger1.png" alt="Tiger" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                <img src="../Media/squirrel1.png" alt="Squirrel" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                <img src="../Media/rat1.png" alt="Rat" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                <img src="../Media/raccoon1.png" alt="Raccoon" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                <img src="../Media/pig1.png" alt="Pig" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                <img src="../Media/frog1.png" alt="Frog" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                <img src="../Media/fox1.png" alt="Fox" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                <img src="../Media/cat1.png" alt="Cat" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+            </div>
+            <div class="usernameidEnter" style="position: absolute; left: 450px; width: 300px; height: 30px; top: 350px;">
+                # <input id="usernameid">
+            </div>
+            <div class="usernameWarning" style="position: absolute; left: 1000px; width: 300px; height: 30px; top: 350px;">
+
+            </div>
+        </div>
+            <button id="buttonnext" class="recarousel__button--next">Login</button>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.recarousel__slide');
+            const prevButton = document.querySelector('.recarousel__button--prev');
+            const nextButton = document.querySelector('.recarousel__button--next');
+            
 
+
+            prevButton.addEventListener('click', function () {
+                window.location.href = 'register';
+                });
+
+            nextButton.addEventListener('click', function () {
+                usernameRecord = tempColor + "-" + tempAnimal;
+                let currentID = document.getElementById('usernameid').value;
+                
+                let jsonUserName = usernameRecord + "#" + currentID;
+
+                if (tempColor == "" || tempAnimal == "" || currentID == "") {
+                    let wdescriptionDiv = document.querySelector('.usernameWarning');
+                    let wMessage = document.createElement('p');
+                    wMessage.textContent = "You need to choose color and animal!"
+                    wMessage.className = 'pcmessage';
+                    wMessage.style.width = '400px';
+                    wMessage.style.height = '30px';
+                    wMessage.style.fontSize = '15px';
+                    wMessage.style.color = 'red';
+                    wdescriptionDiv.appendChild(wMessage);
+                    setTimeout(function () {
+                        wMessage.remove();
+                    }, 3000);
+                }
+                else { 
+                    var $buttonnext = $('#buttonnext');
+                    $buttonnext.prop('disabled', true);
+                    var $buttonprev = $('#buttonprev');
+                    $buttonprev.prop('disabled', true);
+                    $.ajax({
+                        url: '/Home/LoginCheck',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({ Username: jsonUserName }),
+                        success: function (response) {
+                            $buttonnext.prop('disabled', false);
+                            $buttonprev.prop('disabled', false);
+                            if (response.success) {
+                                console.log(response.VIDEOTASK);
+                            } else {
+                                
+                                console.log("Can't find user in database");
+                            }
+                            
+                        },
+                        error: function () {
+                            $buttonnext.prop('disabled', false);
+                            $buttonprev.prop('disabled', false);
+                            console.log("error");
+                            
+                        }
+                    });
+                    console.log("userName: " + jsonUserName);
+                }
+                 
+
+            });
+        });
+    </script>
 </body>
 </html>

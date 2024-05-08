@@ -16,7 +16,6 @@ namespace MainProject_template_test.Models
     {
         public int ID { get; set; }
         public string USERNAME { get; set; }
-        public string PASSWORD { get; set; }
         public string EMAIL { get; set; }
         public string VIDEOTASK { get; set; }
         public string CTASK1 { get; set; }
