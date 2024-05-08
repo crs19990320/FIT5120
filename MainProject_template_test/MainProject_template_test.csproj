@@ -732,7 +732,6 @@
     <Content Include="scss_baker\bootstrap\scss\_utilities.scss" />
     <Content Include="scss_baker\bootstrap\scss\_variables.scss" />
     <Content Include="Views\Home\indexBaker.cshtml" />
->>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
