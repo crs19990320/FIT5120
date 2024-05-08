@@ -40,6 +40,24 @@ namespace MainProject_template_test.Controllers
             var user = db.userTable.FirstOrDefault(u => u.USERNAME == username);
             return user;
         }
+
+        public void UpdateTaskStatus(string username ,string VIDEOTASK, string CTASK1, string CTASK2, string CTASK3, string CTASK4, string CTASK5, string CTASK6)
+        {
+            var user = db.userTable.FirstOrDefault(u => u.USERNAME == username);
+            if (user != null)
+            {
+                user.VIDEOTASK = VIDEOTASK;
+                user.CTASK1 = CTASK1;
+                user.CTASK2 = CTASK2;
+                user.CTASK3 = CTASK3;
+                user.CTASK4 = CTASK4;
+                user.CTASK5 = CTASK5;
+                user.CTASK6 = CTASK6;
+
+                db.SaveChanges();
+            }
+
+        }
     }
 
     

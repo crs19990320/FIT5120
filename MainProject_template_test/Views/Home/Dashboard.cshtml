@@ -277,44 +277,44 @@
             <div style="color: white; margin-left: 30px;">
                 <h5 style="font-family: 'Lobster Two', cursive; color:white;">Visit learn section, click on tasks to earn rewards, and see your impact in the Journey section!</h5>
                 <div class="transparent-cards">
-                    <div class="checklist-item">
-                        <input type="checkbox" id="task1" name="task1">
-                        <label for="task1"></label>
+                    <div id="checklistdiv" class="checklist-item">
+                        <input type="checkbox" id="CTASK1" name="task1">
+                        <label for="CTASK1"></label>
                         <span>Turned off the tap while brushing my teeth</span>
                         <img src="~/Media/puzzlePiece.png" />
                         <p>x1</p>
                     </div>
                     <div class="checklist-item">
-                        <input type="checkbox" id="task2" name="task2">
-                        <label for="task2"></label>
+                        <input type="checkbox" id="CTASK2" name="task2">
+                        <label for="CTASK2"></label>
                         <span>Shortened my shower</span>
                         <img src="~/Media/puzzlePiece.png" />
                         <p>x1</p>
                     </div>
                     <div class="checklist-item">
-                        <input type="checkbox" id="task3" name="task3">
-                        <label for="task3"></label>
+                        <input type="checkbox" id="CTASK3" name="task3">
+                        <label for="CTASK3"></label>
                         <span> Turn off the tap while soaping during handwash</span>
                         <img src="~/Media/puzzlePiece.png" />
                         <p>x1</p>
                     </div>
                     <div class="checklist-item">
-                        <input type="checkbox" id="task4" name="task4">
-                        <label for="task4"></label>
+                        <input type="checkbox" id="CTASK4" name="task4">
+                        <label for="CTASK4"></label>
                         <span> Took a walk around my house to find any water leaks </span>
                         <img src="~/Media/puzzlePiece.png" />
                         <p>x1</p>
                     </div>
                     <div class="checklist-item">
-                        <input type="checkbox" id="task5" name="task5">
-                        <label for="task5"></label>
+                        <input type="checkbox" id="CTASK5" name="task5">
+                        <label for="CTASK5"></label>
                         <span> Used a bucket to collect rainwater</span>
                         <img src="~/Media/puzzlePiece.png" />
                         <p>x1</p>
                     </div>
                     <div class="checklist-item">
-                        <input type="checkbox" id="task6" name="task6">
-                        <label for="task6"></label>
+                        <input type="checkbox" id="CTASK6" name="task6">
+                        <label for="CTASK6"></label>
                         <span> Shared water-saving tips with my friends</span>
                         <img src="~/Media/puzzlePiece.png" />
                         <p>x2</p>
@@ -405,29 +405,144 @@
 
     </div>
     <div style="position: absolute; top: 0px;">
-    <div style="position: absolute; top: 790px; left: 10px; width: 200px; ">
-        <h2 style="font-size:30px">Your Impact</h2>
-    </div>
-    <!-- Journey Page-->
-    <div class="card" style="background-color: #E5696D; width: 630px; height: 230px; position: absolute; top: 850px;">
-        <div class="card-content" style="margin-left:10px;">
-            <div class="card-title" style="font-family: 'Lobster Two', cursive;">Journey</div>
-            <div style="color:white;">
-                After watching lessons and completing tasks,<br />
-                visit here to see your impact and earn rewards!
-            </div>
-            <div class="button-container">
-                <div class="mybutton1">
-                    <a href="Puzzle" class="btn" style="color: #E5696D">Start</a>
+        <div style="position: absolute; top: 790px; left: 10px; width: 200px; ">
+            <h2 style="font-size:30px">Your Impact</h2>
+        </div>
+        <!-- Journey Page-->
+        <div class="card" style="background-color: #E5696D; width: 630px; height: 230px; position: absolute; top: 850px;">
+            <div class="card-content" style="margin-left:10px;">
+                <div class="card-title" style="font-family: 'Lobster Two', cursive;">Journey</div>
+                <div style="color:white;">
+                    After watching lessons and completing tasks,<br />
+                    visit here to see your impact and earn rewards!
+                </div>
+                <div class="button-container">
+                    <div class="mybutton1">
+                        <a href="Puzzle" class="btn" style="color: #E5696D">Start</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="card-image">
-            <img src="~/Media/puzzle.png" alt="Placeholder Image">
+            <div class="card-image">
+                <img src="~/Media/puzzle.png" alt="Placeholder Image">
+            </div>
         </div>
     </div>
-        </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var currentWeek = sessionStorage.getItem('currentWeek');
+            var storedUsername = sessionStorage.getItem('username');
+            if (!storedUsername || storedUsername === "default") {
+                var taskStatus = JSON.parse(sessionStorage.getItem('checkListData')) || {};
+
+                document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(function (checkbox) {
+                    if (taskStatus[checkbox.id]) {
+                        var textSpan = checkbox.parentNode.querySelector('span').textContent;
+                        if (taskStatus[checkbox.id] === textSpan) {
+                            checkbox.checked = true;
+                            checkbox.disabled = true;
+                        }
+                    }
+                    checkbox.addEventListener('click', function () {
+                        var textSpan = checkbox.parentNode.querySelector('span').textContent;
+                        if (checkbox.checked) {
+                            taskStatus[checkbox.id] = textSpan;
+                            checkbox.disabled = true;
+                        }
+                        sessionStorage.setItem('checkListData', JSON.stringify(taskStatus));
+                    });
+                });
+            }
+            else {
+                var taskStatuses = {
+                    CTASK1: JSON.parse(sessionStorage.getItem('CTASK1') || '{}'),
+                    CTASK2: JSON.parse(sessionStorage.getItem('CTASK2') || '{}'),
+                    CTASK3: JSON.parse(sessionStorage.getItem('CTASK3') || '{}'),
+                    CTASK4: JSON.parse(sessionStorage.getItem('CTASK4') || '{}'),
+                    CTASK5: JSON.parse(sessionStorage.getItem('CTASK5') || '{}'),
+                    CTASK6: JSON.parse(sessionStorage.getItem('CTASK6') || '{}')
+                };
+
+                function updateTaskStatus(taskName, checkbox, statusObj) {
+                    var originalValue = "";
+                    var originalObject;
+                    if (statusObj == null) {
+                        statusObj = {};
+                        checkbox.checked = false;
+                        checkbox.disabled = false;
+                    } else if (statusObj != null) {
+                        if (currentWeek in statusObj) {
+                            checkbox.checked = true;
+                            checkbox.disabled = true;
+                        } else {
+                            originalValue = sessionStorage.getItem(taskName);
+                            originalObject = JSON.parse(originalValue);
+                        }
+                    }
+
+                    checkbox.addEventListener('click', function () {
+                        if (!checkbox.checked) {
+                            checkbox.checked = true;
+                        }
+                        statusObj[currentWeek] = true;
+                        var saveObject = { [currentWeek]: statusObj[currentWeek] };
+                        var mergedObject = Object.assign({}, originalObject, saveObject);
+                        sessionStorage.setItem(taskName, JSON.stringify(mergedObject));
+                        $.ajax({
+                            url: '/Home/updateTaskStatus',
+                            type: 'POST',
+                            contentType: 'application/json',
+                            data: JSON.stringify({
+                                USERNAME: storedUsername,
+                                VIDEOTASK: sessionStorage.getItem('VIDEOTASK') || "",
+                                CTASK1: sessionStorage.getItem('CTASK1') || "",
+                                CTASK2: sessionStorage.getItem('CTASK2') || "",
+                                CTASK3: sessionStorage.getItem('CTASK3') || "",
+                                CTASK4: sessionStorage.getItem('CTASK4') || "",
+                                CTASK5: sessionStorage.getItem('CTASK5') || "",
+                                CTASK6: sessionStorage.getItem('CTASK6') || "",
+                            }),
+                            success: function (response) {
+                                console.log(response.message);
+                            },
+                            error: function () {
+
+                                console.log("error");
+
+                            }
+                        });
+                    });
+                }
+
+                document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(function (checkbox) {
+                    var taskName = checkbox.id;
+                    updateTaskStatus(taskName, checkbox, taskStatuses[taskName]);
+                });
+
+            }
+        });
+
+    </script>
+    <script>
+    document.getElementById('game').addEventListener('click', function () {
+        var jsonData = @Html.Raw(Json.Encode(Model));
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+        shuffle(jsonData);
+        var selectedQuestions = jsonData.slice(0, 10);
+        var encapsulatedData = {
+            questions: selectedQuestions
+        };
+        sessionStorage.setItem('QuestionJson', JSON.stringify(encapsulatedData));
+        console.log("Randomly selected 10 questions:", encapsulatedData);
+        window.location.href = '/Home/CardGame';
+    });
+    </script>
 </body>
 </html>
 
@@ -471,50 +586,7 @@
         });
     </script>*@
 
-<script>
-    var taskStatus = {};
-    document.addEventListener('DOMContentLoaded', function () {
-        var taskStatus = JSON.parse(sessionStorage.getItem('checkListData')) || {};
-
-        document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(function (checkbox) {
-            if (taskStatus[checkbox.id]) {
-                var textSpan = checkbox.parentNode.querySelector('span').textContent;
-                if (taskStatus[checkbox.id] === textSpan) {
-                    checkbox.checked = true;
-                }
-            }
-            checkbox.addEventListener('click', function () {
-                var textSpan = checkbox.parentNode.querySelector('span').textContent;
-                if (checkbox.checked) {
-                    taskStatus[checkbox.id] = textSpan;
-                } else {
-                    delete taskStatus[checkbox.id];
-                }
-                console.log(JSON.stringify(taskStatus));
-                sessionStorage.setItem('checkListData', JSON.stringify(taskStatus));
-            });
-        });
-    });
-</script>
 
 
-<script>
-    document.getElementById('game').addEventListener('click', function () {
-        var jsonData = @Html.Raw(Json.Encode(Model));
 
-        function shuffle(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-        }
-        shuffle(jsonData);
-        var selectedQuestions = jsonData.slice(0, 10);
-        var encapsulatedData = {
-            questions: selectedQuestions
-        };
-        sessionStorage.setItem('QuestionJson', JSON.stringify(encapsulatedData));
-        console.log("Randomly selected 10 questions:", encapsulatedData);
-        window.location.href = '/Home/CardGame';
-    });
-</script>
+

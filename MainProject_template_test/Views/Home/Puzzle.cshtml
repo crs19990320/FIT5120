@@ -219,113 +219,247 @@
         </div>
       
     <script>
+        var countpie = parseInt(document.getElementById('pieceNumber').textContent);
         document.addEventListener('DOMContentLoaded', function () {
-            var taskStatusString = sessionStorage.getItem('checkListData');
-            var taskStatus = taskStatusString ? JSON.parse(taskStatusString) : {};
-            var infoBox = document.getElementById('infoBox');
-            var infoText = document.getElementById('infoText');
-            var infoImg = document.getElementById('infoImg');
-            if (Object.keys(taskStatus).length > 0) {
-                var tasks = Object.keys(taskStatus);
+            var currentWeek = sessionStorage.getItem('currentWeek');
+            var storedUsername = sessionStorage.getItem('username');
+            if (!storedUsername || storedUsername == "default") {
+                var taskStatusString = sessionStorage.getItem('checkListData');
+                var taskStatus = taskStatusString ? JSON.parse(taskStatusString) : {};
+                var infoBox = document.getElementById('infoBox');
+                var infoText = document.getElementById('infoText');
+                var infoImg = document.getElementById('infoImg');
+                if (Object.keys(taskStatus).length > 0) {
+                    var tasks = Object.keys(taskStatus);
 
-                tasks.forEach(task => {
-                    const taskIndex = task.replace('task', '');
-                    const ellipseId = `e${taskIndex}`;
-                    const puzzleid = `pi${taskIndex}`;
-                    const ellipse = document.getElementById(ellipseId);
-                    const puzzlepi = document.getElementById(puzzleid);
+                    tasks.forEach(task => {
+                        const taskIndex = task.replace('CTASK', '');
+                        const ellipseId = `e${taskIndex}`;
+                        const puzzleid = `pi${taskIndex}`;
+                        const ellipse = document.getElementById(ellipseId);
+                        const puzzlepi = document.getElementById(puzzleid);
 
-                    if (ellipse) {
-                        switch (taskIndex) {
-                            case '1': ellipse.setAttribute('fill', 'rgb(231, 76, 60)'); break;
-                            case '2': ellipse.setAttribute('fill', 'rgb(230, 126, 34)'); break;
-                            case '3': ellipse.setAttribute('fill', 'rgb(241, 196, 15)'); break;
-                            case '4': ellipse.setAttribute('fill', 'rgb(46, 204, 113)'); break;
-                            case '5': ellipse.setAttribute('fill', 'rgb(52, 152, 219)'); break;
-                            case '6': ellipse.setAttribute('fill', 'rgb(240, 128, 128)'); break;
-                           // case '7': ellipse.setAttribute('fill', 'rgb(142, 68, 173)'); break;
-                        }
-
-                        ellipse.addEventListener('mouseenter', function () {
+                        if (ellipse) {
                             switch (taskIndex) {
-                                case '1': infoImg.src ="../Media/bstars_5.png"; infoText.textContent = "With the latest task you completed, you've filled 5 penguins' ice buckets! Cool job!";; break;
-                                case '2': infoImg.src = "../Media/bstars_3.png"; infoText.textContent = "With the latest task you completed, you've saved 3 bathtubs' worth of water! Keep going!"; break;
-                                case '3': infoImg.src = "../Media/bstars_5.png"; infoText.textContent = "With the latest task you completed, you've filled 5 penguins' ice buckets! Cool job!"; break;
-                                case '4': infoImg.src = "../Media/bstars_7.png"; infoText.textContent = "With the latest task you completed, you've saved enough for a mini water park! 7 buckets? That's a new record!"; break;
-                                case '5': infoImg.src = "../Media/bstars_3.png"; infoText.textContent = "With the latest task you completed, you've saved 3 bathtubs' worth of water! Keep going!"; break;
-                                case '6': infoImg.src = "../Media/bstars_7.png"; infoText.textContent = " With the latest task you completed, you've saved enough for a mini water park! 7 buckets? That's a new record!"; break;
+                                case '1': ellipse.setAttribute('fill', 'rgb(231, 76, 60)'); break;
+                                case '2': ellipse.setAttribute('fill', 'rgb(230, 126, 34)'); break;
+                                case '3': ellipse.setAttribute('fill', 'rgb(241, 196, 15)'); break;
+                                case '4': ellipse.setAttribute('fill', 'rgb(46, 204, 113)'); break;
+                                case '5': ellipse.setAttribute('fill', 'rgb(52, 152, 219)'); break;
+                                case '6': ellipse.setAttribute('fill', 'rgb(240, 128, 128)'); break;
                                 // case '7': ellipse.setAttribute('fill', 'rgb(142, 68, 173)'); break;
                             }
-                            
-                            infoBox.style.display = 'flex';
-                        });
 
-                        ellipse.addEventListener('mouseleave', function () {
-                            infoBox.style.display = 'none';
-                        });
-                    }
+                            ellipse.addEventListener('mouseenter', function () {
+                                switch (taskIndex) {
+                                    case '1': infoImg.src = "../Media/bstars_5.png"; infoText.textContent = "With the latest task you completed, you've filled 5 penguins' ice buckets! Cool job!";; break;
+                                    case '2': infoImg.src = "../Media/bstars_3.png"; infoText.textContent = "With the latest task you completed, you've saved 3 bathtubs' worth of water! Keep going!"; break;
+                                    case '3': infoImg.src = "../Media/bstars_5.png"; infoText.textContent = "With the latest task you completed, you've filled 5 penguins' ice buckets! Cool job!"; break;
+                                    case '4': infoImg.src = "../Media/bstars_7.png"; infoText.textContent = "With the latest task you completed, you've saved enough for a mini water park! 7 buckets? That's a new record!"; break;
+                                    case '5': infoImg.src = "../Media/bstars_3.png"; infoText.textContent = "With the latest task you completed, you've saved 3 bathtubs' worth of water! Keep going!"; break;
+                                    case '6': infoImg.src = "../Media/bstars_7.png"; infoText.textContent = " With the latest task you completed, you've saved enough for a mini water park! 7 buckets? That's a new record!"; break;
+                                    // case '7': ellipse.setAttribute('fill', 'rgb(142, 68, 173)'); break;
+                                }
 
-                    if (taskIndex != '6') {
-                        puzzlepi.setAttribute('fill', 'transparent');
-                    }
-                    else if (taskIndex == '6') {
-                        puzzlepi.setAttribute('fill', 'transparent');
-                        const puzzlepiBonus = document.getElementById("pi7");
-                        puzzlepiBonus.setAttribute('fill', 'transparent');
-                    }
-                });
+                                infoBox.style.display = 'flex';
+                            });
+
+                            ellipse.addEventListener('mouseleave', function () {
+                                infoBox.style.display = 'none';
+                            });
+
+
+                            if (taskIndex != '6') {
+                                puzzlepi.setAttribute('fill', 'transparent');
+                                document.getElementById('pieceNumber').textContent = (countpie + 1).toString();
+                                countpie = parseInt(document.getElementById('pieceNumber').textContent);
+
+                            }
+                            else if (taskIndex == '6') {
+                                puzzlepi.setAttribute('fill', 'transparent');
+                                const puzzlepiBonus = document.getElementById("pi7");
+                                puzzlepiBonus.setAttribute('fill', 'transparent');
+                                document.getElementById('pieceNumber').textContent = (countpie + 2).toString();
+                                countpie = parseInt(document.getElementById('pieceNumber').textContent);
+                            }
+                        }
+                    });
+                } else {
+                    console.log("No data to process.");
+                }
             } else {
-                console.log("No data to process.");
+                
+                var taskStatuses = {
+                    CTASK1: JSON.parse(sessionStorage.getItem('CTASK1') || '{}'),
+                    CTASK2: JSON.parse(sessionStorage.getItem('CTASK2') || '{}'),
+                    CTASK3: JSON.parse(sessionStorage.getItem('CTASK3') || '{}'),
+                    CTASK4: JSON.parse(sessionStorage.getItem('CTASK4') || '{}'),
+                    CTASK5: JSON.parse(sessionStorage.getItem('CTASK5') || '{}'),
+                    CTASK6: JSON.parse(sessionStorage.getItem('CTASK6') || '{}')
+                };
+                var infoBox = document.getElementById('infoBox');
+                var infoText = document.getElementById('infoText');
+                var infoImg = document.getElementById('infoImg');
+
+                Object.keys(taskStatuses).forEach(task => {
+
+                    if (currentWeek in taskStatuses[task]) {
+                        const taskIndex = task.replace('CTASK', '');
+                        const ellipseId = `e${taskIndex}`;
+                        const puzzleid = `pi${taskIndex}`;
+                        const ellipse = document.getElementById(ellipseId);
+                        const puzzlepi = document.getElementById(puzzleid);
+
+                        if (ellipse) {
+                            switch (taskIndex) {
+                                case '1': ellipse.setAttribute('fill', 'rgb(231, 76, 60)'); break;
+                                case '2': ellipse.setAttribute('fill', 'rgb(230, 126, 34)'); break;
+                                case '3': ellipse.setAttribute('fill', 'rgb(241, 196, 15)'); break;
+                                case '4': ellipse.setAttribute('fill', 'rgb(46, 204, 113)'); break;
+                                case '5': ellipse.setAttribute('fill', 'rgb(52, 152, 219)'); break;
+                                case '6': ellipse.setAttribute('fill', 'rgb(240, 128, 128)'); break;
+                                // case '7': ellipse.setAttribute('fill', 'rgb(142, 68, 173)'); break;
+                            }
+                            ellipse.addEventListener('mouseenter', function () {
+                                switch (taskIndex) {
+                                    case '1': infoImg.src = "../Media/bstars_5.png"; infoText.textContent = "With the latest task you completed, you've filled 5 penguins' ice buckets! Cool job!";; break;
+                                    case '2': infoImg.src = "../Media/bstars_3.png"; infoText.textContent = "With the latest task you completed, you've saved 3 bathtubs' worth of water! Keep going!"; break;
+                                    case '3': infoImg.src = "../Media/bstars_5.png"; infoText.textContent = "With the latest task you completed, you've filled 5 penguins' ice buckets! Cool job!"; break;
+                                    case '4': infoImg.src = "../Media/bstars_7.png"; infoText.textContent = "With the latest task you completed, you've saved enough for a mini water park! 7 buckets? That's a new record!"; break;
+                                    case '5': infoImg.src = "../Media/bstars_3.png"; infoText.textContent = "With the latest task you completed, you've saved 3 bathtubs' worth of water! Keep going!"; break;
+                                    case '6': infoImg.src = "../Media/bstars_7.png"; infoText.textContent = " With the latest task you completed, you've saved enough for a mini water park! 7 buckets? That's a new record!"; break;
+                                    // case '7': ellipse.setAttribute('fill', 'rgb(142, 68, 173)'); break;
+                                }
+
+                                infoBox.style.display = 'flex';
+                            });
+
+
+                            ellipse.addEventListener('mouseleave', function () {
+                                infoBox.style.display = 'none';
+                            });
+
+
+                            if (taskIndex != '6') {
+                                puzzlepi.setAttribute('fill', 'transparent');
+                                document.getElementById('pieceNumber').textContent = (countpie + 1).toString();
+                                countpie = parseInt(document.getElementById('pieceNumber').textContent);
+                            } else if (taskIndex == '6') {
+                                puzzlepi.setAttribute('fill', 'transparent');
+                                const puzzlepiBonus = document.getElementById("pi7");
+                                puzzlepiBonus.setAttribute('fill', 'transparent');
+                                document.getElementById('pieceNumber').textContent = (countpie + 2).toString();
+                                countpie = parseInt(document.getElementById('pieceNumber').textContent);
+                            }
+                        }
+                    }
+                    });
+            
             }
-        });
+            });
     </script>
     <script>
-        var videoComplete = sessionStorage.getItem('videoComplete');
-        if (videoComplete) {
-            var infoBox = document.getElementById('infoBox');
-            var infoText = document.getElementById('infoText');
-            var infoImg = document.getElementById('infoImg');
-            var taskStatusString = sessionStorage.getItem('checkListData');
-            var taskStatus = taskStatusString ? JSON.parse(taskStatusString) : {};
-            if ('task6' in taskStatus) {
-                document.getElementById('pieceNumber').textContent = Object.keys(taskStatus).length + 3;
+        var currentWeek = sessionStorage.getItem('currentWeek');
+        var storedUsername = sessionStorage.getItem('username');
+        if (!storedUsername || storedUsername == "default") {
+            var videoComplete = sessionStorage.getItem('videoComplete');
+            if (videoComplete) {
+                var infoBox = document.getElementById('infoBox');
+                var infoText = document.getElementById('infoText');
+                var infoImg = document.getElementById('infoImg');
+                /*var taskStatusString = sessionStorage.getItem('checkListData');
+                var taskStatus = taskStatusString ? JSON.parse(taskStatusString) : {};
+                if ('task6' in taskStatus) {
+                    document.getElementById('pieceNumber').textContent = Object.keys(taskStatus).length + 3;
+                }
+                else {
+                    document.getElementById('pieceNumber').textContent = Object.keys(taskStatus).length + 1;
+                }*/
+
+                document.getElementById('pieceNumber').textContent = (countpie + 2).toString();
+                countpie = parseInt(document.getElementById('pieceNumber').textContent);
+
+                const ellipse = document.getElementById('e7');
+                ellipse.setAttribute('fill', 'rgb(142, 68, 173)');
+
+                ellipse.addEventListener('mouseenter', function () {
+                    infoImg.style.height = '50px';
+                    infoImg.style.left = '200px';
+                    infoImg.style.top = '-10px';
+                    infoImg.src = "../Media/Learn.png";
+                    infoText.textContent = "Great work! Weekly learning video completed. You're absolutely crushing it!";
+                    infoBox.style.display = 'flex';
+                });
+
+                ellipse.addEventListener('mouseleave', function () {
+                    infoBox.style.display = 'none';
+                });
+
+                const puzzlepiBonus1 = document.getElementById("pi8");
+                puzzlepiBonus1.setAttribute('fill', 'transparent');
+                const puzzlepiBonus2 = document.getElementById("pi9");
+                puzzlepiBonus2.setAttribute('fill', 'transparent');
             }
             else {
-                document.getElementById('pieceNumber').textContent = Object.keys(taskStatus).length + 1;
+                /*var taskStatusString = sessionStorage.getItem('checkListData');
+                var taskStatus = taskStatusString ? JSON.parse(taskStatusString) : {};
+                if ('task6' in taskStatus) {
+                    document.getElementById('pieceNumber').textContent = Object.keys(taskStatus).length + 1;
+                }
+                else {
+                    document.getElementById('pieceNumber').textContent = Object.keys(taskStatus).length;
+                }*/
             }
+        } else {
+            var videoComplete = sessionStorage.getItem('VIDEOTASK');
+            if (currentWeek in JSON.parse(videoComplete)) {
+                var infoBox = document.getElementById('infoBox');
+                var infoText = document.getElementById('infoText');
+                var infoImg = document.getElementById('infoImg');
+               /* var taskStatusString = sessionStorage.getItem('checkListData');
+                var taskStatus = taskStatusString ? JSON.parse(taskStatusString) : {};
+                if ('task6' in taskStatus) {
+                    document.getElementById('pieceNumber').textContent = Object.keys(taskStatus).length + 3;
+                }
+                else {
+                    document.getElementById('pieceNumber').textContent = Object.keys(taskStatus).length + 1;
+                }*/
+
+                document.getElementById('pieceNumber').textContent = (countpie + 2).toString();
+                countpie = parseInt(document.getElementById('pieceNumber').textContent);
+
+                const ellipse = document.getElementById('e7');
+                ellipse.setAttribute('fill', 'rgb(142, 68, 173)');
+
+                ellipse.addEventListener('mouseenter', function () {
+                    infoImg.style.height = '50px';
+                    infoImg.style.left = '200px';
+                    infoImg.style.top = '-10px';
+                    infoImg.src = "../Media/Learn.png";
+                    infoText.textContent = "Great work! Weekly learning video completed. You're absolutely crushing it!";
+                    infoBox.style.display = 'flex';
+                });
+
+                ellipse.addEventListener('mouseleave', function () {
+                    infoBox.style.display = 'none';
+                });
+
+                const puzzlepiBonus1 = document.getElementById("pi8");
+                puzzlepiBonus1.setAttribute('fill', 'transparent');
+                const puzzlepiBonus2 = document.getElementById("pi9");
+                puzzlepiBonus2.setAttribute('fill', 'transparent');
+            }   
+                else {
+                    /*var taskStatusString = sessionStorage.getItem('checkListData');
+                    var taskStatus = taskStatusString ? JSON.parse(taskStatusString) : {};
+                    if ('task6' in taskStatus) {
+                        document.getElementById('pieceNumber').textContent = Object.keys(taskStatus).length + 1;
+                    }
+                    else {
+                        document.getElementById('pieceNumber').textContent = Object.keys(taskStatus).length;
+                    }*/
+                }
             
-            
-
-            const ellipse = document.getElementById('e7');
-            ellipse.setAttribute('fill', 'rgb(142, 68, 173)');
-
-            ellipse.addEventListener('mouseenter', function () {
-                infoImg.style.height = '50px';
-                infoImg.style.left = '200px';
-                infoImg.style.top = '-10px';
-                infoImg.src = "../Media/Learn.png";
-                infoText.textContent = "Great work! Weekly learning video completed. You're absolutely crushing it!";
-                infoBox.style.display = 'flex';
-            });
-
-            ellipse.addEventListener('mouseleave', function () {
-                infoBox.style.display = 'none';
-            });
-
-            const puzzlepiBonus1 = document.getElementById("pi8");
-            puzzlepiBonus1.setAttribute('fill', 'transparent');
-            const puzzlepiBonus2 = document.getElementById("pi9");
-            puzzlepiBonus2.setAttribute('fill', 'transparent');
-        }
-        else {
-            var taskStatusString = sessionStorage.getItem('checkListData');
-            var taskStatus = taskStatusString ? JSON.parse(taskStatusString) : {};
-            if ('task6' in taskStatus) {
-                document.getElementById('pieceNumber').textContent = Object.keys(taskStatus).length + 1;
-            }
-            else {
-                document.getElementById('pieceNumber').textContent = Object.keys(taskStatus).length;
-            }
         }
     </script>
     <script>

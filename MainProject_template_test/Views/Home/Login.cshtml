@@ -239,6 +239,7 @@
     </div>
 
     <script>
+        var currentWeek = sessionStorage.getItem('currentWeek');
         document.addEventListener('DOMContentLoaded', function () {
             const slides = document.querySelectorAll('.recarousel__slide');
             const prevButton = document.querySelector('.recarousel__button--prev');
@@ -284,9 +285,29 @@
                             $buttonnext.prop('disabled', false);
                             $buttonprev.prop('disabled', false);
                             if (response.success) {
-                                console.log(response.VIDEOTASK);
+                                sessionStorage.setItem('username', jsonUserName);
+                                sessionStorage.setItem('VIDEOTASK', response.data.VIDEOTASK);
+                                sessionStorage.setItem('CTASK1', response.data.CTASK1);
+                                sessionStorage.setItem('CTASK2', response.data.CTASK2);
+                                sessionStorage.setItem('CTASK3', response.data.CTASK3);
+                                sessionStorage.setItem('CTASK4', response.data.CTASK4);
+                                sessionStorage.setItem('CTASK5', response.data.CTASK5);
+                                sessionStorage.setItem('CTASK6', response.data.CTASK6);
+
+
                             } else {
-                                
+                                let wdescriptionDiv = document.querySelector('.usernameWarning');
+                                let wMessage = document.createElement('p');
+                                wMessage.textContent = "You need to regist first!"
+                                wMessage.className = 'pcmessage';
+                                wMessage.style.width = '400px';
+                                wMessage.style.height = '30px';
+                                wMessage.style.fontSize = '15px';
+                                wMessage.style.color = 'red';
+                                wdescriptionDiv.appendChild(wMessage);
+                                setTimeout(function () {
+                                    wMessage.remove();
+                                }, 3000);
                                 console.log("Can't find user in database");
                             }
                             

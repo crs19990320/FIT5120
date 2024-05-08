@@ -183,7 +183,7 @@ namespace MainProject_template_test.Controllers
         {
             return View();
         }
-<<<<<<< Updated upstream
+
         public ActionResult register()
         {
             return View();
@@ -243,12 +243,27 @@ namespace MainProject_template_test.Controllers
 
             
         }
-=======
+
+        [HttpPost]
+        public JsonResult updateTaskStatus(string username, string VIDEOTASK, string CTASK1, string CTASK2, string CTASK3, string CTASK4, string CTASK5, string CTASK6)
+        {
+            SQLController sqlController = new SQLController();
+            sqlController.UpdateTaskStatus(username, VIDEOTASK, CTASK1, CTASK2, CTASK3, CTASK4, CTASK5, CTASK6);
+            
+                return Json(new
+                {
+                    success = true,
+                    message = "uploaded",
+
+                });
+
+
+        }
 
         public ActionResult indexBaker()
         {
             return View();
         }
->>>>>>> Stashed changes
+
     }
 }
