@@ -648,9 +648,7 @@
     <Content Include="Views\Home\Parents.cshtml" />
     <Content Include="Views\Home\pageNotFound.cshtml" />
     <Content Include="Views\SQL\testTable.cshtml" />
-<<<<<<< Updated upstream
     <Content Include="Views\Home\register.cshtml" />
-=======
     <Content Include="scss_baker\bootstrap.scss" />
     <Content Include="scss_baker\bootstrap\scss\bootstrap-grid.scss" />
     <Content Include="scss_baker\bootstrap\scss\bootstrap-reboot.scss" />
