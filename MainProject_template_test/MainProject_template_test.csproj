@@ -191,6 +191,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Rectangle.cs" />
+    <Compile Include="Models\Difference.cs" />
     <Compile Include="Models\Climate.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -437,11 +439,14 @@
     <Content Include="Media\Learn.png" />
     <Content Include="Media\LearnVideo.png" />
     <Content Include="Media\logo.png" />
+    <Content Include="Media\main_quest_bg.png" />
     <Content Include="Media\map_background.png" />
     <Content Include="Media\Mom&amp;Dad.png" />
     <Content Include="Media\new_logo.png" />
     <Content Include="Media\Note.jpg" />
     <Content Include="Media\page_background4.png" />
+    <Content Include="Media\parent_page1.png" />
+    <Content Include="Media\parent_page2.png" />
     <Content Include="Media\pig1.png" />
     <Content Include="Media\Play.png" />
     <Content Include="Media\puzzle.png" />
@@ -459,6 +464,9 @@
     <Content Include="Media\star.png" />
     <Content Include="Media\StartGame .png" />
     <Content Include="Media\Statuses2.png" />
+    <Content Include="Media\Task_2_1.png" />
+    <Content Include="Media\Task_2_2.png" />
+    <Content Include="Media\Task_2_3.png" />
     <Content Include="Media\testPic.png" />
     <Content Include="Media\tiger1.png" />
     <Content Include="Media\underwater.mp4" />
@@ -645,7 +653,7 @@
     <Content Include="Views\Home\LearnPage.cshtml" />
     <Content Include="Views\Home\CardGame.cshtml" />
     <Content Include="Views\Home\Map.cshtml" />
-    <Content Include="Views\Home\Parents.cshtml" />
+    <Content Include="Views\Home\Parents_notUsed.cshtml" />
     <Content Include="Views\Home\pageNotFound.cshtml" />
     <Content Include="Views\SQL\testTable.cshtml" />
     <Content Include="Views\Home\register.cshtml" />
@@ -731,7 +739,13 @@
     <Content Include="scss_baker\bootstrap\scss\_type.scss" />
     <Content Include="scss_baker\bootstrap\scss\_utilities.scss" />
     <Content Include="scss_baker\bootstrap\scss\_variables.scss" />
+<<<<<<< Updated upstream
     <Content Include="Views\Home\indexBaker.cshtml" />
+=======
+    <Content Include="Views\Home\Parents.cshtml" />
+    <Content Include="Views\Home\Interaction.cshtml" />
+    <Content Include="Views\Home\Quest.cshtml" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

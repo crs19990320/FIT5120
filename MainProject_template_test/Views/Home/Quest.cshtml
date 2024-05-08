@@ -1,0 +1,225 @@
+﻿@{
+    ViewBag.Title = "Quest";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quest Home</title>
+    <style>
+        html, body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #leftbar {
+            position: relative;
+            width: 200px;
+            height: 640px;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(255, 204, 212, 0.63);
+            border-radius: 30px;
+            text-align: center;
+        }
+
+        #topbar {
+            position: relative;
+            width: 1200px;
+            height: 60px;
+            top: 0px;
+            left: 0px;
+            background-color: black;
+            border-radius: 30px;
+            text-align: center;
+        }
+
+        #test {
+            position: absolute;
+            top: 32px;
+            left: 33px;
+            width: 83.5%;
+            height: 59.7%;
+        }
+
+        #svg_puzzle {
+            position: absolute;
+            top: -80px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+        }
+
+        #test {
+            z-index: 1;
+        }
+
+        #svg_puzzle {
+            z-index: 2;
+        }
+
+        #content {
+            position: absolute;
+            left: 370px;
+            top: 100px;
+            width: 582px;
+        }
+
+        .ellipse {
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .ellipse:hover {
+            filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.7));
+        }
+
+        #infoBox {
+            display: none;
+            position: absolute;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgba(39, 55, 70, 0.5);
+            border: 1px solid #ccc;
+            width: auto;
+            transition: all 1s ease;
+        }
+
+        #infoImage {
+            width: 30px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        #infoText {
+            flex: 1;
+            font-size: 13px;
+            color: white;
+        }
+
+        .mp {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .underline {
+            position: relative;
+        }
+
+        .underline:after {
+            content: '';
+            position: absolute;
+            left: 30px;
+            right: 0;
+            bottom: 0;
+            height: 2px; 
+            background-color: black; 
+            width: 140px; /* change size */
+        }
+
+        .quest {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body style="background-image: url('../../media/main_quest_bg.png'); background-size: cover; ">
+    <div style="display: flex; align-items: center; width: 1200px; ">
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style="left:950px">
+            <img src="~/Media/new_logo.png" style=" width: 100px; position: absolute; top: 1px; right:1100px">
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-brown" href="@Url.Action("Dashboard", "Home")" style="font-size:25px;font-weight: bolder;color:black">
+                            <img src="~/Media/Dashboard_Kids.png" alt="Family Icon" style="width: 120px; height: 70px; margin-right: -23px;">
+                            DashBoard
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="card" style=" width: 1200px; height: 700px; margin-top: 20px; background-color: rgba(43, 71, 50, 0.6); border-radius:30px;">
+        <div id="topbar">
+            <h1 style="color:white;">CLIMATE QUESTS</h1>
+        </div>
+
+        <div id="content">
+            <img id="content-image" src="~/Media/puzzle_background.png" style="display: flex; width: 582px; height: 350px; opacity: 0.9; position: absolute; z-index: -1;" />
+            <div id="content-text">Click on a quest to start!</div>
+        </div>
+
+        <div id="leftbar">
+            <h3 style="margin-top:20px;" id="quest1" class="quest">Quest 1</h3>
+            <h3 style="margin-top:20px;" id="quest2" class="quest">Quest 2</h3>
+            <h3 style="margin-top:20px;" id="quest3" class="quest">Quest 3</h3>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+    // click event to all quests
+    document.querySelectorAll('.quest').forEach(item => {
+        item.addEventListener('click', function () {
+
+            var contentImage = document.getElementById('content-image');
+            var contentText = document.getElementById('content-text');
+            // remove all underlines
+            document.querySelectorAll('.quest').forEach(quest => {
+                quest.classList.remove('underline');
+            });
+
+            // add underline for the current quest
+            this.classList.add('underline');
+
+            // update texts for the content
+            switch (this.id) {
+                case 'quest1':
+                    contentImage.src = '../Media/cat1.png'; 
+                    contentText.innerHTML = 'Details for Quest 1...';
+                    break;
+                case 'quest2':
+                    contentImage.src = '../Media/frog1.png';
+                    contentText.innerHTML = 'Details for Quest 2...';
+                    break;
+                case 'quest3':
+                    contentImage.src = '../Media/fox1.png';
+                    contentText.innerHTML = 'Details for Quest 3...';
+                    break;
+                //default:
+                //    contentImage.src = '~/Media/puzzle_background.png';
+                //    contentText.innerHTML = 'Click on a quest to start!';
+                //    break;
+            }
+        });
+    });
+</script>
+
+<script>
+    // by default show quest1
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('quest1').click();
+    });
+</script>
+
+@*<div id="InfoJourney">
+        <div style="display: flex; align-items: center; width: 800px; position: absolute; left: 500px;">
+            <h4 style="position: absolute; left: 70px; top: 20px; font-size: 15px; color: ghostwhite; font-weight: bold;">Your Reward Count:</h4>
+            <h4 style="text-align: left; flex: 1;">
+                <img src="~/Media/puzzlePiece.png" style=" width: 60px; position: absolute; left: 60px; top: 40px;" />
+                <a id="pieceNumber" style="position: absolute; left: 120px; top: 48px; font-size: 30px; color: ghostwhite; font-weight: bold;"> 0 </a>
+            </h4>
+            <h6 style="color:ghostwhite;text-align: right; position: absolute; flex: 1; right: 140px; top: 40px; width: 350px;">
+                Earn all <img src="~/Media/puzzlePiece.png" style="width: 20px;" /> by completing the checklist.
+                Puzzles refresh weekly.
+            </h6>
+        </div>
+    </div>*@

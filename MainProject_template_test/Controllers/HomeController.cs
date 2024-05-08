@@ -189,6 +189,11 @@ namespace MainProject_template_test.Controllers
             return View();
         }
 
+        public ActionResult Quest()
+        {
+            return View();
+        }
+
         [HttpPost]
         public JsonResult Register()
         {
@@ -260,10 +265,52 @@ namespace MainProject_template_test.Controllers
 
         }
 
-        public ActionResult indexBaker()
+        public ActionResult Interaction()
         {
-            return View();
+            var differences = new List<Rectangle>
+            {
+                new Rectangle { X = 101, Y = 514, Width = 597, Height = 565 },
+                new Rectangle { X = 191, Y = 830, Width = 197, Height = 165 },
+                new Rectangle { X = 356, Y = 441, Width = 197, Height = 165 },
+                new Rectangle { X = 503, Y = 175, Width = 197, Height = 165 },
+                new Rectangle { X = 634, Y = 540, Width = 197, Height = 165 },
+                new Rectangle { X = 713, Y = 883, Width = 197, Height = 165 },
+                new Rectangle { X = 1018, Y = 897, Width = 197, Height = 165 },
+                new Rectangle { X = 1066, Y = 514, Width = 197, Height = 165 },
+                new Rectangle { X = 1546, Y = 270, Width = 197, Height = 165 },
+            };
+
+            var model = new Difference
+            {
+                Image1Path = "../Media/Task_2_1.png",
+                Image2Path = "../Media/Task_2_2.png",
+                Differences = differences
+            };
+
+            Session["GameData"] = model;
+
+            return View(model);
         }
 
+<<<<<<< Updated upstream
+=======
+        //[HttpPost]
+        //public JsonResult ValidateClick(int x, int y)
+        //{
+        //    var model = Session["GameData"] as Difference;
+
+        //    if (model == null || model.Differences == null)
+        //    {
+        //        return Json(false);
+        //    }
+
+        //    // 如果 (x, y) 在任何一个差异的矩形区域内则返回 true
+        //    bool isCorrect = model.Differences.Any(rect =>
+        //        x >= rect.X && x <= (rect.X + rect.Width) &&
+        //        y >= rect.Y && y <= (rect.Y + rect.Height));
+
+        //    return Json(isCorrect);
+        //}
+>>>>>>> Stashed changes
     }
 }
