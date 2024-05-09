@@ -453,10 +453,14 @@
     <Content Include="Media\new_logo.png" />
     <Content Include="Media\Note.jpg" />
     <Content Include="Media\page_background4.png" />
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     <Content Include="Media\panda.png" />
     <Content Include="Media\Pig.png" />
 =======
+=======
+    <Content Include="Media\parent1_new.png" />
+>>>>>>> Stashed changes
     <Content Include="Media\parent_page1.png" />
     <Content Include="Media\parent_page2.png" />
 >>>>>>> 72c0b405305ca5f45af4fd5fcc0c9606cf521f46
@@ -758,8 +762,8 @@
     <Content Include="scss_baker\bootstrap\scss\_type.scss" />
     <Content Include="scss_baker\bootstrap\scss\_utilities.scss" />
     <Content Include="scss_baker\bootstrap\scss\_variables.scss" />
-<<<<<<< Updated upstream
     <Content Include="Views\Home\indexBaker.cshtml" />
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     <Content Include="Views\Home\Leaderboard.cshtml" />
     <Content Include="Views\Home\LoginChoicePage.cshtml" />
@@ -770,6 +774,11 @@
     <Content Include="Views\Home\Quest.cshtml" />
 >>>>>>> Stashed changes
 >>>>>>> 72c0b405305ca5f45af4fd5fcc0c9606cf521f46
+=======
+    <Content Include="Views\Home\Parents.cshtml" />
+    <Content Include="Views\Home\Interaction.cshtml" />
+    <Content Include="Views\Home\Quest.cshtml" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

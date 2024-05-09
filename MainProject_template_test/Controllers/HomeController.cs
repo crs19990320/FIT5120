@@ -319,8 +319,6 @@ namespace MainProject_template_test.Controllers
         }
 =======
 
-<<<<<<< Updated upstream
-=======
         //[HttpPost]
         //public JsonResult ValidateClick(int x, int y)
         //{
@@ -338,7 +336,10 @@ namespace MainProject_template_test.Controllers
 
         //    return Json(isCorrect);
         //}
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 >>>>>>> 72c0b405305ca5f45af4fd5fcc0c9606cf521f46
+=======
+>>>>>>> Stashed changes
     }
 }
