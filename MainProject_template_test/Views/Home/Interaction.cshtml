@@ -1,0 +1,159 @@
+﻿@using MainProject_template_test.Models
+
+@{
+    var differences = (List<Rectangle>)Model.Differences;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spot the Differences Game</title>
+    <style>
+        /* 为页面和图片容器添加基本样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            margin: 20px 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        #image-container {
+            position:absolute;
+            display: flex;
+            justify-content: center;
+            left:30px;
+            bottom:100px;
+            align-items: center;
+            gap: 20px; /* 图片间距 */
+            background-color: transparent;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        img {
+            width: 700px;
+            max-width: 1920px;
+            max-height: 1080px;
+            object-fit: contain;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .recarousel__slide {
+            flex: 0 0 100%;
+            width: 100%;
+        }
+
+        @*@: @media (max-width: 1200px) {
+            /* 响应式设计：缩小图片大小 */
+            img {
+                max-width: 100%;
+                height: auto;
+            }*@
+        }
+
+    </style>
+</head>
+<body>
+    <h1 style="margin-bottom:400px;">Spot the Differences Game</h1>
+    <div id="image-container">
+        <img id="image1" src="@Model.Image1Path" alt="First Image">
+        <img id="image2" src="@Model.Image2Path" alt="Second Image">
+        <svg width="1000" height="500" style="position: absolute; left: 450px; bottom:20px;">
+            <circle id="c1" cx="370" cy="420" r="30" fill="transparent" stroke="#E74C3C" stroke-width="3px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+            <circle id="c2" cx="410" cy="430" r="30" fill="transparent" stroke="#9B59B6" stroke-width="3px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+            <circle id="c3" cx="460" cy="300" r="30" fill="transparent" stroke="#82E0AA" stroke-width="3px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+            <circle id="c4" cx="510" cy="210" r="30" fill="transparent" stroke="#EB984E" stroke-width="3px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+            <circle id="c5" cx="555" cy="325" r="30" fill="transparent" stroke="#F89DF0" stroke-width="3px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+            <circle id="c6" cx="580" cy="440" r="30" fill="transparent" stroke="#5DADE2" stroke-width="3px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+            <circle id="c7" cx="685" cy="440" r="30" fill="transparent" stroke="#1C298A" stroke-width="3px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+            <circle id="c8" cx="695" cy="315" r="30" fill="transparent" stroke="#D1D3DB" stroke-width="3px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+            <circle id="c9" cx="850" cy="240" r="30" fill="transparent" stroke="#F4D03F" stroke-width="3px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+        </svg>
+    </div>
+
+
+</body>
+</html>
+ 
+<script>
+    let chooseCircle = null;
+
+    function enlargeAndMoveToFront(circle) {
+        if (chooseCircle !== circle) {
+            circle.setAttribute('r', parseInt(circle.getAttribute('r')) + 10);
+            circle.parentNode.appendChild(circle);
+            if (chooseCircle) {
+                circle.parentNode.appendChild(chooseCircle);
+            }
+        }
+    }
+
+    function resetRadius(circle) {
+        if (chooseCircle !== circle) {
+            circle.setAttribute('r', parseInt(circle.getAttribute('r')) - 10);
+        }
+    }
+
+    function handleCircleClick(circle) {
+        if (chooseCircle !== circle) {
+            if (chooseCircle) {
+                chooseCircle.setAttribute('r', parseInt(chooseCircle.getAttribute('r')) - 25);
+            }
+            circle.setAttribute('r', parseInt(circle.getAttribute('r')) + 15);
+            circle.parentNode.appendChild(circle);
+            chooseCircle = circle;
+            console.log(`Circle ${circle.id} is now active and enlarged.`);
+        }
+    }
+
+</script>
+
+@*<script>
+    var discoveredAreas = [];
+
+    document.getElementById('image2').addEventListener('click', function (e) {
+        var x = e.offsetX;
+        var y = e.offsetY;
+
+        fetch('/Home/ValidateClick', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ x: x, y: y })
+        }).then(response => response.json())
+            .then(isCorrect => {
+                if (isCorrect) {
+                    if (!discoveredAreas.some(area => Math.abs(area.x - x) < 25 && Math.abs(area.y - y) < 25)) {
+                        discoveredAreas.push({ x: x, y: y });
+
+                        var marker = document.createElement('div');
+                        marker.style.position = 'absolute';
+                        marker.style.border = '2px solid red';
+                        marker.style.width = '50px';
+                        marker.style.height = '50px';
+                        marker.style.borderRadius = '50%';
+                        marker.style.left = `${x - 25}px`;
+                        marker.style.top = `${y - 25}px`;
+                        marker.style.pointerEvents = 'none';
+                        document.body.appendChild(marker);
+                    }
+                }
+            });
+    });
+</script>*@
