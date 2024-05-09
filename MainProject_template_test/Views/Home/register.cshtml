@@ -60,16 +60,16 @@
 
         .recarousel {
             position: absolute;
-            height: 500px;
+            height: 750px;
             width: 1300px;
             overflow: hidden;
-            top: 200px;
+            top: 100px;
         }
 
         .recarousel__slides {
             display: flex;
             transition: transform 1s ease;
-            height: 500px;
+            height: 750px;
         }
 
         .recarousel__slide {
@@ -79,21 +79,29 @@
 
         .recarousel__button--prev, .recarousel__button--next {
             position: absolute;
-            top: 400px;
-            background-color: #fff;
+            top: 600px;
             border: none;
-            width: 150px;
-            height: 60px;
+            width: 250px;
+            height: 110px;
             border-radius: 20px;
             z-index: 100;
+            background-color: transparent;
+            font-size: 30px;
+            font-weight: bold;
         }
 
         .recarousel__button--prev {
-            left: 10px;
+            background-image: url('../../Media/left_button.png');
+            background-size: cover;
+            background-position: center;
+            left: 50px;
         }
 
         .recarousel__button--next {
-            right: 10px;
+            background-image: url('../../Media/right_button.png');
+            background-size: cover;
+            background-position: center;
+            right: 0px;
         }
 
         circle {
@@ -170,7 +178,7 @@
                 image.style.transition = "transform 0.3s ease";
                 activeImage = image;
                 tempAnimal = image.alt;
-                tempsrc = image.src;
+                tempsrc = "../Media/" + image.alt + ".png";
             }
         }
     </script>
@@ -320,52 +328,54 @@
 
     <div class="recarousel">
         <button id="buttonprev"class="recarousel__button--prev">Go Back</button>
-        <div class="recarousel__slides">
-            <div class="recarousel__slide">
-                <div style="text-align:center; margin-top:20px;">
-                    <p style="font-size:60px; font-family: 'Lobster Two', cursive;">
-                        On this page we will help you to create a user name! <br />
-                        Ready?
+        <div class="recarousel__slides" >
+            <div class="recarousel__slide" style="background-image: url('../../Media/login_window2.png'); background-size: cover;">
+                <div style="position: absolute; width: 350px; margin-top: 20px; left: 230px;">
+                    <p style="font-size:40px; font-family: 'Lobster Two', cursive;">
+                        Choose your color and animal.
                     </p>
+                    <svg width="1000" height="170" viewBox="0 80 1000 150" style="position: absolute; left: 30px; top: 220px;">
+                        <circle id="Red" cx="100" cy="150" r="50" fill="#E74C3C" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="Purple" cx="200" cy="150" r="50" fill="#9B59B6" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="Green" cx="300" cy="150" r="50" fill="#82E0AA" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="Orange" cx="400" cy="150" r="50" fill="#EB984E" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="Pink" cx="500" cy="150" r="50" fill="#F89DF0" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="Blue" cx="600" cy="150" r="50" fill="#5DADE2" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="Navy" cx="700" cy="150" r="50" fill="#1C298A" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="Grey" cx="800" cy="150" r="50" fill="#D1D3DB" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="Yellow" cx="900" cy="150" r="50" fill="#F4D03F" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                    </svg>
+
+                    <div style="position: absolute; width: 1000px; height: 150px; top: 370px; left: 30px; ">
+                        <img src="../Media/whale1.png" alt="Whale" style="position: relative; width: 96px; height: 96px; margin-top: 50px; margin-left: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                        <img src="../Media/tiger1.png" alt="Tiger" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                        <img src="../Media/squirrel1.png" alt="Squirrel" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                        <img src="../Media/rat1.png" alt="Rat" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                        <img src="../Media/raccoon1.png" alt="Raccoon" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                        <img src="../Media/pig1.png" alt="Pig" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                        <img src="../Media/frog1.png" alt="Frog" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                        <img src="../Media/fox1.png" alt="Fox" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                        <img src="../Media/cat1.png" alt="Cat" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                    </div>
+                    <div class="usernameWarning" style="position: absolute; left: 700px; width: 300px; height: 30px; top: 550px;">
+
+                    </div>
                 </div>
             </div>
-            <div class="recarousel__slide">
-                <svg width="1000" height="170" viewBox="0 80 1000 150" style="position: absolute; left: 1450px;">
-                    <circle id="Red" cx="100" cy="150" r="50" fill="#E74C3C" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                    <circle id="Purple" cx="200" cy="150" r="50" fill="#9B59B6" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                    <circle id="Green" cx="300" cy="150" r="50" fill="#82E0AA" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                    <circle id="Orange" cx="400" cy="150" r="50" fill="#EB984E" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                    <circle id="Pink" cx="500" cy="150" r="50" fill="#F89DF0" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                    <circle id="Blue" cx="600" cy="150" r="50" fill="#5DADE2" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                    <circle id="Navy" cx="700" cy="150" r="50" fill="#1C298A" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                    <circle id="Grey" cx="800" cy="150" r="50" fill="#D1D3DB" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                    <circle id="Yellow" cx="900" cy="150" r="50" fill="#F4D03F" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                </svg>
 
-                <div style="position: absolute; width: 1000px; height: 150px;top:150px; left: 1450px; ">
-                    <img src="../Media/whale1.png" alt="Whale" style="position: relative; width: 96px; height: 96px; margin-top: 50px; margin-left: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
-                    <img src="../Media/tiger1.png" alt="Tiger" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
-                    <img src="../Media/squirrel1.png" alt="Squirrel" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
-                    <img src="../Media/rat1.png" alt="Rat" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
-                    <img src="../Media/raccoon1.png" alt="Raccoon" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
-                    <img src="../Media/pig1.png" alt="Pig" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
-                    <img src="../Media/frog1.png" alt="Frog" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
-                    <img src="../Media/fox1.png" alt="Fox" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
-                    <img src="../Media/cat1.png" alt="Cat" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
-                </div>
-                <div class="usernameWarning" style="position: absolute; left: 2300px; width: 300px; height: 30px; top: 350px;">
-
-                </div>
-            </div>
-            <div class="recarousel__slide">
+            <div class="recarousel__slide" style=" background-image: url('../../Media/login_window3.png'); background-size: cover;">
                 <div class="display" style="text-align:center; margin-top:20px;">
-                    <p style="font-size:50px; font-family: 'Lobster Two', cursive;">
-                        This is your username. Please remember the id behind "#".
+                    <p style="font-size: 40px; font-family: 'Lobster Two', cursive; width: 400px; left: 1490px; position: absolute;">
+                        Here's' your username. Remember the #ID!
                     </p>
-                    <svg width="100" height="100">
-                        <circle id="showSVG" cx="50" cy="50" r="40" />
-                     </svg>
-                    <img  id="animalusername" src="~/Media/fox1.png" style="width:80px;height:80px;">
+                    <svg width="200" height="200" style="position: absolute; top: 300px; left: 1740px;">
+                        <circle id="showSVG" cx="100" cy="100" r="100" />
+                    </svg>
+                    <img id="animalusername" src="~/Media/fox1.png" style="width: 200px; height: 200px; position: relative; left: -110px; top: 280px;">
+                    <svg width="200" height="200" style="position: absolute; top: 300px; left: 1940px;">
+                        <circle id="showSVG" cx="100" cy="100" r="100" fill="#185576"/>
+                    </svg>
+                    <div class="IDdisplay" style="position: absolute; width: 100px; height: 100px; font-size: 50px; left: 1930px; top: 360px; color: white;"></div>
                 </div>
             </div>
             @*<div class="recarousel__slide">
@@ -440,44 +450,65 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const slides = document.querySelectorAll('.recarousel__slide');
-            const prevButton = document.querySelector('.recarousel__button--prev');
-            const nextButton = document.querySelector('.recarousel__button--next');
-            let currentIndex = 0;
-            let currentID = "";
+        let currentID = "";
+
+        window.onload = function () {
             $.ajax({
                 url: '/Home/Register',
                 type: 'POST',
                 success: function (response) {
                     if (response.success) {
-                        currentID = response.userTableRowCount
+                        console.log('success');
+                        currentID = response.userTableRowCount;
+                    }
+                },
+                error: function () {
+                }
+            });
+        };
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.recarousel__slide');
+            const prevButton = document.querySelector('.recarousel__button--prev');
+            const nextButton = document.querySelector('.recarousel__button--next');
+            let currentIndex = 0;
+            var $buttonnext = $('#buttonnext');
+            $buttonnext.prop('disabled', true);
+            var $buttonprev = $('#buttonprev');
+            $buttonprev.prop('disabled', true);
+            $.ajax({
+                url: '/Home/Register',
+                type: 'POST',
+                success: function (response) {
+                    if (response.success) {
+                        currentID = response.userTableRowCount;
+                        $buttonnext.prop('disabled', false);
+                        $buttonprev.prop('disabled', false);
                     }
                 },
                 error: function () {
                 }
             });
             if (currentIndex == 0) {
-                document.getElementById('buttonprev').style.display = 'none';
-                document.getElementById('buttonnext').textContent = "I'm ready!";
+                document.getElementById('buttonprev').textContent = 'BACK';
+                document.getElementById('buttonnext').textContent = "CONFIRM";
             }
             
             function updateCarousel() {
                 const newTransformValue = -100 * currentIndex;
                 document.querySelector('.recarousel__slides').style.transform = `translateX(${newTransformValue}%)`;
                 if (currentIndex == 0) {
-                    document.getElementById('buttonprev').style.display = 'none';
-                    document.getElementById('buttonnext').textContent = "I'm ready!";
+                    document.getElementById('buttonprev').textContent = 'BACK';
+                    document.getElementById('buttonnext').textContent = "CONFIRM";
                 }
                 else if (currentIndex == 1) {
-                    document.getElementById('buttonprev').style.display = 'block';
-                    document.getElementById('buttonnext').textContent = "Confirm!";
-                    document.getElementById('buttonprev').textContent = "Maybe not that ready....";
+                    document.getElementById('buttonnext').textContent = "FINISH";
+                    document.getElementById('buttonprev').textContent = "BACK";
                 }
-                else if (currentIndex == 2) {
+                /*else if (currentIndex == 2) {
                     document.getElementById('buttonnext').textContent = "Confirm!";
                     document.getElementById('buttonprev').textContent = "I want to change something...";
-                }
+                }*/
                 /* else if (currentIndex == 3) {
                     document.getElementById('buttonnext').textContent = "submit password!";
                     document.getElementById('buttonprev').textContent = "I want to change something...";
@@ -490,6 +521,8 @@
             }
 
             prevButton.addEventListener('click', function () {
+                let descriptionDiv = document.querySelector('.IDdisplay');
+                descriptionDiv.innerHTML = '';
                 if (currentIndex > 0) {
                     currentIndex--;
                     updateCarousel();
@@ -500,7 +533,7 @@
             nextButton.addEventListener('click', function () {
                 usernameRecord = tempColor + "-" + tempAnimal;
                 let jsonUserName = usernameRecord + "#" + currentID;
-                if (currentIndex == 1) {
+                if (currentIndex == 0) {
                     if (tempColor == "" || tempAnimal == "") {
                         let wdescriptionDiv = document.querySelector('.usernameWarning');
                         let wMessage = document.createElement('p');
@@ -518,21 +551,21 @@
                     }
                     document.getElementById('showSVG').setAttribute('fill', tempFill);
                     document.getElementById('animalusername').src=tempsrc;
-                    let descriptionDiv = document.querySelector('.display');
+                    let descriptionDiv = document.querySelector('.IDdisplay');
                     let Message = document.createElement('p');
                     Message.textContent = "#" + currentID
                     Message.className = 'pcmessage';
-                    Message.style.position = 'absolute';
+                    /*Message.style.position = 'absolute';
                     Message.style.width = '100px';
                     Message.style.height = '100px';
                     Message.style.fontSize = '40px';
-                    Message.style.left = '3320px';
-                    Message.style.top = '135px';
-                    Message.style.color = 'black';
+                    Message.style.left = '2320px';
+                    Message.style.top = '135px';*/
+                    Message.style.color = 'white';
                     descriptionDiv.appendChild(Message);
 
                 }
-                if (currentIndex == 2) {
+                if (currentIndex == 1) {
                     $.ajax({
                         url: '/Home/RecordRegister',
                         type: 'POST',

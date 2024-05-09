@@ -199,6 +199,23 @@ namespace MainProject_template_test.Controllers
         }
 
         [HttpPost]
+        public JsonResult RegisterIDGen()
+        {
+            Boolean signal = false;
+            SQLController sqlController = new SQLController();
+            Random random = new Random();
+            String idnumber = "";
+            while (!signal)
+            {
+                int randomNumber = random.Next(1, 10000);
+                idnumber = randomNumber.ToString("D4");
+                signal = sqlController.checkID(idnumber);
+            }
+           
+            return Json(new { success = true, message = "Registration successful", userTableRowCount = idnumber });
+        }
+
+        [HttpPost]
         public JsonResult RecordRegister(int id, string UserName)
         {
             SQLController sqlController = new SQLController();
@@ -264,6 +281,13 @@ namespace MainProject_template_test.Controllers
         {
             return View();
         }
-
+        public ActionResult Leaderboard()
+        {
+            return View();
+        }
+        public ActionResult LoginChoicePage()
+        {
+            return View();
+        }
     }
 }

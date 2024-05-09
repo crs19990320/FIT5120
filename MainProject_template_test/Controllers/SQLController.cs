@@ -58,6 +58,26 @@ namespace MainProject_template_test.Controllers
             }
 
         }
+
+        public List<string> GetAllUsernames()
+        {
+            var usernames = db.userTable.Select(u => u.USERNAME).ToList();
+
+            return usernames;
+        }
+        public bool checkID(string idnumber)
+        {
+            List<string> usernames = GetAllUsernames();
+            foreach (string username in usernames)
+            {
+                string id = username.Split('#')[1];
+                if (id == idnumber)
+                {
+                    return false; 
+                }
+            }
+            return true;
+        }
     }
 
     

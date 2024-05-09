@@ -399,10 +399,12 @@
     <Content Include="Media\article7_1.png" />
     <Content Include="Media\back.png" />
     <Content Include="Media\bicycle.png" />
+    <Content Include="Media\board_profile.png" />
     <Content Include="Media\bstars_3.png" />
     <Content Include="Media\bstars_5.png" />
     <Content Include="Media\bstars_7.png" />
     <Content Include="Media\camping_1.png" />
+    <Content Include="Media\Cat.png" />
     <Content Include="Media\cat1.png" />
     <Content Include="Media\Choice.png" />
     <Content Include="Media\co2.jpg" />
@@ -414,7 +416,9 @@
     <Content Include="Media\energy.png" />
     <Content Include="Media\Explore.png" />
     <Content Include="Media\faq.png" />
+    <Content Include="Media\Fox.png" />
     <Content Include="Media\fox1.png" />
+    <Content Include="Media\Frog.png" />
     <Content Include="Media\frog1.png" />
     <Content Include="Media\garden.png" />
     <Content Include="Media\giphy2.gif" />
@@ -436,30 +440,41 @@
     <Content Include="Media\LandingPage.png" />
     <Content Include="Media\Learn.png" />
     <Content Include="Media\LearnVideo.png" />
+    <Content Include="Media\left_button.png" />
+    <Content Include="Media\login_window1.png" />
+    <Content Include="Media\login_window2.png" />
+    <Content Include="Media\login_window3.png" />
     <Content Include="Media\logo.png" />
     <Content Include="Media\map_background.png" />
     <Content Include="Media\Mom&amp;Dad.png" />
     <Content Include="Media\new_logo.png" />
     <Content Include="Media\Note.jpg" />
     <Content Include="Media\page_background4.png" />
+    <Content Include="Media\panda.png" />
+    <Content Include="Media\Pig.png" />
     <Content Include="Media\pig1.png" />
     <Content Include="Media\Play.png" />
     <Content Include="Media\puzzle.png" />
     <Content Include="Media\puzzlebackground.png" />
     <Content Include="Media\puzzlePiece.png" />
     <Content Include="Media\puzzle_background.png" />
+    <Content Include="Media\Raccoon.png" />
     <Content Include="Media\raccoon1.png" />
+    <Content Include="Media\Rat.png" />
     <Content Include="Media\rat1.png" />
     <Content Include="Media\recycle.png" />
     <Content Include="Media\reset.png" />
+    <Content Include="Media\right_button.png" />
     <Content Include="Media\scale_gas.png" />
     <Content Include="Media\scale_temp.png" />
     <Content Include="Media\scale_water.png" />
+    <Content Include="Media\Squirrel.png" />
     <Content Include="Media\squirrel1.png" />
     <Content Include="Media\star.png" />
     <Content Include="Media\StartGame .png" />
     <Content Include="Media\Statuses2.png" />
     <Content Include="Media\testPic.png" />
+    <Content Include="Media\Tiger.png" />
     <Content Include="Media\tiger1.png" />
     <Content Include="Media\underwater.mp4" />
     <Content Include="Media\videoParent1.png" />
@@ -472,6 +487,7 @@
     <Content Include="Media\Walking.png" />
     <Content Include="Media\water_irrigation.png" />
     <Content Include="Media\WelcomePage.png" />
+    <Content Include="Media\Whale.png" />
     <Content Include="Media\whale1.png" />
     <Content Include="Models\Login.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -732,6 +748,8 @@
     <Content Include="scss_baker\bootstrap\scss\_utilities.scss" />
     <Content Include="scss_baker\bootstrap\scss\_variables.scss" />
     <Content Include="Views\Home\indexBaker.cshtml" />
+    <Content Include="Views\Home\Leaderboard.cshtml" />
+    <Content Include="Views\Home\LoginChoicePage.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
