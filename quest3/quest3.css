@@ -1,0 +1,78 @@
+#main-container {
+    display: flex;
+    justify-content: center; /* Center the container horizontally */
+    align-items: center; /* Center the container vertically */
+    width: 100vw; /* Sets the width to cover 100% of the viewport width */
+    height: 95vh; /* Sets the height to cover 100% of the viewport height */
+}
+
+
+#imageContainer {
+    display: flex;
+    justify-content: center; /* Center the container horizontally */
+    align-items: center; /* Center the container vertically */
+    width: 800px;   /* Sets the width of the div to 300 pixels */
+    height: 200px;
+    padding: 300px; /* Add padding to create space between the elements and the container edges */
+    background-image: url('task3/Interactive quests - background.png'); /* Update with your actual image path */
+    background-size: cover; /* This ensures the background covers the entire area */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+.instruction {
+    font-weight: bold;
+    font-size: 60px;
+    text-align: center;
+    color: rgb(43, 43, 48);
+}
+
+.icon {
+    cursor: pointer;
+    margin: 10px;
+    width: 400px;
+    height: auto;
+}
+
+.icon:hover {
+    transform: scale(1.2); /* Scales the icon up by 20% */
+}
+
+
+/* Form and button styling */
+#question-form button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#question-form button:hover {
+    background-color: #0056b3;
+}
+
+
+.question-container {
+    /* Styles for question text and answer options */
+    margin-left: 400px; /* Adjust as needed */
+    margin-top: 200px
+}
+
+.button-container {
+    /* Styles for button container */
+    margin-top: 200px; /* Adjust as needed */
+}
+
+.button-container button {
+    /* Styles for buttons */
+    margin-right: 10px; /* Adjust as needed */
+}
+
+.hidden {
+    display: none;
+}
+
