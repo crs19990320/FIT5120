@@ -1,8 +1,4 @@
-﻿@{
-    ViewBag.Title = "Quest";
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,7 +16,7 @@
             height: 640px;
             top: 0px;
             left: 0px;
-            background-color: rgba(255, 204, 212, 0.63);
+            background-color: rgba(255, 255, 255, 0.7);
             border-radius: 30px;
             text-align: center;
         }
@@ -67,45 +63,6 @@
             width: 582px;
         }
 
-        .ellipse {
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .ellipse:hover {
-            filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.7));
-        }
-
-        #infoBox {
-            display: none;
-            position: absolute;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 10px;
-            border-radius: 10px;
-            background-color: rgba(39, 55, 70, 0.5);
-            border: 1px solid #ccc;
-            width: auto;
-            transition: all 1s ease;
-        }
-
-        #infoImage {
-            width: 30px;
-            height: auto;
-            margin-right: 20px;
-        }
-
-        #infoText {
-            flex: 1;
-            font-size: 13px;
-            color: white;
-        }
-
-        .mp {
-            margin-top: 0;
-            margin-bottom: 0;
-        }
-
         .underline {
             position: relative;
         }
@@ -116,13 +73,37 @@
             left: 30px;
             right: 0;
             bottom: 0;
-            height: 2px; 
-            background-color: black; 
+            height: 2px;
+            background-color: black;
             width: 140px; /* change size */
         }
 
         .quest {
             cursor: pointer;
+        }
+
+        #image-container {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            left: -150px;
+            top: 200px;
+            align-items: center;
+            gap: 20px; /* gap between pics */
+            background-color: transparent;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        img {
+            width: 450px;
+            max-width: 1920px;
+            max-height: 1080px;
+            object-fit: contain;
+            border: none;
+            border-radius: 8px;
+            box-shadow: none;
         }
     </style>
 </head>
@@ -145,7 +126,7 @@
         </nav>
     </div>
 
-    <div class="card" style=" width: 1200px; height: 700px; margin-top: 20px; background-color: rgba(43, 71, 50, 0.6); border-radius:30px;">
+    <div class="card" style=" width: 1200px; height: 700px; margin-top: 20px; background-color: rgba(255, 204, 212, 0.63); border-radius: 30px;">
         <div id="topbar">
             <h1 style="color:white;">CLIMATE QUESTS</h1>
         </div>
@@ -153,6 +134,24 @@
         <div id="content">
             <img id="content-image" src="~/Media/puzzle_background.png" style="display: flex; width: 582px; height: 350px; opacity: 0.9; position: absolute; z-index: -1;" />
             <div id="content-text">Click on a quest to start!</div>
+            <div id="specialDiv" style="display: none;">
+                <div id="image-container">
+                    <img id="image1" src="~/Media/Task_2_1.png" alt="First Image">
+                    <img id="image2" src="~/Media/Task_2_2.png" alt="Second Image">
+                    <svg width="1000" height="500" style="position: absolute; left: 450px; bottom:20px;">
+                        <circle id="c1" cx="88" cy="385" r="10" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c2" cx="110" cy="460" r="10" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c3" cx="145" cy="370" r="10" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c4" cx="180" cy="300" r="20" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c5" cx="220" cy="390" r="10" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c6" cx="230" cy="470" r="10" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c7" cx="305" cy="475" r="10" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c8" cx="313" cy="375" r="30" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c9" cx="426" cy="320" r="15" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                    </svg>
+                </div>
+            </div>
+
         </div>
 
         <div id="leftbar">
@@ -183,14 +182,19 @@
             // update texts for the content
             switch (this.id) {
                 case 'quest1':
-                    contentImage.src = '../Media/cat1.png'; 
+                    document.getElementById('specialDiv').style.display = 'none';
+                    contentImage.src = '../Media/cat1.png';
                     contentText.innerHTML = 'Details for Quest 1...';
                     break;
                 case 'quest2':
                     contentImage.src = '../Media/frog1.png';
                     contentText.innerHTML = 'Details for Quest 2...';
+                    // 获取 div 并更改其显示属性
+                    var specialDiv = document.getElementById('specialDiv');
+                    specialDiv.style.display = 'block'; // 或 'flex'，取决于你的布局需求
                     break;
                 case 'quest3':
+                    document.getElementById('specialDiv').style.display = 'none';
                     contentImage.src = '../Media/fox1.png';
                     contentText.innerHTML = 'Details for Quest 3...';
                     break;
@@ -210,16 +214,35 @@
     });
 </script>
 
-@*<div id="InfoJourney">
-        <div style="display: flex; align-items: center; width: 800px; position: absolute; left: 500px;">
-            <h4 style="position: absolute; left: 70px; top: 20px; font-size: 15px; color: ghostwhite; font-weight: bold;">Your Reward Count:</h4>
-            <h4 style="text-align: left; flex: 1;">
-                <img src="~/Media/puzzlePiece.png" style=" width: 60px; position: absolute; left: 60px; top: 40px;" />
-                <a id="pieceNumber" style="position: absolute; left: 120px; top: 48px; font-size: 30px; color: ghostwhite; font-weight: bold;"> 0 </a>
-            </h4>
-            <h6 style="color:ghostwhite;text-align: right; position: absolute; flex: 1; right: 140px; top: 40px; width: 350px;">
-                Earn all <img src="~/Media/puzzlePiece.png" style="width: 20px;" /> by completing the checklist.
-                Puzzles refresh weekly.
-            </h6>
-        </div>
-    </div>*@
+<script>
+    let chooseCircle = null;
+
+    function enlargeAndMoveToFront(circle) {
+        if (chooseCircle !== circle) {
+            circle.setAttribute('r', parseInt(circle.getAttribute('r')) + 10);
+            circle.parentNode.appendChild(circle);
+            if (chooseCircle) {
+                circle.parentNode.appendChild(chooseCircle);
+            }
+        }
+    }
+
+    function resetRadius(circle) {
+        if (chooseCircle !== circle) {
+            circle.setAttribute('r', parseInt(circle.getAttribute('r')) - 10);
+        }
+    }
+
+    function handleCircleClick(circle) {
+        if (chooseCircle !== circle) {
+            if (chooseCircle) {
+                chooseCircle.setAttribute('r', parseInt(chooseCircle.getAttribute('r')) - 25);
+            }
+            circle.setAttribute('r', parseInt(circle.getAttribute('r')) + 15);
+            circle.parentNode.appendChild(circle);
+            chooseCircle = circle;
+            console.log(`Circle ${circle.id} is now active and enlarged.`);
+        }
+    }
+
+</script>
