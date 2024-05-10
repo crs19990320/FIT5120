@@ -418,6 +418,7 @@
     <Content Include="Media\energy.png" />
     <Content Include="Media\Explore.png" />
     <Content Include="Media\faq.png" />
+    <Content Include="Media\forest_bg.png" />
     <Content Include="Media\Fox.png" />
     <Content Include="Media\fox1.png" />
     <Content Include="Media\Frog.png" />
@@ -440,6 +441,7 @@
     <Content Include="Media\kid1.jpg" />
     <Content Include="Media\kid3.jpg" />
     <Content Include="Media\LandingPage.png" />
+    <Content Include="Media\leaderboard_name.png" />
     <Content Include="Media\Learn.png" />
     <Content Include="Media\LearnVideo.png" />
     <Content Include="Media\left_button.png" />
@@ -453,13 +455,10 @@
     <Content Include="Media\new_logo.png" />
     <Content Include="Media\Note.jpg" />
     <Content Include="Media\page_background4.png" />
-<<<<<<< HEAD
     <Content Include="Media\panda.png" />
     <Content Include="Media\Pig.png" />
-=======
     <Content Include="Media\parent_page1.png" />
     <Content Include="Media\parent_page2.png" />
->>>>>>> 72c0b405305ca5f45af4fd5fcc0c9606cf521f46
     <Content Include="Media\pig1.png" />
     <Content Include="Media\Play.png" />
     <Content Include="Media\puzzle.png" />
@@ -468,6 +467,7 @@
     <Content Include="Media\puzzle_background.png" />
     <Content Include="Media\Raccoon.png" />
     <Content Include="Media\raccoon1.png" />
+    <Content Include="Media\ranking_star.png" />
     <Content Include="Media\Rat.png" />
     <Content Include="Media\rat1.png" />
     <Content Include="Media\recycle.png" />
@@ -758,18 +758,12 @@
     <Content Include="scss_baker\bootstrap\scss\_type.scss" />
     <Content Include="scss_baker\bootstrap\scss\_utilities.scss" />
     <Content Include="scss_baker\bootstrap\scss\_variables.scss" />
-<<<<<<< Updated upstream
     <Content Include="Views\Home\indexBaker.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\Home\Leaderboard.cshtml" />
     <Content Include="Views\Home\LoginChoicePage.cshtml" />
-=======
-=======
     <Content Include="Views\Home\Parents.cshtml" />
     <Content Include="Views\Home\Interaction.cshtml" />
     <Content Include="Views\Home\Quest.cshtml" />
->>>>>>> Stashed changes
->>>>>>> 72c0b405305ca5f45af4fd5fcc0c9606cf521f46
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject_template_test\\views\\home\\leaderboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:views\\home\\leaderboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Leaderboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:Views\\Home\\Leaderboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject_template_test\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject_template_test\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject_template_test\\views\\home\\homepage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:views\\home\\homepage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|d:\\monash\\5120\u00265122\\assessments\\fit5120\\mainproject_template_test\\views\\home\\puzzle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:views\\home\\puzzle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Controllers\\SQLController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\LearnPage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:Views\\Home\\LearnPage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0369479C-F6B6-4119-B41F-D33BFE38DAD2}|MainProject_template_test.csproj|solutionrelative:Views\\Home\\Login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -55,14 +59,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAALUAAAAAAAAAAADwv9IAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T13:56:14.004Z",
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Login.cshtml",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Login.cshtml",
+              "RelativeToolTip": "Views\\Home\\Login.cshtml",
+              "ViewState": "AQIAAA4BAAAAAAAAAAAAACABAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-09T17:57:52.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Puzzle.cshtml",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Puzzle.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Puzzle.cshtml",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Puzzle.cshtml",
+              "RelativeToolTip": "Views\\Home\\Puzzle.cshtml",
+              "ViewState": "AQIAAB0BAAAAAAAAAAAAAC8BAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-09T17:54:37.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomePage.cshtml",
+              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\HomePage.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\HomePage.cshtml",
+              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\HomePage.cshtml",
+              "RelativeToolTip": "Views\\Home\\HomePage.cshtml",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAADwAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-09T17:19:28.031Z",
               "EditorCaption": ""
             },
             {
@@ -73,46 +103,33 @@
               "RelativeDocumentMoniker": "Views\\Home\\Leaderboard.cshtml",
               "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Leaderboard.cshtml",
               "RelativeToolTip": "Views\\Home\\Leaderboard.cshtml",
-              "ViewState": "AQIAADkAAAAAAAAAAAAAAF0AAABrAAAA",
+              "ViewState": "AQIAAAoBAAAAAAAAAAAAACkBAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-08T13:56:03.464Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Login.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Login.cshtml",
-              "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\Login.cshtml",
-              "RelativeToolTip": "Views\\Home\\Login.cshtml",
-              "ViewState": "AQIAAPkAAAAAAAAAAAAAABUBAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-01T09:02:42.867Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "LearnPage.cshtml",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\LearnPage.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\LearnPage.cshtml",
               "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Views\\Home\\LearnPage.cshtml",
               "RelativeToolTip": "Views\\Home\\LearnPage.cshtml",
-              "ViewState": "AQIAALkAAAAAAAAAAAAAAL4AAAA/AAAA",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAAAL4AAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-08T13:09:38.458Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "SQLController.cs",
               "DocumentMoniker": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Controllers\\SQLController.cs",
               "RelativeDocumentMoniker": "Controllers\\SQLController.cs",
               "ToolTip": "D:\\Monash\\5120\u00265122\\Assessments\\FIT5120\\MainProject_template_test\\Controllers\\SQLController.cs",
               "RelativeToolTip": "Controllers\\SQLController.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAgwEYAAAAyAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAA+wB4AAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-01T03:58:47.744Z",
               "EditorCaption": ""

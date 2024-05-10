@@ -375,7 +375,7 @@
                     <svg width="200" height="200" style="position: absolute; top: 300px; left: 1940px;">
                         <circle id="showSVG" cx="100" cy="100" r="100" fill="#185576"/>
                     </svg>
-                    <div class="IDdisplay" style="position: absolute; width: 100px; height: 100px; font-size: 50px; left: 1930px; top: 360px; color: white;"></div>
+                    <div class="IDdisplay" style="position: absolute; width: 100px; height: 100px; font-size: 50px; left: 1960px; top: 360px; color: white;"></div>
                 </div>
             </div>
             @*<div class="recarousel__slide">
@@ -451,21 +451,6 @@
 
     <script>
         let currentID = "";
-
-        window.onload = function () {
-            $.ajax({
-                url: '/Home/Register',
-                type: 'POST',
-                success: function (response) {
-                    if (response.success) {
-                        console.log('success');
-                        currentID = response.userTableRowCount;
-                    }
-                },
-                error: function () {
-                }
-            });
-        };
         
         document.addEventListener('DOMContentLoaded', function () {
             const slides = document.querySelectorAll('.recarousel__slide');
@@ -477,7 +462,7 @@
             var $buttonprev = $('#buttonprev');
             $buttonprev.prop('disabled', true);
             $.ajax({
-                url: '/Home/Register',
+                url: '/Home/RegisterIDGen',
                 type: 'POST',
                 success: function (response) {
                     if (response.success) {

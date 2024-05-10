@@ -28,7 +28,7 @@ namespace MainProject_template_test.Controllers
         public void InsertUser(int id, string username)
         {
             var user = new userTable();
-            user.ID = id;
+            user.ID = GetUserTableRowCount() + 1;
             user.USERNAME = username;
 
             db.userTable.Add(user);
