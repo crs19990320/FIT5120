@@ -56,6 +56,17 @@
 
     <!-- Template Stylesheet -->
     <link href="~/css/style.css" rel="stylesheet">
+
+    <script>
+        sessionStorage.setItem('currentWeek', "week1");
+        var defaultUsername = "default";
+
+        var storedUsername = sessionStorage.getItem('username');
+        if (!storedUsername || storedUsername === defaultUsername) {
+            sessionStorage.setItem('username', defaultUsername);
+        } else {
+        }
+    </script>
 </head>
 
 <body>

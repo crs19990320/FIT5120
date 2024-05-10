@@ -1,0 +1,629 @@
+﻿@{
+    ViewBag.Title = "register";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Layout</title>
+
+    <!-- Favicon -->
+    <link href="~/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="~/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="~/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+
+    @*Template Stylesheet*@
+    <link href="~/css/style.css" rel="stylesheet">
+
+    <style>
+        .navbar-nav .nav-link {
+            position: relative;
+            transition: color 0.5s, border-bottom 0.5s;
+            margin-right: 20px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: orangered;
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 2px;
+            width: 100%;
+            height: 2px;
+            background-color: orangered;
+            transition: width 0.5s;
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+
+        .navbar-nav .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+
+        .recarousel {
+            position: absolute;
+            height: 750px;
+            width: 1300px;
+            overflow: hidden;
+            top: 100px;
+        }
+
+        .recarousel__slides {
+            display: flex;
+            transition: transform 1s ease;
+            height: 750px;
+        }
+
+        .recarousel__slide {
+            flex: 0 0 100%;
+            width: 100%;
+        }
+
+        .recarousel__button--prev, .recarousel__button--next {
+            position: absolute;
+            top: 600px;
+            border: none;
+            width: 250px;
+            height: 110px;
+            border-radius: 20px;
+            z-index: 100;
+            background-color: transparent;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .recarousel__button--prev {
+            background-image: url('../../Media/left_button.png');
+            background-size: cover;
+            background-position: center;
+            left: 50px;
+        }
+
+        .recarousel__button--next {
+            background-image: url('../../Media/right_button.png');
+            background-size: cover;
+            background-position: center;
+            right: 0px;
+        }
+
+        circle {
+            transition: r 0.3s ease;
+        }
+    </style>
+    <script>
+        let usernameRecord = "";
+        let passwordRecord = "";
+        let PasswordConfirmRecord = "";
+        let tempColor = "";
+        let tempAnimal = "";
+        let tempFill = "";
+        let tempsrc = "";
+
+        let chooseCircle = null;
+
+        function enlargeAndMoveToFront(circle) {
+            if (chooseCircle !== circle) {
+                circle.setAttribute('r', parseInt(circle.getAttribute('r')) + 10);
+                circle.parentNode.appendChild(circle);
+                if (chooseCircle) {
+                    circle.parentNode.appendChild(chooseCircle);
+                }
+            }
+
+        }
+
+        function resetRadius(circle) {
+            if (chooseCircle !== circle) {
+                circle.setAttribute('r', parseInt(circle.getAttribute('r')) - 10);
+            }
+        }
+
+        function handleCircleClick(circle) {
+            if (chooseCircle !== circle) {
+                if (chooseCircle) {
+                    chooseCircle.setAttribute('r', parseInt(chooseCircle.getAttribute('r')) - 25);
+                }
+                circle.setAttribute('r', parseInt(circle.getAttribute('r')) + 15);
+                circle.parentNode.appendChild(circle);
+                chooseCircle = circle;
+                tempColor = circle.id;
+                tempFill = circle.getAttribute('fill');
+            }
+        }
+    </script>
+    <script>
+        let activeImage = null;
+        let smallImage = null;
+        function enlargeAndToFront(image) {
+            if (activeImage !== image) {
+                image.style.transform = 'scale(1.2)';
+                image.style.zIndex = "10";
+            }
+        }
+
+        function resetImageSize(image) {
+            if (activeImage !== image) {
+                image.style.transform = 'none';
+                image.style.zIndex = "1";
+                image.style.transition = "transform 0.3s ease";
+            }
+        }
+
+        function imageClicked(image) {
+            if (activeImage !== image) {
+                if (activeImage) {
+                    activeImage.style.transform = 'none';
+                    image.style.zIndex = "1";
+                }
+                image.style.transform = 'scale(1.5)';
+                image.style.zIndex = "20";
+                image.style.transition = "transform 0.3s ease";
+                activeImage = image;
+                tempAnimal = image.alt;
+                tempsrc = "../Media/" + image.alt + ".png";
+            }
+        }
+    </script>
+    @*<script>
+            let clickSequence = [];
+            function reset() {
+                clickSequence = [];
+                let descriptionDiv = document.querySelector('.password-description');
+                let smallImages = descriptionDiv.querySelectorAll('.small_image');
+                let Messages = descriptionDiv.querySelectorAll('.pmessage');
+                smallImages.forEach(image => {
+                    image.remove();
+                });
+                Messages.forEach(p => {
+                    p.remove();
+                })
+            }
+            function enlarge(image) {
+                image.style.transform = 'scale(1.1)';
+                image.style.opacity = 0.85;
+            }
+
+            function resetpImage(image) {
+                image.style.transform = 'none';
+                image.style.opacity = 0.7;
+                image.style.transition = "transform 0.3s ease";
+            }
+
+            function pimageClicked(image) {
+                let index = Array.prototype.indexOf.call(image.parentNode.children, image) + 1;
+                clickSequence.push(index);
+                if (clickSequence.length > 4) {
+                    let Message = document.createElement('p');
+                    Message.textContent = "The length of the password should not over 4!"
+                    Message.className = 'pmessage';
+                    Message.style.width = '400px';
+                    Message.style.height = '30px';
+                    Message.style.fontSize = '15px';
+                    Message.style.color = 'red';
+                    clickSequence.pop(index)
+                    let descriptionDiv = document.querySelector('.password-description');
+                    descriptionDiv.appendChild(Message);
+                    setTimeout(function () {
+                        Message.remove();
+                    }, 3000);
+                } else {
+                    image.style.transform = 'scale(1.2)';
+                    image.style.transition = "transform 0.3s ease";
+
+
+                    let smallImage = document.createElement('img');
+                    smallImage.src = image.src;
+                    smallImage.className = 'small_image';
+                    smallImage.alt = image.alt + '_small';
+                    smallImage.style.width = '50px';
+                    smallImage.style.height = '50px';
+
+                    let descriptionDiv = document.querySelector('.password-description');
+                    descriptionDiv.appendChild(smallImage);
+                }
+            }
+        </script>
+        <script>
+            let clickSequence1 = [];
+            function pcreset() {
+                clickSequence1 = [];
+                let descriptionDiv = document.querySelector('.password-description1');
+                let smallImages = descriptionDiv.querySelectorAll('.small_image1');
+                smallImages.forEach(image => {
+                    image.remove();
+                });
+            }
+            function pcenlarge(image) {
+                image.style.transform = 'scale(1.1)';
+                image.style.opacity = 0.85;
+            }
+
+            function resetpcImage(image) {
+                image.style.transform = 'none';
+                image.style.opacity = 0.7;
+                image.style.transition = "transform 0.3s ease";
+            }
+
+            function pcimageClicked(image) {
+                let index = Array.prototype.indexOf.call(image.parentNode.children, image) + 1;
+                clickSequence1.push(index);
+                if (clickSequence1.length > 4) {
+                    let Message = document.createElement('p');
+                    Message.textContent = "The length of the password should not over 4!"
+                    Message.className = 'pcmessage';
+                    Message.style.width = '400px';
+                    Message.style.height = '30px';
+                    Message.style.fontSize = '15px';
+                    Message.style.color = 'red';
+                    clickSequence1.pop(index)
+                    let descriptionDiv = document.querySelector('.password-description1');
+                    descriptionDiv.appendChild(Message);
+                    setTimeout(function () {
+                        Message.remove();
+                    }, 3000);
+                } else {
+                image.style.transform = 'scale(1.2)';
+                image.style.transition = "transform 0.3s ease";
+
+
+                let smallImage = document.createElement('img');
+                smallImage.src = image.src;
+                smallImage.className = 'small_image1';
+                smallImage.alt = image.alt + '_small';
+                smallImage.style.width = '50px';
+                smallImage.style.height = '50px';
+
+                let descriptionDiv = document.querySelector('.password-description1');
+                descriptionDiv.appendChild(smallImage);
+
+
+                }
+            }
+        </script>*@
+</head>
+
+<body style="background-image:url('../Media/page_background4.png'); background-repeat:no-repeat">
+    <div style="display: flex; align-items: center;">
+        <h1 style="text-align: left; margin-bottom: 20px; flex: 1; font-family: 'Lobster Two', cursive;">
+            <img src="~/Media/anonymous1.png" /> Hi, Guest!
+        </h1>
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style=" font-size: 25px;width:550px">
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-brown" href="@Url.Action("HomePage", "Home")" style="font-weight: bolder; width:250px">
+                            <img src="~/Media/Home.png" alt="Family Icon" style="width: 100px; height: 60px; margin-right: -20px;">
+                            HomePage
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-brown" href="@Url.Action("Parents", "Home")" style="font-weight: bolder; width:380px">
+                            <img src="~/Media/Dashboard_for_MomDad.png" alt="Family Icon" style="width: 100px; height: 60px; margin-right: -20px;">
+                            For Mom & Dad
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="recarousel">
+        <button id="buttonprev"class="recarousel__button--prev">Go Back</button>
+        <div class="recarousel__slides" >
+            <div class="recarousel__slide" style="background-image: url('../../Media/login_window2.png'); background-size: cover;">
+                <div style="position: absolute; width: 350px; margin-top: 20px; left: 230px;">
+                    <p style="font-size:40px; font-family: 'Lobster Two', cursive;">
+                        Choose your color and animal.
+                    </p>
+                    <svg width="1000" height="170" viewBox="0 80 1000 150" style="position: absolute; left: 30px; top: 220px;">
+                        <circle id="Red" cx="100" cy="150" r="50" fill="#E74C3C" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="Purple" cx="200" cy="150" r="50" fill="#9B59B6" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="Green" cx="300" cy="150" r="50" fill="#82E0AA" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="Orange" cx="400" cy="150" r="50" fill="#EB984E" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="Pink" cx="500" cy="150" r="50" fill="#F89DF0" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="Blue" cx="600" cy="150" r="50" fill="#5DADE2" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="Navy" cx="700" cy="150" r="50" fill="#1C298A" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="Grey" cx="800" cy="150" r="50" fill="#D1D3DB" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="Yellow" cx="900" cy="150" r="50" fill="#F4D03F" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                    </svg>
+
+                    <div style="position: absolute; width: 1000px; height: 150px; top: 370px; left: 30px; ">
+                        <img src="../Media/whale1.png" alt="Whale" style="position: relative; width: 96px; height: 96px; margin-top: 50px; margin-left: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                        <img src="../Media/tiger1.png" alt="Tiger" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                        <img src="../Media/squirrel1.png" alt="Squirrel" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                        <img src="../Media/rat1.png" alt="Rat" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                        <img src="../Media/raccoon1.png" alt="Raccoon" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                        <img src="../Media/pig1.png" alt="Pig" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                        <img src="../Media/frog1.png" alt="Frog" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                        <img src="../Media/fox1.png" alt="Fox" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                        <img src="../Media/cat1.png" alt="Cat" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
+                    </div>
+                    <div class="usernameWarning" style="position: absolute; left: 700px; width: 300px; height: 30px; top: 550px;">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="recarousel__slide" style=" background-image: url('../../Media/login_window3.png'); background-size: cover;">
+                <div class="display" style="text-align:center; margin-top:20px;">
+                    <p style="font-size: 40px; font-family: 'Lobster Two', cursive; width: 400px; left: 1490px; position: absolute;">
+                        Here's' your username. Remember the #ID!
+                    </p>
+                    <svg width="200" height="200" style="position: absolute; top: 300px; left: 1740px;">
+                        <circle id="showSVG" cx="100" cy="100" r="100" />
+                    </svg>
+                    <img id="animalusername" src="~/Media/fox1.png" style="width: 200px; height: 200px; position: relative; left: -110px; top: 280px;">
+                    <svg width="200" height="200" style="position: absolute; top: 300px; left: 1940px;">
+                        <circle id="showSVG" cx="100" cy="100" r="100" fill="#185576"/>
+                    </svg>
+                    <div class="IDdisplay" style="position: absolute; width: 100px; height: 100px; font-size: 50px; left: 1930px; top: 360px; color: white;"></div>
+                </div>
+            </div>
+            @*<div class="recarousel__slide">
+            <div class="display" style="text-align:center; margin-top:20px;">
+                <p style="font-size:60px; font-family: 'Lobster Two', cursive;">
+                    Then, we will help you to create a password! <br />
+                    Ready?
+                </p>
+            </div>
+        </div>
+        <div class="recarousel__slide">
+            <div class="display" style="text-align:center; margin-top:20px;">
+                <p style="font-size:60px; font-family: 'Lobster Two', cursive;">
+                    Create a password!
+                </p>
+                <input type="password" id="pasword" />
+                <p style="font-size:60px; font-family: 'Lobster Two', cursive;">
+                    Confirm your password!
+                </p>
+                <input type="password" id="confirmpassword" />
+                <div class="password_detial"></div>
+            </div>
+        </div>*@
+
+            @* <div class="recarousel__slide">
+            <div style="position: absolute; width: 1100px; height: 500px; left: 4000px;">
+                <div class="password-description" style="width: 400px; position: absolute; text-align: center; left: 150px;">
+                    <p style="font-size:40px; font-family: 'Lobster Two', cursive;">
+                        Select animals as your password!
+                    </p>
+                </div>
+                <div id="pimg" style="position: absolute; width: 500px; left: 600px;">
+                    <img src="../Media/whale1.png" alt="pimg1" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 20px; opacity: 0.7;" onmouseover="enlarge(this)" onmouseout="resetpImage(this)" onclick="pimageClicked(this)">
+                    <img src="../Media/tiger1.png" alt="pimg2" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 20px; opacity: 0.7;" onmouseover="enlarge(this)" onmouseout="resetpImage(this)" onclick="pimageClicked(this)">
+                    <img src="../Media/squirrel1.png" alt="pimg3" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 20px; opacity: 0.7;" onmouseover="enlarge(this)" onmouseout="resetpImage(this)" onclick="pimageClicked(this)">
+                    <img src="../Media/rat1.png" alt="pimg4" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7;" onmouseover="enlarge(this)" onmouseout="resetpImage(this)" onclick="pimageClicked(this)">
+                    <img src="../Media/raccoon1.png" alt="pimg5" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7;" onmouseover="enlarge(this)" onmouseout="resetpImage(this)" onclick="pimageClicked(this)">
+                    <img src="../Media/pig1.png" alt="pimg6" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7;" onmouseover="enlarge(this)" onmouseout="resetpImage(this)" onclick="pimageClicked(this)">
+                    <img src="../Media/frog1.png" alt="pimg7" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7; " onmouseover="enlarge(this)" onmouseout="resetpImage(this)" onclick="pimageClicked(this)">
+                    <img src="../Media/fox1.png" alt="pimg8" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7;" onmouseover="enlarge(this)" onmouseout="resetpImage(this)" onclick="pimageClicked(this)">
+                    <img src="../Media/cat1.png" alt="pimg9" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7;" onmouseover="enlarge(this)" onmouseout="resetpImage(this)" onclick="pimageClicked(this)">
+                    <button class="resetButton" style=" position: absolute; top: 200px; left: 500px;" onclick="reset()">reset</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="recarousel__slide">
+            <div style="position: absolute; width: 1100px; height: 500px; left: 5200px;">
+                <div class="password-description1" style="width: 400px; position: absolute; text-align: center; left: 150px;">
+                    <p style="font-size:40px; font-family: 'Lobster Two', cursive;">
+                        Confirm your password!
+                    </p>
+                </div>
+                <div id="pcimg" style="position: absolute; width: 500px; left: 600px;">
+                    <img src="../Media/whale1.png" alt="pcimg1" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 20px; opacity: 0.7;" onmouseover="pcenlarge(this)" onmouseout="resetpcImage(this)" onclick="pcimageClicked(this)">
+                    <img src="../Media/tiger1.png" alt="pcimg2" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 20px; opacity: 0.7;" onmouseover="pcenlarge(this)" onmouseout="resetpcImage(this)" onclick="pcimageClicked(this)">
+                    <img src="../Media/squirrel1.png" alt="pcimg3" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 20px; opacity: 0.7;" onmouseover="pcenlarge(this)" onmouseout="resetpcImage(this)" onclick="pcimageClicked(this)">
+                    <img src="../Media/rat1.png" alt="pcimg4" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7;" onmouseover="pcenlarge(this)" onmouseout="resetpcImage(this)" onclick="pcimageClicked(this)">
+                    <img src="../Media/raccoon1.png" alt="pcimg5" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7;" onmouseover="pcenlarge(this)" onmouseout="resetpcImage(this)" onclick="pcimageClicked(this)">
+                    <img src="../Media/pig1.png" alt="pcimg6" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7;" onmouseover="pcenlarge(this)" onmouseout="resetpcImage(this)" onclick="pcimageClicked(this)">
+                    <img src="../Media/frog1.png" alt="pcimg7" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7; " onmouseover="pcenlarge(this)" onmouseout="resetpcImage(this)" onclick="pcimageClicked(this)">
+                    <img src="../Media/fox1.png" alt="pcimg8" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7;" onmouseover="pcenlarge(this)" onmouseout="resetpcImage(this)" onclick="pcimageClicked(this)">
+                    <img src="../Media/cat1.png" alt="pcimg9" style="position: relative; width: 100px; height: 100px; margin-left: 50px; margin-top: 40px; opacity: 0.7;" onmouseover="pcenlarge(this)" onmouseout="resetpcImage(this)" onclick="pcimageClicked(this)">
+                    <button class="pcresetButton" style=" position: absolute; top: 200px; left: 500px;" onclick="pcreset()">reset</button>
+                </div>
+
+            </div>
+        </div>*@
+
+        </div>
+        <button id="buttonnext" class="recarousel__button--next">Next</button>
+    </div>
+
+    <script>
+        let currentID = "";
+
+        window.onload = function () {
+            $.ajax({
+                url: '/Home/Register',
+                type: 'POST',
+                success: function (response) {
+                    if (response.success) {
+                        console.log('success');
+                        currentID = response.userTableRowCount;
+                    }
+                },
+                error: function () {
+                }
+            });
+        };
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.recarousel__slide');
+            const prevButton = document.querySelector('.recarousel__button--prev');
+            const nextButton = document.querySelector('.recarousel__button--next');
+            let currentIndex = 0;
+            var $buttonnext = $('#buttonnext');
+            $buttonnext.prop('disabled', true);
+            var $buttonprev = $('#buttonprev');
+            $buttonprev.prop('disabled', true);
+            $.ajax({
+                url: '/Home/Register',
+                type: 'POST',
+                success: function (response) {
+                    if (response.success) {
+                        currentID = response.userTableRowCount;
+                        $buttonnext.prop('disabled', false);
+                        $buttonprev.prop('disabled', false);
+                    }
+                },
+                error: function () {
+                }
+            });
+            if (currentIndex == 0) {
+                document.getElementById('buttonprev').textContent = 'BACK';
+                document.getElementById('buttonnext').textContent = "CONFIRM";
+            }
+            
+            function updateCarousel() {
+                const newTransformValue = -100 * currentIndex;
+                document.querySelector('.recarousel__slides').style.transform = `translateX(${newTransformValue}%)`;
+                if (currentIndex == 0) {
+                    document.getElementById('buttonprev').textContent = 'BACK';
+                    document.getElementById('buttonnext').textContent = "CONFIRM";
+                }
+                else if (currentIndex == 1) {
+                    document.getElementById('buttonnext').textContent = "FINISH";
+                    document.getElementById('buttonprev').textContent = "BACK";
+                }
+                /*else if (currentIndex == 2) {
+                    document.getElementById('buttonnext').textContent = "Confirm!";
+                    document.getElementById('buttonprev').textContent = "I want to change something...";
+                }*/
+                /* else if (currentIndex == 3) {
+                    document.getElementById('buttonnext').textContent = "submit password!";
+                    document.getElementById('buttonprev').textContent = "I want to change something...";
+                }
+                else if (currentIndex == 4) {
+                    document.getElementById('buttonnext').textContent = "Confirm!";
+                    document.getElementById('buttonprev').textContent = "I want to change something...";
+                }
+                 */
+            }
+
+            prevButton.addEventListener('click', function () {
+                let descriptionDiv = document.querySelector('.IDdisplay');
+                descriptionDiv.innerHTML = '';
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+                
+                            });
+
+            nextButton.addEventListener('click', function () {
+                usernameRecord = tempColor + "-" + tempAnimal;
+                let jsonUserName = usernameRecord + "#" + currentID;
+                if (currentIndex == 0) {
+                    if (tempColor == "" || tempAnimal == "") {
+                        let wdescriptionDiv = document.querySelector('.usernameWarning');
+                        let wMessage = document.createElement('p');
+                        wMessage.textContent = "You need to choose color and animal!"
+                        wMessage.className = 'pcmessage';
+                        wMessage.style.width = '400px';
+                        wMessage.style.height = '30px';
+                        wMessage.style.fontSize = '15px';
+                        wMessage.style.color = 'red';
+                        wdescriptionDiv.appendChild(wMessage);
+                        setTimeout(function () {
+                            wMessage.remove();
+                        }, 3000);
+                        currentIndex--;
+                    }
+                    document.getElementById('showSVG').setAttribute('fill', tempFill);
+                    document.getElementById('animalusername').src=tempsrc;
+                    let descriptionDiv = document.querySelector('.IDdisplay');
+                    let Message = document.createElement('p');
+                    Message.textContent = "#" + currentID
+                    Message.className = 'pcmessage';
+                    /*Message.style.position = 'absolute';
+                    Message.style.width = '100px';
+                    Message.style.height = '100px';
+                    Message.style.fontSize = '40px';
+                    Message.style.left = '2320px';
+                    Message.style.top = '135px';*/
+                    Message.style.color = 'white';
+                    descriptionDiv.appendChild(Message);
+
+                }
+                if (currentIndex == 1) {
+                    $.ajax({
+                        url: '/Home/RecordRegister',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({ id: parseInt(currentID), Username: jsonUserName }),
+                        success: function (response) {
+                            console.log("success");
+                        },
+                        error: function () {
+                            console.log("error");
+                        }
+                    });
+                }
+                 console.log("userName: " + jsonUserName);
+                 
+                    
+                
+                if (currentIndex < slides.length - 1) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+                
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+@*<form id="registrationForm">
+        <label for="UserName">Enter Your User Name:</label>
+        <input type="text" id="UserName" name="UserName">
+        <label for="Password">Enter Your Password:</label>
+        <input type="password" id="Password" name="Password">
+        <label for="CPassword">Confirm Your Password:</label>
+        <input type="password" id="CPassword" name="CPassword">
+        <button type="button" onclick="submitData()">Submit</button>
+    </form>
+    <script>
+        function submitData() {
+            var userData = {
+                UserName: $('#UserName').val(),
+                Password: $('#Password').val(),
+                ConfirmPassword: $('#CPassword').val()
+            };
+
+            $.ajax({
+                url: '/Home/Register',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(userData),
+                success: function (response) {
+                    alert('Registration successful');
+                },
+                error: function (xhr, status, error) {
+                    alert('Error: ' + error.message);
+                }
+            });
+        }
+    </script>*@

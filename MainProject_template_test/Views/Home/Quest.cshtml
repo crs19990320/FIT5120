@@ -58,25 +58,25 @@
 
         #content {
             position: absolute;
-            left: 370px;
-            top: 100px;
-            width: 582px;
+            left: 230px;
+            top: 70px;
+            width: 782px;
         }
 
         .underline {
             position: relative;
         }
 
-        .underline:after {
-            content: '';
-            position: absolute;
-            left: 30px;
-            right: 0;
-            bottom: 0;
-            height: 2px;
-            background-color: black;
-            width: 140px; /* change size */
-        }
+            .underline:after {
+                content: '';
+                position: absolute;
+                left: 30px;
+                right: 0;
+                bottom: 0;
+                height: 2px;
+                background-color: black;
+                width: 140px; /* change size */
+            }
 
         .quest {
             cursor: pointer;
@@ -86,8 +86,8 @@
             position: absolute;
             display: flex;
             justify-content: center;
-            left: -150px;
-            top: 200px;
+            left: -10px;
+            top: 105px;
             align-items: center;
             gap: 20px; /* gap between pics */
             background-color: transparent;
@@ -105,7 +105,25 @@
             border-radius: 8px;
             box-shadow: none;
         }
+
+        #counterDisplay {
+            display: inline-block;
+            padding: 20px 10px;
+            background-color: #FFC880;
+            color: black;
+            font-size: 16px;
+            text-align: center;
+            border-radius: 35px; /* 圆角边框 */
+            border: none; /* 不显示边框 */
+            transition: background-color 0.3s; /* 背景颜色变化的过渡效果 */
+            position: absolute;
+            top: 2px;
+            font-weight:700;
+            width: 180px;
+        }
+
     </style>
+
 </head>
 
 <body style="background-image: url('../../media/main_quest_bg.png'); background-size: cover; ">
@@ -133,21 +151,27 @@
 
         <div id="content">
             <img id="content-image" src="~/Media/puzzle_background.png" style="display: flex; width: 582px; height: 350px; opacity: 0.9; position: absolute; z-index: -1;" />
-            <div id="content-text">Click on a quest to start!</div>
             <div id="specialDiv" style="display: none;">
+                <div style="margin-bottom:20px;">
+                    <card style="background-color: lightcoral; border-radius: 10px; padding: 10px; color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: inline-block; margin: 1px; font-family: Arial, sans-serif; font-weight:bolder; font-size:x-large;">
+                        <img src="~/Media/telescope.png" style="width:30px;" /> Climate Spotter
+                    </card>
+                </div>
+                <span style="font-family: Arial, sans-serif; font-weight: bold; font-size:larger;"><img src="~/Media/note.png" style="width:30px;" />  Spot the changes! Click on the right picture when you find something different!</span>
+                <div id="counterDisplay">Your Track:0/9</div>
                 <div id="image-container">
-                    <img id="image1" src="~/Media/Task_2_1.png" alt="First Image">
-                    <img id="image2" src="~/Media/Task_2_2.png" alt="Second Image">
+                    <img id="image1" src="~/Media/quest2_1_vertical.png" alt="First Image">
+                    <img id="image2" src="~/Media/quest2_2_vertical.png" alt="Second Image">
                     <svg width="1000" height="500" style="position: absolute; left: 450px; bottom:20px;">
-                        <circle id="c1" cx="88" cy="385" r="10" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                        <circle id="c2" cx="110" cy="460" r="10" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                        <circle id="c3" cx="145" cy="370" r="10" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                        <circle id="c4" cx="180" cy="300" r="20" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                        <circle id="c5" cx="220" cy="390" r="10" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                        <circle id="c6" cx="230" cy="470" r="10" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                        <circle id="c7" cx="305" cy="475" r="10" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                        <circle id="c8" cx="313" cy="375" r="30" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                        <circle id="c9" cx="426" cy="320" r="15" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c1" cx="73" cy="220" r="20" fill="transparent" stroke="transparent" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c2" cx="125" cy="240" r="30" fill="transparent" stroke="transparent" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c3" cx="195" cy="100" r="30" fill="transparent" stroke="transparent" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c4" cx="120" cy="330" r="20" fill="transparent" stroke="transparent" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c5" cx="165" cy="455" r="20" fill="transparent" stroke="transparent" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c6" cx="265" cy="470" r="20" fill="transparent" stroke="transparent" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c7" cx="405" cy="410" r="20" fill="transparent" stroke="transparent" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c8" cx="273" cy="280" r="50" fill="transparent" stroke="transparent" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c9" cx="460" cy="180" r="15" fill="transparent" stroke="transparent" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
                     </svg>
                 </div>
             </div>
@@ -160,7 +184,6 @@
             <h3 style="margin-top:20px;" id="quest3" class="quest">Quest 3</h3>
         </div>
     </div>
-
 </body>
 </html>
 
@@ -184,19 +207,16 @@
                 case 'quest1':
                     document.getElementById('specialDiv').style.display = 'none';
                     contentImage.src = '../Media/cat1.png';
-                    contentText.innerHTML = 'Details for Quest 1...';
                     break;
                 case 'quest2':
                     contentImage.src = '../Media/frog1.png';
-                    contentText.innerHTML = 'Details for Quest 2...';
                     // 获取 div 并更改其显示属性
                     var specialDiv = document.getElementById('specialDiv');
-                    specialDiv.style.display = 'block'; // 或 'flex'，取决于你的布局需求
+                    specialDiv.style.display = 'block';
                     break;
                 case 'quest3':
                     document.getElementById('specialDiv').style.display = 'none';
                     contentImage.src = '../Media/fox1.png';
-                    contentText.innerHTML = 'Details for Quest 3...';
                     break;
                 //default:
                 //    contentImage.src = '~/Media/puzzle_background.png';
@@ -215,6 +235,8 @@
 </script>
 
 <script>
+    let clickedCircles = new Set();
+    let counter = 0;
     let chooseCircle = null;
 
     function enlargeAndMoveToFront(circle) {
@@ -234,14 +256,22 @@
     }
 
     function handleCircleClick(circle) {
+        if (!clickedCircles.has(circle.id)) { // 检查集合中是否已有该圆圈
+            clickedCircles.add(circle.id); // 添加圆圈ID到集合
+            counter++; // 计数器增加
+            document.getElementById('counterDisplay').textContent = `Your Track:${counter}/9`;
+        }
+
         if (chooseCircle !== circle) {
             if (chooseCircle) {
                 chooseCircle.setAttribute('r', parseInt(chooseCircle.getAttribute('r')) - 25);
             }
+            circle.setAttribute('stroke', '#E74C3C');
             circle.setAttribute('r', parseInt(circle.getAttribute('r')) + 15);
             circle.parentNode.appendChild(circle);
             chooseCircle = circle;
             console.log(`Circle ${circle.id} is now active and enlarged.`);
+            
         }
     }
 

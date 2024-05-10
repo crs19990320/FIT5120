@@ -454,20 +454,25 @@
     <Content Include="Media\Mom&amp;Dad.png" />
     <Content Include="Media\new_logo.png" />
     <Content Include="Media\Note.jpg" />
+    <Content Include="Media\note.png" />
     <Content Include="Media\page_background4.png" />
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     <Content Include="Media\panda.png" />
     <Content Include="Media\Pig.png" />
 =======
 <<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
     <Content Include="Media\panda.png" />
     <Content Include="Media\Pig.png" />
-=======
-=======
     <Content Include="Media\parent1_new.png" />
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 >>>>>>> 6d9a9e1b51ecca322266f354924a972521d37607
+=======
+>>>>>>> Stashed changes
     <Content Include="Media\parent_page1.png" />
     <Content Include="Media\parent_page2.png" />
     <Content Include="Media\pig1.png" />
@@ -476,6 +481,8 @@
     <Content Include="Media\puzzlebackground.png" />
     <Content Include="Media\puzzlePiece.png" />
     <Content Include="Media\puzzle_background.png" />
+    <Content Include="Media\quest2_1_vertical.png" />
+    <Content Include="Media\quest2_2_vertical.png" />
     <Content Include="Media\Raccoon.png" />
     <Content Include="Media\raccoon1.png" />
     <Content Include="Media\ranking_star.png" />
@@ -495,6 +502,7 @@
     <Content Include="Media\Task_2_1.png" />
     <Content Include="Media\Task_2_2.png" />
     <Content Include="Media\Task_2_3.png" />
+    <Content Include="Media\telescope.png" />
     <Content Include="Media\testPic.png" />
     <Content Include="Media\Tiger.png" />
     <Content Include="Media\tiger1.png" />
@@ -769,17 +777,21 @@
     <Content Include="scss_baker\bootstrap\scss\_type.scss" />
     <Content Include="scss_baker\bootstrap\scss\_utilities.scss" />
     <Content Include="scss_baker\bootstrap\scss\_variables.scss" />
+<<<<<<< Updated upstream
     <Content Include="Views\Home\indexBaker.cshtml" />
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
 <<<<<<< HEAD
 >>>>>>> 6d9a9e1b51ecca322266f354924a972521d37607
+=======
+>>>>>>> Stashed changes
     <Content Include="Views\Home\Leaderboard.cshtml" />
     <Content Include="Views\Home\LoginChoicePage.cshtml" />
     <Content Include="Views\Home\Parents.cshtml" />
     <Content Include="Views\Home\Interaction.cshtml" />
     <Content Include="Views\Home\Quest.cshtml" />
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
@@ -790,6 +802,8 @@
     <Content Include="Views\Home\Quest.cshtml" />
 >>>>>>> Stashed changes
 >>>>>>> 6d9a9e1b51ecca322266f354924a972521d37607
+=======
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
