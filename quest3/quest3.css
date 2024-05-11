@@ -72,6 +72,34 @@
     margin-right: 10px; /* Adjust as needed */
 }
 
+.button-container img:hover {
+    transform: scale(1.1); /* Increase the scale to 110% on hover */
+    transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+#answer-feedback {
+    display: none; /* Initially hide the feedback */
+    margin-top: 230px; /* Add some space between the answers and feedback */
+    margin-left: 270px;
+    font-size: 20px; /* Adjust font size */
+    position: absolute; /* Set position to absolute */
+    top: 50%; /* Adjust the distance from the top */
+    left: 50%; /* Adjust the distance from the left */
+    transform: translate(-50%, -50%); /* Center the element */
+}
+
+.correct-feedback {
+    color: green; /* Style for correct feedback */
+}
+
+.incorrect-feedback {
+    color: red; /* Style for incorrect feedback */
+}
+
+.no-selection {
+    color: red; /* Style for no selection */
+}
+
 .hidden {
     display: none;
 }
