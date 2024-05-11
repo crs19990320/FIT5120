@@ -456,23 +456,11 @@
     <Content Include="Media\Note.jpg" />
     <Content Include="Media\note.png" />
     <Content Include="Media\page_background4.png" />
-<<<<<<< Updated upstream
-<<<<<<< HEAD
     <Content Include="Media\panda.png" />
     <Content Include="Media\Pig.png" />
-=======
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
     <Content Include="Media\panda.png" />
     <Content Include="Media\Pig.png" />
     <Content Include="Media\parent1_new.png" />
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
->>>>>>> 6d9a9e1b51ecca322266f354924a972521d37607
-=======
->>>>>>> Stashed changes
     <Content Include="Media\parent_page1.png" />
     <Content Include="Media\parent_page2.png" />
     <Content Include="Media\pig1.png" />
@@ -537,6 +525,24 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model11.cs</LastGenOutput>
     </Content>
+    <Content Include="quest3\quest3.css" />
+    <Content Include="quest3\quest3.html" />
+    <Content Include="quest3\quest3.js" />
+    <Content Include="quest3\task3\correct.png" />
+    <Content Include="quest3\task3\element1.png" />
+    <Content Include="quest3\task3\element10.png" />
+    <Content Include="quest3\task3\element2.png" />
+    <Content Include="quest3\task3\element3.png" />
+    <Content Include="quest3\task3\element4.png" />
+    <Content Include="quest3\task3\element5.png" />
+    <Content Include="quest3\task3\element6.png" />
+    <Content Include="quest3\task3\element7.png" />
+    <Content Include="quest3\task3\element8.png" />
+    <Content Include="quest3\task3\element9.png" />
+    <Content Include="quest3\task3\incorrect.png" />
+    <Content Include="quest3\task3\Interactive quests - background.png" />
+    <Content Include="quest3\task3\Interactive quests - bg.png" />
+    <Content Include="quest3\task3\Interactive quests - Quiz.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -588,6 +594,7 @@
     <Content Include="Views\classes.html" />
     <Content Include="Views\contact.html" />
     <Content Include="Views\facility.html" />
+    <None Include="Views\Home\quest3.cshtml" />
     <Content Include="Views\index.html" />
     <Content Include="Views\team.html" />
     <Content Include="Views\testimonial.html" />
@@ -777,33 +784,12 @@
     <Content Include="scss_baker\bootstrap\scss\_type.scss" />
     <Content Include="scss_baker\bootstrap\scss\_utilities.scss" />
     <Content Include="scss_baker\bootstrap\scss\_variables.scss" />
-<<<<<<< Updated upstream
-    <Content Include="Views\Home\indexBaker.cshtml" />
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< HEAD
->>>>>>> 6d9a9e1b51ecca322266f354924a972521d37607
-=======
->>>>>>> Stashed changes
     <Content Include="Views\Home\Leaderboard.cshtml" />
     <Content Include="Views\Home\LoginChoicePage.cshtml" />
     <Content Include="Views\Home\Parents.cshtml" />
-    <Content Include="Views\Home\Interaction.cshtml" />
     <Content Include="Views\Home\Quest.cshtml" />
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> 72c0b405305ca5f45af4fd5fcc0c9606cf521f46
-=======
     <Content Include="Views\Home\Parents.cshtml" />
-    <Content Include="Views\Home\Interaction.cshtml" />
     <Content Include="Views\Home\Quest.cshtml" />
->>>>>>> Stashed changes
->>>>>>> 6d9a9e1b51ecca322266f354924a972521d37607
-=======
->>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

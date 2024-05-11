@@ -194,6 +194,11 @@ namespace MainProject_template_test.Controllers
             return View();
         }
 
+        public ActionResult quest3()
+        {
+            return View();
+        }
+
         [HttpPost]
         public JsonResult Register()
         {
@@ -308,10 +313,6 @@ namespace MainProject_template_test.Controllers
 
             return View(model);
         }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
         public ActionResult Leaderboard()
         {
             return View();
@@ -321,8 +322,6 @@ namespace MainProject_template_test.Controllers
             return View();
         }
 
-<<<<<<< HEAD
-=======
         //[HttpPost]
         //public JsonResult ValidateClick(int x, int y)
         //{
@@ -340,14 +339,5 @@ namespace MainProject_template_test.Controllers
 
         //    return Json(isCorrect);
         //}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
->>>>>>> 72c0b405305ca5f45af4fd5fcc0c9606cf521f46
-=======
->>>>>>> Stashed changes
->>>>>>> 6d9a9e1b51ecca322266f354924a972521d37607
-=======
->>>>>>> Stashed changes
     }
 }
