@@ -13,10 +13,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jaini&display=swap" rel="stylesheet">
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
+
     <style>
-        html,body{
-            overflow:hidden
+        html, body {
+            overflow: hidden
         }
+
         .progress-container {
             width: 80px;
             height: 2px;
@@ -48,7 +51,7 @@
     <div style="display: flex; align-items: center; width: 1200px;">
 
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style="left: 1000px;">
-            <img src="~/Media/new_logo.png" style=" width: 100px; position: absolute; top: 1px; right:1200px">
+            <img src="~/Media/new_logo.png" style=" width: 100px; position: absolute; top: 1px; right:1100px">
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -62,11 +65,11 @@
         </nav>
 
         <div id="bothboard" class="card" style="background-color: transparent; position: absolute; width: 1300px; height: 700px; top: 170px; border-radius: 30px; border-width: 0px; transform: scale(1.1);">
-            <div id="defaultuser" class="card" style=" position: absolute; width: 1280px; height: 700px; top: -27px; left: 3px; border-radius: 30px; border-width: 0px; z-index: 20;">
+            <div id="defaultuser" class="card" style=" position: absolute; width: 1100px; height: 600px; top: 38px; left: 99px; border-radius: 30px; border-width: 0px; z-index: 20;">
                 <img id="defaultsignin" src="~/Media/leaderboard_back-to-register.png" />
-                <p id="default_message" style=" position: absolute; margin-bottom: 0px; color: white; font-weight: bold; font-size: 50px; width: 500px; left: 412px; top: 160px; text-align: center;"> Please create an account to see the leaderboard. </p>
-                <button id="defaultbutton" style=" position: absolute; z-index: 50; background-color: #0A4938; color: white; font-size: 30px; border-radius: 30px; width: 240px; left: 538px; top: 399px;" onclick="gotoLoginorRegister()">SIGN UP HERE</button>
-                <img id="loadinggif" src="~/Media/grey-9026_128.gif" style="position: absolute; left: 607px; top: 248px;" />
+                <p id="default_message" style=" position: absolute; margin-bottom: 0px; color: white; font-weight: bold; font-size: 40px; width: 400px; left: 375px; top: 122px; text-align: center; pointer-events: auto;"> Please create an account to see the leaderboard. </p>
+                <button id="defaultbutton" style=" position: absolute; z-index: 50; background-color: #0A4938; color: white; font-size: 30px; border-radius: 30px; width: 240px; left: 458px; top: 349px;" onclick="gotoLoginorRegister()">SIGN UP HERE</button>
+                <img id="loadinggif" src="~/Media/grey-9026_128.gif" style="position: absolute; left: 507px; top: 220px;" />
             </div>
             <div id="indboard" style="height: 650px; position: absolute; background-image: url('../../Media/board_profile.png'); background-size: cover; width: 390px; border-radius: 30px;">
                 <div style="position: absolute; left: 160px; top: 170px;">
@@ -109,6 +112,7 @@
                         </div>
                     </div>
                 </div>
+                <button style=" position: absolute; top: 499px; left: 141px;;" onclick="captureAndDownload()">Save my profile.</button>
             </div>
             <div id="allboard" style=" height: 600px; position: absolute; right: 25px; top: 25px; width: 870px; background-image:url('../../Media/forest_bg.png')">
                 <div style="width: 830px; height: 570px; position: absolute; left: 20px; top: 15px; background-color: rgba(23, 26, 31, 0.66);">
@@ -216,6 +220,8 @@
         let sortedJson = {};
         var urank = "";
         var username = sessionStorage.getItem('username');
+        document.getElementById('indboard').style.transform = "scale(0.1)";
+        document.getElementById('allboard').style.transform = "scale(0.1)";
         if (username == "PlaceHolder-Panda#0000") {
             document.getElementById('defaultsignin').disabled = false;
             document.getElementById('default_message').style.pointerEvents = 'auto';
@@ -223,6 +229,7 @@
             document.getElementById('loadinggif').style.display = 'none';
         }
         else {
+            
             document.getElementById('defaultsignin').disabled = false;
             document.getElementById('loadinggif').style.display = 'block';
             document.getElementById('default_message').style.pointerEvents = 'auto';
@@ -249,6 +256,8 @@
                 url: '/Home/GetScore',
                 type: 'GET',
                 success: function (response) {
+                    document.getElementById('indboard').style.transform = "scale(1)";
+                    document.getElementById('allboard').style.transform = "scale(1)";
                     totalScore = response.jsonScore;
                     tempJson = JSON.parse(response.jsonScore);
                     for (let key in tempJson) {
@@ -291,6 +300,7 @@
                         }
                     }
                     document.getElementById('defaultuser').style.opacity = 0;
+                    document.getElementById('defaultuser').style.transform = "scale(0.1)";
                     urank = (sortedJson[username.replace("-", '').split("#")[0]].index + 1).toString();
                     document.getElementById('rankU').textContent = urank;
                     var Urank = document.getElementById('rankU').textContent;
@@ -415,7 +425,17 @@
         document.getElementById('yourScore').textContent = ScoreRecord;
         document.getElementById('totalScoreU').textContent = ScoreRecord;
 
+        function captureAndDownload() {
+            const element = document.getElementById('indboard');
 
+            html2canvas(element).then(canvas => {
+
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = 'profile_screenshot.png'; 
+                link.click(); 
+            });
+        }
 
     </script>
 

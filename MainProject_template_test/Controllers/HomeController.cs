@@ -349,8 +349,7 @@ namespace MainProject_template_test.Controllers
             return View();
         }
 
-<<<<<<< HEAD
-=======
+
         //[HttpPost]
         //public JsonResult ValidateClick(int x, int y)
         //{
@@ -368,6 +367,6 @@ namespace MainProject_template_test.Controllers
 
         //    return Json(isCorrect);
         //}
->>>>>>> a5ee65ec1aa254258a9bcd9f4fb503da7fccfa68
+
     }
 }

@@ -238,19 +238,18 @@
     <div style="display: flex; align-items: center;">
         <div id="usernameshow" style="width: 700px;">
             <svg width="100" height="100" style=" position: relative; left: -18px; top: 0px;">
-                <circle id="dashboardusercolor" cx="50" cy="50" r="40" stroke="black" stroke-width="1" />
+                <circle id="dashboardusercolor" cx="50" cy="50" r="40" fill="white" stroke="black" stroke-width="1" />
             </svg>
-            <img id="dashboarduseranimal" src="~/Media/panda.png" style="width: 75px; height: 75px; position: relative; top: 0px; left: -109px;">
+            <img id="dashboarduseranimal" src="~/Media/unregistered_user.png" style="width: 75px; height: 75px; position: relative; top: 0px; left: -109px;">
         </div>
-        <h4 style="text-align: left; position: absolute; font-family: 'Lobster Two', cursive; padding-left: 90px; font-size: 30px;">
-
-            Hi, Alligator Hibiscus!
+        <h4 id="Himessage" style="text-align: left; position: absolute; font-family: 'Lobster Two', cursive; padding-left: 90px; font-size: 30px;">
+            Hi, Guest!
         </h4>
 
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style=" font-size: 25px; width: 550px;left: -250px;">
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
+                    <li id="hidesign" class="nav-item">
                         <a class="nav-link text-brown" href="@Url.Action("LoginChoicePage", "Home")" style="font-weight: bolder; width: 250px;">
                             <img src="~/Media/login_icon.png" alt="Family Icon" style="width: 60px; height: 60px; margin-right: 0px;">
                             Sign up/ Login
@@ -352,7 +351,7 @@
             <div class="card-content">
                 <div class="card-title" style="font-size: 50px; font-family: 'Lobster Two', cursive;">Engage</div>
                 <div style="color: white; padding-right: 90px;">
-                    Explore engaging tutorials and expand your knowledge!
+                    Discover interactive quests to learn and test your knowledge!
                 </div>
                 <div class="button-container">
                     <div class="mybutton1">
@@ -436,10 +435,9 @@
 
             <div class="card" style=" background-color: #CF8767; width: 630px; height: 140px; position: absolute; top: 944px;">
                 <div class="card-content" style="margin-left:10px;">
-                    <div class="card-title" style=" left: 396px; font-family: 'Lobster Two', cursive; position: absolute;">Leaderboard</div>
-                    <div style="position: absolute; color: white; width: 270px; font-size: 13px; left: 337px; top: 82px;">
-                        After watching lessons and completing tasks,<br />
-                        visit here to see your impact and earn rewards!
+                    <div class="card-title" style=" left: 363px; font-family: 'Lobster Two', cursive; position: absolute;">Leaderboard</div>
+                    <div style="position: absolute; color: white; width: 270px; font-size: 13px; left: 372px; top: 82px;">
+                        Check your progress to see your rank and compare scores with friends!
                     </div>
                     <div class="button-container" style="position: absolute; left: 213px; top: 53px;">
                         <div class="mybutton1">
@@ -584,6 +582,9 @@
                 var username = sessionStorage.getItem('username');
                 if (!username || username === "PlaceHolder-Panda#0000") {
                 } else {
+                    
+                    document.getElementById('hidesign').style.opacity = 0;
+                    document.getElementById('hidesign').disabled = true;
                     var color = username.split('-')[0];
                     var fillstring = "";
                     var animal = username.split('-')[1].split("#")[0];
@@ -599,7 +600,7 @@
                         case 'Grey': fillstring = '#D1D3DB'; break;
                         case 'Yellow': fillstring = '#F4D03F'; break;
                     }
-
+                    document.getElementById('Himessage').textContent = "Hi, " + color + " " + animal + "!";
                     document.getElementById('dashboardusercolor').setAttribute('fill', fillstring);
                     document.getElementById('dashboarduseranimal').src = animalsrc;
                 }

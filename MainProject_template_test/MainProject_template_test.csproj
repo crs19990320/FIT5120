@@ -524,15 +524,13 @@
     <Content Include="Media\Task_2_1.png" />
     <Content Include="Media\Task_2_2.png" />
     <Content Include="Media\Task_2_3.png" />
-<<<<<<< HEAD
     <Content Include="Media\techny-medal-and-trophy-awarded-for-success.png" />
-=======
     <Content Include="Media\telescope.png" />
->>>>>>> a5ee65ec1aa254258a9bcd9f4fb503da7fccfa68
     <Content Include="Media\testPic.png" />
     <Content Include="Media\Tiger.png" />
     <Content Include="Media\tiger1.png" />
     <Content Include="Media\underwater.mp4" />
+    <Content Include="Media\unregistered_user.png" />
     <Content Include="Media\videoParent1.png" />
     <Content Include="Media\videoParent2.png" />
     <Content Include="Media\videoParent3.png" />
@@ -830,10 +828,7 @@
     <Content Include="scss_baker\bootstrap\scss\_type.scss" />
     <Content Include="scss_baker\bootstrap\scss\_utilities.scss" />
     <Content Include="scss_baker\bootstrap\scss\_variables.scss" />
-<<<<<<< HEAD
     <Content Include="Views\Home\indexBaker.cshtml" />
-=======
->>>>>>> a5ee65ec1aa254258a9bcd9f4fb503da7fccfa68
     <Content Include="Views\Home\Leaderboard.cshtml" />
     <Content Include="Views\Home\LoginChoicePage.cshtml" />
     <Content Include="Views\Home\Parents.cshtml" />
