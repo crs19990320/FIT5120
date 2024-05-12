@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Quest Home</title>
+
     <style>
         html, body {
             display: flex;
@@ -58,9 +59,9 @@
 
         #content {
             position: absolute;
-            left: 370px;
-            top: 100px;
-            width: 582px;
+            left: 230px;
+            top: 70px;
+            width: 782px;
         }
 
         .underline {
@@ -86,8 +87,8 @@
             position: absolute;
             display: flex;
             justify-content: center;
-            left: -150px;
-            top: 200px;
+            left: -10px;
+            top: 105px;
             align-items: center;
             gap: 20px; /* gap between pics */
             background-color: transparent;
@@ -105,7 +106,134 @@
             border-radius: 8px;
             box-shadow: none;
         }
+
+        #counterDisplay {
+            display: inline-block;
+            padding: 20px 10px;
+            background-color: #FFC880;
+            color: black;
+            font-size: 16px;
+            text-align: center;
+            border-radius: 35px; /* 圆角边框 */
+            border: none; /* 不显示边框 */
+            transition: background-color 0.3s; /* 背景颜色变化的过渡效果 */
+            position: absolute;
+            top: 2px;
+            font-weight: 700;
+            width: 180px;
+        }
+
+        #quest1ImageContainer {
+            display: flex;
+            justify-content: center; /* Center the container horizontally */
+            align-items: center; /* Center the container vertically */
+            width: 950px;
+            height: 200px;
+            padding: 270px; /* Add padding to create space between the elements and the container edges */
+            border-radius: 20px;
+            background-image: url('../../Media/Q1_background.png'); /* Update with your actual image path */
+            background-size: cover; /* This ensures the background covers the entire area */
+            background-position: center; /* Centers the background image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+        }
+
+        #quest3ImageContainer {
+            display: flex;
+            justify-content: center; /* Center the container horizontally */
+            align-items: center; /* Center the container vertically */
+            width: 950px;
+            height: 200px;
+            padding: 270px; /* Add padding to create space between the elements and the container edges */
+            border-radius: 20px;
+            background-image: url('../../Media/quests_background.png'); /* Update with your actual image path */
+            background-size: cover; /* This ensures the background covers the entire area */
+            background-position: center; /* Centers the background image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+        }
+
+        .instruction {
+            font-weight: bolder;
+            font-size: 45px;
+            font-family: 'Lobster Two', cursive;
+            text-align: center;
+            color: rgb(43, 43, 48);
+        }
+
+        .icon {
+            cursor: pointer;
+            margin: 10px;
+            width: 350px;
+            height: auto;
+        }
+
+        .icon:hover {
+            transform: scale(1.2); /* Scales the icon up by 20% */
+        }
+
+        /* Form and button styling */
+        #question-form button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #question-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .question-container {
+            /* Styles for question text and answer options */
+            margin-left: 400px; /* Adjust as needed */
+            margin-top: 200px;
+            width:450px;
+        }
+
+        .button-container {
+            /* Styles for button container */
+            margin-top: 200px; /* Adjust as needed */
+        }
+
+        .button-container button {
+            /* Styles for buttons */
+            margin-right: 10px; /* Adjust as needed */
+        }
+
+        .button-container img:hover {
+            transform: scale(1.1); /* Increase the scale to 110% on hover */
+            transition: transform 0.3s ease; /* Add a smooth transition effect */
+        }
+
+        #answer-feedback {
+            display: none; /* Initially hide the feedback */
+            font-size: 20px; /* Adjust font size */
+            position: absolute; /* Set position to absolute */
+            top: 520px; /* Adjust the distance from the top */
+            left: 550px; /* Adjust the distance from the left */
+            transform: translate(-50%, -50%); /* Center the element */
+        }
+
+        .correct-feedback {
+            color: green; /* Style for correct feedback */
+        }
+
+        .incorrect-feedback {
+            color: red; /* Style for incorrect feedback */
+        }
+
+        .no-selection {
+            color: red; /* Style for no selection */
+        }
+
+        .hidden {
+            display: none;
+        }
     </style>
+
 </head>
 
 <body style="background-image: url('../../media/main_quest_bg.png'); background-size: cover; ">
@@ -132,23 +260,90 @@
         </div>
 
         <div id="content">
-            <img id="content-image" src="~/Media/puzzle_background.png" style="display: flex; width: 582px; height: 350px; opacity: 0.9; position: absolute; z-index: -1;" />
-            <div id="content-text">Click on a quest to start!</div>
+            <!-- Quest 1-->
+            <div id="quest1div" style="display:none;">
+                <div style="margin-bottom:20px;">
+                    <card style="background-color: lightcoral; border-radius: 10px; padding: 10px; color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: inline-block; margin: 1px; font-family: Arial, sans-serif; font-weight:bolder; font-size:x-large;">
+                        <img src="~/Media/Q1_search.png" style="width:40px;" /> Climate Hunter
+                    </card>
+                </div>
+                <div id="quest1ImageContainer">
+                    <div id="quest1-image-content">
+                        <img src="~/Media/Q1_bird_cage.png" class="icon" style="position: absolute; left: -60px; top: 200px; width: 280px;" onclick="showInfo('icon1')">
+                        <img src="~/Media/Q1_wood_cut.png" class="icon" style="position: absolute; left: -70px; top: 420px;width:300px;" onclick="showInfo('icon2')">
+                        <img src="~/Media/Q1_fountain.png" class="icon" style="position: absolute; left: 95px; top: 195px;width:300px;" onclick="showInfo('icon3')">
+                        <img src="~/Media/Q1_grass.png" class="icon" style="position: absolute; left: 120px; top: 380px; width: 350px;" onclick="showInfo('icon4')">
+                        <img src="~/Media/Q1_car.png" class="icon" style="position: absolute; left: 400px; top: 380px; width: 450px;" onclick="showInfo('icon5')">
+                        <img src="~/Media/Q1_fire.png" class="icon" style="position: absolute; left: 480px; top: 200px; width: 250px;" onclick="showInfo('icon6')">
+                        <img src="~/Media/Q1_plastic_bottle.png" class="icon" style="position: absolute; left: 700px; top: 280px;width:100px;" onclick="showInfo('icon7')">
+                        <img src="~/Media/Q1_plastic_bottle.png" class="icon" style="position: absolute; left: 670px; top: 310px; width: 100px;" onclick="showInfo('icon7')">
+                        <img src="~/Media/Q1_bin.png" class="icon" style="position: absolute; left: 770px; top: 400px; width: 250px;" onclick="showInfo('icon8')">
+                    </div>
+                    <div id="quest1-content" class="hidden">
+                        <form id="question-form">
+                            <h3 id="question-text"></h3>
+                            <div id="answer-options"></div>
+                            <img src="~/quest3/task3/incorrect.png" alt="Back" id="backButton">
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Quest 2 -->
             <div id="specialDiv" style="display: none;">
+                <div style="margin-bottom:20px;">
+                    <card style="background-color: lightcoral; border-radius: 10px; padding: 10px; color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: inline-block; margin: 1px; font-family: Arial, sans-serif; font-weight:bolder; font-size:x-large;">
+                        <img src="~/Media/telescope.png" style="width:30px;" /> Climate Spotter
+                    </card>
+                </div>
+                <span style="font-family: Arial, sans-serif; font-weight: bold; font-size:larger;"><img src="~/Media/note.png" style="width:30px;" />  Spot the changes! Click on the right picture when you find something different!</span>
+                <div id="counterDisplay">Your Track:0/9</div>
                 <div id="image-container">
-                    <img id="image1" src="~/Media/Task_2_1.png" alt="First Image">
-                    <img id="image2" src="~/Media/Task_2_2.png" alt="Second Image">
+                    <img id="image1" src="~/Media/quest2_1_vertical.png" alt="First Image">
+                    <img id="image2" src="~/Media/quest2_2_vertical.png" alt="Second Image">
                     <svg width="1000" height="500" style="position: absolute; left: 450px; bottom:20px;">
-                        <circle id="c1" cx="88" cy="385" r="10" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                        <circle id="c2" cx="110" cy="460" r="10" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                        <circle id="c3" cx="145" cy="370" r="10" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                        <circle id="c4" cx="180" cy="300" r="20" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                        <circle id="c5" cx="220" cy="390" r="10" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                        <circle id="c6" cx="230" cy="470" r="10" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                        <circle id="c7" cx="305" cy="475" r="10" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                        <circle id="c8" cx="313" cy="375" r="30" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
-                        <circle id="c9" cx="426" cy="320" r="15" fill="transparent" stroke="#E74C3C" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c1" cx="73" cy="220" r="20" fill="transparent" stroke="transparent" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c2" cx="125" cy="240" r="30" fill="transparent" stroke="transparent" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c3" cx="195" cy="100" r="30" fill="transparent" stroke="transparent" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c4" cx="120" cy="330" r="20" fill="transparent" stroke="transparent" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c5" cx="165" cy="455" r="20" fill="transparent" stroke="transparent" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c6" cx="265" cy="470" r="20" fill="transparent" stroke="transparent" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c7" cx="405" cy="410" r="20" fill="transparent" stroke="transparent" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c8" cx="273" cy="280" r="50" fill="transparent" stroke="transparent" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
+                        <circle id="c9" cx="460" cy="180" r="15" fill="transparent" stroke="transparent" stroke-width="2px" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
                     </svg>
+                </div>
+            </div>
+
+            <!-- Quest 3 -->
+            <div id="quest3div" style="display:none;">
+                <div style="margin-bottom:20px;">
+                    <card style="background-color: lightcoral; border-radius: 10px; padding: 10px; color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: inline-block; margin: 1px; font-family: Arial, sans-serif; font-weight:bolder; font-size:x-large;">
+                        <img src="~/Media/bulb.png" style="width:40px;" /> Climate Quiz
+                    </card>
+                </div>
+                <div id="quest3ImageContainer">
+                    <div id="image-content">
+                        <p class="instruction">Tap icons to discover questions!</p>
+                        <img src="~/quest3/task3/element1.png" class="icon" style="position: absolute; left: 450px; top: 100px; width: 280px;" onclick="showQuestion('icon1')">
+                        <img src="~/quest3/task3/cropped/element2.png" class="icon" style="position: absolute; left: 730px; top: 120px;width:100px;" onclick="showQuestion('icon2')">
+                        <img src="~/quest3/task3/cropped/element3.png" class="icon" style="position: absolute; left: 750px; top: 290px;width:100px;" onclick="showQuestion('icon3')">
+                        <img src="~/quest3/task3/element4.png" class="icon" style="position: absolute; left: 660px; top: 410px; width: 250px;" onclick="showQuestion('icon4')">
+                        <img src="~/quest3/task3/element5.png" class="icon" style="position: absolute; left: 450px; top: 420px; width: 250px;" onclick="showQuestion('icon5')">
+                        <img src="~/quest3/task3/element6.png" class="icon" style="position: absolute; left: 230px; top: 410px; width: 250px;" onclick="showQuestion('icon6')">
+                        <img src="~/quest3/task3/element7.png" class="icon" style="position: absolute; left: -5px; top: 410px;width:250px;" onclick="showQuestion('icon7')">
+                        <img src="~/quest3/task3/element8.png" class="icon" style="position: absolute; left: 0px; top: 260px; width: 250px;" onclick="showQuestion('icon8')">
+                        <img src="~/quest3/task3/element9.png" class="icon" style="position: absolute; left: 15px; top: 120px; width: 250px;" onclick="showQuestion('icon9')">
+                        <img src="~/quest3/task3/element10.png" class="icon" style="position: absolute; left: 250px; top: 130px;width:200px;" onclick="showQuestion('icon10')">
+                    </div>
+                    <div id="question-content" class="hidden">
+                        <form id="question-form">
+                            <h3 id="question-text"></h3>
+                            <div id="answer-options"></div>
+                            <button type="button" onclick="answerQuestion()">Submit Answer</button>
+                            <img src="~/quest3/task3/incorrect.png" alt="Back" id="backButtonImage">
+                        </form>
+                    </div>
                 </div>
             </div>
 
@@ -160,7 +355,8 @@
             <h3 style="margin-top:20px;" id="quest3" class="quest">Quest 3</h3>
         </div>
     </div>
-
+    <script src="~/quest1/quest1.js"></script>
+    <script src="~/quest3/quest3.js"></script>
 </body>
 </html>
 
@@ -183,20 +379,22 @@
             switch (this.id) {
                 case 'quest1':
                     document.getElementById('specialDiv').style.display = 'none';
-                    contentImage.src = '../Media/cat1.png';
-                    contentText.innerHTML = 'Details for Quest 1...';
+                    document.getElementById('quest3div').style.display = 'none';
+                    var quest1div = document.getElementById('quest1div');
+                    quest1div.style.display = 'block';
                     break;
                 case 'quest2':
-                    contentImage.src = '../Media/frog1.png';
-                    contentText.innerHTML = 'Details for Quest 2...';
+                    document.getElementById('quest1div').style.display = 'none';
+                    document.getElementById('quest3div').style.display = 'none';
                     // 获取 div 并更改其显示属性
                     var specialDiv = document.getElementById('specialDiv');
-                    specialDiv.style.display = 'block'; // 或 'flex'，取决于你的布局需求
+                    specialDiv.style.display = 'block';
                     break;
                 case 'quest3':
+                    document.getElementById('quest1div').style.display = 'none';
                     document.getElementById('specialDiv').style.display = 'none';
-                    contentImage.src = '../Media/fox1.png';
-                    contentText.innerHTML = 'Details for Quest 3...';
+                    var quest3div = document.getElementById('quest3div');
+                    quest3div.style.display = 'block';
                     break;
                 //default:
                 //    contentImage.src = '~/Media/puzzle_background.png';
@@ -215,6 +413,8 @@
 </script>
 
 <script>
+    let clickedCircles = new Set();
+    let counter = 0;
     let chooseCircle = null;
 
     function enlargeAndMoveToFront(circle) {
@@ -234,15 +434,24 @@
     }
 
     function handleCircleClick(circle) {
+        if (!clickedCircles.has(circle.id)) { // 检查集合中是否已有该圆圈
+            clickedCircles.add(circle.id); // 添加圆圈ID到集合
+            counter++; // 计数器增加
+            document.getElementById('counterDisplay').textContent = `Your Track:${counter}/9`;
+        }
+
         if (chooseCircle !== circle) {
             if (chooseCircle) {
                 chooseCircle.setAttribute('r', parseInt(chooseCircle.getAttribute('r')) - 25);
             }
+            circle.setAttribute('stroke', '#E74C3C');
             circle.setAttribute('r', parseInt(circle.getAttribute('r')) + 15);
             circle.parentNode.appendChild(circle);
             chooseCircle = circle;
             console.log(`Circle ${circle.id} is now active and enlarged.`);
+            
         }
     }
 
 </script>
+

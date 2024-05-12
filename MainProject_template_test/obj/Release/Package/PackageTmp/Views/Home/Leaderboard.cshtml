@@ -1,0 +1,157 @@
+﻿
+@{
+    ViewBag.Title = "Leaderboard";
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LeaderBoard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaini&display=swap" rel="stylesheet">
+    <style>
+        .progress-container {
+            width: 80px;
+            height: 2px;
+            background-color: #f0f0f0;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 50%; 
+            background-color: #000;
+            border-radius: 10px;
+        }
+
+        .progress-text {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body style="background-image: url('../../media/puzzlebackground.png'); background-size: cover;">
+    <div style="display: flex; align-items: center; width: 1200px;">
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style="left: 1000px;">
+            <img src="~/Media/new_logo.png" style=" width: 100px; position: absolute; top: 1px; right:1100px">
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-brown" href="@Url.Action("Dashboard", "Home")" style="font-size:25px;font-weight: bolder;color:black">
+                            <img src="~/Media/Dashboard_Kids.png" alt="Family Icon" style="width: 120px; height: 70px; margin-right: -23px;">
+                            DashBoard
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="bothboard" class="card" style="background-color: transparent; position: absolute; width: 1300px; height: 700px; top: 150px; border-radius: 30px; border-width: 0px;">
+            <div id="indboard" style="height: 650px; position: absolute; background-image: url('../../Media/board_profile.png'); background-size: cover; width: 390px; border-radius: 30px;">
+                <div style="position: absolute; left: 160px; top: 170px;">
+                    <svg width="120" height="120">
+                        <circle id="showSVG" cx="60" cy="60" r="50" stroke="black" stroke-width="4" />
+                    </svg>
+                    <img id="animalusername" src="~/Media/panda.png" style=" width: 100px; height: 100px; position: relative; top: 0px; left: -115px;">
+                </div>
+                <div id="PersonalInfoDIV">
+                    <div id="totalScore" style="position: absolute; width: 240px; height: 80px; left: 100px; top: 63px; text-align: center; ">
+                        <p id="Score" style="color: white; font-family: 'Jaini', system-ui; font-size: 50px; height: 80px; margin-bottom: 0px; font-weight:bold">Your Profile</p>
+                    </div>
+                    <div id="MissionDetial" style="position: absolute; width: 250px; height: 200px; left: 90px; top: 290px;">
+                        <div id="idDetial" style="width: 150px; height: 50px; background-color: darkolivegreen; border-radius: 50px; position: absolute; left: 55px; color: ghostwhite;">
+                            <p id="userid" style="position: absolute; left: 10px; top: 5px; font-size: 25px; font-weight: bold;"></p>
+                        </div>
+                        <div id="taskDetial" style="width: 200px; height: 130px; background-color: lightyellow; position: absolute; left: 30px; top: 70px; border-radius: 20px; border-color: black; border-width: 5px; border-style: solid; ">
+                            <div>
+                                <p style=" position: absolute; font-weight: bold; font-size: 10px; top: 10px; left: 5px;">Your Score: </p>
+                                <p id="yourScore" style=" position: absolute; top: 7px; font-size: 15px; left: 100px; font-weight: bold;"> 123 </p>
+                            </div>
+                            <div>
+                                <p style="position: absolute; font-weight: bold; font-size: 10px; top: 35px; left: 5px;">Your Rank: </p>
+                                <p id="yourRank" style="position: absolute; left: 90px; top: 30px; font-size: 15px; font-weight: bold; background-color: black; color: ghostwhite; border-radius: 20px; width: 50px; text-align: center;"> 222 </p>
+                            </div>
+                            <div>
+                                <p style="position: absolute; font-weight: bold; font-size: 10px; top: 60px; left: 5px; ">CheckList Tasks: </p>
+                                <div class="progress-container" style=" position: absolute; left: 100px; top: 69px;">
+                                    <div id="progress-bar" class="progress-bar"></div>
+                                </div>
+                                <div id="progress-text" class="progress-text" style="position: absolute; font-size: 10px; font-weight: bold; left: 160px; top: 55px;">4 / 7</div>
+                            </div>
+                            <div>
+                                <p style=" position: absolute; left: 5px; top: 85px; font-weight: bold; font-size: 10px;">Video Watched: </p>
+                                <div class="progress-container" style="position: absolute; left: 100px; top: 93px;">
+                                    <div id="Viprogress-bar" class="progress-bar"></div>
+                                </div>
+                                <div id="Viprogress-text" class="progress-text" style="position: absolute; font-size: 10px; font-weight: bold; left: 160px; top: 79px;">4 / 7</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="allboard" style=" height: 600px; position: absolute; right: 25px; top: 25px; width: 870px; border-radius: 30px; background-color: rgba(159, 25, 35, 0.8);">
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script>
+        var username = sessionStorage.getItem('username');
+        var colornanimal = username.split("-");
+        var color = colornanimal[0];
+        var animal = colornanimal[1].split('#')[0];
+        var fillstring = "";
+        console.log(color + "     " + animal);
+        switch (color) {
+            case 'Red': fillstring = '#E74C3C'; break;
+            case 'Purple': fillstring = '#9B59B6'; break;
+            case 'Green': fillstring = '#82E0AA'; break;
+            case 'Orange': fillstring = '#EB984E'; break;
+            case 'Pink': fillstring = '#F89DF0'; break;
+            case 'Blue': fillstring = '#5DADE2'; break;
+            case 'Navy': fillstring = '#1C298A'; break;
+            case 'Grey': fillstring = '#D1D3DB'; break;
+            case 'Yellow': fillstring = '#F4D03F'; break;
+        }
+        document.getElementById('showSVG').setAttribute('fill', fillstring);
+        var tempsrc = "../Media/" + animal + ".png";
+        document.getElementById('animalusername').src = tempsrc;
+        document.getElementById('userid').textContent = "#" + colornanimal[1].split('#')[1];
+    </script>
+
+    <script>
+        function updateProgressBar(current, total) {
+            let progressBar = document.getElementById('progress-bar');
+            let progressText = document.getElementById('progress-text');
+
+            let percentage = (current / total) * 100;
+
+            progressBar.style.width = percentage + '%';
+
+            progressText.textContent = current + ' / ' + total;
+        }
+
+        updateProgressBar(4, 7);
+    </script>
+    <script>
+        function updateViProgressBar(current, total) {
+            let progressBar = document.getElementById('Viprogress-bar');
+            let progressText = document.getElementById('Viprogress-text');
+
+            let percentage = (current / total) * 100;
+
+            progressBar.style.width = percentage + '%';
+
+            progressText.textContent = current + ' / ' + total;
+        }
+
+        updateViProgressBar(4, 7);
+    </script>
+</body>
+</html>
+
