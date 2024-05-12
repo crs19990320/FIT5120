@@ -427,6 +427,8 @@
     <Content Include="Media\giphy2.gif" />
     <Content Include="Media\go_to_dashboard.png" />
     <Content Include="Media\green_homepage1.png" />
+    <Content Include="Media\grey-9026_128.gif" />
+    <Content Include="Media\handy-line-joyful-monitor.png" />
     <Content Include="Media\Home.png" />
     <Content Include="Media\homebutton.png" />
     <Content Include="Media\icon1.png" />
@@ -441,13 +443,16 @@
     <Content Include="Media\kid1.jpg" />
     <Content Include="Media\kid3.jpg" />
     <Content Include="Media\LandingPage.png" />
+    <Content Include="Media\leaderboard_back-to-register.png" />
     <Content Include="Media\leaderboard_name.png" />
     <Content Include="Media\Learn.png" />
     <Content Include="Media\LearnVideo.png" />
     <Content Include="Media\left_button.png" />
+    <Content Include="Media\login_icon.png" />
     <Content Include="Media\login_window1.png" />
     <Content Include="Media\login_window2.png" />
     <Content Include="Media\login_window3.png" />
+    <Content Include="Media\login_window4.png" />
     <Content Include="Media\logo.png" />
     <Content Include="Media\main_quest_bg.png" />
     <Content Include="Media\map_background.png" />
@@ -455,19 +460,11 @@
     <Content Include="Media\new_logo.png" />
     <Content Include="Media\Note.jpg" />
     <Content Include="Media\page_background4.png" />
-<<<<<<< HEAD
     <Content Include="Media\panda.png" />
     <Content Include="Media\Pig.png" />
-=======
-<<<<<<< Updated upstream
-<<<<<<< HEAD
     <Content Include="Media\panda.png" />
     <Content Include="Media\Pig.png" />
-=======
-=======
     <Content Include="Media\parent1_new.png" />
->>>>>>> Stashed changes
->>>>>>> 6d9a9e1b51ecca322266f354924a972521d37607
     <Content Include="Media\parent_page1.png" />
     <Content Include="Media\parent_page2.png" />
     <Content Include="Media\pig1.png" />
@@ -495,6 +492,7 @@
     <Content Include="Media\Task_2_1.png" />
     <Content Include="Media\Task_2_2.png" />
     <Content Include="Media\Task_2_3.png" />
+    <Content Include="Media\techny-medal-and-trophy-awarded-for-success.png" />
     <Content Include="Media\testPic.png" />
     <Content Include="Media\Tiger.png" />
     <Content Include="Media\tiger1.png" />
@@ -770,26 +768,14 @@
     <Content Include="scss_baker\bootstrap\scss\_utilities.scss" />
     <Content Include="scss_baker\bootstrap\scss\_variables.scss" />
     <Content Include="Views\Home\indexBaker.cshtml" />
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< HEAD
->>>>>>> 6d9a9e1b51ecca322266f354924a972521d37607
     <Content Include="Views\Home\Leaderboard.cshtml" />
     <Content Include="Views\Home\LoginChoicePage.cshtml" />
     <Content Include="Views\Home\Parents.cshtml" />
     <Content Include="Views\Home\Interaction.cshtml" />
     <Content Include="Views\Home\Quest.cshtml" />
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> 72c0b405305ca5f45af4fd5fcc0c9606cf521f46
-=======
     <Content Include="Views\Home\Parents.cshtml" />
     <Content Include="Views\Home\Interaction.cshtml" />
     <Content Include="Views\Home\Quest.cshtml" />
->>>>>>> Stashed changes
->>>>>>> 6d9a9e1b51ecca322266f354924a972521d37607
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

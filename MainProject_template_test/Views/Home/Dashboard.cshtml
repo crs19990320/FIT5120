@@ -36,7 +36,7 @@
         .card-row {
             display: flex;
             justify-content: flex-start;
-            margin-bottom: 20px;
+            margin-bottom: -11px;
         }
 
         .card-row .card {
@@ -59,7 +59,7 @@
         }
 
         .card-title {
-            font-size: 60px;
+            font-size: 40px;
             margin-top: 10px;
             margin-left: 5px;
             margin-bottom: 5px;
@@ -234,19 +234,26 @@
 
 
 </head>
-<body style="background-image:url('../Media/page_background4.png'); background-repeat:no-repeat">
+<body style="background-image:url('../Media/page_background4.png'); background-repeat:no-repeat;background-size:cover">
     <div style="display: flex; align-items: center;">
-        <h1 style="text-align: left; margin-bottom: 20px; flex: 1; font-family: 'Lobster Two', cursive;">
-            <span>&#x1F984;</span> Hi, Alligator Hibiscus!
-        </h1>
+        <div id="usernameshow" style="width: 700px;">
+            <svg width="100" height="100" style=" position: relative; left: -18px; top: 0px;">
+                <circle id="dashboardusercolor" cx="50" cy="50" r="40" stroke="black" stroke-width="1" />
+            </svg>
+            <img id="dashboarduseranimal" src="~/Media/panda.png" style="width: 75px; height: 75px; position: relative; top: 0px; left: -109px;">
+        </div>
+        <h4 style="text-align: left; position: absolute; font-family: 'Lobster Two', cursive; padding-left: 90px; font-size: 30px;">
 
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style=" font-size: 25px;width:550px">
+            Hi, Alligator Hibiscus!
+        </h4>
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style=" font-size: 25px; width: 550px;left: -250px;">
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link text-brown" href="@Url.Action("LoginChoicePage", "Home")" style="font-weight: bolder; width:50px">
-                            <img src="~/Media/Home.png" alt="Family Icon" style="width: 100px; height: 60px; margin-right: -20px;">
-                            Login
+                        <a class="nav-link text-brown" href="@Url.Action("LoginChoicePage", "Home")" style="font-weight: bolder; width: 250px;">
+                            <img src="~/Media/login_icon.png" alt="Family Icon" style="width: 60px; height: 60px; margin-right: 0px;">
+                            Sign up/ Login
                         </a>
                     </li>
                     <li class="nav-item">
@@ -271,9 +278,9 @@
         <h4 style="margin-left: 450px; font-size: 30px">Checklist</h4>
     </div>
 
-    <div class="card" style="width: 40%; background-color: limegreen; float:right">
+    <div class="card" style="width: 40%; background-color: limegreen; float: right; height: 854px;">
         <div class="card-content">
-            <div class="card-title" style="font-family: 'Lobster Two', cursive;">Commit</div>
+            <div class="card-title" style="font-family: 'Lobster Two', cursive; font-size:60px">Commit</div>
             <div style="color: white; margin-left: 30px;">
                 <h5 style="font-family: 'Lobster Two', cursive; color:white;">Visit learn section, click on tasks to earn rewards, and see your impact in the Journey section!</h5>
                 <div class="transparent-cards">
@@ -324,206 +331,235 @@
         </div>
     </div>
 
-    <div class="card">
-        <div class="card-content">
-            <div class="card-title" style="font-family: 'Lobster Two', cursive;">Learn</div>
-            <div style="color:white;">
-                Explore engaging tutorials and expand your knowledge!
-            </div>
-            <div class="button-container">
-                <div class="mybutton1">
-                    <a href="LearnPage" class="btn">Start</a>
-                </div>
-            </div>
-        </div>
-        <div class="card-image">
-            <img src="~/Media/Learn.png" alt="Placeholder Image">
-        </div>
-    </div>
-
     <div class="card-row">
-        <!-- CardGame Card-->
-        <div class="card" style="background-color: mediumpurple; height:260px;">
-            <div class="card-content" style="margin-left:10px;">
-                <div class="card-title" style="font-family: 'Lobster Two', cursive;">Play</div>
-                <div style="color:white;">
-                    Explore scenarios,
-                    choose sustainable <br />actions,
-                    and impact <br /> climate health
+        <div class="card" style="background-color:lightskyblue; height: 248px;">
+            <div class="card-content">
+                <div class="card-title" style="font-size: 50px; font-family: 'Lobster Two', cursive;">Learn</div>
+                <div style="color: white; padding-right: 90px;">
+                    Explore engaging tutorials and expand your knowledge!
                 </div>
                 <div class="button-container">
                     <div class="mybutton1">
-                        <div id="game" class="btn" style="color:mediumpurple">Start</div>
+                        <a href="LearnPage" class="btn">Start</a>
                     </div>
                 </div>
             </div>
-            <div class="card-image-small-card">
-                <img src="~/Media/Play.png" alt="Placeholder Image">
+            <div class="card-image" style="position: absolute; left: 190px; top: 133px;">
+                <img src="~/Media/Learn.png" alt="Placeholder Image">
             </div>
         </div>
-
-        <!-- Puzzle Card-->
-        @*<div class="card" style="background-color: brown; height:230px;">
-                    <div class="card-content" style="margin-left:10px;">
-                        <div class="card-title" style="font-family: 'Lobster Two', cursive;">Journey</div>
-                        <div style="color:white;">
-                            After watching lessons and completing tasks,<br />
-                            visit here to see your impact and earn rewards!
-                        </div>
-                        <div class="button-container">
-                            <div class="mybutton1">
-                                <a href="Puzzle" class="btn">Start</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-image-small-card">
-                        <img src="~/Media/puzzle.png" alt="Placeholder Image">
-                    </div>
-                </div>
-            </div>*@
-
-        <!-- Map page -->
-        <div class="card" style="background-color: hotpink; height:260px;">
-            <div class="card-content" style="margin-left:10px;">
-                <div class="card-title" style="font-family: 'Lobster Two', cursive;">Explore</div>
-                <div style="color:white;">
-                    Discover the impact <br />
-                    of different climate<br />
-                    factors on Australia
+        <div class="card" style="background-color: #FF9900; height:248px;">
+            <div class="card-content">
+                <div class="card-title" style="font-size: 50px; font-family: 'Lobster Two', cursive;">Engage</div>
+                <div style="color: white; padding-right: 90px;">
+                    Explore engaging tutorials and expand your knowledge!
                 </div>
                 <div class="button-container">
                     <div class="mybutton1">
-                        <!--<a class="btn" style="color:hotpink" href="~/d3_project/map.html">Start</a>-->
-                        <a href="Map" class="btn" style="color:hotpink">Start</a>
+                        <a href="LearnPage" class="btn">Start</a>
                     </div>
                 </div>
             </div>
-            <div class="card-image-small-card">
-                <img src="~/Media/Explore.png" alt="Placeholder Image">
-            </div>
-        </div>
-
-    </div>
-    <div style="position: absolute; top: 0px;">
-        <div style="position: absolute; top: 790px; left: 10px; width: 200px; ">
-            <h2 style="font-size:30px">Your Impact</h2>
-        </div>
-        <!-- Journey Page-->
-        <div class="card" style="background-color: #E5696D; width: 630px; height: 230px; position: absolute; top: 850px;">
-            <div class="card-content" style="margin-left:10px;">
-                <div class="card-title" style="font-family: 'Lobster Two', cursive;">Journey</div>
-                <div style="color:white;">
-                    After watching lessons and completing tasks,<br />
-                    visit here to see your impact and earn rewards!
-                </div>
-                <div class="button-container">
-                    <div class="mybutton1">
-                        <a href="Puzzle" class="btn" style="color: #E5696D">Start</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-image">
-                <img src="~/Media/puzzle.png" alt="Placeholder Image">
+            <div class="card-image" style="position: absolute; left: 190px; top: 133px;">
+                <img src="~/Media/handy-line-joyful-monitor.png" style="padding-top: 17px; transform: scale(1.7);" alt="Placeholder Image">
             </div>
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var currentWeek = sessionStorage.getItem('currentWeek');
-            var storedUsername = sessionStorage.getItem('username');
-            if (!storedUsername || storedUsername === "default") {
-                var taskStatus = JSON.parse(sessionStorage.getItem('checkListData')) || {};
+        <div class="card-row">
+            <!-- CardGame Card-->
+            <div class="card" style="background-color: mediumpurple; height:248px;">
+                <div class="card-content" style="margin-left:10px;">
+                    <div class="card-title" style="font-size: 50px; font-family: 'Lobster Two', cursive;">Play</div>
+                    <div style="color:white;">
+                        Explore scenarios,
+                        choose sustainable <br />actions,
+                        and impact <br /> climate health
+                    </div>
+                    <div class="button-container">
+                        <div class="mybutton1">
+                            <div id="game" class="btn" style="color:mediumpurple">Start</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-image-small-card">
+                    <img src="~/Media/Play.png" alt="Placeholder Image">
+                </div>
+            </div>
 
-                document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(function (checkbox) {
-                    if (taskStatus[checkbox.id]) {
-                        var textSpan = checkbox.parentNode.querySelector('span').textContent;
-                        if (taskStatus[checkbox.id] === textSpan) {
-                            checkbox.checked = true;
-                            checkbox.disabled = true;
-                        }
-                    }
-                    checkbox.addEventListener('click', function () {
-                        var textSpan = checkbox.parentNode.querySelector('span').textContent;
-                        if (checkbox.checked) {
-                            taskStatus[checkbox.id] = textSpan;
-                            checkbox.disabled = true;
-                        }
-                        sessionStorage.setItem('checkListData', JSON.stringify(taskStatus));
-                    });
-                });
-            }
-            else {
-                var taskStatuses = {
-                    CTASK1: JSON.parse(sessionStorage.getItem('CTASK1') || '{}'),
-                    CTASK2: JSON.parse(sessionStorage.getItem('CTASK2') || '{}'),
-                    CTASK3: JSON.parse(sessionStorage.getItem('CTASK3') || '{}'),
-                    CTASK4: JSON.parse(sessionStorage.getItem('CTASK4') || '{}'),
-                    CTASK5: JSON.parse(sessionStorage.getItem('CTASK5') || '{}'),
-                    CTASK6: JSON.parse(sessionStorage.getItem('CTASK6') || '{}')
-                };
+          
 
-                function updateTaskStatus(taskName, checkbox, statusObj) {
-                    var originalValue = "";
-                    var originalObject;
-                    if (statusObj == null) {
-                        statusObj = {};
-                        checkbox.checked = false;
-                        checkbox.disabled = false;
-                    } else if (statusObj != null) {
-                        if (currentWeek in statusObj) {
-                            checkbox.checked = true;
-                            checkbox.disabled = true;
-                        } else {
-                            originalValue = sessionStorage.getItem(taskName);
-                            originalObject = JSON.parse(originalValue);
-                        }
-                    }
+            <!-- Map page -->
+            <div class="card" style="background-color: hotpink; height:248px;">
+                <div class="card-content" style="margin-left:10px;">
+                    <div class="card-title" style="font-size: 50px; font-family: 'Lobster Two', cursive;">Explore</div>
+                    <div style="color:white;">
+                        Discover the impact <br />
+                        of different climate<br />
+                        factors on Australia
+                    </div>
+                    <div class="button-container">
+                        <div class="mybutton1">
+                            <!--<a class="btn" style="color:hotpink" href="~/d3_project/map.html">Start</a>-->
+                            <a href="Map" class="btn" style="color:hotpink">Start</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-image-small-card">
+                    <img src="~/Media/Explore.png" alt="Placeholder Image">
+                </div>
+            </div>
 
-                    checkbox.addEventListener('click', function () {
-                        if (!checkbox.checked) {
-                            checkbox.checked = true;
-                        }
-                        statusObj[currentWeek] = true;
-                        var saveObject = { [currentWeek]: statusObj[currentWeek] };
-                        var mergedObject = Object.assign({}, originalObject, saveObject);
-                        sessionStorage.setItem(taskName, JSON.stringify(mergedObject));
-                        $.ajax({
-                            url: '/Home/updateTaskStatus',
-                            type: 'POST',
-                            contentType: 'application/json',
-                            data: JSON.stringify({
-                                USERNAME: storedUsername,
-                                VIDEOTASK: sessionStorage.getItem('VIDEOTASK') || "",
-                                CTASK1: sessionStorage.getItem('CTASK1') || "",
-                                CTASK2: sessionStorage.getItem('CTASK2') || "",
-                                CTASK3: sessionStorage.getItem('CTASK3') || "",
-                                CTASK4: sessionStorage.getItem('CTASK4') || "",
-                                CTASK5: sessionStorage.getItem('CTASK5') || "",
-                                CTASK6: sessionStorage.getItem('CTASK6') || "",
-                            }),
-                            success: function (response) {
-                                console.log(response.message);
-                            },
-                            error: function () {
+        </div>
+        <div style="position: absolute; top: 0px;">
+            <div style="position: absolute; top: 759px; left: 10px; width: 200px; ">
+                <h2 style="font-size:25px">Your Impact</h2>
+            </div>
+            <!-- Journey Page-->
+            <div class="card" style=" background-color: #E5696D; width: 630px; height: 140px; position: absolute; top: 791px;">
+                <div class="card-content" style="margin-left:10px;">
+                    <div class="card-title" style="font-family: 'Lobster Two', cursive;">Journey</div>
+                    <div style="color: white; width: 270px; font-size: 13px;">
+                        After watching lessons and completing tasks,<br />
+                        visit here to see your impact and earn rewards!
+                    </div>
+                    <div class="button-container" style="position: absolute; left: 318px; top: 53px;">
+                        <div class="mybutton1">
+                            <a href="Puzzle" class="btn" style="color: #E5696D">Start</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-image" style="width: 200px;">
+                    <img src="~/Media/puzzle.png" alt="Placeholder Image">
+                </div>
+            </div>
 
-                                console.log("error");
+            <div class="card" style=" background-color: #CF8767; width: 630px; height: 140px; position: absolute; top: 944px;">
+                <div class="card-content" style="margin-left:10px;">
+                    <div class="card-title" style=" left: 396px; font-family: 'Lobster Two', cursive; position: absolute;">Leaderboard</div>
+                    <div style="position: absolute; color: white; width: 270px; font-size: 13px; left: 337px; top: 82px;">
+                        After watching lessons and completing tasks,<br />
+                        visit here to see your impact and earn rewards!
+                    </div>
+                    <div class="button-container" style="position: absolute; left: 213px; top: 53px;">
+                        <div class="mybutton1">
+                            <a href="Leaderboard" class="btn" style="color: #E5696D">Start</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-image" style="width: 200px; position: absolute;">
+                    <img src="~/Media/techny-medal-and-trophy-awarded-for-success.png" alt="Placeholder Image">
+                </div>
+            </div>
 
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var currentWeek = sessionStorage.getItem('currentWeek');
+                var storedUsername = sessionStorage.getItem('username');
+                if (!storedUsername || storedUsername === "PlaceHolder-Panda#0000") {
+                    var taskStatus = JSON.parse(sessionStorage.getItem('checkListData')) || {};
+
+                    document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(function (checkbox) {
+                        if (taskStatus[checkbox.id]) {
+                            var textSpan = checkbox.parentNode.querySelector('span').textContent;
+                            if (taskStatus[checkbox.id] === textSpan) {
+                                checkbox.checked = true;
                             }
+                        }
+                        checkbox.addEventListener('click', function () {
+                            var textSpan = checkbox.parentNode.querySelector('span').textContent;
+                            if (checkbox.checked) {
+                                taskStatus[checkbox.id] = textSpan;
+                            } else {
+                                delete taskStatus[checkbox.id];
+                            }
+                            sessionStorage.setItem('checkListData', JSON.stringify(taskStatus));
                         });
                     });
                 }
+                else {
+                    var taskStatuses = {
+                        CTASK1: JSON.parse(sessionStorage.getItem('CTASK1') || '{}'),
+                        CTASK2: JSON.parse(sessionStorage.getItem('CTASK2') || '{}'),
+                        CTASK3: JSON.parse(sessionStorage.getItem('CTASK3') || '{}'),
+                        CTASK4: JSON.parse(sessionStorage.getItem('CTASK4') || '{}'),
+                        CTASK5: JSON.parse(sessionStorage.getItem('CTASK5') || '{}'),
+                        CTASK6: JSON.parse(sessionStorage.getItem('CTASK6') || '{}')
+                    };
 
-                document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(function (checkbox) {
-                    var taskName = checkbox.id;
-                    updateTaskStatus(taskName, checkbox, taskStatuses[taskName]);
-                });
+                    function updateTaskStatus(taskName, checkbox, statusObj) {
+                        var originalValue = "";
+                        var originalObject;
+                        if (statusObj == null) {
+                            statusObj = {};
+                            checkbox.checked = false;
+                        } else if (statusObj != null) {
+                            if (currentWeek in statusObj) {
+                                checkbox.checked = true;
+                            } else {
+                                originalValue = sessionStorage.getItem(taskName);
+                                originalObject = JSON.parse(originalValue);
+                            }
+                        }
 
-            }
-        });
+                        checkbox.addEventListener('click', function () {
+                            if (checkbox.checked) {
+                                statusObj[currentWeek] = true;
+                            } else {
+                                checkbox.checked = false;
+                                statusObj[currentWeek] = false;
+                            }
+                            console.log(originalObject);
+                            //statusObj[currentWeek] = true;
+                            if (statusObj[currentWeek]) {
+                                var saveObject = { [currentWeek]: statusObj[currentWeek] };
+                                var mergedObject = Object.assign({}, originalObject, saveObject);
+                                sessionStorage.setItem(taskName, JSON.stringify(mergedObject));
+                            }
+                            else {
+                                ForDeleteValue = sessionStorage.getItem(taskName);
+                                ForDeleteObject = JSON.parse(ForDeleteValue);
+                                delete ForDeleteObject[currentWeek];
+                                sessionStorage.setItem(taskName, JSON.stringify(ForDeleteObject));
+                                console.log(sessionStorage.getItem(taskName));
 
-    </script>
-    <script>
+                            }
+                            $.ajax({
+                                url: '/Home/updateTaskStatus',
+                                type: 'POST',
+                                contentType: 'application/json',
+                                data: JSON.stringify({
+                                    USERNAME: storedUsername,
+                                    VIDEOTASK: sessionStorage.getItem('VIDEOTASK') || "",
+                                    CTASK1: sessionStorage.getItem('CTASK1') || "",
+                                    CTASK2: sessionStorage.getItem('CTASK2') || "",
+                                    CTASK3: sessionStorage.getItem('CTASK3') || "",
+                                    CTASK4: sessionStorage.getItem('CTASK4') || "",
+                                    CTASK5: sessionStorage.getItem('CTASK5') || "",
+                                    CTASK6: sessionStorage.getItem('CTASK6') || "",
+                                }),
+                                success: function (response) {
+                                    console.log(response.message);
+                                },
+                                error: function () {
+
+                                    console.log("error");
+
+                                }
+                            });
+                        });
+                    }
+
+                    document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(function (checkbox) {
+                        var taskName = checkbox.id;
+                        updateTaskStatus(taskName, checkbox, taskStatuses[taskName]);
+                    });
+
+                }
+            });
+
+        </script>
+        <script>
     document.getElementById('game').addEventListener('click', function () {
         var jsonData = @Html.Raw(Json.Encode(Model));
 
@@ -542,7 +578,32 @@
         console.log("Randomly selected 10 questions:", encapsulatedData);
         window.location.href = '/Home/CardGame';
     });
-    </script>
+        </script>
+
+            <script>
+                var username = sessionStorage.getItem('username');
+                if (!username || username === "PlaceHolder-Panda#0000") {
+                } else {
+                    var color = username.split('-')[0];
+                    var fillstring = "";
+                    var animal = username.split('-')[1].split("#")[0];
+                    var animalsrc = "../Media/" + animal + ".png";
+                    switch (color) {
+                        case 'Red': fillstring = '#E74C3C'; break;
+                        case 'Purple': fillstring = '#9B59B6'; break;
+                        case 'Green': fillstring = '#82E0AA'; break;
+                        case 'Orange': fillstring = '#EB984E'; break;
+                        case 'Pink': fillstring = '#F89DF0'; break;
+                        case 'Blue': fillstring = '#5DADE2'; break;
+                        case 'Navy': fillstring = '#1C298A'; break;
+                        case 'Grey': fillstring = '#D1D3DB'; break;
+                        case 'Yellow': fillstring = '#F4D03F'; break;
+                    }
+
+                    document.getElementById('dashboardusercolor').setAttribute('fill', fillstring);
+                    document.getElementById('dashboarduseranimal').src = animalsrc;
+                }
+            </script>
 </body>
 </html>
 

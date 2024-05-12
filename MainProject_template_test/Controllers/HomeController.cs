@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using Google.Cloud.Storage.V1;
 using CsvHelper;
+using static Google.Apis.Storage.v1.StorageService;
+using System.Diagnostics;
 
 namespace MainProject_template_test.Controllers
 {
@@ -225,8 +227,23 @@ namespace MainProject_template_test.Controllers
         {
             SQLController sqlController = new SQLController();
             sqlController.InsertUser(id,UserName);
+            userTable user = sqlController.LoginUser(UserName);
 
-            return Json(new { success = true, message = "Registration successful"});
+            return Json(new
+            {
+                success = true,
+                message = "Login successful",
+                data = new
+                {
+                    VIDEOTASK = user.VIDEOTASK,
+                    CTASK1 = user.CTASK1,
+                    CTASK2 = user.CTASK2,
+                    CTASK3 = user.CTASK3,
+                    CTASK4 = user.CTASK4,
+                    CTASK5 = user.CTASK5,
+                    CTASK6 = user.CTASK6
+                }
+            });
         }
 
         [HttpPost]
@@ -282,6 +299,16 @@ namespace MainProject_template_test.Controllers
 
         }
 
+        [HttpGet]
+        public JsonResult GetScore()
+        {
+            Debug.WriteLine(1111111);
+            SQLController sqlController = new SQLController();
+            string resultString = sqlController.CountTasks();
+            Debug.WriteLine(resultString);
+            return Json(new { success = true, jsonScore = resultString }, JsonRequestBehavior.AllowGet);
+
+        }
         public ActionResult Interaction()
         {
             var differences = new List<Rectangle>
@@ -318,30 +345,5 @@ namespace MainProject_template_test.Controllers
             return View();
         }
 
-<<<<<<< HEAD
-=======
-        //[HttpPost]
-        //public JsonResult ValidateClick(int x, int y)
-        //{
-        //    var model = Session["GameData"] as Difference;
-
-        //    if (model == null || model.Differences == null)
-        //    {
-        //        return Json(false);
-        //    }
-
-        //    // 如果 (x, y) 在任何一个差异的矩形区域内则返回 true
-        //    bool isCorrect = model.Differences.Any(rect =>
-        //        x >= rect.X && x <= (rect.X + rect.Width) &&
-        //        y >= rect.Y && y <= (rect.Y + rect.Height));
-
-        //    return Json(isCorrect);
-        //}
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
->>>>>>> 72c0b405305ca5f45af4fd5fcc0c9606cf521f46
-=======
->>>>>>> Stashed changes
->>>>>>> 6d9a9e1b51ecca322266f354924a972521d37607
     }
 }
