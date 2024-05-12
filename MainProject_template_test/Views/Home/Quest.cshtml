@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Quest Home</title>
+
     <style>
         html, body {
             display: flex;
@@ -67,16 +68,16 @@
             position: relative;
         }
 
-            .underline:after {
-                content: '';
-                position: absolute;
-                left: 30px;
-                right: 0;
-                bottom: 0;
-                height: 2px;
-                background-color: black;
-                width: 140px; /* change size */
-            }
+        .underline:after {
+            content: '';
+            position: absolute;
+            left: 30px;
+            right: 0;
+            bottom: 0;
+            height: 2px;
+            background-color: black;
+            width: 140px; /* change size */
+        }
 
         .quest {
             cursor: pointer;
@@ -118,10 +119,119 @@
             transition: background-color 0.3s; /* 背景颜色变化的过渡效果 */
             position: absolute;
             top: 2px;
-            font-weight:700;
+            font-weight: 700;
             width: 180px;
         }
 
+        #quest1ImageContainer {
+            display: flex;
+            justify-content: center; /* Center the container horizontally */
+            align-items: center; /* Center the container vertically */
+            width: 950px;
+            height: 200px;
+            padding: 270px; /* Add padding to create space between the elements and the container edges */
+            border-radius: 20px;
+            background-image: url('../../Media/Q1_background.png'); /* Update with your actual image path */
+            background-size: cover; /* This ensures the background covers the entire area */
+            background-position: center; /* Centers the background image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+        }
+
+        #quest3ImageContainer {
+            display: flex;
+            justify-content: center; /* Center the container horizontally */
+            align-items: center; /* Center the container vertically */
+            width: 950px;
+            height: 200px;
+            padding: 270px; /* Add padding to create space between the elements and the container edges */
+            border-radius: 20px;
+            background-image: url('../../Media/quests_background.png'); /* Update with your actual image path */
+            background-size: cover; /* This ensures the background covers the entire area */
+            background-position: center; /* Centers the background image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+        }
+
+        .instruction {
+            font-weight: bolder;
+            font-size: 45px;
+            font-family: 'Lobster Two', cursive;
+            text-align: center;
+            color: rgb(43, 43, 48);
+        }
+
+        .icon {
+            cursor: pointer;
+            margin: 10px;
+            width: 350px;
+            height: auto;
+        }
+
+        .icon:hover {
+            transform: scale(1.2); /* Scales the icon up by 20% */
+        }
+
+        /* Form and button styling */
+        #question-form button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #question-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .question-container {
+            /* Styles for question text and answer options */
+            margin-left: 400px; /* Adjust as needed */
+            margin-top: 200px;
+            width:450px;
+        }
+
+        .button-container {
+            /* Styles for button container */
+            margin-top: 200px; /* Adjust as needed */
+        }
+
+        .button-container button {
+            /* Styles for buttons */
+            margin-right: 10px; /* Adjust as needed */
+        }
+
+        .button-container img:hover {
+            transform: scale(1.1); /* Increase the scale to 110% on hover */
+            transition: transform 0.3s ease; /* Add a smooth transition effect */
+        }
+
+        #answer-feedback {
+            display: none; /* Initially hide the feedback */
+            font-size: 20px; /* Adjust font size */
+            position: absolute; /* Set position to absolute */
+            top: 520px; /* Adjust the distance from the top */
+            left: 550px; /* Adjust the distance from the left */
+            transform: translate(-50%, -50%); /* Center the element */
+        }
+
+        .correct-feedback {
+            color: green; /* Style for correct feedback */
+        }
+
+        .incorrect-feedback {
+            color: red; /* Style for incorrect feedback */
+        }
+
+        .no-selection {
+            color: red; /* Style for no selection */
+        }
+
+        .hidden {
+            display: none;
+        }
     </style>
 
 </head>
@@ -150,7 +260,36 @@
         </div>
 
         <div id="content">
-            <img id="content-image" src="~/Media/puzzle_background.png" style="display: flex; width: 582px; height: 350px; opacity: 0.9; position: absolute; z-index: -1;" />
+            <!-- Quest 1-->
+            <div id="quest1div" style="display:none;">
+                <div style="margin-bottom:20px;">
+                    <card style="background-color: lightcoral; border-radius: 10px; padding: 10px; color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: inline-block; margin: 1px; font-family: Arial, sans-serif; font-weight:bolder; font-size:x-large;">
+                        <img src="~/Media/Q1_search.png" style="width:40px;" /> Climate Hunter
+                    </card>
+                </div>
+                <div id="quest1ImageContainer">
+                    <div id="quest1-image-content">
+                        <img src="~/Media/Q1_bird_cage.png" class="icon" style="position: absolute; left: -60px; top: 200px; width: 280px;" onclick="showInfo('icon1')">
+                        <img src="~/Media/Q1_wood_cut.png" class="icon" style="position: absolute; left: -70px; top: 420px;width:300px;" onclick="showInfo('icon2')">
+                        <img src="~/Media/Q1_fountain.png" class="icon" style="position: absolute; left: 95px; top: 195px;width:300px;" onclick="showInfo('icon3')">
+                        <img src="~/Media/Q1_grass.png" class="icon" style="position: absolute; left: 120px; top: 380px; width: 350px;" onclick="showInfo('icon4')">
+                        <img src="~/Media/Q1_car.png" class="icon" style="position: absolute; left: 400px; top: 380px; width: 450px;" onclick="showInfo('icon5')">
+                        <img src="~/Media/Q1_fire.png" class="icon" style="position: absolute; left: 480px; top: 200px; width: 250px;" onclick="showInfo('icon6')">
+                        <img src="~/Media/Q1_plastic_bottle.png" class="icon" style="position: absolute; left: 700px; top: 280px;width:100px;" onclick="showInfo('icon7')">
+                        <img src="~/Media/Q1_plastic_bottle.png" class="icon" style="position: absolute; left: 670px; top: 310px; width: 100px;" onclick="showInfo('icon7')">
+                        <img src="~/Media/Q1_bin.png" class="icon" style="position: absolute; left: 770px; top: 400px; width: 250px;" onclick="showInfo('icon8')">
+                    </div>
+                    <div id="quest1-content" class="hidden">
+                        <form id="question-form">
+                            <h3 id="question-text"></h3>
+                            <div id="answer-options"></div>
+                            <img src="~/quest3/task3/incorrect.png" alt="Back" id="backButton">
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Quest 2 -->
             <div id="specialDiv" style="display: none;">
                 <div style="margin-bottom:20px;">
                     <card style="background-color: lightcoral; border-radius: 10px; padding: 10px; color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: inline-block; margin: 1px; font-family: Arial, sans-serif; font-weight:bolder; font-size:x-large;">
@@ -176,6 +315,38 @@
                 </div>
             </div>
 
+            <!-- Quest 3 -->
+            <div id="quest3div" style="display:none;">
+                <div style="margin-bottom:20px;">
+                    <card style="background-color: lightcoral; border-radius: 10px; padding: 10px; color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: inline-block; margin: 1px; font-family: Arial, sans-serif; font-weight:bolder; font-size:x-large;">
+                        <img src="~/Media/bulb.png" style="width:40px;" /> Climate Quiz
+                    </card>
+                </div>
+                <div id="quest3ImageContainer">
+                    <div id="image-content">
+                        <p class="instruction">Tap icons to discover questions!</p>
+                        <img src="~/quest3/task3/element1.png" class="icon" style="position: absolute; left: 450px; top: 100px; width: 280px;" onclick="showQuestion('icon1')">
+                        <img src="~/quest3/task3/cropped/element2.png" class="icon" style="position: absolute; left: 730px; top: 120px;width:100px;" onclick="showQuestion('icon2')">
+                        <img src="~/quest3/task3/cropped/element3.png" class="icon" style="position: absolute; left: 750px; top: 290px;width:100px;" onclick="showQuestion('icon3')">
+                        <img src="~/quest3/task3/element4.png" class="icon" style="position: absolute; left: 660px; top: 410px; width: 250px;" onclick="showQuestion('icon4')">
+                        <img src="~/quest3/task3/element5.png" class="icon" style="position: absolute; left: 450px; top: 420px; width: 250px;" onclick="showQuestion('icon5')">
+                        <img src="~/quest3/task3/element6.png" class="icon" style="position: absolute; left: 230px; top: 410px; width: 250px;" onclick="showQuestion('icon6')">
+                        <img src="~/quest3/task3/element7.png" class="icon" style="position: absolute; left: -5px; top: 410px;width:250px;" onclick="showQuestion('icon7')">
+                        <img src="~/quest3/task3/element8.png" class="icon" style="position: absolute; left: 0px; top: 260px; width: 250px;" onclick="showQuestion('icon8')">
+                        <img src="~/quest3/task3/element9.png" class="icon" style="position: absolute; left: 15px; top: 120px; width: 250px;" onclick="showQuestion('icon9')">
+                        <img src="~/quest3/task3/element10.png" class="icon" style="position: absolute; left: 250px; top: 130px;width:200px;" onclick="showQuestion('icon10')">
+                    </div>
+                    <div id="question-content" class="hidden">
+                        <form id="question-form">
+                            <h3 id="question-text"></h3>
+                            <div id="answer-options"></div>
+                            <button type="button" onclick="answerQuestion()">Submit Answer</button>
+                            <img src="~/quest3/task3/incorrect.png" alt="Back" id="backButtonImage">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <div id="leftbar">
@@ -184,6 +355,8 @@
             <h3 style="margin-top:20px;" id="quest3" class="quest">Quest 3</h3>
         </div>
     </div>
+    <script src="~/quest1/quest1.js"></script>
+    <script src="~/quest3/quest3.js"></script>
 </body>
 </html>
 
@@ -206,17 +379,22 @@
             switch (this.id) {
                 case 'quest1':
                     document.getElementById('specialDiv').style.display = 'none';
-                    contentImage.src = '../Media/cat1.png';
+                    document.getElementById('quest3div').style.display = 'none';
+                    var quest1div = document.getElementById('quest1div');
+                    quest1div.style.display = 'block';
                     break;
                 case 'quest2':
-                    contentImage.src = '../Media/frog1.png';
+                    document.getElementById('quest1div').style.display = 'none';
+                    document.getElementById('quest3div').style.display = 'none';
                     // 获取 div 并更改其显示属性
                     var specialDiv = document.getElementById('specialDiv');
                     specialDiv.style.display = 'block';
                     break;
                 case 'quest3':
+                    document.getElementById('quest1div').style.display = 'none';
                     document.getElementById('specialDiv').style.display = 'none';
-                    contentImage.src = '../Media/fox1.png';
+                    var quest3div = document.getElementById('quest3div');
+                    quest3div.style.display = 'block';
                     break;
                 //default:
                 //    contentImage.src = '~/Media/puzzle_background.png';
@@ -276,3 +454,4 @@
     }
 
 </script>
+
