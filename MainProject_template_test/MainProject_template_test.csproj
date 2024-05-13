@@ -514,6 +514,7 @@
     <Content Include="Media\recycle.png" />
     <Content Include="Media\reset.png" />
     <Content Include="Media\right_button.png" />
+    <Content Include="Media\save_my_profile_button.png" />
     <Content Include="Media\scale_gas.png" />
     <Content Include="Media\scale_temp.png" />
     <Content Include="Media\scale_water.png" />
