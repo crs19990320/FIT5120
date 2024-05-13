@@ -1,3 +1,37 @@
+// Function to store the information about whether the user answered a question correctly
+function storeAnswerStatus(iconId, isCorrect) {
+    sessionStorage.setItem(iconId, isCorrect ? 'Correct' : 'Incorrect');
+}
+
+// Function to retrieve the answer status for a particular icon
+function getAnswerStatus(iconId) {
+    return sessionStorage.getItem(iconId);
+}
+
+function displayAnswerStatus() {
+    for (let i = 1; i <= 10; i++) {
+        let iconId = 'icon' + i;
+        let answerStatus = getAnswerStatus(iconId);
+        let statusElements = document.querySelectorAll('#' + iconId + '-status');
+        for (let j = 0; j < statusElements.length; j++) {
+            let statusElement = statusElements[j];
+            if (answerStatus === 'Correct') {
+                console.log("CORRECT!!!!!")
+                statusElement.src = '../../Media/correct.png';
+                statusElement.style.visibility = 'visible';
+            } else if (answerStatus === 'Incorrect') {
+                console.log("INCORRECT!!!!")
+                statusElement.src = '../../Media/incorrect.png';
+                statusElement.style.visibility = 'visible';
+            } else {
+                console.log("HIDDENNNNNN")
+                statusElement.style.visibility = 'hidden'; // Hide if no answer yet
+            }
+        }
+    }
+}
+
+
 function showQuestion(iconId) {
     document.getElementById('image-content').style.display = 'none';
     document.getElementById('question-content').style.display = 'block';
@@ -94,6 +128,11 @@ function showQuestion(iconId) {
             
     }
 
+    // Store the correct answer and iconId in sessionStorage
+    sessionStorage.setItem('correctAnswer_' + iconId, correctAnswer);
+    sessionStorage.setItem('currentQuestionIconId', iconId);
+    console.log("Correct answer retrieved from sessionStorage:", correctAnswer);
+    console.log("IconID:", iconId);
 
     // Create icon image element
     var iconImg = document.createElement('img');
@@ -166,9 +205,9 @@ function showQuestion(iconId) {
     summitButtonImage.style.left = '520px'; // Set the distance from the left of the container
 
     // Attach click event listener to summit button image
-    summitButtonImage.addEventListener('click', function() {
+    summitButtonImage.addEventListener('click', function () {
         // Call answerQuestion function and pass the correct answer
-        answerQuestion(correctAnswer);
+        answerQuestion();
     });
 
     // Create back button image dynamically
@@ -199,15 +238,33 @@ function showQuestion(iconId) {
 }
 
 
-function answerQuestion(correctAnswer) {
+function answerQuestion() {
     var selectedAnswer = document.querySelector('input[name="answer"]:checked');
+    console.log('here', selectedAnswer);
     var feedbackElement = document.getElementById('answer-feedback');
 
+    // Reset feedback element's class
+    feedbackElement.classList.remove('correct-feedback', 'incorrect-feedback', 'no-selection');
+
     if (selectedAnswer) {
+        // Retrieve the iconId from sessionStorage
+        var iconId = sessionStorage.getItem('currentQuestionIconId');
+        var correctAnswer = sessionStorage.getItem('correctAnswer_' + iconId); // Retrieve correct answer using iconId
+        console.log("Correct answer retrieved from sessionStorage:", correctAnswer);
+        console.log("Icon ID:", iconId);
         var userAnswer = selectedAnswer.value;
 
         // Check if the answer is correct
-        if ( userAnswer === correctAnswer) {
+        var isCorrect = userAnswer === correctAnswer;
+
+        // Store the answer status in sessionStorage
+        storeAnswerStatus(iconId, isCorrect);
+
+        // Update the answer status display
+        displayAnswerStatus();
+
+        // Check if the answer is correct
+        if (userAnswer === correctAnswer) {
             // Correct answer
             feedbackElement.textContent = 'Congratulations! Your answer is correct!';
             feedbackElement.classList.add('correct-feedback'); // Add class for styling
@@ -238,3 +295,5 @@ function returnToMain() {
     document.getElementById('question-content').style.display = 'none';
     document.getElementById('image-content').style.display = 'block';
 }
+
+window.addEventListener('load', displayAnswerStatus);

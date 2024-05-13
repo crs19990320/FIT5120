@@ -79,6 +79,16 @@ h1 {
    /* background-color: #555; /* Change background color to a lighter shade or a different color for visibility */
   }
 
-  
+#info-box {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    border-radius:20px;
+    padding: 10px;
+    pointer-events: auto;
+    z-index: 1000;
+    width:200px;
+}
 
  
