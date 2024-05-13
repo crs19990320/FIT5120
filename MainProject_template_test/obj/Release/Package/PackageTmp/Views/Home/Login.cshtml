@@ -60,10 +60,11 @@
 
         .recarousel {
             position: absolute;
-            height: 500px;
+            height: 750px;
             width: 1300px;
             overflow: hidden;
-            top: 200px;
+            top: 131px;
+            transform: scaleX(1.1);
         }
 
         .recarousel__slides {
@@ -79,25 +80,36 @@
 
         .recarousel__button--prev, .recarousel__button--next {
             position: absolute;
-            top: 400px;
-            background-color: #fff;
+            top: 600px;
             border: none;
-            width: 150px;
-            height: 60px;
+            width: 250px;
+            height: 110px;
             border-radius: 20px;
             z-index: 100;
+            background-color: transparent;
+            font-size: 30px;
+            font-weight: bold;
         }
 
         .recarousel__button--prev {
+            background-image: url('../../Media/left_button.png');
+            background-size: cover;
+            background-position: center;
             left: 10px;
         }
 
         .recarousel__button--next {
-            right: 10px;
+            background-image: url('../../Media/right_button.png');
+            background-size: cover;
+            background-position: center;
+            right: 0px;
         }
 
         circle {
             transition: r 0.3s ease;
+        }
+        #usernameid:focus {
+            outline: none;
         }
     </style>
     <script>
@@ -176,25 +188,19 @@
     </script>
 </head>
 
-<body style="background-image:url('../Media/page_background4.png'); background-repeat:no-repeat">
-    <div style="display: flex; align-items: center;">
+<body style="background-image: url('../Media/page_background4.png'); background-repeat: no-repeat; background-size: cover; ">
+    <div style="display: flex; align-items: center; height: 70px;">
         <h1 style="text-align: left; margin-bottom: 20px; flex: 1; font-family: 'Lobster Two', cursive;">
-            <img src="~/Media/anonymous1.png" /> Hi, Guest!
+            
         </h1>
 
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style=" font-size: 25px;width:550px">
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link text-brown" href="@Url.Action("HomePage", "Home")" style="font-weight: bolder; width:250px">
-                            <img src="~/Media/Home.png" alt="Family Icon" style="width: 100px; height: 60px; margin-right: -20px;">
-                            HomePage
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-brown" href="@Url.Action("Parents", "Home")" style="font-weight: bolder; width:380px">
-                            <img src="~/Media/Dashboard_for_MomDad.png" alt="Family Icon" style="width: 100px; height: 60px; margin-right: -20px;">
-                            For Mom & Dad
+                <ul  class="navbar-nav">
+                    <li id="dashboardbutton" class="nav-item">
+                        <a  class="nav-link text-brown" href="@Url.Action("Dashboard", "Home")" style="font-size:25px;font-weight: bolder;color:black">
+                            <img src="~/Media/Dashboard_Kids.png" alt="Family Icon" style="width: 120px; height: 70px; margin-right: -23px;">
+                            DashBoard
                         </a>
                     </li>
                 </ul>
@@ -202,10 +208,11 @@
         </nav>
     </div>
 
-    <div class="recarousel">
+    <div class="recarousel" >
         <button id="buttonprev" class="recarousel__button--prev">Register</button>
-        <div class="recarousel__slide">
-            <svg width="1000" height="170" viewBox="0 80 1000 150" style="position: absolute; left: 150px;">
+        <div class="recarousel__slide"  style="background-image: url(../../Media/login_window4.png); background-size: cover; height: 650px; width: 1250px; position: absolute; left: -5px; ">
+            <p style="font-family: 'Lobster Two', cursive; position: absolute; left: 750px; top: 20px; font-size: 30px; width: 250px; margin-bottom: 0px;">Select Color and animal here.</p>
+            <svg width="1000" height="170" viewBox="0 80 1000 150" style="position: absolute; left: 236px; top: 142px; transform: scale(0.8);">
                 <circle id="Red" cx="100" cy="150" r="50" fill="#E74C3C" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
                 <circle id="Purple" cx="200" cy="150" r="50" fill="#9B59B6" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
                 <circle id="Green" cx="300" cy="150" r="50" fill="#82E0AA" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
@@ -217,7 +224,7 @@
                 <circle id="Yellow" cx="900" cy="150" r="50" fill="#F4D03F" onmouseover="enlargeAndMoveToFront(this)" onmouseout="resetRadius(this)" onclick="handleCircleClick(this)" />
             </svg>
 
-            <div style="position: absolute; width: 1000px; height: 150px;top:150px; left: 150px; ">
+            <div style=" position: absolute; width: 1000px; height: 150px; transform: scale(0.82); top: 257px; left: 235px;">
                 <img src="../Media/whale1.png" alt="Whale" style="position: relative; width: 96px; height: 96px; margin-top: 50px; margin-left: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
                 <img src="../Media/tiger1.png" alt="Tiger" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
                 <img src="../Media/squirrel1.png" alt="Squirrel" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
@@ -229,7 +236,8 @@
                 <img src="../Media/cat1.png" alt="Cat" style="position: relative; width: 96px; height: 96px; margin-top: 50px; " onmouseover="enlargeAndToFront(this)" onmouseout="resetImageSize(this)" onclick="imageClicked(this)">
             </div>
             <div class="usernameidEnter" style="position: absolute; left: 450px; width: 300px; height: 30px; top: 350px;">
-                # <input id="usernameid">
+                <p style="font-family: 'Lobster Two', cursive; position: absolute; font-size: 30px; margin-bottom: 0px; top: 109px;"> Fill your ID here: </p> 
+                <input id="usernameid" style="position: absolute; left: 247px; top: 113px; height: 42px; border-width: 0px; width: 120px;">
             </div>
             <div class="usernameWarning" style="position: absolute; left: 1000px; width: 300px; height: 30px; top: 350px;">
 
@@ -271,7 +279,9 @@
                         wMessage.remove();
                     }, 3000);
                 }
-                else { 
+                else {
+                    document.getElementById('dashboardbutton').style.opacity = 0;
+                    document.getElementById('dashboardbutton').disabled = true;
                     var $buttonnext = $('#buttonnext');
                     $buttonnext.prop('disabled', true);
                     var $buttonprev = $('#buttonprev');
@@ -293,7 +303,7 @@
                                 sessionStorage.setItem('CTASK4', response.data.CTASK4);
                                 sessionStorage.setItem('CTASK5', response.data.CTASK5);
                                 sessionStorage.setItem('CTASK6', response.data.CTASK6);
-
+                                window.location.href = "Dashboard";
 
                             } else {
                                 let wdescriptionDiv = document.querySelector('.usernameWarning');
@@ -319,7 +329,7 @@
                             
                         }
                     });
-                    console.log("userName: " + jsonUserName);
+                 
                 }
                  
 

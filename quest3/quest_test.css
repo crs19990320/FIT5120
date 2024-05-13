@@ -100,6 +100,15 @@
     color: red; /* Style for no selection */
 }
 
+.answer-status {
+    position: absolute;
+    bottom: 70;  /* Align with bottom of the icon */
+    left: 110px;   /* Move to the right of the icon */
+    width: 140px;   /* Suitable size for the image */
+    height: 80px;  /* Suitable size for the image */
+    visibility: hidden; /* Start as hidden */
+}
+
 .hidden {
     display: none;
 }

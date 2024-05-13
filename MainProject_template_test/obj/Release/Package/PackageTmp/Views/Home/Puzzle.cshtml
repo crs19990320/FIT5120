@@ -223,7 +223,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             var currentWeek = sessionStorage.getItem('currentWeek');
             var storedUsername = sessionStorage.getItem('username');
-            if (!storedUsername || storedUsername == "default") {
+            if (!storedUsername || storedUsername == "PlaceHolder-Panda#0000") {
                 var taskStatusString = sessionStorage.getItem('checkListData');
                 var taskStatus = taskStatusString ? JSON.parse(taskStatusString) : {};
                 var infoBox = document.getElementById('infoBox');

@@ -67,22 +67,16 @@
 <body style="background-image: url('../../media/page_background4.png'); background-size: cover;">
     <div style="display: flex; align-items: center;">
         <h1 style="text-align: left; margin-bottom: 20px; flex: 1; font-family: 'Lobster Two', cursive;">
-            <img src="~/Media/anonymous1.png" /> Hi, Guest!
+            
         </h1>
 
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style=" font-size: 25px;width:550px">
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link text-brown" href="@Url.Action("HomePage", "Home")" style="font-weight: bolder; width:250px">
-                            <img src="~/Media/Home.png" alt="Family Icon" style="width: 100px; height: 60px; margin-right: -20px;">
-                            HomePage
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-brown" href="@Url.Action("Parents", "Home")" style="font-weight: bolder; width:380px">
-                            <img src="~/Media/Dashboard_for_MomDad.png" alt="Family Icon" style="width: 100px; height: 60px; margin-right: -20px;">
-                            For Mom & Dad
+                        <a class="nav-link text-brown" href="@Url.Action("Dashboard", "Home")" style="font-size:25px;font-weight: bolder;color:black">
+                            <img src="~/Media/Dashboard_Kids.png" alt="Family Icon" style="width: 120px; height: 70px; margin-right: -23px;">
+                            DashBoard
                         </a>
                     </li>
                 </ul>
@@ -90,7 +84,7 @@
         </nav>
     </div>
     <div style="position: absolute; background-image: url(../../Media/login_window1.png); background-position: center; background-size: cover; width: 1400px; height: 700px; top: 150px; margin-left: -50px; ">
-        <button id=" registerbutton" style="position: absolute; width: 350px; height: 100px; border-radius: 70px; background-color: darkgreen; left: 530px; top: 160px; color: ghostwhite; border-width: 0px; font-size: 50px; font-weight: bolder; " onclick="gotoRegister()">NEW  PLAYER</button>
+        <button id=" registerbutton" style="position: absolute; width: 350px; height: 100px; border-radius: 70px; background-color: darkgreen; left: 530px; top: 160px; color: ghostwhite; border-width: 0px; font-size: 50px; font-weight: bolder; " onclick="gotoRegister()">SIGN UP</button>
         <button id=" loginButton" style="position: absolute; width: 350px; height: 100px; border-radius: 70px; background-color: greenyellow; left: 530px; top: 300px; border-width: 0px; font-size: 50px; font-weight: bolder; " onclick="gotoLogin()">LOGIN</button>
     </div>
     <script>
