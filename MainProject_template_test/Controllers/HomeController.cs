@@ -348,8 +348,11 @@ namespace MainProject_template_test.Controllers
         {
             return View();
         }
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
 
         //[HttpPost]
         //public JsonResult ValidateClick(int x, int y)
@@ -368,7 +371,10 @@ namespace MainProject_template_test.Controllers
 
         //    return Json(isCorrect);
         //}
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
     }
 }
