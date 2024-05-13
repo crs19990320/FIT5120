@@ -12,7 +12,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jaini&display=swap" rel="stylesheet">
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
+
     <style>
+        html, body {
+            overflow: hidden
+        }
+
         .progress-container {
             width: 80px;
             height: 2px;
@@ -21,7 +28,7 @@
 
         .progress-bar {
             height: 100%;
-            width: 50%; 
+            width: 50%;
             background-color: #000;
             border-radius: 10px;
         }
@@ -29,9 +36,18 @@
         .progress-text {
             font-size: 14px;
         }
+
+        .boarditem {
+            width: 800px;
+            height: 45px;
+            background-color: lightyellow;
+            border-radius: 30px;
+            margin-bottom: 15px;
+        }
     </style>
+
 </head>
-<body style="background-image: url('../../media/puzzlebackground.png'); background-size: cover;">
+<body style="background-image: url('../Media/page_background4.png'); background-size: cover;">
     <div style="display: flex; align-items: center; width: 1200px;">
 
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style="left: 1000px;">
@@ -48,7 +64,13 @@
             </div>
         </nav>
 
-        <div id="bothboard" class="card" style="background-color: transparent; position: absolute; width: 1300px; height: 700px; top: 150px; border-radius: 30px; border-width: 0px;">
+        <div id="bothboard" class="card" style="background-color: transparent; position: absolute; width: 1300px; height: 700px; top: 170px; border-radius: 30px; border-width: 0px; transform: scale(1.1);">
+            <div id="defaultuser" class="card" style=" position: absolute; width: 1100px; height: 600px; top: 38px; left: 99px; border-radius: 30px; border-width: 0px; z-index: 20;">
+                <img id="defaultsignin" src="~/Media/leaderboard_back-to-register.png" />
+                <p id="default_message" style=" position: absolute; margin-bottom: 0px; color: white; font-weight: bold; font-size: 40px; width: 400px; left: 375px; top: 122px; text-align: center; pointer-events: auto;"> Please create an account to see the leaderboard. </p>
+                <button id="defaultbutton" style=" position: absolute; z-index: 50; background-color: #0A4938; color: white; font-size: 30px; border-radius: 30px; width: 240px; left: 458px; top: 349px;" onclick="gotoLoginorRegister()">SIGN UP HERE</button>
+                <img id="loadinggif" src="~/Media/grey-9026_128.gif" style="position: absolute; left: 507px; top: 220px;" />
+            </div>
             <div id="indboard" style="height: 650px; position: absolute; background-image: url('../../Media/board_profile.png'); background-size: cover; width: 390px; border-radius: 30px;">
                 <div style="position: absolute; left: 160px; top: 170px;">
                     <svg width="120" height="120">
@@ -61,8 +83,8 @@
                         <p id="Score" style="color: white; font-family: 'Jaini', system-ui; font-size: 50px; height: 80px; margin-bottom: 0px; font-weight:bold">Your Profile</p>
                     </div>
                     <div id="MissionDetial" style="position: absolute; width: 250px; height: 200px; left: 90px; top: 290px;">
-                        <div id="idDetial" style="width: 150px; height: 50px; background-color: darkolivegreen; border-radius: 50px; position: absolute; left: 55px; color: ghostwhite;">
-                            <p id="userid" style="position: absolute; left: 10px; top: 5px; font-size: 25px; font-weight: bold;"></p>
+                        <div id="idDetial" style="width: 100px; height: 50px; background-color: darkolivegreen; border-radius: 50px; position: absolute; left: 76px; color: ghostwhite;">
+                            <p id="userid" style="position: absolute; left: 18px; top: 5px; font-size: 25px; font-weight: bold;"></p>
                         </div>
                         <div id="taskDetial" style="width: 200px; height: 130px; background-color: lightyellow; position: absolute; left: 30px; top: 70px; border-radius: 20px; border-color: black; border-width: 5px; border-style: solid; ">
                             <div>
@@ -78,35 +100,239 @@
                                 <div class="progress-container" style=" position: absolute; left: 100px; top: 69px;">
                                     <div id="progress-bar" class="progress-bar"></div>
                                 </div>
-                                <div id="progress-text" class="progress-text" style="position: absolute; font-size: 10px; font-weight: bold; left: 160px; top: 55px;">4 / 7</div>
+                                <div id="progress-text" class="progress-text" style="position: absolute; font-size: 10px; font-weight: bold; left: 140px; top: 55px;">4 / 7</div>
                             </div>
                             <div>
                                 <p style=" position: absolute; left: 5px; top: 85px; font-weight: bold; font-size: 10px;">Video Watched: </p>
                                 <div class="progress-container" style="position: absolute; left: 100px; top: 93px;">
                                     <div id="Viprogress-bar" class="progress-bar"></div>
                                 </div>
-                                <div id="Viprogress-text" class="progress-text" style="position: absolute; font-size: 10px; font-weight: bold; left: 160px; top: 79px;">4 / 7</div>
+                                <div id="Viprogress-text" class="progress-text" style="position: absolute; font-size: 10px; font-weight: bold; left: 140px; top: 79px;">4 / 7</div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <button style=" position: absolute; top: 499px; left: 141px;;" onclick="captureAndDownload()">Save my profile.</button>
             </div>
-            <div id="allboard" style=" height: 600px; position: absolute; right: 25px; top: 25px; width: 870px; border-radius: 30px; background-color: rgba(159, 25, 35, 0.8);">
+            <div id="allboard" style=" height: 600px; position: absolute; right: 25px; top: 25px; width: 870px; background-image:url('../../Media/forest_bg.png')">
+                <div style="width: 830px; height: 570px; position: absolute; left: 20px; top: 15px; background-color: rgba(23, 26, 31, 0.66);">
+                    <div id="leaderboardTitle">
+                        <img src="~/Media/leaderboard_name.png" style=" position: absolute; width: 350px; left: 250px; height:160px">
+                        <p style="font-family: 'Jaini', system-ui;position: absolute; left: 320px; top: 40px; font-size: 50px; color: ghostwhite;">Leaderboard</p>
+                    </div>
+                    <div id="boardbody" style="position: absolute; width: 800px; height: 300px; top: 160px; left: 15px;">
+                        <div class="boarditem" id="boardcontent1">
+                            <p id="rank1" style="margin-bottom: 0px; position: relative; font-size: 20px; font-weight: bold; left: 30px; top: 7px;">1</p>
+                            <div>
+                                <svg width="40" height="40" style=" position: relative; left: 62px; top: -27px;">
+                                    <circle id="boardSVG1" cx="18" cy="18" r="18" stroke="black" stroke-width="1" />
+                                </svg>
+                                <img id="boardanimal1" src="~/Media/panda.png" style="width: 34px; height: 34px; position: relative; top: -27px; left: 19px;">
+                            </div>
+                            <p id="namewithouid1" style="margin-bottom: 0px; position: relative; left: 117px; top: -58px; font-weight: bold;">PlaceholderPanda</p>
+                            <img src="~/Media/ranking_star.png" style=" position: relative; width: 35px; left: 596px; top: -89px; z-index: 2;">
+                            <p id="totalScore1" style="background-color: darkred; position: relative; width: 190px; left: 600px; border-radius: 30px; text-align: right; margin-bottom: 0; top: -119px; color: ghostwhite; font-weight: bold; padding-right: 15px;">0   </p>
+                        </div>
+                        <div class="boarditem" id="boardcontent2">
+                            <p id="rank2" style="margin-bottom: 0px; position: relative; font-size: 20px; font-weight: bold; left: 30px; top: 7px;"> 2 </p>
+                            <div>
+                                <svg width="40" height="40" style=" position: relative; left: 62px; top: -27px;">
+                                    <circle id="boardSVG2" cx="18" cy="18" r="18" stroke="black" stroke-width="1" />
+                                </svg>
+                                <img id="boardanimal2" src="~/Media/panda.png" style="width: 34px; height: 34px; position: relative; top: -27px; left: 19px;">
+                            </div>
+                            <p id="namewithouid2" style="margin-bottom: 0px; position: relative; left: 117px; top: -58px; font-weight: bold;">PlaceholderPanda</p>
+                            <img src="~/Media/ranking_star.png" style=" position: relative; width: 35px; left: 596px; top: -89px; z-index: 2;">
+                            <p id="totalScore2" style="background-color: darkred; position: relative; width: 190px; left: 600px; border-radius: 30px; text-align: right; margin-bottom: 0; top: -119px; color: ghostwhite; font-weight: bold; padding-right: 15px;">0   </p>
 
+                        </div>
+                        <div class="boarditem" id="boardcontent3">
+                            <p id="rank3" style="margin-bottom: 0px; position: relative; font-size: 20px; font-weight: bold; left: 30px; top: 7px;"> 3 </p>
+                            <div>
+                                <svg width="40" height="40" style=" position: relative; left: 62px; top: -27px;">
+                                    <circle id="boardSVG3" cx="18" cy="18" r="18" stroke="black" stroke-width="1" />
+                                </svg>
+                                <img id="boardanimal3" src="~/Media/panda.png" style="width: 34px; height: 34px; position: relative; top: -27px; left: 19px;">
+                            </div>
+                            <p id="namewithouid3" style="margin-bottom: 0px; position: relative; left: 117px; top: -58px; font-weight: bold;">PlaceholderPanda</p>
+                            <img src="~/Media/ranking_star.png" style=" position: relative; width: 35px; left: 596px; top: -89px; z-index: 2;">
+                            <p id="totalScore3" style="background-color: darkred; position: relative; width: 190px; left: 600px; border-radius: 30px; text-align: right; margin-bottom: 0; top: -119px; color: ghostwhite; font-weight: bold; padding-right: 15px;">0   </p>
+
+                        </div>
+                        <div class="boarditem" id="boardcontent4">
+                            <p id="rank4" style="margin-bottom: 0px; position: relative; font-size: 20px; font-weight: bold; left: 30px; top: 7px;"> 4 </p>
+                            <div>
+                                <svg width="40" height="40" style=" position: relative; left: 62px; top: -27px;">
+                                    <circle id="boardSVG4" cx="18" cy="18" r="18" stroke="black" stroke-width="1" />
+                                </svg>
+                                <img id="boardanimal4" src="~/Media/panda.png" style="width: 34px; height: 34px; position: relative; top: -27px; left: 19px;">
+                            </div>
+                            <p id="namewithouid4" style="margin-bottom: 0px; position: relative; left: 117px; top: -58px; font-weight: bold;">PlaceholderPanda</p>
+                            <img src="~/Media/ranking_star.png" style=" position: relative; width: 35px; left: 596px; top: -89px; z-index: 2;">
+                            <p id="totalScore4" style="background-color: darkred; position: relative; width: 190px; left: 600px; border-radius: 30px; text-align: right; margin-bottom: 0; top: -119px; color: ghostwhite; font-weight: bold; padding-right: 15px;">0   </p>
+
+                        </div>
+                        <div class="boarditem" id="boardcontent5">
+                            <p id="rank5" style="margin-bottom: 0px; position: relative; font-size: 20px; font-weight: bold; left: 30px; top: 7px;"> 5 </p>
+                            <div>
+                                <svg width="40" height="40" style=" position: relative; left: 62px; top: -27px;">
+                                    <circle id="boardSVG5" cx="18" cy="18" r="18" stroke="black" stroke-width="1" />
+                                </svg>
+                                <img id="boardanimal5" src="~/Media/panda.png" style="width: 34px; height: 34px; position: relative; top: -27px; left: 19px;">
+                            </div>
+                            <p id="namewithouid5" style="margin-bottom: 0px; position: relative; left: 117px; top: -58px; font-weight: bold;">PlaceholderPanda</p>
+                            <img src="~/Media/ranking_star.png" style=" position: relative; width: 35px; left: 596px; top: -89px; z-index: 2;">
+                            <p id="totalScore5" style="background-color: darkred; position: relative; width: 190px; left: 600px; border-radius: 30px; text-align: right; margin-bottom: 0; top: -119px; color: ghostwhite; font-weight: bold; padding-right: 15px;">0   </p>
+
+                        </div>
+                    </div>
+                    <div id="boardYourRank" style=" position: absolute; top: 471px; left: 15px;">
+                        <p style="font-size: 25px; font-weight: bold; padding-left: 10px; margin-bottom: 0; color: ghostwhite;">Your Rank</p>
+                        <div class="boarditem" id="Yourboardcontent">
+                            <p id="rankU" style="margin-bottom: 0px; position: relative; font-size: 20px; font-weight: bold; left: 30px; top: 7px;"> U </p>
+                            <div>
+                                <svg width="40" height="40" style=" position: relative; left: 62px; top: -27px;">
+                                    <circle id="boardSVGU" cx="18" cy="18" r="18" stroke="black" stroke-width="1" />
+                                </svg>
+                                <img id="boardanimalU" src="~/Media/panda.png" style="width: 34px; height: 34px; position: relative; top: -27px; left: 19px;">
+                            </div>
+                            <p id="namewithouidU" style="margin-bottom: 0px; position: relative; left: 117px; top: -58px; font-weight: bold;">PlaceholderPanda</p>
+                            <img src="~/Media/ranking_star.png" style=" position: relative; width: 35px; left: 596px; top: -89px; z-index: 2;">
+                            <p id="totalScoreU" style="background-color: darkred; position: relative; width: 190px; left: 600px; border-radius: 30px; text-align: right; margin-bottom: 0; top: -119px; color: ghostwhite; font-weight: bold; padding-right: 15px;">0   </p>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-
-
     </div>
 
     <script>
+        function gotoLoginorRegister() {
+            window.location.href = 'LoginChoicePage';
+        }
+    </script>
+
+    <script>
+        var totalScore = "";
+        let tempJson = {};
+        let sortJson = {};
+        let sortedJson = {};
+        var urank = "";
         var username = sessionStorage.getItem('username');
+        document.getElementById('indboard').style.transform = "scale(0.1)";
+        document.getElementById('allboard').style.transform = "scale(0.1)";
+        if (username == "PlaceHolder-Panda#0000") {
+            document.getElementById('defaultsignin').disabled = false;
+            document.getElementById('default_message').style.pointerEvents = 'auto';
+            document.getElementById('defaultbutton').disabled = false;
+            document.getElementById('loadinggif').style.display = 'none';
+        }
+        else {
+            
+            document.getElementById('defaultsignin').disabled = false;
+            document.getElementById('loadinggif').style.display = 'block';
+            document.getElementById('default_message').style.pointerEvents = 'auto';
+            document.getElementById('defaultbutton').style.display = 'none';
+            document.getElementById('default_message').textContent = "LOADING";
+        }
         var colornanimal = username.split("-");
         var color = colornanimal[0];
         var animal = colornanimal[1].split('#')[0];
         var fillstring = "";
-        console.log(color + "     " + animal);
+        switch (color) {
+            case 'Red': fillstring = '#E74C3C'; break;
+            case 'Purple': fillstring = '#9B59B6'; break;
+            case 'Green': fillstring = '#82E0AA'; break;
+            case 'Orange': fillstring = '#EB984E'; break;
+            case 'Pink': fillstring = '#F89DF0'; break;
+            case 'Blue': fillstring = '#5DADE2'; break;
+            case 'Navy': fillstring = '#1C298A'; break;
+            case 'Grey': fillstring = '#D1D3DB'; break;
+            case 'Yellow': fillstring = '#F4D03F'; break;
+        }
+        function loadLeaderboardData() {
+            $.ajax({
+                url: '/Home/GetScore',
+                type: 'GET',
+                success: function (response) {
+                    document.getElementById('indboard').style.transform = "scale(1)";
+                    document.getElementById('allboard').style.transform = "scale(1)";
+                    totalScore = response.jsonScore;
+                    tempJson = JSON.parse(response.jsonScore);
+                    for (let key in tempJson) {
+                        let boardname = key.replace("-", '').split("#")[0];
+                        let score = tempJson[key];
+                        sortJson[boardname] = { score: score, pk: key };
+                    }
+                    console.log(sortJson);
+                    let sortedKeys = Object.keys(sortJson).sort(function (a, b) {
+                        return sortJson[b].score - sortJson[a].score;
+                    });
+
+                    sortedKeys.forEach(function (key, index) {
+                        sortedJson[key] = {
+                            score: sortJson[key].score,
+                            index: index,
+                            pmk: sortJson[key].pk
+                        };
+                    });
+
+                    var tempfillstring = "";
+                    for (let key in sortedJson) {
+                        switch (sortedJson[key].pmk.split('-')[0]) {
+                            case 'Red': tempfillstring = '#E74C3C'; break;
+                            case 'Purple': tempfillstring = '#9B59B6'; break;
+                            case 'Green': tempfillstring = '#82E0AA'; break;
+                            case 'Orange': tempfillstring = '#EB984E'; break;
+                            case 'Pink': tempfillstring = '#F89DF0'; break;
+                            case 'Blue': tempfillstring = '#5DADE2'; break;
+                            case 'Navy': tempfillstring = '#1C298A'; break;
+                            case 'Grey': tempfillstring = '#D1D3DB'; break;
+                            case 'Yellow': tempfillstring = '#F4D03F'; break;
+                        }
+                        var tempsrc = "../Media/" + sortedJson[key].pmk.split('-')[1].split('#')[0] + ".png";
+                        if (sortedJson[key].index <= 4) {
+                            document.getElementById('boardSVG' + (sortedJson[key].index + 1)).setAttribute('fill', tempfillstring);
+                            document.getElementById('boardanimal' + (sortedJson[key].index + 1)).src = tempsrc;
+                            document.getElementById('namewithouid' + (sortedJson[key].index + 1)).textContent = key;
+                            document.getElementById('totalScore' + (sortedJson[key].index + 1)).textContent = sortedJson[key].score;
+                        }
+                    }
+                    document.getElementById('defaultuser').style.opacity = 0;
+                    document.getElementById('defaultuser').style.transform = "scale(0.1)";
+                    urank = (sortedJson[username.replace("-", '').split("#")[0]].index + 1).toString();
+                    document.getElementById('rankU').textContent = urank;
+                    var Urank = document.getElementById('rankU').textContent;
+                    document.getElementById('yourRank').textContent = Urank;
+                    switch (Urank) {
+                        case "1": document.getElementById('Yourboardcontent').style.backgroundColor = "#DAA520"; break;
+                        case "2": document.getElementById('Yourboardcontent').style.backgroundColor = "#D4D3D5"; break;
+                        case "3": document.getElementById('Yourboardcontent').style.backgroundColor = "#CD7F32"; break;
+                    }
+                    console.log(sortedJson);
+                },
+                error: function () {
+                }
+            });
+
+        }
+
+        $(document).ready(function () {
+            if (username != "PlaceHolder-Panda#0000") {
+                loadLeaderboardData();
+            }
+        });
+
+
+    </script>
+    <script>
+        document.getElementById('boardcontent1').style.backgroundColor = "#DAA520";
+        document.getElementById('boardcontent2').style.backgroundColor = "#D4D3D5";
+        document.getElementById('boardcontent3').style.backgroundColor = "#CD7F32";
+    </script>
+    <script>
+
         switch (color) {
             case 'Red': fillstring = '#E74C3C'; break;
             case 'Purple': fillstring = '#9B59B6'; break;
@@ -121,37 +347,98 @@
         document.getElementById('showSVG').setAttribute('fill', fillstring);
         var tempsrc = "../Media/" + animal + ".png";
         document.getElementById('animalusername').src = tempsrc;
-        document.getElementById('userid').textContent = "#" + colornanimal[1].split('#')[1];
+        document.getElementById('userid').textContent = colornanimal[1].split('#')[1];
+        document.getElementById('boardSVGU').setAttribute('fill', fillstring);
+        document.getElementById('boardanimalU').src = tempsrc;
+        document.getElementById('namewithouidU').textContent = username.replace("-", '').split('#')[0];
+
+    </script>
+    <script>
+        var taskStatuses = {
+            CTASK1: JSON.parse(sessionStorage.getItem('CTASK1') || '{}'),
+            CTASK2: JSON.parse(sessionStorage.getItem('CTASK2') || '{}'),
+            CTASK3: JSON.parse(sessionStorage.getItem('CTASK3') || '{}'),
+            CTASK4: JSON.parse(sessionStorage.getItem('CTASK4') || '{}'),
+            CTASK5: JSON.parse(sessionStorage.getItem('CTASK5') || '{}'),
+            CTASK6: JSON.parse(sessionStorage.getItem('CTASK6') || '{}')
+        };
+        var CTASKCOUNT = 0;
+        var VTASKCOUNT = 0;
+
+
+        Object.keys(taskStatuses).forEach(task => {
+            var taskData = taskStatuses[task];
+            if (taskData != null) {
+                var numberOfKeys = Object.keys(taskData).length;
+                CTASKCOUNT += numberOfKeys;
+
+            }
+
+        });
+    </script>
+    <script>
+        var VTaskstatuses = JSON.parse(sessionStorage.getItem('VIDEOTASK') || '{}');
+        if (VTaskstatuses != null) {
+            var numberOfKeys = Object.keys(VTaskstatuses).length;
+            VTASKCOUNT += numberOfKeys;
+        }
+
     </script>
 
     <script>
         function updateProgressBar(current, total) {
             let progressBar = document.getElementById('progress-bar');
             let progressText = document.getElementById('progress-text');
-
             let percentage = (current / total) * 100;
-
             progressBar.style.width = percentage + '%';
-
             progressText.textContent = current + ' / ' + total;
         }
 
-        updateProgressBar(4, 7);
+        var currentWeek = sessionStorage.getItem('currentWeek');
+        var weekNumber = currentWeek.replace("week", '');
+        var totalCTasks = 6 * parseInt(weekNumber);
+        updateProgressBar(CTASKCOUNT, totalCTasks);
     </script>
     <script>
         function updateViProgressBar(current, total) {
             let progressBar = document.getElementById('Viprogress-bar');
             let progressText = document.getElementById('Viprogress-text');
-
             let percentage = (current / total) * 100;
-
             progressBar.style.width = percentage + '%';
-
             progressText.textContent = current + ' / ' + total;
         }
 
-        updateViProgressBar(4, 7);
+        var totalViTasks = parseInt(weekNumber);
+        updateViProgressBar(VTASKCOUNT, totalViTasks);
     </script>
+    <script>
+        var numberWithCommas = function (x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        };
+
+    </script>
+
+    <script>
+        var ScoreRecord = "";
+
+        ScoreRecord = numberWithCommas((CTASKCOUNT * 500 + VTASKCOUNT * 750).toString());
+        document.getElementById('yourScore').textContent = ScoreRecord;
+        document.getElementById('totalScoreU').textContent = ScoreRecord;
+
+        function captureAndDownload() {
+            const element = document.getElementById('indboard');
+
+            html2canvas(element).then(canvas => {
+
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = 'profile_screenshot.png'; 
+                link.click(); 
+            });
+        }
+
+    </script>
+
 </body>
-</html>
+</html >
 

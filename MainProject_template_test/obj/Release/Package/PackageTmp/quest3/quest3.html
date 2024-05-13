@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="quest_test.css">
+    <title>Interactive Page</title>
+</head>
+<body>
+    <div id="main-container">
+        <div class="container" id="imageContainer">
+                <div id="image-content">
+                    <p class="instruction">Tap icons to discover questions!</p>
+                    <img src="task3/element1.png" class="icon" style="position: absolute; left: 650px; top: 100px;" onclick="showQuestion('icon1')">
+                    <img src="task3/element2.png" class="icon" style="position: absolute; left: 950px; top: 120px;" onclick="showQuestion('icon2')">
+                    <img src="task3/element3.png" class="icon" style="position: absolute; left: 1200px; top: 160px;" onclick="showQuestion('icon3')">
+                    <img src="task3/element4.png" class="icon" style="position: absolute; left: 1150px; top: 410px;" onclick="showQuestion('icon4')">
+                    <img src="task3/element5.png" class="icon" style="position: absolute; left: 950px; top: 550px;" onclick="showQuestion('icon5')">
+                    <img src="task3/element6.png" class="icon" style="position: absolute; left: 650px; top: 550px;" onclick="showQuestion('icon6')">
+                    <img src="task3/element7.png" class="icon" style="position: absolute; left: 330px; top: 520px;" onclick="showQuestion('icon7')">
+                    <img src="task3/element8.png" class="icon" style="position: absolute; left: 150px; top: 400px;" onclick="showQuestion('icon8')">
+                    <img src="task3/element9.png" class="icon" style="position: absolute; left: 100px; top: 200px;" onclick="showQuestion('icon9')">
+                    <img src="task3/element10.png" class="icon" style="position: absolute; left: 350px; top: 120px;" onclick="showQuestion('icon10')">
+                </div>
+                <div id="question-content" class="hidden">
+                    <form id="question-form">
+                        <p id="question-text"></p>
+                        <div id="answer-options"></div>
+                    </form>
+                </div>
+        </div>
+    </div>
+    
+<script src="quest_test.js"></script>
+</body>
+</html>

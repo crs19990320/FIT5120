@@ -829,7 +829,6 @@
     <Content Include="scss_baker\bootstrap\scss\_type.scss" />
     <Content Include="scss_baker\bootstrap\scss\_utilities.scss" />
     <Content Include="scss_baker\bootstrap\scss\_variables.scss" />
-    <Content Include="Views\Home\indexBaker.cshtml" />
     <Content Include="Views\Home\Leaderboard.cshtml" />
     <Content Include="Views\Home\LoginChoicePage.cshtml" />
     <Content Include="Views\Home\Parents.cshtml" />
