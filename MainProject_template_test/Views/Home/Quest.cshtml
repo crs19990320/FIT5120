@@ -246,6 +246,14 @@
             color: red; /* Style for no selection */
         }
 
+        .answer-status {
+            position: absolute;
+            bottom: 70px; /* Align with bottom of the icon */
+            left: 110px; /* Move to the right of the icon */
+            width: 140px; /* Suitable size for the image */
+            height: 80px; /* Suitable size for the image */
+        }
+
         .hidden {
             display: none;
         }
@@ -344,22 +352,40 @@
                     <div id="image-content">
                         <p class="instruction">Tap icons to discover questions!</p>
                         <img src="~/quest3/task3/element1.png" class="icon" style="position: absolute; left: 450px; top: 100px; width: 280px;" onclick="showQuestion('icon1')">
+                        <img id="icon1-status" class="answer-status" src="" alt="status" style="position: absolute; left: 580px; top: 200px;" />
+
                         <img src="~/quest3/task3/cropped/element2.png" class="icon" style="position: absolute; left: 730px; top: 120px;width:100px;" onclick="showQuestion('icon2')">
+                        <img id="icon2-status" class="answer-status" src="" alt="status" style="position: absolute; left: 780px; top: 200px;" />
+
                         <img src="~/quest3/task3/cropped/element3.png" class="icon" style="position: absolute; left: 750px; top: 290px;width:100px;" onclick="showQuestion('icon3')">
+                        <img id="icon3-status" class="answer-status" src="" alt="status" style="position: absolute; left: 780px; top: 350px;" />
+
                         <img src="~/quest3/task3/element4.png" class="icon" style="position: absolute; left: 660px; top: 410px; width: 250px;" onclick="showQuestion('icon4')">
+                        <img id="icon4-status" class="answer-status" src="" alt="status" style="position: absolute; left: 780px; top: 480px;" />
+
                         <img src="~/quest3/task3/element5.png" class="icon" style="position: absolute; left: 450px; top: 420px; width: 250px;" onclick="showQuestion('icon5')">
+                        <img id="icon5-status" class="answer-status" src="" alt="status" style="position: absolute; left: 580px; top: 480px;" />
+
                         <img src="~/quest3/task3/element6.png" class="icon" style="position: absolute; left: 230px; top: 410px; width: 250px;" onclick="showQuestion('icon6')">
+                        <img id="icon6-status" class="answer-status" src="" alt="status" style="position: absolute; left: 340px; top: 480px;" />
+
                         <img src="~/quest3/task3/element7.png" class="icon" style="position: absolute; left: -5px; top: 410px;width:250px;" onclick="showQuestion('icon7')">
+                        <img id="icon7-status" class="answer-status" src="" alt="status" style="position: absolute; left: 100px; top: 480px;" />
+
                         <img src="~/quest3/task3/element8.png" class="icon" style="position: absolute; left: 0px; top: 260px; width: 250px;" onclick="showQuestion('icon8')">
+                        <img id="icon8-status" class="answer-status" src="" alt="status" style="position: absolute; left: 100px; top: 350px;" />
+
                         <img src="~/quest3/task3/element9.png" class="icon" style="position: absolute; left: 15px; top: 120px; width: 250px;" onclick="showQuestion('icon9')">
+                        <img id="icon9-status" class="answer-status" src="" alt="status" style="position: absolute; left: 100px; top: 200px;" />
+
                         <img src="~/quest3/task3/element10.png" class="icon" style="position: absolute; left: 250px; top: 130px;width:200px;" onclick="showQuestion('icon10')">
+                        <img id="icon10-status" class="answer-status" src="" alt="status" style="position: absolute; left: 340px; top: 200px;" />
+
                     </div>
                     <div id="question-content" class="hidden">
                         <form id="question-form">
                             <h3 id="question-text"></h3>
                             <div id="answer-options"></div>
-                            <button type="button" onclick="answerQuestion()">Submit Answer</button>
-                            <img src="~/quest3/task3/incorrect.png" alt="Back" id="backButtonImage">
                         </form>
                     </div>
                 </div>

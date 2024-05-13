@@ -415,6 +415,7 @@
     <Content Include="Media\co2.jpg" />
     <Content Include="Media\community.png" />
     <Content Include="Media\cooking_1.png" />
+    <Content Include="Media\correct.png" />
     <Content Include="Media\Dashboard_for_MomDad.png" />
     <Content Include="Media\Dashboard_Kids.png" />
     <Content Include="Media\element1.png" />
