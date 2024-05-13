@@ -261,6 +261,7 @@ d3.selectAll('input[name="option"]').on('change', function() {
                 [143.785153, -36.471308], // VIC
                 [121.628310, -25.672817], // WA
             ],
+
             width: 200,
             height: 200
         }
@@ -393,7 +394,17 @@ updateAllIconCoordinates();
           .attr("x", x + offset.dx - newWidth / 2) // Use the updated width for positioning
           .attr("y", y + offset.dy - newHeight / 2) // Use the updated height for positioning
           .attr("width", newWidth)
-          .attr("height", newHeight);
+          .attr("height", newHeight)
+            // Add Functionality for icons - info box on clicking
+            .on('click', function (event, d) {
+                event.stopPropagation();
+                // Pass relevant information to iconClickHandler
+                const iconClickInfo = {
+                    type: icon.type,
+                    location: [lng, lat] // Pass the icon location as an array [lng, lat]
+                };
+                iconClickHandler(event, iconClickInfo, this);
+            });
       });
     });
   }
@@ -412,7 +423,145 @@ updateAllIconCoordinates();
   
       return {...icon, coordinates: updatedCoordinates}; // Update icon with new coordinates (including sizes)
     });
-  }
+    }
+
+    // Mapping of state names to coordinates
+    const stateToCoordinates = {
+        'ACT': [153.012368, -35.473468],
+        'NSW': [147.612793, -31.240233],
+        'NT': [134.550960, -21.491411],
+        'QLD': [145.702796, -24.517574],
+        'SA': [135.209155, -28.000233],
+        'TAS': [149.8087, -41.809],
+        'VIC': [145.785153, -38.471308],
+        'WA': [120.628310, -27.672817]
+    };
+
+    const iconDescriptions = {
+        'Greenhouse Gases': {
+            NSW: 'This icon shows daily greenhouse gas emissions in NSW, about emissions from driving a car for 16 hours everyday.',
+            VIC: 'This icon shows daily greenhouse gas emissions in Victoria, about emissions from driving a car for 12 hours everyday.',
+            QLD: 'This icon shows daily greenhouse gas emissions in Queensland, about emissions from driving a car for 17 hours everyday.',
+            SA: 'This icon shows daily greenhouse gas emissions in South Australia, about emissions from driving a car for 10 hours everyday.',
+            WA: 'This icon shows daily greenhouse gas emissions in West Australia, about emissions from driving a car for 15 hours everyday.',
+            TAS: 'This icon shows daily greenhouse gas emissions in Tasmania, about emissions from driving a car for 5 hours everyday.',
+            NT: 'This icon shows daily greenhouse gas emissions in Northern Territory, about emissions from driving a car for 8 hours everyday.',
+            ACT: 'This icon shows  daily greenhouse gas emissions in ACT, about emissions from driving a car for 7 hours everyday.'
+        },
+        'Water Consumption': {
+            NSW: 'This icon shows daily water consumption in NSW, about 15 buckets per family.',
+            VIC: 'This icon shows daily water consumption in Victoria, about 11 buckets per family.',
+            QLD: 'This icon shows daily water consumption in Queensland, about 14 buckets per family.',
+            SA: 'This icon shows daily water consumption in South Australia, about 10 buckets per family.',
+            WA: 'This icon shows daily water consumption in West Australia, about 9 buckets per family.',
+            TAS: 'This icon shows daily water consumption in Tasmania, about 7 buckets per family.',
+            NT: 'This icon shows daily water consumption in Northern Territory, about 7 buckets per family.',
+            ACT: 'This icon shows daily water consumption in ACT, about 5 buckets per family.'
+        },
+        'PM2.5': {
+            NSW: 'This icon shows daily air quality in NSW, similar to breathing in air near a bonfire for 1 hour each day.',
+            VIC: 'This icon shows daily air quality in Victoria, similar to breathing in air near a bonfire for 3 hours each day.',
+            QLD: 'This icon shows daily air quality in Queensland, similar to breathing in air near a bonfire for 4 hours each day.',
+            SA: 'This icon shows daily air quality in South Australia, similar to breathing in air near a bonfire for 2 hours each day.',
+            WA: 'This icon shows daily air quality in West Australia, similar to breathing in air near a bonfire for 2 and half hours each day.',
+            TAS: 'This icon shows daily air quality in Tasmania, similar to breathing in air near a bonfire for 1 hour each day.',
+            NT: 'This icon shows daily air quality in Northern Territory, similar to breathing in air near a bonfire for 4 and half hours each day.',
+            ACT: 'This icon shows daily air quality in ACT, similar to breathing in air near a bonfire for 3 hours each day.'
+        },
+        'Non-renewable': {
+            NSW: 'This icon shows daily non-renewable energy consumption in NSW, about the same as burning coal to power 70 light bulbs for 24 hours.',
+            VIC: 'This icon shows daily non-renewable energy consumption in Victoria, about the same as burning coal to power 70 light bulbs for 24 hours.',
+            QLD: 'This icon shows daily non-renewable energy consumption in Queensland, about the same as burning coal to power 80 light bulbs for 24 hours.',
+            SA: 'This icon shows daily non-renewable energy consumption in South Australia, about the same as burning coal to power 40 light bulbs for 24 hours.',
+            WA: 'This icon shows daily non-renewable energy consumption in West Australia, about the same as burning coal to power 50 light bulbs for 24 hours.',
+            TAS: 'This icon shows daily non-renewable energy consumption in Tasmania, about the same as burning coal to power 10 light bulbs for 24 hours.',
+            NT: 'This icon shows daily non-renewable energy consumption in Northern Territory, about the same as burning coal to power 20 light bulbs for 24 hours.',
+            ACT: 'This icon shows daily non-renewable energy consumption in ACT, about the same as burning coal to power 30 light bulbs for 24 hours.'
+        },
+        'Waste': {
+            NSW: 'This icon shows daily waste in NSW, equivalent to filling up a extra large dumpster every day.',
+            VIC: 'This icon shows daily waste in Victoria, equivalent to filling up a extra large dumpster every day.',
+            QLD: 'This icon shows daily waste in Queensland, equivalent to filling up a large dumpster every day.',
+            SA: 'This icon shows daily waste in South Australia, equivalent to filling up a medium size dumpster every day.',
+            WA: 'This icon shows daily waste in West Australia, equivalent to filling up a large dumpster every day.',
+            TAS: 'This icon shows daily waste in Tasmania, equivalent to filling up a small dumpster every day.',
+            NT: 'This icon shows daily waste in Northern Territory, equivalent to filling up a small dumpster every day.',
+            ACT: 'This icon shows daily waste in ACT, equivalent to filling up a medium size dumpster every day.'
+        }
+    };
+
+    // Icon Clicking Functionality
+    function displayInfoBox(iconDescription, event) {
+        const { icon_name, location, icon_description } = iconDescription;
+        const infoText = icon_description ? `${icon_description}` : 'No description available';
+        const infoBox = d3.select('#info-box');
+
+
+        // Position the info box relative to the click event
+        const clickX = event.clientX;
+        const clickY = event.clientY;
+        const infoBoxWidth = infoBox.node().offsetWidth;
+        const infoBoxHeight = infoBox.node().offsetHeight;
+
+
+        // Set the position of the info box
+        infoBox
+            .style('left', `${clickX - infoBoxWidth / 2}px`)
+            .style('top', `${clickY - infoBoxHeight - 10}px`) // Adjust the vertical offset as needed
+            .style('display', 'block')
+            .html(`<strong>${infoText}</strong>`);
+        // Hide the info box after a delay
+            setTimeout(() => { infoBox.style('display', 'none'); }, 5000);
+    }
+
+
+    function iconClickHandler(event, data, icon) {
+        // Set a default value for data if it's undefined
+        data = data || { type: "Unknown", location: "Unknown" };
+        console.log("Icon clicked:", data);
+        console.log('icon', icon)
+        // Get the description for the clicked icon type and location
+        let iconDescription = "No description available"; // Default description
+        // Define the margin of error for latitude and longitude comparisons
+        const marginOfError = 3.0; // Adjust as needed
+        // Loop through the stateToCoordinates object to find the corresponding state name
+        Object.keys(stateToCoordinates).forEach(state => {
+            const [lng, lat] = stateToCoordinates[state];
+
+
+            // Calculate the absolute differences between the clicked location and state coordinates
+            const lngDiff = Math.abs(data.location[0] - lng);
+            const latDiff = Math.abs(data.location[1] - lat);
+
+
+            // Check if both differences are within the margin of error
+            if (lngDiff <= marginOfError && latDiff <= marginOfError) {
+                console.log("Location matched!");
+                // Check if the icon type has a corresponding description for the found state
+                if (iconDescriptions[data.type] && iconDescriptions[data.type][state]) {
+                    iconDescription = iconDescriptions[data.type][state];
+                    return; // Exit the loop once description is found
+                }
+            }
+        });
+        // Display the icon description
+        displayInfoBox({ icon_name: data.type, location: data.location.join(', '), icon_description: iconDescription }, event);
+
+
+        // Optionally, style the clicked icon for visual feedback
+        const bbox = icon.getBoundingClientRect();
+        d3.selectAll('.icon').attr("stroke", null).attr("stroke-width", 0);
+        d3.select(icon)
+            .raise() // Bring to front
+            .attr("stroke", "blue")
+            .attr("stroke-width", 2);
+    }
+
+
+    d3.select('body').on('click', function () {
+        hideInfoBox();
+    });
+
 
 ////////////////////////////////////////////////////////////////
   // Attach an event listener to the radio buttons
@@ -424,7 +573,3 @@ updateAllIconCoordinates();
   updateMap('all');  
 // end
 }
-
-
-
-
