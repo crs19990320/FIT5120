@@ -348,33 +348,5 @@ namespace MainProject_template_test.Controllers
         {
             return View();
         }
-<<<<<<< Updated upstream
-
-
-=======
->>>>>>> Stashed changes
-
-        //[HttpPost]
-        //public JsonResult ValidateClick(int x, int y)
-        //{
-        //    var model = Session["GameData"] as Difference;
-
-        //    if (model == null || model.Differences == null)
-        //    {
-        //        return Json(false);
-        //    }
-
-        //    // 如果 (x, y) 在任何一个差异的矩形区域内则返回 true
-        //    bool isCorrect = model.Differences.Any(rect =>
-        //        x >= rect.X && x <= (rect.X + rect.Width) &&
-        //        y >= rect.Y && y <= (rect.Y + rect.Height));
-
-        //    return Json(isCorrect);
-        //}
-<<<<<<< Updated upstream
-
-
-=======
->>>>>>> Stashed changes
     }
 }
