@@ -348,7 +348,7 @@ namespace MainProject_template_test.Controllers
         {
             return View();
         }
-<<<<<<< Updated upstream
+
 
 
         //[HttpPost]
@@ -369,7 +369,6 @@ namespace MainProject_template_test.Controllers
         //    return Json(isCorrect);
         //}
 
-=======
->>>>>>> Stashed changes
+
     }
 }
