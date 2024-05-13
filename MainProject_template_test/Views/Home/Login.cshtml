@@ -124,7 +124,7 @@
         let chooseCircle = null;
 
         function enlargeAndMoveToFront(circle) {
-            if (chooseCircle !== circle) {
+            if (chooseCircle !== circle && parseInt(circle.getAttribute('r')) == 50) {
                 circle.setAttribute('r', parseInt(circle.getAttribute('r')) + 10);
                 circle.parentNode.appendChild(circle);
                 if (chooseCircle) {

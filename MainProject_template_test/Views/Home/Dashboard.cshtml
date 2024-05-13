@@ -507,11 +507,12 @@
                                 checkbox.checked = false;
                                 statusObj[currentWeek] = false;
                             }
-                            console.log(originalObject);
+                            
                             //statusObj[currentWeek] = true;
                             if (statusObj[currentWeek]) {
                                 var saveObject = { [currentWeek]: statusObj[currentWeek] };
                                 var mergedObject = Object.assign({}, originalObject, saveObject);
+                                console.log("TrueL: "+ mergedObject);
                                 sessionStorage.setItem(taskName, JSON.stringify(mergedObject));
                             }
                             else {
@@ -519,9 +520,9 @@
                                 ForDeleteObject = JSON.parse(ForDeleteValue);
                                 delete ForDeleteObject[currentWeek];
                                 sessionStorage.setItem(taskName, JSON.stringify(ForDeleteObject));
-                                console.log(sessionStorage.getItem(taskName));
-
                             }
+
+                            console.log(sessionStorage.getItem(taskName));
                             $.ajax({
                                 url: '/Home/updateTaskStatus',
                                 type: 'POST',
