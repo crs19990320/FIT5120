@@ -202,7 +202,7 @@
         .navbar-nav .nav-link {
             position: relative;
             transition: color 0.5s, border-bottom 0.5s;
-            margin-right: 20px;
+            margin-right: 5px;
         }
 
         .navbar-nav .nav-link:hover {
@@ -212,9 +212,9 @@
         .navbar-nav .nav-link::after {
             content: '';
             position: absolute;
-            left: 0;
+            left: 20px;
             bottom: 2px;
-            width: 100%;
+            width: 80%;
             height: 2px;
             background-color: orangered;
             transition: width 0.5s;
@@ -246,16 +246,16 @@
             Hi, Guest!
         </h4>
 
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style=" font-size: 25px; width: 550px;left: -250px;">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style=" font-size: 20px; width: 550px;left: -10px;">
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
                 <ul class="navbar-nav">
-                    <li id="hidesign" class="nav-item">
+                    <li id="hidesign" class="nav-item" style="width:186px;">
                         <a class="nav-link text-brown" href="@Url.Action("LoginChoicePage", "Home")" style="font-weight: bolder; width: 250px;">
                             <img src="~/Media/login_icon.png" alt="Family Icon" style="width: 60px; height: 60px; margin-right: 0px;">
                             Sign up/ Login
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" style="width:171px;">
                         <a class="nav-link text-brown" href="@Url.Action("HomePage", "Home")" style="font-weight: bolder; width:250px">
                             <img src="~/Media/Home.png" alt="Family Icon" style="width: 100px; height: 60px; margin-right: -20px;">
                             HomePage
