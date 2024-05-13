@@ -97,7 +97,7 @@ function showQuestion(iconId) {
             questionText = 'Jake is learning about different kinds of energy in school. He wonders why using wind and sun to make energy is good. Which answer best explains why?';
             answers = ['Because it helps flowers grow', 'Because it can make the air dirty',
              'Because it doesn’t use up things like coal and oil','Because it makes too much noise'];
-            correctAnswer = 'Because it doesn’t use up things like coal and oil ';
+            correctAnswer = 'Because it doesn’t use up things like coal and oil';
             iconSrc = '../../Media/element7.png';
             hint = '';
             break;

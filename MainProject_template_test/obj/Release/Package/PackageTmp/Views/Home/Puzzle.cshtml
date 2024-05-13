@@ -311,10 +311,12 @@
                 var infoBox = document.getElementById('infoBox');
                 var infoText = document.getElementById('infoText');
                 var infoImg = document.getElementById('infoImg');
+                console.log(taskStatuses['CTASK4']);
+                console.log(taskStatuses['CTASK5']);
 
                 Object.keys(taskStatuses).forEach(task => {
 
-                    if (currentWeek in taskStatuses[task]) {
+                    if (taskStatuses[task] != null && currentWeek in taskStatuses[task]) {
                         const taskIndex = task.replace('CTASK', '');
                         const ellipseId = `e${taskIndex}`;
                         const puzzleid = `pi${taskIndex}`;
@@ -423,7 +425,7 @@
             }
         } else {
             var videoComplete = sessionStorage.getItem('VIDEOTASK');
-            if (currentWeek in JSON.parse(videoComplete)) {
+            if (videoComplete != null && currentWeek in JSON.parse(videoComplete)) {
                 var infoBox = document.getElementById('infoBox');
                 var infoText = document.getElementById('infoText');
                 var infoImg = document.getElementById('infoImg');

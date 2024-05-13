@@ -64,7 +64,7 @@ function showQuestion(iconId) {
             break;
         case 'icon3':
             questionText = 'What gas do humans produce that causes the Earth to warm up?';
-            answers = ['Oxygen' + '\n', 'Hydrogen', 'Carbon dioxide', 'Helium'];
+            answers = ['Oxygen', 'Hydrogen', 'Carbon dioxide', 'Helium'];
             correctAnswer = 'Carbon dioxide';
             iconSrc = '../../Media/element3_origin.png';
             hint = '';
@@ -97,7 +97,7 @@ function showQuestion(iconId) {
             questionText = 'Jake is learning about different kinds of energy in school. He wonders why using wind and sun to make energy is good. Which answer best explains why?';
             answers = ['Because it helps flowers grow', 'Because it can make the air dirty',
              'Because it doesn’t use up things like coal and oil','Because it makes too much noise'];
-            correctAnswer = 'Because it doesn’t use up things like coal and oil ';
+            correctAnswer = 'Because it doesn’t use up things like coal and oil';
             iconSrc = '../../Media/element7.png';
             hint = '';
             break;
@@ -172,6 +172,15 @@ function showQuestion(iconId) {
         label.style.position = 'relative'; // Example inline style for positioning
         label.style.top = '-60px'; // Example inline style for top position
         label.style.left = '0px'; // Example inline style for left position
+
+        // Specific answers array
+        var specificAnswers = ['Oxygen', 'Hydrogen', 'Carbon dioxide', 'Helium'];
+
+        // Check if the current answer should have specific styles
+        if (specificAnswers.includes(answer)) {
+            label.style.paddingRight = '250px'; // Example specific style
+        }
+
         answerOptionsElement.appendChild(label);
     });
 
