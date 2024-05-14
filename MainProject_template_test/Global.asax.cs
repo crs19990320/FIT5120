@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MainProject_template_test.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,22 @@ namespace MainProject_template_test
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
+
+        protected void Application_Error()
+        {
+            Exception exception = Server.GetLastError();
+            HttpException httpException = exception as HttpException;
+
+            if (httpException != null)
+            {
+                int errorCode = httpException.GetHttpCode();
+                if (errorCode == 404)
+                {
+                    Server.ClearError();
+                    Response.Redirect("/Home/pageNotFound");
+                }
+            }
         }
     }
 }

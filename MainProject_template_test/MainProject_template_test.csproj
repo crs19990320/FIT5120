@@ -293,6 +293,7 @@
     <Content Include="d3-mainproject\map2.css" />
     <Content Include="d3-mainproject\map2.js" />
     <Content Include="favicon.ico" />
+    <Content Include="favicon1.ico" />
     <Content Include="Games\Build\Games.framework.js" />
     <Content Include="Games\Build\Games.loader.js" />
     <Content Include="Games\card.html" />
@@ -388,6 +389,7 @@
     <Content Include="lib_baker\waypoints\waypoints.min.js" />
     <Content Include="lib_baker\wow\wow.js" />
     <Content Include="lib_baker\wow\wow.min.js" />
+    <Content Include="Content\logo.png" />
     <Content Include="Media\1.png" />
     <Content Include="Media\2.png" />
     <Content Include="Media\3.png" />

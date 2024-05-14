@@ -17,14 +17,14 @@ namespace MainProject_template_test
                 name: "Default",
                 url: "{controller}/{action}/{id}",
 
-                defaults: new { controller = "Home", action = "HomePage", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "SaftyPassword", id = UrlParameter.Optional }
             );
 
             // Add route for 404 errors
             routes.MapRoute(
-                name: "404-PageNotFound",
-                url: "404",
-                defaults: new { controller = "Home", action = "PageNotFound" }
+                name: "NotFound",
+                url: "{*url}",
+                defaults: new { controller = "Home", action = "pageNotFound" }
             );
         }
     }

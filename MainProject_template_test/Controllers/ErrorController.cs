@@ -13,7 +13,7 @@ namespace MainProject_template_test.Controllers
         public ActionResult PageNotFound()
         {
             Response.StatusCode = 404; // Set HTTP status code to 404
-            return View("pageNotFound"); // Return your 404 error view
+            return View("Home/pageNotFound"); // Return your 404 error view
         }
 
         //public ActionResult pageNotFound()

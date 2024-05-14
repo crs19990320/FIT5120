@@ -490,30 +490,57 @@ updateAllIconCoordinates();
         }
     };
 
+    //function highlightNumbers(description) {
+    //    return description.replace(/(\d+\.?\d*|\d*\.\d+)\s*(hours|light bulbs|buckets|hour)/gi, '<span class="highlight">$1 $2</span>');
+    //}
+
+    //function displayDescriptions() {
+    //    const container = document.getElementById('info-box');
+    //    Object.entries(iconDescriptions).forEach(([category, details]) => {
+    //        const categoryDiv = document.createElement('div');
+    //        categoryDiv.innerHTML = `<h3>${category}</h3>`;
+    //        Object.entries(details).forEach(([state, desc]) => {
+    //            const p = document.createElement('p');
+    //            p.innerHTML = `${state}: ${highlightNumbers(desc)}`;
+    //            categoryDiv.appendChild(p);
+    //        });
+    //        container.appendChild(categoryDiv);
+    //    });
+    //}
+
     // Icon Clicking Functionality
     function displayInfoBox(iconDescription, event) {
+        // Destructuring to extract values from the iconDescription object
         const { icon_name, location, icon_description } = iconDescription;
-        const infoText = icon_description ? `${icon_description}` : 'No description available';
+
+        // Replace numbers with highlighted HTML
+        const highlightedDescription = icon_description.replace(
+            /(\d+\.?\d*|\d*\.\d+)\s*(hours?|light bulbs|buckets?|hour|dumpsters?|light bulbs for|buckets per family|hour each day)/gi,
+            '<span class="highlight">$1 $2</span>'
+        );
+
+        // Prepare the text to be displayed, using the highlighted description
+        const infoText = highlightedDescription || 'No description available';
+
+        // Select the info box using d3
         const infoBox = d3.select('#info-box');
 
-
-        // Position the info box relative to the click event
+        // Get mouse click coordinates
         const clickX = event.clientX;
         const clickY = event.clientY;
         const infoBoxWidth = infoBox.node().offsetWidth;
         const infoBoxHeight = infoBox.node().offsetHeight;
 
-
-        // Set the position of the info box
+        // Calculate and set the position of the info box
         infoBox
             .style('left', `${clickX - infoBoxWidth / 2}px`)
-            .style('top', `${clickY - infoBoxHeight - 10}px`) // Adjust the vertical offset as needed
+            .style('top', `${clickY - infoBoxHeight - 10}px`) // Adjust the vertical offset
             .style('display', 'block')
             .html(`<strong>${infoText}</strong>`);
-        // Hide the info box after a delay
-            setTimeout(() => { infoBox.style('display', 'none'); }, 5000);
-    }
 
+        // Automatically hide the info box after a delay
+        setTimeout(() => { infoBox.style('display', 'none'); }, 10000);
+    }
 
     function iconClickHandler(event, data, icon) {
         // Set a default value for data if it's undefined
