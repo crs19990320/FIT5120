@@ -10,6 +10,11 @@ using Google.Cloud.Storage.V1;
 using CsvHelper;
 using static Google.Apis.Storage.v1.StorageService;
 using System.Diagnostics;
+using Microsoft.Ajax.Utilities;
+using Org.BouncyCastle.Crypto;
+using Org.BouncyCastle.Crypto.Parameters;
+using Org.BouncyCastle.Security;
+using System.Text;
 
 namespace MainProject_template_test.Controllers
 {
@@ -347,6 +352,50 @@ namespace MainProject_template_test.Controllers
         public ActionResult LoginChoicePage()
         {
             return View();
+        }
+
+
+        private const string SecretKey = "ameaernalsynergy";
+        private const string Iv = "ameaernalsynergy";
+
+        public ActionResult SaftyPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public JsonResult VerifyUser(string username, string password)
+        {
+            string decryptedPassword = Decrypt(password);
+            bool isValid = CheckPassword(username, decryptedPassword);
+            return Json(new { isValid = isValid });
+        }
+
+        private bool CheckPassword(string webUsername, string webPassword)
+        {
+            if (string.IsNullOrEmpty(webUsername) || string.IsNullOrEmpty(webPassword))
+            {
+                return false;
+            }
+            else if (webUsername != "fit5120@tp28")
+            {
+                return false;
+            }
+
+            return webPassword == "fit5120@tp28";
+        }
+
+        private string Decrypt(string encryptedText)
+        {
+            var keyBytes = Encoding.UTF8.GetBytes(SecretKey);
+            var ivBytes = Encoding.UTF8.GetBytes(Iv);
+            var encryptedBytes = Convert.FromBase64String(encryptedText);
+
+            var cipher = CipherUtilities.GetCipher("AES/CBC/PKCS7PADDING");
+            cipher.Init(false, new ParametersWithIV(new KeyParameter(keyBytes), ivBytes));
+
+            var decryptedBytes = cipher.DoFinal(encryptedBytes);
+            return Encoding.UTF8.GetString(decryptedBytes);
         }
     }
 }
